@@ -15,7 +15,6 @@ const mailTransport = nodemailer.createTransport({
 })
 
 exports.submit = functions.https.onRequest((req, res) => {
-  console.log('New email sent to:', gmailEmail)
   res.set('Access-Control-Allow-Origin', '*')
   res.set('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS')
   res.set('Access-Control-Allow-Headers', '*')
@@ -29,9 +28,9 @@ exports.submit = functions.https.onRequest((req, res) => {
       }
 
       const mailOptions = {
-        from: req.body.email,
-        replyTo: req.body.email,
-        to: gmailEmail,
+        from: gmailEmail,
+        replyTo: 'info@loppemconversa.be',
+        to: req.body.email,
         subject: `${req.body.name} just messaged me from my website`,
         text: req.body.message,
         html: `<p>${req.body.message}</p>`,
