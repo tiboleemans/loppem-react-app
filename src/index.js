@@ -6,6 +6,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { ThemeProvider } from '@material-ui/core/styles';
 import * as serviceWorker from './serviceWorker';
 import theme from './theme';
+import "material-kit-react/src/assets/scss/material-kit-react.scss?v=1.9.0";
 
 ReactDOM.render(
     <React.StrictMode>

@@ -7,10 +7,17 @@ import Container from '@material-ui/core/Container';
 import Input from '@material-ui/core/Input';
 import InputLabel from '@material-ui/core/InputLabel';
 import FormControl from '@material-ui/core/FormControl';
-import DatePicker from '@bit/nexxtway.react-rainbow.date-picker';
 import {makeStyles} from '@material-ui/core/styles';
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
+import FormLabel from "@material-ui/core/FormLabel";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Radio from "@material-ui/core/Radio";
+import Datetime from 'react-datetime';
+import "react-datetime/css/react-datetime.css";
+import moment from 'moment';
+import 'moment/locale/nl';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -22,12 +29,46 @@ const useStyles = makeStyles((theme) => ({
         textAlign: 'center',
         color: theme.palette.text.secondary,
     },
+    label: {
+        color: "rgba(213,18,18,0.26)",
+        cursor: "pointer",
+        display: "inline-flex",
+        fontSize: "14px",
+        transition: "0.3s ease all",
+        lineHeight: "1.428571429",
+        fontWeight: "400",
+        paddingLeft: "0"
+    }
 }));
 
 const ContactForm = () => {
+
     const classes = useStyles();
 
     const [formData, setFormData] = useState({})
+
+    const [valueLang, setValueLang] = React.useState('');
+    const [errorLang, setErrorLang] = React.useState(false);
+
+    const handleRadioLangChange = (event) => {
+        setValueLang(event.target.value);
+        setErrorLang(false);
+    };
+
+    const [valuePeriod, setValuePeriod] = React.useState('');
+    const [errorPeriod, setErrorPeriod] = React.useState(false);
+
+    const handleRadioPeriodeChange = (event) => {
+        setValuePeriod(event.target.value);
+        setErrorPeriod(false);
+    };
+
+    function valid(current) {
+        const mindate = moment().year(2003);
+        const maxdate = moment().year(2012);
+        return current.isAfter(mindate) && current.isBefore(maxdate);
+    }
+
 
     const updateInput = e => {
         setFormData({
@@ -61,6 +102,7 @@ const ContactForm = () => {
                 console.log(error)
             })
     }
+
 
     return (
         <>
@@ -101,11 +143,6 @@ const ContactForm = () => {
                             <Button>Meisje</Button>
                         </ButtonGroup>
                     </div>
-                    <div
-                        className="rainbow-p-vertical_large rainbow-p-horizontal_xx-large rainbow-m-horizontal_xx-large">
-                        <DatePicker
-                            label="Geboortedatum"/>
-                    </div>
                     <div>
                         <FormControl>
                             <InputLabel htmlFor="email">Email</InputLabel>
@@ -119,39 +156,62 @@ const ContactForm = () => {
                 <div className={classes.root}>
                     <Grid container spacing={3}>
                         <Grid item xs={12} md={6}>
-                            <Grid container spacing={1}>
-                                <Grid item xs={3}>
-                                    <label>cursustaal:</label>
-                                </Grid>
-                                <Grid item xs={3}>
-                                    <ButtonGroup color="primary" aria-label="primary button group">
-                                        <Button>Nederlands</Button>
-                                        <Button>Engels</Button>
-                                    </ButtonGroup>
-                                </Grid>
-                            </Grid>
+                            <FormControl component="fieldset" error={errorLang} className={classes.formControl}>
+                                <FormLabel component="legend">* Curusustaal:</FormLabel>
+                                <RadioGroup aria-label="language-choice" name="language-choice" value={valueLang}
+                                            onChange={handleRadioLangChange}>
+                                    <FormControlLabel value="dutch" control={<Radio/>} label="Nederlands"/>
+                                    <FormControlLabel value="english" control={<Radio/>} label="Engels"/>
+                                </RadioGroup>
+                            </FormControl>
                         </Grid>
                         <Grid item xs={12} md={6}>
-                            <Paper className={classes.paper}>Periode</Paper>
+                            <FormControl component="fieldset" error={errorPeriod} className={classes.formControl}>
+                                <FormLabel component="legend">* Periode:</FormLabel>
+                                <RadioGroup aria-label="periode-choice" name="periode-choice" value={valuePeriod}
+                                            onChange={handleRadioPeriodeChange}>
+                                    <FormControlLabel value="july" control={<Radio/>} label="Juli"/>
+                                    <FormControlLabel value="august" control={<Radio/>} label="Augustus"/>
+                                </RadioGroup>
+                            </FormControl>
                         </Grid>
                         <Grid item xs={12} md={6}>
-                            <Paper className={classes.paper}>Voornaam</Paper>
+                            <FormControl>
+                                <InputLabel htmlFor="firstName">Voornaam</InputLabel>
+                                <Input id="firstName"/>
+                            </FormControl>
                         </Grid>
+                        <FormControl>
+                            <InputLabel htmlFor="name">Naam</InputLabel>
+                            <Input id="name"/>
+                        </FormControl>
                         <Grid item xs={12} md={6}>
-                            <Paper className={classes.paper}>Naam</Paper>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Paper className={classes.paper}>Geslacht</Paper>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Paper className={classes.paper}>Geboortedatum</Paper>
-                        </Grid>
-                        <Grid item xs={12} md={12}>
-                            <Paper className={classes.paper}>Email</Paper>
+                            <FormControl component="fieldset" error={errorPeriod} className={classes.formControl}>
+                                <FormLabel component="legend">* Geslacht:</FormLabel>
+                                <ButtonGroup color="primary" aria-label="outlined primary button group">
+                                    <Button>Jongen</Button>
+                                    <Button>Meisje</Button>
+                                </ButtonGroup>
+                            </FormControl>
                         </Grid>
                         <Grid item xs={2} md={2}>
-                            <Paper className={classes.paper}>checkbox</Paper>
-                        </Grid>
+                            <div>
+                                <InputLabel className={classes.label}>
+                                    Geboortedatum
+                                </InputLabel>
+                                <FormControl fullWidth>
+                                    <Datetime
+                                        timeFormat={false}
+                                        dateFormat={"DD/MM/YYYY"}
+                                        initialViewMode="years"
+                                        locale="nl"
+                                        isValidDate={valid}
+                                        initialViewDate={new moment().year(2008)}
+                                        inputProps={{ placeholder: "Gelieve de geboortedatum te selecteren" }}
+                                    />
+                                </FormControl>
+                            </div>
+                            </Grid>
                         <Grid item xs={10}>
                             <Paper className={classes.paper}>Ben je akkoord?</Paper>
                         </Grid>
