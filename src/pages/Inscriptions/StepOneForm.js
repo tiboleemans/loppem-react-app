@@ -7,8 +7,6 @@ import CustomCheckbox from "../../components/controls/CustomCheckbox";
 import CustomDatePicker from "../../components/controls/CustomDatePicker";
 import CustomButton from "../../components/controls/CustomButton";
 import Typography from "@material-ui/core/Typography";
-import CustomCard from "../../components/controls/CustomCard";
-import Paper from "@material-ui/core/Paper";
 
 
 const initialFieldValues = {
@@ -22,6 +20,15 @@ const initialFieldValues = {
     firstNameParent: '',
     lastNameParent: '',
     email: '',
+    relation: '',
+    street: '',
+    houseNr: '',
+    busNr: '',
+
+    city: '',
+    zipCode: '',
+    gsm: '',
+    gsm2: '',
 
     acceptPictures: '',
     acceptTerms: ''
@@ -43,6 +50,12 @@ export default function StepOneForm() {
     const genderItems = [
         {id: 'boy', title: 'Jongen'},
         {id: 'girl', title: 'Meisje'},
+    ]
+
+    const relationItems = [
+        {id: 'mother', title: 'Moeder'},
+        {id: 'father', title: 'Vader'},
+        {id: 'guardian', title: 'Voogd'},
     ]
 
     const {
