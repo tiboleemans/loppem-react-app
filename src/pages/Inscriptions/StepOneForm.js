@@ -5,8 +5,8 @@ import CustomInput from "../../components/controls/CustomInput";
 import CustomRadioGroup from "../../components/controls/CustomRadioGroup";
 import CustomCheckbox from "../../components/controls/CustomCheckbox";
 import CustomDatePicker from "../../components/controls/CustomDatePicker";
-import CustomButton from "../../components/controls/CustomButton";
 import Typography from "@material-ui/core/Typography";
+import {makeStyles} from "@material-ui/core/styles";
 
 
 const initialFieldValues = {
@@ -33,9 +33,14 @@ const initialFieldValues = {
     acceptPictures: '',
     acceptTerms: ''
 }
+const useStyles = makeStyles((theme) => ({
+    row: {
+        marginBottom: 0.1,
+    }
+}));
 
 export default function StepOneForm() {
-
+    const classes = useStyles();
 
     const languageItems = [
         {id: 'dutch', title: 'Nederlands'},
@@ -70,8 +75,8 @@ export default function StepOneForm() {
                 Informatie leerling
             </Typography>
 
-            <Grid container>
-                <Grid item xs={12} md={6}>
+            <Grid container spacing={3}>
+                <Grid item xs={12} sm={6} >
                     <CustomRadioGroup
                         name="language"
                         label="* Cursustaal:"
@@ -80,7 +85,7 @@ export default function StepOneForm() {
                         items={languageItems}
                     />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6}>
                     <CustomRadioGroup
                         name="period"
                         label="* Periode:"
@@ -88,7 +93,7 @@ export default function StepOneForm() {
                         onChange={handleInputChange}
                         items={periodItems}/>
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6}>
                     <CustomInput
                         label="Voornaam Leerling"
                         name="firstNameStudent"
@@ -96,8 +101,7 @@ export default function StepOneForm() {
                         onChange={handleInputChange}
                     />
                 </Grid>
-
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6}>
                     <CustomInput
                         label="Naam Leerling"
                         name="lastNameStudent"
@@ -105,7 +109,7 @@ export default function StepOneForm() {
                         onChange={handleInputChange}
                     />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6}>
                     <CustomDatePicker
                         name="birthday"
                         label="Geboortedatum"
@@ -114,7 +118,7 @@ export default function StepOneForm() {
                     />
                 </Grid>
 
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6}>
                     <CustomRadioGroup
                         name="gender"
                         label="* Geslacht:"
@@ -128,8 +132,8 @@ export default function StepOneForm() {
                 Informatie ouder
             </Typography>
 
-            <Grid container>
-                <Grid item xs={12} md={6}>
+            <Grid container spacing={3}>
+                <Grid item xs={12} sm={6}>
                     <CustomInput
                         label="Voornaam ouder"
                         name="firstNameParent"
@@ -137,7 +141,7 @@ export default function StepOneForm() {
                         onChange={handleInputChange}
                     />
                 </Grid>
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={6}>
                     <CustomInput
                         label="Naam ouder"
                         name="lastNameParent"
@@ -146,7 +150,7 @@ export default function StepOneForm() {
                     />
                 </Grid>
             </Grid>
-            <Grid item xs={12}>
+            <Grid xs={12} row>
                 <CustomCheckbox
                     name="acceptPictures"
                     label="Ik geef toestemming om foto's van mijn kind te gebruiken voor commerciële doeleinden (klik hier voor details)"
@@ -160,12 +164,6 @@ export default function StepOneForm() {
                     onChange={handleInputChange}
                 />
             </Grid>
-            <div>
-                <CustomButton
-                    text="Inschrijven"
-                    type="Submit"
-                />
-            </div>
         </Form>
     )
 }

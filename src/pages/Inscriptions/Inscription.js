@@ -2,6 +2,7 @@ import React from 'react';
 import StepOneForm from "./StepOneForm";
 import Paper from "@material-ui/core/Paper";
 import {makeStyles} from "@material-ui/core/styles";
+import InscriptionForm from "./InscripionForm";
 
 const useStyles = makeStyles(theme => ({
     pageContent: {
@@ -15,11 +16,7 @@ export default function Inscription() {
     const classes = useStyles();
     return (
         <>
-            <Paper className={classes.pageContent}
-                   variant="outlined"
-            >
-                <StepOneForm/>
-            </Paper>
+            <InscriptionForm/>
         </>
     )
 }
