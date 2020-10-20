@@ -1,48 +1,32 @@
 import React from 'react';
-import Grid from "@material-ui/core/Grid";
 import useForm, {Form} from "../../components/useForm";
-import CustomInput from "../../components/controls/CustomInput";
-import CustomRadioGroup from "../../components/controls/CustomRadioGroup";
-import CustomCheckbox from "../../components/controls/CustomCheckbox";
-import CustomDatePicker from "../../components/controls/CustomDatePicker";
-import CustomButton from "../../components/controls/CustomButton";
 import Typography from "@material-ui/core/Typography";
-import CustomCard from "../../components/controls/CustomCard";
-import Paper from "@material-ui/core/Paper";
+import Grid from "@material-ui/core/Grid";
+import CustomInput from "../../components/controls/CustomInput";
 
 
 const initialFieldValues = {
-    language: '',
-    period: '',
-    firstNameStudent: '',
-    lastNameStudent: '',
-    gender: '',
-    birthday: null,
-
     firstNameParent: '',
     lastNameParent: '',
     email: '',
+    relation: '',
+    street: '',
+    houseNr: '',
+    busNr: '',
 
-    acceptPictures: '',
-    acceptTerms: ''
+    city: '',
+    zipCode: '',
+    gsm: '',
+    gsm2: '',
 }
 
 export default function StepTwoForm() {
 
 
-    const languageItems = [
-        {id: 'dutch', title: 'Nederlands'},
-        {id: 'english', title: 'Engels'},
-    ]
-
-    const periodItems = [
-        {id: 'july', title: 'Juli'},
-        {id: 'augusts', title: 'Augustus'},
-    ]
-
-    const genderItems = [
-        {id: 'boy', title: 'Jongen'},
-        {id: 'girl', title: 'Meisje'},
+    const relationItems = [
+        {id: 'mother', title: 'Moeder'},
+        {id: 'father', title: 'Vader'},
+        {id: 'guardian', title: 'Voogd'},
     ]
 
     const {
@@ -54,8 +38,27 @@ export default function StepTwoForm() {
 
         <Form>
             <Typography variant="h5" gutterBottom>
-                Informatie van de school
+                Gegevens ouder
             </Typography>
+
+            <Grid container spacing={3}>
+                <Grid item xs={12} sm={6}>
+                    <CustomInput
+                        label="Voornaam ouder"
+                        name="firstNameParent"
+                        value={values.firstNameParent}
+                        onChange={handleInputChange}
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6}>
+                    <CustomInput
+                        label="Naam ouder"
+                        name="lastNameParent"
+                        value={values.lastNameParent}
+                        onChange={handleInputChange}
+                    />
+                </Grid>
+            </Grid>
         </Form>
     )
 }

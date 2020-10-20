@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Grid from "@material-ui/core/Grid";
 import useForm, {Form} from "../../components/useForm";
 import CustomInput from "../../components/controls/CustomInput";
@@ -7,6 +7,11 @@ import CustomCheckbox from "../../components/controls/CustomCheckbox";
 import CustomDatePicker from "../../components/controls/CustomDatePicker";
 import Typography from "@material-ui/core/Typography";
 import {makeStyles} from "@material-ui/core/styles";
+import ButtonGroup from "@material-ui/core/ButtonGroup";
+import Button from "@material-ui/core/Button";
+import FormControl from "@material-ui/core/FormControl";
+import FormLabel from "@material-ui/core/FormLabel";
+import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 
 const initialFieldValues = {
@@ -17,20 +22,6 @@ const initialFieldValues = {
     gender: '',
     birthday: null,
 
-    firstNameParent: '',
-    lastNameParent: '',
-    email: '',
-    relation: '',
-    street: '',
-    houseNr: '',
-    busNr: '',
-
-    city: '',
-    zipCode: '',
-    gsm: '',
-    gsm2: '',
-
-    acceptPictures: '',
     acceptTerms: ''
 }
 const useStyles = makeStyles((theme) => ({
@@ -42,14 +33,16 @@ const useStyles = makeStyles((theme) => ({
 export default function StepOneForm() {
     const classes = useStyles();
 
+    const [language, setLanguage] = useState('');
+
     const languageItems = [
         {id: 'dutch', title: 'Nederlands'},
         {id: 'english', title: 'Engels'},
     ]
 
     const periodItems = [
-        {id: 'july', title: 'Juli'},
-        {id: 'augusts', title: 'Augustus'},
+        {id: 'july', title: 'Juli', selected: 'false'},
+        {id: 'august', title: 'Augustus', selected: 'true'},
     ]
 
     const genderItems = [
@@ -57,26 +50,26 @@ export default function StepOneForm() {
         {id: 'girl', title: 'Meisje'},
     ]
 
-    const relationItems = [
-        {id: 'mother', title: 'Moeder'},
-        {id: 'father', title: 'Vader'},
-        {id: 'guardian', title: 'Voogd'},
-    ]
-
     const {
         values, setValues, handleInputChange
     } = useForm(initialFieldValues);
+
+    const toggleContent = e => {
+        e.preventDefault();
+        console.log(e.target.name);
+        setLanguage(e.target.name);
+    }
 
 
     return (
 
         <Form>
             <Typography variant="h5" gutterBottom>
-                Informatie leerling
+                Gegevens leerling
             </Typography>
 
             <Grid container spacing={3}>
-                <Grid item xs={12} sm={6} >
+                <Grid item xs={12} sm={6} style={{paddingBottom: '0px'}}>
                     <CustomRadioGroup
                         name="language"
                         label="* Cursustaal:"
@@ -85,7 +78,7 @@ export default function StepOneForm() {
                         items={languageItems}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} style={{paddingBottom: '0px'}}>
                     <CustomRadioGroup
                         name="period"
                         label="* Periode:"
@@ -93,7 +86,33 @@ export default function StepOneForm() {
                         onChange={handleInputChange}
                         items={periodItems}/>
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} style={{paddingBottom: '0px'}}>
+                    <CustomButtonGroup
+                        name="period"
+                        label="* Periode:"
+                        value={values.period}
+                        onChange={handleInputChange}
+                        items={periodItems}/>
+                </Grid>
+                <Grid item xs={12} sm={6} >
+                    <FormControl>
+                        <FormLabel component="legend">* Cursustaal:</FormLabel>
+                        <ButtonGroup fullWidth style={{paddingTop: '10px'}}>
+                            <Button>Nederlands</Button>
+                            <Button>Engels</Button>
+                        </ButtonGroup>
+                    </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} >
+                    <FormControl>
+                        <FormLabel component="legend">* Periode:</FormLabel>
+                        <ButtonGroup fullWidth style={{paddingTop: '10px'}}>
+                            <Button onClick={toggleContent} className={language ==='Juli' ? 'active' : null} name={'Juli'}>Juli</Button>
+                            <Button onClick={toggleContent} className={language ==='Augustus' ? 'active' : null} name={'Augustus'}>Augustus</Button>
+                        </ButtonGroup>
+                    </FormControl>
+                </Grid>
+                <Grid item xs={12} sm={6} style={{paddingTop: '0px'}}>
                     <CustomInput
                         label="Voornaam Leerling"
                         name="firstNameStudent"
@@ -101,7 +120,7 @@ export default function StepOneForm() {
                         onChange={handleInputChange}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12} sm={6} style={{paddingTop: '0px'}}>
                     <CustomInput
                         label="Naam Leerling"
                         name="lastNameStudent"
@@ -128,35 +147,8 @@ export default function StepOneForm() {
                     />
                 </Grid>
             </Grid>
-            <Typography variant="h5" gutterBottom>
-                Informatie ouder
-            </Typography>
 
-            <Grid container spacing={3}>
-                <Grid item xs={12} sm={6}>
-                    <CustomInput
-                        label="Voornaam ouder"
-                        name="firstNameParent"
-                        value={values.firstNameParent}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <CustomInput
-                        label="Naam ouder"
-                        name="lastNameParent"
-                        value={values.lastNameParent}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-            </Grid>
             <Grid xs={12} row>
-                <CustomCheckbox
-                    name="acceptPictures"
-                    label="Ik geef toestemming om foto's van mijn kind te gebruiken voor commerciële doeleinden (klik hier voor details)"
-                    value={values.acceptPictures}
-                    onChange={handleInputChange}
-                />
                 <CustomCheckbox
                     name="acceptTerms"
                     label="Ik aanvaard de algemene voorwaarden en privacyregels"

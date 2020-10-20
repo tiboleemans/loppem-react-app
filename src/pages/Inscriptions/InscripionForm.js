@@ -12,8 +12,9 @@ import Typography from '@material-ui/core/Typography';
 import StepOneForm from "./StepOneForm";
 import StepTwoForm from "./StepTwoForm";
 import StepThreeForm from "./StepThreeForm";
+import StepFourForm from "./StepFourForm";
 
-const steps = ['Intiële informatie', 'Informatie van de school', 'Extra informatie'];
+const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
 
 const useStyles = makeStyles((theme) => ({
     layout: {
@@ -57,6 +58,8 @@ function getStepContent(step) {
             return <StepTwoForm/>;
         case 2:
             return <StepThreeForm/>;
+        case 3:
+            return <StepFourForm/>;
         default:
             throw new Error('Unknown step');
     }
