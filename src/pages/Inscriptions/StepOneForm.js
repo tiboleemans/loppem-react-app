@@ -8,6 +8,7 @@ import CustomDatePicker from "../../components/controls/CustomDatePicker";
 import CustomButton from "../../components/controls/CustomButton";
 import Typography from "@material-ui/core/Typography";
 import CustomCard from "../../components/controls/CustomCard";
+import Paper from "@material-ui/core/Paper";
 
 
 const initialFieldValues = {
@@ -26,7 +27,7 @@ const initialFieldValues = {
     acceptTerms: ''
 }
 
-export default function InscriptionForm() {
+export default function StepOneForm() {
 
 
     const languageItems = [
@@ -52,20 +53,15 @@ export default function InscriptionForm() {
     return (
 
         <Form>
-            <Typography variant="h3" component="h2" gutterBottom>
-                Inschrijvingsformulier
+            <Typography variant="h5" gutterBottom>
+                Informatie leerling
             </Typography>
 
             <Grid container>
-                <Grid item xs={12}>
-                    <CustomCard
-                        title="Informatie leerling"
-                    />
-                </Grid>
                 <Grid item xs={12} md={6}>
                     <CustomRadioGroup
                         name="language"
-                        label="* Cursustaal"
+                        label="* Cursustaal:"
                         values={values.language}
                         onChange={handleInputChange}
                         items={languageItems}
@@ -114,11 +110,12 @@ export default function InscriptionForm() {
                         items={genderItems}
                     />
                 </Grid>
-                <Grid item xs={12}>
-                    <CustomCard
-                        title="Informatie ouder"
-                    />
-                </Grid>
+            </Grid>
+            <Typography variant="h5" gutterBottom>
+                Informatie ouder
+            </Typography>
+
+            <Grid container>
                 <Grid item xs={12} md={6}>
                     <CustomInput
                         label="Voornaam ouder"
@@ -135,34 +132,27 @@ export default function InscriptionForm() {
                         onChange={handleInputChange}
                     />
                 </Grid>
-                <Grid item xs={12}>
-                    <CustomCard
-                        title="Extra informatie"
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <CustomCheckbox
-                        name="acceptPictures"
-                        label="Ik geef toestemming om foto's van mijn kind te gebruiken voor commerciële doeleinden (klik hier voor details)"
-                        value={values.acceptPictures}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-                <Grid item xs={12}>
-                    <CustomCheckbox
-                        name="acceptTerms"
-                        label="Ik aanvaard de algemene voorwaarden en privacyregels"
-                        value={values.acceptTerms}
-                        onChange={handleInputChange}
-                    />
-                </Grid>
-                <div>
-                    <CustomButton
-                        text="Inschrijven"
-                        type="Submit"
-                    />
-                </div>
             </Grid>
+            <Grid item xs={12}>
+                <CustomCheckbox
+                    name="acceptPictures"
+                    label="Ik geef toestemming om foto's van mijn kind te gebruiken voor commerciële doeleinden (klik hier voor details)"
+                    value={values.acceptPictures}
+                    onChange={handleInputChange}
+                />
+                <CustomCheckbox
+                    name="acceptTerms"
+                    label="Ik aanvaard de algemene voorwaarden en privacyregels"
+                    value={values.acceptTerms}
+                    onChange={handleInputChange}
+                />
+            </Grid>
+            <div>
+                <CustomButton
+                    text="Inschrijven"
+                    type="Submit"
+                />
+            </div>
         </Form>
     )
 }

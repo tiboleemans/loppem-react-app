@@ -1,5 +1,5 @@
 import React from 'react';
-import InscriptionForm from "./InscriptionForm";
+import StepOneForm from "./StepOneForm";
 import Paper from "@material-ui/core/Paper";
 import {makeStyles} from "@material-ui/core/styles";
 
@@ -18,7 +18,7 @@ export default function Inscription() {
             <Paper className={classes.pageContent}
                    variant="outlined"
             >
-                <InscriptionForm/>
+                <StepOneForm/>
             </Paper>
         </>
     )
