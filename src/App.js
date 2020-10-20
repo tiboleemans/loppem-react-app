@@ -9,6 +9,7 @@ function App() {
                 {/*<ContactForm />*/}
                 
                 <Inscription/>
+                {/*<Test/>*/}
             </header>
         </div>
     )

@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from "@material-ui/core/Grid";
 import useForm, {Form} from "../../components/useForm";
-import Input from "../../components/controls/Input";
+import CustomInput from "../../components/controls/CustomInput";
 import CustomRadioGroup from "../../components/controls/CustomRadioGroup";
 import CustomCheckbox from "../../components/controls/CustomCheckbox";
 import CustomDatePicker from "../../components/controls/CustomDatePicker";
@@ -80,7 +80,7 @@ export default function InscriptionForm() {
                         items={periodItems}/>
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Input
+                    <CustomInput
                         label="Voornaam Leerling"
                         name="firstNameStudent"
                         value={values.firstNameStudent}
@@ -89,7 +89,7 @@ export default function InscriptionForm() {
                 </Grid>
 
                 <Grid item xs={12} md={6}>
-                    <Input
+                    <CustomInput
                         label="Naam Leerling"
                         name="lastNameStudent"
                         value={values.lastNameStudent}
@@ -120,7 +120,7 @@ export default function InscriptionForm() {
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Input
+                    <CustomInput
                         label="Voornaam ouder"
                         name="firstNameParent"
                         value={values.firstNameParent}
@@ -128,7 +128,7 @@ export default function InscriptionForm() {
                     />
                 </Grid>
                 <Grid item xs={12} md={6}>
-                    <Input
+                    <CustomInput
                         label="Naam ouder"
                         name="lastNameParent"
                         value={values.lastNameParent}

@@ -5,8 +5,8 @@ export default function useForm(initialFieldValues){
 
     const [values, setValues] = useState(initialFieldValues);
 
-    const handleInputChange = e => {
-        const {name, value} = e.target
+    const handleInputChange = event => {
+        const {name, value} = event.target;
         setValues({
             ...values,
             [name]:value

@@ -1,6 +1,7 @@
 import React from 'react';
 import {makeStyles} from "@material-ui/core/styles";
 import CardHeader from "@material-ui/core/CardHeader";
+import Card from "@material-ui/core/Card";
 
 const useStyles = makeStyles(theme => ({
     top: {
@@ -20,11 +21,13 @@ function CustomCard(props) {
     const {title, subheader} = props;
 
     return (
+        <Card>
             <CardHeader
                 title={title}
                 subheader={subheader || ""}
                 classes={{ content: classes.top }}
             />
+        </Card>
     );
 }
 
