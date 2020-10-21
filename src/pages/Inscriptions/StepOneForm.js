@@ -16,7 +16,7 @@ import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 const initialFieldValues = {
     language: '',
-    period: 'july',
+    period: '',
     firstNameStudent: '',
     lastNameStudent: '',
     gender: '',
@@ -69,24 +69,16 @@ export default function StepOneForm() {
             </Typography>
 
             <Grid container spacing={3}>
-                <Grid item xs={12} sm={6} style={{paddingBottom: '0px'}}>
-                    <CustomRadioGroup
+                <Grid item xs={12} sm={6}>
+                    <CustomButtonGroup
                         name="language"
                         label="* Cursustaal:"
-                        values={values.language}
+                        value={values.language}
                         onChange={handleInputChange}
-                        items={languageItems}
-                    />
+                        items={languageItems}/>
                 </Grid>
-                <Grid item xs={12} sm={6} style={{paddingBottom: '0px'}}>
-                    <CustomRadioGroup
-                        name="periodValues"
-                        label="* Periode:"
-                        value={values.periodValues}
-                        onChange={handleInputChange}
-                        items={periodItems}/>
-                </Grid>
-                <Grid item xs={12} sm={6} style={{paddingBottom: '0px'}}>
+
+                <Grid item xs={12} sm={6}>
                     <CustomButtonGroup
                         name="period"
                         label="* Periode:"
@@ -94,25 +86,8 @@ export default function StepOneForm() {
                         onChange={handleInputChange}
                         items={periodItems}/>
                 </Grid>
+
                 <Grid item xs={12} sm={6} >
-                    <FormControl>
-                        <FormLabel component="legend">* Cursustaal:</FormLabel>
-                        <ButtonGroup fullWidth style={{paddingTop: '10px'}}>
-                            <Button>Nederlands</Button>
-                            <Button>Engels</Button>
-                        </ButtonGroup>
-                    </FormControl>
-                </Grid>
-                <Grid item xs={12} sm={6} >
-                    <FormControl>
-                        <FormLabel component="legend">* Periode:</FormLabel>
-                        <ButtonGroup fullWidth style={{paddingTop: '10px'}}>
-                            <Button onClick={toggleContent} className={language ==='Juli' ? 'active' : null} name={'Juli'}>Juli</Button>
-                            <Button onClick={toggleContent} className={language ==='Augustus' ? 'active' : null} name={'Augustus'}>Augustus</Button>
-                        </ButtonGroup>
-                    </FormControl>
-                </Grid>
-                <Grid item xs={12} sm={6} style={{paddingTop: '0px'}}>
                     <CustomInput
                         label="Voornaam Leerling"
                         name="firstNameStudent"
@@ -120,7 +95,7 @@ export default function StepOneForm() {
                         onChange={handleInputChange}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6} style={{paddingTop: '0px'}}>
+                <Grid item xs={12} sm={6} >
                     <CustomInput
                         label="Naam Leerling"
                         name="lastNameStudent"
@@ -137,14 +112,13 @@ export default function StepOneForm() {
                     />
                 </Grid>
 
-                <Grid item xs={12} sm={6}>
-                    <CustomRadioGroup
+                <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
+                    <CustomButtonGroup
                         name="gender"
                         label="* Geslacht:"
                         value={values.gender}
                         onChange={handleInputChange}
-                        items={genderItems}
-                    />
+                        items={genderItems}/>
                 </Grid>
             </Grid>
 
