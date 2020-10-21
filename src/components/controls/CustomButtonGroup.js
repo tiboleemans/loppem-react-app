@@ -41,15 +41,27 @@ function CustomButtonGroup(props) {
     const {name, label, value, onChange, items} = props;
 
     const [color, setColor] = useState(defaultColor);
-    const [selected, setSelected] = useState('');
+    const [selected, setSelected] = useState(value);
     const classes = useStyles();
 
-    const handleButtonChange = event => {
-        event.preventDefault()
-        setSelected(event.target.value);
-        console.log(selected);
-    }
+    const handleButtonChange = (event, id) => {
+        event.preventDefault();
 
+        if (selected === id) {
+            return;
+        }
+
+        event.target = {name: name, value: id};
+        setSelected(id);
+        onChange(event);
+    };
+
+    const changeStyleOfButton = (id) => {
+        if (id === selected)
+            return blue;
+        else
+            return defaultColor;
+    }
 
     return (
 
@@ -63,7 +75,9 @@ function CustomButtonGroup(props) {
                 {
                     items.map(
                         (item, index) => (
-                            <Button className={classes.button} style={color} value={item.id} label={item.title} onClick={handleButtonChange}>{item.title}</Button>
+                            <Button className={classes.button} style={changeStyleOfButton(item.id)}
+                                    value={item.id} label={item.title}
+                                    onClick={(e) => handleButtonChange(e, item.id)}>{item.title}</Button>
                         )
                     )
                 }

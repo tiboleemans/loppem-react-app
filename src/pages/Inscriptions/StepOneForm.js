@@ -16,7 +16,7 @@ import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 const initialFieldValues = {
     language: '',
-    period: '',
+    period: 'july',
     firstNameStudent: '',
     lastNameStudent: '',
     gender: '',
@@ -80,9 +80,9 @@ export default function StepOneForm() {
                 </Grid>
                 <Grid item xs={12} sm={6} style={{paddingBottom: '0px'}}>
                     <CustomRadioGroup
-                        name="period"
+                        name="periodValues"
                         label="* Periode:"
-                        value={values.period}
+                        value={values.periodValues}
                         onChange={handleInputChange}
                         items={periodItems}/>
                 </Grid>
