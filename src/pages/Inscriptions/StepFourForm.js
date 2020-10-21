@@ -3,6 +3,7 @@ import Typography from "@material-ui/core/Typography";
 import CustomCheckbox from "../../components/controls/CustomCheckbox";
 import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
+import Grid from "@material-ui/core/Grid";
 
 const initialFieldValues = {
     language: '',
@@ -37,6 +38,15 @@ export default function StepFourForm() {
                 value={values.acceptPictures}
                 onChange={handleInputChange}
             />
+
+            <Grid xs={12} row>
+                <CustomCheckbox
+                    name="acceptTerms"
+                    label="Ik aanvaard de algemene voorwaarden en privacyregels"
+                    value={values.acceptTerms}
+                    onChange={handleInputChange}
+                />
+            </Grid>
         </Form>
     )
 }

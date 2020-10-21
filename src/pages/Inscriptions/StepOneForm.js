@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import Grid from "@material-ui/core/Grid";
 import useForm, {Form} from "../../components/useForm";
-import CustomInput from "../../components/controls/CustomInput";
+import CustomTextField from "../../components/controls/CustomTextField";
 import CustomRadioGroup from "../../components/controls/CustomRadioGroup";
 import CustomCheckbox from "../../components/controls/CustomCheckbox";
 import CustomDatePicker from "../../components/controls/CustomDatePicker";
@@ -88,7 +88,7 @@ export default function StepOneForm() {
                 </Grid>
 
                 <Grid item xs={12} sm={6} >
-                    <CustomInput
+                    <CustomTextField
                         label="Voornaam Leerling"
                         name="firstNameStudent"
                         value={values.firstNameStudent}
@@ -96,7 +96,7 @@ export default function StepOneForm() {
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} >
-                    <CustomInput
+                    <CustomTextField
                         label="Naam Leerling"
                         name="lastNameStudent"
                         value={values.lastNameStudent}
@@ -122,14 +122,7 @@ export default function StepOneForm() {
                 </Grid>
             </Grid>
 
-            <Grid xs={12} row>
-                <CustomCheckbox
-                    name="acceptTerms"
-                    label="Ik aanvaard de algemene voorwaarden en privacyregels"
-                    value={values.acceptTerms}
-                    onChange={handleInputChange}
-                />
-            </Grid>
+
         </Form>
     )
 }

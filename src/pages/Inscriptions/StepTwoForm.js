@@ -2,7 +2,7 @@ import React from 'react';
 import useForm, {Form} from "../../components/useForm";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
-import CustomInput from "../../components/controls/CustomInput";
+import CustomTextField from "../../components/controls/CustomTextField";
 
 
 const initialFieldValues = {
@@ -43,7 +43,7 @@ export default function StepTwoForm() {
 
             <Grid container spacing={3}>
                 <Grid item xs={12} sm={6}>
-                    <CustomInput
+                    <CustomTextField
                         label="Voornaam ouder"
                         name="firstNameParent"
                         value={values.firstNameParent}
@@ -51,7 +51,7 @@ export default function StepTwoForm() {
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <CustomInput
+                    <CustomTextField
                         label="Naam ouder"
                         name="lastNameParent"
                         value={values.lastNameParent}
