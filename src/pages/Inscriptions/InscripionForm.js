@@ -7,9 +7,9 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import StepOneForm from "./StepOneForm";
-import StepTwoForm from "./StepTwoForm";
-import StepThreeForm from "./StepThreeForm";
+import StudentInformationForm from "./StudentInformationForm";
+import ParentInformationForm from "./ParentInformationForm";
+import SchoolInformationForm from "./SchoolInformationForm";
 import StepFourForm from "./StepFourForm";
 import {color} from "@material-ui/system";
 
@@ -64,11 +64,11 @@ const useStyles = makeStyles((theme) => ({
 function getStepContent(step) {
     switch (step) {
         case 0:
-            return <StepOneForm/>;
+            return <StudentInformationForm/>;
         case 1:
-            return <StepTwoForm/>;
+            return <ParentInformationForm/>;
         case 2:
-            return <StepThreeForm/>;
+            return <SchoolInformationForm/>;
         case 3:
             return <StepFourForm/>;
         default:

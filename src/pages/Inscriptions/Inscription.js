@@ -1,5 +1,5 @@
 import React from 'react';
-import StepOneForm from "./StepOneForm";
+import StudentInformationForm from "./StudentInformationForm";
 import Paper from "@material-ui/core/Paper";
 import {makeStyles} from "@material-ui/core/styles";
 import InscriptionForm from "./InscripionForm";

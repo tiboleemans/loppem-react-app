@@ -24,16 +24,10 @@ const initialFieldValues = {
 
     acceptTerms: ''
 }
-const useStyles = makeStyles((theme) => ({
-    row: {
-        marginBottom: 0.1,
-    }
-}));
 
-export default function StepOneForm() {
-    const classes = useStyles();
+export default function StudentInformationForm() {
 
-    const [language, setLanguage] = useState('');
+    const {values, setValues, handleInputChange} = useForm(initialFieldValues);
 
     const languageItems = [
         {id: 'dutch', title: 'Nederlands'},
@@ -50,16 +44,6 @@ export default function StepOneForm() {
         {id: 'girl', title: 'Meisje'},
     ]
 
-    const {
-        values, setValues, handleInputChange
-    } = useForm(initialFieldValues);
-
-    const toggleContent = e => {
-        e.preventDefault();
-        console.log(e.target.name);
-        setLanguage(e.target.name);
-    }
-
 
     return (
 
@@ -68,7 +52,7 @@ export default function StepOneForm() {
                 Gegevens leerling
             </Typography>
 
-            <Grid container spacing={3}>
+            <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                     <CustomButtonGroup
                         name="language"
@@ -121,8 +105,6 @@ export default function StepOneForm() {
                         items={genderItems}/>
                 </Grid>
             </Grid>
-
-
         </Form>
     )
 }

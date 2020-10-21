@@ -26,7 +26,7 @@ const useStyles = makeStyles(theme => ({
 )
 
 
-const CustomTextField = (props) => {
+const CustomTextArea = (props) => {
     const {name, label, value, onChange, type, placeholder, helperText} = props;
 
 
@@ -42,8 +42,10 @@ const CustomTextField = (props) => {
             placeholder={placeholder}
             helperText={helperText}
             classes={{root:classes.root}}
+            multiline
+            rows={4}
         />
     );
 };
 
-export default CustomTextField;
+export default CustomTextArea;
