@@ -1,8 +1,6 @@
 import React from 'react';
 import {makeStyles} from '@material-ui/core/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import Paper from '@material-ui/core/Paper';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -13,6 +11,7 @@ import StepOneForm from "./StepOneForm";
 import StepTwoForm from "./StepTwoForm";
 import StepThreeForm from "./StepThreeForm";
 import StepFourForm from "./StepFourForm";
+import {color} from "@material-ui/system";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
 
@@ -39,10 +38,22 @@ const useStyles = makeStyles((theme) => ({
     },
     stepper: {
         padding: theme.spacing(3, 0, 5),
+        '& .MuiStepIcon-active': {
+            color: '#f5a034',
+        },
+        '& .MuiStepIcon-completed': {
+            color: '#f5a034',
+        }
+
     },
     buttons: {
         display: 'flex',
         justifyContent: 'flex-end',
+        color: '#000',
+        '& .MuiButton-containedPrimary': {
+            backgroundColor: '#f5a034',
+            color: 'white'
+        }
     },
     button: {
         marginTop: theme.spacing(3),

@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import {makeStyles} from "@material-ui/core/styles";
 
 const orange = {
-    'color': '#000',
+    'color': 'white',
     'variant':'contained',
     'background-color': '#f5a034',
 };
