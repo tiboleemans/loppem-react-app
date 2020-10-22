@@ -5,12 +5,6 @@ import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
 import {customButtonGroupStyling} from "./CustomStyling";
 
-const orange = {
-    'color': 'white',
-    'variant':'contained',
-    'background-color': '#f5a034',
-};
-
 function CustomButtonGroup(props) {
 
     const {name, label, value, onChange, items} = props;

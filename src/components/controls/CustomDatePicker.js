@@ -2,7 +2,7 @@ import React from 'react';
 import DateFnsUtils from "@date-io/date-fns";
 import {KeyboardDatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
 import {customStyling} from "./CustomStyling";
-
+import nlLocale from "date-fns/locale/nl-BE";
 
 function CustomDatePicker(props) {
 
@@ -17,7 +17,7 @@ function CustomDatePicker(props) {
     })
 
     return (
-        <MuiPickersUtilsProvider utils={DateFnsUtils}>
+        <MuiPickersUtilsProvider utils={DateFnsUtils} locale={nlLocale}>
             <KeyboardDatePicker
                 disableFuture
                 openTo="year"

@@ -28,6 +28,9 @@ const customStyling = makeStyles(theme => ({
                 borderColor: customColors.primaryColor,
             },
         },
+        '& MuiPickersToolbar-toolbar': {
+            backgroundColor: customColors.primaryColor,
+        }
     },
     layout: {
         width: 'auto',
@@ -71,13 +74,13 @@ const customStyling = makeStyles(theme => ({
     button: {
         marginTop: theme.spacing(3),
         marginLeft: theme.spacing(1),
-    },
+    }
 }))
 
 const customButtonGroupStyling = {
-    'color': 'white',
-    'variant':'contained',
-    'background-color': customColors.primaryColor,
+    color: 'white',
+    variant:'contained',
+    backgroundColor: customColors.primaryColor,
 }
 
 export {customStyling, customButtonGroupStyling};
