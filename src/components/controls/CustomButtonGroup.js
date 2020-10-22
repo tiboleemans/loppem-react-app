@@ -3,7 +3,6 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
-import {makeStyles} from "@material-ui/core/styles";
 
 const orange = {
     'color': 'white',
@@ -49,10 +48,12 @@ function CustomButtonGroup(props) {
                 {
                     items.map(
                         (item, index) => (
-                            <Button style={changeStyleOfButton(item.id)}
-
-                                    value={item.id} label={item.title}
-                                    onClick={(e) => handleButtonChange(e, item.id)}>{item.title}</Button>
+                            <Button
+                                key={index}
+                                style={changeStyleOfButton(item.id)}
+                                value={item.id} label={item.title}
+                                onClick={(e) => handleButtonChange(e, item.id)}>{item.title}
+                            </Button>
                         )
                     )
                 }

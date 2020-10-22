@@ -24,7 +24,7 @@ const initialFieldValues = {
 export default function ParentInformationForm() {
 
 
-    const {values, setValues, handleInputChange} = useForm(initialFieldValues);
+    const {values, handleInputChange} = useForm(initialFieldValues);
 
     const relationItems = [
         {id: 'mother', title: 'Moeder'},

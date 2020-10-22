@@ -16,7 +16,6 @@ export default function useForm(initialFieldValues) {
 
     return {
         values,
-        setValues,
         handleInputChange
     }
 };

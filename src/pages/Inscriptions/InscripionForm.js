@@ -11,7 +11,6 @@ import StudentInformationForm from "./StudentInformationForm";
 import ParentInformationForm from "./ParentInformationForm";
 import SchoolInformationForm from "./SchoolInformationForm";
 import StepFourForm from "./StepFourForm";
-import {color} from "@material-ui/system";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
 

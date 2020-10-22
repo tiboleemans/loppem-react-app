@@ -18,8 +18,8 @@ function CustomCheckbox(props) {
             <FormControlLabel
                 control={<Checkbox
                     name={name}
+                    checked={value === 'true'}
                     color={"primary"}
-                    checked={value}
                     onChange={e => onChange(convertToDefaultEventParameter(name, e.target.checked))}
                 />}
                 label={label}

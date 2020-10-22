@@ -26,7 +26,7 @@ const initialFieldValues = {
 
 export default function SchoolInformationForm() {
 
-    const {values, setValues, handleInputChange} = useForm(initialFieldValues);
+    const {values, handleInputChange} = useForm(initialFieldValues);
 
     const titleProfItems = [
         {id: 'mister', title: 'Meneer'},
