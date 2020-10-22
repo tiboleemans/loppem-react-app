@@ -15,8 +15,8 @@ const initialFieldValues = {
     foodInfo: '',
     interest: '',
 
-    acceptPictures: '',
-    acceptTerms: 'true'
+    acceptPictures: false,
+    acceptTerms: false
 }
 
 const contactItems = [
@@ -65,8 +65,8 @@ export default function StepFourForm() {
                 <Grid item xs={12}>
                     <CustomTextArea
                         label="Relevante informatie voor de kok"
-                        name="firstNameParent"
-                        value={values.firstNameParent}
+                        name="foodInfo"
+                        value={values.foodInfo}
                         onChange={handleInputChange}
                         helperText={"(voedselallergiën, intoleranties, vegetarish, ...)"}
                     />
@@ -75,8 +75,8 @@ export default function StepFourForm() {
                 <Grid item xs={12}>
                     <CustomTextArea
                         label="Extra informatie over uw zoon of dochter"
-                        name="firstNameParent"
-                        value={values.firstNameParent}
+                        name="additionalInfo"
+                        value={values.additionalInfo}
                         onChange={handleInputChange}
                         helperText={"(medisch, allergiën, examens, kamerindeling, ...)"}
                     />
