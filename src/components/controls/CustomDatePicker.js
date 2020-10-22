@@ -1,8 +1,12 @@
 import React from 'react';
 import DateFnsUtils from "@date-io/date-fns";
 import {KeyboardDatePicker, MuiPickersUtilsProvider} from "@material-ui/pickers";
+import {customStyling} from "./CustomStyling";
+
 
 function CustomDatePicker(props) {
+
+    const classes = customStyling();
 
     const {name, label, value, onChange} = props;
 
@@ -28,6 +32,7 @@ function CustomDatePicker(props) {
                 autoOk={true}
                 inputVariant="outlined"
                 orientation="landscape"
+                classes={{root:classes.textfield_root}}
             />
         </MuiPickersUtilsProvider>
     );

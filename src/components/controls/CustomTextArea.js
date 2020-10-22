@@ -28,9 +28,8 @@ const useStyles = makeStyles(theme => ({
 
 const CustomTextArea = (props) => {
     const {name, label, value, onChange, type, placeholder, helperText} = props;
-
-
     const classes = useStyles();
+
     return (
         <TextField
             variant="outlined"

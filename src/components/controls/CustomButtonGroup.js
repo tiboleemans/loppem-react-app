@@ -3,6 +3,7 @@ import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
+import {customButtonGroupStyling} from "./CustomStyling";
 
 const orange = {
     'color': 'white',
@@ -30,12 +31,13 @@ function CustomButtonGroup(props) {
 
     const changeStyleOfButton = (id) => {
         if (id === selected)
-            return orange;
+            return customButtonGroupStyling;
         else
             return {};
     }
 
     return (
+
 
         <FormControl>
             <FormLabel component="legend">{label}</FormLabel>
