@@ -9,7 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import StudentInformationForm from "./StudentInformationForm";
 import ParentInformationForm from "./ParentInformationForm";
 import SchoolInformationForm from "./SchoolInformationForm";
-import StepFourForm from "./StepFourForm";
+import ExtraInformationForm from "./ExtraInformationForm";
 import {customStyling} from "../../components/controls/CustomStyling";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
@@ -23,7 +23,7 @@ function getStepContent(step) {
         case 2:
             return <SchoolInformationForm/>;
         case 3:
-            return <StepFourForm/>;
+            return <ExtraInformationForm/>;
         default:
             throw new Error('Unknown step');
     }

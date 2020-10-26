@@ -31,7 +31,7 @@ const contactItems = [
     {id: 'other', title: 'Andere'}
 ]
 
-export default function StepFourForm() {
+export default function ExtraInformationForm() {
 
     const {values, handleInputChange} = useForm(initialFieldValues);
     return (
