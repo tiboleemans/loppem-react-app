@@ -26,7 +26,7 @@ const initialFieldValues = {
     birthday: null,
 
     // ParentInformation
-    firstNameParent: 'test',
+    firstNameParent: '',
     lastNameParent: '',
     email: '',
     relation: '',

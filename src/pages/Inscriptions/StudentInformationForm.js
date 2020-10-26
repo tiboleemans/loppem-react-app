@@ -106,11 +106,11 @@ export default function StudentInformationForm(props) {
 export function getErrorStudentStep(values) {
 
     let errors = {}
-    errors.language = values.language ? "" : "This field is required."
-    errors.period = values.period ? "" : "This field is required."
-    errors.firstNameStudent = values.firstNameStudent ? "" : "This field is required."
-    errors.lastNameStudent = values.lastNameStudent ? "" : "This field is required."
-    errors.gender = values.gender ? "" : "This field is required."
-    errors.birthday = values.birthday ? "" : "This field is required."
+    errors.language = values.language ? "" : "Gelieve de gewenste cursustaal aan te duiden."
+    errors.period = values.period ? "" : "Gelieve de gewenste periode aan te duiden."
+    errors.firstNameStudent = values.firstNameStudent ? "" : "Gelieve de voornaam van de leerling in te vullen."
+    errors.lastNameStudent = values.lastNameStudent ? "" : "Gelieve de naam van de leerling in te vullen."
+    errors.birthday = values.birthday ? "" : "Gelieve de geboortedatum van de leerling in te vullen."
+    errors.gender = values.gender ? "" : "Gelieve het geslacht van de leerling in te vullen."
     return errors;
 }
