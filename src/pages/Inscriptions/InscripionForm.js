@@ -11,35 +11,87 @@ import ParentInformationForm from "./ParentInformationForm";
 import SchoolInformationForm from "./SchoolInformationForm";
 import ExtraInformationForm from "./ExtraInformationForm";
 import {customStyling} from "../../components/controls/CustomStyling";
+import useForm from "../../components/useForm";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
 
-function getStepContent(step) {
-    switch (step) {
-        case 0:
-            return <StudentInformationForm/>;
-        case 1:
-            return <ParentInformationForm/>;
-        case 2:
-            return <SchoolInformationForm/>;
-        case 3:
-            return <ExtraInformationForm/>;
-        default:
-            throw new Error('Unknown step');
-    }
+const initialFieldValues = {
+    // StudentInformation
+    language: '',
+    period: '',
+    firstNameStudent: '',
+    lastNameStudent: '',
+    gender: '',
+    birthday: null,
+
+    // ParentInformation
+    firstNameParent: '',
+    lastNameParent: '',
+    email: '',
+    relation: '',
+    street: '',
+    houseNr: '',
+    busNr: '',
+
+    city: '',
+    zipCode: '',
+    gsm: '',
+    gsm2: '',
+
+    // SchoolInformation
+    nameSchool: '',
+    streetSchool: '',
+    houseNrSchool: '',
+    busNrSchool: '',
+    citySchool: '',
+    zipSchool: '',
+    titleProfSchool: '',
+    nameProfSchool: '',
+    yearsSchool: '',
+    hoursSchool: '',
+    immersionSchool: '',
+    reportSchool: '',
+
+    // ExtraInformation
+    apportedStudent: '',
+    contact: '',
+    additionalInfo: '',
+    foodInfo: '',
+    interest: '',
+    acceptPictures: false,
+    acceptTerms: false
 }
 
 
 export default function InscriptionForm() {
     const classes = customStyling();
-    const [activeStep, setActiveStep] = React.useState(0);
+
+    const [step, setStep] = React.useState(0);
+
+    const {values, handleInputChange} = useForm(initialFieldValues);
+
+
+    function getStepContent(step) {
+        switch (step) {
+            case 0:
+                return <StudentInformationForm values={values} handleInputChange={handleInputChange}/>;
+            case 1:
+                return <ParentInformationForm values={values} handleInputChange={handleInputChange}/>;
+            case 2:
+                return <SchoolInformationForm values={values} handleInputChange={handleInputChange}/>;
+            case 3:
+                return <ExtraInformationForm values={values} handleInputChange={handleInputChange}/>;
+            default:
+                throw new Error('Unknown step');
+        }
+    }
 
     const handleNext = () => {
-        setActiveStep(activeStep + 1);
+        setStep(step + 1);
     };
 
     const handleBack = () => {
-        setActiveStep(activeStep - 1);
+        setStep(step - 1);
     };
 
     return (
@@ -50,7 +102,7 @@ export default function InscriptionForm() {
                     <Typography component="h1" variant="h4" align="center">
                         Inschrijvingsformulier
                     </Typography>
-                    <Stepper activeStep={activeStep} className={classes.stepper}>
+                    <Stepper activeStep={step} className={classes.stepper}>
                         {steps.map((label) => (
                             <Step key={label}>
                                 <StepLabel>{label}</StepLabel>
@@ -58,7 +110,7 @@ export default function InscriptionForm() {
                         ))}
                     </Stepper>
                     <React.Fragment>
-                        {activeStep === steps.length ? (
+                        {step === steps.length ? (
                             <React.Fragment>
                                 <Typography variant="h5" gutterBottom>
                                     Thank you for your order.
@@ -70,9 +122,9 @@ export default function InscriptionForm() {
                             </React.Fragment>
                         ) : (
                             <React.Fragment>
-                                {getStepContent(activeStep)}
+                                {getStepContent(step)}
                                 <div className={classes.buttons}>
-                                    {activeStep !== 0 && (
+                                    {step !== 0 && (
                                         <Button onClick={handleBack} className={classes.button}>
                                             Vorige
                                         </Button>
@@ -83,7 +135,7 @@ export default function InscriptionForm() {
                                         onClick={handleNext}
                                         className={classes.button}
                                     >
-                                        {activeStep === steps.length - 1 ? 'Inschrijven' : 'Volgende'}
+                                        {step === steps.length - 1 ? 'Inschrijven' : 'Volgende'}
                                     </Button>
                                 </div>
                             </React.Fragment>

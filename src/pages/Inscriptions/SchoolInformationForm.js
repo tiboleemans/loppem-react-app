@@ -7,26 +7,13 @@ import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 
 const initialFieldValues = {
-    nameSchool: '',
-    streetSchool: '',
-    houseNrSchool: '',
-    busNrSchool: '',
-    citySchool: '',
-    zipSchool: '',
 
-    titleProfSchool: '',
-    nameProfSchool: '',
-
-    yearsSchool: '',
-    hoursSchool: '',
-    immersionSchool: '',
-    reportSchool: '',
 
 }
 
-export default function SchoolInformationForm() {
+export default function SchoolInformationForm(props) {
 
-    const {values, handleInputChange} = useForm(initialFieldValues);
+    const {values, handleInputChange} = props;
 
     const titleProfItems = [
         {id: 'mister', title: 'Meneer'},

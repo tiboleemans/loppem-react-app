@@ -1,30 +1,14 @@
 import React from 'react';
-import useForm, {Form} from "../../components/useForm";
+import {Form} from "../../components/useForm";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import CustomTextField from "../../components/controls/CustomTextField";
 import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 
-const initialFieldValues = {
-    firstNameParent: '',
-    lastNameParent: '',
-    email: '',
-    relation: '',
-    street: '',
-    houseNr: '',
-    busNr: '',
+export default function ParentInformationForm(props) {
 
-    city: '',
-    zipCode: '',
-    gsm: '',
-    gsm2: '',
-}
-
-export default function ParentInformationForm() {
-
-
-    const {values, handleInputChange} = useForm(initialFieldValues);
+    const {values, handleInputChange} = props;
 
     const relationItems = [
         {id: 'mother', title: 'Moeder'},

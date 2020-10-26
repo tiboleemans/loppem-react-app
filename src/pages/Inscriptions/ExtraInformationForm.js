@@ -1,4 +1,4 @@
-import useForm, {Form} from "../../components/useForm";
+import {Form} from "../../components/useForm";
 import Typography from "@material-ui/core/Typography";
 import CustomCheckbox from "../../components/controls/CustomCheckbox";
 import React from "react";
@@ -6,18 +6,6 @@ import Grid from "@material-ui/core/Grid";
 import CustomTextField from "../../components/controls/CustomTextField";
 import CustomTextArea from "../../components/controls/CustomTextArea";
 import CustomSelect from "../../components/controls/CustomSelect";
-
-const initialFieldValues = {
-
-    apportedStudent: '',
-    contact: '',
-    additionalInfo: '',
-    foodInfo: '',
-    interest: '',
-
-    acceptPictures: false,
-    acceptTerms: false
-}
 
 const contactItems = [
     {id: 'viavia', title: 'Mond-tot-mond-reclame'},
@@ -31,9 +19,10 @@ const contactItems = [
     {id: 'other', title: 'Andere'}
 ]
 
-export default function ExtraInformationForm() {
+export default function ExtraInformationForm(props) {
 
-    const {values, handleInputChange} = useForm(initialFieldValues);
+    const {values, handleInputChange} = props;
+
     return (
         <Form>
             <Typography variant="h5" gutterBottom>

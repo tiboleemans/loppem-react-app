@@ -1,26 +1,15 @@
 import React from 'react';
 import Grid from "@material-ui/core/Grid";
-import useForm, {Form} from "../../components/useForm";
+import {Form} from "../../components/useForm";
 import CustomTextField from "../../components/controls/CustomTextField";
 import CustomDatePicker from "../../components/controls/CustomDatePicker";
 import Typography from "@material-ui/core/Typography";
 import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 
-const initialFieldValues = {
-    language: '',
-    period: '',
-    firstNameStudent: '',
-    lastNameStudent: '',
-    gender: '',
-    birthday: null,
+export default function StudentInformationForm(props) {
 
-    acceptTerms: ''
-}
-
-export default function StudentInformationForm() {
-
-    const {values, handleInputChange} = useForm(initialFieldValues);
+    const {values, handleInputChange} = props;
 
     const languageItems = [
         {id: 'dutch', title: 'Nederlands'},
