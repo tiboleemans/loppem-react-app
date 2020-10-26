@@ -14,7 +14,7 @@ import {customStyling} from "../../components/controls/CustomStyling";
 import useForm from "../../components/useForm";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
-const disableValidation = false;
+const disableValidation = true;
 
 const initialFieldValues = {
     // StudentInformation
@@ -115,7 +115,7 @@ export default function InscriptionForm() {
         if(validate()) {
             setStep(step + 1);
         } else {
-            window.alert("test")
+            window.alert("Niet alle verplichten velden zijn correct ingevuld")
         }
     };
 
@@ -161,9 +161,9 @@ export default function InscriptionForm() {
                                     )}
                                     <Button
                                         variant="contained"
-                                        color="primary"
                                         onClick={handleNext}
                                         className={classes.button}
+                                        color="primary"
                                     >
                                         {step === steps.length - 1 ? 'Inschrijven' : 'Volgende'}
                                     </Button>

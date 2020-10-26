@@ -26,10 +26,6 @@ export default function StudentInformationForm(props) {
         {id: 'girl', title: 'Meisje'},
     ]
 
-    // const handleSubmit = () => {
-    //     window.alert('Testing...')
-    // }
-
     return (
 
         <Form>

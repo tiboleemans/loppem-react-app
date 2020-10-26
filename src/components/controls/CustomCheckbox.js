@@ -22,7 +22,7 @@ function CustomCheckbox(props) {
                 control={<Checkbox
                     name={name}
                     checked={value}
-                    // color={"primary"}
+                    color={"primary"}
                     onChange={e => onChange(convertToDefaultEventParameter(name, e.target.checked))}
                     classes={{root: classes.checkbox}}
                 />}

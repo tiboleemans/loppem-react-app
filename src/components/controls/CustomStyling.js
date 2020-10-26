@@ -76,10 +76,10 @@ const customStyling = makeStyles(theme => ({
         marginLeft: theme.spacing(1),
     },
     checkbox: {
-        color: "primary",
-        // '& .MuiCheckbox-colorPrimary.Mui-checked' : {
-        //     color: "primary",
-        // },
+        // color: "primary",
+        '& .MuiCheckbox-colorPrimary.Mui-checked' : {
+            color: customColors.primaryColor,
+        },
     }
 }))
 
