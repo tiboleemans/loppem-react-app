@@ -14,7 +14,7 @@ import {customStyling} from "../../components/controls/CustomStyling";
 import useForm from "../../components/useForm";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
-const disableValidation = true;
+const disableValidation = false;
 
 const initialFieldValues = {
     // StudentInformation
