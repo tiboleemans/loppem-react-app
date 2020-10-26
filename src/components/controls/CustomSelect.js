@@ -3,13 +3,14 @@ import FormControl from "@material-ui/core/FormControl";
 import InputLabel from "@material-ui/core/InputLabel";
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
+import FormHelperText from "@material-ui/core/FormHelperText";
 
 function CustomSelect(props) {
 
-    const {name, labelId, labelText, value, onChange, items} = props;
+    const {name, labelId, labelText, value, onChange, items, error} = props;
     return (
 
-        <FormControl variant="outlined">
+        <FormControl variant="outlined" {...(error && {error:true})}>
             <InputLabel id={labelId}>{labelText}</InputLabel>
             <Select
                 labelId={labelId}
@@ -28,6 +29,7 @@ function CustomSelect(props) {
                     )
                 }
             </Select>
+            <FormHelperText>{error}</FormHelperText>
         </FormControl>
     )
 }

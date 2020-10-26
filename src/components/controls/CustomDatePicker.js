@@ -8,7 +8,7 @@ function CustomDatePicker(props) {
 
     const classes = customStyling();
 
-    const {name, label, value, onChange} = props;
+    const {name, label, value, onChange, error = null} = props;
 
     const convertToDefaultEventParameter = (name, value) => ({
         target: {
@@ -28,11 +28,14 @@ function CustomDatePicker(props) {
                 onChange={date => onChange(convertToDefaultEventParameter(name, date))}
                 value={value}
                 minDate={new Date("2003-01-01")}
+                minDateMessage={"minDateMessage"}
                 maxDate={new Date("2012-01-01")}
+                maxDateMessage={"maxDateMessage"}
                 autoOk={true}
                 inputVariant="outlined"
                 orientation="landscape"
                 classes={{root:classes.textfield_root}}
+                {...(error && {error:true, helperText:error})}
             />
         </MuiPickersUtilsProvider>
     );

@@ -9,7 +9,7 @@ import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 export default function StudentInformationForm(props) {
 
-    const {values, handleInputChange} = props;
+    const {values, handleInputChange, errors} = props;
 
     const languageItems = [
         {id: 'dutch', title: 'Nederlands'},
@@ -26,6 +26,9 @@ export default function StudentInformationForm(props) {
         {id: 'girl', title: 'Meisje'},
     ]
 
+    // const handleSubmit = () => {
+    //     window.alert('Testing...')
+    // }
 
     return (
 
@@ -41,7 +44,9 @@ export default function StudentInformationForm(props) {
                         label="* Cursustaal:"
                         value={values.language}
                         onChange={handleInputChange}
-                        items={languageItems}/>
+                        items={languageItems}
+                        error={errors.language}
+                    />
                 </Grid>
 
                 <Grid item xs={12} sm={6}>
@@ -50,23 +55,27 @@ export default function StudentInformationForm(props) {
                         label="* Periode:"
                         value={values.period}
                         onChange={handleInputChange}
-                        items={periodItems}/>
+                        items={periodItems}
+                        error={errors.period}
+                    />
                 </Grid>
 
-                <Grid item xs={12} sm={6} >
+                <Grid item xs={12} sm={6}>
                     <CustomTextField
                         label="Voornaam Leerling"
                         name="firstNameStudent"
                         value={values.firstNameStudent}
                         onChange={handleInputChange}
+                        error={errors.firstNameStudent}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6} >
+                <Grid item xs={12} sm={6}>
                     <CustomTextField
                         label="Naam Leerling"
                         name="lastNameStudent"
                         value={values.lastNameStudent}
                         onChange={handleInputChange}
+                        error={errors.lastNameStudent}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -75,6 +84,7 @@ export default function StudentInformationForm(props) {
                         label="Geboortedatum"
                         value={values.birthday}
                         onChange={handleInputChange}
+                        error={errors.birthday}
                     />
                 </Grid>
 
@@ -84,9 +94,23 @@ export default function StudentInformationForm(props) {
                         label="* Geslacht:"
                         value={values.gender}
                         onChange={handleInputChange}
-                        items={genderItems}/>
+                        items={genderItems}
+                        error={errors.gender}
+                    />
                 </Grid>
             </Grid>
         </Form>
     )
+}
+
+export function getErrorStudentStep(values) {
+
+    let errors = {}
+    errors.language = values.language ? "" : "This field is required."
+    errors.period = values.period ? "" : "This field is required."
+    errors.firstNameStudent = values.firstNameStudent ? "" : "This field is required."
+    errors.lastNameStudent = values.lastNameStudent ? "" : "This field is required."
+    errors.gender = values.gender ? "" : "This field is required."
+    errors.birthday = values.birthday ? "" : "This field is required."
+    return errors;
 }

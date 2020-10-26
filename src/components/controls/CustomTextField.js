@@ -4,7 +4,7 @@ import {customStyling} from "./CustomStyling";
 
 
 const CustomTextField = (props) => {
-    const {name, label, value, onChange, type, placeholder, helperText} = props;
+    const {name, label, value, onChange, type, placeholder, helperText, error = null} = props;
     const classes = customStyling();
 
     return (
@@ -18,6 +18,7 @@ const CustomTextField = (props) => {
             placeholder={placeholder}
             helperText={helperText}
             classes={{root:classes.textfield_root}}
+            {...(error && {error:true, helperText:error})}
         />
     );
 };

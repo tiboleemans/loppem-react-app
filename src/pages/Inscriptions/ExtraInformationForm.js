@@ -21,7 +21,7 @@ const contactItems = [
 
 export default function ExtraInformationForm(props) {
 
-    const {values, handleInputChange} = props;
+    const {values, handleInputChange, errors} = props;
 
     return (
         <Form>
@@ -49,6 +49,7 @@ export default function ExtraInformationForm(props) {
                         value={values.contact}
                         onChange={handleInputChange}
                         items={contactItems}
+                        error={errors.contact}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -87,9 +88,17 @@ export default function ExtraInformationForm(props) {
                         label="Ik aanvaard de algemene voorwaarden en privacyregels"
                         value={values.acceptTerms}
                         onChange={handleInputChange}
+                        error={errors.acceptTerms}
                     />
                 </Grid>
             </Grid>
         </Form>
     )
+}
+
+export function getErrorExtraInfoStep(values) {
+    let errors = {}
+    errors.contact = values.contact ? "" : "Gelieve aan te duiden via welke weg u in contact bent gekomen met Loppem Conversa."
+    errors.acceptTerms = values.acceptTerms ? "" : "Gelieve het cursusreglement te lezen en te accepteren."
+    return errors;
 }

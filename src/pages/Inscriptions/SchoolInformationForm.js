@@ -1,19 +1,14 @@
 import React from 'react';
-import useForm, {Form} from "../../components/useForm";
+import {Form} from "../../components/useForm";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import CustomTextField from "../../components/controls/CustomTextField";
 import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 
-const initialFieldValues = {
-
-
-}
-
 export default function SchoolInformationForm(props) {
 
-    const {values, handleInputChange} = props;
+    const {values, handleInputChange, errors} = props;
 
     const titleProfItems = [
         {id: 'mister', title: 'Meneer'},
@@ -64,6 +59,7 @@ export default function SchoolInformationForm(props) {
                         name="nameSchool"
                         value={values.nameSchool}
                         onChange={handleInputChange}
+                        error={errors.nameSchool}
                     />
                 </Grid>
                 <Grid item sm={6}/>
@@ -74,6 +70,7 @@ export default function SchoolInformationForm(props) {
                         name="streetSchool"
                         value={values.streetSchool}
                         onChange={handleInputChange}
+                        error={errors.streetSchool}
                     />
                 </Grid>
 
@@ -83,6 +80,7 @@ export default function SchoolInformationForm(props) {
                         name="houseNrSchool"
                         value={values.houseNrSchool}
                         onChange={handleInputChange}
+                        error={errors.houseNrSchool}
                     />
                 </Grid>
 
@@ -101,6 +99,7 @@ export default function SchoolInformationForm(props) {
                         name="citySchool"
                         value={values.citySchool}
                         onChange={handleInputChange}
+                        error={errors.citySchool}
                     />
                 </Grid>
 
@@ -110,6 +109,7 @@ export default function SchoolInformationForm(props) {
                         name="zipSchool"
                         value={values.zipSchool}
                         onChange={handleInputChange}
+                        error={errors.zipSchool}
                     />
                 </Grid>
 
@@ -119,7 +119,9 @@ export default function SchoolInformationForm(props) {
                         label="Aanspreektitel leerkracht"
                         value={values.titleProfSchool}
                         onChange={handleInputChange}
-                        items={titleProfItems}/>
+                        items={titleProfItems}
+                        error={errors.titleProfSchool}
+                    />
                 </Grid>
 
                 <Grid item xs={12} sm={6}>
@@ -128,6 +130,7 @@ export default function SchoolInformationForm(props) {
                         name="nameProfSchool"
                         value={values.nameProfSchool}
                         onChange={handleInputChange}
+                        error={errors.nameProfSchool}
                     />
                 </Grid>
 
@@ -137,7 +140,9 @@ export default function SchoolInformationForm(props) {
                         label="Aantal jaren Nederlands of Engels op school"
                         value={values.yearsSchool}
                         onChange={handleInputChange}
-                        items={yearsSchoolItems}/>
+                        items={yearsSchoolItems}
+                        error={errors.yearsSchool}
+                    />
                 </Grid>
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
@@ -146,7 +151,9 @@ export default function SchoolInformationForm(props) {
                         label="Aanal schooluren Nederlands of Engels per week"
                         value={values.hoursSchool}
                         onChange={handleInputChange}
-                        items={hoursSchoolItems}/>
+                        items={hoursSchoolItems}
+                        error={errors.hoursSchool}
+                    />
                 </Grid>
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
@@ -155,7 +162,9 @@ export default function SchoolInformationForm(props) {
                         label="Volgt uw kind tweetalig onderwijs voor de gekozen doeltaal op school?"
                         value={values.immersionSchool}
                         onChange={handleInputChange}
-                        items={immersionSchoolItems}/>
+                        items={immersionSchoolItems}
+                        error={errors.immersionSchool}
+                    />
                 </Grid>
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
@@ -164,10 +173,31 @@ export default function SchoolInformationForm(props) {
                         label="Moet er een rapport na de stage opgestuurd worden naar de school?"
                         value={values.reportSchool}
                         onChange={handleInputChange}
-                        items={reportSchoolItems}/>
+                        items={reportSchoolItems}
+                        error={errors.reportSchool}
+                    />
                 </Grid>
             </Grid>
 
         </Form>
     )
+}
+
+export function getErrorSchoolStep(values) {
+
+    let errors = {}
+    errors.nameSchool = values.nameSchool ? "" : "Gelieve de naam van de school in te vullen."
+    errors.streetSchool = values.streetSchool ? "" : "Gelieve de straat van de school in te vullen."
+    errors.houseNrSchool = values.houseNrSchool ? "" : "Gelieve het huisnummer van de school in te vullen."
+    errors.citySchool = values.citySchool ? "" : "Gelieve de gemeente van de school in te vullen."
+    errors.zipSchool = values.zipSchool ? "" : "Gelieve de postcode van de school in te vullen."
+    errors.titleProfSchool = values.titleProfSchool ? "" : "Gelieve de aanspreektitel van de leerkracht in te vullen."
+    errors.nameProfSchool = values.nameProfSchool ? "" : "Gelieve de naam van de leerkracht in te vullen."
+    errors.yearsSchool = values.yearsSchool ? "" : "Gelieve het aantal jaren van de gekozen taal op school aan te duiden."
+    errors.hoursSchool = values.hoursSchool ? "" : "Gelieve het aantal uren per week van de gekozen taal op school aan te duiden."
+    errors.immersionSchool = values.immersionSchool ? "" : "Gelieve aan te duiden of de leerling immersie volgt."
+    errors.reportSchool = values.reportSchool ? "" : "Gelieve aan te duiden of u een rapport wenst op te sturen naar de school na de stage."
+    return errors;
+
+
 }

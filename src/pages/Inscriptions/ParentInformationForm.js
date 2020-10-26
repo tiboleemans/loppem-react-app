@@ -8,7 +8,7 @@ import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 export default function ParentInformationForm(props) {
 
-    const {values, handleInputChange} = props;
+    const {values, handleInputChange, errors} = props;
 
     const relationItems = [
         {id: 'mother', title: 'Moeder'},
@@ -31,6 +31,7 @@ export default function ParentInformationForm(props) {
                         name="firstNameParent"
                         value={values.firstNameParent}
                         onChange={handleInputChange}
+                        error={errors.firstNameParent}
                     />
                 </Grid>
 
@@ -40,6 +41,7 @@ export default function ParentInformationForm(props) {
                         name="lastNameParent"
                         value={values.lastNameParent}
                         onChange={handleInputChange}
+                        error={errors.lastNameParent}
                     />
                 </Grid>
 
@@ -50,6 +52,7 @@ export default function ParentInformationForm(props) {
                         type="email"
                         value={values.email}
                         onChange={handleInputChange}
+                        error={errors.email}
                     />
                 </Grid>
 
@@ -59,7 +62,9 @@ export default function ParentInformationForm(props) {
                         label="* Relatie met leerling:"
                         value={values.relation}
                         onChange={handleInputChange}
-                        items={relationItems}/>
+                        items={relationItems}
+                        error={errors.relation}
+                    />
                 </Grid>
 
                 <Grid item xs={12} sm={6}>
@@ -68,6 +73,7 @@ export default function ParentInformationForm(props) {
                         name="street"
                         value={values.street}
                         onChange={handleInputChange}
+                        error={errors.street}
                     />
                 </Grid>
                 <Grid item xs={6} sm={3}>
@@ -76,6 +82,7 @@ export default function ParentInformationForm(props) {
                         name="houseNr"
                         value={values.houseNr}
                         onChange={handleInputChange}
+                        error={errors.houseNr}
                     />
                 </Grid>
                 <Grid item xs={6} sm={3}>
@@ -93,6 +100,7 @@ export default function ParentInformationForm(props) {
                         name="city"
                         value={values.city}
                         onChange={handleInputChange}
+                        error={errors.city}
                     />
                 </Grid>
 
@@ -102,6 +110,7 @@ export default function ParentInformationForm(props) {
                         name="zipCode"
                         value={values.zipCode}
                         onChange={handleInputChange}
+                        error={errors.zipCode}
                     />
                 </Grid>
 
@@ -111,6 +120,7 @@ export default function ParentInformationForm(props) {
                         name="gsm"
                         value={values.gsm}
                         onChange={handleInputChange}
+                        error={errors.gsm}
                     />
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -119,10 +129,26 @@ export default function ParentInformationForm(props) {
                         name="gsm2"
                         value={values.gsm2}
                         onChange={handleInputChange}
+                        error={errors.gsm2}
                     />
                 </Grid>
 
             </Grid>
         </Form>
     )
+}
+
+export function getErrorParentStep(values) {
+    let errors = {}
+    errors.firstNameParent = values.firstNameParent ? "" : "Gelieve uw voornaam in te vullen.\n"
+    errors.lastNameParent = values.lastNameParent ? "" : "Gelieve uw naam in te vullen."
+    errors.email = values.email ? "" : "Gelieve uw e-mailadres in te vullen."
+    errors.relation = values.relation ? "" : "Gelieve uw relatie met de leerling aan te duiden."
+    errors.street = values.street ? "" : "Gelieve uw adres volledig in te vullen."
+    errors.houseNr = values.houseNr ? "" : "Gelieve uw huisnummer in te vullen."
+    errors.city = values.city ? "" : "Gelieve uw gemeente in te vullen."
+    errors.zipCode = values.zipCode ? "" : "Gelieve uw postcode in te vullen."
+    errors.gsm = values.gsm ? "" : "Gelieve uw gsm nummer in te vullen."
+    errors.gsm2 = values.gsm2 ? "" : "Gelieve het nummer in geval van nood in te vullen."
+    return errors;
 }

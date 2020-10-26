@@ -3,10 +3,11 @@ import FormControl from "@material-ui/core/FormControl";
 import Checkbox from "@material-ui/core/Checkbox";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import {customStyling} from "./CustomStyling";
+import FormHelperText from "@material-ui/core/FormHelperText";
 
 
 function CustomCheckbox(props) {
-    const {name, label, value, onChange} = props;
+    const {name, label, value, onChange, error} = props;
     const classes = customStyling();
 
     const convertToDefaultEventParameter = (name, value) => ({
@@ -16,18 +17,21 @@ function CustomCheckbox(props) {
     })
 
     return (
-        <FormControl>
+        <FormControl {...(error && {error:true})}>
             <FormControlLabel
                 control={<Checkbox
                     name={name}
                     checked={value}
-                    color={"#f5a034"}
+                    // color={"primary"}
                     onChange={e => onChange(convertToDefaultEventParameter(name, e.target.checked))}
-                    classes={{root: classes.root}}
+                    classes={{root: classes.checkbox}}
                 />}
                 label={label}
+
             />
+            <FormHelperText>{error}</FormHelperText>
         </FormControl>
+
     )
 }
 

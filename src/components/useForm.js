@@ -5,9 +5,9 @@ export default function useForm(initialFieldValues) {
 
     const [values, setValues] = useState(initialFieldValues);
 
+
     const handleInputChange = event => {
         const {name, value} = event.target;
-        console.log("name:" + name + " and value:" + value);
         setValues({
             ...values,
             [name]: value
@@ -31,8 +31,9 @@ const useStyles = makeStyles(theme => ({
 
 export function Form(props) {
     const classes = useStyles();
+    const { children, ...other} = props;
     return (
-        <form className={classes.root} autoComplete="off">
+        <form className={classes.root} autoComplete="off" {...other}>
             {props.children}
         </form>
     )

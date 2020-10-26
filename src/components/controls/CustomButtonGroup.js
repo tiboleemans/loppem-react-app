@@ -4,10 +4,11 @@ import FormLabel from "@material-ui/core/FormLabel";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
 import Button from "@material-ui/core/Button";
 import {customButtonGroupStyling} from "./CustomStyling";
+import FormHelperText from "@material-ui/core/FormHelperText";
 
 function CustomButtonGroup(props) {
 
-    const {name, label, value, onChange, items} = props;
+    const {name, label, value, onChange, items, error = null} = props;
 
     const [selected, setSelected] = useState(value);
 
@@ -33,8 +34,8 @@ function CustomButtonGroup(props) {
     return (
 
 
-        <FormControl>
-            <FormLabel component="legend">{label}</FormLabel>
+        <FormControl {...(error && {error:true})}>
+            <FormLabel component="legend" >{label}</FormLabel>
             <ButtonGroup fullWidth
                          name={name}
                          value={value}
@@ -54,6 +55,7 @@ function CustomButtonGroup(props) {
                     )
                 }
             </ButtonGroup>
+            <FormHelperText>{error}</FormHelperText>
         </FormControl>
     )
 }
