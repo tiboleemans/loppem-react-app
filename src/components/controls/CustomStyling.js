@@ -1,7 +1,8 @@
 import {makeStyles} from "@material-ui/core/styles";
 
 const customColors = {
-    primaryColor: '#f5a034',
+    primaryColor: '#3f5659',
+    // primaryColor: '#f5a034',
 };
 
 
@@ -67,9 +68,11 @@ const customStyling = makeStyles(theme => ({
         justifyContent: 'flex-end',
         color: '#000',
         '& .MuiButton-containedPrimary': {
-            backgroundColor: customColors.primaryColor,
-            color: 'white'
-        }
+            color: 'white',
+            '&:hover': {
+                background: '#f5a034'
+            }
+        },
     },
     button: {
         marginTop: theme.spacing(3),
@@ -77,7 +80,7 @@ const customStyling = makeStyles(theme => ({
     },
     checkbox: {
         // color: "primary",
-        '& .MuiCheckbox-colorPrimary.Mui-checked' : {
+        '& .MuiCheckbox-colorPrimary.Mui-checked': {
             color: customColors.primaryColor,
         },
     }
@@ -85,7 +88,7 @@ const customStyling = makeStyles(theme => ({
 
 const customButtonGroupStyling = {
     color: 'white',
-    variant:'contained',
+    variant: 'contained',
     backgroundColor: customColors.primaryColor,
 }
 

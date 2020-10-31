@@ -167,6 +167,7 @@ export default function InscriptionForm() {
                                     >
                                         {step === steps.length - 1 ? 'Inschrijven' : 'Volgende'}
                                     </Button>
+
                                 </div>
                             </React.Fragment>
                         )}

@@ -52,7 +52,7 @@ const NavBar = (props) => {
       <div className="container header-container">
         <div className="brand">
           <img src={require('../images/logo.png')} alt=""
-               style={{maxWidth: '200px',
+               style={{maxWidth: '100px',
                  margin: '-30px 0px'}}
                />
         </div>

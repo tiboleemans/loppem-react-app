@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import {scrollTo} from "../utils";
 import TopBar from "../components/NavBar";
 import Inscription from "./Inscriptions/Inscription";
+import Intro10 from "./Intro10";
 
 const Home = () => {
   useEffect(() => {
@@ -11,6 +12,7 @@ const Home = () => {
   return (
     <div className="home">
       <TopBar />
+      <Intro10 />
       <Inscription />
     </div>
   );
