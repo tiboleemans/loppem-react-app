@@ -3,6 +3,7 @@ import {scrollTo} from "../utils";
 import TopBar from "../components/NavBar";
 import Inscription from "./Inscriptions/Inscription";
 import Intro from "./Intro";
+import TaalVakanties from "./TaalVakanties";
 
 const Home = () => {
   useEffect(() => {
@@ -13,6 +14,7 @@ const Home = () => {
     <div className="home">
       <TopBar />
       <Intro />
+      <TaalVakanties />
       <Inscription />
     </div>
   );
