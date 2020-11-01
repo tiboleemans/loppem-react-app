@@ -40,7 +40,7 @@ const useStyles = makeStyles(({palette, ...theme}) => ({
     },
 }));
 
-const Intro10 = () => {
+const Intro = () => {
     const classes = useStyles();
 
     const renderer = ({days, hours, minutes, seconds}) => {
@@ -143,4 +143,4 @@ const Intro10 = () => {
     );
 };
 
-export default Intro10;
+export default Intro;
