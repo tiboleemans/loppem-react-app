@@ -40,6 +40,7 @@ export const colorStyles = makeStyles(({ palette, ...theme }) => ({
     ".section-bg-light-primary": { background: "rgba(var(--primary),0.1)" },
     ".bg-light-green": { background: "rgba(8, 173, 108, 0.5) !important" },
     ".bg-transparent": { background: "transparent !important" },
+    ".bg-nils": {background: "#3f5659"},
     ".text-white": { color: "#fff !important" },
     ".text-black": { color: "rgba(0, 0, 0, 0.87) !important" },
     ".text-white-secondary": { color: "rgba(255, 255, 255, 0.87) !important" },

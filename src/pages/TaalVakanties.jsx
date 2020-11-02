@@ -153,7 +153,7 @@ const TaalVakanties = () => {
     }
 
     return (
-        <div className="section" id="testimonial1">
+        <div className="section bg-light-gray" id="taalvakanties">
             <div className="container">
                 <div className="section__header">
                     <h2>Onze taalvakanties</h2>

@@ -66,8 +66,13 @@ const NavBar = (props) => {
             </ScrollTo>
           </li>
           <li>
-            <ScrollTo to="stages" onScroll={close}>
+            <ScrollTo to="taalvakanties" onScroll={close}>
               Taalvakanties
+            </ScrollTo>
+          </li>
+          <li>
+            <ScrollTo to="inscription" onScroll={close}>
+              Inschrijven
             </ScrollTo>
           </li>
           {/*<li>*/}
@@ -76,7 +81,7 @@ const NavBar = (props) => {
           {/*  </ScrollTo>*/}
           {/*</li>*/}
           <li>
-            <ScrollTo to="us" onScroll={close}>
+            <ScrollTo to="overons" onScroll={close}>
               Over ons
             </ScrollTo>
           </li>

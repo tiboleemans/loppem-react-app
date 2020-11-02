@@ -68,7 +68,7 @@ const Intro = () => {
     };
 
     return (
-        <section className="section" id="intro10">
+        <section className="section bg-light-gray" id="intro">
             <div className={classes.introWrapper}>
                 <div className="container">
                     <div
