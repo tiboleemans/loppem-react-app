@@ -1,6 +1,6 @@
 import React, {useEffect} from "react";
 import {scrollTo} from "../utils";
-import TopBar from "../components/NavBar";
+import NavBar from "../components/NavBar";
 import Intro from "./Intro";
 import TaalVakanties from "./TaalVakanties";
 import OverOns from "./OverOns";
@@ -13,7 +13,7 @@ const Home = () => {
 
     return (
         <div className="home">
-            <TopBar/>
+            <NavBar/>
             <Intro/>
             <TaalVakanties/>
             <OverOns/>
