@@ -5,6 +5,7 @@ import Intro from "./Intro";
 import TaalVakanties from "./TaalVakanties";
 import OverOns from "./OverOns";
 import InscriptionForm from "./Inscriptions/InscripionForm";
+import ContactForm from "../contact";
 
 const Home = () => {
     useEffect(() => {
@@ -18,6 +19,7 @@ const Home = () => {
             <TaalVakanties/>
             <OverOns/>
             <InscriptionForm/>
+            <ContactForm />
         </div>
     );
 };
