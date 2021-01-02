@@ -1,3 +1,6 @@
+const submitTempForm = require('./inscription_temporary_save')
+const sendTempMail = require('./inscription_temporary_mail')
+
 const functions = require('firebase-functions')
 const nodemailer = require('nodemailer')
 const cors = require('cors')({
@@ -13,6 +16,9 @@ const mailTransport = nodemailer.createTransport({
     pass: gmailPassword,
   },
 })
+
+exports.inscriptionTemporarySave = submitTempForm.inscriptionTemporarySave
+exports.inscriptionTemporaryMail = sendTempMail.inscriptionTemporaryMail
 
 exports.submit = functions.https.onRequest((req, res) => {
   res.set('Access-Control-Allow-Origin', '*')
