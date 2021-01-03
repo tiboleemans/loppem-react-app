@@ -1,24 +1,7 @@
-const submitTempForm = require('./inscription_temporary_save');
-const sendTempMail = require('./inscription_temporary_mail');
+const inscitpionSave = require('./inscription_save');
 
-const functions = require('firebase-functions');
-const nodemailer = require('nodemailer');
-const cors = require('cors')({
-  origin: true,
-});
-const gmailEmail = functions.config().gmail.email;
-const gmailPassword = functions.config().gmail.password;
-
-const mailTransport = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: gmailEmail,
-    pass: gmailPassword,
-  },
-});
-
-exports.inscriptionTemporarySave = submitTempForm.inscriptionTemporarySave;
-exports.inscriptionTemporarySaveMailRequest = submitTempForm.inscriptionTemporarySaveMailRequest;
-exports.inscriptionTemporarySaveMailRequestUpdate = submitTempForm.inscriptionTemporarySaveMailRequestUpdate;
-
-exports.inscriptionTemporaryMail = sendTempMail.inscriptionTemporaryMail;
+///////.inscriptionTemporarySa <-- this is the max visible lenght of a function name
+exports.inscriptionSaveTemporary = inscitpionSave.inscriptionSaveTemporary;
+exports.inscriptionSaveMailCreatedInscription = inscitpionSave.inscriptionSaveMailCreatedInscription;
+exports.inscriptionSaveMailUpdatedInscription = inscitpionSave.inscriptionSaveMailUpdatedInscription;
+exports.inscriptionSaveScheduleMail = inscitpionSave.inscriptionSaveScheduleMail;

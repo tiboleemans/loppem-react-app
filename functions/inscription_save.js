@@ -10,7 +10,7 @@ const cors = require('cors')({
 // https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript 🤷‍♂️
 const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-exports.inscriptionTemporarySave = functions
+exports.inscriptionSaveTemporary = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .https.onRequest(async (req, res) => {
@@ -43,7 +43,7 @@ exports.inscriptionTemporarySave = functions
       });
     });
 
-exports.inscriptionTemporarySaveMailRequest = functions
+exports.inscriptionSaveMailCreatedInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
@@ -63,7 +63,7 @@ exports.inscriptionTemporarySaveMailRequest = functions
           });
     });
 
-exports.inscriptionTemporarySaveMailRequestUpdate = functions
+exports.inscriptionSaveMailUpdatedInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
@@ -77,12 +77,65 @@ exports.inscriptionTemporarySaveMailRequestUpdate = functions
             firstName: change.after.data().firstNameParent,
             lastName: change.after.data().lastNameParent,
             email: change.after.data().email,
-            mailSent: false,
+            mailScheduled: false,
             updateTimestamp: new Date(),
           }, {
             merge: true,
           });
     });
+
+exports.inscriptionSaveScheduleMail = functions
+    .runWith(tools.defaultBatchOptions)
+    .region('europe-west1')
+    .pubsub.schedule('0/10 16-22 * * *').onRun(async (context) => {
+      console.info(`Fetching unsent mails for camp year ${tools.campYear()}`);
+      const mailsToSend = await db.collection('inscription_temporary_mails_to_send')
+          .where('campYear', '==', tools.campYear())
+          .where('mailScheduled', '==', false)
+          .limit(100)
+          .get();
+      let count = 0;
+      let errorCount = 0;
+      mailsToSend.forEach(async (mailRequest) => {
+        try {
+          count += 1;
+          await db.collection('mail_ext')
+              .add({
+                from: 'Loppem test <vzwtaalstagescv@gmail.com>',
+                // replyTo:
+                to: mailRequest.data().email,
+                template: {
+                  name: 'inscription-temporary-mail-edit-link', // TODO: make it language dependent ?
+                  data: mailRequest.data(),
+                },
+              }).then(() => {
+                db.collection('inscription_temporary_mails_to_send')
+                    .doc(mailRequest.id)
+                    .set({
+                      mailScheduled: true,
+                      mailScheduledLastTimestamp: new Date(),
+                    }, {
+                      merge: true,
+                    });
+              });
+        } catch (err) {
+          errorCount += 1;
+          console.error('Could not prepare to send message', mailRequest.data(), err);
+          db.collection('inscription_temporary_mails_to_send')
+              .doc(mailRequest.id)
+              .set({
+                mailScheduled: true, // don't let it loop
+                mailError: err.message,
+                mailScheduledLastTimestamp: new Date(),
+              }, {
+                merge: true,
+              });
+        }
+      });
+      console.info(`Finished proccessing ${count} requests with ${errorCount} errors`);
+      return null;
+    });
+
 
 /**
  * Insert a new record in the table inscription_temporary.
