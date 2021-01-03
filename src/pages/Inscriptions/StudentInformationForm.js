@@ -5,8 +5,6 @@ import CustomTextField from "../../components/controls/CustomTextField";
 import CustomDatePicker from "../../components/controls/CustomDatePicker";
 import Typography from "@material-ui/core/Typography";
 import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
-import {Button} from "@material-ui/core";
-
 
 export default function StudentInformationForm(props) {
 

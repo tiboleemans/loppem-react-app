@@ -6,6 +6,7 @@ import TaalVakanties from "./TaalVakanties";
 import OverOns from "./OverOns";
 import InscriptionForm from "./Inscriptions/InscripionForm";
 import ContactForm from "../contact";
+import Pricing from "./Pricing";
 
 const Home = () => {
     useEffect(() => {
@@ -19,6 +20,7 @@ const Home = () => {
             <TaalVakanties/>
             <OverOns/>
             <InscriptionForm/>
+            <Pricing/>
             <ContactForm />
         </div>
     );
