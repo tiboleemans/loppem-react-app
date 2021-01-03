@@ -53,8 +53,8 @@ exports.inscriptionSaveMailCreatedInscription = functions
           .collection('inscription_temporary_mails_to_send')
           .doc(context.params.docId)
           .set({
-            firstName: change.data().firstNameParent,
-            lastName: change.data().lastNameParent,
+            firstNameParent: change.data().firstNameParent,
+            lastNameParent: change.data().lastNameParent,
             email: change.data().email,
             temporaryInscriptionId: context.params.docId,
             campYear: change.data().campYear,
@@ -74,8 +74,8 @@ exports.inscriptionSaveMailUpdatedInscription = functions
           .collection('inscription_temporary_mails_to_send')
           .doc(context.params.docId)
           .set({
-            firstName: change.after.data().firstNameParent,
-            lastName: change.after.data().lastNameParent,
+            firstNameParent: change.after.data().firstNameParent,
+            lastNameParent: change.after.data().lastNameParent,
             email: change.after.data().email,
             mailScheduled: false,
             updateTimestamp: new Date(),
@@ -87,7 +87,7 @@ exports.inscriptionSaveMailUpdatedInscription = functions
 exports.inscriptionSaveScheduleMail = functions
     .runWith(tools.defaultBatchOptions)
     .region('europe-west1')
-    .pubsub.schedule('0/10 16-22 * * *')
+    .pubsub.schedule('*/10 16-22 * * *')
     .timeZone('Europe/Brussels')
     .onRun(async (context) => {
       console.info(`Fetching unsent mails for camp year ${tools.campYear()}`);
