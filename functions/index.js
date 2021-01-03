@@ -22,36 +22,3 @@ exports.inscriptionTemporarySaveMailRequest = submitTempForm.inscriptionTemporar
 exports.inscriptionTemporarySaveMailRequestUpdate = submitTempForm.inscriptionTemporarySaveMailRequestUpdate;
 
 exports.inscriptionTemporaryMail = sendTempMail.inscriptionTemporaryMail;
-
-exports.submit = functions.https.onRequest((req, res) => {
-  res.set('Access-Control-Allow-Origin', '*');
-  res.set('Access-Control-Allow-Methods', 'GET, PUT, POST, OPTIONS');
-  res.set('Access-Control-Allow-Headers', '*');
-
-  if (req.method === 'OPTIONS') {
-    res.end();
-  } else {
-    cors(req, res, () => {
-      if (req.method !== 'POST') {
-        return;
-      }
-
-      const mailOptions = {
-        from: gmailEmail,
-        replyTo: 'info@loppemconversa.be',
-        to: req.body.email,
-        subject: `${req.body.name} just messaged me from my website`,
-        text: req.body.message,
-        html: `<p>${req.body.message}</p>`,
-      };
-
-      return mailTransport.sendMail(mailOptions).then(() => {
-        console.log('New email sent to:', gmailEmail);
-        res.status(200).send({
-          isEmailSend: true,
-        });
-        return;
-      });
-    });
-  }
-});
