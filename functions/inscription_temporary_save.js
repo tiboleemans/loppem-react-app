@@ -1,6 +1,6 @@
-const tools = require('./tools')
-const functions = require('firebase-functions')
-const { admin, db } = require('./db')
+const tools = require('./tools');
+const functions = require('firebase-functions');
+const {admin, db} = require('./db');
 
 const cors = require('cors')({
   origin: true,
@@ -11,94 +11,124 @@ const cors = require('cors')({
 const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
 exports.inscriptionTemporarySave = functions
-  .runWith(tools.default_http_options)
-  .region('europe-west-1')
-  .https.onRequest(async (req, res) => {
-    if (req.method != 'POST') {
-      return res.status(400).send({
-        message: "Method not supported"
-      });
-    }
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west-1')
+    .https.onRequest(async (req, res) => {
+      if (req.method !== 'POST') {
+        return res.status(400).send({
+          message: 'Method not supported',
+        });
+      }
 
-    if (!pre_validate(req.body)) {
-      return res.status(400).send({
-        message: "firstNameParent and lastNameParent are mandatory, email should be a valid e-mail address."
-      })
-    }
+      if (!preValidate(req.body)) {
+        return res.status(400).send({
+          message: 'firstNameParent and lastNameParent are mandatory, email should be a valid e-mail address.',
+        });
+      }
 
-    let doc_id = req.query.id
-    let insert = doc_id == null;
-    console.log(`Request temporary save with id ${doc_id} for ${req.body.firstNameStudent} ${req.body.lastNameStudent}`)
+      let docId = req.query.id;
+      const insert = docId == null;
+      console.log(`Request temporary save with id ${docId} for ${req.body.firstNameStudent} ${req.body.lastNameStudent}`);
 
-    if (insert) {
-      doc_id = await perform_insert(req.body);
-      schedule_send_link(req.body, doc_id)
-    } else {
-      await perform_update(doc_id, req.body);
-    }
+      if (insert) {
+        docId = await performInsert(req.body);
+      } else {
+        await performUpdate(docId, req.body);
+      }
 
-    return cors(req, res, () => {
-      res.status(insert ? 201 : 200).send({
-        id : doc_id
+      return cors(req, res, () => {
+        res.status(insert ? 201 : 200).send({
+          id: docId,
+        });
       });
     });
-  });
 
-  /**
-   * Insert a new record in the table inscription_temporary.
-   * Returns the document ID
-   * @param {*} data the request body
-   */
-  async function perform_insert(data) {
-    writeResult = await db
+exports.inscriptionTemporarySaveMailRequest = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west-1')
+    .firestore
+    .document('inscription_temporary/{docId}')
+    .onCreate((change, context) => {
+      return db
+          .collection('inscription_temporary_mails_to_send')
+          .doc(context.params.docId)
+          .set({
+            firstName: change.data().firstNameParent,
+            lastName: change.data().lastNameParent,
+            email: change.data().email,
+            temporaryInscriptionId: context.params.docId,
+            campYear: change.data().campYear,
+            mailSent: false,
+            insertTimestamp: new Date(),
+          });
+    });
+
+exports.inscriptionTemporarySaveMailRequestUpdate = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west-1')
+    .firestore
+    .document('inscription_temporary/{docId}')
+    .onUpdate((change, context) => {
+      console.info(change.before.data());
+      return db
+          .collection('inscription_temporary_mails_to_send')
+          .doc(context.params.docId)
+          .set({
+            firstName: change.after.data().firstNameParent,
+            lastName: change.after.data().lastNameParent,
+            email: change.after.data().email,
+            mailSent: false,
+            updateTimestamp: new Date(),
+          }, {
+            merge: true,
+          });
+    });
+
+/**
+ * Insert a new record in the table inscription_temporary.
+ * Returns the document ID
+ * @param {*} data the request body
+ */
+async function performInsert(data) {
+  const writeResult = await db
       .collection('inscription_temporary')
       .add({
         ...data,
         insertTimestamp: new Date(),
-        campYear: tools.camp_year()
+        campYear: tools.campYear(),
       });
-    console.info(`Added document with id ${writeResult.id}`)
-    return writeResult.id
-  }
+  console.info(`Added document with id ${writeResult.id}`);
+  return writeResult.id;
+}
 
-  /**
-   * Add record to the table inscription_temporary_mails_to_send
-   * so we can keep track whether we've already sent an e-mail
-   * with the edit link or not
-   * @param {*} data the request body
-   * @param {*} doc_id the document id of the stored 'temporary' data
-   */
-  async function schedule_send_link(data, doc_id) {
-    await db
-      .collection('inscription_temporary_mails_to_send')
-      .doc(doc_id)
-      .set({
-        firstName: data.firstNameParent,
-        lastName: data.lastNameParent,
-        email: data.email,
-        temporaryInscriptionId: doc_id,
-        campYear: tools.camp_year(),
-        mailSent: false,
-        insertTimestamp: new Date()
-      });
-  }
-
-  async function perform_update(doc_id, data) {
-    writeResult = await db
+/**
+ * Updates an existing document, merges the data (e.g. missing fields will not be removed)
+ * @param {*} docId
+ * @param {*} data
+ */
+async function performUpdate(docId, data) {
+  await db
       .collection('inscription_temporary')
-      .doc(doc_id)
-      .set({...data, updateTimestamp: new Date()}, {merge: true});
-    console.info(`Updated document with id ${doc_id}`)
-  }
+      .doc(docId)
+      .set({
+        ...data,
+        updateTimestamp: new Date(),
+      }, {
+        merge: true,
+      },
+      );
+  console.info(`Updated document with id ${docId}`);
+}
 
-  /**
-   * Contact information of parents is required, otherwise we can't contact them
-   * @param {*} data
-   */
-  function pre_validate(data) {
-    let valid = true;
-    valid &= data.firstNameParent != '';
-    valid &= data.lastNameParent  != '';
-    valid &= re.test(data.email)
-    return valid;
-  }
+/**
+ * Contact information of parents is required, otherwise we can't contact them
+ * @param {*} data
+ * @return {boolean} true if contact information is correct
+ */
+function preValidate(data) {
+  let valid = true;
+  valid &= data.firstNameParent !== '';
+  valid &= data.lastNameParent !== '';
+  valid &= re.test(data.email);
+  return valid;
+}
