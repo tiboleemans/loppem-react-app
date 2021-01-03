@@ -12,7 +12,7 @@ const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[
 
 exports.inscriptionTemporarySave = functions
     .runWith(tools.defaultHttpOptions)
-    .region('europe-west-1')
+    .region('europe-west1')
     .https.onRequest(async (req, res) => {
       if (req.method !== 'POST') {
         return res.status(400).send({
@@ -45,7 +45,7 @@ exports.inscriptionTemporarySave = functions
 
 exports.inscriptionTemporarySaveMailRequest = functions
     .runWith(tools.defaultHttpOptions)
-    .region('europe-west-1')
+    .region('europe-west1')
     .firestore
     .document('inscription_temporary/{docId}')
     .onCreate((change, context) => {
@@ -65,7 +65,7 @@ exports.inscriptionTemporarySaveMailRequest = functions
 
 exports.inscriptionTemporarySaveMailRequestUpdate = functions
     .runWith(tools.defaultHttpOptions)
-    .region('europe-west-1')
+    .region('europe-west1')
     .firestore
     .document('inscription_temporary/{docId}')
     .onUpdate((change, context) => {

@@ -4,8 +4,8 @@ const { admin, db } = require('./db');
 
 exports.inscriptionTemporaryMail = functions
     .runWith(tools.defaultBatchOptions)
-    .region('europe-west-1')
-    .pubsub.schedule('every 1 hour').onRun(async (context) => {
+    .region('europe-west1')
+    .pubsub.schedule('0 * * * *').onRun(async (context) => {
       console.info(`Fetching unsent mails for camp year ${tools.campYear()}`);
       const mailsToSend = await db.collection('inscription_temporary_mails_to_send')
           .where('campYear', '==', tools.campYear())
