@@ -77,10 +77,18 @@ View the raw content of this file to understand the format.
 ## Todo
 
 ### Backend
-- [ ] Data voorlopig opslaan na voorlopig inschrijven knop
-- [ ] Data ophalen 
+- [X] Data voorlopig opslaan na voorlopig inschrijven knop
+- [X] Mail sturen met voorlopige edit link
+- [ ] Data ophalen
 - [ ] Data opslaan na inschrijven knop
+  - [ ] Opslaan data voor verpleegste
+  - [ ] Opslaan data voor kok
+  - [ ] Opslaan 0-betaling
+  - [ ] Opslaan data in klas collection
+- [ ] Versturen bevestigings mail inschrijving
 
+### Mail Templates
+- [ ] Mail met edit link van voorlopig inschrijven
 ### Frontend
 - [ ] Voorlopig inschrijven knop toevoegen
 - [ ] Getuigenissen
