@@ -66,3 +66,65 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+# Example of TODO.md
+
+This is an example of TODO.md
+
+View the raw content of this file to understand the format.
+
+## Todo
+
+### Backend
+- [ ] Data voorlopig opslaan na voorlopig inschrijven knop
+- [ ] Data ophalen 
+- [ ] Data opslaan na inschrijven knop
+
+### Frontend
+- [ ] Voorlopig inschrijven knop toevoegen
+- [ ] Getuigenissen
+- [ ] Contact
+- [ ] Foto's
+- [ ] Faq
+- [ ] Jobs
+
+
+
+
+
+
+
+## Analyse
+
+Admin pagina
+--> lijst alle voorlopige inschrijvingen op -> stuur mail met link naar voorlopige data
+--> manuele aanpassingen voor verpleegster
+--> link leerlingen met een klas
+--> link leerkrachten met een klas
+
+Inschrijvingen
+--> kampjaar, data van leerlingen, ouders, gedupliceerde school
+--> Voornaam leerlinge, naam , medische data voor verpleegster
+--> data voor de kok
+
+
+Medewerkers
+--> data leerkrachten, monitoren, ..., klas
+
+
+Link leerling leerkracht klas
+
+Betalingen
+--> kampjaar, Basic info (naam voornaam geboortedatum email, naam voornaam ouder) van inschrijving (dup data)
+--> rapppels (bedrag < 400) 1 maand na inschrijving stuur mail
+
+Klassen
+--> leerlingen info + klas
+
+Voorlopige ingeschreven (oude inschrijvingen)
+Uitgeschreven
+Wachtlijst
+
+Scholen
+--> adressen scholen
