@@ -87,12 +87,14 @@ exports.inscriptionSaveMailUpdatedInscription = functions
 exports.inscriptionSaveScheduleMail = functions
     .runWith(tools.defaultBatchOptions)
     .region('europe-west1')
-    .pubsub.schedule('0/10 16-22 * * *').onRun(async (context) => {
+    .pubsub.schedule('0/10 16-22 * * *')
+    .timeZone('Europe/Brussels')
+    .onRun(async (context) => {
       console.info(`Fetching unsent mails for camp year ${tools.campYear()}`);
       const mailsToSend = await db.collection('inscription_temporary_mails_to_send')
           .where('campYear', '==', tools.campYear())
           .where('mailScheduled', '==', false)
-          .limit(100)
+          .limit(20)
           .get();
       let count = 0;
       let errorCount = 0;
