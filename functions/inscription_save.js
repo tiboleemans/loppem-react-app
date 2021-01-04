@@ -43,6 +43,35 @@ exports.inscriptionSaveTemporary = functions
       });
     });
 
+exports.inscriptionSaveGetTempInscrition = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west1')
+    .https.onRequest(async (req, res) => {
+      if (req.method !== 'GET') {
+        return res.status(400).send({
+          message: 'Method not supported',
+        });
+      }
+
+      const docId = req.query.id;
+      if (docId == null) {
+        return res.status(400).send({
+          message: 'id is a mandatory parameter',
+        });
+      }
+
+      const doc = await db.collection('inscription_temporary')
+          .doc(docId).get();
+      if (doc.exists) {
+        return res.send(stripTechnicalFields(doc.data()));
+      } else {
+        return res.status(404).send({
+          message: `Document with ${docId} not found`,
+          data: doc,
+        });
+      }
+    });
+
 exports.inscriptionSaveMailCreatedInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
@@ -186,4 +215,11 @@ function preValidate(data) {
   valid &= data.lastNameParent !== '';
   valid &= re.test(data.email);
   return valid;
+}
+
+function stripTechnicalFields(data) {
+  const strippedData = {...data};
+  delete strippedData.insertTimestamp;
+  delete strippedData.updateTimestamp;
+  return strippedData;
 }

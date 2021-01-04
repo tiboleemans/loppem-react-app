@@ -79,7 +79,7 @@ View the raw content of this file to understand the format.
 ### Backend
 - [X] Data voorlopig opslaan na voorlopig inschrijven knop
 - [X] Mail sturen met voorlopige edit link
-- [ ] Data ophalen
+- [X] Data ophalen
 - [ ] Data opslaan na inschrijven knop
   - [ ] Opslaan data voor verpleegste
   - [ ] Opslaan data voor kok

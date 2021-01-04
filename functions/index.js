@@ -1,7 +1,9 @@
-const inscitpionSave = require('./inscription_save');
+const inscriptionSave = require('./inscription_save');
+const inscriptionSubmit = require('./inscription_submit');
 
-///////.inscriptionTemporarySa <-- this is the max visible lenght of a function name
-exports.inscriptionSaveTemporary = inscitpionSave.inscriptionSaveTemporary;
-exports.inscriptionSaveMailCreatedInscription = inscitpionSave.inscriptionSaveMailCreatedInscription;
-exports.inscriptionSaveMailUpdatedInscription = inscitpionSave.inscriptionSaveMailUpdatedInscription;
-exports.inscriptionSaveScheduleMail = inscitpionSave.inscriptionSaveScheduleMail;
+// ////.inscriptionTemporarySa <-- this is the max visible lenght of a function name
+exports.inscriptionSaveTemporary = inscriptionSave.inscriptionSaveTemporary;
+exports.inscriptionSaveGetTempInscrition = inscriptionSave.inscriptionSaveGetTempInscrition
+exports.inscriptionSaveMailCreatedInscription = inscriptionSave.inscriptionSaveMailCreatedInscription;
+exports.inscriptionSaveMailUpdatedInscription = inscriptionSave.inscriptionSaveMailUpdatedInscription;
+exports.inscriptionSaveScheduleMail = inscriptionSave.inscriptionSaveScheduleMail;
