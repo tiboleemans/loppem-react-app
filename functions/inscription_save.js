@@ -87,7 +87,7 @@ exports.inscriptionSaveMailCreatedInscription = functions
             email: change.data().email,
             temporaryInscriptionId: context.params.docId,
             campYear: change.data().campYear,
-            mailSent: false,
+            mailScheduled: false,
             insertTimestamp: new Date(),
           });
     });
