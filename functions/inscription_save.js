@@ -42,7 +42,7 @@ exports.inscriptionSaveTemporary = functions
       });
     });
 
-exports.inscriptionSaveGetTempInscrition = functions
+exports.inscriptionSaveGetTempInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .https.onRequest(async (req, res) => {
