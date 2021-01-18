@@ -81,7 +81,7 @@ View the raw content of this file to understand the format.
 - [X] Mail sturen met voorlopige edit link
 - [X] Data ophalen
 - [ ] Data opslaan na inschrijven knop
-  - [ ] Opslaan data voor verpleegste
+  - [ ] Opslaan data voor verpleegster
   - [ ] Opslaan data voor kok
   - [ ] Opslaan 0-betaling
   - [ ] Opslaan data in klas collection
