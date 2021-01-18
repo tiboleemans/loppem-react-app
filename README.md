@@ -80,12 +80,13 @@ View the raw content of this file to understand the format.
 - [X] Data voorlopig opslaan na voorlopig inschrijven knop
 - [X] Mail sturen met voorlopige edit link
 - [X] Data ophalen
-- [ ] Data opslaan na inschrijven knop
-  - [ ] Opslaan data voor verpleegster
-  - [ ] Opslaan data voor kok
-  - [ ] Opslaan 0-betaling
-  - [ ] Opslaan data in klas collection
+- [X] Data opslaan na inschrijven knop
+  - [X] Opslaan data voor verpleegster
+  - [X] Opslaan data voor kok
+  - [X] Opslaan 0-betaling
+  - [X] Opslaan data in klas collection (na bevestiging betaling)
 - [ ] Versturen bevestigings mail inschrijving
+- [ ] Versturen bevestigings mail na betaling (?)
 
 ### Mail Templates
 - [ ] Mail met edit link van voorlopig inschrijven
