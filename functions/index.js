@@ -7,3 +7,5 @@ exports.inscriptionSaveGetTempInscrition = inscriptionSave.inscriptionSaveGetTem
 exports.inscriptionSaveMailCreatedInscription = inscriptionSave.inscriptionSaveMailCreatedInscription;
 exports.inscriptionSaveMailUpdatedInscription = inscriptionSave.inscriptionSaveMailUpdatedInscription;
 exports.inscriptionSaveScheduleMail = inscriptionSave.inscriptionSaveScheduleMail;
+
+exports.inscriptionSubmit = inscriptionSubmit.inscriptionSubmit
