@@ -20,6 +20,7 @@ exports.inscriptionSubmit = functions
 
       validation = validate(req.body);
       if (validation.error) {
+        console.log(validation.error);
         return res.status(400).send(
             validation,
         );
