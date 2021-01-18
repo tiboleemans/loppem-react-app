@@ -35,6 +35,130 @@ exports.inscriptionSubmit = functions
       });
     });
 
+exports.addPaymentAndConfirm = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west1')
+    .https.onRequest(async (req, res) => {
+      if (req.method !== 'POST') {
+        return res.status(400).send({
+          message: 'Method not supported',
+        });
+      }
+
+
+      validation = validatePayment(req.body);
+      if (validation.error) {
+        console.log(validation.error);
+        return res.status(400).send(
+            validation,
+        );
+      }
+
+      await updatePayment(validation.value);
+
+      return cors(req, res, () => {
+        res.status(200).send({ });
+      });
+    });
+
+exports.createInitialPayment = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west1')
+    .firestore
+    .document('inscription/{docId}')
+    .onCreate((change, context) => {
+      return db
+          .collection('payment')
+          .doc(context.params.docId)
+          .set({
+            firstNameParent: change.data().firstNameParent,
+            lastNameParent: change.data().lastNameParent,
+            firstNameStudent: change.data().firstNameStudent,
+            lastNameStudent: change.data().lastNameStudent,
+            period: change.data().period,
+            language: change.data().language,
+            email: change.data().email,
+            campYear: change.data().campYear,
+            paidAmount: 0.00,
+            insertTimestamp: new Date(),
+          });
+    });
+
+exports.createNotesCook = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west1')
+    .firestore
+    .document('inscription/{docId}')
+    .onCreate((change, context) => {
+      return db
+          .collection('notes_cook')
+          .doc(context.params.docId)
+          .set({
+            firstNameStudent: change.data().firstNameStudent,
+            lastNameStudent: change.data().lastNameStudent,
+            period: change.data().period,
+            language: change.data().language,
+            campYear: change.data().campYear,
+            foodInfo: change.data().foodInfo,
+            insertTimestamp: new Date(),
+          });
+    });
+
+exports.createNotesNurse = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west1')
+    .firestore
+    .document('inscription/{docId}')
+    .onCreate((change, context) => {
+      return db
+          .collection('notes_nurse')
+          .doc(context.params.docId)
+          .set({
+            firstNameStudent: change.data().firstNameStudent,
+            lastNameStudent: change.data().lastNameStudent,
+            period: change.data().period,
+            language: change.data().language,
+            campYear: change.data().campYear,
+            additionalInfo: change.data().additionalInfo,
+            insertTimestamp: new Date(),
+          });
+    });
+
+exports.confirmStudentAfterPayment = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west1')
+    .firestore
+    .document('payment/{docId}')
+    .onUpdate((change, context) => {
+      if (!change.after.data().paymentComplete || change.before.data().paymentComplete) {
+        console.info(`Confirmation for ${context.params.docId} became ${change.after.data().paymentComplete}, was ${change.before.data().paymentComplete}`);
+        return true;
+      }
+
+      const data = change.after.data();
+      const defaultClass = data.campYear + '_' + data.period + '_' + data.language + '_default';
+      console.log(`Confirming studentId ${context.params.docId} into default class ${defaultClass}`);
+      db
+          .collection('class')
+          .doc(defaultClass)
+          .set({ // TODO: maybe not overwrite this every time ?
+            campYear: data.campYear,
+            period: data.period,
+            language: data.language,
+          });
+      return db
+          .collection('class')
+          .doc(defaultClass)
+          .collection('class_assignment')
+          .doc(context.params.docId)
+          .set({
+            student: db.collection('inscription').doc(context.params.docId),
+            firstNameStudent: data.firstNameStudent,
+            lastNameStudent: data.lastNameStudent,
+            insertTimestamp: new Date(),
+          });
+    });
+
 /**
  * Insert a new record in the table inscription.
  * Returns the document ID
@@ -50,6 +174,27 @@ async function performInsert(data) {
       });
   console.info(`Added document with id ${writeResult.id}`);
   return writeResult.id;
+}
+
+/**
+ * Updates an existing payment record
+ * @param {*} data
+ */
+async function updatePayment(data) {
+  await db
+      .collection('payment')
+      .doc(data.studentId)
+      .set({
+        paidAmount: data.paymentAmount,
+        paymentDate: data.paymentDate,
+        paymentComplete: data.paymentComplete,
+        updateTimestamp: new Date(),
+      }, {
+        merge: true,
+      },
+      );
+  console.info(`Updated payment with id ${data.studentId}`);
+  return data.studentId;
 }
 
 /**
@@ -96,6 +241,31 @@ function validate(data) {
     interest: joi.string().trim().allow(''),
     acceptPictures: joi.boolean(),
     acceptTerms: joi.boolean().allow(true),
+  });
+
+  return schema.validate(data, {
+    presence: 'required', // don't save an empty object
+    convert: true, // perform trim and XSS sanitizations
+    abortEarly: false, // validate all fields instead of stopping at the first error
+    allowUnknown: false, // do not allow unknonw fields
+    errors: {
+      escapeHtml: true, // espace the original data in error messages
+    },
+  });
+}
+
+/**
+ * Validates and sanitizes input
+ * @param {*} data
+ * @return {*} validation data
+ */
+function validatePayment(data) {
+  const joi = tools.saferJoi;
+  const schema = joi.object({
+    studentId: joi.string().min(5).required(),
+    paymentAmount: joi.number().min(1).required(),
+    paymentDate: joi.string().min(10).required(),
+    paymentComplete: joi.boolean().required(),
   });
 
   return schema.validate(data, {
