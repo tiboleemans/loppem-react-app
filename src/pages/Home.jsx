@@ -7,6 +7,7 @@ import OverOns from "./OverOns";
 import InscriptionForm from "./Inscriptions/InscripionForm";
 import ContactForm from "../contact";
 import Pricing from "./Pricing";
+import Gallery from "./Gallery";
 
 const Home = () => {
     useEffect(() => {
@@ -21,6 +22,7 @@ const Home = () => {
             <OverOns/>
             <InscriptionForm/>
             <Pricing/>
+            <Gallery />
             <ContactForm />
         </div>
     );
