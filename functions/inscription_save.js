@@ -6,10 +6,6 @@ const cors = require('cors')({
   origin: true,
 });
 
-
-// https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript 🤷‍♂️
-const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
 exports.inscriptionSaveTemporary = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
@@ -20,7 +16,10 @@ exports.inscriptionSaveTemporary = functions
         });
       }
 
-      if (!preValidate(req.body)) {
+      validation = preValidate(req.body);
+
+      if (validation.error != null) {
+        console.log(validation.error);
         return res.status(400).send({
           message: 'firstNameParent and lastNameParent are mandatory, email should be a valid e-mail address.',
         });
@@ -28,12 +27,12 @@ exports.inscriptionSaveTemporary = functions
 
       let docId = req.query.id;
       const insert = docId == null;
-      console.log(`Request temporary save with id ${docId} for ${req.body.firstNameStudent} ${req.body.lastNameStudent}`);
+      console.log(`Request temporary save with id ${docId} for parent ${validation.value.firstNameParent} ${validation.value.lastNameParent}`);
 
       if (insert) {
-        docId = await performInsert(req.body);
+        docId = await performInsert(validation.value);
       } else {
-        await performUpdate(docId, req.body);
+        await performUpdate(docId, validation.value);
       }
 
       return cors(req, res, () => {
@@ -43,7 +42,7 @@ exports.inscriptionSaveTemporary = functions
       });
     });
 
-exports.inscriptionSaveGetTempInscrition = functions
+exports.inscriptionSaveGetTempInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .https.onRequest(async (req, res) => {
@@ -210,13 +209,61 @@ async function performUpdate(docId, data) {
  * @return {boolean} true if contact information is correct
  */
 function preValidate(data) {
-  let valid = true;
-  valid &= data.firstNameParent !== '';
-  valid &= data.lastNameParent !== '';
-  valid &= re.test(data.email);
-  return valid;
+  const joi = tools.saferJoi;
+  const schema = joi.object({
+    language: joi.string().trim().allow(''),
+    period: joi.string().trim().allow(''),
+    firstNameStudent: joi.string().trim().allow(''),
+    lastNameStudent: joi.string().trim().allow(''),
+    gender: joi.string().trim().allow(''),
+    birthday: joi.string().trim().allow(''),
+    firstNameParent: joi.string().trim().min(3).required(),
+    lastNameParent: joi.string().trim().min(3).required(),
+    email: joi.string().trim().email().required(),
+    relation: joi.string().trim().allow(''),
+    street: joi.string().trim().allow(''),
+    houseNr: joi.string().trim().allow(''),
+    busNr: joi.string().trim().allow(''),
+    city: joi.string().trim().allow(''),
+    zipCode: joi.string().trim().allow(''),
+    gsm: joi.string().trim().allow(''),
+    gsm2: joi.string().trim().allow(''),
+    nameSchool: joi.string().trim().allow(''),
+    streetSchool: joi.string().trim().allow(''),
+    houseNrSchool: joi.string().trim().allow(''),
+    busNrSchool: joi.string().trim().allow(''),
+    citySchool: joi.string().trim().allow(''),
+    zipSchool: joi.string().trim().allow(''),
+    titleProfSchool: joi.string().trim().allow(''),
+    nameProfSchool: joi.string().trim().allow(''),
+    yearsSchool: joi.number().min(0),
+    hoursSchool: joi.number().min(0),
+    immersionSchool: joi.boolean(),
+    reportSchool: joi.string().trim().allow(''),
+    apportedStudent: joi.boolean(),
+    contact: joi.string().trim().allow(''),
+    additionalInfo: joi.string().trim().allow(''),
+    foodInfo: joi.string().trim().allow(''),
+    interest: joi.string().trim().allow(''),
+    acceptPictures: joi.boolean(),
+    acceptTerms: joi.boolean().allow(true),
+  });
+
+  return schema.validate(data, {
+    presence: 'required', // don't save an empty object
+    convert: true, // perform trim and XSS sanitizations
+    abortEarly: true, // temporary save is very lax
+    allowUnknown: false, // do not allow unknonw fields
+    errors: {
+      escapeHtml: true, // espace the original data in error messages
+    },
+  });
 }
 
+/**
+ * Removes the technical fields when sending data back to the front-end
+ * @return {*} the document without timestamps
+ */
 function stripTechnicalFields(data) {
   const strippedData = {...data};
   delete strippedData.insertTimestamp;

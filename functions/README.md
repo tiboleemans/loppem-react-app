@@ -33,7 +33,7 @@ A successfull respnose returns HTTP 200 and the following sample response.
 ```
 
 ### Get
-The `GET` method `inscriptionSaveGetTempInscrition` is responsible for fetching an existing temporary inscription from the `inscription_temporary` collection. The mandatory `id` request parameter is the document id of the collection (as retuned by `inscriptionSaveTemporary` and which we'll mail to the parents).
+The `GET` method `inscriptionSaveGetTempInscription` is responsible for fetching an existing temporary inscription from the `inscription_temporary` collection. The mandatory `id` request parameter is the document id of the collection (as retuned by `inscriptionSaveTemporary` and which we'll mail to the parents).
 
 ### Delete
 TODO should happend as a result of saving it. Probably want to save with the same id as the temporary one.
