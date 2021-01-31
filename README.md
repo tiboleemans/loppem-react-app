@@ -94,8 +94,8 @@ View the raw content of this file to understand the format.
 - [ ] Voorlopig inschrijven knop toevoegen
 - [ ] Getuigenissen
 - [ ] Contact
-- [ ] Foto's
-- [ ] Faq
+- [X] Foto's
+- [X] Faq
 - [ ] Jobs
 
 
