@@ -47,14 +47,14 @@ const useStyles = makeStyles(({ palette, ...theme }) => ({
 const Carousel = (props) => {
   let theme = useTheme();
   let {
-    slidesPerView = 1,
-    spacing = 32,
+    slidesPerView = props.slidesPerView,
+    spacing = 100,
     allowSlideNext = true,
     allowSlidePrev = true,
-    delay = 60000,
+    delay = props.delay,
     navigation = true,
     bulletColor = theme.palette.primary.main,
-    paginationClass = "mt-6",
+    paginationClass = "mt-6 mb-6",
     carouselId = "swiper-1",
     children,
   } = props;

@@ -1,6 +1,6 @@
 import React from "react";
 import {Grid, Button} from "@material-ui/core";
-import {makeStyles, lighten} from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 import {Link} from "react-router-dom";
 
 const useStyles = makeStyles(({
@@ -75,7 +75,7 @@ const Gallery = () => {
                 <Grid container spacing={3}>
                     {imageList.map((item, ind) => (<Grid key={ind} item lg={4} md={4} sm={4} xs={12}>
                         <div className={classes.cardHolder}>
-                            <img className="w-full block" src={item.image} alt="picture"/>
+                            <img className="w-full block" src={item.image} alt=""/>
                             <div className={classes.cardOverlay}>
                                 <h3 className="m-0">{item.title}</h3>
                                 <p className="text-inherit">{item.subtitle}</p>

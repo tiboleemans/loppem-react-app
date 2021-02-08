@@ -1,10 +1,5 @@
 import React, {useState} from "react";
-import {
-  Grid,
-  ExpansionPanel,
-  ExpansionPanelSummary,
-  ExpansionPanelDetails,
-} from "@material-ui/core";
+import {Accordion, AccordionDetails, AccordionSummary, Grid,} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import clsx from "clsx";
 
@@ -104,7 +99,7 @@ const FAQ = () => {
           <Grid item md={9} sm={8} xs={12}>
             {<div>
               {categoryList[tabIndex].faqs.map((faq, ind) => (
-                <ExpansionPanel
+                <Accordion
                   key={ind}
                   className={clsx({
                     "border-radius-4 mb-6": true,
@@ -116,7 +111,7 @@ const FAQ = () => {
                   }
                   expanded={expandedIndex === ind}
                 >
-                  <ExpansionPanelSummary
+                  <AccordionSummary
                     className={clsx({
                       "hover-bg-primary": true,
                       [classes.bgLightGray]: true,
@@ -124,13 +119,13 @@ const FAQ = () => {
                     })}
                   >
                     {faq.question}
-                  </ExpansionPanelSummary>
-                  <ExpansionPanelDetails>
+                  </AccordionSummary >
+                  <AccordionDetails>
                     <p>
                       {faq.answer}
                     </p>
-                  </ExpansionPanelDetails>
-                </ExpansionPanel>
+                  </AccordionDetails>
+                </Accordion>
               ))}
             </div>
             }

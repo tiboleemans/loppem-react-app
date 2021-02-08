@@ -159,7 +159,7 @@ const TaalVakanties = () => {
                     <h2>Onze taalvakanties</h2>
                 </div>
 
-                <Carousel carouselId="testimonial-1">
+                <Carousel carouselId="taalvakanties-1">
                     {informationList.map((information, index) => (
                         <Card className="px-6 card" key={index}>
                             <Grid container>

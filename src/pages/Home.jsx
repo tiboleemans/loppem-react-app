@@ -9,6 +9,8 @@ import ContactForm from "../contact";
 import Pricing from "./Pricing";
 import Gallery from "./Gallery";
 import FAQ from "./FAQ";
+import Testimonial1 from "./Testimonial1";
+import Contact2 from "./Contact2";
 
 const Home = () => {
   useEffect(() => {
@@ -25,7 +27,8 @@ const Home = () => {
       <Pricing/>
       <Gallery/>
       <FAQ/>
-      <ContactForm/>
+      <Testimonial1/>
+      <Contact2/>
     </div>
   );
 };

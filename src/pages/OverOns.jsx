@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Grid, Card, Avatar } from "@material-ui/core";
+import React from "react";
+import {Avatar, Card, Grid} from "@material-ui/core";
 
 const OverOns = () => {
   const cardList = [
