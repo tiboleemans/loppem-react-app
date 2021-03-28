@@ -1,16 +1,17 @@
 import React from "react";
-import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from "react-google-maps";
+import {GoogleMap, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
 
 const ContactMap1 = props => {
   return (
-    <GoogleMap defaultZoom={12} defaultCenter={{ lat: 24.9328, lng: 91.8739 }}>
+    <GoogleMap defaultZoom={15} defaultCenter={{
+      lat: 51.15994360494397,
+      lng: 3.1590096808385915
+    }}>
       {props.isMarkerShown && (
-        <Marker position={{ lat: 24.9328, lng: 91.8739 }} />
+        <Marker position={{
+          lat: 51.15994360494397,
+          lng: 3.1590096808385915
+        }}/>
       )}
     </GoogleMap>
   );

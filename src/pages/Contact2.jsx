@@ -1,22 +1,23 @@
 import React from "react";
-import { Grid, Card, TextField, Button } from "@material-ui/core";
+import {Button, Card, Grid, TextField} from "@material-ui/core";
 import ContactMap1 from "../sections/ContactMap1";
 
 const Contact2 = () => {
   return (
     <section className="section" id="contact2">
-      <div className="container text-center">
-        <h1 className="mt-0 mb-16 font-normal text-44 mx-auto">
-          Get in touch with us
-        </h1>
+        <div className="container">
+          <div className="section__header">
+            <h2>Contacteer ons</h2>
+          </div>
         <Grid container spacing={3}>
-          <Grid item md={8} sm={7} xs={12}>
+
+          <Grid item md={4} sm={7} xs={12}>
             <ContactMap1
               isMarkerShown
               googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-              loadingElement={<div className="h-full" />}
-              containerElement={<div className="h-full" />}
-              mapElement={<div className="h-full" />}
+              loadingElement={<div className="h-full"/>}
+              containerElement={<div className="h-full"/>}
+              mapElement={<div className="h-full"/>}
             />
           </Grid>
           <Grid item md={4} sm={5} xs={12}>
@@ -53,6 +54,15 @@ const Contact2 = () => {
                 </Button>
               </form>
             </Card>
+          </Grid>
+          <Grid item md={4} sm={7} xs={12}>
+            <ContactMap1
+              isMarkerShown
+              googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
+              loadingElement={<div className="h-full"/>}
+              containerElement={<div className="h-full"/>}
+              mapElement={<div className="h-full"/>}
+            />
           </Grid>
         </Grid>
       </div>

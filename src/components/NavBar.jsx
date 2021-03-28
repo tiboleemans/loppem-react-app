@@ -68,11 +68,6 @@ const NavBar = (props) => {
             </ScrollTo>
           </li>
           <li>
-            <ScrollTo to="overons" onScroll={close}>
-              Over ons
-            </ScrollTo>
-          </li>
-          <li>
             <ScrollTo to="media" onScroll={close}>
               Foto's
             </ScrollTo>
