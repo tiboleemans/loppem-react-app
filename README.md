@@ -92,7 +92,7 @@ View the raw content of this file to understand the format.
 - [ ] Mail met edit link van voorlopig inschrijven
 ### Frontend
 - [ ] Voorlopig inschrijven knop toevoegen
-- [ ] Getuigenissen
+- [X] Getuigenissen
 - [ ] Contact
 - [X] Foto's
 - [X] Faq
