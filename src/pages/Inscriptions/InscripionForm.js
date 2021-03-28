@@ -16,62 +16,14 @@ import {Axios} from "../../firebase/firebaseConfig";
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
 const disableValidation = true;
 
-const initialFieldValues = {
-  // StudentInformation
-  language: '',
-  period: '',
-  firstNameStudent: '',
-  lastNameStudent: '',
-  gender: '',
-  birthday: null,
-
-  // ParentInformation
-  firstNameParent: '',
-  lastNameParent: '',
-  email: '',
-  relation: '',
-  street: '',
-  houseNr: '',
-  busNr: '',
-
-  city: '',
-  zipCode: '',
-  gsm: '',
-  gsm2: '',
-
-  // SchoolInformation
-  nameSchool: '',
-  streetSchool: '',
-  houseNrSchool: '',
-  busNrSchool: '',
-  citySchool: '',
-  zipSchool: '',
-  titleProfSchool: '',
-  nameProfSchool: '',
-  yearsSchool: '',
-  hoursSchool: '',
-  immersionSchool: '',
-  reportSchool: '',
-
-  // ExtraInformation
-  apportedStudent: '',
-  contact: '',
-  additionalInfo: '',
-  foodInfo: '',
-  interest: '',
-  acceptPictures: false,
-  acceptTerms: false
-}
-
 export default function InscriptionForm() {
   const classes = customStyling();
   const [step, setStep] = useState(0);
-  const [id, setId] = useState();
 
   const {
     values,
     handleInputChange
-  } = useForm(initialFieldValues);
+  } = useForm();
   const [errors, setErrors] = useState({});
 
   function getStepContent() {
@@ -127,19 +79,19 @@ export default function InscriptionForm() {
   };
 
   const sentInfo = () => {
-    if (!id) {
+    if (!values.id) {
       Axios.post(
         'https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveTemporary',
         values
       ).then(res => {
-        setId(res.id);
+        values.id = res.id;
       })
     } else {
       Axios.post(
-        `https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveTemporary?id=${id}`,
+        `https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveTemporary?id=${values.id}`,
         values
       ).then(res => {
-        setId(res.id);
+        values.id = res.id;
       })
     }
   }
