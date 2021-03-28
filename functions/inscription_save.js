@@ -21,7 +21,7 @@ exports.inscriptionSaveTemporary = functions
       if (validation.error != null) {
         console.log(validation.error);
         return res.status(400).send({
-          message: 'firstNameParent and lastNameParent are mandatory, email should be a valid e-mail address.',
+          validation,
         });
       }
 
@@ -236,17 +236,17 @@ function preValidate(data) {
     zipSchool: joi.string().trim().allow(''),
     titleProfSchool: joi.string().trim().allow(''),
     nameProfSchool: joi.string().trim().allow(''),
-    yearsSchool: joi.number().min(0),
-    hoursSchool: joi.number().min(0),
-    immersionSchool: joi.boolean(),
-    reportSchool: joi.string().trim().allow(''),
-    apportedStudent: joi.boolean(),
+    yearsSchool: joi.string().trim().allow(''),
+    hoursSchool: joi.string().trim().allow(''),
+    immersionSchool: joi.boolean().allow(null),
+    reportSchool: joi.boolean().allow(null),
+    apportedStudent: joi.string().trim().allow(''),
     contact: joi.string().trim().allow(''),
     additionalInfo: joi.string().trim().allow(''),
     foodInfo: joi.string().trim().allow(''),
     interest: joi.string().trim().allow(''),
-    acceptPictures: joi.boolean(),
-    acceptTerms: joi.boolean().allow(true),
+    acceptPictures: joi.boolean().allow(null),
+    acceptTerms: joi.boolean().allow(null),
   });
 
   return schema.validate(data, {
