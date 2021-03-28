@@ -54,7 +54,7 @@ content-type: application/json
  {
     "language": "en",
     "period": "august    ",
-    "firstNameStudent": "Joske    ",
+    "firstNameStudent": "Franske    ",
     "lastNameStudent": "Vermeulen",
     "gender": "<script type=\"javascript\">alert('test')</script>",
     "birthday": "2020-01-01",

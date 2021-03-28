@@ -2,7 +2,7 @@ POST http://127.0.0.1:5001/loppem-adf69/europe-west1/addPaymentAndConfirm http/1
 content-type: application/json
 
 {
-  "studentId": "zKAjpu08RmeYb5O0hrni",
+  "studentId": "eVdASYJLguJqjPrNLjsp",
   "paymentAmount": 1220.0,
   "paymentDate": "01-01-2020",
   "paymentComplete": true

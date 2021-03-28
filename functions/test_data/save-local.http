@@ -1,4 +1,4 @@
-POST http://127.0.0.1:5001/loppem-adf69/europe-west1/inscriptionSaveTemporary?id=IFLLSEaSdov6KrUqmVxa http/1.1
+POST http://127.0.0.1:5001/loppem-adf69/europe-west1/inscriptionSaveTemporary http/1.1
 content-type: application/json
 
  {
@@ -33,7 +33,7 @@ content-type: application/json
     "yearsSchool": "6",
     "hoursSchool": "1",
     "immersionSchool": "true",
-    "reportSchool": "n",
+    "reportSchool": null,
 
     "apportedStudent": "false",
     "contact": "euhm",
