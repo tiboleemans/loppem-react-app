@@ -85,11 +85,24 @@ View the raw content of this file to understand the format.
   - [X] Opslaan data voor kok
   - [X] Opslaan 0-betaling
   - [X] Opslaan data in klas collection (na bevestiging betaling)
+- [ ] Replace copy-paste of basic data with reference to original inscription document
+- [ ] Add function to create classes
+- [ ] Add function to assign 1 student to a class
 - [ ] Versturen bevestigings mail inschrijving
-- [ ] Versturen bevestigings mail na betaling (?)
+- [ ] GET lijst klassen
+- [ ] Lijst van niet betaalde inschrijvingen
+- [ ] Export naar CSV van volledig kampjaar
+- [ ] Generieke search op inschrijving
+- [ ] Functie om rappel te sturen voor ontbrekende betaling (wanner laatste rappel verstuurt ?)
+- [ ] GET/PUT voor notes cook
+- [ ] GET/PUT voor notes nurse
+- [ ] Medewerkers + assign to klas (naam/voornaam, RRN, geboortedatum, adres)
+
 
 ### Mail Templates
 - [ ] Mail met edit link van voorlopig inschrijven
+- [ ] Mail met bevestiging inschrijving
+- [ ] Mail met rappel voor betaling
 ### Frontend
 - [ ] Voorlopig inschrijven knop toevoegen
 - [X] Getuigenissen
