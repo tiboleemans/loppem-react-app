@@ -19,7 +19,7 @@ exports.inscriptionSaveTemporary = functions
       validation = preValidate(req.body);
 
       if (validation.error != null) {
-        console.log(validation.error);
+        console.log(validation.error.details);
         return res.status(400).send({
           validation,
         });
@@ -71,7 +71,7 @@ exports.inscriptionSaveGetTempInscription = functions
       }
     });
 
-exports.inscriptionSaveMailCreatedInscription = functions
+exports.inscriptionSaveMailAfterInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
@@ -91,13 +91,26 @@ exports.inscriptionSaveMailCreatedInscription = functions
           });
     });
 
-exports.inscriptionSaveMailUpdatedInscription = functions
+exports.inscriptionSaveMailAfterUpdate = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
     .document('inscription_temporary/{docId}')
     .onUpdate((change, context) => {
-      console.info(change.before.data());
+      const previousMail = db.collection('inscription_temporary_mails_to_send')
+        .doc(context.params.docId).get();
+      if (previousMail.exists) {
+        if (previousMail.data().mailScheduled === true) {
+          const timeDiff = (new Date().getTime() - previousMail.data().updateTimestamp.getTime()) / 1000;
+          const oneDay = (60 * 60 * 24);
+          console.info(`Time diff is ${timeDiff}`);
+          if (timeDiff < oneDay) {
+            console.info(`No mail will be sent for id ${context.params.docId} because time diff is only ${timeDiff}s`);
+            return;
+          }
+        }
+      }
+
       return db
           .collection('inscription_temporary_mails_to_send')
           .doc(context.params.docId)
@@ -112,10 +125,22 @@ exports.inscriptionSaveMailUpdatedInscription = functions
           });
     });
 
+exports.inscriptionSaveConvertEmailForExt = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west1')
+    .firestore
+    .document('inscription_temporary_mails_to_send/{docId}')
+    .onWrite((change, context) => { // this is also delete ... but we don't do those by default
+      console.info(`Converting mail for request ${context.params.docId}`)
+      return prepareSendEmail(change);
+    });
+
+
+
 exports.inscriptionSaveScheduleMail = functions
     .runWith(tools.defaultBatchOptions)
     .region('europe-west1')
-    .pubsub.schedule('*/10 16-22 * * *')
+    .pubsub.schedule('0 8 * * *')
     .timeZone('Europe/Brussels')
     .onRun(async (context) => {
       console.info(`Fetching unsent mails for camp year ${tools.campYear()}`);
@@ -124,48 +149,45 @@ exports.inscriptionSaveScheduleMail = functions
           .where('mailScheduled', '==', false)
           .limit(20)
           .get();
-      let count = 0;
-      let errorCount = 0;
-      mailsToSend.forEach(async (mailRequest) => {
-        try {
-          count += 1;
-          await db.collection('mail_ext')
-              .add({
-                from: 'Loppem test <vzwtaalstagescv@gmail.com>',
-                // replyTo:
-                to: mailRequest.data().email,
-                template: {
-                  name: 'inscription-temporary-mail-edit-link', // TODO: make it language dependent ?
-                  data: mailRequest.data(),
-                },
-              }).then(() => {
-                db.collection('inscription_temporary_mails_to_send')
-                    .doc(mailRequest.id)
-                    .set({
-                      mailScheduled: true,
-                      mailScheduledLastTimestamp: new Date(),
-                    }, {
-                      merge: true,
-                    });
-              });
-        } catch (err) {
-          errorCount += 1;
-          console.error('Could not prepare to send message', mailRequest.data(), err);
-          db.collection('inscription_temporary_mails_to_send')
-              .doc(mailRequest.id)
-              .set({
-                mailScheduled: true, // don't let it loop
-                mailError: err.message,
-                mailScheduledLastTimestamp: new Date(),
-              }, {
-                merge: true,
-              });
-        }
-      });
+      mailsToSend.forEach(async (mailRequest) => prepareSendEmail(mailRequest));
       console.info(`Finished proccessing ${count} requests with ${errorCount} errors`);
       return null;
     });
 
+async function prepareSendEmail(mailRequest) {
+  try {
+    await db.collection('mail_ext')
+        .add({
+          from: 'Loppem test <vzwtaalstagescv@gmail.com>',
+          // replyTo:
+          to: mailRequest.data().email,
+          template: {
+            name: 'inscription-temporary-mail-edit-link', // TODO: make it language dependent ?
+            data: mailRequest.data(),
+          },
+        }).then(() => {
+          db.collection('inscription_temporary_mails_to_send')
+              .doc(mailRequest.id)
+              .set({
+                mailScheduled: true,
+                mailScheduledLastTimestamp: new Date(),
+              }, {
+                merge: true,
+              });
+        });
+  } catch (err) {
+    console.error('Could not prepare to send message', mailRequest.data(), err);
+    db.collection('inscription_temporary_mails_to_send')
+        .doc(mailRequest.id)
+        .set({
+          mailScheduled: false, // If it failed to schedule, let it be picked up again next day
+          mailError: err.message,
+          mailScheduledLastTimestamp: new Date(),
+        }, {
+          merge: true,
+        });
+  }
+}
 
 /**
  * Insert a new record in the table inscription_temporary.
