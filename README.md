@@ -85,7 +85,7 @@ View the raw content of this file to understand the format.
   - [X] Opslaan data voor kok
   - [X] Opslaan 0-betaling
   - [X] Opslaan data in klas collection (na bevestiging betaling)
-- [ ] Replace copy-paste of basic data with reference to original inscription document
+- [X] Replace copy-paste of basic data with reference to original inscription document
 - [ ] Add function to create classes
 - [ ] Add function to assign 1 student to a class
 - [ ] Versturen bevestigings mail inschrijving

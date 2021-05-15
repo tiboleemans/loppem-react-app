@@ -23,5 +23,7 @@ exports.addPaymentAndConfirm = adminPayment.addPaymentAndConfirm;
 
 exports.createNotesCook = adminNotes.createNotesCook;
 exports.createNotesNurse = adminNotes.createNotesNurse;
+exports.adminGetNotesCook = adminNotes.adminGetNotesCook;
+exports.adminGetNotesNurse = adminNotes.adminGetNotesNurse;
 
 exports.confirmStudentAfterPayment = adminClasses.confirmStudentAfterPayment;
