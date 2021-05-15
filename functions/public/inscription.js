@@ -1,3 +1,9 @@
+// =================================================================================
+// Student inscription
+// This class is responsible for permanently inscribing a student into the system.
+// Actions triggered by this creation are stored in the 'admin' section.
+// =================================================================================
+
 const tools = require('../tools');
 const functions = require('firebase-functions');
 const {admin, db} = require('../db');
@@ -6,6 +12,9 @@ const cors = require('cors')({
   origin: true,
 });
 
+/**
+ * REST: Permanently inscribes the student in the system.
+ */
 exports.inscriptionSubmit = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
@@ -15,7 +24,6 @@ exports.inscriptionSubmit = functions
           message: 'Method not supported',
         });
       }
-
 
       validation = validate(req.body);
       if (validation.error) {

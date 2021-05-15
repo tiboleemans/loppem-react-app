@@ -1,12 +1,24 @@
+// =================================================================================
+// Sending temporary emails
+// This class is responsible for sending e-mail after a student was temporarily
+// inscribed. The mail will only be send once a day.
+// The system relies on the installed mail sender plugin in firebase.
+// inscription_temporary_mails_to_send:
+// - campYear
+// - email
+// - firstNameParent
+// - insertTimestamp
+// - lastNameParent
+// - mailScheduled  <= this field indicates if we've prepared the data for the extention.
+// - temporaryInscriptionId <= this is (another) reference to the temporary student.
+// =================================================================================
 const tools = require('../tools');
 const functions = require('firebase-functions');
 const {admin, db} = require('../db');
 
-const cors = require('cors')({
-  origin: true,
-});
-
-
+/**
+ * Firestore#onCreate: after first temporary inscription, send e-mail
+ */
 exports.inscriptionSaveMailAfterInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
@@ -27,6 +39,9 @@ exports.inscriptionSaveMailAfterInscription = functions
           });
     });
 
+/**
+ * Firestore#onUpdate: after updating temporary inscription, send e-mail
+ */
 exports.inscriptionSaveMailAfterUpdate = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
@@ -34,7 +49,8 @@ exports.inscriptionSaveMailAfterUpdate = functions
     .document('inscription_temporary/{docId}')
     .onUpdate((change, context) => {
       const previousMail = db.collection('inscription_temporary_mails_to_send')
-        .doc(context.params.docId).get();
+          .doc(context.params.docId).get();
+
       if (previousMail.exists) {
         if (previousMail.data().mailScheduled === true) {
           const timeDiff = (new Date().getTime() - previousMail.data().updateTimestamp.getTime()) / 1000;
@@ -61,6 +77,9 @@ exports.inscriptionSaveMailAfterUpdate = functions
           });
     });
 
+/**
+ * Firestore#onWrite: convert our mail data to the format of the mail sender plugin
+ */
 exports.inscriptionSaveConvertEmailForExt = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
@@ -71,8 +90,9 @@ exports.inscriptionSaveConvertEmailForExt = functions
       return prepareSendEmail(change);
     });
 
-
-
+/**
+ * PubSub: send mails if it previously failed
+ */
 exports.inscriptionSaveScheduleMail = functions
     .runWith(tools.defaultBatchOptions)
     .region('europe-west1')
@@ -90,11 +110,18 @@ exports.inscriptionSaveScheduleMail = functions
       return null;
     });
 
+/**
+ * Converts the temporary student data and store it into the mail extention table (which will perform the actual sending of the e-mail).
+ * @param {*} mailRequest the firebase document
+ * @return {null} nothing
+ */
 async function prepareSendEmail(mailRequest) {
   try {
     mailData = null;
     if (mailRequest.data) {
       mailData = mailRequest.data();
+    } else if (mailData.before.data().mailScheduled === true && mailData.after.data().mailScheduled === false && mailData.after.data().mailError != '') {
+      mailData = mailRequest.after.data();
     } else {
       return; // do not process updates
     }

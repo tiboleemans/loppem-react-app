@@ -1,3 +1,6 @@
+// =================================================================================
+// Management of cook's and nurse's notes.
+// =================================================================================
 const tools = require('../tools');
 const functions = require('firebase-functions');
 const {admin, db} = require('../db');

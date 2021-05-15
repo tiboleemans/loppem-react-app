@@ -1,3 +1,9 @@
+// =================================================================================
+// Student temporary inscription
+// This class is responsible for CRU interaction with the inscription_temporary,
+// containing the students which aren't permanently inscribed into the system (yet).
+// This might trigger actions defined in the inscription_temporary_mails_to_send.js.
+// =================================================================================
 const tools = require('../tools');
 const functions = require('firebase-functions');
 const {admin, db} = require('../db');
@@ -6,7 +12,9 @@ const cors = require('cors')({
   origin: true,
 });
 
-
+/**
+ * REST: temporarily inscribe a student into the system
+ */
 exports.inscriptionSaveTemporary = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
@@ -43,6 +51,9 @@ exports.inscriptionSaveTemporary = functions
       });
     });
 
+/**
+ * REST: fetch a temporarily saved student
+ */
 exports.inscriptionSaveGetTempInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
@@ -76,9 +87,9 @@ exports.inscriptionSaveGetTempInscription = functions
 /**
  * Insert a new record in the table inscription_temporary.
  * Returns the document ID
- * @param {*} data the request body
+ * @param {*} data the request body (student data)
  */
- async function performInsert(data) {
+async function performInsert(data) {
   const writeResult = await db
       .collection('inscription_temporary')
       .add({
@@ -92,8 +103,8 @@ exports.inscriptionSaveGetTempInscription = functions
 
 /**
  * Updates an existing document, merges the data (e.g. missing fields will not be removed)
- * @param {*} docId
- * @param {*} data
+ * @param {string} docId
+ * @param {*} data student data
  */
 async function performUpdate(docId, data) {
   await db
@@ -111,7 +122,7 @@ async function performUpdate(docId, data) {
 
 /**
  * Contact information of parents is required, otherwise we can't contact them
- * @param {*} data
+ * @param {*} data student data
  * @return {boolean} true if contact information is correct
  */
 function preValidate(data) {
@@ -168,6 +179,7 @@ function preValidate(data) {
 
 /**
  * Removes the technical fields when sending data back to the front-end
+ * @param {*} data student data
  * @return {*} the document without timestamps
  */
 function stripTechnicalFields(data) {

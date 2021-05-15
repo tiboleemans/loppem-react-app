@@ -1,3 +1,7 @@
+// =================================================================================
+// Payment data management
+// This class is responsible for handling data in the payment table
+// =================================================================================
 const tools = require('../tools');
 const functions = require('firebase-functions');
 const {admin, db} = require('../db');
