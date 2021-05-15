@@ -1,19 +1,27 @@
-const inscriptionSave = require('./inscription_save');
-const inscriptionSubmit = require('./inscription_submit');
+const inscriptionSave = require('./public/inscription_temporary');
+const inscriptionMailToSend = require('./public/inscription_temporary_mails_to_send');
+const inscriptionSubmit = require('./public/inscription');
+
+const adminPayment = require('./admin/payments');
+const adminNotes = require('./admin/notes');
+const adminClasses = require('./admin/classes');
 
 // ////.inscriptionTemporarySa <-- this is the max visible lenght of a function name
 exports.inscriptionSaveTemporary = inscriptionSave.inscriptionSaveTemporary;
 exports.inscriptionSaveGetTempInscription = inscriptionSave.inscriptionSaveGetTempInscription;
-exports.inscriptionSaveMailAfterInscription = inscriptionSave.inscriptionSaveMailAfterInscription;
-exports.inscriptionSaveMailAfterUpdate = inscriptionSave.inscriptionSaveMailAfterUpdate;
-exports.inscriptionSaveConvertEmailForExt = inscriptionSave.inscriptionSaveConvertEmailForExt;
-exports.inscriptionSaveMailUpdatedInscription = inscriptionSave.inscriptionSaveMailUpdatedInscription;
-exports.inscriptionSaveScheduleMail = inscriptionSave.inscriptionSaveScheduleMail;
+
+exports.inscriptionSaveMailAfterInscription = inscriptionMailToSend.inscriptionSaveMailAfterInscription;
+exports.inscriptionSaveMailAfterUpdate = inscriptionMailToSend.inscriptionSaveMailAfterUpdate;
+exports.inscriptionSaveConvertEmailForExt = inscriptionMailToSend.inscriptionSaveConvertEmailForExt;
+exports.inscriptionSaveMailUpdatedInscription = inscriptionMailToSend.inscriptionSaveMailUpdatedInscription;
+exports.inscriptionSaveScheduleMail = inscriptionMailToSend.inscriptionSaveScheduleMail;
 
 exports.inscriptionSubmit = inscriptionSubmit.inscriptionSubmit;
-exports.createInitialPayment = inscriptionSubmit.createInitialPayment;
-exports.createNotesCook = inscriptionSubmit.createNotesCook;
-exports.createNotesNurse = inscriptionSubmit.createNotesNurse;
 
-exports.addPaymentAndConfirm = inscriptionSubmit.addPaymentAndConfirm;
-exports.confirmStudentAfterPayment = inscriptionSubmit.confirmStudentAfterPayment;
+exports.createInitialPayment = adminPayment.createInitialPayment;
+exports.addPaymentAndConfirm = adminPayment.addPaymentAndConfirm;
+
+exports.createNotesCook = adminNotes.createNotesCook;
+exports.createNotesNurse = adminNotes.createNotesNurse;
+
+exports.confirmStudentAfterPayment = adminClasses.confirmStudentAfterPayment;
