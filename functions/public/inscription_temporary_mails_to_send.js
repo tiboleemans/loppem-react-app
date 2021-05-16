@@ -118,10 +118,16 @@ exports.inscriptionSaveScheduleMail = functions
 async function prepareSendEmail(mailRequest) {
   try {
     mailData = null;
+    id = null;
     if (mailRequest.data) {
       mailData = mailRequest.data();
+      id = mailRequest.id;
+    } else if (!mailRequest.before.data() && mailRequest.after.data()) {
+      mailData = mailRequest.after.data();
+      id = mailRequest.after.id;
     } else if (mailRequest.before.data().mailScheduled === true && mailRequest.after.data().mailScheduled === false && mailRequest.after.data().mailError != '') {
       mailData = mailRequest.after.data();
+      id = mailRequest.after.id;
     } else {
       return; // do not process updates
     }
@@ -137,7 +143,7 @@ async function prepareSendEmail(mailRequest) {
           },
         }).then(() => {
           db.collection('inscription_temporary_mails_to_send')
-              .doc(mailData.id)
+              .doc(id)
               .set({
                 mailScheduled: true,
                 mailScheduledLastTimestamp: new Date(),
@@ -147,9 +153,9 @@ async function prepareSendEmail(mailRequest) {
               });
         });
   } catch (err) {
-    console.error('Could not prepare to send message', mailData, err);
+    console.error('Could not prepare to send message', mailRequest.after.id, err);
     db.collection('inscription_temporary_mails_to_send')
-        .doc(mailData.id)
+        .doc(mailRequest.id)
         .set({
           mailScheduled: false, // If it failed to schedule, let it be picked up again next day
           mailError: err.message,
