@@ -5,6 +5,7 @@ const inscriptionSubmit = require('./public/inscription');
 const adminPayment = require('./admin/payments');
 const adminNotes = require('./admin/notes');
 const adminClasses = require('./admin/classes');
+const adminStudent = require('./admin/student.js');
 
 // ////.inscriptionTemporarySa <-- this is the max visible lenght of a function name
 exports.inscriptionSaveTemporary = inscriptionSave.inscriptionSaveTemporary;
@@ -24,5 +25,7 @@ exports.addPaymentAndConfirm = adminPayment.addPaymentAndConfirm;
 exports.createNotesCook = adminNotes.createNotesCook;
 exports.createNotesNurse = adminNotes.createNotesNurse;
 exports.adminGetStudentNotes = adminNotes.adminGetStudentNotes;
+exports.adminListStudentNotes = adminNotes.adminListStudentNotes;
 
-exports.confirmStudentAfterPayment = adminClasses.confirmStudentAfterPayment;
+exports.createStudentAfterPayment = adminStudent.createStudentAfterPayment;
+exports.addNewStudentToDefaultClass = adminClasses.addNewStudentToDefaultClass;

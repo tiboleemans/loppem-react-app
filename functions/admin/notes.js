@@ -19,7 +19,7 @@ const cors = require('cors')({
 exports.adminGetStudentNotes = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
-    .https.onRequest(async (req, res) => {
+    .https.onRequest((req, res) => {
       if (req.method !== 'GET') {
         return res.status(400).send({
           message: 'Method not supported',
@@ -40,35 +40,109 @@ exports.adminGetStudentNotes = functions
         });
       }
 
-      const doc = await db.collection(getTableName(type))
-          .doc(docId).get();
-      if (doc.exists) {
-        const body = await fetchStudent(doc.data());
-        return cors(req, res, () => {
-          res.send(stripTechnicalFields(body));
-        });
-      } else {
-        return cors(req, res, () => {
-          res.status(404).send({
-            message: `Document with ${docId} not found`,
-            data: doc,
-          });
+      return new Promise((resolve, reject) => {
+        db.collection(getTableName(type))
+            .doc(docId)
+            .get()
+            .then(async (doc) => {
+              if (doc.exists) {
+                await fetchStudent(doc.data())
+                    .then((student) => {
+                      resolve(cors(req, res, () => {
+                        res.send(stripTechnicalFields(student));
+                      }));
+                    });
+              } else {
+                resolve(cors(req, res, () => {
+                  res.status(404).send({
+                    message: `Document with ${docId} not found`,
+                    data: doc,
+                  });
+                }));
+              }
+            });
+      });
+    });
+
+/**
+ * REST: List notes.
+ * Method: GET
+ * Request Parameters:
+ *  - type: 'cook' or 'nurse'
+ *  - campyear: mandatory (int)
+ *  - period: mandatory (string)
+ */
+exports.adminListStudentNotes = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west1')
+    .https.onRequest((req, res) => {
+      if (req.method !== 'GET') {
+        return res.status(400).send({
+          message: 'Method not supported',
         });
       }
+
+      const campYear = req.query.campyear;
+      if (campYear == null) {
+        return res.status(400).send({
+          message: 'campyear is a mandatory parameter',
+        });
+      }
+
+      const period = req.query.period;
+      if (period == null) {
+        return res.status(400).send({
+          message: 'period is a mandatory parameter',
+        });
+      }
+
+      const type = req.query.type;
+      if (type == null) {
+        return res.status(400).send({
+          message: 'type is a mandatory parameter',
+        });
+      }
+      const resultList = [];
+      return new Promise((resolve, reject) => {
+        db.collection(getTableName(type))
+            .where('campYear', '==', parseInt(campYear))
+            .where('period', '==', period)
+            .get()
+            .then(async (querySnapshot) => {
+              for (i = 0; i < querySnapshot.size; ++i) {
+                const doc = querySnapshot.docs[i];
+                await fetchStudent(doc.data()).then((noteWithStudent) => {
+                  resultList.push(stripTechnicalFields(noteWithStudent));
+                });
+              }
+              if (resultList.length > 0) {
+                resolve(cors(req, res, () => {
+                  res.send(resultList);
+                }));
+              } else {
+                resolve(cors(req, res, () => {
+                  res.status(404).send({
+                    message: `No results`,
+                  });
+                }));
+              }
+            });
+      });
     });
 
 exports.createNotesCook = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
-    .document('inscription/{docId}')
+    .document('student/{docId}')
     .onCreate((change, context) => {
       return db
           .collection('notes_cook')
           .doc(context.params.docId)
           .set({
-            student: db.collection('inscription').doc(context.params.docId),
+            student: change.ref,
             campYear: change.data().campYear,
+            period: change.data().period,
             foodInfo: change.data().foodInfo,
             insertTimestamp: new Date(),
           });
@@ -78,14 +152,15 @@ exports.createNotesNurse = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
-    .document('inscription/{docId}')
+    .document('student/{docId}')
     .onCreate((change, context) => {
       return db
           .collection('notes_nurse')
           .doc(context.params.docId)
           .set({
-            student: db.collection('inscription').doc(context.params.docId),
+            student: change.ref,
             campYear: change.data().campYear,
+            period: change.data().period,
             additionalInfo: change.data().additionalInfo,
             insertTimestamp: new Date(),
           });
@@ -123,10 +198,14 @@ function stripTechnicalFields(data) {
  * @param {*} data the data from the notes table
  * @return {*} the document with actual student data instead of the firestore doc
  */
-async function fetchStudent(data) {
-  const studentData = {...data};
-  delete studentData.student;
-  const student = await data.student.get();
-  studentData.student = stripTechnicalFields(student.data());
-  return studentData;
+function fetchStudent(data) {
+  return new Promise((resolve, reject) => {
+    const studentData = {...data};
+    delete studentData.student;
+    data.student.get()
+        .then((student) => {
+          studentData.student = stripTechnicalFields(student.data());
+          resolve(studentData);
+        });
+  });
 }

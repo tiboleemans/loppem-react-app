@@ -1,0 +1,5 @@
+GET http://localhost:5001/loppem-adf69/europe-west1/adminListStudentNotes?type=nurse&campyear=2021&period=august
+
+###
+
+GET http://localhost:5001/loppem-adf69/europe-west1/adminGetStudentNotes?id=eU4BqGPY5pzR7XSo9z9i&type=nurse

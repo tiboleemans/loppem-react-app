@@ -10,7 +10,7 @@ const server = supertest.agent('http://localhost:5001/loppem-adf69/europe-west1'
 let studentId = null;
 describe('Notes', function() {
   before(function(done) {
-    this.timeout(15000);
+    this.timeout(20000);
     server
         .post('/inscriptionSubmit')
         .send(data.validStudent)
@@ -22,16 +22,27 @@ describe('Notes', function() {
           should.exist(res.body.id);
           studentId = res.body.id;
           console.info(`\tStudent=${studentId}`);
+          server
+              .post('/addPaymentAndConfirm')
+              .send({
+                ...data.validPayment,
+                studentId: studentId,
+              })
+              .expect('Content-type', /json/)
+              .expect(200)
+              .end(function(err, res) {
+                if (err) return done(err);
 
-          new Promise((resolve) => setTimeout(done, 12000))
-              .then(done);
-
-          // done();
+                should.exist(res.body.message);
+                res.body.message.should.equal('ok');
+                new Promise((resolve) => setTimeout(done, 12000))
+                    .then(done);
+              });
         });
   });
 
   describe('Nurse notes', function() {
-    it('The nurses notes should be retreivable', function(done) {
+    it('Should retreive the nurse notes of a single student', function(done) {
       server
           .get(`/adminGetStudentNotes?id=${studentId}&type=nurse`)
           .expect('Content-type', /json/)
@@ -47,10 +58,24 @@ describe('Notes', function() {
             done();
           });
     });
+
+    it('Should get all nurse notes', function(done) {
+      server
+          .get(`/adminListStudentNotes?type=nurse&campyear=2021&period=august`)
+          .expect('Content-type', /json/)
+          .expect(200)
+          .end(function(err, res) {
+            if (err) return done(err);
+
+            res.body.should.be.instanceof(Array);
+
+            done();
+          });
+    });
   });
 
   describe('Cook notes', function() {
-    it('The cook\'s notes should be retreivable', function(done) {
+    it('It should retreive the cook\'s notes of a single student', function(done) {
       server
           .get(`/adminGetStudentNotes?id=${studentId}&type=cook`)
           .expect('Content-type', /json/)
