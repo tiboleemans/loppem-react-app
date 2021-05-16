@@ -120,7 +120,7 @@ async function prepareSendEmail(mailRequest) {
     mailData = null;
     if (mailRequest.data) {
       mailData = mailRequest.data();
-    } else if (mailData.before.data().mailScheduled === true && mailData.after.data().mailScheduled === false && mailData.after.data().mailError != '') {
+    } else if (mailRequest.before.data().mailScheduled === true && mailRequest.after.data().mailScheduled === false && mailRequest.after.data().mailError != '') {
       mailData = mailRequest.after.data();
     } else {
       return; // do not process updates
