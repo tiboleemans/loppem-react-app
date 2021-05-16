@@ -36,3 +36,32 @@ exports.saferJoi = Joi.extend((joi) => {
     },
   };
 });
+
+/**
+ * Removes the technical fields when sending data back to the front-end
+ * @param {*} data student data
+ * @return {*} the document without timestamps
+ */
+exports.stripTechnicalFields = function stripTechnicalFields(data) {
+  const strippedData = {...data};
+  delete strippedData.insertTimestamp;
+  delete strippedData.updateTimestamp;
+  return strippedData;
+};
+
+/**
+ * Resolves the student data
+ * @param {*} data the data from the notes table
+ * @return {*} the document with actual student data instead of the firestore doc
+ */
+exports.fetchStudent = function fetchStudent(data) {
+  return new Promise((resolve, reject) => {
+    const studentData = {...data};
+    delete studentData.student;
+    data.student.get()
+        .then((student) => {
+          studentData.student = this.stripTechnicalFields(student.data());
+          resolve(studentData);
+        });
+  });
+};

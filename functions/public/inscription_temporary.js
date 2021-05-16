@@ -80,7 +80,7 @@ exports.inscriptionSaveGetTempInscription = functions
       const doc = await db.collection('inscription_temporary')
           .doc(docId).get();
       if (doc.exists) {
-        return res.send(stripTechnicalFields(doc.data()));
+        return res.send(tools.stripTechnicalFields(doc.data()));
       } else {
         return res.status(404).send({
           message: `Document with ${docId} not found`,
@@ -181,16 +181,4 @@ function preValidate(data) {
       escapeHtml: true, // espace the original data in error messages
     },
   });
-}
-
-/**
- * Removes the technical fields when sending data back to the front-end
- * @param {*} data student data
- * @return {*} the document without timestamps
- */
-function stripTechnicalFields(data) {
-  const strippedData = {...data};
-  delete strippedData.insertTimestamp;
-  delete strippedData.updateTimestamp;
-  return strippedData;
 }

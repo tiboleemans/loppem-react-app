@@ -46,10 +46,10 @@ exports.adminGetStudentNotes = functions
             .get()
             .then(async (doc) => {
               if (doc.exists) {
-                await fetchStudent(doc.data())
+                await tools.fetchStudent(doc.data())
                     .then((student) => {
                       resolve(cors(req, res, () => {
-                        res.send(stripTechnicalFields(student));
+                        res.send(tools.stripTechnicalFields(student));
                       }));
                     });
               } else {
@@ -111,8 +111,8 @@ exports.adminListStudentNotes = functions
             .then(async (querySnapshot) => {
               for (i = 0; i < querySnapshot.size; ++i) {
                 const doc = querySnapshot.docs[i];
-                await fetchStudent(doc.data()).then((noteWithStudent) => {
-                  resultList.push(stripTechnicalFields(noteWithStudent));
+                await tools.fetchStudent(doc.data()).then((noteWithStudent) => {
+                  resultList.push(tools.stripTechnicalFields(noteWithStudent));
                 });
               }
               if (resultList.length > 0) {
@@ -179,33 +179,4 @@ function getTableName(type) {
   } else {
     return null;
   }
-}
-
-/**
- * Removes the technical fields when sending data back to the front-end
- * @param {*} data student data
- * @return {*} the document without timestamps
- */
-function stripTechnicalFields(data) {
-  const strippedData = {...data};
-  delete strippedData.insertTimestamp;
-  delete strippedData.updateTimestamp;
-  return strippedData;
-}
-
-/**
- * Resolves the student data
- * @param {*} data the data from the notes table
- * @return {*} the document with actual student data instead of the firestore doc
- */
-function fetchStudent(data) {
-  return new Promise((resolve, reject) => {
-    const studentData = {...data};
-    delete studentData.student;
-    data.student.get()
-        .then((student) => {
-          studentData.student = stripTechnicalFields(student.data());
-          resolve(studentData);
-        });
-  });
 }
