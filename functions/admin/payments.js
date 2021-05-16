@@ -48,15 +48,7 @@ exports.createInitialPayment = functions
           .collection('payment')
           .doc(context.params.docId)
           .set({
-            firstNameParent: change.data().firstNameParent,
-            lastNameParent: change.data().lastNameParent,
-            firstNameStudent: change.data().firstNameStudent,
-            lastNameStudent: change.data().lastNameStudent,
-            period: change.data().period,
-            language: change.data().language,
-            email: change.data().email,
-            campYear: change.data().campYear,
-            paidAmount: 0.00,
+            inscription: change.ref,
             insertTimestamp: new Date(),
           });
     });

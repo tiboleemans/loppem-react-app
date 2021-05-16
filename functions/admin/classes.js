@@ -9,18 +9,13 @@ const cors = require('cors')({
   origin: true,
 });
 
-exports.confirmStudentAfterPayment = functions
+exports.addNewStudentToDefaultClass = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
-    .document('payment/{docId}')
-    .onUpdate((change, context) => {
-      if (!change.after.data().paymentComplete || change.before.data().paymentComplete) {
-        console.info(`Confirmation for ${context.params.docId} became ${change.after.data().paymentComplete}, was ${change.before.data().paymentComplete}`);
-        return true;
-      }
-
-      const data = change.after.data();
+    .document('student/{docId}')
+    .onCreate(async (change, context) => {
+      const data = change.data();
       const defaultClass = data.campYear + '_' + data.period + '_' + data.language + '_default';
       console.log(`Confirming studentId ${context.params.docId} into default class ${defaultClass}`);
       db
@@ -37,9 +32,7 @@ exports.confirmStudentAfterPayment = functions
           .collection('class_assignment')
           .doc(context.params.docId)
           .set({
-            student: db.collection('inscription').doc(context.params.docId),
-            firstNameStudent: data.firstNameStudent,
-            lastNameStudent: data.lastNameStudent,
+            student: data,
             insertTimestamp: new Date(),
           });
     });
