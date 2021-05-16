@@ -33,7 +33,7 @@ describe('Notes', function() {
   describe('Nurse notes', function() {
     it('The nurses notes should be retreivable', function(done) {
       server
-          .get(`/adminGetNotesNurse?id=${studentId}`)
+          .get(`/adminGetStudentNotes?id=${studentId}&type=nurse`)
           .expect('Content-type', /json/)
           .expect(200)
           .end(function(err, res) {
@@ -52,7 +52,7 @@ describe('Notes', function() {
   describe('Cook notes', function() {
     it('The cook\'s notes should be retreivable', function(done) {
       server
-          .get(`/adminGetNotesCook?id=${studentId}`)
+          .get(`/adminGetStudentNotes?id=${studentId}&type=cook`)
           .expect('Content-type', /json/)
           .expect(200)
           .end(function(err, res) {

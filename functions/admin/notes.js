@@ -10,9 +10,13 @@ const cors = require('cors')({
 });
 
 /**
- * REST: fetch cook's notes
+ * REST: fetch notes for a particular student.
+ * Method: GET
+ * Request Parameters:
+ *  - id
+ *  - type: 'cook' or 'nurse'
  */
-exports.adminGetNotesCook = functions
+exports.adminGetStudentNotes = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .https.onRequest(async (req, res) => {
@@ -29,45 +33,14 @@ exports.adminGetNotesCook = functions
         });
       }
 
-      const doc = await db.collection('notes_cook')
-          .doc(docId).get();
-      if (doc.exists) {
-        const body = await fetchStudent(doc.data());
-        return cors(req, res, () => {
-          res.send(stripTechnicalFields(body));
-        });
-      } else {
-        return cors(req, res, () => {
-          res.status(404).send({
-            message: `Document with ${docId} not found`,
-            data: doc,
-          });
-        });
-      }
-    });
-
-
-/**
- * REST: fetch nurse's notes
- */
-exports.adminGetNotesNurse = functions
-    .runWith(tools.defaultHttpOptions)
-    .region('europe-west1')
-    .https.onRequest(async (req, res) => {
-      if (req.method !== 'GET') {
+      const type = req.query.type;
+      if (type == null) {
         return res.status(400).send({
-          message: 'Method not supported',
+          message: 'type is a mandatory parameter',
         });
       }
 
-      const docId = req.query.id;
-      if (docId == null) {
-        return res.status(400).send({
-          message: 'id is a mandatory parameter',
-        });
-      }
-
-      const doc = await db.collection('notes_nurse')
+      const doc = await db.collection(getTableName(type))
           .doc(docId).get();
       if (doc.exists) {
         const body = await fetchStudent(doc.data());
@@ -118,6 +91,20 @@ exports.createNotesNurse = functions
           });
     });
 
+/**
+ * Gets the table name for either cook or nurse notes.
+ * @param {string} type
+ * @return {string} a document table name.
+ */
+function getTableName(type) {
+  if (type === 'cook') {
+    return 'notes_cook';
+  } else if (type === 'nurse') {
+    return 'notes_nurse';
+  } else {
+    return null;
+  }
+}
 
 /**
  * Removes the technical fields when sending data back to the front-end
