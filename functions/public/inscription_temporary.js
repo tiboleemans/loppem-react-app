@@ -14,6 +14,9 @@ const cors = require('cors')({
 
 /**
  * REST: temporarily inscribe a student into the system
+ * Method: POST
+ * Request Parameters:
+ *  - id (optional, if present it will update an existing record)
  */
 exports.inscriptionSaveTemporary = functions
     .runWith(tools.defaultHttpOptions)
@@ -53,6 +56,9 @@ exports.inscriptionSaveTemporary = functions
 
 /**
  * REST: fetch a temporarily saved student
+ * Method: GET
+ * Request Parameters:
+ *  - id
  */
 exports.inscriptionSaveGetTempInscription = functions
     .runWith(tools.defaultHttpOptions)

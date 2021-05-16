@@ -14,6 +14,7 @@ const cors = require('cors')({
 
 /**
  * REST: Permanently inscribes the student in the system.
+ * Method: POST
  */
 exports.inscriptionSubmit = functions
     .runWith(tools.defaultHttpOptions)
