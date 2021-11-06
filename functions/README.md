@@ -50,7 +50,7 @@ For the initial setup of the emulators, run `firebase init emulators`. Normally 
 
 ## Dowloading the emulators
 ```bash
-firebase setup:emulators:databas
+firebase setup:emulators:database
 firebase setup:emulators:firestore
 firebase setup:emulators:pubsub
 ```
