@@ -3,7 +3,7 @@ import React from "react";
 import {Avatar, Card, CardContent} from "@material-ui/core";
 import Carousel from "../common/Carousel";
 
-const Testimonial1 = () => {
+const Testimonial = () => {
   const testimonialList = [
     {
       user: {
@@ -76,4 +76,4 @@ const Testimonial1 = () => {
   );
 };
 
-export default Testimonial1;
+export default Testimonial;

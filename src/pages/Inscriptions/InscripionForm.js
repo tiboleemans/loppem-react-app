@@ -164,12 +164,13 @@ export default function InscriptionForm() {
               {step === steps.length ? (
                 <React.Fragment>
                   <Typography variant="h5" gutterBottom>
-                    Thank you for your order.
+                    Bedankt voor uw inschrijving.
                   </Typography>
                   <Typography variant="subtitle1">
-                    Your order number is #2001539. We have emailed your order confirmation, and
-                    will
-                    send you an update when your order has shipped.
+                    U ontvangt van ons een bevestigingsmail (gelieve ook uw ongewenste e-mail na te kijken).
+                    Begin juni contacteren wij u per e-mail met praktische informatie m.b.t. de taalvakantie.
+                    We verwachten u op de eerste dag van de stage in de abdijschool van Zevenkerken.
+                    Gelieve het voorschot binnen de drie werkdagen te storten op rekening BE16 0018 5319 2474.
                   </Typography>
                 </React.Fragment>
               ) : (

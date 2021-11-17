@@ -16,17 +16,20 @@
     "cors": "^2.8.5",
     "date-fns": "^2.16.1",
     "firebase": "^7.22.1",
+    "firebase-functions": "^3.16.0",
     "firebase-tools": "^9.1.0",
+    "joi": "^17.4.2",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-countdown": "^2.3.1",
     "react-dom": "^16.13.1",
+    "react-google-maps": "^9.4.5",
     "react-perfect-scrollbar": "^1.5.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "swiper": "^4.5.0",
-    "react-google-maps": "^9.4.5"
+    "xss": "^1.0.10"
   },
   "scripts": {
     "start": "react-scripts start",

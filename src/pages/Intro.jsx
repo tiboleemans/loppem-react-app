@@ -77,7 +77,7 @@ const Intro = () => {
                             classes.intro
                         )}
                     >
-                        <Countdown date={'2021-07-02T11:00:00'} renderer={renderer}/>,
+                        <Countdown date={'2022-07-02T11:00:00'} renderer={renderer}/>,
                         <h1 className="font-medium text-44 text-primary mb-2">
                             Loppem Conversa
                         </h1>

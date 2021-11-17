@@ -7,27 +7,29 @@ import InscriptionForm from "./Inscriptions/InscripionForm";
 import Pricing from "./Pricing";
 import Gallery from "./Gallery";
 import FAQ from "./FAQ";
-import Testimonial1 from "./Testimonial1";
-import Contact2 from "./Contact2";
+import Testimonial from "./Testimonial";
+import Contact from "./Contact";
+import Footer from "./Footer";
 
 const Home = () => {
-  useEffect(() => {
-    scrollTo("root");
-  }, [scrollTo]);
+    useEffect(() => {
+        scrollTo("root");
+    }, [scrollTo]);
 
-  return (
-    <div className="home">
-      <NavBar/>
-      <Intro/>
-      <TaalVakanties/>
-      <InscriptionForm/>
-      <Pricing/>
-      <Gallery/>
-      <FAQ/>
-      <Testimonial1/>
-      <Contact2/>
-    </div>
-  );
+    return (
+        <div className="home">
+            <NavBar/>
+            <Intro/>
+            <TaalVakanties/>
+            <InscriptionForm/>
+            <Pricing/>
+            <Gallery/>
+            <FAQ/>
+            <Testimonial/>
+            <Contact/>
+            <Footer/>
+        </div>
+    );
 };
 
 export default Home;

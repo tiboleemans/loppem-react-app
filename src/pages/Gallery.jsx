@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useState} from "react";
 import {Grid, Button} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
+import {lighten, makeStyles} from "@material-ui/core/styles";
 import {Link} from "react-router-dom";
+import CardMedia from "@material-ui/core/CardMedia";
+import Section from "../components/Section";
 
 const useStyles = makeStyles(({
                                   palette,
@@ -32,12 +34,34 @@ const useStyles = makeStyles(({
         background: "rgba(0,0,0,0.67)",
         zIndex: 5,
     },
+    buttonGroupBG: {
+        background: lighten(palette.primary.light, 0.9),
+        "&>div": {
+            transition: "all 250ms ease",
+            "&:hover": {
+                background: palette.primary.main,
+                color: palette.primary.contrastText,
+                borderRadius: 8,
+            },
+            [theme.breakpoints.down("sm")]: {
+                textAlign: "center",
+                width: "100%",
+            },
+        },
+    },
 }));
 
 const Gallery = () => {
     const classes = useStyles();
+    const [tabIndex, setTabIndex] = useState(0);
 
-    const imageList = [{
+    const sections = [{
+        title: "Team"
+    }, {
+        title: "Team2"
+    }];
+
+    const imageList = [[{
         title: "",
         subtitle: "Er worden tal van leuke spelen georganiseerd",
         image: require("../images/monitrek.jpg"),
@@ -61,26 +85,114 @@ const Gallery = () => {
         title: "",
         subtitle: "Spelletjes waar we plezier in de verf zetten",
         image: require("../images/verf.jpg"),
-    }];
+    }],
+        [{
+            title: "Thibault Leemans - voorzitter",
+            subtitle: "Thibault is de voorzitter van Loppem Conversa en neemt het initiatief voor de organisatie van de verschillende aspecten doorheen het jaar." +
+                "Tijdens de stage is hij coördinator, die mee inspringt waar nodig.",
+            image: require("../images/Thibault.JPG"),
+        }, {
+            title: "Bob Beuls - secretaris",
+            subtitle: "Bob is de secretaris van Loppem Conversa",
+            image: require("../images/Thibault.JPG"),
+        }, {
+            title: "Briek Deblaere - penningmeester",
+            subtitle: "Briek beheert de financiën",
+            image: require("../images/briek.jpg"),
+        }],
+        [{
+            title: "",
+            subtitle: "Spelletjes waar we plezier in de verf zetten",
+            image: require("../images/domein.mp4"),
+        },
+            {
+                title: "",
+                subtitle: "Spelletjes waar we plezier in de verf zetten",
+                image: require("../images/domein.mp4"),
+            },
+            {
+                title: "",
+                subtitle: "Spelletjes waar we plezier in de verf zetten",
+                image: require("../images/domein.mp4"),
+            },
+            {
+                title: "",
+                subtitle: "Spelletjes waar we plezier in de verf zetten",
+                image: require("../images/domein.mp4"),
+            },
+            {
+                title: "",
+                subtitle: "Spelletjes waar we plezier in de verf zetten",
+                image: require("../images/domein.mp4"),
+            },
+            {
+                title: "",
+                subtitle: "Spelletjes waar we plezier in de verf zetten",
+                image: require("../images/domein.mp4"),
+            },
+            {
+                title: "",
+                subtitle: "Spelletjes waar we plezier in de verf zetten",
+                image: require("../images/domein.mp4"),
+            }]
+    ];
 
     return (<section className="section" id="gallery1">
         <div className="section bg-light-gray">
             <div className="container">
                 <div className="mb-8">
                     <h1 className="font-normal text-44 mt-0">Loppem Conversa in beeld</h1>
-                    <p className="mb-16">
-                        Bij Loppem Conversa worden talrijke leuke activiteiten georganiseerd.
-                    </p>
                 </div>
-                <Grid container spacing={3}>
-                    {imageList.map((item, ind) => (<Grid key={ind} item lg={4} md={4} sm={4} xs={12}>
-                        <div className={classes.cardHolder}>
-                            <img className="w-full block" src={item.image} alt=""/>
-                            <div className={classes.cardOverlay}>
-                                <h3 className="m-0">{item.title}</h3>
-                                <p className="text-inherit">{item.subtitle}</p>
-                            </div>
+                <div className="inline-block mb-10">
+                    <div
+                        className={`flex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG}`}
+                    >
+                        <Section data={sections}/>
+                        <div
+                            className="px-6 py-2 cursor-pointer"
+                            onClick={() => setTabIndex(0)}
+                        >
+                            Activiteiten
                         </div>
+                        <div
+                            className="px-6 py-2 cursor-pointer"
+                            onClick={() => setTabIndex(1)}
+                        >
+                            Team
+                        </div>
+                        <div
+                            className="px-6 py-2 cursor-pointer"
+                            onClick={() => setTabIndex(2)}
+                        >
+                            Videos
+                        </div>
+                    </div>
+                </div>
+
+                <Grid container spacing={3}>
+                    {imageList[tabIndex].map((item, ind) => (<Grid key={ind} item lg={4} md={4} sm={4} xs={12}>
+                        {
+                            item.image.endsWith(".mp4") ?
+                                <CardMedia
+                                    style={{
+                                        width: '90%',
+                                        margin: "150px auto 0px auto"
+                                    }}
+                                    component="video"
+                                    image={item.image}
+                                    title={item.title}
+                                    controls
+                                />
+                                :
+                                <div className={classes.cardHolder}>
+                                    <img className="w-full block" src={item.image} alt=""/>
+                                    <div className={classes.cardOverlay}>
+                                        <h3 className="m-0">{item.title}</h3>
+                                        <p className="text-inherit">{item.subtitle}</p>
+                                    </div>
+                                </div>
+                        }
+
                     </Grid>))}
                 </Grid>
 
