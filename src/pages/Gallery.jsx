@@ -3,6 +3,7 @@ import {Grid, Button} from "@material-ui/core";
 import {lighten, makeStyles} from "@material-ui/core/styles";
 import {Link} from "react-router-dom";
 import CardMedia from "@material-ui/core/CardMedia";
+import useTabs from "./useTabs";
 import Section from "../components/Section";
 
 const useStyles = makeStyles(({
@@ -53,54 +54,55 @@ const useStyles = makeStyles(({
 
 const Gallery = () => {
     const classes = useStyles();
-    const [tabIndex, setTabIndex] = useState(0);
-
-    const sections = [{
-        title: "Team"
+    const { body, header } = useTabs([{
+        id: 'ACTIVITIES',
+        title: "Activiteiten",
+        body: [{
+            title: "",
+            subtitle: "Er worden tal van leuke spelen georganiseerd",
+            image: require("../images/monitrek.jpg"),
+        }, {
+            title: "",
+            subtitle: "Een uitstap naar Brugge om de doeltaal in praktijk te gebruiken",
+            image: require("../images/brugge.jpg"),
+        }, {
+            title: "",
+            subtitle: "Interactieve lessen in klassen van maximaal 10 leerlingen",
+            image: require("../images/klasfoto.jpg"),
+        }, {
+            title: "",
+            subtitle: "Waterspelen om even af te koelen",
+            image: require("../images/water.jpg"),
+        }, {
+            title: "",
+            subtitle: "Sportieve spelen om je helemaal uit te leven",
+            image: require("../images/rugby.jpg"),
+        }, {
+            title: "",
+            subtitle: "Spelletjes waar we plezier in de verf zetten",
+            image: require("../images/verf.jpg"),
+        }]
     }, {
-        title: "Team2"
-    }];
-
-    const imageList = [[{
-        title: "",
-        subtitle: "Er worden tal van leuke spelen georganiseerd",
-        image: require("../images/monitrek.jpg"),
-    }, {
-        title: "",
-        subtitle: "Een uitstap naar Brugge om de doeltaal in praktijk te gebruiken",
-        image: require("../images/brugge.jpg"),
-    }, {
-        title: "",
-        subtitle: "Interactieve lessen in klassen van maximaal 10 leerlingen",
-        image: require("../images/klasfoto.jpg"),
-    }, {
-        title: "",
-        subtitle: "Waterspelen om even af te koelen",
-        image: require("../images/water.jpg"),
-    }, {
-        title: "",
-        subtitle: "Sportieve spelen om je helemaal uit te leven",
-        image: require("../images/rugby.jpg"),
-    }, {
-        title: "",
-        subtitle: "Spelletjes waar we plezier in de verf zetten",
-        image: require("../images/verf.jpg"),
-    }],
-        [{
+        id: 'TEAM',
+        title: "Team",
+        body: [{
             title: "Thibault Leemans - voorzitter",
             subtitle: "Thibault is de voorzitter van Loppem Conversa en neemt het initiatief voor de organisatie van de verschillende aspecten doorheen het jaar." +
-                "Tijdens de stage is hij coördinator, die mee inspringt waar nodig.",
+              "Tijdens de stage is hij coördinator, die mee inspringt waar nodig.",
             image: require("../images/Thibault.JPG"),
         }, {
-            title: "Bob Beuls - secretaris",
-            subtitle: "Bob is de secretaris van Loppem Conversa",
-            image: require("../images/Thibault.JPG"),
-        }, {
+        title: "Bob Beuls - secretaris",
+        subtitle: "Bob is de secretaris van Loppem Conversa",
+        image: require("../images/Thibault.JPG"),
+    }, {
             title: "Briek Deblaere - penningmeester",
             subtitle: "Briek beheert de financiën",
             image: require("../images/briek.jpg"),
-        }],
-        [{
+        }]
+    }, {
+        id: "VIDEO",
+        title: "Video's",
+        body: [{
             title: "",
             subtitle: "Spelletjes waar we plezier in de verf zetten",
             image: require("../images/domein.mp4"),
@@ -135,7 +137,8 @@ const Gallery = () => {
                 subtitle: "Spelletjes waar we plezier in de verf zetten",
                 image: require("../images/domein.mp4"),
             }]
-    ];
+    }], 'TEAM');
+
 
     return (<section className="section" id="gallery1">
         <div className="section bg-light-gray">
@@ -144,33 +147,34 @@ const Gallery = () => {
                     <h1 className="font-normal text-44 mt-0">Loppem Conversa in beeld</h1>
                 </div>
                 <div className="inline-block mb-10">
-                    <div
-                        className={`flex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG}`}
-                    >
-                        <Section data={sections}/>
-                        <div
-                            className="px-6 py-2 cursor-pointer"
-                            onClick={() => setTabIndex(0)}
-                        >
-                            Activiteiten
-                        </div>
-                        <div
-                            className="px-6 py-2 cursor-pointer"
-                            onClick={() => setTabIndex(1)}
-                        >
-                            Team
-                        </div>
-                        <div
-                            className="px-6 py-2 cursor-pointer"
-                            onClick={() => setTabIndex(2)}
-                        >
-                            Videos
-                        </div>
-                    </div>
+                    {header}
+                    {/*<div*/}
+                    {/*    className={`flex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG}`}*/}
+                    {/*>*/}
+                    {/*    <Section data={sections}/>*/}
+                    {/*    <div*/}
+                    {/*        className="px-6 py-2 cursor-pointer"*/}
+                    {/*        onClick={() => setTabIndex(0)}*/}
+                    {/*    >*/}
+                    {/*        Activiteiten*/}
+                    {/*    </div>*/}
+                    {/*    <div*/}
+                    {/*        className="px-6 py-2 cursor-pointer"*/}
+                    {/*        onClick={() => setTabIndex(1)}*/}
+                    {/*    >*/}
+                    {/*        Team*/}
+                    {/*    </div>*/}
+                    {/*    <div*/}
+                    {/*        className="px-6 py-2 cursor-pointer"*/}
+                    {/*        onClick={() => setTabIndex(2)}*/}
+                    {/*    >*/}
+                    {/*        Videos*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                 </div>
 
                 <Grid container spacing={3}>
-                    {imageList[tabIndex].map((item, ind) => (<Grid key={ind} item lg={4} md={4} sm={4} xs={12}>
+                    {body?.map((item, ind) => (<Grid key={ind} item lg={4} md={4} sm={4} xs={12}>
                         {
                             item.image.endsWith(".mp4") ?
                                 <CardMedia
