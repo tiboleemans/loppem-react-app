@@ -91,7 +91,7 @@ exports.inscriptionSaveGetTempInscription = functions
 
 
 /**
- * Insert a new record in the table inscription_temporary.
+ * Insert a new record in the table 'inscription_temporary'.
  * Returns the document ID
  * @param {*} data the request body (student data)
  */

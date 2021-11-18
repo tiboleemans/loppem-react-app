@@ -1,7 +1,8 @@
 // =================================================================================
 // Sending temporary emails
 // This class is responsible for sending e-mail after a student was temporarily
-// inscribed. The mail will only be send once a day.
+// inscribed. The mail will be sent immediately after saving, but it will only
+// send the e-mail at most once per day.
 // The system relies on the installed mail sender plugin in firebase.
 // inscription_temporary_mails_to_send:
 // - campYear

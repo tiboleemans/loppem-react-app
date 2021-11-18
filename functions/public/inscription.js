@@ -14,6 +14,8 @@ const cors = require('cors')({
 
 /**
  * REST: Permanently inscribes the student in the system.
+ * This does not mean the student will be assigned to a class,
+ * this only happens after confirmation of the full payment.
  * Method: POST
  */
 exports.inscriptionSubmit = functions
@@ -44,7 +46,7 @@ exports.inscriptionSubmit = functions
     });
 
 /**
- * Insert a new record in the table inscription.
+ * Insert a new student record in the table 'inscription'.
  * Returns the document ID
  * @param {*} data the request body
  */
