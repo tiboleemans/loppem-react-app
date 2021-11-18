@@ -2,7 +2,7 @@ const xss = require('xss');
 const Joi = require('joi');
 
 exports.campYear = function campYear() {
-  return 2021; // Could become a function, like once we're passed august it can become next year ?
+  return 2022; // Could become a function, like once we're passed august it can become next year ?
 };
 
 exports.defaultHttpOptions = {
