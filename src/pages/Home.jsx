@@ -10,6 +10,7 @@ import FAQ from "./FAQ";
 import Testimonial from "./Testimonial";
 import Contact from "./Contact";
 import Footer from "./Footer";
+import CallToAction from "./CallToAction";
 
 const Home = () => {
     useEffect(() => {
@@ -21,11 +22,17 @@ const Home = () => {
             <NavBar/>
             <Intro/>
             <TaalVakanties/>
+            <CallToAction />
             <InscriptionForm/>
+            <CallToAction />
             <Pricing/>
-            <Gallery/>
+            <CallToAction />
             <FAQ/>
+            <CallToAction />
             <Testimonial/>
+            <CallToAction />
+            <Gallery/>
+            <CallToAction />
             <Contact/>
             <Footer/>
         </div>

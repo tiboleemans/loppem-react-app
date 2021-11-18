@@ -1,51 +1,10 @@
-import React, {useState} from "react";
+import React from "react";
 
 import {Card, CardContent} from "@material-ui/core";
-import Carousel from "../common/Carousel";
 import CardHeader from "@material-ui/core/CardHeader";
 import Grid from "@material-ui/core/Grid";
-import DoneIcon from '@material-ui/icons/Done';
-import green from "@material-ui/core/colors/green";
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import CardActions from "@material-ui/core/CardActions";
-import Button from "@material-ui/core/Button";
 import CardMedia from "@material-ui/core/CardMedia";
 import useTabs from "./useTabs";
-import {makeStyles} from "@material-ui/core/styles";
-
-const useStyles = makeStyles(({
-                                  palette,
-                                  ...theme
-                              }) => ({
-    cardHolder: {
-        position: "relative",
-        borderRadius: 8,
-        overflow: "hidden",
-        "&:hover $cardOverlay": {
-            opacity: 1,
-        },
-    },
-    cardOverlay: {
-        padding: "0px 1rem",
-        transition: "all 250ms ease",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-end",
-        position: "absolute",
-        borderRadius: 8,
-        top: 0,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        opacity: 0,
-        color: palette.primary.contrastText,
-        background: "rgba(0,0,0,0.67)",
-        zIndex: 5,
-    }
-}));
 
 const TaalVakanties = () => {
         const {body, header} = useTabs([{
@@ -128,13 +87,11 @@ const TaalVakanties = () => {
             }
         }]);
 
-        const classes = useStyles();
-
         return (
-            <div className="section bg-light-gray" id="taalvakanties">
+            <div className="pt-12 bg-light-gray" id="taalvakanties">
                 <div className="container">
-                    <div className="section__header">
-                        <h2>Onze taalvakanties</h2>
+                    <div className="max-w-400 mb-16 text-center mx-auto">
+                        <h2 className="mt-0 font-normal text-44">Onze taalvakanties</h2>
                     </div>
 
                     {header}
@@ -171,7 +128,7 @@ const TaalVakanties = () => {
                                                                 controls
                                                             /> :
                                                             <Card className="relative card m-2">
-                                                                <div className={classes.cardHolder}>
+                                                                <div>
                                                                     <img className="w-full block" src={image} alt=""/>
                                                                 </div>
                                                             </Card>
