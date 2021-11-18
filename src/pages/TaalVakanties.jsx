@@ -88,12 +88,11 @@ const TaalVakanties = () => {
         }]);
 
         return (
-            <div className="pt-12 bg-light-gray" id="taalvakanties">
+            <div className="pt-15 bg-light-gray" id="taalvakanties">
                 <div className="container">
-                    <div className="max-w-400 mb-16 text-center mx-auto">
-                        <h2 className="mt-0 font-normal text-44">Onze taalvakanties</h2>
+                    <div className="text-center mx-auto">
+                        <h2 className="font-normal text-44">Onze taalvakanties</h2>
                     </div>
-
                     {header}
                     <Grid container spacing={3}>
                         {
