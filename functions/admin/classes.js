@@ -10,7 +10,7 @@ const cors = require('cors')({
 });
 
 exports.addNewStudentToDefaultClass = functions
-    .runWith(tools.defaultHttpOptions)
+    .runWith(tools.defaultInternalHttpOptions)
     .region('europe-west1')
     .firestore
     .document('student/{docId}')

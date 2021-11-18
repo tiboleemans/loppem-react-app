@@ -12,7 +12,7 @@ const cors = require('cors')({
 });
 
 exports.createStudentAfterPayment = functions
-    .runWith(tools.defaultHttpOptions)
+    .runWith(tools.defaultInternalHttpOptions)
     .region('europe-west1')
     .firestore
     .document('payment/{docId}')

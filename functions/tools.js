@@ -9,6 +9,13 @@ exports.defaultHttpOptions = {
   maxInstances: 25,
   timeoutSeconds: 15,
   memory: '128MB',
+  ingressSettings: 'ALLOW_ALL',
+};
+
+exports.defaultInternalHttpOptions = {
+  maxInstances: 25,
+  timeoutSeconds: 15,
+  memory: '128MB',
   ingressSettings: 'ALLOW_INTERNAL_ONLY',
 };
 

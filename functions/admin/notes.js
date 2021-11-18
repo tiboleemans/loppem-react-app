@@ -17,7 +17,7 @@ const cors = require('cors')({
  *  - type: 'cook' or 'nurse'
  */
 exports.adminGetStudentNotes = functions
-    .runWith(tools.defaultHttpOptions)
+    .runWith(tools.defaultInternalHttpOptions)
     .region('europe-west1')
     .https.onRequest((req, res) => {
       if (req.method !== 'GET') {
@@ -73,7 +73,7 @@ exports.adminGetStudentNotes = functions
  *  - period: mandatory (string)
  */
 exports.adminListStudentNotes = functions
-    .runWith(tools.defaultHttpOptions)
+    .runWith(tools.defaultInternalHttpOptions)
     .region('europe-west1')
     .https.onRequest((req, res) => {
       if (req.method !== 'GET') {

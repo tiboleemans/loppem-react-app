@@ -11,7 +11,7 @@ const cors = require('cors')({
 });
 
 exports.addPaymentAndConfirm = functions
-    .runWith(tools.defaultHttpOptions)
+    .runWith(tools.defaultInternalHttpOptions)
     .region('europe-west1')
     .https.onRequest(async (req, res) => {
       if (req.method !== 'POST') {
@@ -39,7 +39,7 @@ exports.addPaymentAndConfirm = functions
     });
 
 exports.createInitialPayment = functions
-    .runWith(tools.defaultHttpOptions)
+    .runWith(tools.defaultInternalHttpOptions)
     .region('europe-west1')
     .firestore
     .document('inscription/{docId}')
