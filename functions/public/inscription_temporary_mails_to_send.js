@@ -135,7 +135,7 @@ async function prepareSendEmail(mailRequest) {
 
     await db.collection('mail_ext')
         .add({
-          from: 'Loppem test <vzwtaalstagescv@gmail.com>',
+          from: 'Loppem Conversa <info@loppemconversa.be>',
           // replyTo:
           to: mailData.email,
           template: {

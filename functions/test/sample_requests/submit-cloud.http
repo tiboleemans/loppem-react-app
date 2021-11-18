@@ -1,0 +1,158 @@
+POST https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSubmit http/1.1
+content-type: application/json
+
+ {
+    "sitelanguage": "nl",
+    "language": "en",
+    "period": "august    ",
+    "firstNameStudent": "Franske    ",
+    "lastNameStudent": "Vermeulen",
+    "gender": "Het is een manneke",
+    "birthday": "2020-01-01",
+
+    "firstNameParent": "Mario",
+    "lastNameParent": "Vermeulen",
+    "email": "tiboleemans@gmail.com",
+    "relation": "yes please",
+    "street": "Trammezandlei",
+    "houseNr": "122",
+    "busNr": "",
+
+    "city": "Schoten",
+    "zipCode": "2900",
+    "gsm": "0412/1231212",
+    "gsm2": "",
+
+    "nameSchool": "école de test",
+    "streetSchool": "rue de test",
+    "houseNrSchool": "1",
+    "busNrSchool": "",
+    "citySchool": "Bruxelles",
+    "zipSchool": "1000",
+    "titleProfSchool": "Mr",
+    "nameProfSchool": "François",
+    "yearsSchool": "6",
+    "hoursSchool": "1",
+    "immersionSchool": "false",
+    "reportSchool": "n",
+
+    "apportedStudent": "true",
+    "contact": "euhm",
+    "additionalInfo": "Graag",
+    "foodInfo": "Hoe meer hoe beter",
+    "interest": "Node.JS",
+    "acceptPictures": false,
+    "acceptTerms": true
+}
+
+
+###
+
+POST https://europe-west1-loppem-adf69.cloudfunctions.net/updateTemplate?id=inscription-confirmation-nl http/1.1
+content-type: application/text
+
+<html>
+  <body>
+    Mijnheer, Mevrouw {{lastNameParent}},<br />
+    <br />
+    Wij hebben {{firstNameStudent}} {{lastNameStudent}} op de wachtlijst geplaatst voor de periode {{period}} {{campYear}}.<br />
+    Wij contacteren u zodra er een plaats vrijkomt. Alvast bedankt voor het vertrouwen.<br />
+    <br />
+    Met vriendelijke groeten,<br />
+    <br />
+    Loppem Conversa<br />
+    <br />
+    ---<br />
+    Gekozen taal: {{language}}<br />
+    Gekozen periode: {{period}} {{campYear}}<br />
+    Naam leerling: {{lastNameStudent}}<br />
+    Voornaam leerling: {{firstNameStudent}}<br />
+    Geboortedatum: {{birthday}}<br />
+    Geslacht: {{gender}}<br />
+    Naam ouder: {{lastNameParent}}<br />
+    Voornaam ouder: {{firstNameParent}}<br />
+    E-mail ouder: {{email}}<br />
+    Relatie met leerling: {{relation}}<br />
+    Straatnaam ouder: {{street}}<br />
+    Huisnummer ouder: {{houseNr}}<br />
+    Busnummer: {{busNr}}<br />
+    Postcode ouder: {{zipCode}}<br />
+    Gemeente ouder: {{city}}<br />
+    Telefoonnummer ouder: {{gsm}}<br />
+    Noodnummer: {{gsm2}}<br />
+    Naam school: {{nameSchool}}<br />
+    Straatnaam school: {{streetSchool}}<br />
+    Huisnummer school: {{houseNrSchool}}<br />
+    Busnummer school: {{busNrSchool}}<br />
+    Postcode school: {{zipSchool}}<br />
+    Gemeente school: {{citySchool}}<br />
+    Aanspreektitel leerkracht: {{titleProfSchool}}<br />
+    Naam leerkracht: {{nameProfSchool}}<br />
+    Aantal jaren les in de gekozen taal: {{yearsSchool}}<br />
+    Aantal uren les per week in de gekozen taal: {{hoursSchool}}<br />
+    CLIL: {{immersionSchool}}<br />
+    Rapport: {{reportSchool}}<br />
+    Aangebrachte leerling: {{apportedStudent}}<br />
+    Contactwijze: {{contact}}<br />
+    Extra info: {{additionalInfo}}<br />
+    Voedselallergieën of intoleranties: {{foodInfo}}<br />
+    Interesse: {{interest}}<br />
+    {{#if acceptPictures}}
+    Toestemming gebruik foto's: ja<br />
+    {{else}}
+    Toestemming gebruik foto's: nee
+    {{/if}}
+  </body>
+</html>
+
+
+###
+
+POST https://europe-west1-loppem-adf69.cloudfunctions.net/updateTemplate?id=inscription-cc http/1.1
+content-type: application/text
+
+<html>
+  <body>
+    Gegevens nieuwe inschrijving:
+    ---<br />
+    Gekozen taal: {{language}}<br />
+    Gekozen periode: {{period}} {{campYear}}<br />
+    Naam leerling: {{lastNameStudent}}<br />
+    Voornaam leerling: {{firstNameStudent}}<br />
+    Geboortedatum: {{birthday}}<br />
+    Geslacht: {{gender}}<br />
+    Naam ouder: {{lastNameParent}}<br />
+    Voornaam ouder: {{firstNameParent}}<br />
+    E-mail ouder: {{email}}<br />
+    Relatie met leerling: {{relation}}<br />
+    Straatnaam ouder: {{street}}<br />
+    Huisnummer ouder: {{houseNr}}<br />
+    Busnummer: {{busNr}}<br />
+    Postcode ouder: {{zipCode}}<br />
+    Gemeente ouder: {{city}}<br />
+    Telefoonnummer ouder: {{gsm}}<br />
+    Noodnummer: {{gsm2}}<br />
+    Naam school: {{nameSchool}}<br />
+    Straatnaam school: {{streetSchool}}<br />
+    Huisnummer school: {{houseNrSchool}}<br />
+    Busnummer school: {{busNrSchool}}<br />
+    Postcode school: {{zipSchool}}<br />
+    Gemeente school: {{citySchool}}<br />
+    Aanspreektitel leerkracht: {{titleProfSchool}}<br />
+    Naam leerkracht: {{nameProfSchool}}<br />
+    Aantal jaren les in de gekozen taal: {{yearsSchool}}<br />
+    Aantal uren les per week in de gekozen taal: {{hoursSchool}}<br />
+    CLIL: {{immersionSchool}}<br />
+    Rapport: {{reportSchool}}<br />
+    Aangebrachte leerling: {{apportedStudent}}<br />
+    Contactwijze: {{contact}}<br />
+    Extra info: {{additionalInfo}}<br />
+    Voedselallergieën of intoleranties: {{foodInfo}}<br />
+    Interesse: {{interest}}<br />
+    {{#if acceptPictures}}
+    Toestemming gebruik foto's: ja<br />
+    {{else}}
+    Toestemming gebruik foto's: nee
+    {{/if}}
+  </body>
+</html>

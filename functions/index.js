@@ -1,6 +1,9 @@
 const inscriptionSave = require('./public/inscription_temporary');
 const inscriptionMailToSend = require('./public/inscription_temporary_mails_to_send');
 const inscriptionSubmit = require('./public/inscription');
+const inscriptionSubmitMailToSend = require('./public/inscription_mails_to_send');
+
+const manageTemplate = require('./public/manage_template.js');
 
 const adminPayment = require('./admin/payments');
 const adminNotes = require('./admin/notes');
@@ -16,6 +19,10 @@ exports.inscriptionSaveMailAfterUpdate = inscriptionMailToSend.inscriptionSaveMa
 exports.inscriptionSaveConvertEmailForExt = inscriptionMailToSend.inscriptionSaveConvertEmailForExt;
 exports.inscriptionSaveMailUpdatedInscription = inscriptionMailToSend.inscriptionSaveMailUpdatedInscription;
 exports.inscriptionSaveScheduleMail = inscriptionMailToSend.inscriptionSaveScheduleMail;
+
+exports.inscriptionSaveMailAfterSubmit = inscriptionSubmitMailToSend.inscriptionSaveMailAfterSubmit;
+
+exports.updateTemplate = manageTemplate.updateTemplate
 
 exports.inscriptionSubmit = inscriptionSubmit.inscriptionSubmit;
 
