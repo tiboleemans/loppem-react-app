@@ -34,27 +34,12 @@ const useStyles = makeStyles(({
         color: palette.primary.contrastText,
         background: "rgba(0,0,0,0.67)",
         zIndex: 5,
-    },
-    buttonGroupBG: {
-        background: lighten(palette.primary.light, 0.9),
-        "&>div": {
-            transition: "all 250ms ease",
-            "&:hover": {
-                background: palette.primary.main,
-                color: palette.primary.contrastText,
-                borderRadius: 8,
-            },
-            [theme.breakpoints.down("sm")]: {
-                textAlign: "center",
-                width: "100%",
-            },
-        },
-    },
+    }
 }));
 
 const Gallery = () => {
     const classes = useStyles();
-    const { body, header } = useTabs([{
+    const {body, header} = useTabs([{
         id: 'ACTIVITIES',
         title: "Activiteiten",
         body: [{
@@ -88,13 +73,13 @@ const Gallery = () => {
         body: [{
             title: "Thibault Leemans - voorzitter",
             subtitle: "Thibault is de voorzitter van Loppem Conversa en neemt het initiatief voor de organisatie van de verschillende aspecten doorheen het jaar." +
-              "Tijdens de stage is hij coördinator, die mee inspringt waar nodig.",
+                "Tijdens de stage is hij coördinator, die mee inspringt waar nodig.",
             image: require("../images/Thibault.JPG"),
         }, {
-        title: "Bob Beuls - secretaris",
-        subtitle: "Bob is de secretaris van Loppem Conversa",
-        image: require("../images/Thibault.JPG"),
-    }, {
+            title: "Bob Beuls - secretaris",
+            subtitle: "Bob is de secretaris van Loppem Conversa",
+            image: require("../images/Thibault.JPG"),
+        }, {
             title: "Briek Deblaere - penningmeester",
             subtitle: "Briek beheert de financiën",
             image: require("../images/briek.jpg"),
@@ -146,32 +131,7 @@ const Gallery = () => {
                 <div className="mb-8">
                     <h1 className="font-normal text-44 mt-0">Loppem Conversa in beeld</h1>
                 </div>
-                <div className="inline-block mb-10">
-                    {header}
-                    {/*<div*/}
-                    {/*    className={`flex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG}`}*/}
-                    {/*>*/}
-                    {/*    <Section data={sections}/>*/}
-                    {/*    <div*/}
-                    {/*        className="px-6 py-2 cursor-pointer"*/}
-                    {/*        onClick={() => setTabIndex(0)}*/}
-                    {/*    >*/}
-                    {/*        Activiteiten*/}
-                    {/*    </div>*/}
-                    {/*    <div*/}
-                    {/*        className="px-6 py-2 cursor-pointer"*/}
-                    {/*        onClick={() => setTabIndex(1)}*/}
-                    {/*    >*/}
-                    {/*        Team*/}
-                    {/*    </div>*/}
-                    {/*    <div*/}
-                    {/*        className="px-6 py-2 cursor-pointer"*/}
-                    {/*        onClick={() => setTabIndex(2)}*/}
-                    {/*    >*/}
-                    {/*        Videos*/}
-                    {/*    </div>*/}
-                    {/*</div>*/}
-                </div>
+                {header}
 
                 <Grid container spacing={3}>
                     {body?.map((item, ind) => (<Grid key={ind} item lg={4} md={4} sm={4} xs={12}>
