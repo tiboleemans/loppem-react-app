@@ -2,6 +2,7 @@ POST http://127.0.0.1:5001/loppem-adf69/europe-west1/inscriptionSaveTemporary ht
 content-type: application/json
 
  {
+     "sitelanguage": "nl",
     "language": "english   ",
     "period": "august   ",
     "firstNameStudent": "Joske   ",

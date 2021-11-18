@@ -1,4 +1,5 @@
 exports.validTemporaryStudent = {
+  'sitelanguage': 'nl',
   'language': 'english   ',
   'period': 'august   ',
   'firstNameStudent': 'Joske   ',
@@ -42,6 +43,7 @@ exports.validTemporaryStudent = {
 };
 
 exports.validStudent = {
+  'sitelanguage': 'nl',
   'language': 'english   ',
   'period': 'august   ',
   'firstNameStudent': 'Joske   ',

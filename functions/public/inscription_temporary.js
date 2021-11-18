@@ -134,6 +134,7 @@ async function performUpdate(docId, data) {
 function preValidate(data) {
   const joi = tools.saferJoi;
   const schema = joi.object({
+    sitelanguage: joi.string().trim().allow(''),
     language: joi.string().trim().allow(''),
     period: joi.string().trim().allow(''),
     firstNameStudent: joi.string().trim().allow(''),
