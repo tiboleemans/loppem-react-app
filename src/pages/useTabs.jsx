@@ -1,8 +1,8 @@
 import React, {useState, useEffect} from "react";
 
-const TabsContainer = ({ tabs, selectedTab }) => <div>
+const TabsContainer = ({ tabs, selectedTab, setSelectedTabId }) => <div>
   {tabs.map((tab) => (
-    <div className={`lex flex-wrap items-center border-radius-8 ${selectedTab === tab.id ? 'active' : ''}`}>
+    <div onClick={() => setSelectedTabId(tab.id)} className={`lex flex-wrap items-center border-radius-8 ${selectedTab === tab.id ? 'active' : ''}`}>
       {tab.title}
     </div>
   ))}
@@ -21,7 +21,7 @@ const useTabs = (tabs) => {
 
   return {
     selectedTabId,
-    header: <TabsContainer tabs={tabs} selectedTab={selectedTab} />, // [link, link, link]
+    header: <TabsContainer tabs={tabs} selectedTab={selectedTab} setSelectedTabId={setSelectedTabId}/>, // [link, link, link]
     body: selectedTabId ? selectedTab.body : null // Geselecteerde body obv tabIndex
   }
 };
