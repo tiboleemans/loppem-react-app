@@ -9,7 +9,7 @@ const functions = require('firebase-functions');
 const {admin, db} = require('../db');
 
 /**
- * Firestore#onCreate: after first temporary inscription, send e-mail
+ * Firestore#onCreate: after inscription, send e-mail confirmation mail to parents and to admin
  */
 exports.inscriptionSaveMailAfterSubmit = functions
     .runWith(tools.defaultHttpOptions)
@@ -17,21 +17,23 @@ exports.inscriptionSaveMailAfterSubmit = functions
     .firestore
     .document('inscription/{docId}')
     .onCreate((change, context) => {
-      prepareSendEmailToParent(change.data())
+      return prepareSendEmailToParent(context.params.docId, change.data())
           .then(() => {
-            prepareSendEmailToAdmin(change.data());
+            prepareSendEmailToAdmin(context.params.docId, change.data());
           });
     });
 
 /**
  * Converts the student data and store it into the mail extention table (which will perform the actual sending of the e-mail).
- * @param {*} student the firebase document
+ * @param {*} studentId the documentID of the student, will be used as part of the mail_ext documentId
+ * @param {*} student the firebase document of the inscription table
  * @return {null} nothing
  */
-async function prepareSendEmailToParent(student) {
+async function prepareSendEmailToParent(studentId, student) {
   try {
     return await db.collection('mail_ext')
-        .add({
+        .doc(studentId + '-inscription-confirmation')
+        .set({
           from: 'Loppem Conversa <info@loppemconversa.be>',
           // replyTo:
           to: student.email,
@@ -41,20 +43,22 @@ async function prepareSendEmailToParent(student) {
           },
         });
   } catch (err) {
-    console.error('Could not prepare to send message', student.id, err);
+    console.error('Could not prepare to send message', studentId, err);
   }
 }
 
 
 /**
  * Converts the student data and store it into the mail extention table (which will perform the actual sending of the e-mail).
- * @param {*} student the firebase document
+ * @param {*} studentId the documentID of the student, will be used as part of the mail_ext documentId
+ * @param {*} student the firebase document of the inscription table
  * @return {null} nothing
  */
- async function prepareSendEmailToAdmin(student) {
+async function prepareSendEmailToAdmin(studentId, student) {
   try {
     return await db.collection('mail_ext')
-        .add({
+        .doc(studentId + '-inscription-cc')
+        .set({
           from: 'Loppem Conversa <info@loppemconversa.be>',
           // replyTo:
           to: 'wutske@gmail.com',
@@ -64,6 +68,6 @@ async function prepareSendEmailToParent(student) {
           },
         });
   } catch (err) {
-    console.error('Could not prepare to send message', student.id, err);
+    console.error('Could not prepare to send message', studentId, err);
   }
 }
