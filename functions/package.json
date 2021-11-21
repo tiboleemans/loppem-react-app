@@ -1,13 +1,13 @@
 {
   "name": "functions",
-  "description": "Cloud Functions for Firebase",
+  "description": "Cloud Functions for Loppem Conversa website",
   "scripts": {
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "test": "mocha --timeout 5000"
+    "test": "FIRESTORE_EMULATOR_HOST=localhost:8080 mocha --timeout 5000"
   },
   "engines": {
     "node": "14"
