@@ -1,6 +1,10 @@
 const data = require('./test_data.js');
 const supertest = require('supertest');
 const should = require('should');
+const tools = require('../tools.js');
+const testutils = require('./testutils.js');
+const {admin, db} = require('../db');
+
 
 // This agent refers to PORT where program is runninng.
 
@@ -8,37 +12,41 @@ const server = supertest.agent('http://localhost:5001/loppem-adf69/europe-west1'
 
 
 let studentId = null;
-describe('Notes', function() {
-  before(function(done) {
-    this.timeout(20000);
-    server
+describe('Notes functionality', function() {
+  before(async function() {
+    const res = await server
         .post('/inscriptionSubmit')
         .send(data.validStudent)
         .expect('Content-type', /json/)
-        .expect(201)
-        .end(function(err, res) {
-          if (err) return done(err);
+        .expect(201);
+    should.exist(res.body.id);
+    studentId = res.body.id;
+    console.info(`\tStudent=${studentId}`);
 
-          should.exist(res.body.id);
-          studentId = res.body.id;
-          console.info(`\tStudent=${studentId}`);
-          server
-              .post('/addPaymentAndConfirm')
-              .send({
-                ...data.validPayment,
-                studentId: studentId,
-              })
-              .expect('Content-type', /json/)
-              .expect(200)
-              .end(function(err, res) {
-                if (err) return done(err);
+    let initialPayment = await db.collection('payment')
+        .doc(res.body.id)
+        .get();
 
-                should.exist(res.body.message);
-                res.body.message.should.equal('ok');
-                new Promise((resolve) => setTimeout(done, 12000))
-                    .then(done);
-              });
-        });
+    attemptsLeft = 10;
+    while (attemptsLeft-- > 0 && !initialPayment.exists) {
+      await testutils.sleep(500);
+      initialPayment = await db.collection('payment')
+          .doc(res.body.id)
+          .get();
+    }
+    initialPayment.exists.should.be.true();
+    const payres = await server
+        .post('/addPaymentAndConfirm')
+        .send({
+          ...data.validPayment,
+          studentId: studentId,
+        })
+        .expect('Content-type', /json/)
+        .expect(200);
+
+    should.exist(payres.body.message);
+    payres.body.message.should.equal('ok');
+    await testutils.sleep(4000);  // TODO: find a better way to wait for the creation of both notes ?
   });
 
   describe('Nurse notes', function() {
@@ -61,7 +69,7 @@ describe('Notes', function() {
 
     it('Should get all nurse notes', function(done) {
       server
-          .get(`/adminListStudentNotes?type=nurse&campyear=2021&period=august`)
+          .get(`/adminListStudentNotes?type=nurse&campyear=${tools.campYear()}&period=august`)
           .expect('Content-type', /json/)
           .expect(200)
           .end(function(err, res) {
