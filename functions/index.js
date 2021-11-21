@@ -22,7 +22,7 @@ exports.inscriptionSaveScheduleMail = inscriptionMailToSend.inscriptionSaveSched
 
 exports.inscriptionSaveMailAfterSubmit = inscriptionSubmitMailToSend.inscriptionSaveMailAfterSubmit;
 
-exports.updateTemplate = manageTemplate.updateTemplate
+exports.updateTemplate = manageTemplate.updateTemplate;
 
 exports.inscriptionSubmit = inscriptionSubmit.inscriptionSubmit;
 
