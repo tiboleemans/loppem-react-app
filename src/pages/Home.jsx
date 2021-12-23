@@ -11,8 +11,12 @@ import Testimonial from "./Testimonial";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import CallToAction from "./CallToAction";
+import {changeLanguage} from "../i18n/i18nSetup";
+import {useTranslation} from "react-i18next";
 
 const Home = () => {
+  const { t, i18n: { language} } = useTranslation();
+
     useEffect(() => {
         scrollTo("root");
     }, [scrollTo]);
@@ -20,6 +24,13 @@ const Home = () => {
     return (
         <div className="home">
             <NavBar/>
+            <button type="button" onClick={() => changeLanguage('nl-BE')}>
+              {language === 'nl-BE' ? <b>Nederlands</b> : "Nederlands"}
+            </button>
+            <button type="button" onClick={() => changeLanguage('fr-BE')}>
+              {language === 'fr-BE' ? <b>Français</b> : "Français"}
+            </button>
+            {t('hi')}
             <Intro/>
             <TaalVakanties/>
             <CallToAction />

@@ -8,9 +8,10 @@ import {Theme} from "./theme";
 import GlobalCss from "./styles/jss/GlobalCss";
 import Home from "./pages/Home";
 import InscriptionForm from "./pages/Inscriptions/InscripionForm";
+import setupAndInitI18n from "./i18n/i18nSetup";
 
 function App() {
-
+  setupAndInitI18n();
   return (
     <MuiThemeProvider theme={Theme}>
       <GlobalCss>

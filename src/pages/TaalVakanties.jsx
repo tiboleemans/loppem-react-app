@@ -5,11 +5,13 @@ import CardHeader from "@material-ui/core/CardHeader";
 import Grid from "@material-ui/core/Grid";
 import CardMedia from "@material-ui/core/CardMedia";
 import useTabs from "./useTabs";
+import {useTranslation} from "react-i18next";
 
 const TaalVakanties = () => {
+  const { t } = useTranslation();
         const {body, header} = useTabs([{
             id: 'WHAT',
-            title: "Wat?",
+            title: t("vacations.what"),
             body: {
                 title: "Loppem Conversa organiseert",
                 images: [require("../images/class.jpg"), require("../images/slider-image1.jpg"), require("../images/slider-image1.jpg"), require("../images/slider-image1.jpg")],

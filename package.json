@@ -29,7 +29,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "swiper": "^4.5.0",
-    "xss": "^1.0.10"
+    "xss": "^1.0.10",
+    "i18next": "^21.6.3",
+    "react-i18next": "^11.15.1",
+    "i18next-browser-languagedetector": "^6.1.2"
   },
   "scripts": {
     "start": "react-scripts start",
