@@ -12,149 +12,164 @@ import ExtraInformationForm, {getErrorExtraInfoStep} from "./ExtraInformationFor
 import {customStyling} from "../../components/controls/CustomStyling";
 import useForm from "../../components/useForm";
 import {Axios} from "../../firebase/firebaseConfig";
+import Alert from '@mui/material/Alert';
+import registerStudent from "../../services/InscriptionService";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
 const disableValidation = true;
 
 export default function InscriptionForm() {
-  const classes = customStyling();
-  const [step, setStep] = useState(0);
+    const classes = customStyling();
+    const [step, setStep] = useState(0);
+    const [hasFeedback, setHasFeedback] = useState(false);
+    const [feedbackMessage, setFeedbackMessage] = useState();
 
-  const {
-    values,
-    handleInputChange
-  } = useForm();
-  const [errors, setErrors] = useState({});
+    const {
+        values,
+        handleInputChange
+    } = useForm();
+    const [errors, setErrors] = useState({});
 
-  function getStepContent() {
-    switch (step) {
-      case 0:
-        return <StudentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
-      case 1:
-        return <ParentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
-      case 2:
-        return <SchoolInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
-      case 3:
-        return <ExtraInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
-      default:
-        throw new Error('Unknown step');
+    function getStepContent() {
+        switch (step) {
+            case 0:
+                return <StudentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
+            case 1:
+                return <ParentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
+            case 2:
+                return <SchoolInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
+            case 3:
+                return <ExtraInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
+            default:
+                throw new Error('Unknown step');
+        }
     }
-  }
 
-  const validate = () => {
-    switch (step) {
-      case 0:
-        return disableValidation || validateStep(getErrorStudentStep(values));
-      case 1:
-        return disableValidation || validateStep(getErrorParentStep(values));
-      case 2:
-        return disableValidation || validateStep(getErrorSchoolStep(values));
-      case 3:
-        return validateStep(getErrorExtraInfoStep(values));
-      default:
-        throw new Error('Unknown step');
+    const validate = () => {
+        switch (step) {
+            case 0:
+                return disableValidation || validateStep(getErrorStudentStep(values));
+            case 1:
+                return disableValidation || validateStep(getErrorParentStep(values));
+            case 2:
+                return disableValidation || validateStep(getErrorSchoolStep(values));
+            case 3:
+                return disableValidation || validateStep(getErrorExtraInfoStep(values));
+            default:
+                throw new Error('Unknown step');
+        }
     }
-  }
 
-  const validateStep = (errors) => {
+    const validateStep = (errors) => {
 
-    setErrors({
-      ...errors
-    })
+        setErrors({
+            ...errors
+        })
 
-    return Object.values(errors).every(error => error === "");
+        return Object.values(errors).every(error => error === "");
 
-  }
-
-  const handleNext = () => {
-    if (validate()) {
-      setStep(step + 1);
-    } else {
-      window.alert("Niet alle verplichten velden zijn correct ingevuld")
     }
-  };
 
-  const handleBack = () => {
-    setStep(step - 1);
-  };
+    const handleNext = () => {
+        if (validate()) {
+            setHasFeedback(false);
+            setStep(step + 1);
+            console.log('step is '+ step);
+            if(step === steps.length - 1) {
+                sentInfo()
+            }
+        } else {
+            const generalError = <Alert severity="warning">This is a warning alert — check it out!</Alert>
+            setFeedbackMessage(generalError)
+            setHasFeedback(true);
+        }
+    };
 
-  const sentInfo = () => {
-    if (!values.id) {
-      Axios.post(
-        'https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveTemporary',
-        values
-      ).then(res => {
-        values.id = res.id;
-      })
-    } else {
-      Axios.post(
-        `https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveTemporary?id=${values.id}`,
-        values
-      ).then(res => {
-        values.id = res.id;
-      })
+    const handleBack = () => {
+        setStep(step - 1);
+    };
+
+    const sentInfo = () => {
+        if (!values.id) {
+            registerStudent(values)
+                .then((inscription) => {
+                    const success = <Alert severity="success">Successfully registered with id ${inscription.id}</Alert>
+                    setFeedbackMessage(success);
+                    setHasFeedback(true);
+                });
+        } else {
+            Axios.post(
+                `https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveTemporary?id=${values.id}`,
+                values
+            ).then(res => {
+                values.id = res.id;
+            })
+        }
     }
-  }
 
-  return (
+    const getInscriptionConfirmation = () => {
+        return <React.Fragment>
+            <Typography variant="h5" gutterBottom>
+                Bedankt voor uw inschrijving.
+            </Typography>
+            <Typography variant="subtitle1">
+                U ontvangt van ons een bevestigingsmail (gelieve ook uw ongewenste e-mail na te kijken).
+                Begin juni contacteren wij u per e-mail met praktische informatie m.b.t. de taalvakantie.
+                We verwachten u op de eerste dag van de stage in de abdijschool van Zevenkerken.
+                Gelieve het voorschot binnen de drie werkdagen te storten op rekening BE16 0018 5319 2474.
+            </Typography>
+            {hasFeedback ? feedbackMessage : null}
+        </React.Fragment>;
+    }
 
-    <React.Fragment>
-      <div className="section bg-light-gray" id="inscription">
-        <div className="container">
-          <Paper className={classes.paper}>
-            <div className="section__header">
-              <h2>Inschrijvingsformulier</h2>
+    return (
+
+        <React.Fragment>
+            <div className="section bg-light-gray" id="inscription">
+                <div className="container">
+                    <Paper className={classes.paper}>
+                        <div className="section__header">
+                            <h2>Inschrijvingsformulier</h2>
+                        </div>
+                        <Stepper activeStep={step} className={classes.stepper}>
+                            {steps.map((label) => (
+                                <Step key={label}>
+                                    <StepLabel>{label}</StepLabel>
+                                </Step>
+                            ))}
+                        </Stepper>
+                        <React.Fragment>
+                            {step === steps.length ? getInscriptionConfirmation() : (
+                                <React.Fragment>
+                                    {getStepContent()}
+                                    {hasFeedback ? feedbackMessage : null}
+                                    <div className={classes.buttons}>
+                                        {step > 1 && (
+                                            <Button onClick={sentInfo} className={classes.button}>
+                                                Voorlopig opslaan
+                                            </Button>
+                                        )}
+                                        {step !== 0 && (
+                                            <Button onClick={handleBack} className={classes.button}>
+                                                Vorige
+                                            </Button>
+                                        )}
+                                        <Button
+                                            variant="contained"
+                                            onClick={handleNext}
+                                            className={classes.button}
+                                            color="primary"
+                                        >
+                                            {step === steps.length - 1 ? 'Inschrijven' : 'Volgende'}
+                                        </Button>
+
+                                    </div>
+                                </React.Fragment>
+                            )}
+                        </React.Fragment>
+                    </Paper>
+                </div>
             </div>
-            <Stepper activeStep={step} className={classes.stepper}>
-              {steps.map((label) => (
-                <Step key={label}>
-                  <StepLabel>{label}</StepLabel>
-                </Step>
-              ))}
-            </Stepper>
-            <React.Fragment>
-              {step === steps.length ? (
-                <React.Fragment>
-                  <Typography variant="h5" gutterBottom>
-                    Bedankt voor uw inschrijving.
-                  </Typography>
-                  <Typography variant="subtitle1">
-                    U ontvangt van ons een bevestigingsmail (gelieve ook uw ongewenste e-mail na te kijken).
-                    Begin juni contacteren wij u per e-mail met praktische informatie m.b.t. de taalvakantie.
-                    We verwachten u op de eerste dag van de stage in de abdijschool van Zevenkerken.
-                    Gelieve het voorschot binnen de drie werkdagen te storten op rekening BE16 0018 5319 2474.
-                  </Typography>
-                </React.Fragment>
-              ) : (
-                <React.Fragment>
-                  {getStepContent()}
-                  <div className={classes.buttons}>
-                    {step > 1 && (
-                      <Button onClick={sentInfo} className={classes.button}>
-                        Voorlopig opslaan
-                      </Button>
-                    )}
-                    {step !== 0 && (
-                      <Button onClick={handleBack} className={classes.button}>
-                        Vorige
-                      </Button>
-                    )}
-                    <Button
-                      variant="contained"
-                      onClick={handleNext}
-                      className={classes.button}
-                      color="primary"
-                    >
-                      {step === steps.length - 1 ? 'Inschrijven' : 'Volgende'}
-                    </Button>
-
-                  </div>
-                </React.Fragment>
-              )}
-            </React.Fragment>
-          </Paper>
-        </div>
-      </div>
-    </React.Fragment>
-  );
+        </React.Fragment>
+    );
 }
