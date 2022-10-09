@@ -16,7 +16,7 @@ The validations are very basic and only require that the following fields are fi
 * lastNameParent
 * email
 
-A successfull respnose returns `HTTP201` and the following sample response, which contains the unique document from the database collection.
+A successfull response returns `HTTP201` and the following sample response, which contains the unique document from the database collection.
 ```json
 {
   "id": "zFKw5akYMopLmRxO4aom"
@@ -27,7 +27,7 @@ A successfull respnose returns `HTTP201` and the following sample response, whic
 ### Update
 The same function `inscriptionSaveTemporary` performs the update of an existing temporary inscription. The presence of the query parameter `id` makes the distinction between create and update.
 
-A successfull respnose returns `HTTP200` and the following sample response.
+A successfull response returns `HTTP200` and the following sample response.
 ```json
 {
   "id": "zFKw5akYMopLmRxO4aom"
