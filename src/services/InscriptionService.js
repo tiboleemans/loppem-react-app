@@ -1,7 +1,7 @@
 import {Axios} from "../firebase/firebaseConfig";
 import Inscription from "../models/Inscription";
 
-const apiPathInscription = 'https://europe-west1-loppem-adf69.cloudfunctions.net'
+const apiPathInscription = process.env.REACT_APP_API_ENDPOINT;
 
 const registerStudent = (request) => {
     return Axios.post(

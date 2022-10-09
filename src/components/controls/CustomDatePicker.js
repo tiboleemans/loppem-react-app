@@ -8,11 +8,11 @@ function CustomDatePicker(props) {
 
     const classes = customStyling();
 
-    const {name, label, value, onChange, error = null} = props;
+    const {subject, name, label, value, onChange, error = null} = props;
 
-    const convertToDefaultEventParameter = (name, value) => ({
+    const convertToDefaultEventParameter = (subject,name, value) => ({
         target: {
-            name, value
+            subject, name, value
         }
     })
 
@@ -23,9 +23,10 @@ function CustomDatePicker(props) {
                 openTo="year"
                 format="dd/MM/yyyy"
                 views={["year", "month", "date"]}
+                subject={subject}
                 label={label}
                 name={name}
-                onChange={date => onChange(convertToDefaultEventParameter(name, date))}
+                onChange={date => onChange(convertToDefaultEventParameter(subject, name, date))}
                 value={value}
                 minDate={new Date("2003-01-01")}
                 minDateMessage={"minDateMessage"}

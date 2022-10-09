@@ -7,18 +7,26 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 
 function CustomSelect(props) {
 
-    const {name, labelId, labelText, value, onChange, items, error} = props;
+    const {subject, name, labelId, labelText, value, onChange, items, error} = props;
+
+    const handleChange = (event) => {
+        event.preventDefault();
+        event.target = {subject: subject, name: name, value: event.target.value};
+        onChange(event);
+    };
+
     return (
 
         <FormControl variant="outlined" {...(error && {error:true})}>
             <InputLabel id={labelId}>{labelText}</InputLabel>
             <Select
+                subject={subject}
                 labelId={labelId}
                 id={name}
                 name={name}
                 value={value}
                 label={labelText}
-                onChange={onChange}
+                onChange={(e) => handleChange(e)}
             >
 
                 {

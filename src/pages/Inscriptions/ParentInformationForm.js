@@ -27,6 +27,7 @@ export default function ParentInformationForm(props) {
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="parent"
                         label="Voornaam ouder"
                         name="firstNameParent"
                         value={values.firstNameParent}
@@ -37,6 +38,7 @@ export default function ParentInformationForm(props) {
 
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="parent"
                         label="Naam ouder"
                         name="lastNameParent"
                         value={values.lastNameParent}
@@ -47,6 +49,7 @@ export default function ParentInformationForm(props) {
 
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="parent"
                         label="E-mail"
                         name="email"
                         type="email"
@@ -58,6 +61,8 @@ export default function ParentInformationForm(props) {
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
                     <CustomButtonGroup
+                        subject="parent"
+                        subject="parent"
                         name="relation"
                         label="* Relatie met leerling:"
                         value={values.relation}
@@ -69,6 +74,7 @@ export default function ParentInformationForm(props) {
 
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="parent"
                         label="Straat"
                         name="street"
                         value={values.street}
@@ -78,6 +84,7 @@ export default function ParentInformationForm(props) {
                 </Grid>
                 <Grid item xs={6} sm={3}>
                     <CustomTextField
+                        subject="parent"
                         label="Huisnummer"
                         name="houseNr"
                         value={values.houseNr}
@@ -87,6 +94,7 @@ export default function ParentInformationForm(props) {
                 </Grid>
                 <Grid item xs={6} sm={3}>
                     <CustomTextField
+                        subject="parent"
                         label="Busnummer"
                         name="busNr"
                         value={values.busNr}
@@ -96,6 +104,7 @@ export default function ParentInformationForm(props) {
 
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="parent"
                         label="Gemeente"
                         name="city"
                         value={values.city}
@@ -106,6 +115,7 @@ export default function ParentInformationForm(props) {
 
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="parent"
                         label="Postcode"
                         name="zipCode"
                         value={values.zipCode}
@@ -116,6 +126,7 @@ export default function ParentInformationForm(props) {
 
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="parent"
                         label="GSM"
                         name="gsm"
                         value={values.gsm}
@@ -125,6 +136,7 @@ export default function ParentInformationForm(props) {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="parent"
                         label="2e telefoonnummer"
                         name="gsm2"
                         value={values.gsm2}

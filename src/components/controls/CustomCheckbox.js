@@ -7,12 +7,12 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 
 
 function CustomCheckbox(props) {
-    const {name, label, value, onChange, error} = props;
+    const {subject, name, label, value, onChange, error} = props;
     const classes = customStyling();
 
-    const convertToDefaultEventParameter = (name, value) => ({
+    const convertToDefaultEventParameter = (subject, name, value) => ({
         target: {
-            name, value
+            subject, name, value
         }
     })
 
@@ -20,10 +20,11 @@ function CustomCheckbox(props) {
         <FormControl {...(error && {error:true})}>
             <FormControlLabel
                 control={<Checkbox
+                    subject={subject}
                     name={name}
                     checked={value}
                     color={"primary"}
-                    onChange={e => onChange(convertToDefaultEventParameter(name, e.target.checked))}
+                    onChange={e => onChange(convertToDefaultEventParameter(subject, name, e.target.checked))}
                     classes={{root: classes.checkbox}}
                 />}
                 label={label}

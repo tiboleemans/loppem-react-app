@@ -8,7 +8,7 @@ import FormHelperText from "@material-ui/core/FormHelperText";
 
 function CustomButtonGroup(props) {
 
-    const {name, label, value, onChange, items, error = null} = props;
+    const {subject, name, label, value, onChange, items, error = null} = props;
 
     const [selected, setSelected] = useState(value);
 
@@ -18,8 +18,7 @@ function CustomButtonGroup(props) {
         if (selected === id) {
             return;
         }
-
-        event.target = {name: name, value: id};
+        event.target = {subject: subject, name: name, value: id};
         setSelected(id);
         onChange(event);
     };

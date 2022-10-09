@@ -55,6 +55,7 @@ export default function SchoolInformationForm(props) {
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="school"
                         label="Naam school"
                         name="nameSchool"
                         value={values.nameSchool}
@@ -66,6 +67,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="school"
                         label="Straat"
                         name="streetSchool"
                         value={values.streetSchool}
@@ -76,6 +78,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={6} sm={3}>
                     <CustomTextField
+                        subject="school"
                         label="Huisnummer"
                         name="houseNrSchool"
                         value={values.houseNrSchool}
@@ -86,6 +89,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={6} sm={3}>
                     <CustomTextField
+                        subject="school"
                         label="Busnummer"
                         name="busNrSchool"
                         value={values.busNrSchool}
@@ -95,6 +99,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="school"
                         label="Gemeente"
                         name="citySchool"
                         value={values.citySchool}
@@ -105,6 +110,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="school"
                         label="Postcode"
                         name="zipSchool"
                         value={values.zipSchool}
@@ -115,6 +121,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
                     <CustomButtonGroup
+                        subject="school"
                         name="titleProfSchool"
                         label="Aanspreektitel leerkracht"
                         value={values.titleProfSchool}
@@ -126,6 +133,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={12} sm={6}>
                     <CustomTextField
+                        subject="school"
                         label="Naam leerkracht"
                         name="nameProfSchool"
                         value={values.nameProfSchool}
@@ -136,6 +144,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
                     <CustomButtonGroup
+                        subject="school"
                         name="yearsSchool"
                         label="Aantal jaren Nederlands of Engels op school"
                         value={values.yearsSchool}
@@ -147,6 +156,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
                     <CustomButtonGroup
+                        subject="school"
                         name="hoursSchool"
                         label="Aanal schooluren Nederlands of Engels per week"
                         value={values.hoursSchool}
@@ -158,6 +168,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
                     <CustomButtonGroup
+                        subject="school"
                         name="immersionSchool"
                         label="Volgt uw kind tweetalig onderwijs voor de gekozen doeltaal op school?"
                         value={values.immersionSchool}
@@ -169,6 +180,7 @@ export default function SchoolInformationForm(props) {
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
                     <CustomButtonGroup
+                        subject="school"
                         name="reportSchool"
                         label="Moet er een rapport na de stage opgestuurd worden naar de school?"
                         value={values.reportSchool}

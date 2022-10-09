@@ -27,16 +27,23 @@ const useStyles = makeStyles(theme => ({
 
 
 const CustomTextArea = (props) => {
-    const {name, label, value, onChange, type, placeholder, helperText} = props;
+    const {subject, name, label, value, onChange, type, placeholder, helperText} = props;
     const classes = useStyles();
+
+    const handleChange = (event) => {
+        event.preventDefault();
+        event.target = {subject: subject, name: name, value: event.target.value};
+        onChange(event);
+    };
 
     return (
         <TextField
             variant="outlined"
+            subject={subject}
             label={label}
             name={name}
             value={value}
-            onChange={onChange}
+            onChange={(e) => handleChange(e)}
             type={type}
             placeholder={placeholder}
             helperText={helperText}

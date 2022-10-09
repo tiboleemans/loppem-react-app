@@ -33,6 +33,7 @@ export default function ExtraInformationForm(props) {
 
                 <Grid item xs={12}>
                     <CustomTextField
+                        subject="extra"
                         label="Naam nieuw aangebrachte leerling"
                         name="apportedStudent"
                         value={values.apportedStudent}
@@ -42,6 +43,7 @@ export default function ExtraInformationForm(props) {
                 </Grid>
                 <Grid item xs={12}>
                     <CustomSelect
+                        subject="extra"
                         labelId="contactLabelId"
                         labelText="Hoe bent u in contact gekomen met de cursus?"
                         name={"contact"}
@@ -54,6 +56,7 @@ export default function ExtraInformationForm(props) {
                 </Grid>
                 <Grid item xs={12}>
                     <CustomTextArea
+                        subject="extra"
                         label="Relevante informatie voor de kok"
                         name="foodInfo"
                         value={values.foodInfo}
@@ -64,6 +67,7 @@ export default function ExtraInformationForm(props) {
 
                 <Grid item xs={12}>
                     <CustomTextArea
+                        subject="extra"
                         label="Extra informatie over uw zoon of dochter"
                         name="additionalInfo"
                         value={values.additionalInfo}
@@ -75,6 +79,7 @@ export default function ExtraInformationForm(props) {
 
                 <Grid item xs={12}>
                     <CustomCheckbox
+                        subject="extra"
                         name="acceptPictures"
                         label="Ik geef toestemming om foto's van mijn kind te gebruiken voor commerciële doeleinden (klik hier voor details)"
                         value={values.acceptPictures}
@@ -84,6 +89,7 @@ export default function ExtraInformationForm(props) {
 
                 <Grid item xs={12}>
                     <CustomCheckbox
+                        subject="extra"
                         name="acceptTerms"
                         label="Ik aanvaard de algemene voorwaarden en privacyregels"
                         value={values.acceptTerms}
