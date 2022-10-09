@@ -1,6 +1,19 @@
 const xss = require('xss');
 const Joi = require('joi');
 
+exports.CORS_GET = {
+  origin: true,
+  methods: ['GET'],
+  preflightContinue: false
+}
+
+exports.CORS_POST = {
+  origin: true,
+  methods: ['POST'],
+  preflightContinue: false
+}
+
+
 exports.campYear = function campYear() {
   return 2022; // Could become a function, like once we're passed august it can become next year ?
 };

@@ -8,9 +8,7 @@ const tools = require('../tools');
 const functions = require('firebase-functions');
 const {admin, db} = require('../db');
 
-const cors = require('cors')({
-  origin: true,
-});
+const cors = require('cors');
 
 /**
  * REST: temporarily inscribe a student into the system
@@ -22,19 +20,29 @@ exports.inscriptionSaveTemporary = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .https.onRequest(async (req, res) => {
+      if (req.method == 'OPTIONS') {
+        return cors(tools.CORS_POST)(req, res, () => {
+          res.end();
+        })
+      }
       if (req.method !== 'POST') {
-        return res.status(400).send({
-          message: 'Method not supported',
-        });
+        return cors(tools.CORS_POST)(req, res, () => {
+          res.status(400).send({
+            message: 'Method not supported',
+          })
+        })
       }
 
       validation = preValidate(req.body);
 
       if (validation.error != null) {
         console.log(validation.error.details);
-        return res.status(400).send({
-          validation,
-        });
+        cors(tools.CORS_POST)(req, res, () => {
+          res.status(400).send({
+            validation,
+          });
+        })
+        return;
       }
 
       let docId = req.query.id;
@@ -47,7 +55,7 @@ exports.inscriptionSaveTemporary = functions
         await performUpdate(docId, validation.value);
       }
 
-      return cors(req, res, () => {
+      return cors(tools.CORS_POST)(req, res, () => {
         res.status(insert ? 201 : 200).send({
           id: docId,
         });
@@ -64,29 +72,40 @@ exports.inscriptionSaveGetTempInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .https.onRequest(async (req, res) => {
+      if (req.method == 'OPTIONS') {
+        return cors(tools.CORS_GET)(req, res, () => {
+          res.end();
+        })
+      }
       if (req.method !== 'GET') {
-        return res.status(400).send({
-          message: 'Method not supported',
-        });
+        return cors(tools.CORS_GET)(req, res, () => {
+          res.status(400).send({
+            message: 'Method not supported',
+            });
+        })
       }
 
       const docId = req.query.id;
       if (docId == null) {
-        return res.status(400).send({
-          message: 'id is a mandatory parameter',
-        });
+        return cors(tools.CORS_GET)(req, res, () => {
+          res.status(400).send({
+            message: 'id is a mandatory parameter',
+          });
+        })
       }
 
       const doc = await db.collection('inscription_temporary')
           .doc(docId).get();
-      if (doc.exists) {
-        return res.send(tools.stripTechnicalFields(doc.data()));
-      } else {
-        return res.status(404).send({
-          message: `Document with ${docId} not found`,
-          data: doc,
-        });
-      }
+      cors(tools.CORS_GET)(req, res, () => {
+        if (doc.exists) {
+          return res.send(tools.stripTechnicalFields(doc.data()));
+        } else {
+          return res.status(404).send({
+            message: `Document with ${docId} not found`,
+            data: doc,
+          });
+        }
+      });
     });
 
 
