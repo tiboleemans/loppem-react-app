@@ -8,59 +8,40 @@ const tools = require('../tools');
 const functions = require('firebase-functions');
 const {admin, db} = require('../db');
 
-const cors = require('cors');
-
 /**
  * REST: temporarily inscribe a student into the system
  * Method: POST
  * Request Parameters:
  *  - id (optional, if present it will update an existing record)
  */
-exports.inscriptionSaveTemporary = functions
-    .runWith(tools.defaultHttpOptions)
-    .region('europe-west1')
-    .https.onRequest(async (req, res) => {
-      if (req.method == 'OPTIONS') {
-        return cors(tools.CORS_POST)(req, res, () => {
-          res.end();
-        })
-      }
-      if (req.method !== 'POST') {
-        return cors(tools.CORS_POST)(req, res, () => {
-          res.status(400).send({
-            message: 'Method not supported',
-          })
-        })
-      }
+exports.inscriptionSaveTemporary = async (req, res) => {
+  if (req.method == 'OPTIONS') {
+    return res.end();
+  }
 
-      validation = preValidate(req.body);
+  validation = preValidate(req.body);
 
-      if (validation.error != null) {
-        console.log(validation.error.details);
-        cors(tools.CORS_POST)(req, res, () => {
-          res.status(400).send({
-            validation,
-          });
-        })
-        return;
-      }
-
-      let docId = req.query.id;
-      const insert = docId == null;
-      console.log(`Request temporary save with id ${docId} for parent ${validation.value.firstNameParent} ${validation.value.lastNameParent}`);
-
-      if (insert) {
-        docId = await performInsert(validation.value);
-      } else {
-        await performUpdate(docId, validation.value);
-      }
-
-      return cors(tools.CORS_POST)(req, res, () => {
-        res.status(insert ? 201 : 200).send({
-          id: docId,
-        });
-      });
+  if (validation.error != null) {
+    console.log(validation.error.details);
+    return res.status(400).json({
+      validation,
     });
+  }
+
+  let docId = req.query.id;
+  const insert = docId == null;
+  console.log(`Request temporary save with id ${docId} for parent ${validation.value.firstNameParent} ${validation.value.lastNameParent}`);
+
+  if (insert) {
+    docId = await performInsert(validation.value);
+  } else {
+    await performUpdate(docId, validation.value);
+  }
+
+  return res.status(insert ? 201 : 200).json({
+    id: docId,
+  });
+};
 
 /**
  * REST: fetch a temporarily saved student
@@ -68,45 +49,34 @@ exports.inscriptionSaveTemporary = functions
  * Request Parameters:
  *  - id
  */
-exports.inscriptionSaveGetTempInscription = functions
-    .runWith(tools.defaultHttpOptions)
-    .region('europe-west1')
-    .https.onRequest(async (req, res) => {
-      if (req.method == 'OPTIONS') {
-        return cors(tools.CORS_GET)(req, res, () => {
-          res.end();
-        })
-      }
-      if (req.method !== 'GET') {
-        return cors(tools.CORS_GET)(req, res, () => {
-          res.status(400).send({
-            message: 'Method not supported',
-            });
-        })
-      }
-
-      const docId = req.query.id;
-      if (docId == null) {
-        return cors(tools.CORS_GET)(req, res, () => {
-          res.status(400).send({
-            message: 'id is a mandatory parameter',
-          });
-        })
-      }
-
-      const doc = await db.collection('inscription_temporary')
-          .doc(docId).get();
-      cors(tools.CORS_GET)(req, res, () => {
-        if (doc.exists) {
-          return res.send(tools.stripTechnicalFields(doc.data()));
-        } else {
-          return res.status(404).send({
-            message: `Document with ${docId} not found`,
-            data: doc,
-          });
-        }
-      });
+exports.inscriptionSaveGetTempInscription = async (req, res) => {
+  if (req.method == 'OPTIONS') {
+    return res.end();
+  }
+  if (req.method !== 'GET') {
+    return res.status(400).json({
+      message: 'Method not supported',
     });
+  }
+
+  const docId = req.query.id;
+  if (docId == null) {
+    return res.status(400).json({
+      message: 'id is a mandatory parameter',
+    });
+  }
+
+  const doc = await db.collection('inscription_temporary')
+      .doc(docId).get();
+  if (doc.exists) {
+    return res.json(tools.stripTechnicalFields(doc.data()));
+  } else {
+    return res.status(404).json({
+      message: `Document with ${docId} not found`,
+      data: doc,
+    });
+  }
+}
 
 
 /**

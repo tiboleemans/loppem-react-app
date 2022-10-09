@@ -4,7 +4,7 @@ const should = require('should');
 
 // This agent refers to PORT where program is runninng.
 
-const server = supertest.agent('http://localhost:5001/loppem-adf69/europe-west1');
+const server = supertest.agent('http://localhost:5001/loppem-adf69/europe-west1/api');
 
 describe('Temporary inscription', function() {
   describe('Happy flow', function() {
@@ -12,8 +12,8 @@ describe('Temporary inscription', function() {
       server
           .post('/inscriptionSaveTemporary')
           .send(data.validTemporaryStudent)
-          .expect('Content-type', /json/)
           .expect(201)
+          .expect('Content-type', /json/)
           .end(function(err, res) {
             if (err) return done(err);
 
@@ -121,13 +121,24 @@ describe('Temporary inscription', function() {
     it('Should return 400 if not using GET', function(done) {
       server
           .post('/inscriptionSaveGetTempInscription?id=iets-random')
-          .expect('Content-type', /json/)
-          .expect(400)
+          .expect(404)
           .end(function(err, res) {
             if (err) return done(err);
 
             should.exist(res.body.message);
             res.body.message.should.equal('Method not supported');
+            done();
+          });
+    });
+
+    it('Should handle preflight checks', function(done) {
+      server
+          .options('/inscriptionSaveGetTempInscription?id=iets-random')
+          .expect('access-control-allow-methods', /GET/)
+          .expect(204)
+          .end(function(err, res) {
+            if (err) return done(err);
+
             done();
           });
     });
