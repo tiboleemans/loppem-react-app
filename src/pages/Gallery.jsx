@@ -1,10 +1,9 @@
-import React, {useState} from "react";
-import {Grid, Button} from "@material-ui/core";
-import {lighten, makeStyles} from "@material-ui/core/styles";
+import React from "react";
+import {Button, Grid} from "@material-ui/core";
+import {makeStyles} from "@material-ui/core/styles";
 import {Link} from "react-router-dom";
 import CardMedia from "@material-ui/core/CardMedia";
 import useTabs from "./useTabs";
-import Section from "../components/Section";
 
 const useStyles = makeStyles(({
                                   palette,

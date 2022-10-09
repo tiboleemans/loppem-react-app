@@ -18,6 +18,8 @@
     "firebase": "^7.22.1",
     "firebase-functions": "^3.16.0",
     "firebase-tools": "^9.1.0",
+    "i18next": "^21.6.3",
+    "i18next-browser-languagedetector": "^6.1.2",
     "joi": "^17.4.2",
     "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
@@ -25,14 +27,12 @@
     "react-countdown": "^2.3.1",
     "react-dom": "^16.13.1",
     "react-google-maps": "^9.4.5",
+    "react-i18next": "^11.15.1",
     "react-perfect-scrollbar": "^1.5.8",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
     "swiper": "^4.5.0",
-    "xss": "^1.0.10",
-    "i18next": "^21.6.3",
-    "react-i18next": "^11.15.1",
-    "i18next-browser-languagedetector": "^6.1.2"
+    "xss": "^1.0.10"
   },
   "scripts": {
     "start": "react-scripts start",
