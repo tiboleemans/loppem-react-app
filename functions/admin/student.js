@@ -7,10 +7,6 @@ const tools = require('../tools');
 const functions = require('firebase-functions');
 const {admin, db} = require('../db');
 
-const cors = require('cors')({
-  origin: true,
-});
-
 exports.createStudentAfterPayment = functions
     .runWith(tools.defaultInternalHttpOptions)
     .region('europe-west1')
