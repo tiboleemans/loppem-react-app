@@ -10,33 +10,27 @@ const cors = require('cors')({
   origin: true,
 });
 
-exports.addPaymentAndConfirm = functions
-    .runWith(tools.defaultInternalHttpOptions)
-    .region('europe-west1')
-    .https.onRequest(async (req, res) => {
-      if (req.method !== 'POST') {
-        return res.status(400).send({
-          message: 'Method not supported',
-        });
-      }
+exports.addPaymentAndConfirm = async (req, res) => {
+  if (req.method == 'OPTIONS') {
+    return res.end();
+  }
 
+  validation = validatePayment(req.body);
+  if (validation.error) {
+    console.log(validation.error);
+    return res.status(400).send(
+        validation,
+    );
+  }
 
-      validation = validatePayment(req.body);
-      if (validation.error) {
-        console.log(validation.error);
-        return res.status(400).send(
-            validation,
-        );
-      }
+  await updatePayment(validation.value);
 
-      await updatePayment(validation.value);
-
-      return cors(req, res, () => {
-        res.status(200).send({
-          'message': 'ok',
-        });
-      });
+  return cors(req, res, () => {
+    res.status(200).send({
+      'message': 'ok',
     });
+  });
+};
 
 exports.createInitialPayment = functions
     .runWith(tools.defaultInternalHttpOptions)

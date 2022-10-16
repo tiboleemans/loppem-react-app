@@ -7,9 +7,6 @@
 const tools = require('../tools');
 const {admin, db} = require('../db');
 
-const cors = require('cors')({
-  origin: true,
-});
 
 /**
  * REST: Permanently inscribes the student in the system.
@@ -34,10 +31,8 @@ exports.inscriptionSubmit = async (req, res) => {
 
   const docId = await performInsert(validation.value);
 
-  return cors(req, res, () => {
-    res.status(201).send({
-      id: docId,
-    });
+  return res.status(201).send({
+    id: docId,
   });
 };
 

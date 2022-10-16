@@ -4,7 +4,8 @@ const should = require('should');
 
 // This agent refers to PORT where program is runninng.
 
-const server = supertest.agent('http://localhost:5001/loppem-adf69/europe-west1');
+const server = supertest.agent('http://localhost:5001/loppem-adf69/europe-west1/api');
+const adminServer = supertest.agent('http://localhost:5001/loppem-adf69/europe-west1/admin/api');
 
 describe('Payment', function() {
   describe('Add a payment', function() {
@@ -20,14 +21,14 @@ describe('Payment', function() {
             should.exist(res.body.id);
             const docId = res.body.id;
 
-            server
+            adminServer
                 .post('/addPaymentAndConfirm')
                 .send({
                   ...data.validPayment,
                   studentId: docId,
                 })
-                .expect('Content-type', /json/)
                 .expect(200)
+                .expect('Content-type', /json/)
                 .end(function(err, res) {
                   if (err) return done(err);
 

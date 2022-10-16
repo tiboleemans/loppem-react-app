@@ -47,16 +47,31 @@ exports.inscriptionSaveScheduleMail = inscriptionMailToSend.inscriptionSaveSched
 
 exports.inscriptionSaveMailAfterSubmit = inscriptionSubmitMailToSend.inscriptionSaveMailAfterSubmit;
 
+// ADMIN API
+// All defined endpoints are available under the /admin path
+const admin = express();
+admin.use(cors({origin: true}));
+
+admin.post('/api/addPaymentAndConfirm', (req, res) => {
+  adminPayment.addPaymentAndConfirm(req, res);
+});
+
+exports.admin = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west1')
+    .https.onRequest(admin);
+
 // JUST SOME ENDPOINT TO MANAGED MAIL TEMPLATES
 exports.updateTemplate = manageTemplate.updateTemplate;
 
 exports.createInitialPayment = adminPayment.createInitialPayment;
-exports.addPaymentAndConfirm = adminPayment.addPaymentAndConfirm;
 
 exports.createNotesCook = adminNotes.createNotesCook;
 exports.createNotesNurse = adminNotes.createNotesNurse;
-exports.adminGetStudentNotes = adminNotes.adminGetStudentNotes;
-exports.adminListStudentNotes = adminNotes.adminListStudentNotes;
+
+// TODO: migrate below to express.js based /admin/api endpoint
+// exports.adminGetStudentNotes = adminNotes.adminGetStudentNotes;
+// exports.adminListStudentNotes = adminNotes.adminListStudentNotes;
 
 exports.createStudentAfterPayment = adminStudent.createStudentAfterPayment;
 exports.addNewStudentToDefaultClass = adminClasses.addNewStudentToDefaultClass;
