@@ -1,4 +1,4 @@
-POST http://127.0.0.1:5001/loppem-adf69/europe-west1/inscriptionSaveTemporary http/1.1
+POST http://127.0.0.1:5001/loppem-adf69/europe-west1/api/inscriptionSaveTemporary http/1.1
 content-type: application/json
 
  {
@@ -12,7 +12,7 @@ content-type: application/json
 
     "firstNameParent": "Mario",
     "lastNameParent": "Vermeulen",
-    "email": "onsmario@gmail.fake.com",
+    "email": "",
     "relation": "yes please",
     "street": "Trammezandlei",
     "houseNr": "122",

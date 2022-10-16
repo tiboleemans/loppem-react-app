@@ -90,6 +90,25 @@ describe('Temporary inscription', function() {
   });
 
   describe('Unhappy flow', function() {
+    it('Should return 400 if invalid data is passed', function(done) {
+      const invalidStudent = {...data.validStudent};
+      invalidStudent.email = 'This-is-not-an-email';
+      server
+          .post('/inscriptionSaveTemporary')
+          .send(invalidStudent)
+          .expect('Content-type', /json/)
+          .end(function(err, res) {
+            if (err) return done(err);
+
+            should.exist(res.body.error);
+            const error = res.body.error;
+            error.details.should.be.Array();
+            error.details.should.have.length(1);
+            error.details[0].path[0].should.equal('email');
+            done();
+          });
+    });
+
     it('Should return 400 if no docId is passed', function(done) {
       server
           .get('/inscriptionSaveGetTempInscription')
@@ -118,15 +137,13 @@ describe('Temporary inscription', function() {
           });
     });
 
-    it('Should return 400 if not using GET', function(done) {
+    it('Should return 404 if not using GET', function(done) {
       server
           .post('/inscriptionSaveGetTempInscription?id=iets-random')
           .expect(404)
           .end(function(err, res) {
             if (err) return done(err);
 
-            should.exist(res.body.message);
-            res.body.message.should.equal('Method not supported');
             done();
           });
     });

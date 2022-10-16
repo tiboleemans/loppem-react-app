@@ -5,7 +5,6 @@
 // =================================================================================
 
 const tools = require('../tools');
-const functions = require('firebase-functions');
 const {admin, db} = require('../db');
 
 const cors = require('cors')({
@@ -16,34 +15,31 @@ const cors = require('cors')({
  * REST: Permanently inscribes the student in the system.
  * This does not mean the student will be assigned to a class,
  * this only happens after confirmation of the full payment.
- * Method: POST
+ * @param {Request} req the request
+ * @param {Response} res the response
+ * @return {Response} The response with status 201 (created) or 400 (validation error)
  */
-exports.inscriptionSubmit = functions
-    .runWith(tools.defaultHttpOptions)
-    .region('europe-west1')
-    .https.onRequest(async (req, res) => {
-      if (req.method !== 'POST') {
-        return res.status(400).send({
-          message: 'Method not supported',
-        });
-      }
+exports.inscriptionSubmit = async (req, res) => {
+  if (req.method == 'OPTIONS') {
+    return res.end();
+  }
 
-      validation = validate(req.body);
-      if (validation.error) {
-        console.log(validation.error);
-        return res.status(400).send(
-            validation,
-        );
-      }
+  const validation = validate(req.body);
+  if (validation.error) {
+    console.log(validation);
+    return res.status(400).send(
+        validation,
+    );
+  }
 
-      const docId = await performInsert(validation.value);
+  const docId = await performInsert(validation.value);
 
-      return cors(req, res, () => {
-        res.status(201).send({
-          id: docId,
-        });
-      });
+  return cors(req, res, () => {
+    res.status(201).send({
+      id: docId,
     });
+  });
+};
 
 /**
  * Insert a new student record in the table 'inscription'.

@@ -29,6 +29,9 @@ app.post('/inscriptionSaveTemporary', (req, res) => {
 app.get('/inscriptionSaveGetTempInscription', (req, res) => {
   inscriptionSave.inscriptionSaveGetTempInscription(req, res);
 });
+app.post('/inscriptionSubmit', (req, res) => {
+  inscriptionSubmit.inscriptionSubmit(req, res);
+});
 
 exports.api = functions
     .runWith(tools.defaultHttpOptions)
@@ -46,8 +49,6 @@ exports.inscriptionSaveMailAfterSubmit = inscriptionSubmitMailToSend.inscription
 
 // JUST SOME ENDPOINT TO MANAGED MAIL TEMPLATES
 exports.updateTemplate = manageTemplate.updateTemplate;
-
-exports.inscriptionSubmit = inscriptionSubmit.inscriptionSubmit;
 
 exports.createInitialPayment = adminPayment.createInitialPayment;
 exports.addPaymentAndConfirm = adminPayment.addPaymentAndConfirm;

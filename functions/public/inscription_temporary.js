@@ -20,13 +20,13 @@ exports.inscriptionSaveTemporary = async (req, res) => {
     return res.end();
   }
 
-  validation = preValidate(req.body);
+  const validation = preValidate(req.body);
 
   if (validation.error != null) {
-    console.log(validation.error.details);
-    return res.status(400).json({
-      validation,
-    });
+    console.log(validation);
+    return res.status(400).json(
+        validation,
+    );
   }
 
   let docId = req.query.id;
