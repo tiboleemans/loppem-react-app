@@ -3,6 +3,7 @@
   "description": "Cloud Functions for Loppem Conversa website",
   "scripts": {
     "serve": "firebase emulators:start --only functions",
+    "emulate": "firebase emulators:start",
     "shell": "firebase functions:shell",
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
