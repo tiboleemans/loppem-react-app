@@ -12,7 +12,7 @@ const server = supertest.agent('http://localhost:5001/loppem-adf69/europe-west1'
 
 
 let studentId = null;
-describe('Notes functionality', function() {
+describe.skip('Notes functionality', function() {
   before(async function() {
     const res = await server
         .post('/inscriptionSubmit')
@@ -82,7 +82,7 @@ describe('Notes functionality', function() {
     });
   });
 
-  describe('Cook notes', function() {
+  describe.skip('Cook notes', function() {
     it('It should retreive the cook\'s notes of a single student', function(done) {
       server
           .get(`/adminGetStudentNotes?id=${studentId}&type=cook`)
