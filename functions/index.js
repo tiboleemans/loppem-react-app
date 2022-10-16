@@ -8,7 +8,7 @@ const inscriptionMailToSend = require('./public/inscription_temporary_mails_to_s
 const inscriptionSubmit = require('./public/inscription');
 const inscriptionSubmitMailToSend = require('./public/inscription_mails_to_send');
 
-const manageTemplate = require('./public/manage_template.js');
+const manageTemplate = require('./admin/manage_template.js');
 
 const adminPayment = require('./admin/payments');
 const adminNotes = require('./admin/notes');
@@ -56,13 +56,14 @@ admin.post('/api/addPaymentAndConfirm', (req, res) => {
   adminPayment.addPaymentAndConfirm(req, res);
 });
 
+admin.post('/api/updateTemplate', (req, res) => {
+  manageTemplate.updateTemplate(req, res);
+});
+
 exports.admin = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .https.onRequest(admin);
-
-// JUST SOME ENDPOINT TO MANAGED MAIL TEMPLATES
-exports.updateTemplate = manageTemplate.updateTemplate;
 
 exports.createInitialPayment = adminPayment.createInitialPayment;
 
