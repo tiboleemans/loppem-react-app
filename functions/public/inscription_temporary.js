@@ -3,16 +3,17 @@
 // This class is responsible for CRU interaction with the inscription_temporary,
 // containing the students which aren't permanently inscribed into the system (yet).
 // This might trigger actions defined in the inscription_temporary_mails_to_send.js.
+// This functionality is only used when parents don't submit the student but rather
+// save it's data and want to continue with the form data on a later moment.
 // =================================================================================
 const tools = require('../tools');
-const functions = require('firebase-functions');
 const {admin, db} = require('../db');
 
 /**
  * REST: temporarily inscribe a student into the system
- * Method: POST
- * Request Parameters:
- *  - id (optional, if present it will update an existing record)
+ * @param {Request} req the request
+ * @param {Response} res the response
+ * @return {Response} The response with status 200, 201 or 400
  */
 exports.inscriptionSaveTemporary = async (req, res) => {
   if (req.method == 'OPTIONS') {
@@ -44,10 +45,10 @@ exports.inscriptionSaveTemporary = async (req, res) => {
 };
 
 /**
- * REST: fetch a temporarily saved student
- * Method: GET
- * Request Parameters:
- *  - id
+ * REST: retrieve a temporarily saved student
+ * @param {Request} req the request
+ * @param {Response} res the response
+ * @return {Response} The response with the student as body (200), a 404 (not found) or 400 (id param missing)
  */
 exports.inscriptionSaveGetTempInscription = async (req, res) => {
   if (req.method == 'OPTIONS') {
@@ -76,8 +77,7 @@ exports.inscriptionSaveGetTempInscription = async (req, res) => {
       data: doc,
     });
   }
-}
-
+};
 
 /**
  * Insert a new record in the table 'inscription_temporary'.

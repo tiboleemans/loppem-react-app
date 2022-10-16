@@ -1,8 +1,7 @@
 const express = require('express');
 const functions = require('firebase-functions');
 const cors = require('cors');
-const app = express();
-const tools = require('./tools')
+const tools = require('./tools');
 
 const inscriptionSave = require('./public/inscription_temporary');
 const inscriptionMailToSend = require('./public/inscription_temporary_mails_to_send');
@@ -16,10 +15,27 @@ const adminNotes = require('./admin/notes');
 const adminClasses = require('./admin/classes');
 const adminStudent = require('./admin/student.js');
 
-// ////.inscriptionTemporarySa <-- this is the max visible lenght of a function name
-//exports.inscriptionSaveTemporary = inscriptionSave.inscriptionSaveTemporary;
-//exports.inscriptionSaveGetTempInscription = inscriptionSave.inscriptionSaveGetTempInscription;
+// PUBLIC API
+// All defined endpoints are available under the /api path
+const app = express();
+app.use(cors({origin: true}));
 
+// Temporary inscriptions
+// These are _only_ used when a parent doesn't submit the form but
+// saves it for a later date (e.g. doesn't have all the data)
+app.post('/inscriptionSaveTemporary', (req, res) => {
+  inscriptionSave.inscriptionSaveTemporary(req, res);
+});
+app.get('/inscriptionSaveGetTempInscription', (req, res) => {
+  inscriptionSave.inscriptionSaveGetTempInscription(req, res);
+});
+
+exports.api = functions
+    .runWith(tools.defaultHttpOptions)
+    .region('europe-west1')
+    .https.onRequest(app);
+
+// FIRESTORE TRIGGERED FUNCTIONS
 exports.inscriptionSaveMailAfterInscription = inscriptionMailToSend.inscriptionSaveMailAfterInscription;
 exports.inscriptionSaveMailAfterUpdate = inscriptionMailToSend.inscriptionSaveMailAfterUpdate;
 exports.inscriptionSaveConvertEmailForExt = inscriptionMailToSend.inscriptionSaveConvertEmailForExt;
@@ -28,6 +44,7 @@ exports.inscriptionSaveScheduleMail = inscriptionMailToSend.inscriptionSaveSched
 
 exports.inscriptionSaveMailAfterSubmit = inscriptionSubmitMailToSend.inscriptionSaveMailAfterSubmit;
 
+// JUST SOME ENDPOINT TO MANAGED MAIL TEMPLATES
 exports.updateTemplate = manageTemplate.updateTemplate;
 
 exports.inscriptionSubmit = inscriptionSubmit.inscriptionSubmit;
@@ -42,17 +59,3 @@ exports.adminListStudentNotes = adminNotes.adminListStudentNotes;
 
 exports.createStudentAfterPayment = adminStudent.createStudentAfterPayment;
 exports.addNewStudentToDefaultClass = adminClasses.addNewStudentToDefaultClass;
-
-app.use(cors({origin: true}));
-
-app.post('/inscriptionSaveTemporary', (req, res) => {
-  inscriptionSave.inscriptionSaveTemporary(req, res)
-});
-app.get('/inscriptionSaveGetTempInscription', (req, res) => {
-  inscriptionSave.inscriptionSaveGetTempInscription(req, res)
-});
-
-exports.api = functions
-  .runWith(tools.defaultHttpOptions)
-  .region('europe-west1')
-  .https.onRequest(app);
