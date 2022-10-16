@@ -17,7 +17,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "firebase-admin": "^11.1.0",
-    "firebase-functions": "^3.24.1",
+    "firebase-functions": "^4.0.0-rc.0",
     "joi": "^17.4.0",
     "xss": "^1.0.9"
   },
