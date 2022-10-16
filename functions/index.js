@@ -15,10 +15,21 @@ const adminNotes = require('./admin/notes');
 const adminClasses = require('./admin/classes');
 const adminStudent = require('./admin/student.js');
 
+const CORS_CONFIG = {
+  origin: [
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
+    'https://loppem-adf69.web.app',
+    'https://loppem-adf69.firebaseapp.com',
+    'https://www.loppemconversa.be',
+  ],
+  methods: ['POST', 'PUT', 'GET', 'HEAD'],
+};
+
 // PUBLIC API
 // All defined endpoints are available under the /api path
 const app = express();
-app.use(cors({origin: true}));
+app.use(cors(CORS_CONFIG));
 
 // Temporary inscriptions
 // These are _only_ used when a parent doesn't submit the form but
@@ -50,7 +61,7 @@ exports.inscriptionSaveMailAfterSubmit = inscriptionSubmitMailToSend.inscription
 // ADMIN API
 // All defined endpoints are available under the /admin path
 const admin = express();
-admin.use(cors({origin: true}));
+admin.use(cors(CORS_CONFIG));
 
 admin.post('/api/addPaymentAndConfirm', (req, res) => {
   tools.executeRequest(adminPayment.addPaymentAndConfirm, req, res);
