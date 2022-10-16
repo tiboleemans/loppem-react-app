@@ -6,7 +6,7 @@ const {admin, db} = require('../db');
 
 // This agent refers to PORT where program is runninng.
 
-const server = supertest.agent('http://localhost:5001/loppem-adf69/europe-west1/api');
+const server = supertest.agent(`${process.env.APP_TEST_BASE_URL}${process.env.APP_TEST_PUBLIC_API_PREFIX}`);
 
 describe('Final inscription', function() {
   describe('Happy flow', function() {

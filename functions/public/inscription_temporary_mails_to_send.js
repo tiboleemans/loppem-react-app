@@ -97,7 +97,7 @@ exports.inscriptionSaveConvertEmailForExt = functions
 exports.inscriptionSaveScheduleMail = functions
     .runWith(tools.defaultBatchOptions)
     .region('europe-west1')
-    .pubsub.schedule('0 8 * * *')
+    .pubsub.schedule(process.env.APP_MAIL_RETRY_SCHEDULE)
     .timeZone('Europe/Brussels')
     .onRun(async (context) => {
       console.info(`Fetching unsent mails for camp year ${tools.campYear()}`);
@@ -135,7 +135,7 @@ async function prepareSendEmail(mailRequest) {
 
     await db.collection('mail_ext')
         .add({
-          from: 'Loppem Conversa <info@loppemconversa.be>',
+          from: process.env.APP_MAIL_FROM,
           // replyTo:
           to: mailData.email,
           template: {

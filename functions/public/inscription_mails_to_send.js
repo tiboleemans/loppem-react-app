@@ -34,7 +34,7 @@ async function prepareSendEmailToParent(studentId, student) {
     return await db.collection('mail_ext')
         .doc(studentId + '-inscription-confirmation')
         .set({
-          from: 'Loppem Conversa <info@loppemconversa.be>',
+          from: process.env.APP_MAIL_FROM,
           // replyTo:
           to: student.email,
           template: {
@@ -59,9 +59,9 @@ async function prepareSendEmailToAdmin(studentId, student) {
     return await db.collection('mail_ext')
         .doc(studentId + '-inscription-cc')
         .set({
-          from: 'Loppem Conversa <info@loppemconversa.be>',
+          from: process.env.APP_MAIL_FROM,
           // replyTo:
-          to: 'wutske@gmail.com',
+          to: process.env.APP_MAIL_ADMIN_EMAIL,
           template: {
             name: `inscription-cc`,
             data: student,

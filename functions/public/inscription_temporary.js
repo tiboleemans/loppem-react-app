@@ -54,11 +54,6 @@ exports.inscriptionSaveGetTempInscription = async (req, res) => {
   if (req.method == 'OPTIONS') {
     return res.end();
   }
-  if (req.method !== 'GET') {
-    return res.status(400).json({
-      message: 'Method not supported',
-    });
-  }
 
   const docId = req.query.id;
   if (docId == null) {

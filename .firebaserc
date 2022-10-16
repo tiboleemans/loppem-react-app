@@ -1,5 +1,9 @@
 {
   "projects": {
-    "default": "loppem-adf69"
-  }
+    "default": "loppem-adf69",
+    "development": "loppem-adf69",
+    "production": "loppem-adf69"
+  },
+  "targets": {},
+  "etags": {}
 }

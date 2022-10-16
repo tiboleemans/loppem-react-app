@@ -16,7 +16,7 @@ exports.CORS_POST = {
 
 
 exports.campYear = function campYear() {
-  return 2022; // Could become a function, like once we're passed august it can become next year ?
+  return parseInt(process.env.APP_CAMP_YEAR); // Could become a function, like once we're passed august it can become next year ?
 };
 
 exports.defaultHttpOptions = {

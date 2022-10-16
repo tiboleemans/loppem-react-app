@@ -4,7 +4,7 @@ const {admin, db} = require('../db');
 
 // This agent refers to PORT where program is runninng.
 
-const adminServer = supertest.agent('http://localhost:5001/loppem-adf69/europe-west1/admin/api');
+const adminServer = supertest.agent(`${process.env.APP_TEST_BASE_URL}${process.env.APP_TEST_ADMIN_API_PREFIX}`);
 
 describe('Mail templates', function() {
   describe('Add a mail template', function() {
