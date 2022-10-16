@@ -24,13 +24,13 @@ app.use(cors({origin: true}));
 // These are _only_ used when a parent doesn't submit the form but
 // saves it for a later date (e.g. doesn't have all the data)
 app.post('/inscriptionSaveTemporary', (req, res) => {
-  inscriptionSave.inscriptionSaveTemporary(req, res);
+  tools.executeRequest(inscriptionSave.inscriptionSaveTemporary, req, res);
 });
 app.get('/inscriptionSaveGetTempInscription', (req, res) => {
-  inscriptionSave.inscriptionSaveGetTempInscription(req, res);
+  tools.executeRequest(inscriptionSave.inscriptionSaveGetTempInscription, req, res);
 });
 app.post('/inscriptionSubmit', (req, res) => {
-  inscriptionSubmit.inscriptionSubmit(req, res);
+  tools.executeRequest(inscriptionSubmit.inscriptionSubmit, req, res);
 });
 
 exports.api = functions
@@ -53,11 +53,11 @@ const admin = express();
 admin.use(cors({origin: true}));
 
 admin.post('/api/addPaymentAndConfirm', (req, res) => {
-  adminPayment.addPaymentAndConfirm(req, res);
+  tools.executeRequest(adminPayment.addPaymentAndConfirm, req, res);
 });
 
 admin.post('/api/updateTemplate', (req, res) => {
-  manageTemplate.updateTemplate(req, res);
+  tools.executeRequest(manageTemplate.updateTemplate, req, res);
 });
 
 exports.admin = functions

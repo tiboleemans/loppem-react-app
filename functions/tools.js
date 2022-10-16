@@ -1,5 +1,6 @@
 const xss = require('xss');
 const Joi = require('joi');
+const crypto = require('crypto');
 
 exports.CORS_GET = {
   origin: true,
@@ -84,4 +85,24 @@ exports.fetchStudent = function fetchStudent(data) {
           resolve(studentData);
         });
   });
+};
+
+function logRequest(id, req) {
+  if (req) {
+    console.log(`[${id}] ${req.method} - ${req.url}`);
+  }
+};
+
+function logResponse(id, res) {
+  if (res) {
+    console.log(`[${id}] ${res.statusCode}`);
+  }
+};
+
+exports.executeRequest = (fun, req, res) => {
+  requestId = crypto.randomBytes(8).toString('hex');
+  logRequest(requestId, req);
+  v = fun(req, res);
+  logResponse(requestId, res);
+  return v;
 };
