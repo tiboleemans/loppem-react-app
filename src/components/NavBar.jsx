@@ -1,9 +1,11 @@
 import React from "react";
 import {classList} from "../utils";
 import ScrollTo from "../common/ScrollTo";
+import {changeLanguage} from "../i18n/i18nSetup";
+import {useTranslation} from "react-i18next";
 
 const NavBar = () => {
-
+    const { t, i18n: { language} } = useTranslation();
     return (
         <section
             className={classList({
@@ -52,6 +54,14 @@ const NavBar = () => {
                         </ScrollTo>
                     </li>
                 </ul>
+                <ul className="navigation"><li>
+                    <button type="button" onClick={() => changeLanguage('nl-BE')}>
+                        {language === 'nl-BE' ? <b>Nederlands</b> : "Nederlands"}
+                    </button>
+                    <button type="button" onClick={() => changeLanguage('fr-BE')}>
+                        {language === 'fr-BE' ? <b>Français</b> : "Français"}
+                    </button>
+                </li></ul>
             </div>
         </section>
     );

@@ -41,14 +41,14 @@ const Pricing1 = () => {
                                 <Divider className="mb-2"/>
                                 <div className="px-3 py-2">
                                     <Grid container spacing={2}>
-                                        <Grid container item justify="flex-end" md={7}><span
+                                        <Grid container item justifyContent="flex-end" md={7}><span
                                             className="text-20"><strong>Basisprijs</strong></span></Grid>
-                                        <Grid container item justify="flex-end" md={4}><span
+                                        <Grid container item justifyContent="flex-end" md={4}><span
                                             className="text-20"><strong>€ 740</strong></span></Grid>
-                                        <Grid md={7} container item justify="flex-end">Tijdelijke korting</Grid>
-                                        <Grid md={4} container item justify="flex-end">-€20</Grid>
-                                        <Grid md={7} container item justify="flex-end">Speciale korting</Grid>
-                                        <Grid md={4} container item justify="flex-end">-€20</Grid>
+                                        <Grid md={7} container item justifyContent="flex-end">Tijdelijke korting</Grid>
+                                        <Grid md={4} container item justifyContent="flex-end">-€20</Grid>
+                                        <Grid md={7} container item justifyContent="flex-end">Speciale korting</Grid>
+                                        <Grid md={4} container item justifyContent="flex-end">-€20</Grid>
                                     </Grid>
                                 </div>
                                 <Button className="mt-4" color="primary" variant="contained">
@@ -70,14 +70,14 @@ const Pricing1 = () => {
                                 <Divider className="mb-2"/>
                                 <div className="px-3 py-2">
                                     <Grid container spacing={2}>
-                                        <Grid container item justify="flex-end" md={7}><span
+                                        <Grid container item justifyContent="flex-end" md={7}><span
                                             className="text-20"><strong>Basisprijs</strong></span></Grid>
-                                        <Grid container item justify="flex-end" md={4}><span
+                                        <Grid container item justifyContent="flex-end" md={4}><span
                                             className="text-20"><strong>€ 690</strong></span></Grid>
-                                        <Grid md={7} container item justify="flex-end">Tijdelijke korting</Grid>
-                                        <Grid md={4} container item justify="flex-end">-€20</Grid>
-                                        <Grid md={7} container item justify="flex-end">Speciale korting</Grid>
-                                        <Grid md={4} container item justify="flex-end">-€20</Grid>
+                                        <Grid md={7} container item justifyContent="flex-end">Tijdelijke korting</Grid>
+                                        <Grid md={4} container item justifyContent="flex-end">-€20</Grid>
+                                        <Grid md={7} container item justifyContent="flex-end">Speciale korting</Grid>
+                                        <Grid md={4} container item justifyContent="flex-end">-€20</Grid>
                                     </Grid>
                                 </div>
                                 <Button className="mt-4" color="primary" variant="contained">

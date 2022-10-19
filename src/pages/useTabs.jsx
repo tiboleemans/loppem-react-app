@@ -23,8 +23,8 @@ const useStyles = makeStyles(({
 }));
 
 const TabsContainer = ({tabs, selectedTab, setSelectedTabId, classes}) => <div>
-    {tabs.map((tab) => (
-        <div className="inline-block mb-10">
+    {tabs.map((tab, index) => (
+        <div className="inline-block mb-10" key={index}>
             <div onClick={() => setSelectedTabId(tab.id)}
                  className={`lex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG} ${selectedTab === tab.id ? 'active' : ''}`}>
                 <div

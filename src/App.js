@@ -17,7 +17,7 @@ function App() {
       <GlobalCss>
         <Scrollbar
           className="h-full-screen scrollable-content"
-          option={{suppressScrollX: true}}
+          options={{suppressScrollX: true}}
         >
           <Router basename="/">
             <Switch>

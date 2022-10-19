@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
-import {Axios} from "../firebase/firebaseConfig";
-import {useParams} from "react-router";
+import {useParams} from "react-router-dom";
+import {updateStudent} from "../services/InscriptionService";
 
 const initialFieldValues = {
     id: '',
@@ -65,10 +65,8 @@ export default function useForm() {
     let {id} = useParams();
     useEffect(() => {
         if (id) {
-            Axios.get(
-                `https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveGetTempInscription?id=${id}`
-            ).then(res => {
-                setValues(res.data);
+            updateStudent(id, values).then((inscription) => {
+                setValues(inscription);
                 values.id = id;
             }).catch(error => {
                 console.log(error)
@@ -77,17 +75,11 @@ export default function useForm() {
     }, [])
 
     const handleInputChange = event => {
-        console.log(event);
-        console.log(event.target);
         const {
             subject,
             name,
             value
         } = event.target;
-
-        console.log(subject);
-        console.log(name);
-        console.log(value);
 
         if (subject) {
             setValues({

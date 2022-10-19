@@ -62,7 +62,6 @@ export default function ParentInformationForm(props) {
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
                     <CustomButtonGroup
                         subject="parent"
-                        subject="parent"
                         name="relation"
                         label="* Relatie met leerling:"
                         value={values.relation}

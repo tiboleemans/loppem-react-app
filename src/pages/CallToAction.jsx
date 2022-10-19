@@ -12,7 +12,7 @@ const CallToAction = () => {
                     spacing={3}
                     direction="row"
                     alignItems="center"
-                    justify="flex-start"
+                    justifyContent="flex-start"
                 >
                     <Grid item lg={8} md={8} sm={12} xs={12}>
                         <h2>Dont miss the best management tool of the world</h2>

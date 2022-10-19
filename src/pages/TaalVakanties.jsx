@@ -8,7 +8,7 @@ import useTabs from "./useTabs";
 import {useTranslation} from "react-i18next";
 
 const TaalVakanties = () => {
-  const { t } = useTranslation();
+        const {t} = useTranslation();
         const {body, header} = useTabs([{
             id: 'WHAT',
             title: t("vacations.what"),
@@ -104,7 +104,7 @@ const TaalVakanties = () => {
                                         <CardHeader title={body?.title}/>
                                         <CardContent>
                                             {body?.sections.map((section, i) =>
-                                                <div>
+                                                <div key={i}>
                                                     <h4> {section.title}</h4>
                                                     <p className="text-16"> {section.text}</p>
                                                 </div>
@@ -143,7 +143,6 @@ const TaalVakanties = () => {
                         }
                     </Grid>
                 </div>
-
             </div>
         )
             ;

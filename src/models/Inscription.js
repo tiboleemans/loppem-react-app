@@ -79,6 +79,8 @@ class Inscription {
     }
 
     static fromApi(data) {
+
+
         return new Inscription(data.id, data.sitelanguage, data.language, data.period, data.firstNameStudent, data.lastNameStudent, data.gender, data.birthday, data.firstNameParent, data.lastNameParent, data.email, data.relation, data.street, data.houseNr, data.busNr, data.city, data.zipCode, data.gsm, data.gsm2, data.nameSchool, data.streetSchool, data.houseNrSchool, data.busNrSchool, data.citySchool, data.zipSchool, data.titleProfSchool, data.nameProfSchool, data.yearsSchool, data.hoursSchool, data.immersionSchool, data.reportSchool, data.apportedStudent, data.contact, data.additionalInfo, data.foodInfo, data.interest, data.acceptPictures, data.acceptTerms);
     }
 }

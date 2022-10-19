@@ -1,6 +1,7 @@
 import React from "react";
 import {Button, Card, Grid, TextField} from "@material-ui/core";
-import ContactMap1 from "../sections/ContactMap1";
+
+import ContactMap2 from "../sections/ContactMap2";
 
 const Contact = () => {
     return (
@@ -13,31 +14,34 @@ const Contact = () => {
                     <Grid item md={6} xs={12}>
                         <Card className="py-10 px-6" elevation={3}>
                             <Grid container spacing={3}>
-                                <Grid container item md={4} justify="flex-end">Correspondent:</Grid>
+                                <Grid container item md={4} justifyContent="flex-end">Correspondent:</Grid>
                                 <Grid container item md={8}>Thibault Leemans</Grid>
-                                <Grid container item md={4} justify="flex-end">Emailadres:</Grid>
+                                <Grid container item md={4} justifyContent="flex-end">Emailadres:</Grid>
                                 <Grid container item md={8}>info@loppemconversa.be</Grid>
-                                <Grid container item md={4} justify="flex-end">Gsm:</Grid>
+                                <Grid container item md={4} justifyContent="flex-end">Gsm:</Grid>
                                 <Grid container item md={8}>0478 51 93 44 <br/> (bij voorkeur buiten de kantooruren)</Grid>
-                                <Grid container item md={4} justify="flex-end">Naam vereniging:</Grid>
+                                <Grid container item md={4} justifyContent="flex-end">Naam vereniging:</Grid>
                                 <Grid container item md={8}>VZW Taalstages CV</Grid>
-                                <Grid container item md={4} justify="flex-end">KBO:</Grid>
+                                <Grid container item md={4} justifyContent="flex-end">KBO:</Grid>
                                 <Grid container item md={8}>0714.900.490</Grid>
-                                <Grid container item md={4} justify="flex-end">Maatschappelijke zetel:</Grid>
+                                <Grid container item md={4} justifyContent="flex-end">Maatschappelijke zetel:</Grid>
                                 <Grid container item md={8}>Koolskampstraat 37 <br/> 8820 Torhout</Grid>
-                                <Grid container item md={4} justify="flex-end">Adres van de stage:</Grid>
+                                <Grid container item md={4} justifyContent="flex-end">Adres van de stage:</Grid>
                                 <Grid container item md={8}>Abdijschool van Zevenkerken < br/> Zevenkerken 4 < br/> 8200 Brugge</Grid>
                             </Grid>
                         </Card>
                     </Grid>
+                    {/*<Grid item md={6} xs={12}>*/}
+                    {/*    <ContactMap1*/}
+                    {/*        isMarkerShown*/}
+                    {/*        googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"*/}
+                    {/*        loadingElement={<div className="h-full"/>}*/}
+                    {/*        containerElement={<div className="h-full"/>}*/}
+                    {/*        mapElement={<div className="h-full"/>}*/}
+                    {/*    />*/}
+                    {/*</Grid>*/}
                     <Grid item md={6} xs={12}>
-                        <ContactMap1
-                            isMarkerShown
-                            googleMapURL="https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places"
-                            loadingElement={<div className="h-full"/>}
-                            containerElement={<div className="h-full"/>}
-                            mapElement={<div className="h-full"/>}
-                        />
+                        <ContactMap2/>
                     </Grid>
                 </Grid>
                 <Grid container spacing={3}>
@@ -67,7 +71,7 @@ const Contact = () => {
                                     placeholder="Message"
                                     size="small"
                                     multiline
-                                    rows={8}
+                                    minRows={8}
                                     variant="outlined"
                                     fullWidth
                                 />
@@ -103,7 +107,7 @@ const Contact = () => {
                                     placeholder="Message"
                                     size="small"
                                     multiline
-                                    rows={8}
+                                    minRows={8}
                                     variant="outlined"
                                     fullWidth
                                 />

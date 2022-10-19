@@ -43,7 +43,7 @@ const setupAndInitI18n = (language) => {
     defaultNS: 'translations',
     nsSeparator: '|', // Makes sure that the default value : can't be used in a translation
     react: {
-      wait: true,
+      useSuspense: true,
       withRef: true,
       defaultTransParent: 'span'
     }

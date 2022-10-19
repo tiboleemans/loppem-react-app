@@ -24,12 +24,8 @@ const Home = () => {
     return (
         <div className="home">
             <NavBar/>
-            <button type="button" onClick={() => changeLanguage('nl-BE')}>
-              {language === 'nl-BE' ? <b>Nederlands</b> : "Nederlands"}
-            </button>
-            <button type="button" onClick={() => changeLanguage('fr-BE')}>
-              {language === 'fr-BE' ? <b>Français</b> : "Français"}
-            </button>
+
+            TEST THIBAULT
             {t('hi')}
             <Intro/>
             <TaalVakanties/>

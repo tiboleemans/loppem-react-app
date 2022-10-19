@@ -12,4 +12,13 @@ const registerStudent = (request) => {
     })
 };
 
-export default registerStudent;
+const updateStudent = (id, request) => {
+    return Axios.post(
+        `${apiPathInscription}/api/inscriptionSaveTemporary?${id}`,
+        request
+    ).then(({response}) => {
+        Inscription.fromApi(response);
+    })
+};
+
+export {registerStudent, updateStudent};

@@ -11,9 +11,9 @@ import SchoolInformationForm, {getErrorSchoolStep} from "./SchoolInformationForm
 import ExtraInformationForm, {getErrorExtraInfoStep} from "./ExtraInformationForm";
 import {customStyling} from "../../components/controls/CustomStyling";
 import useForm from "../../components/useForm";
-import {Axios} from "../../firebase/firebaseConfig";
 import Alert from '@mui/material/Alert';
-import registerStudent from "../../services/InscriptionService";
+import {registerStudent} from "../../services/InscriptionService";
+import {updateStudent} from "../../services/InscriptionService";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
 const disableValidation = true;
@@ -74,8 +74,7 @@ export default function InscriptionForm() {
         if (validate()) {
             setHasFeedback(false);
             setStep(step + 1);
-            console.log('step is '+ step);
-            if(step === steps.length - 1) {
+            if (step === steps.length - 1) {
                 sentInfo()
             }
         } else {
@@ -96,14 +95,15 @@ export default function InscriptionForm() {
                     const success = <Alert severity="success">Successfully registered with id ${inscription.id}</Alert>
                     setFeedbackMessage(success);
                     setHasFeedback(true);
+                    values.id = inscription.id;
                 });
         } else {
-            Axios.post(
-                `https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveTemporary?id=${values.id}`,
-                values
-            ).then(res => {
-                values.id = res.id;
-            })
+            updateStudent(values.id, values)
+                .then((inscription) => {
+                    const success = <Alert severity="success">Successfully updated inscription with id ${inscription.id}</Alert>
+                    setFeedbackMessage(success);
+                    setHasFeedback(true);
+                })
         }
     }
 
