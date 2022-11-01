@@ -15,12 +15,15 @@ exports.inscriptionSaveMailAfterSubmit = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
-    .document('inscription/{docId}')
+    .document('registration/{docId}')
     .onCreate((change, context) => {
-      return prepareSendEmailToParent(context.params.docId, change.data())
-          .then(() => {
-            prepareSendEmailToAdmin(context.params.docId, change.data());
-          });
+      if (change.data().status == 'FINAL') {
+        return prepareSendEmailToParent(context.params.docId, change.data())
+            .then(() => {
+              prepareSendEmailToAdmin(context.params.docId, change.data());
+            });
+      }
+      return "SKIP";
     });
 
 /**

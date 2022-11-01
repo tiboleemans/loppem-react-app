@@ -24,8 +24,11 @@ exports.inscriptionSaveMailAfterInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
-    .document('inscription_temporary/{docId}')
+    .document('registration/{docId}')
     .onCreate((change, context) => {
+      if (change.data().status != 'TEMPORARY') {
+        return "not-temporary";
+      }
       return db
           .collection('inscription_temporary_mails_to_send')
           .doc(context.params.docId)
@@ -49,6 +52,9 @@ exports.inscriptionSaveMailAfterUpdate = functions
     .firestore
     .document('inscription_temporary/{docId}')
     .onUpdate((change, context) => {
+      if (change.after.data().status != 'TEMPORARY') {
+        return "not-temporary";
+      }
       const previousMail = db.collection('inscription_temporary_mails_to_send')
           .doc(context.params.docId).get();
 

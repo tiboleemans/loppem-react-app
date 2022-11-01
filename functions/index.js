@@ -7,9 +7,8 @@ const cors = require('cors');
 const tools = require('./tools');
 
 const register = require('./public/registration');
-const inscriptionMailToSend = require('./public/inscription_temporary_mails_to_send');
-const inscriptionSubmit = require('./public/inscription');
-const inscriptionSubmitMailToSend = require('./public/inscription_mails_to_send');
+const registrationMailToSend = require('./public/registration_temporary_mails_to_send');
+const registrationSubmitMailToSend = require('./public/registration_mails_to_send');
 
 const manageTemplate = require('./admin/manage_template.js');
 
@@ -59,13 +58,13 @@ exports.api = functions
     .https.onRequest(app);
 
 // FIRESTORE TRIGGERED FUNCTIONS
-exports.inscriptionSaveMailAfterInscription = inscriptionMailToSend.inscriptionSaveMailAfterInscription;
-exports.inscriptionSaveMailAfterUpdate = inscriptionMailToSend.inscriptionSaveMailAfterUpdate;
-exports.inscriptionSaveConvertEmailForExt = inscriptionMailToSend.inscriptionSaveConvertEmailForExt;
-exports.inscriptionSaveMailUpdatedInscription = inscriptionMailToSend.inscriptionSaveMailUpdatedInscription;
-exports.inscriptionSaveScheduleMail = inscriptionMailToSend.inscriptionSaveScheduleMail;
+exports.inscriptionSaveMailAfterInscription = registrationMailToSend.inscriptionSaveMailAfterInscription;
+exports.inscriptionSaveMailAfterUpdate = registrationMailToSend.inscriptionSaveMailAfterUpdate;
+exports.inscriptionSaveConvertEmailForExt = registrationMailToSend.inscriptionSaveConvertEmailForExt;
+exports.inscriptionSaveMailUpdatedInscription = registrationMailToSend.inscriptionSaveMailUpdatedInscription;
+exports.inscriptionSaveScheduleMail = registrationMailToSend.inscriptionSaveScheduleMail;
 
-exports.inscriptionSaveMailAfterSubmit = inscriptionSubmitMailToSend.inscriptionSaveMailAfterSubmit;
+exports.inscriptionSaveMailAfterSubmit = registrationSubmitMailToSend.inscriptionSaveMailAfterSubmit;
 
 // ADMIN API
 // All defined endpoints are available under the /admin path
