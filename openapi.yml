@@ -1,0 +1,186 @@
+swagger: "2.0"
+info:
+  description: "This is a sample server Petstore server.  You can find out more about     Swagger at [http://swagger.io](http://swagger.io) or on [irc.freenode.net, #swagger](http://swagger.io/irc/).      For this sample, you can use the api key `special-key` to test the authorization     filters."
+  version: "1.0.0"
+  title: "Swagger Petstore"
+  termsOfService: "http://swagger.io/terms/"
+  contact:
+    email: "apiteam@swagger.io"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+host: "petstore.swagger.io"
+basePath: "/v2"
+tags:
+  - name: "pet"
+    description: "Everything about your Pets"
+    externalDocs:
+      description: "Find out more"
+      url: "http://swagger.io"
+  - name: "store"
+    description: "Access to Petstore orders"
+  - name: "user"
+    description: "Operations about user"
+    externalDocs:
+      description: "Find out more about our store"
+      url: "http://swagger.io"
+schemes:
+  - "https"
+  - "http"
+paths:
+  /api/registration/{id}:
+    get:
+      tags:
+        - "registration"
+      summary: "Get registration"
+      description: ""
+      operationId: "getRegistration"
+      produces:
+        - "application/json"
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: string
+      responses:
+        "200":
+          description: "Gets all kind of registration identified by id"
+          schema:
+            $ref: "#/definitions/Registration"
+  /api/registration/temporary:
+    post:
+      tags:
+        - "registration"
+      summary: "Add a new temporary registration"
+      description: ""
+      operationId: "addTemporaryRegistration"
+      consumes:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Temporary registration that needs to be added"
+          required: true
+          schema:
+            $ref: "#/definitions/TemporaryRegistration"
+      responses:
+        "201":
+          description: "CREATED"
+    put:
+      tags:
+        - "inscription"
+      summary: "Update an existing temporary registration"
+      description: ""
+      operationId: "updateTemporaryRegistration"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Temporary registration that needs to be added"
+          required: true
+          schema:
+            $ref: "#/definitions/TemporaryRegistration"
+      responses:
+        "200":
+          description: "Successfully updated temporary registration"
+          schema:
+            $ref: "#/definitions/TemporaryRegistration"
+  /api/registration:
+    post:
+      tags:
+        - "registration"
+      summary: "Add a new registration"
+      description: ""
+      operationId: "addRegistration"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "New registration that needs to be added"
+          required: true
+          schema:
+            $ref: "#/definitions/Registration"
+      responses:
+        "201":
+          description: "Successfully submitted registration"
+    put:
+      tags:
+        - "registration"
+      summary: "comment update to registration"
+      description: ""
+      operationId: "commentUpdateRegistration"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "New registration that needs to be added"
+          required: true
+          schema:
+            $ref: "#/definitions/CommentRegistration"
+      responses:
+        "200":
+          description: "Successfully submitted registration"
+  /api/admin/registration:
+    put:
+      tags:
+        - "inscription"
+      summary: "Update an existing registration"
+      description: ""
+      operationId: "updateRegistration"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Registration that needs to be added"
+          required: true
+          schema:
+            $ref: "#/definitions/Registration"
+      responses:
+        "200":
+          description: "Successfully updated final registration"
+  /api/admin/registration/{id}/payed:
+    post:
+      tags:
+        - "inscription"
+      summary: "Save or update a payment for an registration identified by given id"
+      description: ""
+      operationId: "payedRegistration"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: path
+          name: id
+          required: true
+          type: string
+        - in: body
+          name: "body"
+          description: "Payment details"
+          required: true
+          schema:
+            $ref: "#/definitions/PayedRegistration"
+      responses:
+        "200":
+          description: "Successfully added/updated payment for registration"
+definitions:
+  TemporaryRegistration:
+    type: object
+  Registration:
+    type: object
+  PayedRegistration:
+    type: object
+  CommentRegistration:
+    type: object
