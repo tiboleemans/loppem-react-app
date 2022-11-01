@@ -11,7 +11,7 @@ describe('Temporary registration', function() {
     it('Should temporarily save the sample student', function(done) {
       server
           .post('/temporary')
-          .send(data.validTemporaryStudent)
+          .send(data.validTemporaryStudent())
           .expect(201)
           .expect('Content-type', /json/)
           .end(function(err, res) {
@@ -29,7 +29,7 @@ describe('Temporary registration', function() {
     it('Should temporarily save the sample student and return correct data', function(done) {
       server
           .post('/temporary')
-          .send(data.validTemporaryStudent)
+          .send(data.validTemporaryStudent())
           .expect('Content-type', /json/)
           .expect(201)
           .end(function(err, res) {
@@ -64,7 +64,7 @@ describe('Temporary registration', function() {
     it('Should update the temporary sample student and return correct data', function(done) {
       server
           .post('/temporary')
-          .send(data.validTemporaryStudent)
+          .send(data.validTemporaryStudent())
           .expect('Content-type', /json/)
           .expect(201)
           .end(function(err, res) {
@@ -72,7 +72,7 @@ describe('Temporary registration', function() {
 
             should.exist(res.body.id);
             const docId = res.body.id;
-            const updatedStudent = {...data.validTemporaryStudent, id: docId};
+            const updatedStudent = {...data.validTemporaryStudent(), id: docId};
             updatedStudent.extra.interest = 'Ruby';
 
             server
@@ -108,7 +108,7 @@ describe('Temporary registration', function() {
 
   describe('Validation failures', function() {
     it('Should return 400 if invalid data is passed', function(done) {
-      const invalidStudent = {...data.validStudent};
+      const invalidStudent = {...data.validTemporaryStudent()};
       invalidStudent.parent.email = 'This-is-not-an-email';
       server
           .post('/temporary')
@@ -128,7 +128,7 @@ describe('Temporary registration', function() {
     it('Should return a 400 if updating without an id', function(done) {
       server
           .put('/temporary')
-          .send(data.validTemporaryStudent)
+          .send(data.validTemporaryStudent())
           .expect(400)
           .expect('Content-type', /json/)
           .end(function(err, res) {
@@ -143,7 +143,7 @@ describe('Temporary registration', function() {
     it('Should return a 400 when trying to create a new registration with an id', function(done) {
       server
           .post('/temporary')
-          .send({...data.validTemporaryStudent, id: 'something'})
+          .send({...data.validTemporaryStudent(), id: 'something'})
           .expect(400)
           .expect('Content-type', /json/)
           .end(function(err, res) {
@@ -158,7 +158,7 @@ describe('Temporary registration', function() {
     it('Should return a 404 when trying to update a non-existing registration', function(done) {
       server
           .put('/temporary')
-          .send({...data.validTemporaryStudent, id: 'something'})
+          .send({...data.validTemporaryStudent(), id: 'something'})
           .expect(404)
           .expect('Content-type', /json/)
           .end(function(err, res) {
@@ -175,7 +175,7 @@ describe('Temporary registration', function() {
     it('Should not be possible to set status on a temporary registration', function(done) {
       server
           .post('/temporary')
-          .send({...data.validTemporaryStudent, status: 'PAID'})
+          .send({...data.validTemporaryStudent(), status: 'PAID'})
           .expect(201)
           .expect('Content-type', /json/)
           .end(function(err, res) {
@@ -190,7 +190,7 @@ describe('Temporary registration', function() {
     it('Should not be possible to update the temporary status', function(done) {
       server
           .post('/temporary')
-          .send(data.validTemporaryStudent)
+          .send(data.validTemporaryStudent())
           .expect('Content-type', /json/)
           .expect(201)
           .end(function(err, res) {
@@ -198,7 +198,7 @@ describe('Temporary registration', function() {
 
             should.exist(res.body.id);
             const docId = res.body.id;
-            const updatedStudent = {...data.validTemporaryStudent, id: docId, status: 'FINAL'};
+            const updatedStudent = {...data.validTemporaryStudent(), id: docId, status: 'FINAL'};
             updatedStudent.extra.interest = 'Ruby';
 
             server
