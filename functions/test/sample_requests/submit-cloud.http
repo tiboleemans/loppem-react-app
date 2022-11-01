@@ -2,7 +2,7 @@ POST https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSubmit http
 content-type: application/json
 
  {
-    "sitelanguage": "nl",
+    "siteLanguage": "nl",
     "language": "en",
     "period": "august    ",
     "firstNameStudent": "Franske    ",

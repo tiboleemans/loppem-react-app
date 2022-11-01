@@ -38,7 +38,7 @@ async function prepareSendEmailToParent(studentId, student) {
           // replyTo:
           to: student.email,
           template: {
-            name: `inscription-confirmation-${student.sitelanguage}`,
+            name: `inscription-confirmation-${student.siteLanguage}`,
             data: student,
           },
         });

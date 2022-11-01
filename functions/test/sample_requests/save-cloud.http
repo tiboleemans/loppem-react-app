@@ -6,7 +6,7 @@ POST https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveTempora
 content-type: application/json
 
  {
-    "sitelanguage": "nl",
+    "siteLanguage": "nl",
     "language": "dutch",
     "period": "august",
     "firstNameStudent": "Joske",

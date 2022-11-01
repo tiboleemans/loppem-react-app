@@ -3,7 +3,7 @@ POST http://127.0.0.1:5001/loppem-adf69/europe-west1/inscriptionSubmit http/1.1
 content-type: application/json
 
  {
-   "sitelanguage": "nl",
+   "siteLanguage": "nl",
     "language": "    ",
     "period": "august    ",
     "firstNameStudent": "Joske    ",
@@ -53,7 +53,7 @@ POST http://127.0.0.1:5001/loppem-adf69/europe-west1/inscriptionSubmit http/1.1
 content-type: application/json
 
  {
-    "sitelanguage": "nl",
+    "siteLanguage": "nl",
     "language": "en",
     "period": "august    ",
     "firstNameStudent": "Franske    ",

@@ -61,7 +61,7 @@ async function performInsert(data) {
 function validate(data) {
   const joi = tools.saferJoi;
   const schema = joi.object({
-    sitelanguage: joi.string().trim().allow(''),
+    siteLanguage: joi.string().trim().allow(''),
     language: joi.string().trim().min(1).required(),
     period: joi.string().trim().min(4).required(),
     firstNameStudent: joi.string().trim().min(2).required(),
