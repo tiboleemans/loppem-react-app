@@ -6,7 +6,7 @@ const functions = require('firebase-functions');
 const cors = require('cors');
 const tools = require('./tools');
 
-const inscriptionSave = require('./public/inscription_temporary');
+const inscriptionSave = require('./public/register');
 const inscriptionMailToSend = require('./public/inscription_temporary_mails_to_send');
 const inscriptionSubmit = require('./public/inscription');
 const inscriptionSubmitMailToSend = require('./public/inscription_mails_to_send');
