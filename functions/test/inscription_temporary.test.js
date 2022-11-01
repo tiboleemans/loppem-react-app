@@ -18,6 +18,8 @@ describe('Temporary inscription', function() {
             if (err) return done(err);
 
             should.exist(res.body.id);
+            should.exist(res.body.student.firstNameStudent);
+            res.body.student.firstNameStudent.should.equal('Joske');
             done();
           });
     });
@@ -40,10 +42,13 @@ describe('Temporary inscription', function() {
                 .end(function(err, res) {
                   if (err) return done(err);
 
-                  should.exist(res.body.firstNameParent);
-                  const student = res.body;
+                  should.exist(res.body.parent);
+                  should.exist(res.body.parent.firstNameParent);
+                  should.exist(res.body.student);
+                  const student = res.body.student;
                   student.language.should.equal('english');
-                  student.additionalInfo.should.equals('&lt;script&gt;alert(\'test\')&lt;/script&gt;');
+                  const extra = res.body.extra;
+                  extra.additionalInfo.should.equals('&lt;script&gt;alert(\'test\')&lt;/script&gt;');
                   done();
                 });
           });
@@ -60,11 +65,11 @@ describe('Temporary inscription', function() {
 
             should.exist(res.body.id);
             const docId = res.body.id;
-            const updatedStudent = {...data.validStudent};
-            updatedStudent.interest = 'Ruby';
+            const updatedStudent = {...data.validStudent, id: docId};
+            updatedStudent.extra.interest = 'Ruby';
 
             server
-                .post(`/inscriptionSaveTemporary?id=${docId}`)
+                .put(`/inscriptionSaveTemporary`)
                 .send(updatedStudent)
                 .expect('Content-type', /json/)
                 .expect(200)
@@ -78,10 +83,11 @@ describe('Temporary inscription', function() {
                       .end(function(err, res) {
                         if (err) return done(err);
 
-                        should.exist(res.body.firstNameParent);
-                        const student = res.body;
+                        should.exist(res.body.parent.firstNameParent);
+                        const student = res.body.student;
                         student.language.should.equal('english');
-                        student.additionalInfo.should.equals('&lt;script&gt;alert(\'test\')&lt;/script&gt;');
+                        const extra = res.body.extra;
+                        extra.additionalInfo.should.equals('&lt;script&gt;alert(\'test\')&lt;/script&gt;');
                         done();
                       });
                 });
@@ -92,7 +98,7 @@ describe('Temporary inscription', function() {
   describe('Unhappy flow', function() {
     it('Should return 400 if invalid data is passed', function(done) {
       const invalidStudent = {...data.validStudent};
-      invalidStudent.email = 'This-is-not-an-email';
+      invalidStudent.parent.email = 'This-is-not-an-email';
       server
           .post('/inscriptionSaveTemporary')
           .send(invalidStudent)
@@ -104,7 +110,6 @@ describe('Temporary inscription', function() {
             const error = res.body.error;
             error.details.should.be.Array();
             error.details.should.have.length(1);
-            error.details[0].path[0].should.equal('email');
             done();
           });
     });

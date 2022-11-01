@@ -30,9 +30,9 @@ exports.inscriptionSaveMailAfterInscription = functions
           .collection('inscription_temporary_mails_to_send')
           .doc(context.params.docId)
           .set({
-            firstNameParent: change.data().firstNameParent,
-            lastNameParent: change.data().lastNameParent,
-            email: change.data().email,
+            firstNameParent: change.data().parent.firstNameParent,
+            lastNameParent: change.data().parent.lastNameParent,
+            email: change.data().parent.email,
             temporaryInscriptionId: context.params.docId,
             campYear: change.data().campYear,
             mailScheduled: false,
@@ -68,9 +68,9 @@ exports.inscriptionSaveMailAfterUpdate = functions
           .collection('inscription_temporary_mails_to_send')
           .doc(context.params.docId)
           .set({
-            firstNameParent: change.after.data().firstNameParent,
-            lastNameParent: change.after.data().lastNameParent,
-            email: change.after.data().email,
+            firstNameParent: change.after.data().parent.firstNameParent,
+            lastNameParent: change.after.data().parent.lastNameParent,
+            email: change.after.data().parent.email,
             mailScheduled: false,
             updateTimestamp: new Date(),
           }, {

@@ -40,6 +40,9 @@ app.use(cors(CORS_CONFIG));
 app.post('/inscriptionSaveTemporary', (req, res) => {
   tools.executeRequest(inscriptionSave.inscriptionSaveTemporary, req, res);
 });
+app.put('/inscriptionSaveTemporary', (req, res) => {
+  tools.executeRequest(inscriptionSave.inscriptionUpdateTemporary, req, res);
+});
 app.get('/inscriptionSaveGetTempInscription', (req, res) => {
   tools.executeRequest(inscriptionSave.inscriptionSaveGetTempInscription, req, res);
 });

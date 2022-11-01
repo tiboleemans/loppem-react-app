@@ -67,6 +67,7 @@ exports.stripTechnicalFields = function stripTechnicalFields(data) {
   const strippedData = {...data};
   delete strippedData.insertTimestamp;
   delete strippedData.updateTimestamp;
+  delete strippedData.campYear;
   return strippedData;
 };
 

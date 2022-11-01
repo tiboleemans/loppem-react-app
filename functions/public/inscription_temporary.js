@@ -29,19 +29,59 @@ exports.inscriptionSaveTemporary = async (req, res) => {
     );
   }
 
-  let docId = req.query.id;
-  const insert = docId == null;
-  console.log(`Request temporary save with id ${docId} for parent ${validation.value.firstNameParent} ${validation.value.lastNameParent}`);
+  console.log(`Request temporary create for parent ${validation.value.firstNameParent} ${validation.value.lastNameParent}`);
 
-  if (insert) {
-    docId = await performInsert(validation.value);
-  } else {
-    await performUpdate(docId, validation.value);
+  docId = await performInsert(validation.value);
+
+  const doc = await db.collection('inscription_temporary')
+    .doc(docId).get();
+  return res.status(201)
+    .json(
+      {...tools.stripTechnicalFields(doc.data()),
+        id: docId,
+      }
+    );
+};
+
+
+/**
+ * REST: update a temporary inscription
+ * @param {Request} req the request
+ * @param {Response} res the response
+ * @return {Response} The response with status 200, 201 or 400
+ */
+ exports.inscriptionUpdateTemporary = async (req, res) => {
+  if (req.method == 'OPTIONS') {
+    return res.end();
   }
 
-  return res.status(insert ? 201 : 200).json({
-    id: docId,
-  });
+  const validation = preValidate(req.body);
+
+  if (validation.error != null) {
+    console.log(validation);
+    return res.status(400).json(
+        validation,
+    );
+  }
+
+  let docId = req.body.id;
+  console.log(`Request temporary update with id ${docId} for parent ${validation.value.firstNameParent} ${validation.value.lastNameParent}`);
+  if (docId == null) {
+    return res.status(400).json({
+      message: 'id is a mandatory property for update',
+    });
+  }
+
+  await performUpdate(docId, validation.value);
+
+  const doc = await db.collection('inscription_temporary')
+    .doc(docId).get();
+  return res.status(200)
+    .json(
+      {...tools.stripTechnicalFields(doc.data()),
+        id: docId,
+      }
+    );
 };
 
 /**
@@ -118,7 +158,7 @@ async function performUpdate(docId, data) {
 function preValidate(data) {
   const joi = tools.saferJoi;
   const schema = joi.object({
-    id: joi.string().trim().allow(''),
+    id: joi.string().optional().trim().allow(''),
     student: joi.object().keys({
       language: joi.string().trim().allow(''),
       period: joi.string().trim().allow(''),
