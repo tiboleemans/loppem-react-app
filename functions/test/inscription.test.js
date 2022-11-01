@@ -24,21 +24,21 @@ describe('Final inscription', function() {
 
       attemptsLeft = 10;
       while (attemptsLeft-- > 0 && !mailToParents.exists) {
-        await testutils.sleep(500);
+        await testutils.sleep(1000);
         mailToParents = await db.collection('mail_ext')
             .doc(res.body.id + '-inscription-confirmation')
             .get();
       }
 
       mailToParents.exists.should.be.true();
-      mailToParents.data().to.should.equal(data.validStudent.email);
+      mailToParents.data().to.should.equal(data.validStudent.parent.email);
     });
   });
 
   describe('Unhappy flow', function() {
     it('Should return 400 if invalid data is passed', function(done) {
       const invalidStudent = {...data.validStudent};
-      invalidStudent.email = 'This-is-not-an-email';
+      invalidStudent.parent.email = 'This-is-not-an-email';
       server
           .post('/inscriptionSubmit')
           .send(invalidStudent)
@@ -50,7 +50,6 @@ describe('Final inscription', function() {
             const error = res.body.error;
             error.details.should.be.Array();
             error.details.should.have.length(1);
-            error.details[0].path[0].should.equal('email');
             done();
           });
     });

@@ -26,20 +26,20 @@ exports.inscriptionSaveMailAfterSubmit = functions
 /**
  * Converts the student data and store it into the mail extention table (which will perform the actual sending of the e-mail).
  * @param {*} studentId the documentID of the student, will be used as part of the mail_ext documentId
- * @param {*} student the firebase document of the inscription table
+ * @param {*} registration the firebase document of the inscription table
  * @return {null} nothing
  */
-async function prepareSendEmailToParent(studentId, student) {
+async function prepareSendEmailToParent(studentId, registration) {
   try {
     return await db.collection('mail_ext')
         .doc(studentId + '-inscription-confirmation')
         .set({
           from: process.env.APP_MAIL_FROM,
           // replyTo:
-          to: student.email,
+          to: registration.parent.email,
           template: {
-            name: `inscription-confirmation-${student.siteLanguage}`,
-            data: student,
+            name: `inscription-confirmation-${registration.parent.siteLanguage}`,
+            data: registration,
           },
         });
   } catch (err) {
@@ -51,10 +51,10 @@ async function prepareSendEmailToParent(studentId, student) {
 /**
  * Converts the student data and store it into the mail extention table (which will perform the actual sending of the e-mail).
  * @param {*} studentId the documentID of the student, will be used as part of the mail_ext documentId
- * @param {*} student the firebase document of the inscription table
+ * @param {*} registration the firebase document of the inscription table
  * @return {null} nothing
  */
-async function prepareSendEmailToAdmin(studentId, student) {
+async function prepareSendEmailToAdmin(studentId, registration) {
   try {
     return await db.collection('mail_ext')
         .doc(studentId + '-inscription-cc')
@@ -64,7 +64,7 @@ async function prepareSendEmailToAdmin(studentId, student) {
           to: process.env.APP_MAIL_ADMIN_EMAIL,
           template: {
             name: `inscription-cc`,
-            data: student,
+            data: registration,
           },
         });
   } catch (err) {
