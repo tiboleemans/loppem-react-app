@@ -100,10 +100,10 @@ function logResponse(id, res) {
   }
 };
 
-exports.executeRequest = (fun, req, res) => {
+exports.executeRequest = async (fun, req, res) => {
   requestId = crypto.randomBytes(8).toString('hex');
   logRequest(requestId, req);
-  v = fun(req, res);
+  v = await fun(req, res);
   logResponse(requestId, res);
   return v;
 };
