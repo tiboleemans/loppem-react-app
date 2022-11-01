@@ -6,7 +6,7 @@ const functions = require('firebase-functions');
 const cors = require('cors');
 const tools = require('./tools');
 
-const inscriptionSave = require('./public/register');
+const register = require('./public/registration');
 const inscriptionMailToSend = require('./public/inscription_temporary_mails_to_send');
 const inscriptionSubmit = require('./public/inscription');
 const inscriptionSubmitMailToSend = require('./public/inscription_mails_to_send');
@@ -37,17 +37,20 @@ app.use(cors(CORS_CONFIG));
 // Temporary inscriptions
 // These are _only_ used when a parent doesn't submit the form but
 // saves it for a later date (e.g. doesn't have all the data)
-app.post('/inscriptionSaveTemporary', (req, res) => {
-  tools.executeRequest(inscriptionSave.inscriptionSaveTemporary, req, res);
+app.post('/registration/temporary', (req, res) => {
+  tools.executeRequest(register.createTemporaryRegistration, req, res);
 });
-app.put('/inscriptionSaveTemporary', (req, res) => {
-  tools.executeRequest(inscriptionSave.inscriptionUpdateTemporary, req, res);
+app.put('/registration/temporary', (req, res) => {
+  tools.executeRequest(register.updateTemporaryRegistration, req, res);
 });
-app.get('/inscriptionSaveGetTempInscription', (req, res) => {
-  tools.executeRequest(inscriptionSave.inscriptionSaveGetTempInscription, req, res);
+app.get('/registration/:id', (req, res) => {
+  tools.executeRequest(register.getRegistration, req, res);
 });
-app.post('/inscriptionSubmit', (req, res) => {
-  tools.executeRequest(inscriptionSubmit.inscriptionSubmit, req, res);
+app.post('/registration', (req, res) => {
+  tools.executeRequest(register.createFinalRegistration, req, res);
+});
+app.put('/registration', (req, res) => {
+  tools.executeRequest(register.updateFinalRegistration, req, res);
 });
 
 exports.api = functions
