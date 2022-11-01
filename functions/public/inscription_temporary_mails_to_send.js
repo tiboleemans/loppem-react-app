@@ -97,7 +97,7 @@ exports.inscriptionSaveConvertEmailForExt = functions
 exports.inscriptionSaveScheduleMail = functions
     .runWith(tools.defaultBatchOptions)
     .region('europe-west1')
-    .pubsub.schedule(process.env.APP_MAIL_RETRY_SCHEDULE)
+    .pubsub.schedule('0 8 * * *')
     .timeZone('Europe/Brussels')
     .onRun(async (context) => {
       console.info(`Fetching unsent mails for camp year ${tools.campYear()}`);
