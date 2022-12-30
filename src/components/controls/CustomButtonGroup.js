@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import FormControl from "@material-ui/core/FormControl";
 import FormLabel from "@material-ui/core/FormLabel";
 import ButtonGroup from "@material-ui/core/ButtonGroup";
@@ -12,16 +12,29 @@ function CustomButtonGroup(props) {
 
     const [selected, setSelected] = useState(value);
 
+    useEffect(() => {
+        setSelected(value);
+    }, [value]);
+
     const handleButtonChange = (event, id) => {
         event.preventDefault();
-
         if (selected === id) {
             return;
         }
-        event.target = {subject: subject, name: name, value: id};
+        event.target = {subject: subject, name: name, value: parse(id)};
         setSelected(id);
         onChange(event);
     };
+
+    const parse = (value) => {
+        if (value === 'yes') {
+            return true;
+        }
+        if (value === 'no') {
+            return false;
+        }
+        return value;
+    }
 
     const changeStyleOfButton = (id) => {
         if (id === selected)
@@ -31,10 +44,8 @@ function CustomButtonGroup(props) {
     }
 
     return (
-
-
-        <FormControl {...(error && {error:true})}>
-            <FormLabel component="legend" >{label}</FormLabel>
+        <FormControl {...(error && {error: true})}>
+            <FormLabel component="legend">{label}</FormLabel>
             <ButtonGroup fullWidth
                          name={name}
                          value={value}

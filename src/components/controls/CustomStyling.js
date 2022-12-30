@@ -1,8 +1,8 @@
 import {makeStyles} from "@material-ui/core/styles";
 
 const customColors = {
-    primaryColor: '#3f5659',
-    // primaryColor: '#f5a034',
+    primaryColor: '#F49B05',
+    secondaryColor: '#9DC982'
 };
 
 

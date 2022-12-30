@@ -5,8 +5,12 @@ export const colorStyles = makeStyles(({ palette, ...theme }) => ({
     ".bg-primary": { background: `${palette.primary.main} !important` },
     ".bg-secondary": { background: `${palette.secondary.main} !important` },
     ".bg-green": {
-      backgroundColor: "rgba(0, 128, 0, 0.75) !important",
-      background: "#08ad6c !important",
+      backgroundColor: "rgba(157, 201, 130, 0.2) !important",
+      background: "#9DC982 !important",
+    },
+    ".bg-orange": {
+      backgroundColor: "rgba(244, 155, 5, 1) !important",
+      background: "#F49B05 !important",
     },
     ".bg-error": {
       background: `${palette.error.main} !important`,
@@ -40,7 +44,6 @@ export const colorStyles = makeStyles(({ palette, ...theme }) => ({
     ".section-bg-light-primary": { background: "rgba(var(--primary),0.1)" },
     ".bg-light-green": { background: "rgba(8, 173, 108, 0.5) !important" },
     ".bg-transparent": { background: "transparent !important" },
-    ".bg-nils": {background: "#3f5659"},
     ".text-white": { color: "#fff !important" },
     ".text-black": { color: "rgba(0, 0, 0, 0.87) !important" },
     ".text-white-secondary": { color: "rgba(255, 255, 255, 0.87) !important" },

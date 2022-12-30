@@ -90,62 +90,59 @@ const TaalVakanties = () => {
         }]);
 
         return (
-            <div className="pt-15 bg-light-gray" id="taalvakanties">
+            <div className="p-15 bg-green" id="taalvakanties">
                 <div className="container">
-                    <div className="text-center mx-auto">
-                        <h2 className="font-normal text-44">Onze taalvakanties</h2>
-                    </div>
-                    {header}
-                    <Grid container spacing={3}>
-                        {
-                            <Card className="px-6 card">
-                                <Grid container>
-                                    <Grid item xs={6}>
-                                        <CardHeader title={body?.title}/>
-                                        <CardContent>
-                                            {body?.sections.map((section, i) =>
-                                                <div key={i}>
-                                                    <h4> {section.title}</h4>
-                                                    <p className="text-16"> {section.text}</p>
-                                                </div>
-                                            )}
-
-                                        </CardContent>
-                                    </Grid>
-                                    <Grid item xs={6}>
-                                        <Grid className="m-4" container spacing={3}>
-                                            {
-                                                body?.images.map((image, index) => (
-                                                    <Grid key={index} item lg={6} md={6} sm={6} xs={12}>
-                                                        {image.endsWith("mp4") ?
-                                                            <CardMedia
-                                                                style={{
-                                                                    width: '90%',
-                                                                    margin: "50px"
-                                                                }}
-                                                                component="video"
-                                                                image={image.url}
-                                                                title='title'
-                                                                controls
-                                                            /> :
-                                                            <Card className="relative card m-2">
-                                                                <div>
-                                                                    <img className="w-full block" src={image} alt=""/>
-                                                                </div>
-                                                            </Card>
-                                                        }
-                                                    </Grid>
-                                                ))
-                                            }</Grid>
-                                    </Grid>
-                                </Grid>
-                            </Card>
-                        }
-                    </Grid>
+                    <Card className="p-6 card">
+                        <Grid container>
+                            <Grid item xs={6}>
+                                <div className="mt-10">
+                                    {header}
+                                </div>
+                                {/*<CardHeader title={body?.title}/>*/}
+                                <CardContent>
+                                    {body?.sections.map((section, i) =>
+                                        <div key={i}>
+                                            <h4> {section.title}</h4>
+                                            <p className="text-16"> {section.text}</p>
+                                        </div>
+                                    )}
+                                </CardContent>
+                            </Grid>
+                            <Grid item xs={6}>
+                                <div className="mt-8">
+                                </div>
+                                <Grid className="m-2" container spacing={3}>
+                                    {
+                                        body?.images.map((image, index) => (
+                                            <Grid key={index} item lg={6} md={6} sm={6} xs={12}>
+                                                {image.endsWith("mp4") ?
+                                                    <CardMedia
+                                                        style={{
+                                                            width: '90%',
+                                                            margin: "50px"
+                                                        }}
+                                                        component="video"
+                                                        image={image.url}
+                                                        title='title'
+                                                        controls
+                                                    /> :
+                                                    <div className="mr-6">
+                                                        <Card className="relative card mr-2">
+                                                            <div>
+                                                                <img className="w-full block" src={image} alt=""/>
+                                                            </div>
+                                                        </Card>
+                                                    </div>
+                                                }
+                                            </Grid>
+                                        ))
+                                    }</Grid>
+                            </Grid>
+                        </Grid>
+                    </Card>
                 </div>
             </div>
-        )
-            ;
+        );
     }
 ;
 

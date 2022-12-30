@@ -31,6 +31,7 @@ export const typographyStyles = makeStyles(({ palette, ...theme }) => ({
     ".font-medium": { fontWeight: "500 !important" },
     ".font-semibold": { fontWeight: "600 !important" },
     ".font-bold": { fontWeight: "700 !important" },
+    ".font-italic": { fontStyle: "italic !important" },
     ".text-13": { fontSize: "13px !important" },
     ".text-14": { fontSize: "14px !important" },
     ".text-16": { fontSize: "16px !important" },

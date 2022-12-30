@@ -1,24 +1,30 @@
-import {Axios} from "../firebase/firebaseConfig";
 import Inscription from "../models/Inscription";
+import axios from "axios";
 
-const apiPathInscription = process.env.REACT_APP_API_ENDPOINT;
-
-const registerStudent = (request) => {
-    return Axios.post(
+const registerStudent = async (request) => {
+    const apiPathInscription = process.env.REACT_APP_API_ENDPOINT;
+    return await axios.post(
         `${apiPathInscription}/api/inscriptionSaveTemporary`,
         request
-    ).then(({response}) => {
-        Inscription.fromApi(response);
-    })
-};
+    ).then(({data}) => {
+        console.log("registerStudent " + data.id + " nothing");
+        Inscription.fromApi(data)
+    });
+}
 
-const updateStudent = (id, request) => {
-    return Axios.post(
+const updateStudent = async (id, request) => {
+    const apiPathInscription = process.env.REACT_APP_API_ENDPOINT;
+    return await axios.post(
         `${apiPathInscription}/api/inscriptionSaveTemporary?${id}`,
         request
-    ).then(({response}) => {
-        Inscription.fromApi(response);
-    })
-};
+    );
+}
 
-export {registerStudent, updateStudent};
+const getInscription = async (id) => {
+    const apiPathInscription = process.env.REACT_APP_API_ENDPOINT;
+    return await axios.get(
+        `${apiPathInscription}/api/inscriptionSaveGetTempInscription?id=${id}`
+    ).then(({data}) => Inscription.fromApi(data))
+}
+
+export {registerStudent, updateStudent, getInscription};

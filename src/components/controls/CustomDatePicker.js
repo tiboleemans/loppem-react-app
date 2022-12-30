@@ -16,6 +16,9 @@ function CustomDatePicker(props) {
         }
     })
 
+    const minDate = new Date((new Date().getFullYear() - 20) + "-01-01");
+    const maxDate = new Date((new Date().getFullYear() - 9) + "-01-01");
+
     return (
         <MuiPickersUtilsProvider utils={DateFnsUtils} locale={nlLocale}>
             <KeyboardDatePicker
@@ -28,9 +31,9 @@ function CustomDatePicker(props) {
                 name={name}
                 onChange={date => onChange(convertToDefaultEventParameter(subject, name, date))}
                 value={value}
-                minDate={new Date("2003-01-01")}
+                minDate={minDate}
                 minDateMessage={"minDateMessage"}
-                maxDate={new Date("2012-01-01")}
+                maxDate={maxDate}
                 maxDateMessage={"maxDateMessage"}
                 autoOk={true}
                 inputVariant="outlined"
@@ -41,5 +44,6 @@ function CustomDatePicker(props) {
         </MuiPickersUtilsProvider>
     );
 }
+
 
 export default CustomDatePicker;

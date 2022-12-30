@@ -151,15 +151,15 @@ export default function ParentInformationForm(props) {
 
 export function getErrorParentStep(values) {
     let errors = {}
-    errors.firstNameParent = values.firstNameParent ? "" : "Gelieve uw voornaam in te vullen.\n"
-    errors.lastNameParent = values.lastNameParent ? "" : "Gelieve uw naam in te vullen."
-    errors.email = values.email ? "" : "Gelieve uw e-mailadres in te vullen."
-    errors.relation = values.relation ? "" : "Gelieve uw relatie met de leerling aan te duiden."
-    errors.street = values.street ? "" : "Gelieve uw adres volledig in te vullen."
-    errors.houseNr = values.houseNr ? "" : "Gelieve uw huisnummer in te vullen."
-    errors.city = values.city ? "" : "Gelieve uw gemeente in te vullen."
-    errors.zipCode = values.zipCode ? "" : "Gelieve uw postcode in te vullen."
-    errors.gsm = values.gsm ? "" : "Gelieve uw gsm nummer in te vullen."
-    errors.gsm2 = values.gsm2 ? "" : "Gelieve het nummer in geval van nood in te vullen."
+    errors.firstNameParent = values.parent.firstNameParent ? "" : "Gelieve uw voornaam in te vullen.\n"
+    errors.lastNameParent = values.parent.lastNameParent ? "" : "Gelieve uw naam in te vullen."
+    errors.email = values.parent.email ? "" : "Gelieve uw e-mailadres in te vullen."
+    errors.relation = values.parent.relation ? "" : "Gelieve uw relatie met de leerling aan te duiden."
+    errors.street = values.parent.street ? "" : "Gelieve uw adres volledig in te vullen."
+    errors.houseNr = values.parent.houseNr ? "" : "Gelieve uw huisnummer in te vullen."
+    errors.city = values.parent.city ? "" : "Gelieve uw gemeente in te vullen."
+    errors.zipCode = values.parent.zipCode ? "" : "Gelieve uw postcode in te vullen."
+    errors.gsm = values.parent.gsm ? "" : "Gelieve uw gsm nummer in te vullen."
+    errors.gsm2 = values.parent.gsm2 ? "" : "Gelieve het nummer in geval van nood in te vullen."
     return errors;
 }

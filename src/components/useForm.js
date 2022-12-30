@@ -1,63 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {makeStyles} from "@material-ui/core/styles";
+import {initialFieldValues} from "../pages/Inscriptions/initialFieldValues";
 import {useParams} from "react-router-dom";
-import {updateStudent} from "../services/InscriptionService";
+import {getInscription} from "../services/InscriptionService";
 
-const initialFieldValues = {
-    id: '',
-    // StudentInformation
-    student: {
-        language: '',
-        period: '',
-        firstNameStudent: '',
-        lastNameStudent: '',
-        gender: '',
-        birthday: null,
-    },
-    // ParentInformation
-    parent: {
-        firstNameParent: '',
-        lastNameParent: '',
-        email: '',
-        relation: '',
-        street: '',
-        houseNr: '',
-        busNr: '',
-
-        city: '',
-        zipCode: '',
-        gsm: '',
-        gsm2: '',
-    },
-
-    // SchoolInformation
-    school: {
-        nameSchool: '',
-        streetSchool: '',
-        houseNrSchool: '',
-        busNrSchool: '',
-        citySchool: '',
-        zipSchool: '',
-        titleProfSchool: '',
-        nameProfSchool: '',
-        yearsSchool: '',
-        hoursSchool: '',
-        immersionSchool: '',
-        reportSchool: ''
-    },
-
-    extra: {
-        // ExtraInformation
-        apportedStudent: '',
-        contact: '',
-        additionalInfo: '',
-        foodInfo: '',
-        interest: '',
-        acceptPictures: false,
-        acceptTerms: false
-    }
-
-}
 
 export default function useForm() {
 
@@ -65,15 +11,14 @@ export default function useForm() {
     let {id} = useParams();
     useEffect(() => {
         if (id) {
-            updateStudent(id, values).then((inscription) => {
+            getInscription(id).then((inscription) => {
+                inscription.id = id;
                 setValues(inscription);
-                values.id = id;
             }).catch(error => {
                 console.log(error)
             })
         }
-    }, [])
-
+    }, [id])
     const handleInputChange = event => {
         const {
             subject,

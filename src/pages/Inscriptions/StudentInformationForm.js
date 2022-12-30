@@ -31,14 +31,13 @@ export default function StudentInformationForm(props) {
             <Typography variant="h5" gutterBottom>
                 Gegevens leerling
             </Typography>
-
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                     <CustomButtonGroup
                         subject="student"
                         name="language"
                         label="* Cursustaal:"
-                        value={values.language}
+                        value={values?.student?.language}
                         onChange={handleInputChange}
                         items={languageItems}
                         error={errors.language}
@@ -50,7 +49,7 @@ export default function StudentInformationForm(props) {
                         subject="student"
                         name="period"
                         label="* Periode:"
-                        value={values.period}
+                        value={values?.student?.period}
                         onChange={handleInputChange}
                         items={periodItems}
                         error={errors.period}
@@ -62,7 +61,7 @@ export default function StudentInformationForm(props) {
                         subject="student"
                         label="Voornaam Leerling"
                         name="firstNameStudent"
-                        value={values.student.firstNameStudent}
+                        value={values?.student?.firstNameStudent}
                         onChange={handleInputChange}
                         error={errors.firstNameStudent}
                     />
@@ -72,7 +71,7 @@ export default function StudentInformationForm(props) {
                         subject="student"
                         label="Naam Leerling"
                         name="lastNameStudent"
-                        value={values.student.lastNameStudent}
+                        value={values?.student?.lastNameStudent}
                         onChange={handleInputChange}
                         error={errors.lastNameStudent}
                     />
@@ -82,7 +81,7 @@ export default function StudentInformationForm(props) {
                         subject="student"
                         name="birthday"
                         label="Geboortedatum"
-                        value={values.birthday}
+                        value={values?.student?.birthday}
                         onChange={handleInputChange}
                         error={errors.birthday}
                     />
@@ -93,7 +92,7 @@ export default function StudentInformationForm(props) {
                         subject="student"
                         name="gender"
                         label="* Geslacht:"
-                        value={values.gender}
+                        value={values?.student?.gender}
                         onChange={handleInputChange}
                         items={genderItems}
                         error={errors.gender}
@@ -108,11 +107,11 @@ export default function StudentInformationForm(props) {
 export function getErrorStudentStep(values) {
 
     let errors = {}
-    errors.language = values.language ? "" : "Gelieve de gewenste cursustaal aan te duiden."
-    errors.period = values.period ? "" : "Gelieve de gewenste periode aan te duiden."
-    errors.firstNameStudent = values.firstNameStudent ? "" : "Gelieve de voornaam van de leerling in te vullen."
-    errors.lastNameStudent = values.lastNameStudent ? "" : "Gelieve de naam van de leerling in te vullen."
-    errors.birthday = values.birthday ? "" : "Gelieve de geboortedatum van de leerling in te vullen."
-    errors.gender = values.gender ? "" : "Gelieve het geslacht van de leerling in te vullen."
+    errors.language = values.student.language ? "" : "Gelieve de gewenste cursustaal aan te duiden."
+    errors.period = values.student.period ? "" : "Gelieve de gewenste periode aan te duiden."
+    errors.firstNameStudent = values.student.firstNameStudent ? "" : "Gelieve de voornaam van de leerling in te vullen."
+    errors.lastNameStudent = values.student.lastNameStudent ? "" : "Gelieve de naam van de leerling in te vullen."
+    errors.birthday = values.student.birthday ? "" : "Gelieve de geboortedatum van de leerling in te vullen."
+    errors.gender = values.student.gender ? "" : "Gelieve het geslacht van de leerling in te vullen."
     return errors;
 }

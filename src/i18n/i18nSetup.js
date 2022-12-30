@@ -60,5 +60,10 @@ const setupAndInitI18n = (language) => {
     .init(i18nOptions);
 };
 
+const getLanguage = () => {
+  return i18n.language;
+}
+
 export { changeLanguage };
+export { getLanguage };
 export default setupAndInitI18n;

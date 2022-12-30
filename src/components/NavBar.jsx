@@ -3,6 +3,8 @@ import {classList} from "../utils";
 import ScrollTo from "../common/ScrollTo";
 import {changeLanguage} from "../i18n/i18nSetup";
 import {useTranslation} from "react-i18next";
+import {FormControl, InputLabel, MenuItem, Select} from "@mui/material";
+import LanguageSelector from "./controls/LanguageSelector";
 
 const NavBar = () => {
     const { t, i18n: { language} } = useTranslation();
@@ -14,7 +16,7 @@ const NavBar = () => {
             })}
         >
             <div className="container header-container">
-                <div className="brand">
+                <div className="brand" >
                     <img src={require('../images/logo.png')} alt=""
                          style={{
                              maxWidth: '100px',
@@ -54,15 +56,11 @@ const NavBar = () => {
                         </ScrollTo>
                     </li>
                 </ul>
-                <ul className="navigation"><li>
-                    <button type="button" onClick={() => changeLanguage('nl-BE')}>
-                        {language === 'nl-BE' ? <b>Nederlands</b> : "Nederlands"}
-                    </button>
-                    <button type="button" onClick={() => changeLanguage('fr-BE')}>
-                        {language === 'fr-BE' ? <b>Français</b> : "Français"}
-                    </button>
-                </li></ul>
+                <div style={{marginLeft: 'auto', order: 2}}>
+                    <LanguageSelector />
+                </div>
             </div>
+
         </section>
     );
 };

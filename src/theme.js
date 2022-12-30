@@ -5,11 +5,10 @@ const themeOptions = {
     palette: {
         type: "light",
         primary: {
-            // main: '#556cd6',
-            main: '#3f5659',
+            main: '#F49B05',
         },
         secondary: {
-            main: '#f5a034',
+            main: '#9DC982',
         },
         error: {
             main: red.A400,

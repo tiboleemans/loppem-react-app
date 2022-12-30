@@ -6,7 +6,7 @@ const useStyles = makeStyles(({
                                   ...theme
                               }) => ({
     buttonGroupBG: {
-        background: lighten(palette.primary.light, 0.9),
+        background: lighten(palette.primary.light, 0.5),
         "&>div": {
             transition: "all 250ms ease",
             "&:hover": {
@@ -24,7 +24,7 @@ const useStyles = makeStyles(({
 
 const TabsContainer = ({tabs, selectedTab, setSelectedTabId, classes}) => <div>
     {tabs.map((tab, index) => (
-        <div className="inline-block mb-10" key={index}>
+        <div className="inline-block ml-6" key={index}>
             <div onClick={() => setSelectedTabId(tab.id)}
                  className={`lex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG} ${selectedTab === tab.id ? 'active' : ''}`}>
                 <div

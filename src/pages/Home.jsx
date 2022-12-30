@@ -11,7 +11,6 @@ import Testimonial from "./Testimonial";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import CallToAction from "./CallToAction";
-import {changeLanguage} from "../i18n/i18nSetup";
 import {useTranslation} from "react-i18next";
 
 const Home = () => {
@@ -24,9 +23,6 @@ const Home = () => {
     return (
         <div className="home">
             <NavBar/>
-
-            TEST THIBAULT
-            {t('hi')}
             <Intro/>
             <TaalVakanties/>
             <CallToAction />

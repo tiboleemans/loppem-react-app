@@ -74,7 +74,7 @@ export const spacingStyles = makeStyles(({ palette, ...theme }) => ({
     ".min-h-full": { minHeight: "100% !important" },
     ".h-full": { height: "100% !important" },
     ".h-auto": { height: "auto" },
-    ".h-full-screen": { height: "100vh" },
+    ".h-full-screen": { height: "98vh" },
     ".h-150px": { height: "150px !important" },
     ".size-36": { height: "36px !important", width: "36px !important" },
     ".size-24": { height: "24px !important", width: "24px !important" },

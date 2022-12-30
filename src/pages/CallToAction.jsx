@@ -5,7 +5,7 @@ import clsx from "clsx";
 
 const CallToAction = () => {
     return (
-        <div style={{backgroundColor: "#6ac4c8"}} className={clsx("section text-white")} id="cta1">
+        <div className={clsx("section text-white pt-15 bg-orange")} id="cta1">
             <div className="container">
                 <Grid
                     container

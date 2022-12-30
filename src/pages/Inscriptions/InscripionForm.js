@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Paper from '@material-ui/core/Paper';
 import Stepper from '@material-ui/core/Stepper';
 import Step from '@material-ui/core/Step';
@@ -12,23 +12,66 @@ import ExtraInformationForm, {getErrorExtraInfoStep} from "./ExtraInformationFor
 import {customStyling} from "../../components/controls/CustomStyling";
 import useForm from "../../components/useForm";
 import Alert from '@mui/material/Alert';
-import {registerStudent} from "../../services/InscriptionService";
-import {updateStudent} from "../../services/InscriptionService";
+import {getInscription, registerStudent, updateStudent} from "../../services/InscriptionService";
+import {getLanguage} from "../../i18n/i18nSetup";
+import {CircularProgress} from "@mui/material";
+import {initialFieldValues} from "./initialFieldValues";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
-const disableValidation = true;
+const disableValidation = false;
 
 export default function InscriptionForm() {
     const classes = customStyling();
     const [step, setStep] = useState(0);
     const [hasFeedback, setHasFeedback] = useState(false);
     const [feedbackMessage, setFeedbackMessage] = useState();
+    const  [isLoading, setIsLoading] = useState(false);
+
+
 
     const {
         values,
         handleInputChange
-    } = useForm();
+    } = useForm(initialFieldValues);
     const [errors, setErrors] = useState({});
+
+    useEffect(() => {
+        if(hasFeedback) {
+            switch (step) {
+                case 0:
+                    let errorStudentStep = getErrorStudentStep(values);
+                    setErrors(errorStudentStep);
+                    if(validateStep(errorStudentStep)) {
+                        setHasFeedback(false);
+                    }
+                    break;
+                case 1:
+                    let errorParentStep = getErrorParentStep(values);
+                    setErrors(errorParentStep);
+                    if(validateStep(errorParentStep)) {
+                        setHasFeedback(false);
+                    }
+                    break;
+                case 2:
+                    let errorSchoolStep = getErrorSchoolStep(values);
+                    setErrors(errorSchoolStep);
+                    if(validateStep(errorSchoolStep)) {
+                        setHasFeedback(false);
+                    }
+                    break;
+                case 3:
+                    let errorExtraStep = getErrorExtraInfoStep(values);
+                    setErrors(errorExtraStep);
+                    if(validateStep(errorExtraStep)) {
+                        setHasFeedback(false);
+                    }
+                    break;
+                default:
+                    throw new Error('Unknown step');
+            }
+
+        }
+    }, [values]);
 
     function getStepContent() {
         switch (step) {
@@ -78,7 +121,7 @@ export default function InscriptionForm() {
                 sentInfo()
             }
         } else {
-            const generalError = <Alert severity="warning">This is a warning alert — check it out!</Alert>
+            const generalError = <Alert severity="warning">Niet alle verplichte velden werden ingevuld.</Alert>
             setFeedbackMessage(generalError)
             setHasFeedback(true);
         }
@@ -89,37 +132,34 @@ export default function InscriptionForm() {
     };
 
     const sentInfo = () => {
+        setIsLoading(true);
+        values.parent.siteLanguage = getLanguage();
         if (!values.id) {
-            registerStudent(values)
-                .then((inscription) => {
-                    const success = <Alert severity="success">Successfully registered with id ${inscription.id}</Alert>
-                    setFeedbackMessage(success);
-                    setHasFeedback(true);
-                    values.id = inscription.id;
-                });
+            const register = registerStudent(values);
+            values.id = register.id;
         } else {
-            updateStudent(values.id, values)
-                .then((inscription) => {
-                    const success = <Alert severity="success">Successfully updated inscription with id ${inscription.id}</Alert>
-                    setFeedbackMessage(success);
-                    setHasFeedback(true);
-                })
+            const update = updateStudent(values.id, values);
         }
+        setIsLoading(false)
     }
 
     const getInscriptionConfirmation = () => {
-        return <React.Fragment>
-            <Typography variant="h5" gutterBottom>
-                Bedankt voor uw inschrijving.
-            </Typography>
-            <Typography variant="subtitle1">
-                U ontvangt van ons een bevestigingsmail (gelieve ook uw ongewenste e-mail na te kijken).
-                Begin juni contacteren wij u per e-mail met praktische informatie m.b.t. de taalvakantie.
-                We verwachten u op de eerste dag van de stage in de abdijschool van Zevenkerken.
-                Gelieve het voorschot binnen de drie werkdagen te storten op rekening BE16 0018 5319 2474.
-            </Typography>
-            {hasFeedback ? feedbackMessage : null}
-        </React.Fragment>;
+        if(isLoading) {
+            return <CircularProgress />
+        } else {
+            return <React.Fragment>
+                <Typography variant="h5" gutterBottom>
+                    Bedankt voor uw inschrijving.
+                </Typography>
+                <Typography variant="subtitle1">
+                    U ontvangt van ons een bevestigingsmail (gelieve ook uw ongewenste e-mail na te kijken).
+                    Begin juni contacteren wij u per e-mail met praktische informatie m.b.t. de taalvakantie.
+                    We verwachten u op de eerste dag van de stage in de abdijschool van Zevenkerken.
+                    Gelieve het voorschot binnen de drie werkdagen te storten op rekening BE16 0018 5319 2474.
+                </Typography>
+                {hasFeedback ? feedbackMessage : null}
+            </React.Fragment>;
+        }
     }
 
     return (
