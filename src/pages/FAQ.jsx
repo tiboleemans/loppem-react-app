@@ -1,9 +1,9 @@
 import React, {useState} from "react";
-import {Accordion, AccordionDetails, AccordionSummary, Grid,} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
+import {Accordion, AccordionDetails, AccordionSummary, Grid,} from "@mui/material";
+import {styled} from "@mui/system";
 import clsx from "clsx";
 
-const useStyles = makeStyles(({palette, ...theme}) => ({
+const useStyles = styled(({palette, ...theme}) => ({
   bgLightGray: {
     background: "rgba(0,0,0,0.05)",
   },

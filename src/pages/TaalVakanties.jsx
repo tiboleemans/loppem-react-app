@@ -1,15 +1,15 @@
 import React from "react";
 
-import {Card, CardContent} from "@material-ui/core";
-import CardHeader from "@material-ui/core/CardHeader";
-import Grid from "@material-ui/core/Grid";
-import CardMedia from "@material-ui/core/CardMedia";
+import {Card, CardContent} from "@mui/material";
+import Grid from "@mui/material/Grid";
+import CardMedia from "@mui/material/CardMedia";
 import useTabs from "./useTabs";
 import {useTranslation} from "react-i18next";
 
 const TaalVakanties = () => {
         const {t} = useTranslation();
-        const {body, header} = useTabs([{
+        const {body, header} = useTabs(
+          [{
             id: 'WHAT',
             title: t("vacations.what"),
             body: {
@@ -87,10 +87,11 @@ const TaalVakanties = () => {
                 },
                 ]
             }
-        }]);
+        }]
+        );
 
         return (
-            <div className="p-15 bg-green" id="taalvakanties">
+            <div className="p-15 light-gray" id="taalvakanties">
                 <div className="container">
                     <Card className="p-6 card">
                         <Grid container>

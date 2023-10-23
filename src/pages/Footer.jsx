@@ -1,9 +1,9 @@
 import React from "react";
-import {Grid} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
+import {Grid} from "@mui/material";
+import { styled } from "@mui/system";
 import clsx from "clsx";
 
-const useStyles = makeStyles(({palette, ...theme}) => ({
+const useStyles = styled(({palette, ...theme}) => ({
     footerSection: {
         "& h4:after": {
             content: '" "',

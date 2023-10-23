@@ -1,57 +1,66 @@
 import React from 'react';
-import TextField from "@material-ui/core/TextField";
-import {makeStyles} from "@material-ui/core/styles";
+import TextField from "@mui/material/TextField";
+import {styled} from "@mui/system";
 
-const useStyles = makeStyles(theme => ({
-        root: {
-            '& label.Mui-focused': {
-                color: '#f5a034',
-            },
-            '& .MuiInput-underline:after': {
-                borderBottomColor: 'black',
-            },
-            '& .MuiOutlinedInput-root': {
-                // '& fieldset': {
-                //     borderColor: '#f5a034',
-                // },
-                '&:hover fieldset': {
-                    borderColor: '#f5a034',
-                },
-                '&.Mui-focused fieldset': {
-                    borderColor: '#f5a034',
-                },
-            },
-        }
-    })
+const PREFIX = 'MyCustomTextArea';
+
+const classes = {
+  root: `${PREFIX}-root`,
+  intro: `${PREFIX}-intro`,
+  lightWhiteBG: `${PREFIX}-lightWhiteBG`,
+}
+
+
+const StyledCustomTextArea = styled('div')(({theme}) => ({
+    [`&.${classes.root}`]: {
+      '& label.Mui-focused': {
+        color: '#f5a034',
+      },
+      '& .MuiInput-underline:after': {
+        borderBottomColor: 'black',
+      },
+      '& .MuiOutlinedInput-root': {
+        // '& fieldset': {
+        //     borderColor: '#f5a034',
+        // },
+        '&:hover fieldset': {
+          borderColor: '#f5a034',
+        },
+        '&.Mui-focused fieldset': {
+          borderColor: '#f5a034',
+        },
+      },
+    }
+  })
 )
 
 
 const CustomTextArea = (props) => {
-    const {subject, name, label, value, onChange, type, placeholder, helperText} = props;
-    const classes = useStyles();
+  const {subject, name, label, value, onChange, type, placeholder, helperText} = props;
+  const classes = useStyles();
 
-    const handleChange = (event) => {
-        event.preventDefault();
-        event.target = {subject: subject, name: name, value: event.target.value};
-        onChange(event);
-    };
+  const handleChange = (event) => {
+    event.preventDefault();
+    event.target = {subject: subject, name: name, value: event.target.value};
+    onChange(event);
+  };
 
-    return (
-        <TextField
-            variant="outlined"
-            subject={subject}
-            label={label}
-            name={name}
-            value={value}
-            onChange={(e) => handleChange(e)}
-            type={type}
-            placeholder={placeholder}
-            helperText={helperText}
-            classes={{root:classes.root}}
-            multiline
-            rows={4}
-        />
-    );
+  return (
+    <TextField
+      variant="outlined"
+      subject={subject}
+      label={label}
+      name={name}
+      value={value}
+      onChange={(e) => handleChange(e)}
+      type={type}
+      placeholder={placeholder}
+      helperText={helperText}
+      classes={{root: classes.root}}
+      multiline
+      rows={4}
+    />
+  );
 };
 
 export default CustomTextArea;

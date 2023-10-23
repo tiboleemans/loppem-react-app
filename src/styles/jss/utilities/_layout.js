@@ -1,5 +1,5 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { styled } from "@mui/system";
 
-export const layoutStyles = makeStyles(({ palette, ...theme }) => ({
+export const layoutStyles = styled(({ palette, ...theme }) => ({
   "@global": {},
 }));

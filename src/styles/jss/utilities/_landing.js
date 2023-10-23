@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { styled } from "@mui/system";
 
-export const landingStyles = makeStyles(({ palette, ...theme }) => ({
+export const landingStyles = styled(({ palette, ...theme }) => ({
   "@global": {
     ".landing": { color: "rgba(0, 0, 0, 0.87)", overflow: "hidden" },
     ".landing p": { color: "rgba(var(--body), 0.74)" },

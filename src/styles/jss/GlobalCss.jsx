@@ -1,29 +1,14 @@
-import {variableStyles} from "./_variables";
-import {positioningStyles} from "./utilities/_positionings";
-import {spacingStyles} from "./utilities/_spacing";
-import {borderStyles} from "./utilities/_border";
-import {shadowStyles} from "./utilities/_shadows";
-import {colorStyles} from "./utilities/_color";
-import {typographyStyles} from "./utilities/_typography";
-import {commonStyles} from "./utilities/_common";
-import {animationStyles} from "./utilities/_animations";
-import {layoutStyles} from "./utilities/_layout";
-import {landingStyles} from "./utilities/_landing";
+import {styled} from "@mui/system";
+import clsx from 'clsx';
+import React from "react";
 
-const GlobalCss = ({ children }) => {
-  variableStyles();
-  positioningStyles();
-  spacingStyles();
-  borderStyles();
-  colorStyles();
-  shadowStyles();
-  typographyStyles();
-  commonStyles();
-  animationStyles();
-  layoutStyles();
-  landingStyles();
+import {GlobalStyleTypography} from "./utilities/_typography";
+import {GlobalStyleVariables} from "./_variables";
 
-  return children;
-};
+
+const GlobalCss = styled('div')(({theme}) => ({
+  '& .MuiButton-root': GlobalStyleTypography.sx,
+}));
+
 
 export default GlobalCss;

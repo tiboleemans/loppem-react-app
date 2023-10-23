@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { styled } from "@mui/system";
 
-export const borderStyles = makeStyles(({ palette, ...theme }) => ({
+export const borderStyles = styled(({ palette, ...theme }) => ({
   "@global": {
     ".border-radius-0": { borderRadius: "0px !important", overflow: "hidden" },
     ".border-radius-4": { borderRadius: "4px !important", overflow: "hidden" },

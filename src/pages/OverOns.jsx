@@ -1,5 +1,5 @@
 import React from "react";
-import {Avatar, Card, Grid} from "@material-ui/core";
+import {Avatar, Card, Grid} from "@mui/material";
 
 const OverOns = () => {
   const cardList = [

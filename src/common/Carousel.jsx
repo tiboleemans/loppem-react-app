@@ -1,16 +1,18 @@
-import "swiper/dist/css/swiper.min.css";
-import React, { Children, useEffect } from "react";
+import React, {Children, useEffect} from "react";
 import Swiper from "swiper";
 import PropTypes from "prop-types";
-import { Fab } from "@material-ui/core";
-import NavigateNext from "@material-ui/icons/NavigateNext";
-import NavigateBefore from "@material-ui/icons/NavigateBefore";
-import { makeStyles, useTheme } from "@material-ui/core/styles";
+import {Fab} from "@mui/material";
+import NavigateNext from "@mui/icons-material/NavigateNext";
+import NavigateBefore from "@mui/icons-material/NavigateBefore";
 import clsx from "clsx";
+import {styled} from "@mui/system";
+import {Theme} from "../theme";
+
 
 let globalBulletColor = "red";
+const theme = Theme;
 
-const useStyles = makeStyles(({ palette, ...theme }) => ({
+const useStyles = styled(({palette, ...theme}) => ({
   bulletClass: {
     opacity: 1,
     background: globalBulletColor,
@@ -45,8 +47,7 @@ const useStyles = makeStyles(({ palette, ...theme }) => ({
 }));
 
 const Carousel = (props) => {
-  let theme = useTheme();
-  let {
+  const {
     slidesPerView = props.slidesPerView,
     spacing = 100,
     allowSlideNext = true,
@@ -121,7 +122,7 @@ const Carousel = (props) => {
         </div>
 
         {/* pagination */}
-        <div className={clsx("swiper-pagination relative", paginationClass)} />
+        <div className={clsx("swiper-pagination relative", paginationClass)}/>
       </div>
 
       {/* navigation */}
@@ -133,7 +134,7 @@ const Carousel = (props) => {
             navButton
           )}
         >
-          <NavigateBefore />
+          <NavigateBefore/>
         </Fab>
       )}
       {navigation && (
@@ -144,7 +145,7 @@ const Carousel = (props) => {
             navButton
           )}
         >
-          <NavigateNext />
+          <NavigateNext/>
         </Fab>
       )}
     </div>

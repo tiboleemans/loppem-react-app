@@ -1,5 +1,6 @@
-import {createTheme } from "@material-ui/core/styles";
-import red from "@material-ui/core/colors/red";
+import {createTheme } from "@mui/material/styles";
+import red from "@mui/material/colors/red";
+import {darkScrollbar} from "@mui/material";
 
 const themeOptions = {
     palette: {
@@ -49,6 +50,20 @@ const themeOptions = {
 };
 
 export const Theme = createTheme ({
+    components: {
+        MuiCssBaseline: {
+            styleOverrides: {
+                body: {
+                    ...darkScrollbar(),
+                    color: "darkred",
+                    backgroundColor: "grey",
+                    "& h1": {
+                        color: "black"
+                    }
+                }
+            }
+        }
+    },
     ...themeOptions,
 });
 

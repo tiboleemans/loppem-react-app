@@ -1,6 +1,7 @@
-import { makeStyles, lighten } from "@material-ui/core/styles";
+import { makeStyles, lighten } from "@mui/material/styles";
+import {styled} from "@mui/system";
 
-export const colorStyles = makeStyles(({ palette, ...theme }) => ({
+export const colorStyles = styled(({ palette, ...theme }) => ({
   "@global": {
     ".bg-primary": { background: `${palette.primary.main} !important` },
     ".bg-secondary": { background: `${palette.secondary.main} !important` },

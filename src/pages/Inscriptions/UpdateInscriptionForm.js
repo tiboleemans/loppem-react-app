@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import Paper from "@material-ui/core/Paper";
+import Paper from "@mui/material/Paper";
 import {customStyling} from "../../components/controls/CustomStyling";
 import useForm from "../../components/useForm";
 import StudentInformationForm from "./StudentInformationForm";

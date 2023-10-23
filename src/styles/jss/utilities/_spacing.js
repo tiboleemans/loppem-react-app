@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { styled } from "@mui/system";
 
-export const spacingStyles = makeStyles(({ palette, ...theme }) => ({
+export const spacingStyles = styled(({ palette, ...theme }) => ({
   "@global": {
     ".px-80": {
       paddingRight: "80px",
@@ -92,7 +92,7 @@ const generateMarginPadding = (
   increament = 0.25,
   unit = "rem"
 ) => {
-  let classList = {};
+  const classList = {};
 
   for (let i = start; i <= end; i++) {
     classList[`.m-${i}${unit === "px" ? "px" : ""}`] = {
@@ -153,7 +153,7 @@ const generateHeightWidh = (
   increament = 4,
   unit = "px"
 ) => {
-  let classList = {};
+  const classList = {};
 
   for (let i = start; i <= end; i += increament) {
     classList[`.w-${i}`] = {

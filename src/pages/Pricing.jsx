@@ -1,11 +1,9 @@
 import React from "react";
-import {Button, Card, CardContent, Divider, Grid,} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
+import {Card, CardContent, Divider, Grid,} from "@mui/material";
+import { styled } from "@mui/system";
 import clsx from "clsx";
-import EuroIcon from '@material-ui/icons/Euro';
-import useTabs from "./useTabs";
 
-const useStyles = makeStyles(({palette, ...theme}) => ({
+const useStyles = styled(({palette, ...theme}) => ({
     card: {
         "& .card-header": {
             background: "rgba(0, 0, 0, 0.024)",

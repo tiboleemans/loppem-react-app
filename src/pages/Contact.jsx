@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Card, Grid, TextField} from "@material-ui/core";
+import {Button, Card, Grid, TextField} from "@mui/material";
 
 import ContactMap2 from "../sections/ContactMap2";
 

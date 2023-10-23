@@ -1,9 +1,9 @@
 import React from 'react';
-import Grid from "@material-ui/core/Grid";
+import Grid from "@mui/material/Grid";
 import {Form} from "../../components/useForm";
 import CustomTextField from "../../components/controls/CustomTextField";
 import CustomDatePicker from "../../components/controls/CustomDatePicker";
-import Typography from "@material-ui/core/Typography";
+import Typography from "@mui/material/Typography";
 import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 export default function StudentInformationForm(props) {
@@ -28,7 +28,7 @@ export default function StudentInformationForm(props) {
     return (
 
         <Form>
-            <Typography variant="h5" gutterBottom>
+            <Typography variant="h3" gutterBottom>
                 Gegevens leerling
             </Typography>
             <Grid container spacing={2}>
@@ -76,16 +76,16 @@ export default function StudentInformationForm(props) {
                         error={errors.lastNameStudent}
                     />
                 </Grid>
-                <Grid item xs={12} sm={6}>
-                    <CustomDatePicker
-                        subject="student"
-                        name="birthday"
-                        label="Geboortedatum"
-                        value={values?.student?.birthday}
-                        onChange={handleInputChange}
-                        error={errors.birthday}
-                    />
-                </Grid>
+                {/*<Grid item xs={12} sm={6}>*/}
+                {/*    <CustomDatePicker*/}
+                {/*        subject="student"*/}
+                {/*        name="birthday"*/}
+                {/*        label="Geboortedatum"*/}
+                {/*        value={values?.student?.birthday}*/}
+                {/*        onChange={handleInputChange}*/}
+                {/*        error={errors.birthday}*/}
+                {/*    />*/}
+                {/*</Grid>*/}
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
                     <CustomButtonGroup
@@ -106,7 +106,7 @@ export default function StudentInformationForm(props) {
 
 export function getErrorStudentStep(values) {
 
-    let errors = {}
+    const errors = {}
     errors.language = values.student.language ? "" : "Gelieve de gewenste cursustaal aan te duiden."
     errors.period = values.student.period ? "" : "Gelieve de gewenste periode aan te duiden."
     errors.firstNameStudent = values.student.firstNameStudent ? "" : "Gelieve de voornaam van de leerling in te vullen."

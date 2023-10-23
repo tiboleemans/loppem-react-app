@@ -1,11 +1,11 @@
 import React from "react";
-import {Button, Grid} from "@material-ui/core";
-import {makeStyles} from "@material-ui/core/styles";
+import {Button, Grid} from "@mui/material";
+import { styled } from "@mui/system";
 import {Link} from "react-router-dom";
-import CardMedia from "@material-ui/core/CardMedia";
+import CardMedia from "@mui/material/CardMedia";
 import useTabs from "./useTabs";
 
-const useStyles = makeStyles(({
+const useStyles = styled(({
                                   palette,
                                   ...theme
                               }) => ({
