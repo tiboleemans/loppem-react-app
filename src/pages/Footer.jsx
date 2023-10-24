@@ -3,8 +3,14 @@ import {Grid} from "@mui/material";
 import { styled } from "@mui/system";
 import clsx from "clsx";
 
-const useStyles = styled(({palette, ...theme}) => ({
-    footerSection: {
+const PREFIX = 'MyFooter';
+
+const classes = {
+    footerSection: `${PREFIX}-footerSection`,
+}
+
+const StyledFooter = styled('div')(({theme}) => ({
+    [`&.${classes.footerSection}`]: {
         "& h4:after": {
             content: '" "',
             position: "absolute",
@@ -12,16 +18,15 @@ const useStyles = styled(({palette, ...theme}) => ({
             left: 0,
             height: 2,
             width: 64,
-            background: palette.secondary.main,
+            background: theme.palette.secondary.main,
         },
     },
 }));
 
 const Footer = () => {
-    const classes = useStyles();
 
     return (
-        <div className={clsx("bg-light-gray", classes.footerSection)} id="footer">
+        <StyledFooter className={clsx("bg-light-gray", classes.footerSection)} id="footer">
             <div className="container">
                 <Grid container>
                     <Grid item lg={3} md={3} sm={12}>
@@ -68,7 +73,7 @@ const Footer = () => {
                     </Grid>
                 </Grid>
             </div>
-        </div>
+        </StyledFooter>
     );
 };
 

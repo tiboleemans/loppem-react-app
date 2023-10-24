@@ -27,7 +27,7 @@ const StyledStepper = styled(Stepper)(({theme}) => ({
 
 const MyStyledStepper = (props) => {
   return (
-    <StyledStepper className={classes.stepper}>
+    <StyledStepper className={classes.stepper} activeStep={props.activeStep}>
       {props.children}
     </StyledStepper>
   )

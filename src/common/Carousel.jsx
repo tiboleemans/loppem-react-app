@@ -12,8 +12,17 @@ import {Theme} from "../theme";
 let globalBulletColor = "red";
 const theme = Theme;
 
-const useStyles = styled(({palette, ...theme}) => ({
-  bulletClass: {
+const PREFIX = 'MyCarousel';
+
+const classes = {
+  bulletClass: `${PREFIX}-bulletClass`,
+  bulletActiveClass: `${PREFIX}-bulletActiveClass`,
+  nextButton: `${PREFIX}-nextButton`,
+  prevButton: `${PREFIX}-prevButton`,
+  navButton: `${PREFIX}-navButton`,
+}
+const StyledCarousel = styled(Fab)(({theme}) => ({
+  [`&.${classes.bulletClass}`]: {
     opacity: 1,
     background: globalBulletColor,
     transition: "transform 400ms cubic-bezier(0.17, 0.67, 0.83, 0.67)",
@@ -24,18 +33,18 @@ const useStyles = styled(({palette, ...theme}) => ({
     cursor: "pointer",
     margin: "0 4px",
   },
-  bulletActiveClass: {
+  [`&.${classes.bulletActiveClass}`]: {
     transform: "scale(1.8)",
   },
-  prevButton: {
+  [`&.${classes.prevButton}`]: {
     left: 0,
     marginLeft: "-24px !important",
   },
-  nextButton: {
+  [`&.${classes.nextButton}`]: {
     right: 0,
     marginRight: "-24px !important",
   },
-  navButton: {
+  [`&.${classes.navButton}`]: {
     position: "absolute !important",
     top: "50%",
     transform: "translateY(calc(-50% - 50px))",
@@ -62,13 +71,6 @@ const Carousel = (props) => {
 
   globalBulletColor = bulletColor;
 
-  let {
-    bulletClass,
-    bulletActiveClass,
-    nextButton,
-    prevButton,
-    navButton,
-  } = useStyles();
 
   const swiperOptions = {
     direction: "horizontal",
@@ -97,8 +99,8 @@ const Carousel = (props) => {
     pagination: {
       el: ".swiper-pagination",
       type: "bullets",
-      bulletClass,
-      bulletActiveClass,
+      // bulletClass,
+      // bulletActiveClass,
       clickable: true,
     },
 
@@ -127,26 +129,26 @@ const Carousel = (props) => {
 
       {/* navigation */}
       {navigation && (
-        <Fab
+        <StyledCarousel
           className={clsx(
             "carousel__button-prev bg-white",
-            prevButton,
-            navButton
+            classes.prevButton,
+            classes.navButton
           )}
         >
           <NavigateBefore/>
-        </Fab>
+        </StyledCarousel>
       )}
       {navigation && (
-        <Fab
+        <StyledCarousel
           className={clsx(
             "carousel__button-next bg-white",
-            nextButton,
-            navButton
+            classes.nextButton,
+            classes.navButton
           )}
         >
           <NavigateNext/>
-        </Fab>
+        </StyledCarousel>
       )}
     </div>
   );

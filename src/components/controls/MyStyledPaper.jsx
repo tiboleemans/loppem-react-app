@@ -1,5 +1,6 @@
 import React from "react";
 import {styled} from "@mui/system";
+import Paper from "@mui/material/Paper";
 
 const PREFIX = 'MyPaper';
 
@@ -7,7 +8,7 @@ const classes = {
   paper: `${PREFIX}-paper`,
 }
 
-const StyledPaper = styled('div')(({theme}) => ({
+const StyledPaper = styled(Paper)(({theme}) => ({
   [`&.${classes.paper}`]: {
     marginTop: theme.spacing(3),
     marginBottom: theme.spacing(3),

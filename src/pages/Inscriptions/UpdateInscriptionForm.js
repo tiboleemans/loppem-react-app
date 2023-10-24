@@ -1,56 +1,49 @@
-import React, {useEffect, useState} from "react";
-import Paper from "@mui/material/Paper";
-import {customStyling} from "../../components/controls/CustomStyling";
+import React, {useState} from "react";
 import useForm from "../../components/useForm";
 import StudentInformationForm from "./StudentInformationForm";
-import {Button} from "@mui/material";
-import Alert from "@mui/material/Alert";
-import {getLanguage} from "../../i18n/i18nSetup";
-import {getInscription, registerStudent, updateStudent} from "../../services/InscriptionService";
-import {useParams} from "react-router-dom";
+import {updateStudent} from "../../services/InscriptionService";
+import MyStyledPaper from "../../components/controls/MyStyledPaper";
+import {MyStyledButton} from "../../components/controls/MyStyledButton";
 
 
 export default function UpdateInscriptionForm() {
-    const classes = customStyling();
-    const {
-        values,
-        handleInputChange
-    } = useForm();
+  const {
+    values,
+    handleInputChange
+  } = useForm();
 
-    const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState({});
 
-    function getContent(){
-        return <StudentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
-    }
+  function getContent() {
+    return <StudentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
+  }
 
-    const sentInfo = () => {
-        // setIsLoading(true);
-        // values.parent.siteLanguage = getLanguage();
-        const update = updateStudent(values.id, values);
-        // setIsLoading(false)
-    }
+  const sentInfo = () => {
+    // setIsLoading(true);
+    // values.parent.siteLanguage = getLanguage();
+    const update = updateStudent(values.id, values);
+    // setIsLoading(false)
+  }
 
 
-    return (
-        <React.Fragment>
-            <div className="section bg-light-gray" id="inscription">
-                <div className="container">
-                    <Paper className={classes.paper}>
-                        <div className="section__header">
-                            <h2>Inschrijvingsformulier</h2>
-                        </div>
-                        <React.Fragment>
-                            {getContent()}
-                            <Button
-                                variant="contained"
-                                onClick={sentInfo}
-                                className={classes.button}
-                                color="primary"
-                            > Update </Button>
-                        </React.Fragment>
-                    </Paper>
-                </div>
+  return (
+    <React.Fragment>
+      <div className="section bg-light-gray" id="inscription">
+        <div className="container">
+          <MyStyledPaper>
+            <div className="section__header">
+              <h2>Inschrijvingsformulier</h2>
             </div>
-        </React.Fragment>
-    );
+            <React.Fragment>
+              {getContent()}
+              <MyStyledButton
+                variant="contained"
+                onClick={sentInfo}
+              > Update </MyStyledButton>
+            </React.Fragment>
+          </MyStyledPaper>
+        </div>
+      </div>
+    </React.Fragment>
+  );
 }

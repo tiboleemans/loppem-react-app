@@ -8,7 +8,7 @@ const classes = {
   buttonGroupBG: `${PREFIX}-buttonGroupBG`
 }
 const StyledTabs = styled('div')(({theme}) => ({
-  buttonGroupBG: {
+  [`&.${classes.buttonGroupBG}`]: {
     background: lighten(`${theme.palette.primary.light}`, 0.5),
     '&>div': {
       transition: 'all 250ms ease',
@@ -26,18 +26,18 @@ const StyledTabs = styled('div')(({theme}) => ({
 }));
 
 const TabsContainer = ({tabs, selectedTab, setSelectedTabId}) => <div>
-    {tabs.map((tab, index) => (
-      <div className="inline-block ml-6" key={index}>
-        <StyledTabs onClick={() => setSelectedTabId(tab.id)}
-             className={`lex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG} ${selectedTab === tab.id ? 'active' : ''}`}>
-          <div
-            className="px-6 py-2 cursor-pointer"
-          >
-            {tab.title}
-          </div>
-        </StyledTabs>
-      </div>
-    ))}
+  {tabs.map((tab, index) => (
+    <div className="inline-block ml-6" key={index}>
+      <StyledTabs onClick={() => setSelectedTabId(tab.id)}
+           className={`lex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG} ${selectedTab === tab.id ? 'active' : ''}`}>
+        <div
+          className="px-6 py-2 cursor-pointer"
+        >
+          {tab.title}
+        </div>
+      </StyledTabs>
+    </div>
+  ))}
 </div>;
 
 const useTabs = (tabs) => {

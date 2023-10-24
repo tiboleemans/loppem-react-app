@@ -5,13 +5,11 @@ import {styled} from "@mui/system";
 const PREFIX = 'MyCustomTextArea';
 
 const classes = {
-  root: `${PREFIX}-root`,
-  intro: `${PREFIX}-intro`,
-  lightWhiteBG: `${PREFIX}-lightWhiteBG`,
+  root: `${PREFIX}-root`
 }
 
 
-const StyledCustomTextArea = styled('div')(({theme}) => ({
+const StyledCustomTextField = styled(TextField)(({theme}) => ({
     [`&.${classes.root}`]: {
       '& label.Mui-focused': {
         color: '#f5a034',
@@ -37,7 +35,6 @@ const StyledCustomTextArea = styled('div')(({theme}) => ({
 
 const CustomTextArea = (props) => {
   const {subject, name, label, value, onChange, type, placeholder, helperText} = props;
-  const classes = useStyles();
 
   const handleChange = (event) => {
     event.preventDefault();
@@ -46,7 +43,7 @@ const CustomTextArea = (props) => {
   };
 
   return (
-    <TextField
+    <StyledCustomTextField
       variant="outlined"
       subject={subject}
       label={label}

@@ -3,7 +3,6 @@ import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
-import {customButtonGroupStyling} from "./CustomStyling";
 import FormHelperText from "@mui/material/FormHelperText";
 
 function CustomButtonGroup(props) {
@@ -34,6 +33,12 @@ function CustomButtonGroup(props) {
             return false;
         }
         return value;
+    }
+
+    const customButtonGroupStyling = {
+        color: 'white',
+        variant: 'contained',
+        backgroundColor: '#1d7100',
     }
 
     const changeStyleOfButton = (id) => {

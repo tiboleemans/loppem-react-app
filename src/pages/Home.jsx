@@ -27,17 +27,17 @@ const Home = () => {
       <TaalVakanties/>
       <CallToAction/>
       <InscriptionForm/>
-      {/*<CallToAction/>*/}
-      {/*<Pricing/>*/}
-      {/*<CallToAction/>*/}
-      {/*<FAQ/>*/}
-      {/*<CallToAction/>*/}
-      {/*<Testimonial/>*/}
-      {/*<CallToAction/>*/}
-      {/*<Gallery/>*/}
-      {/*<CallToAction/>*/}
-      {/*<Contact/>*/}
-      {/*<Footer/>*/}
+      <CallToAction/>
+      <Pricing/>
+      <CallToAction/>
+      <FAQ/>
+      <CallToAction/>
+      <Testimonial/>
+      <CallToAction/>
+      <Gallery/>
+      <CallToAction/>
+      <Contact/>
+      <Footer/>
     </div>
   );
 };

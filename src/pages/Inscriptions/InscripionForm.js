@@ -1,14 +1,11 @@
 import React, {useEffect, useState} from 'react';
-import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import StudentInformationForm, {getErrorStudentStep} from "./StudentInformationForm";
 import ParentInformationForm, {getErrorParentStep} from "./ParentInformationForm";
 import SchoolInformationForm, {getErrorSchoolStep} from "./SchoolInformationForm";
 import ExtraInformationForm, {getErrorExtraInfoStep} from "./ExtraInformationForm";
-import {customStylingClasses} from "../../components/controls/CustomStyling";
 import useForm from "../../components/useForm";
 import Alert from '@mui/material/Alert';
 import {registerStudent, updateStudent} from "../../services/InscriptionService";
@@ -17,12 +14,12 @@ import {CircularProgress} from "@mui/material";
 import {initialFieldValues} from "./initialFieldValues";
 import MyStyledPaper from "../../components/controls/MyStyledPaper";
 import MyStyledStepper from "../../components/controls/MyStyledStepper";
+import {MyStyledButton, MyStyledButtons} from "../../components/controls/MyStyledButton";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
 const disableValidation = true;
 
 export default function InscriptionForm() {
-  const classes = customStylingClasses;
   const [step, setStep] = useState(0);
   const [hasFeedback, setHasFeedback] = useState(false);
   const [feedbackMessage, setFeedbackMessage] = useState();
@@ -183,27 +180,25 @@ export default function InscriptionForm() {
                 <React.Fragment>
                   {getStepContent()}
                   {hasFeedback ? feedbackMessage : null}
-                  <div className={classes.buttons}>
+                  <MyStyledButtons>
                     {step > 1 && (
-                      <Button onClick={sentInfo} className={classes.button}>
+                      <MyStyledButton onClick={sentInfo}>
                         Voorlopig opslaan
-                      </Button>
+                      </MyStyledButton>
                     )}
                     {step !== 0 && (
-                      <Button onClick={handleBack} className={classes.button}>
+                      <MyStyledButton onClick={handleBack}>
                         Vorige
-                      </Button>
+                      </MyStyledButton>
                     )}
-                    <Button
+                    <MyStyledButton
                       variant="contained"
                       onClick={handleNext}
-                      className={classes.button}
-                      color="primary"
                     >
                       {step === steps.length - 1 ? 'Inschrijven' : 'Volgende'}
-                    </Button>
+                    </MyStyledButton>
 
-                  </div>
+                  </MyStyledButtons>
                 </React.Fragment>
               )}
             </React.Fragment>

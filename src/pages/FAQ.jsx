@@ -3,8 +3,14 @@ import {Accordion, AccordionDetails, AccordionSummary, Grid,} from "@mui/materia
 import {styled} from "@mui/system";
 import clsx from "clsx";
 
-const useStyles = styled(({palette, ...theme}) => ({
-  bgLightGray: {
+const PREFIX = 'MyFaq';
+
+const classes = {
+  bgLightGray: `${PREFIX}-bgLightGray`,
+}
+
+const StyledFaq = styled('div')(({theme}) => ({
+  [`&.${classes.bgLightGray}`]: {
     background: "rgba(0,0,0,0.05)",
   },
 }));
@@ -12,8 +18,6 @@ const useStyles = styled(({palette, ...theme}) => ({
 const FAQ = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState(null);
-
-  const classes = useStyles();
 
   const categoryList = [
     {
@@ -79,7 +83,7 @@ const FAQ = () => {
           <Grid item md={3} sm={4} xs={12}>
             <div>
               {categoryList.map((item, ind) => (
-                <div
+                <StyledFaq
                   key={ind}
                   className={clsx({
                     "px-4 py-2 mb-3 text-center border-radius-8 hover-bg-primary cursor-pointer": true,
@@ -92,7 +96,7 @@ const FAQ = () => {
                   }}
                 >
                   {item.title}
-                </div>
+                </StyledFaq>
               ))}
             </div>
           </Grid>
