@@ -17,30 +17,30 @@ function CustomDatePicker(props) {
     primaryColor: '#F49B05',
     secondaryColor: '#9DC982'
   };
-  const StyledDatePicker = styled(DatePicker)(({theme}) => ({
-    [`&.${classes.textfield_root}`]: {
-      '& label.Mui-focused': {
-        color: customColors.primaryColor,
-      },
-      '& .MuiInput-underline:after': {
-        borderBottomColor: 'black',
-      },
-      '& .MuiOutlinedInput-root': {
-        // '& fieldset': {
-        //     borderColor: customColors.primaryColor,
-        // },
-        '&:hover fieldset': {
-          borderColor: customColors.primaryColor,
-        },
-        '&.Mui-focused fieldset': {
-          borderColor: customColors.primaryColor,
-        },
-      },
-      '& MuiPickersToolbar-toolbar': {
-        backgroundColor: customColors.primaryColor,
-      }
-    },
-  }))
+  // const StyledDatePicker = styled(DatePicker)(({theme}) => ({
+  //   [`&.${classes.textfield_root}`]: {
+  //     '& label.Mui-focused': {
+  //       color: customColors.primaryColor,
+  //     },
+  //     '& .MuiInput-underline:after': {
+  //       borderBottomColor: 'black',
+  //     },
+  //     '& .MuiOutlinedInput-root': {
+  //       // '& fieldset': {
+  //       //     borderColor: customColors.primaryColor,
+  //       // },
+  //       '&:hover fieldset': {
+  //         borderColor: customColors.primaryColor,
+  //       },
+  //       '&.Mui-focused fieldset': {
+  //         borderColor: customColors.primaryColor,
+  //       },
+  //     },
+  //     '& MuiPickersToolbar-toolbar': {
+  //       backgroundColor: customColors.primaryColor,
+  //     }
+  //   },
+  // }))
 
   const {subject, name, label, value, onChange, error = null} = props;
 
@@ -55,11 +55,11 @@ function CustomDatePicker(props) {
 
   return (
     <LocalizationProvider adapterLocale={nlLocale} dateAdapter={AdapterDateFns}>
-      <StyledDatePicker
+      <DatePicker
         disableFuture
         openTo="year"
         inputFormat="dd/MM/yyyy"
-        views={["year", "month", "date"]}
+        views={["year", "month", "day"]}
         subject={subject}
         label={label}
         name={name}
@@ -75,6 +75,7 @@ function CustomDatePicker(props) {
         classes={{root: classes.textfield_root}}
         {...(error && {error: true, helperText: error})}
       />
+
     </LocalizationProvider>
   );
 }

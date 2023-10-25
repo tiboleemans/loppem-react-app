@@ -17,18 +17,10 @@ const themeOptions = {
         background: {
             default: '#fff',
         },
-        // Default colors of Evelyne
-        // primary: indigo,
-        // secondary: orange,
-        // error: red,
-        contrastThreshold: 3,
-        // Used to shift a color's luminance by approximately
-        // two indexes within its tonal palette.
-        // E.g., shift from Red 500 to Red 300 or Red 700.
-        tonalOffset: 0.2,
     },
     typography: {
         useNextVariants: true,
+        fontFamily: "\"Roboto\", serif",
     },
     overrides: {
         MuiButton: {
@@ -38,7 +30,7 @@ const themeOptions = {
         },
         MuiCard: {
             root: {
-                borderRadius: 8,
+                borderRadius: 80,
             },
         },
         MuiFab: {
@@ -58,7 +50,7 @@ export const Theme = createTheme ({
                     color: "darkred",
                     backgroundColor: "grey",
                     "& h1": {
-                        color: "black"
+                        color: "blue"
                     }
                 }
             }

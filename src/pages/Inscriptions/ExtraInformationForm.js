@@ -25,9 +25,9 @@ export default function ExtraInformationForm(props) {
 
     return (
         <Form>
-            <Typography variant="h5" gutterBottom>
+            <h4>
                 Extra informatie
-            </Typography>
+            </h4>
 
             <Grid container spacing={2}>
 
@@ -103,7 +103,7 @@ export default function ExtraInformationForm(props) {
 }
 
 export function getErrorExtraInfoStep(values) {
-    let errors = {}
+    const errors = {}
     errors.contact = values.contact ? "" : "Gelieve aan te duiden via welke weg u in contact bent gekomen met Loppem Conversa."
     errors.acceptTerms = values.acceptTerms ? "" : "Gelieve het cursusreglement te lezen en te accepteren."
     return errors;

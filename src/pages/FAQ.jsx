@@ -17,7 +17,7 @@ const StyledFaq = styled('div')(({theme}) => ({
 
 const FAQ = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState(0);
 
   const categoryList = [
     {

@@ -38,6 +38,8 @@
     "func-call-spacing": "off",
     "new-cap": "off",
     "linebreak-style": "off",
-    "arrow-parens" : "off"
+    "arrow-parens" : "off",
+    "no-invalid-this" : "off",
+    "prefer-rest-params": "off"
   }
 }

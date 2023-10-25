@@ -197,7 +197,7 @@ export default function SchoolInformationForm(props) {
 
 export function getErrorSchoolStep(values) {
 
-    let errors = {}
+    const errors = {}
     errors.nameSchool = values.nameSchool ? "" : "Gelieve de naam van de school in te vullen."
     errors.streetSchool = values.streetSchool ? "" : "Gelieve de straat van de school in te vullen."
     errors.houseNrSchool = values.houseNrSchool ? "" : "Gelieve het huisnummer van de school in te vullen."

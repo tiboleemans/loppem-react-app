@@ -41,11 +41,6 @@ export const GlobalStyleVariables = styled('div')(({theme}) => ({
   "--font-display-4": "300 112px/112px var(--font)",
 
   // typography
-  ".h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6": {
-    margin: "0 0 0.5rem",
-    lineHeight: "1.1",
-    color: "inherit",
-  },
   ".h1, h1": {fontSize: "2rem"},
   ".h2, h2": {fontSize: "1.75rem"},
   ".h3, h3": {fontSize: "1.5rem"},

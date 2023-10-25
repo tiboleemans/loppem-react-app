@@ -7,7 +7,8 @@ import {Theme} from "./theme";
 import Home from "./pages/Home";
 import setupAndInitI18n from "./i18n/i18nSetup";
 import UpdateInscriptionForm from "./pages/Inscriptions/UpdateInscriptionForm";
-import {GlobalStyleVariables} from "./styles/jss/utilities/global";
+import {GlobalStyleVariables} from "./styles/global";
+
 
 function App() {
   setupAndInitI18n();
@@ -15,10 +16,6 @@ function App() {
   return (
     <ThemeProvider theme={Theme}>
       <GlobalStyleVariables>
-        {/*<Scrollbar*/}
-        {/*  className="h-full-screen scrollable-content"*/}
-        {/*  options={{suppressScrollX: true}}*/}
-        {/*>*/}
         <Router basename="/">
           <Switch>
             <Route path="/home" component={Home} exact/>
@@ -27,7 +24,6 @@ function App() {
             {/* <Route component={Error} /> */}
           </Switch>
         </Router>
-        {/*</Scrollbar>*/}
       </GlobalStyleVariables>
     </ThemeProvider>
   )

@@ -1,5 +1,4 @@
 import React, {Children, useEffect} from "react";
-import Swiper from "swiper";
 import PropTypes from "prop-types";
 import {Fab} from "@mui/material";
 import NavigateNext from "@mui/icons-material/NavigateNext";
@@ -7,6 +6,7 @@ import NavigateBefore from "@mui/icons-material/NavigateBefore";
 import clsx from "clsx";
 import {styled} from "@mui/system";
 import {Theme} from "../theme";
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
 
 let globalBulletColor = "red";
@@ -76,7 +76,7 @@ const Carousel = (props) => {
     direction: "horizontal",
     allowSlideNext,
     allowSlidePrev,
-    slidesPerView,
+    slidesPerView: 3,
     spaceBetween: spacing,
 
     autoplay: {
@@ -87,20 +87,28 @@ const Carousel = (props) => {
     breakpoints: {
       // when window width is <= 480px
       480: {
-        slidesPerView: 1,
+        slidesPerView: slidesPerView,
         spaceBetween: 0,
       },
       // when window width is <= 640px
       768: {
-        slidesPerView: 1,
+        slidesPerView: slidesPerView,
       },
     },
 
     pagination: {
       el: ".swiper-pagination",
       type: "bullets",
-      // bulletClass,
-      // bulletActiveClass,
+      opacity: 1,
+      background: globalBulletColor,
+      transition: "transform 400ms cubic-bezier(0.17, 0.67, 0.83, 0.67)",
+      width: 8,
+      height: 8,
+      display: "inline-block",
+      borderRadius: "100%",
+      cursor: "pointer",
+      margin: "0 4px",
+      transform: "scale(1.8)",
       clickable: true,
     },
 

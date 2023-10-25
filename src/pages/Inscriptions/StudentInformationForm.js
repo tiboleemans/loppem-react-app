@@ -76,16 +76,16 @@ export default function StudentInformationForm(props) {
                         error={errors.lastNameStudent}
                     />
                 </Grid>
-                {/*<Grid item xs={12} sm={6}>*/}
-                {/*    <CustomDatePicker*/}
-                {/*        subject="student"*/}
-                {/*        name="birthday"*/}
-                {/*        label="Geboortedatum"*/}
-                {/*        value={values?.student?.birthday}*/}
-                {/*        onChange={handleInputChange}*/}
-                {/*        error={errors.birthday}*/}
-                {/*    />*/}
-                {/*</Grid>*/}
+                <Grid item xs={12} sm={6}>
+                    <CustomDatePicker
+                        subject="student"
+                        name="birthday"
+                        label="Geboortedatum"
+                        value={values?.student?.birthday}
+                        onChange={handleInputChange}
+                        error={errors.birthday}
+                    />
+                </Grid>
 
                 <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
                     <CustomButtonGroup
