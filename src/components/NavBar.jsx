@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {classList} from "../utils";
 import ScrollTo from "../common/ScrollTo";
 import {changeLanguage} from "../i18n/i18nSetup";
@@ -8,11 +8,15 @@ import LanguageSelector from "./controls/LanguageSelector";
 
 const NavBar = () => {
     const { t, i18n: { language} } = useTranslation();
+    const [isClosed, setIsClosed] = useState(true);
     return (
+        <>
+            <button onClick={() => setIsClosed(!isClosed)}>open</button>
         <section
             className={classList({
                 header: true,
-                "header-fixed": true
+                "header-fixed": true,
+                "closed": isClosed
             })}
         >
             <div className="container header-container">
@@ -62,6 +66,7 @@ const NavBar = () => {
             </div>
 
         </section>
+            </>
     );
 };
 

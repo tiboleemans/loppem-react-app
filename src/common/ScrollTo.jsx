@@ -10,6 +10,7 @@ const ScrollTo = ({ to, onScroll, children }) => {
       href={`#${to}`}
       onClick={(e) => {
         scrollTo(appContainer, to);
+        e.preventDefault();
         if (onScroll) {
           e.preventDefault();
           onScroll(e);

@@ -12,24 +12,21 @@ import UpdateInscription from "./pages/update/UpdateInscription";
 import UpdateInscriptionForm from "./pages/Inscriptions/UpdateInscriptionForm";
 
 function App() {
+    // In index
     setupAndInitI18n();
     return (
         <MuiThemeProvider theme={Theme}>
             <GlobalCss>
-                <Scrollbar
-                    className="h-full-screen scrollable-content"
-                    options={{suppressScrollX: true}}
-                >
                     <Router basename="/">
                         <Switch>
                             <Route path="/home" component={Home} exact/>
 
                             <Route path="/inscription/:id" component={UpdateInscriptionForm}/>
+                            <Route path="/inscription/:id" component={UpdateInscriptionForm}/>
                             <Redirect path="/" exact to="home"/>
                             {/* <Route component={Error} /> */}
                         </Switch>
                     </Router>
-                </Scrollbar>
             </GlobalCss>
         </MuiThemeProvider>
     );

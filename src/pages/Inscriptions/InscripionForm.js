@@ -180,7 +180,7 @@ export default function InscriptionForm() {
                         </Stepper>
                         <React.Fragment>
                             {step === steps.length ? getInscriptionConfirmation() : (
-                                <React.Fragment>
+                                <>
                                     {getStepContent()}
                                     {hasFeedback ? feedbackMessage : null}
                                     <div className={classes.buttons}>
@@ -204,7 +204,7 @@ export default function InscriptionForm() {
                                         </Button>
 
                                     </div>
-                                </React.Fragment>
+                                </>
                             )}
                         </React.Fragment>
                     </Paper>

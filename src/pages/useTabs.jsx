@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import {lighten, makeStyles} from "@material-ui/core/styles";
+import {lighten, darken, makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles(({
                                   palette,
@@ -7,6 +7,10 @@ const useStyles = makeStyles(({
                               }) => ({
     buttonGroupBG: {
         background: lighten(palette.primary.light, 0.5),
+        "&.active": {
+            background: palette.primary.main
+            margin: variable + 'px'
+        },
         "&>div": {
             transition: "all 250ms ease",
             "&:hover": {
@@ -26,7 +30,7 @@ const TabsContainer = ({tabs, selectedTab, setSelectedTabId, classes}) => <div>
     {tabs.map((tab, index) => (
         <div className="inline-block ml-6" key={index}>
             <div onClick={() => setSelectedTabId(tab.id)}
-                 className={`lex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG} ${selectedTab === tab.id ? 'active' : ''}`}>
+                 className={`lex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG} ${selectedTab?.id === tab.id ? 'active' : ''}`}>
                 <div
                     className="px-6 py-2 cursor-pointer"
                 >

@@ -8,7 +8,7 @@ const themeOptions = {
             main: '#F49B05',
         },
         secondary: {
-            main: '#9DC982',
+            main: '#537EBA',
         },
         error: {
             main: red.A400,
@@ -30,6 +30,11 @@ const themeOptions = {
         useNextVariants: true,
     },
     overrides: {
+        MuiPaper: {
+            root: {
+                color: 'rgb(31, 31, 31, 0.9)'
+            }
+        },
         MuiButton: {
             root: {
                 textTransform: "none",

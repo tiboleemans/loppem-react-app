@@ -9,7 +9,7 @@ export const commonStyles = makeStyles(({ palette, ...theme }) => ({
       overflow: "hidden",
     },
     ".card": { transition: "all 0.3s ease" },
-    ".card:hover": { boxShadow: theme.shadows[12] },
+    ".card-hover:hover": { boxShadow: theme.shadows[12] },
     ".card-title": {
       fontSize: "1rem",
       textTransform: "capitalize",

@@ -11,7 +11,7 @@ const useStyles = makeStyles(({palette, ...theme}) => ({
 
 const FAQ = () => {
   const [tabIndex, setTabIndex] = useState(0);
-  const [expandedIndex, setExpandedIndex] = useState(null);
+  const [expandedIndex, setExpandedIndex] = useState(0);
 
   const classes = useStyles();
 

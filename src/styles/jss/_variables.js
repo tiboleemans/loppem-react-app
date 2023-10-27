@@ -3,7 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 export const variableStyles = makeStyles((theme) => ({
   "@global": {
     ":root": {
-      "--topbar-mobile-width": "220px",
+      "--topbar-mobile-width": "330px",
       "--topbar-height": "64px",
       "--sidenav-width": "260px",
       "--sidenav-button-width": "220px",
