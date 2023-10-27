@@ -8,10 +8,12 @@ import Home from "./pages/Home";
 import setupAndInitI18n from "./i18n/i18nSetup";
 import UpdateInscriptionForm from "./pages/Inscriptions/UpdateInscriptionForm";
 import {GlobalStyleVariables} from "./styles/global";
+import {register} from 'swiper/element/bundle';
 
 
 function App() {
   setupAndInitI18n();
+  register();
 
   return (
     <ThemeProvider theme={Theme}>

@@ -1,4 +1,4 @@
-import React, {Children, useEffect} from "react";
+import React, {Children, useEffect, useRef} from "react";
 import PropTypes from "prop-types";
 import {Fab} from "@mui/material";
 import NavigateNext from "@mui/icons-material/NavigateNext";
@@ -6,7 +6,6 @@ import NavigateBefore from "@mui/icons-material/NavigateBefore";
 import clsx from "clsx";
 import {styled} from "@mui/system";
 import {Theme} from "../theme";
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
 
 let globalBulletColor = "red";
@@ -71,6 +70,9 @@ const Carousel = (props) => {
 
   globalBulletColor = bulletColor;
 
+  // See https://swiperjs.com/element#usage-with-react
+  const swiperRef = useRef();
+
 
   const swiperOptions = {
     direction: "horizontal",
@@ -112,28 +114,26 @@ const Carousel = (props) => {
       clickable: true,
     },
 
-    navigation: {
-      nextEl: ".carousel__button-next",
-      prevEl: ".carousel__button-prev",
-    },
+    navigation: false,
   };
 
   useEffect(() => {
-    new Swiper(`#${carouselId}`, swiperOptions);
-  }, [swiperOptions]);
+      if (swiperRef.current !== null) {
+          Object.assign(swiperRef.current, swiperOptions);
+          swiperRef.current.initialize();
+      }
+  }, [swiperRef.current])
 
   return (
     <div className="relative w-full">
-      <div className="swiper-container" id={carouselId}>
-        <div className="swiper-wrapper">
+      <swiper-container ref={swiperRef} id={carouselId}>
           {Children.map(children, (child, index) => (
-            <div className="swiper-slide h-auto p-1 pb-6">{child}</div>
+            <swiper-slide className="h-auto p-1 pb-6">{child}</swiper-slide>
           ))}
-        </div>
 
         {/* pagination */}
+      </swiper-container>
         <div className={clsx("swiper-pagination relative", paginationClass)}/>
-      </div>
 
       {/* navigation */}
       {navigation && (
@@ -143,6 +143,7 @@ const Carousel = (props) => {
             classes.prevButton,
             classes.navButton
           )}
+          onClick={() => swiperRef.current?.swiper.slidePrev()}
         >
           <NavigateBefore/>
         </StyledCarousel>
@@ -154,6 +155,7 @@ const Carousel = (props) => {
             classes.nextButton,
             classes.navButton
           )}
+          onClick={() => swiperRef.current?.swiper.slideNext()}
         >
           <NavigateNext/>
         </StyledCarousel>
