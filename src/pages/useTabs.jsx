@@ -30,7 +30,7 @@ const StyledTabs = styled('div')(({theme}) => ({
 
 const TabsContainer = ({tabs, selectedTab, setSelectedTabId}) => <div>
   {tabs.map((tab, index) => (
-    <div className="inline-block ml-6" key={index}>
+    <div id="tab-div" className="tab-div" key={index}>
       <StyledTabs onClick={() => setSelectedTabId(tab.id)}
            className={`lex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG} ${selectedTab?.id === tab.id ? 'active' : ''}`}>
         <div

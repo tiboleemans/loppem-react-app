@@ -1,4 +1,15 @@
+:root {
+    --primary-main: #F49B05;
+    --text-muted: #9DC982;
+}
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin: 0 0 0.5rem;
+    line-height: 1.2;
+    color: inherit;
+}
+
+p {
     margin: 0 0 0.5rem;
     line-height: 1.1;
     color: inherit;
@@ -7,4 +18,122 @@
 body {
     /*font-family: "Roboto", serif;*/
     margin: 0;
+}
+
+.font-medium {
+    font-weight: 500
+}
+
+.text-44 {
+    font-size: 44px
+}
+
+.font-italic {
+    font-style: italic
+}
+
+.font-normal {
+    font-weight: normal
+}
+
+.font-semibold {
+    font-weight: 600
+}
+
+.font-bold {
+    font-weight: 700
+}
+
+.items-end {
+    align-items: flex-end
+}
+
+.text-right {
+    text-align: right
+}
+
+.text-left {
+    text-align: left
+}
+
+.justify-end {
+    justify-content: flex-end
+}
+
+.intro {
+    padding-top: 4rem;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.container {
+    padding: 0 1rem;
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+.intro-title {
+    font-weight: 500;
+    font-size: 44px;
+}
+
+.intro-subtitle {
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: 2rem;
+}
+
+.intro-info-label {
+    align-items: flex-end;
+    text-align: right;
+    justify-content: flex-end;
+    font-weight: normal;
+    margin: 0 0 1rem 0;
+}
+
+.intro-info-text {
+    align-items: flex-start;
+    text-align: left;
+    justify-content: flex-start;
+    font-weight: bolder;
+}
+
+.intro-footer {
+    font-weight: normal;
+    font-style: italic;
+    margin: 2rem 0 0 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+.vacations {
+    padding: 4rem;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.vacations-card {
+    padding: 2rem;
+}
+
+.card {
+    transition: all 0.3s ease
+}
+
+.card:hover {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5)
+}
+
+.card-title {
+    font-size: 1rem;
+    text-transform: capitalize;
+    font-weight: normal;
+}
+
+.card-subtitle {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+}
+
+.tab-div {
+    display: inline-block;
+    margin-left: 2rem;
 }

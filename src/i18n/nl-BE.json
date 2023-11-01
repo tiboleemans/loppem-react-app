@@ -1,6 +1,18 @@
 {
-    "hi": "Hallo",
-    "vacations": {
-        "what": "Wat?"
-    }
+  "intro": {
+    "title": "Loppem Conversa",
+    "subtitle": "Een duidelijke voorsprong",
+    "info.label.what": "Wat?",
+    "info.text.what": "Taalvakanties Nederlands / Engels",
+    "info.label.when": "Wanneer?",
+    "info.text.when.p1": "7 - 17 juli 2024",
+    "info.text.when.p2": "4 - 14 augustus 2024",
+    "info.label.who": "Wie?",
+    "info.text.who": "Voor jongeren van 10 tot 18 jaar",
+    "footer": "Wij zijn pas tevreden wanneer de jongeren in de doeltaal dromen!"
+  },
+  "hi": "Hallo",
+  "vacations": {
+    "what": "Wat?"
+  }
 }

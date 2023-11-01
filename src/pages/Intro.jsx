@@ -1,7 +1,7 @@
 import React from "react";
 import {styled} from "@mui/material/styles";
-import clsx from "clsx";
 import Grid from "@mui/material/Grid";
+import {useTranslation} from "react-i18next";
 
 const PREFIX = 'MyIntro';
 
@@ -25,7 +25,13 @@ const StyledIntro = styled('div')(({theme}) => ({
     [theme.breakpoints.down("sm")]: {
       padding: "2.5rem 0rem",
     },
-    zIndex: 5
+    zIndex: 5,
+    display: "flex",
+    flexDirection: "column",
+    textAlign: "center",
+    marginLeft: "auto",
+    marginRight: "auto",
+    position: "relative"
   },
   [`&.${classes.lightWhiteBG}`]: {
     position: "absolute",
@@ -47,53 +53,50 @@ const StyledIntro = styled('div')(({theme}) => ({
 }))
 
 const Intro = () => {
+  const {t} = useTranslation();
   return (
-    <section className="pt-12 bg-light-gray" id="intro">
+    <section className="intro" id="intro">
       <StyledIntro className={classes.introWrapper}>
         <div className="container">
-          <StyledIntro
-            className={clsx(
-              "relative mx-auto text-center flex-column justify-center items-center",
-              classes.intro
-            )}
-          >
-            <h1 className="font-medium text-44 text-black mb-2">
-              Loppem Conversa
+          <StyledIntro className={classes.intro}>
+            <h1 id="intro-title" className="intro-title">
+              {t("intro.title")}
             </h1>
-            <h4 className="font-italic font-normal m-0 mb-8 text-black">
-              Een duidelijke voorsprong
+            <h4 className="intro-subtitle">
+              {t("intro.subtitle")}
             </h4>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={3}>
-                <h4 className="items-end text-right justify-end font-normal m-0 mb-4 text-black">Wat?</h4>
+                <h4 id="intro.info.label.what" className="intro-info-label">{t("intro.info.label.what")}</h4>
               </Grid>
               <Grid item xs={12} sm={9}>
-                <h5 style={{paddingTop: '4px'}} className="items-start text-left justify-start">Taalvakanties Nederlands / Engels</h5>
+                <h4 className="intro-info-text">{t("intro.info.text.what")}</h4>
               </Grid>
             </Grid>
 
             <Grid container spacing={2}>
               <Grid item xs={12} sm={3}>
-                <h4 className="items-end text-right justify-end font-normal m-0 mb-4 text-black">Wanneer? </h4>
+                <h4 id="intro-info-label" className="intro-info-label">{t("intro.info.label.when")}</h4>
               </Grid>
               <Grid item xs={12} sm={9}>
-                <h5 style={{paddingTop: '4px'}} className="items-start text-left justify-start">9 - 19 juli 2023 & 2 - 12 augustus
-                  2023</h5>
+                <h4 className="intro-info-text">
+                  <p>{t("intro.info.text.when.p1")}</p>
+                  <p>{t("intro.info.text.when.p2")}</p>
+                </h4>
               </Grid>
             </Grid>
-
             <Grid container spacing={2}>
               <Grid item xs={12} sm={3}>
-                <h4 className="items-end text-right justify-end font-normal m-0 mb-4 text-black">Wie?</h4>
+                <h4 id="intro-info-label" className="intro-info-label">{t("intro.info.label.who")}</h4>
               </Grid>
               <Grid item xs={12} sm={9}>
-                <h5 style={{paddingTop: '4px'}} className="items-start text-left justify-start">Voor jongeren van 10 tot 18 jaar</h5>
+                <h4 className="intro-info-text">{t("intro.info.text.who")}</h4>
               </Grid>
             </Grid>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={12}>
-                <h4 className="font-normal font-italic mt-8 text-black text-18 text-left">
-                  Wij zijn pas tevreden wanneer de jongeren in de doeltaal dromen!
+                <h4 id="intro-footer" className="intro-footer">
+                  {t("intro.footer")}
                 </h4>
               </Grid>
             </Grid>
