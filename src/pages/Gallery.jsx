@@ -41,7 +41,7 @@ const StyledDiv = styled('div')(({theme}) => ({
 }));
 
 const Gallery = () => {
-  const {body, header} = useTabs([{
+  const {bodyActiveTab, tabTitles} = useTabs([{
     id: 'ACTIVITIES',
     title: "Activiteiten",
     body: [{
@@ -51,7 +51,7 @@ const Gallery = () => {
     }, {
       title: "",
       subtitle: "Een uitstap naar Brugge om de doeltaal in praktijk te gebruiken",
-      image: require("../images/brugge.jpg"),
+      image: require("../images/vacations/5.jpg"),
     }, {
       title: "",
       subtitle: "Interactieve lessen in klassen van maximaal 10 leerlingen",
@@ -133,10 +133,10 @@ const Gallery = () => {
         <div className="mb-8">
           <h1 className="font-normal text-44 mt-0">Loppem Conversa in beeld</h1>
         </div>
-        {header}
+        {tabTitles}
 
         <Grid container spacing={3}>
-          {body?.map((item, ind) => (<Grid key={ind} item lg={4} md={4} sm={4} xs={12}>
+          {bodyActiveTab?.map((item, ind) => (<Grid key={ind} item lg={4} md={4} sm={4} xs={12}>
             {
               item.image.endsWith(".mp4") ?
                 <CardMedia

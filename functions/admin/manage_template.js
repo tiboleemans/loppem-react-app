@@ -18,13 +18,13 @@ exports.updateTemplate = async (req, res) => {
 
   if (req.body.html == null || req.body.html == '') {
     return res.status(400).send({
-      message: 'The body should contain an html body',
+      message: 'The bodyActiveTab should contain an html bodyActiveTab',
     });
   }
 
   if (req.body.subject == null || req.body.subject == '') {
     return res.status(400).send({
-      message: 'The body should contain a subject',
+      message: 'The bodyActiveTab should contain a subject',
     });
   }
 

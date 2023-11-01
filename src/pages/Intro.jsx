@@ -15,7 +15,7 @@ const StyledIntro = styled('div')(({theme}) => ({
   [`&.${classes.introWrapper}`]: {
     position: "relative",
     background:
-      "url(" + require('../images/intro.jpg') + ") center center/cover no-repeat",
+      "url(" + require('../images/intro/intro.jpg') + ") center center/cover no-repeat",
     height: "100%",
     overflow: "hidden"
   },

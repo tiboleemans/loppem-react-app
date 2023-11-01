@@ -33,7 +33,7 @@ const NavBar = () => {
                         </ScrollTo>
                     </li>
                     <li>
-                        <ScrollTo to="taalvakanties">
+                        <ScrollTo to="vacations">
                             Taalvakanties
                         </ScrollTo>
                     </li>

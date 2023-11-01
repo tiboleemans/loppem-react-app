@@ -391,7 +391,7 @@ async function getAndTransformRegistration(docId) {
 /**
  * Insert a new record in the table 'inscription_temporary'.
  * Returns the document ID
- * @param {*} data the request body (student data)
+ * @param {*} data the request bodyActiveTab (student data)
  */
 async function performInsert(data) {
   const writeResult = await db

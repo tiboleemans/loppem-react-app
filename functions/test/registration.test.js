@@ -418,8 +418,8 @@ describe('Final registration', function() {
     //       .end(function(err, res) {
     //         if (err) return done(err);
 
-    //         should.exist(res.body.id);
-    //         const docId = res.body.id;
+    //         should.exist(res.bodyActiveTab.id);
+    //         const docId = res.bodyActiveTab.id;
     //         const updatedStudent = {...data.validTemporaryStudent(), id: docId};
     //         updatedStudent.extra.interest = 'Ruby';
 
@@ -438,14 +438,14 @@ describe('Final registration', function() {
     //                   .end(function(err, res) {
     //                     if (err) return done(err);
 
-    //                     should.exist(res.body.id);
-    //                     res.body.id.should.equal(docId);
-    //                     should.exist(res.body.parent.firstNameParent);
-    //                     should.exist(res.body.status);
-    //                     res.body.status.should.equals('TEMPORARY');
-    //                     const student = res.body.student;
+    //                     should.exist(res.bodyActiveTab.id);
+    //                     res.bodyActiveTab.id.should.equal(docId);
+    //                     should.exist(res.bodyActiveTab.parent.firstNameParent);
+    //                     should.exist(res.bodyActiveTab.status);
+    //                     res.bodyActiveTab.status.should.equals('TEMPORARY');
+    //                     const student = res.bodyActiveTab.student;
     //                     student.language.should.equal('english');
-    //                     const extra = res.body.extra;
+    //                     const extra = res.bodyActiveTab.extra;
     //                     extra.additionalInfo.should.equals('&lt;script&gt;alert(\'test\')&lt;/script&gt;');
     //                     done();
     //                   });
@@ -482,8 +482,8 @@ describe('Final registration', function() {
     //       .end(function(err, res) {
     //         if (err) return done(err);
 
-    //         should.exist(res.body.message);
-    //         res.body.message.should.equal('id is mandatory when updating a registration');
+    //         should.exist(res.bodyActiveTab.message);
+    //         res.bodyActiveTab.message.should.equal('id is mandatory when updating a registration');
     //         done();
     //       });
     // })
@@ -498,8 +498,8 @@ describe('Final registration', function() {
     //       .end(function(err, res) {
     //         if (err) return done(err);
 
-    //         should.exist(res.body.message);
-    //         res.body.message.should.equal('the registration with id something was not found');
+    //         should.exist(res.bodyActiveTab.message);
+    //         res.bodyActiveTab.message.should.equal('the registration with id something was not found');
     //         done();
     //       });
     // })
@@ -530,8 +530,8 @@ describe('Final registration', function() {
     //       .end(function(err, res) {
     //         if (err) return done(err);
 
-    //         should.exist(res.body.id);
-    //         const docId = res.body.id;
+    //         should.exist(res.bodyActiveTab.id);
+    //         const docId = res.bodyActiveTab.id;
     //         const updatedStudent = {...data.validTemporaryStudent(), id: docId, status: 'FINAL'};
     //         updatedStudent.extra.interest = 'Ruby';
 
@@ -543,8 +543,8 @@ describe('Final registration', function() {
     //             .end(function(err, res) {
     //               if (err) return done(err);
 
-    //               should.exist(res.body.status);
-    //               res.body.status.should.equal('TEMPORARY');
+    //               should.exist(res.bodyActiveTab.status);
+    //               res.bodyActiveTab.status.should.equal('TEMPORARY');
     //               done();
     //             });
     //       });

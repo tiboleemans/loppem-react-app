@@ -4,6 +4,7 @@ import FormLabel from "@mui/material/FormLabel";
 import ButtonGroup from "@mui/material/ButtonGroup";
 import Button from "@mui/material/Button";
 import FormHelperText from "@mui/material/FormHelperText";
+import {theme} from "../../theme";
 
 function CustomButtonGroup(props) {
 
@@ -38,7 +39,7 @@ function CustomButtonGroup(props) {
     const customButtonGroupStyling = {
         color: 'white',
         variant: 'contained',
-        backgroundColor: '#1d7100',
+        backgroundColor: theme.palette.primary.main
     }
 
     const changeStyleOfButton = (id) => {

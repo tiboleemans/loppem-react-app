@@ -9,7 +9,7 @@ const themeOptions = {
             main: '#F49B05',
         },
         secondary: {
-            main: '#9DC982',
+            main: '#ffffff',
         },
         error: {
             main: red.A400,
@@ -41,7 +41,7 @@ const themeOptions = {
     },
 };
 
-export const Theme = createTheme ({
+export const theme = createTheme ({
     components: {
         MuiCssBaseline: {
             styleOverrides: {

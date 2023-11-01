@@ -3,7 +3,6 @@ import Grid from "@mui/material/Grid";
 import {Form} from "../../components/useForm";
 import CustomTextField from "../../components/controls/CustomTextField";
 import CustomDatePicker from "../../components/controls/CustomDatePicker";
-import Typography from "@mui/material/Typography";
 import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
 
 export default function StudentInformationForm(props) {
@@ -28,9 +27,6 @@ export default function StudentInformationForm(props) {
     return (
 
         <Form>
-            <Typography variant="h3" gutterBottom>
-                Gegevens leerling
-            </Typography>
             <Grid container spacing={2}>
                 <Grid item xs={12} sm={6}>
                     <CustomButtonGroup

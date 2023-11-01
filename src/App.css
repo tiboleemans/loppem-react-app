@@ -1,6 +1,15 @@
 :root {
     --primary-main: #F49B05;
     --text-muted: #9DC982;
+    --swiper-navigation-top-offset: 20px;
+    --swiper-navigation-sides-offset: 200px;
+    --swiper-navigation-color: var(--primary-main);
+    --swiper-pagination-top: 10px;
+    --swiper-pagination-fraction-color: var(--primary-main);
+}
+
+.swiper-pagination {
+    margin: -100px;
 }
 
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
@@ -136,4 +145,27 @@ body {
 .tab-div {
     display: inline-block;
     margin-left: 2rem;
+}
+
+.vacations-content {
+    font-size: 16px;
+}
+
+.vacation-swiper-slide-card {
+    position: relative;
+    margin: 60px 20px;
+}
+
+.rating-banner {
+    padding: 2rem 0;
+    color: #fff;
+    background: #F49B05;
+}
+
+.banner-google {
+    text-align: center;
+}
+
+.banner-google-stars {
+    margin-top: 10px;
 }

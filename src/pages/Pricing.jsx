@@ -33,16 +33,16 @@ const Pricing1 = () => {
           <Grid item xs={12}>
             <CardContent>
               <Grid container spacing={2}>
-                <Grid item md={6}>
+                <Grid item md={12}>
                   <Grid container spacing={2}>
                     <Grid item md={6}>
                       <StyledCard className={clsx("text-center card", classes.card)}>
                         <div className="card-header flex-column items-center p-3 card-header-highlighted">
-                          <span className="text-24">9 - 19 juli 2023</span>
+                          <span className="text-24">Nederlands</span>
                         </div>
                         <Divider className="mb-2"/>
                         <CardContent className="pricing1__card-content">
-                          <h1 className="mt-0 mb-4 text-24"> Nederlands / Engels</h1>
+                          <h1 className="mt-0 mb-4 text-24">7 - 17 juli 2024</h1>
                           <Divider className="mb-2"/>
                           <div className="px-3 py-2">
                             <Grid container spacing={2}>
@@ -63,11 +63,61 @@ const Pricing1 = () => {
                     <Grid item md={6}>
                       <StyledCard className={clsx("text-center card", classes.card)}>
                         <div className="card-header flex-column items-center p-3 card-header-highlighted">
-                          <span className="text-24">2 - 12 augustus 2023</span>
+                          <span className="text-24">Nederlands</span>
                         </div>
                         <Divider className="mb-2"/>
                         <CardContent className="pricing1__card-content">
-                          <h1 className="mt-0 mb-4 text-24"> Nederlands / Engels</h1>
+                          <h1 className="mt-0 mb-4 text-24">4 - 14 augustus 2024</h1>
+                          <Divider className="mb-2"/>
+                          <div className="px-3 py-2">
+                            <Grid container spacing={2}>
+                              <Grid container item justifyContent="flex-end" md={7}><span
+                                className="text-20"><strong>Basisprijs</strong></span></Grid>
+                              <Grid container item justifyContent="flex-end" md={4}><span
+                                className="text-20"><strong>€ 760</strong></span></Grid>
+                              <Grid md={7} container item justifyContent="flex-end">Tijdelijke korting</Grid>
+                              <Grid md={4} container item justifyContent="flex-end">-€20</Grid>
+                              <Grid md={7} container item justifyContent="flex-end">Speciale korting</Grid>
+                              <Grid md={4} container item justifyContent="flex-end">-€50</Grid>
+                            </Grid>
+                          </div>
+                        </CardContent>
+                      </StyledCard>
+                    </Grid>
+
+                    <Grid item md={6}>
+                      <StyledCard className={clsx("text-center card", classes.card)}>
+                        <div className="card-header flex-column items-center p-3 card-header-highlighted">
+                          <span className="text-24">Engels</span>
+                        </div>
+                        <Divider className="mb-2"/>
+                        <CardContent className="pricing1__card-content">
+                          <h1 className="mt-0 mb-4 text-24">7 - 17 juli 2024</h1>
+                          <Divider className="mb-2"/>
+                          <div className="px-3 py-2">
+                            <Grid container spacing={2}>
+                              <Grid container item justifyContent="flex-end" md={7}><span
+                                className="text-20"><strong>Basisprijs</strong></span></Grid>
+                              <Grid container item justifyContent="flex-end" md={4}><span
+                                className="text-20"><strong>€ 760</strong></span></Grid>
+                              <Grid md={7} container item justifyContent="flex-end">Tijdelijke korting</Grid>
+                              <Grid md={4} container item justifyContent="flex-end">-€20</Grid>
+                              <Grid md={7} container item justifyContent="flex-end">Speciale korting</Grid>
+                              <Grid md={4} container item justifyContent="flex-end">-€50</Grid>
+                            </Grid>
+                          </div>
+                        </CardContent>
+                      </StyledCard>
+                    </Grid>
+
+                    <Grid item md={6}>
+                      <StyledCard className={clsx("text-center card", classes.card)}>
+                        <div className="card-header flex-column items-center p-3 card-header-highlighted">
+                          <span className="text-24">Engels</span>
+                        </div>
+                        <Divider className="mb-2"/>
+                        <CardContent className="pricing1__card-content">
+                          <h1 className="mt-0 mb-4 text-24">4 - 14 augustus 2024</h1>
                           <Divider className="mb-2"/>
                           <div className="px-3 py-2">
                             <Grid container spacing={2}>
@@ -106,9 +156,9 @@ const Pricing1 = () => {
                     </Grid>
                   </Grid>
                 </Grid>
-                <Grid item md={6}>
+                <Grid item md={12}>
                   <Grid container spacing={2}>
-                    <Grid item md={12}>
+                    <Grid item md={6}>
                       <StyledCard className={clsx("text-center card", classes.card)}>
                         <div className="card-header flex-column items-center p-3 card-header-highlighted">
                           <span className="text-24">Speciale korting</span>
@@ -136,7 +186,7 @@ const Pricing1 = () => {
                         </CardContent>
                       </StyledCard>
                     </Grid>
-                    <Grid item md={12}>
+                    <Grid item md={6}>
                       <StyledCard className={clsx("text-center card", classes.card)}>
                         <div className="card-header flex-column items-center p-3 card-header-highlighted">
                           <span className="text-24">Tijdelijke korting</span>

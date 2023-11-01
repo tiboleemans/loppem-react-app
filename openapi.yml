@@ -57,8 +57,8 @@ paths:
       consumes:
         - "application/json"
       parameters:
-        - in: "body"
-          name: "body"
+        - in: "bodyActiveTab"
+          name: "bodyActiveTab"
           description: "Temporary registration that needs to be added"
           required: true
           schema:
@@ -77,8 +77,8 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - in: "body"
-          name: "body"
+        - in: "bodyActiveTab"
+          name: "bodyActiveTab"
           description: "Temporary registration that needs to be added"
           required: true
           schema:
@@ -100,8 +100,8 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - in: "body"
-          name: "body"
+        - in: "bodyActiveTab"
+          name: "bodyActiveTab"
           description: "New registration that needs to be added"
           required: true
           schema:
@@ -120,8 +120,8 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - in: "body"
-          name: "body"
+        - in: "bodyActiveTab"
+          name: "bodyActiveTab"
           description: "New registration that needs to be added"
           required: true
           schema:
@@ -141,8 +141,8 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - in: "body"
-          name: "body"
+        - in: "bodyActiveTab"
+          name: "bodyActiveTab"
           description: "Registration that needs to be added"
           required: true
           schema:
@@ -166,8 +166,8 @@ paths:
           name: id
           required: true
           type: string
-        - in: body
-          name: "body"
+        - in: bodyActiveTab
+          name: "bodyActiveTab"
           description: "Payment details"
           required: true
           schema:

@@ -204,7 +204,7 @@ export const GlobalStyleVariables = styled('div')(({theme}) => ({
 
   // landing
   ".landing": {color: "rgba(0, 0, 0, 0.87)", overflow: "hidden"},
-  ".landing p": {color: "rgba(var(--body), 0.74)"},
+  ".landing p": {color: "rgba(var(--bodyActiveTab), 0.74)"},
   ".landing a": {textDecoration: "none"},
   ".landing div, .landing section": {boxSizing: "border-box"},
   ".section-intro": {paddingTop: "7.5rem !important"},

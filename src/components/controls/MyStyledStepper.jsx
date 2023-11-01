@@ -8,20 +8,9 @@ const classes = {
   stepper: `${PREFIX}-stepper`,
 }
 
-const customColors = {
-  primaryColor: '#F49B05',
-  secondaryColor: '#9DC982'
-};
-
 const StyledStepper = styled(Stepper)(({theme}) => ({
   [`&.${classes.stepper}`]: {
-    padding: theme.spacing(3, 0, 5),
-    '& .MuiStepIcon-active': {
-      color: customColors.primaryColor,
-    },
-    '& .MuiStepIcon-completed': {
-      color: customColors.primaryColor,
-    }
+    padding: theme.spacing(0, 0, 5),
   },
 }));
 

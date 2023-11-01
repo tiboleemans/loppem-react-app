@@ -5,12 +5,11 @@ import NavigateNext from "@mui/icons-material/NavigateNext";
 import NavigateBefore from "@mui/icons-material/NavigateBefore";
 import clsx from "clsx";
 import {styled} from "@mui/system";
-import {Theme} from "../theme";
+import {theme} from "../theme";
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
 
 let globalBulletColor = "red";
-const theme = Theme;
 
 const PREFIX = 'MyCarousel';
 

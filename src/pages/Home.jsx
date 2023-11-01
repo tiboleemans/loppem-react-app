@@ -12,6 +12,7 @@ import Contact from "./Contact";
 import Footer from "./Footer";
 import CallToAction from "./CallToAction";
 import {useTranslation} from "react-i18next";
+import RatingBanner from "./RatingBanner";
 
 const Home = () => {
   const {t, i18n: {language}} = useTranslation();
@@ -25,17 +26,17 @@ const Home = () => {
       <NavBar/>
       <Intro/>
       <TaalVakanties/>
-      <CallToAction/>
+      <RatingBanner/>
       <InscriptionForm/>
       <CallToAction/>
       <Pricing/>
       <CallToAction/>
       <FAQ/>
       <CallToAction/>
-      <Testimonial/>
-      <CallToAction/>
-      <Gallery/>
-      <CallToAction/>
+      {/*<Testimonial/>*/}
+      {/*<CallToAction/>*/}
+      {/*<Gallery/>*/}
+      {/*<CallToAction/>*/}
       <Contact/>
       <Footer/>
     </div>

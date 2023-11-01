@@ -11,8 +11,39 @@
     "info.text.who": "Voor jongeren van 10 tot 18 jaar",
     "footer": "Wij zijn pas tevreden wanneer de jongeren in de doeltaal dromen!"
   },
-  "hi": "Hallo",
   "vacations": {
-    "what": "Wat?"
-  }
+    "what": {
+      "title": "Wat?",
+      "section.one.title": "Taalvakanties Nederlands / Engels",
+      "section.one.text": "Loppem Conversa organiseert conversatiecursussen Nederlands en Engels voor jongeren van 10 tot 18 jaar in de prachtige groene omgeving van de abdijschool van Zevenkerken, in de nabijheid van Brugge.",
+      "section.two.title": "Kwaliteit",
+      "section.two.text": "Wij staan garant voor kwaliteitsvolle, interactieve conversatiecursussen in klassen van maximum tien leerlingen. De lessen worden afgewisseld met een waaier aan sporten, kleine en grote spelen, muzikale activiteiten en shows, onder leiding van een toegewijde monitorenploeg. Zo creëren we keer op keer een sfeervolle en onvergetelijke vakantie voor jongeren.",
+      "section.three.title": "Taalbad",
+      "section.three.text": "Bij Loppem Conversa wordt de gekozen taal altijd en overal gesproken. Wij zijn pas tevreden als de jongeren in de doeltaal dromen."
+    },
+    "when": {
+      "title": "Wanneer?",
+      "section.one.title": "7 - 17 juli 2024",
+      "section.one.text": "De stages Engels/Nederlands gaan door van 2 tot 12 augustus. De leerlingen worden de eerste dag verwacht tussen 9 en 11 uur en worden de laatste dag terug opgehaald tussen 9 en 11 uur.",
+      "section.two.title": "4 - 14 juli 2024",
+      "section.two.text": "De stages Engels/Nederlands gaan door van 2 tot 12 augustus. De leerlingen worden de eerste dag verwacht tussen 9 en 11 uur en worden de laatste dag terug opgehaald tussen 9 en 11 uur."
+    },
+    "where": {
+      "title": "Waar?",
+      "section.one.title": "Het domein",
+      "section.one.text": "De stages gaan door in de abdijschool van Zevenkerken, gelegen in de prachtige groene omgeving van de Brugse rand. De gezonde buitenlucht draagt bij tot een bruisend vakantiegevoel.",
+      "section.two.title": "Geschikt voor sport & spel",
+      "section.two.text": "Het domein omvat onder andere drie grote voetbalvelden, een hockeyveld, twee basketbalpleinen, drie tennisvelden en een grote vernieuwde sportzaal. Deze terreinen waar de leerlingen zich onder begeleiding kunnen uitleven, zijn omringd door prachtige bossen. Verder is er een grote speelruimte met vier ping pongtafels en drie kickertafels. Hiernaast bevindt zich het monitorenlokaal met een ruim aanbod van materiaal de gebruikt mag worden tijdens de vrije momenten en de activiteiten.",
+      "section.three.title": "De klaslokalen",
+      "section.three.text": "De interactieve lessen gaan door in goed uitgeruste klaslokalen in klasgroepen van maximaal 10 leerlingen.",
+      "section.four.title": "De overnachting",
+      "section.four.text": "Alle leerlingen slapen in individuele éénpersoonskamers."
+    },
+    "why": {
+      "title": "Waarom?",
+      "section.one.title": "Een duidelijke voorsprong",
+      "section.one.text": "Loppem Conversa is een springplank naar de toekomst en geeft uw kind een duidelijke voorsprong in het spreken van de gekozen taal. Deze meerwaarde vraagt op persoonlijk niveau en op studievlak een duidelijke inspanning van de leerlingen. Zo opent het spreken van vreemde talen mogelijkheden naar verdere studies en de beroepswereld."
+    }
+  },
+  "banner.rating.text" : "Wist u dat Loppem Conversa een 5-sterren review heeft op Google?"
 }

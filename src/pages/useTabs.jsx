@@ -5,10 +5,15 @@ import {styled} from "@mui/system";
 const PREFIX = 'MyTabs';
 
 const classes = {
-  buttonGroupBG: `${PREFIX}-buttonGroupBG`
+  buttonGroupBG: `${PREFIX}-buttonGroupBG`,
+  tab: `${PREFIX}-tab`
 }
 const StyledTabs = styled('div')(({theme}) => ({
   [`&.${classes.buttonGroupBG}`]: {
+    // ".border-radius-8": {borderRadius: "8px !important", overflow: "hidden"},
+    borderRadius: '8px',
+    overflow: 'hidden',
+    cursor: "pointer",
     background: lighten(`${theme.palette.primary.light}`, 0.5),
     '&.active': {
       background: `${theme.palette.primary.main}`,
@@ -26,37 +31,37 @@ const StyledTabs = styled('div')(({theme}) => ({
       },
     },
   },
+  [`&.${classes.tab}`]: {
+    padding: "0.75rem 1.5rem",
+  }
 }));
 
-const TabsContainer = ({tabs, selectedTab, setSelectedTabId}) => <div>
+const TabsContainer = ({tabs, activeTab, setActiveTabId}) => <div>
   {tabs.map((tab, index) => (
     <div id="tab-div" className="tab-div" key={index}>
-      <StyledTabs onClick={() => setSelectedTabId(tab.id)}
-           className={`lex flex-wrap items-center border-radius-8 ${classes.buttonGroupBG} ${selectedTab?.id === tab.id ? 'active' : ''}`}>
-        <div
-          className="px-6 py-2 cursor-pointer"
-        >
+      <StyledTabs onClick={() => setActiveTabId(tab.id)} className={`${classes.buttonGroupBG} ${activeTab?.id === tab.id ? 'active' : ''}`}>
+        <StyledTabs className={classes.tab}>
           {tab.title}
-        </div>
+        </StyledTabs>
       </StyledTabs>
     </div>
   ))}
 </div>;
 
 const useTabs = (tabs) => {
-  const [selectedTabId, setSelectedTabId] = useState();
+  const [activeTabId, setActiveTabId] = useState();
   useEffect(() => {
-    if (!selectedTabId) {
-      setSelectedTabId(tabs[0].id);
+    if (!activeTabId) {
+      setActiveTabId(tabs[0].id);
     }
-  }, [selectedTabId, setSelectedTabId]);
+  }, [activeTabId, setActiveTabId]);
 
-  const selectedTab = tabs.find((tab) => tab.id === selectedTabId);
+  const activeTab = tabs.find((tab) => tab.id === activeTabId);
 
   return {
-    selectedTabId,
-    header: <TabsContainer tabs={tabs} selectedTab={selectedTab} setSelectedTabId={setSelectedTabId}/>, // [link, link, link]
-    body: selectedTabId ? selectedTab.body : null, // Geselecteerde body obv tabIndex
+    activeTabId,
+    tabTitles: <TabsContainer tabs={tabs} activeTab={activeTab} setActiveTabId={setActiveTabId}/>, // [link, link, link]
+    bodyActiveTab: activeTabId ? activeTab.body : null, // Geselecteerde bodyActiveTab obv tabIndex
   };
 };
 
