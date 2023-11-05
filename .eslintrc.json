@@ -40,6 +40,7 @@
     "linebreak-style": "off",
     "arrow-parens" : "off",
     "no-invalid-this" : "off",
-    "prefer-rest-params": "off"
+    "prefer-rest-params": "off",
+    "prefer-const" : "off"
   }
 }

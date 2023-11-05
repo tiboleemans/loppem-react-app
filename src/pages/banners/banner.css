@@ -21,7 +21,6 @@
     background: var(--secondary-main);
     padding: 0.75rem 0;
     font-weight: 500;
-    font-family: var(--font);
     text-align: center;
 }
 
@@ -46,6 +45,5 @@
     background: var(--primary-main);
     padding: 1rem;
     font-weight: 500;
-    font-family: var(--font);
     text-align: center;
 }

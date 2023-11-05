@@ -20,7 +20,7 @@ const themeOptions = {
     },
     typography: {
         useNextVariants: true,
-        fontFamily: "\"Roboto\", serif",
+        fontFamily: "\"Big City Grotesque\", serif",
     },
     overrides: {
         MuiButton: {

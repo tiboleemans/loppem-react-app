@@ -24,7 +24,6 @@ export default function InscriptionForm() {
   const [feedbackMessage, setFeedbackMessage] = useState();
   const [isLoading, setIsLoading] = useState(false);
 
-
   const {
     values,
     handleInputChange

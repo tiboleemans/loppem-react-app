@@ -1,3 +1,13 @@
+@font-face {
+    font-family: 'Big City Grotesque';
+    src: local('Big City Grotesque Regular'), local('Big-City-Grotesque-Regular'),
+    url('resources/assets/BigCityGrotesquePro-Regular.woff2') format('woff2'),
+    url('resources/assets/BigCityGrotesquePro-Regular.woff') format('woff'),
+    url('resources/assets/BigCityGrotesquePro-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* Root */
 :root {
     --primary-main: #F49B05;
@@ -13,7 +23,12 @@
     --swiper-pagination-top: 10px;
     --swiper-pagination-fraction-color: var(--primary-main);
     --topbar-mobile-width: 220px;
-    --font: "Roboto", serif;
+    --font: "Big City Grotesque", serif;
+}
+
+body {
+    font-family: 'Big City Grotesque', sans-serif;
+    margin: 0;
 }
 
 /* Swiper */
@@ -32,11 +47,6 @@ p {
     margin: 0 0 0.5rem;
     line-height: 1.1;
     color: inherit;
-}
-
-body {
-    font-family: "Roboto", serif;
-    margin: 0;
 }
 
 .font-medium {
