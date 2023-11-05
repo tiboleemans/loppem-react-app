@@ -1,12 +1,12 @@
 import React from "react";
-
 import {Card, CardContent} from "@mui/material";
 import Grid from "@mui/material/Grid";
 import useTabs from "./useTabs";
 import {useTranslation} from "react-i18next";
-import ImageCarousel from "../common/ImageCarousel";
+import ImageCarousel from "../../common/ImageCarousel";
+import "./vacations.css";
 
-const TaalVakanties = () => {
+const Vacations = () => {
     const {t} = useTranslation();
     const {bodyActiveTab, tabTitles} = useTabs(
       [{
@@ -85,7 +85,7 @@ const TaalVakanties = () => {
     return (
       <div className="vacations" id="vacations">
         <div className="container">
-          <Card className="vacations-card card">
+          <Card className="vacations-card card-container">
             <Grid container>
               <Grid item xs={6}>
                 <div id="vacations-grid" className="vacations-grid">
@@ -101,9 +101,7 @@ const TaalVakanties = () => {
                 </CardContent>
               </Grid>
               <Grid item xs={6}>
-                <div>
-                  <ImageCarousel/>
-                </div>
+                <ImageCarousel/>
               </Grid>
             </Grid>
           </Card>
@@ -113,4 +111,4 @@ const TaalVakanties = () => {
   }
 ;
 
-export default TaalVakanties;
+export default Vacations;

@@ -3,7 +3,7 @@ import {Card} from "@mui/material";
 import {Navigation, Pagination} from 'swiper/modules';
 import CardMedia from "@mui/material/CardMedia";
 
-const ImageCarousel = (props) => {
+const ImageCarousel = () => {
   const swiperElRef = useRef(null);
   const swiperPaginationRef = useRef(null);
 
@@ -38,16 +38,6 @@ const ImageCarousel = (props) => {
       },
     };
 
-    // listen for Swiper events using addEventListener
-    swiperElRef.current.addEventListener('swiperprogress', (e) => {
-      const [swiper, progress] = e.detail;
-      console.log(progress);
-    });
-
-    swiperElRef.current.addEventListener('swiperslidechange', (e) => {
-      console.log('slide changed');
-    });
-
     // now we need to assign all parameters to Swiper element
     Object.assign(swiperContainer, swiperParams);
 
@@ -62,34 +52,34 @@ const ImageCarousel = (props) => {
       <swiper-container ref={swiperElRef}>
 
         <swiper-slide lazy="true">
-          <Card className="vacation-swiper-slide-card card">
-            <img className="w-full block" src={require("../images/vacations/1.jpeg")}/>
+          <Card className="vacation-swiper-slide-card">
+            <img className="w-full block" src={require("../images/vacations/1.jpeg")} alt="vacation-picture-1"/>
           </Card>
         </swiper-slide>
 
         <swiper-slide lazy="true">
-          <Card className="vacation-swiper-slide-card card">
-            <img className="w-full block" src={require("../images/vacations/2.jpeg")}/>
+          <Card className="vacation-swiper-slide-card">
+            <img className="w-full block" src={require("../images/vacations/2.jpeg")} alt="vacation-picture-2"/>
           </Card>
         </swiper-slide>
         <swiper-slide lazy="true">
-          <Card className="vacation-swiper-slide-card card">
-            <img className="w-full block" src={require("../images/vacations/3.jpeg")}/>
+          <Card className="vacation-swiper-slide-card">
+            <img className="w-full block" src={require("../images/vacations/3.jpeg")} alt="vacation-picture-3"/>
           </Card>
         </swiper-slide>
         <swiper-slide lazy="true">
-          <Card className="vacation-swiper-slide-card card">
-            <img className="w-full block" src={require("../images/vacations/4.jpeg")}/>
+          <Card className="vacation-swiper-slide-card">
+            <img className="w-full block" src={require("../images/vacations/4.jpeg")} alt="vacation-picture-4"/>
           </Card>
         </swiper-slide>
         <swiper-slide lazy="true">
-          <Card className="vacation-swiper-slide-card card">
-            <img className="w-full block" src={require("../images/vacations/5.jpg")}/>
+          <Card className="vacation-swiper-slide-card">
+            <img className="w-full block" src={require("../images/vacations/5.jpg")} alt="vacation-picture-5"/>
           </Card>
         </swiper-slide>
 
         <swiper-slide>
-          <CardMedia className="vacation-swiper-slide-card card"
+          <CardMedia className="vacation-swiper-slide-card"
                      component="video"
                      image={require("../images/vacations/promo.mp4")}
                      title='promo-video-loppem-conversa'

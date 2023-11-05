@@ -1,17 +1,27 @@
+/* Root */
 :root {
     --primary-main: #F49B05;
+    --primary-hex-main: rgba(244, 155, 5, 1);
+    --primary-hex-light: rgba(244, 155, 5, 0.5);
+    --secondary-main: #ffffff;
+    --secondary-hex-main: rgba(255, 255, 255, 1);
+    --secondary-hex-light: rgba(255, 255, 255, 0.5);
     --text-muted: #9DC982;
     --swiper-navigation-top-offset: 20px;
     --swiper-navigation-sides-offset: 200px;
     --swiper-navigation-color: var(--primary-main);
     --swiper-pagination-top: 10px;
     --swiper-pagination-fraction-color: var(--primary-main);
+    --topbar-mobile-width: 220px;
+    --font: "Roboto", serif;
 }
 
+/* Swiper */
 .swiper-pagination {
     margin: -100px;
 }
 
+/*Global */
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     margin: 0 0 0.5rem;
     line-height: 1.2;
@@ -25,7 +35,7 @@ p {
 }
 
 body {
-    /*font-family: "Roboto", serif;*/
+    font-family: "Roboto", serif;
     margin: 0;
 }
 
@@ -69,66 +79,24 @@ body {
     justify-content: flex-end
 }
 
-.intro {
-    padding-top: 4rem;
-    background: rgba(0, 0, 0, 0.03);
-}
-
 .container {
     padding: 0 1rem;
     max-width: 1170px;
     margin: 0 auto;
 }
 
-.intro-title {
-    font-weight: 500;
-    font-size: 44px;
-}
-
-.intro-subtitle {
-    font-style: italic;
-    font-weight: normal;
-    margin-bottom: 2rem;
-}
-
-.intro-info-label {
-    align-items: flex-end;
-    text-align: right;
-    justify-content: flex-end;
-    font-weight: normal;
-    margin: 0 0 1rem 0;
-}
-
-.intro-info-text {
-    align-items: flex-start;
-    text-align: left;
-    justify-content: flex-start;
-    font-weight: bolder;
-}
-
-.intro-footer {
-    font-weight: normal;
-    font-style: italic;
-    margin: 2rem 0 0 0;
-    font-size: 18px;
-    text-align: left;
-}
-
-.vacations {
-    padding: 4rem;
-    background: rgba(0, 0, 0, 0.03);
-}
-
-.vacations-card {
+.card-container {
     padding: 2rem;
 }
 
-.card {
-    transition: all 0.3s ease
+.card-container:hover {
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
 .card:hover {
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5)
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
 .card-title {
@@ -142,30 +110,15 @@ body {
     color: var(--text-muted);
 }
 
-.tab-div {
-    display: inline-block;
-    margin-left: 2rem;
+.section-header {
+    margin: 16px 0 0 0;
 }
 
-.vacations-content {
+.section-header h3 {
+    font-weight: 700;
+}
+
+.section-header p {
     font-size: 16px;
-}
-
-.vacation-swiper-slide-card {
-    position: relative;
-    margin: 60px 20px;
-}
-
-.rating-banner {
-    padding: 2rem 0;
-    color: #fff;
-    background: #F49B05;
-}
-
-.banner-google {
-    text-align: center;
-}
-
-.banner-google-stars {
-    margin-top: 10px;
+    max-width: 36rem;
 }

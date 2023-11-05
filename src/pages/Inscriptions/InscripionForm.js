@@ -10,9 +10,8 @@ import useForm from "../../components/useForm";
 import Alert from '@mui/material/Alert';
 import {registerStudent, updateStudent} from "../../services/InscriptionService";
 import {getLanguage} from "../../i18n/i18nSetup";
-import {CircularProgress} from "@mui/material";
+import {Card, CircularProgress} from "@mui/material";
 import {initialFieldValues} from "./initialFieldValues";
-import MyStyledPaper from "../../components/controls/MyStyledPaper";
 import MyStyledStepper from "../../components/controls/MyStyledStepper";
 import {MyStyledButton, MyStyledButtons} from "../../components/controls/MyStyledButton";
 
@@ -164,7 +163,7 @@ export default function InscriptionForm() {
     <React.Fragment>
       <div className="section bg-light-gray" id="inscription">
         <div className="container">
-          <MyStyledPaper>
+          <Card className="pricing-card card-container">
             <div className="section__header">
               <h2>Inschrijvingsformulier</h2>
             </div>
@@ -202,7 +201,7 @@ export default function InscriptionForm() {
                 </React.Fragment>
               )}
             </React.Fragment>
-          </MyStyledPaper>
+          </Card>
         </div>
       </div>
     </React.Fragment>

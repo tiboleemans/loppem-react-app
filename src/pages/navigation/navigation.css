@@ -1,0 +1,121 @@
+/* Navigation */
+
+.nav-logo {
+    max-width: 75px;
+    margin: 0;
+}
+
+.nav-language-selector {
+    margin-left: auto;
+    order: 2;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: #ffffff;
+    left: 0;
+    right: 0;
+    padding: 20px 0;
+    transition: padding 0.3s linear;
+    z-index: 999999;
+}
+
+.header-fixed {
+    padding: 10px 0;
+    background: #ffffff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+    z-index: 999;
+}
+
+.header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+}
+
+.header-container ul.navigation {
+    list-style: none;
+    margin: 0 0 0 30px;
+    padding: 0;
+}
+
+.header-container ul.navigation li {
+    display: inline-block
+}
+
+.header-container ul.navigation li a:hover {
+    background: #f0f0f0;
+}
+
+.header-container ul.navigation li a {
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.87);
+    padding: 8px 15px;
+    font-weight: 700;
+    border-radius: 4px;
+    transition: all 0.3s ease-in;
+}
+
+@media only screen and (max-width: 767px) {
+    .header {
+        width: var(--topbar-mobile-width);
+        height: 100vh;
+        left: auto;
+        right: 0;
+        padding: 20px 0 !important;
+        box-shadow: -2px 0 4px rgba(0, 0, 0, 0.14), -2px 4px 8px rgba(0, 0, 0, 0.28) !important;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .header.closed {
+        right: calc(-1 * var(--topbar-mobile-width) - 5px);
+    }
+
+    .header.closed .header__toggle {
+        color: rgba(0, 0, 0, 0.87);
+        background: #ffffff;
+        box-shadow: 0 3px 5px -1px rgba(0, 0, 0, 0.2), 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12);
+    }
+
+    .header .header__toggle {
+        top: 10px;
+        right: 15px;
+        color: rgba(0, 0, 0, 0.87);
+        position: fixed;
+        display: inline-block !important;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .header-container {
+        flex-direction: column;
+        padding: 0;
+        height: 100%;
+    }
+
+    .header-container .brand {
+        padding: 0 20px 20px;
+        width: 100%;
+    }
+
+    .header-container ul.navigation {
+        margin: 0;
+        width: 100%
+    }
+
+    .header .header-container ul.navigation li {
+        display: block
+    }
+
+    .header .header-container ul.navigation li a {
+        padding: 15px 20px;
+        border-radius: 0;
+    }
+}

@@ -54,7 +54,7 @@ const OverOns = () => {
         <Grid container spacing={4}>
           {cardList.map((card, index) => (
             <Grid item lg={6} md={6} sm={12} xs={12} key={index}>
-              <Card className="py-8 px-6 card">
+              <Card className="py-8 px-6 card-container">
                 <h4 className="text-gray">{card.title}</h4>
                 <p>{card.text}</p>
                 <Grid container spacing={2} alignItems="center">

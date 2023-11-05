@@ -1,0 +1,51 @@
+.banner {
+    padding: 2rem 0;
+    color: #fff;
+    background: #F49B05;
+}
+
+.banner-text {
+    text-align: center;
+}
+
+.banner-action {
+    margin-top: 10px;
+}
+
+.banner-button {
+    color: #000;
+    text-transform: uppercase;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--secondary-main);
+    padding: 0.75rem 0;
+    font-weight: 500;
+    font-family: var(--font);
+    text-align: center;
+}
+
+.banner-button:hover {
+    background: var(--secondary-hex-light);
+    border-radius: 16px;
+    transition: all 250ms ease;
+    color: #fff;
+}
+
+.rating-item {
+    text-align: center;
+    padding: 2px;
+}
+
+.banner-button-dialog {
+    color: #fff;
+    text-transform: uppercase;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--primary-main);
+    padding: 1rem;
+    font-weight: 500;
+    font-family: var(--font);
+    text-align: center;
+}

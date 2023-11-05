@@ -23,20 +23,26 @@ function CustomDatePicker(props) {
       },
       '& .MuiOutlinedInput-root': {
         '& fieldset': {
-            borderColor: theme.palette.primary.main,
+          borderColor: theme.palette.primary.main,
+          color: "#fff"
         },
         '&:hover fieldset': {
           borderColor: theme.palette.primary.main,
+          color: "#fff"
         },
         '&.Mui-focused fieldset': {
           borderColor: theme.palette.primary.main,
+          color: "#fff"
         },
       },
       '& MuiPickersToolbar-toolbar': {
         backgroundColor: theme.palette.primary.main,
-      },
-      '& Mui-selected': {
         color: "#fff"
+      },
+      '& .MuiPickersYear-yearButton': {
+        '&.Mui-selected': {
+          color: "#fff"
+        }
       }
     },
   }))

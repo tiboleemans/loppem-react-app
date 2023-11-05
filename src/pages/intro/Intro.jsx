@@ -1,64 +1,15 @@
 import React from "react";
-import {styled} from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import {useTranslation} from "react-i18next";
-
-const PREFIX = 'MyIntro';
-
-const classes = {
-  introWrapper: `${PREFIX}-introWrapper`,
-  intro: `${PREFIX}-intro`,
-  lightWhiteBG: `${PREFIX}-lightWhiteBG`,
-}
-
-const StyledIntro = styled('div')(({theme}) => ({
-  [`&.${classes.introWrapper}`]: {
-    position: "relative",
-    background:
-      "url(" + require('../images/intro/intro.jpg') + ") center center/cover no-repeat",
-    height: "100%",
-    overflow: "hidden"
-  },
-  [`&.${classes.intro}`]: {
-    padding: "3rem 0rem",
-    maxWidth: 600,
-    [theme.breakpoints.down("sm")]: {
-      padding: "2.5rem 0rem",
-    },
-    zIndex: 5,
-    display: "flex",
-    flexDirection: "column",
-    textAlign: "center",
-    marginLeft: "auto",
-    marginRight: "auto",
-    position: "relative"
-  },
-  [`&.${classes.lightWhiteBG}`]: {
-    position: "absolute",
-    display: "block",
-    top: 0,
-    bottom: 0,
-    left: "calc(55% - 500px)",
-    right: "calc(55% - 500px)",
-    background: "rgba(255,255,255,0.75)",
-    clipPath: "polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)",
-
-    [theme.breakpoints.down("xs")]: {
-      right: 0,
-      left: 0,
-      clipPath: "none",
-      background: "rgba(255,255,255,0.7)",
-    },
-  }
-}))
+import './intro.css'
 
 const Intro = () => {
   const {t} = useTranslation();
   return (
     <section className="intro" id="intro">
-      <StyledIntro className={classes.introWrapper}>
+      <div className="intro-wrapper">
         <div className="container">
-          <StyledIntro className={classes.intro}>
+          <div className="intro-banner">
             <h1 id="intro-title" className="intro-title">
               {t("intro.title")}
             </h1>
@@ -100,10 +51,10 @@ const Intro = () => {
                 </h4>
               </Grid>
             </Grid>
-          </StyledIntro>
-          <StyledIntro className={classes.lightWhiteBG}/>
+          </div>
+          <div className="intro-light-background"/>
         </div>
-      </StyledIntro>
+      </div>
     </section>
   );
 };

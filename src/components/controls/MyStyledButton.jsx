@@ -13,11 +13,10 @@ const StyledButtons = styled('div')(({theme}) => ({
   [`&.${classes.buttons}`]: {
     display: 'flex',
     justifyContent: 'flex-end',
-    color: '#000',
     '& .MuiButton-containedPrimary': {
       color: 'white',
       '&:hover': {
-        background: '#f5a034'
+        background: theme.palette.primary.main
       }
     },
   },

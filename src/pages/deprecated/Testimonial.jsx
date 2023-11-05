@@ -1,34 +1,34 @@
 import React from "react";
 
 import {Avatar, Card, CardContent} from "@mui/material";
-import Carousel from "../common/Carousel";
+import Carousel from "../../common/Carousel";
 
 const Testimonial = () => {
   const testimonialList = [
     {
       user: {
-        imageUrl: require("../images/briek.jpg"),
+        imageUrl: require("../../images/briek.jpg"),
         name: "Briek Deblaere",
         designation: "Penningmeester",
       },
     },
     {
       user: {
-        imageUrl: require("../images/briek.jpg"),
+        imageUrl: require("../../images/briek.jpg"),
         name: "Briek Deblaere",
         designation: "Penningmeester",
       },
     },
     {
       user: {
-        imageUrl: require("../images/briek.jpg"),
+        imageUrl: require("../../images/briek.jpg"),
         name: "Briek Deblaere",
         designation: "Penningmeester",
       },
     },
     {
       user: {
-        imageUrl: require("../images/briek.jpg"),
+        imageUrl: require("../../images/briek.jpg"),
         name: "Briek Deblaere",
         designation: "Penningmeester",
       },
@@ -44,7 +44,7 @@ const Testimonial = () => {
 
         <Carousel carouselId="getuigenis-1" slidesPerView="3" delay="5000">
           {testimonialList.map((testimonial, index) => (
-            <Card className="px-6 card w-full h-full" key={index}>
+            <Card className="px-6 card-container w-full h-full" key={index}>
               <CardContent className="flex-column justify-between min-h-full">
                 <h1>Un stage incroyable</h1>
                 <p className="mt-0 text-16">

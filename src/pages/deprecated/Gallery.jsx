@@ -3,7 +3,7 @@ import {Button, Grid} from "@mui/material";
 import {styled} from "@mui/system";
 import {Link} from "react-router-dom";
 import CardMedia from "@mui/material/CardMedia";
-import useTabs from "./useTabs";
+import useTabs from "../vacations/useTabs";
 
 const PREFIX = 'MyGalleryDiv';
 
@@ -47,27 +47,27 @@ const Gallery = () => {
     body: [{
       title: "",
       subtitle: "Er worden tal van leuke spelen georganiseerd",
-      image: require("../images/monitrek.jpg"),
+      image: require("../../images/monitrek.jpg"),
     }, {
       title: "",
       subtitle: "Een uitstap naar Brugge om de doeltaal in praktijk te gebruiken",
-      image: require("../images/vacations/5.jpg"),
+      image: require("../../images/vacations/5.jpg"),
     }, {
       title: "",
       subtitle: "Interactieve lessen in klassen van maximaal 10 leerlingen",
-      image: require("../images/klasfoto.jpg"),
+      image: require("../../images/klasfoto.jpg"),
     }, {
       title: "",
       subtitle: "Waterspelen om even af te koelen",
-      image: require("../images/water.jpg"),
+      image: require("../../images/water.jpg"),
     }, {
       title: "",
       subtitle: "Sportieve spelen om je helemaal uit te leven",
-      image: require("../images/rugby.jpg"),
+      image: require("../../images/rugby.jpg"),
     }, {
       title: "",
       subtitle: "Spelletjes waar we plezier in de verf zetten",
-      image: require("../images/verf.jpg"),
+      image: require("../../images/verf.jpg"),
     }]
   }, {
     id: 'TEAM',
@@ -76,15 +76,15 @@ const Gallery = () => {
       title: "Thibault Leemans - voorzitter",
       subtitle: "Thibault is de voorzitter van Loppem Conversa en neemt het initiatief voor de organisatie van de verschillende aspecten doorheen het jaar." +
         "Tijdens de stage is hij coördinator, die mee inspringt waar nodig.",
-      image: require("../images/Thibault.JPG"),
+      image: require("../../images/Thibault.JPG"),
     }, {
       title: "Bob Beuls - secretaris",
       subtitle: "Bob is de secretaris van Loppem Conversa",
-      image: require("../images/Thibault.JPG"),
+      image: require("../../images/Thibault.JPG"),
     }, {
       title: "Briek Deblaere - penningmeester",
       subtitle: "Briek beheert de financiën",
-      image: require("../images/briek.jpg"),
+      image: require("../../images/briek.jpg"),
     }]
   }, {
     id: "VIDEO",
@@ -92,37 +92,37 @@ const Gallery = () => {
     body: [{
       title: "",
       subtitle: "Spelletjes waar we plezier in de verf zetten",
-      image: require("../images/domein.mp4"),
+      image: require("../../images/domein.mp4"),
     },
       {
         title: "",
         subtitle: "Spelletjes waar we plezier in de verf zetten",
-        image: require("../images/domein.mp4"),
+        image: require("../../images/domein.mp4"),
       },
       {
         title: "",
         subtitle: "Spelletjes waar we plezier in de verf zetten",
-        image: require("../images/domein.mp4"),
+        image: require("../../images/domein.mp4"),
       },
       {
         title: "",
         subtitle: "Spelletjes waar we plezier in de verf zetten",
-        image: require("../images/domein.mp4"),
+        image: require("../../images/domein.mp4"),
       },
       {
         title: "",
         subtitle: "Spelletjes waar we plezier in de verf zetten",
-        image: require("../images/domein.mp4"),
+        image: require("../../images/domein.mp4"),
       },
       {
         title: "",
         subtitle: "Spelletjes waar we plezier in de verf zetten",
-        image: require("../images/domein.mp4"),
+        image: require("../../images/domein.mp4"),
       },
       {
         title: "",
         subtitle: "Spelletjes waar we plezier in de verf zetten",
-        image: require("../images/domein.mp4"),
+        image: require("../../images/domein.mp4"),
       }]
   }], 'TEAM');
 

@@ -1,0 +1,17 @@
+.info-index-table {
+    padding: 8px;
+    margin-bottom: 10px;
+    text-align: center;
+    border-radius: 8px;
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.active {
+    background: var(--primary-main);
+    color: #ffffff;
+}
+
+.practical-info-grid {
+    margin-top: 50px;
+}

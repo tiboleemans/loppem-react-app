@@ -1,4 +1,17 @@
 {
+  "common": {
+    "button": {
+      "close": "Sluiten"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "vacations": "Taalvakanties",
+    "pricing": "Prijs",
+    "enroll": "Inschrijven",
+    "info": "Praktische info",
+    "contact": "Contact"
+  },
   "intro": {
     "title": "Loppem Conversa",
     "subtitle": "Een duidelijke voorsprong",
@@ -45,5 +58,97 @@
       "section.one.text": "Loppem Conversa is een springplank naar de toekomst en geeft uw kind een duidelijke voorsprong in het spreken van de gekozen taal. Deze meerwaarde vraagt op persoonlijk niveau en op studievlak een duidelijke inspanning van de leerlingen. Zo opent het spreken van vreemde talen mogelijkheden naar verdere studies en de beroepswereld."
     }
   },
-  "banner.rating.text" : "Wist u dat Loppem Conversa een 5-sterren review heeft op Google?"
+  "banner": {
+    "rating": {
+      "text": "Wist u dat Loppem Conversa een 5-sterren review heeft op Google?",
+      "button.1": "Zie reviews",
+      "button.2": "Schrijf review"
+    }
+  },
+  "bringafriend": {
+    "title": "Neem een vriend mee en geniet van 50 euro cashback!",
+    "conditions": {
+      "button": "ZIE VOORWAARDEN",
+      "dialog.title": "Voorwaarden aanbrengen nieuwe leerling",
+      "dialog.content.1": "Uw kind is zelf ingeschreven.",
+      "dialog.content.2": "De nieuw aangebrachte leerling heeft nog nooit een stage bij Loppem Conversa gevolgd.",
+      "dialog.content.3": "De nieuw aangebrachte leerling behoort niet tot hetzelfde gezin (dus inwonend op hetzelfde adres).",
+      "dialog.content.4": "U vermeldt de naam van deze leerling duidelijk in het inschrijvingsformulier op de website in het daartoe bestemde vakje.",
+      "dialog.content.5": "De nieuw aangebrachte leerling is nog niet door iemand anders aangebracht.",
+      "dialog.content.6": "U kunt elkaar niet wederzijds aanbrengen.",
+      "dialog.content.footer": "Deze korting wordt pas toegekend en <bold>terugbetaald NA de stage </bold>."
+    },
+    "form": {
+      "button": "Aanbrengen",
+      "dialog.title": "Aanbrengen nieuwe leerling",
+      "dialog.subtitle": "Vul dit onderstaande formulier in om een nieuwe leerling aan te brengen.",
+      "dialog.section.1.header": "Uw gegevens",
+      "dialog.section.1.text.field.1": "Uw naam",
+      "dialog.section.1.text.field.2": "Naam van uw ingeschreven kind",
+      "dialog.section.1.text.field.3": "Uw emailadres",
+      "dialog.section.2.header": "Gegevens aangebrachte leerling",
+      "dialog.section.2.text.field.1": "Naam van aangebrachte leerling",
+      "dialog.action.cancel": "Cancel",
+      "dialog.action.send": "Verzenden"
+    }
+  },
+  "pricing": {
+    "card.camp": {
+      "label.price": "€ 780",
+      "label.enroll": "Boek nu",
+      "label.language": "Doeltaal: ",
+      "label.period": "Periode: ",
+      "label.available": "Beschikbaar: ",
+      "content.language.1": "Nederlands",
+      "content.period.1": "7 - 17 juli 2024",
+      "content.available.1": "success",
+      "content.language.2": "Engels",
+      "content.period.2": "7 - 17 juli 2024",
+      "content.available.2": "success",
+      "content.language.3": "Nederlands",
+      "content.period.3": "4 - 14 augustus 2024",
+      "content.available.3": "success",
+      "content.language.4": "Engels",
+      "content.period.4": "4 - 14 augustus 2024",
+      "content.available.4": "success"
+    },
+    "accordion.1": {
+      "summary": "PRIJSDETAILS",
+      "details": {
+        "title.1": "Basisprijs",
+        "text.1": "De basisprijs van al onze kampen bedraagt € 780 euro.",
+        "title.2": "Vroegboekkorting",
+        "text.2": "Schrijf in voor 1 februari en geniet van 20 euro korting.",
+        "title.3": "Cashback",
+        "text.3": "Neem een vriend mee en geniet van 50 euro cashback!"
+      }
+    },
+    "accordion.2": {
+      "summary": "BETALINGSDETAILS",
+      "details": {
+        "title.1": "Voorschot",
+        "text.1": "Het voorschot dient meteen na de inschrijving betaald te worden. In het voorschot mogen de kortingen verrekend worden. Voor 1 februari: 360 euro Na 1 februari: 380 euro",
+        "title.2": "Resterende saldo",
+        "text.2": "Het resterende saldo bedraagt 400 euro en dient voor 1 juni betaald te worden.",
+        "title.3": "Volledige bedrag",
+        "text.3": "Het volledige bedrag kan ook meteen gestort worden.",
+        "title.4": "Overschrijving",
+        "text.4": "Rekeningnummer, naam, mededeling, ..."
+      }
+    },
+    "accordion.3": {
+      "summary": "VOORDELEN",
+      "details": {
+        "title.1": "Ziekenfonds",
+        "text.1": "Sommige ziekenfondsen komen tussenbeide in de inschrijvingskosten. Informeer bij uw ziekenfonds.",
+        "title.2": "Fiscale attesten",
+        "text.2": "Voor deelnemers tot 12 jaar wordt een fiscaal attest voor opvang opgeleverd."
+      }
+    }
+  },
+  "interest": {
+    "text" : "Kent u iemand die mogelijks geïnteresseerd is?",
+    "button.send": "Stuur een bericht",
+    "button.share": "Download brochure"
+  }
 }

@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Redirect, Route, Switch} from "react-router-dom
 import "react-perfect-scrollbar/dist/css/styles.css";
 import {ThemeProvider} from '@mui/material/styles';
 import {theme} from "./theme";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import setupAndInitI18n from "./i18n/i18nSetup";
 import UpdateInscriptionForm from "./pages/Inscriptions/UpdateInscriptionForm";
 import {GlobalStyleVariables} from "./styles/global";

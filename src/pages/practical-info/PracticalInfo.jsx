@@ -1,21 +1,8 @@
 import React, {useState} from "react";
-import {Accordion, AccordionDetails, AccordionSummary, Grid,} from "@mui/material";
-import {styled} from "@mui/system";
-import clsx from "clsx";
+import {Accordion, AccordionDetails, AccordionSummary, Card, Grid,} from "@mui/material";
+import "./practicalInfo.css"
 
-const PREFIX = 'MyFaq';
-
-const classes = {
-  bgLightGray: `${PREFIX}-bgLightGray`,
-}
-
-const StyledFaq = styled('div')(({theme}) => ({
-  [`&.${classes.bgLightGray}`]: {
-    background: "rgba(0,0,0,0.05)",
-  },
-}));
-
-const FAQ = () => {
+const PracticalInfo = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState(0);
 
@@ -70,74 +57,57 @@ const FAQ = () => {
   ];
 
   return (
-    <section className="section" id="faq1">
+    <section className="section" id="info">
       <div className="container">
-        <div className="mb-8">
-          <h1 className="font-normal text-44 mt-0">Veel gestelde vragen</h1>
-          <p className="mb-16">
-            Hieronder vindt u het antwoord op veelgestelde vragen.
-          </p>
-        </div>
-
-        <Grid container spacing={3}>
-          <Grid item md={3} sm={4} xs={12}>
-            <div>
-              {categoryList.map((item, ind) => (
-                <StyledFaq
-                  key={ind}
-                  className={clsx({
-                    "px-4 py-2 mb-3 text-center border-radius-8 hover-bg-primary cursor-pointer": true,
-                    "bg-primary text-white": tabIndex === ind,
-                    [classes.bgLightGray]: true,
-                  })}
-                  onClick={() => {
-                    setTabIndex(ind);
-                    setExpandedIndex(null);
-                  }}
-                >
-                  {item.title}
-                </StyledFaq>
-              ))}
-            </div>
-          </Grid>
-          <Grid item md={9} sm={8} xs={12}>
-            {<div>
-              {categoryList[tabIndex].faqs.map((faq, ind) => (
-                <Accordion
-                  key={ind}
-                  className={clsx({
-                    "border-radius-4 mb-6": true,
-                    "elevation-z3": expandedIndex === ind,
-                    "box-shadow-none": expandedIndex !== ind,
-                  })}
-                  onChange={(e, expanded) =>
-                    expanded ? setExpandedIndex(ind) : setExpandedIndex(null)
-                  }
-                  expanded={expandedIndex === ind}
-                >
-                  <AccordionSummary
-                    className={clsx({
-                      "hover-bg-primary": true,
-                      [classes.bgLightGray]: true,
-                      "bg-primary text-white": expandedIndex === ind,
-                    })}
-                  >
-                    {faq.question}
-                  </AccordionSummary >
-                  <AccordionDetails>
-                    <p>
-                      {faq.answer}
-                    </p>
-                  </AccordionDetails>
-                </Accordion>
-              ))}
-            </div>
-            }
-          </Grid>
-        </Grid>
+        <Card className="card-container">
+          <h1>Praktische informatie</h1>
+          <div className="practical-info-grid">
+            <Grid container spacing={3}>
+              <Grid item md={3} sm={4} xs={12}>
+                <div>
+                  {categoryList.map((item, ind) => (
+                    <div key={ind}
+                         className={`card info-index-table ${tabIndex === ind ? 'active' : ''}`}
+                         onClick={() => {
+                           setTabIndex(ind);
+                           setExpandedIndex(0);
+                         }}
+                    >
+                      {item.title}
+                    </div>
+                  ))}
+                </div>
+              </Grid>
+              <Grid item md={9} sm={8} xs={12}>
+                {<div>
+                  {categoryList[tabIndex].faqs.map((faq, ind) => (
+                    <Accordion
+                      key={ind}
+                      className="accordion card"
+                      onChange={(e, expanded) =>
+                        expanded ? setExpandedIndex(ind) : setExpandedIndex(null)
+                      }
+                      expanded={expandedIndex === ind}
+                    >
+                      <AccordionSummary className="accordion-summary">
+                        {faq.question}
+                      </AccordionSummary>
+                      <AccordionDetails className="accordion-details">
+                        <p>
+                          {faq.answer}
+                        </p>
+                      </AccordionDetails>
+                    </Accordion>
+                  ))}
+                </div>
+                }
+              </Grid>
+            </Grid>
+          </div>
+        </Card>
       </div>
     </section>
   );
 };
 
-export default FAQ;
+export default PracticalInfo;

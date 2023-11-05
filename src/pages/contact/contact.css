@@ -1,0 +1,94 @@
+.contact {
+    padding: 4rem;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.card-contact {
+    color: rgba(0, 0, 0, 0.87);
+    -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 15px;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    margin: 50px 0;
+}
+
+.card-header-contact {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background: rgb(249, 148, 32);
+    border-radius: 15px 0 0 0;
+    box-shadow: none;
+}
+
+.card-contact-content {
+    margin: 20px;
+}
+
+.card-contact-content-item {
+    margin-left: 30px;
+    font-size: 18px;
+}
+
+.contact-map {
+    margin-top: 25px;
+}
+
+.contact-instagram {
+    float: left;
+    margin: 10px 0 0 0;
+}
+
+.contact-instagram:hover {
+    border-radius: 16px;
+}
+
+.contact-instagram-img {
+    width: 200px;
+}
+
+.contact-facebook-img {
+    width: 200px;
+}
+
+.contact-facebook {
+    float: right;
+    margin: 0 0 20px 20px;
+}
+
+.contact-facebook:hover {
+    border-radius: 16px;
+}
+
+.contact-juvigo {
+    float: left;
+    margin: 5px 0 10px 0;
+    padding: 5px;
+}
+
+.contact-juvigo:hover {
+    border-radius: 16px;
+}
+
+.contact-juvigo-img {
+    width: 250px;
+}
+
+.contact-vgc-img {
+    width: 100px;
+}
+
+.contact-vgc {
+    float: right;
+    margin: 0 20px 20px 20px;
+    padding: 20px;
+}
+
+.contact-vgc:hover {
+    border-radius: 16px;
+}
+

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
 import {getInscription} from "../../services/InscriptionService";
-import UpdateInscriptionForm from "../Inscriptions/UpdateInscriptionForm";
+import UpdateInscriptionForm from "./UpdateInscriptionForm";
 import MyStyledPaper from "../../components/controls/MyStyledPaper";
 
 export default function UpdateInscription() {

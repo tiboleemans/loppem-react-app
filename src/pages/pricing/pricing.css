@@ -1,0 +1,94 @@
+.pricing {
+    padding: 4rem;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.card-header-highlighted {
+    background: rgba(var(--primary-main), 1)
+}
+
+.card-header-highlighted span {
+    color: #ffffff;
+}
+
+.card-camp {
+    color: rgba(0, 0, 0, 0.87);
+    -webkit-transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 15px;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    border-left: 10px solid var(--primary-main);
+    padding-left: 20px;
+    margin: 50px 0;
+}
+
+.card-header-price {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 5px 10px;
+    background: rgb(249, 148, 32);
+    border-radius: 0 15px;
+    box-shadow: none;
+}
+
+.card-button-price:hover {
+    font-size: 12px;
+    transform: scale(1.5);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+    transition: all 500ms ease;
+}
+
+.card-button-price {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    background: rgb(249, 148, 32);
+    border-radius: 15px 0;
+    margin-top: 42px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.card-camp-grid {
+    padding-top: 15px;
+}
+
+.card-camp-label {
+    font-size: 20px;
+    text-align: right;
+}
+
+.card-camp-content {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.accordion {
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 6px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+.accordion-summary {
+    background: var(--primary-main) !important;
+    transition: all 250ms;
+    color: #ffffff !important;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.accordion-details {
+
+}
+
+.pricing-content {
+    margin: 50px 25px;
+}

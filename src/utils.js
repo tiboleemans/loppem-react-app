@@ -45,49 +45,7 @@ export function scrollTo(scrollableElement, elmID) {
     return;
   }
 
-  const startY = currentYPosition(scrollableElement);
-  const stopY = elmYPosition(elm);
-
-  const distance = stopY > startY ? stopY - startY : startY - stopY;
-  if (distance < 100) {
-    scrollTo(0, stopY);
-    return;
-  }
-  let speed = Math.round(distance / 50);
-  if (speed >= 20) speed = 20;
-  const step = Math.round(distance / 25);
-  let leapY = stopY > startY ? startY + step : startY - step;
-  let timer = 0;
-  if (stopY > startY) {
-    for (let i = startY; i < stopY; i += step) {
-      setTimeout(
-        (function (leapY) {
-          return () => {
-            scrollableElement.scrollTo(0, leapY);
-          };
-        })(leapY),
-        timer * speed
-      );
-      leapY += step;
-      if (leapY > stopY) leapY = stopY;
-      timer++;
-    }
-    return;
-  }
-  for (let i = startY; i > stopY; i -= step) {
-    setTimeout(
-      (function (leapY) {
-        return () => {
-          scrollableElement.scrollTo(0, leapY);
-        };
-      })(leapY),
-      timer * speed
-    );
-    leapY -= step;
-    if (leapY < stopY) leapY = stopY;
-    timer++;
-  }
-  return false;
+  window.scrollTo({behavior: "smooth", top: elm.offsetTop - 20});
 }
 
 export function classList(classes) {
