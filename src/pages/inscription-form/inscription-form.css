@@ -1,0 +1,41 @@
+.inscription-card {
+    padding: 4rem;
+    background: rgba(0, 0, 0, 0.03);
+}
+
+.inscription-button-group-selected {
+    color: var(--secondary-main) !important;
+    background-color: var(--primary-main) !important;
+}
+
+.inscription-button-container {
+    color: #ffffff;
+    display: flex;
+    float: right;
+}
+
+
+.inscription-button {
+    color: #ffffff;
+    display: flex;
+    justify-content: flex-end;
+    text-transform: uppercase;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--primary-main);
+    padding: 6px 16px;
+    margin: 10px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.inscription-button:hover {
+    background: var(--primary-hex-light);
+    transition: all 250ms ease;
+    color: #fff;
+}
+
+.inscription-stepper {
+    padding: 20px 0;
+}

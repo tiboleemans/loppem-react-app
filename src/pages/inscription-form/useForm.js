@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import {styled} from "@mui/system";
-import {initialFieldValues} from "../pages/Inscriptions/initialFieldValues";
+import {initialFieldValues} from "./initialFieldValues";
 import {useParams} from "react-router-dom";
-import {getInscription} from "../services/InscriptionService";
+import {getInscription} from "../../services/InscriptionService";
 
 
 export default function useForm() {
@@ -48,18 +48,11 @@ export default function useForm() {
   }
 };
 
-const PREFIX = 'MyStyledForm';
-
-const classes = {
-  root: `${PREFIX}-root`
-}
 
 const StyledForm = styled('form')(({theme}) => ({
-  [`&.${classes.root}`]: {
-    '& .MuiFormControl-root': {
-      width: '90%',
-      margin: theme.spacing(0.6)
-    }
+  '& .MuiFormControl-root': {
+    width: '90%',
+    margin: theme.spacing(0.6)
   }
 }))
 
@@ -69,7 +62,7 @@ export function Form(props) {
     ...other
   } = props;
   return (
-    <StyledForm className={classes.root} autoComplete="off" {...other}>
+    <StyledForm autoComplete="off" {...other}>
       {props.children}
     </StyledForm>
   )

@@ -1,7 +1,7 @@
 import React, {useState} from "react";
-import ScrollTo from "../../common/ScrollTo";
+import ScrollTo from "../common/ScrollTo";
 import {useTranslation} from "react-i18next";
-import LanguageSelector from "../../components/controls/LanguageSelector";
+import LanguageSelector from "./LanguageSelector";
 import "./navigation.css"
 
 const Navigation = () => {
@@ -10,7 +10,7 @@ const Navigation = () => {
   return (
     <>
       <button onClick={() => setIsClosed(!isClosed)}>open</button>
-      <section className={`header header-fixed ${isClosed ? 'closed' : ''}`}>
+      <div className={`header header-fixed ${isClosed ? 'closed' : ''}`}>
         <div className="container header-container">
           <div className="brand">
             <img src={require('../../images/logo.png')} className="nav-logo" alt="nav-logo"/>
@@ -39,7 +39,7 @@ const Navigation = () => {
             <LanguageSelector/>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 };

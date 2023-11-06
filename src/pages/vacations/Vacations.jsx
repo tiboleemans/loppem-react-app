@@ -3,7 +3,7 @@ import {Card, CardContent} from "@mui/material";
 import Grid from "@mui/material/Grid";
 import useTabs from "./useTabs";
 import {useTranslation} from "react-i18next";
-import ImageCarousel from "../../common/ImageCarousel";
+import ImageCarousel from "./ImageCarousel";
 import "./vacations.css";
 
 const Vacations = () => {

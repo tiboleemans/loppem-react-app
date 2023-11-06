@@ -127,7 +127,7 @@ const Gallery = () => {
   }], 'TEAM');
 
 
-  return (<section className="section" id="gallery1">
+  return (<div className="section" id="gallery1">
     <div className="section bg-light-gray">
       <div className="container">
         <div className="mb-8">
@@ -192,7 +192,7 @@ const Gallery = () => {
         </Grid>
       </div>
     </div>
-  </section>);
+  </div>);
 };
 
 export default Gallery;

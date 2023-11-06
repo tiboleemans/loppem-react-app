@@ -57,7 +57,7 @@ const PracticalInfo = () => {
   ];
 
   return (
-    <section className="section" id="info">
+    <div className="info-card" id="info">
       <div className="container">
         <Card className="card-container">
           <h1>Praktische informatie</h1>
@@ -106,7 +106,7 @@ const PracticalInfo = () => {
           </div>
         </Card>
       </div>
-    </section>
+    </div>
   );
 };
 

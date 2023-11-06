@@ -53,35 +53,35 @@ const ImageCarousel = () => {
 
         <swiper-slide lazy="true">
           <Card className="vacation-swiper-slide-card">
-            <img className="w-full block" src={require("../images/vacations/1.jpeg")} alt="vacation-picture-1"/>
+            <img className="vacation-swiper-slide-card-img" src={require("../../images/vacations/1.jpeg")} alt="vacation-picture-1"/>
           </Card>
         </swiper-slide>
 
         <swiper-slide lazy="true">
           <Card className="vacation-swiper-slide-card">
-            <img className="w-full block" src={require("../images/vacations/2.jpeg")} alt="vacation-picture-2"/>
+            <img className="vacation-swiper-slide-card-img" src={require("../../images/vacations/2.jpeg")} alt="vacation-picture-2"/>
           </Card>
         </swiper-slide>
         <swiper-slide lazy="true">
           <Card className="vacation-swiper-slide-card">
-            <img className="w-full block" src={require("../images/vacations/3.jpeg")} alt="vacation-picture-3"/>
+            <img className="vacation-swiper-slide-card-img" src={require("../../images/vacations/3.jpeg")} alt="vacation-picture-3"/>
           </Card>
         </swiper-slide>
         <swiper-slide lazy="true">
           <Card className="vacation-swiper-slide-card">
-            <img className="w-full block" src={require("../images/vacations/4.jpeg")} alt="vacation-picture-4"/>
+            <img className="vacation-swiper-slide-card-img" src={require("../../images/vacations/4.jpeg")} alt="vacation-picture-4"/>
           </Card>
         </swiper-slide>
         <swiper-slide lazy="true">
           <Card className="vacation-swiper-slide-card">
-            <img className="w-full block" src={require("../images/vacations/5.jpg")} alt="vacation-picture-5"/>
+            <img className="vacation-swiper-slide-card-img" src={require("../../images/vacations/5.jpg")} alt="vacation-picture-5"/>
           </Card>
         </swiper-slide>
 
         <swiper-slide>
           <CardMedia className="vacation-swiper-slide-card"
                      component="video"
-                     image={require("../images/vacations/promo.mp4")}
+                     image={require("../../images/vacations/promo.mp4")}
                      title='promo-video-loppem-conversa'
                      controls/>
         </swiper-slide>

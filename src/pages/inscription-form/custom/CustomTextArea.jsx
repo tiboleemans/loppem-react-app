@@ -2,33 +2,25 @@ import React from 'react';
 import TextField from "@mui/material/TextField";
 import {styled} from "@mui/system";
 
-const PREFIX = 'MyCustomTextArea';
-
-const classes = {
-  root: `${PREFIX}-root`
-}
-
 
 const StyledCustomTextField = styled(TextField)(({theme}) => ({
-    [`&.${classes.root}`]: {
-      '& label.Mui-focused': {
-        color: '#f5a034',
+    '& label.Mui-focused': {
+      color: theme.palette.primary.main,
+    },
+    '& .MuiInput-underline:after': {
+      borderBottomColor: 'black',
+    },
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+          borderColor: theme.palette.primary.main,
       },
-      '& .MuiInput-underline:after': {
-        borderBottomColor: 'black',
+      '&:hover fieldset': {
+        borderColor: theme.palette.primary.main,
       },
-      '& .MuiOutlinedInput-root': {
-        // '& fieldset': {
-        //     borderColor: '#f5a034',
-        // },
-        '&:hover fieldset': {
-          borderColor: '#f5a034',
-        },
-        '&.Mui-focused fieldset': {
-          borderColor: '#f5a034',
-        },
+      '&.Mui-focused fieldset': {
+        borderColor: theme.palette.primary.main,
       },
-    }
+    },
   })
 )
 
@@ -53,7 +45,6 @@ const CustomTextArea = (props) => {
       type={type}
       placeholder={placeholder}
       helperText={helperText}
-      classes={{root: classes.root}}
       multiline
       rows={4}
     />

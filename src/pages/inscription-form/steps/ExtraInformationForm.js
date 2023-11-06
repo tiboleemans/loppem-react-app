@@ -1,11 +1,11 @@
-import {Form} from "../../components/useForm";
+import {Form} from "../useForm";
 import Typography from "@mui/material/Typography";
-import CustomCheckbox from "../../components/controls/CustomCheckbox";
+import CustomCheckbox from "../custom/CustomCheckbox";
 import React from "react";
 import Grid from "@mui/material/Grid";
-import CustomTextField from "../../components/controls/CustomTextField";
-import CustomTextArea from "../../components/controls/CustomTextArea";
-import CustomSelect from "../../components/controls/CustomSelect";
+import CustomTextField from "../custom/CustomTextField";
+import CustomTextArea from "../custom/CustomTextArea";
+import CustomSelect from "../custom/CustomSelect";
 
 const contactItems = [
     {id: 'viavia', title: 'Mond-tot-mond-reclame'},

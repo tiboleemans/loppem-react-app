@@ -2,35 +2,27 @@ import React from 'react';
 import TextField from "@mui/material/TextField";
 import {styled} from "@mui/material/styles";
 
-const PREFIX = 'MyCustomTextField';
-
-const classes = {
-  textfield_root: `${PREFIX}-textfield_root`,
-}
-
 const MyStyledCustomTextField = styled(TextField)(({theme}) => ({
-  [`&.${classes.textfield_root}`]: {
-    '& label.Mui-focused': {
-      color: theme.palette.primary.main,
-    },
-    '& .MuiInput-underline:after': {
-      borderBottomColor: 'black',
-    },
-    '& .MuiOutlinedInput-root': {
-      // '& fieldset': {
-      //     borderColor: customColors.primaryColor,
-      // },
-      '&:hover fieldset': {
-        borderColor: theme.palette.primary.main,
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: theme.palette.primary.main,
-      },
-    },
-    '& MuiPickersToolbar-toolbar': {
-      backgroundColor: theme.palette.primary.main,
-    }
+  '& label.Mui-focused': {
+    color: theme.palette.primary.main,
   },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: 'black',
+  },
+  '& .MuiOutlinedInput-root': {
+    // '& fieldset': {
+    //     borderColor: customColors.primaryColor,
+    // },
+    '&:hover fieldset': {
+      borderColor: theme.palette.primary.main,
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: theme.palette.primary.main,
+    },
+  },
+  '& MuiPickersToolbar-toolbar': {
+    backgroundColor: theme.palette.primary.main,
+  }
 }))
 
 
@@ -54,7 +46,6 @@ const CustomTextField = (props) => {
       type={type}
       placeholder={placeholder}
       helperText={helperText}
-      classes={{root: classes.textfield_root}}
       {...(error && {error: true, helperText: error})}
     />
   );

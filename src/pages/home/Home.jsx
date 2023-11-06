@@ -2,7 +2,7 @@ import React from "react";
 import Navigation from "../navigation/Navigation";
 import Intro from "../intro/Intro";
 import Vacations from "../vacations/Vacations";
-import InscriptionForm from "../Inscriptions/InscripionForm";
+import InscriptionForm from "../inscription-form/InscripionForm";
 import Pricing from "../pricing/Pricing";
 import PracticalInfo from "../practical-info/PracticalInfo";
 import Contact from "../contact/Contact";

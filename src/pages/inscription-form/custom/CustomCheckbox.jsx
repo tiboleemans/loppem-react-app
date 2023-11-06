@@ -2,7 +2,7 @@ import React from 'react';
 import FormControl from "@mui/material/FormControl";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormHelperText from "@mui/material/FormHelperText";
-import MyStyledCheckbox from "./MyStyledCheckbox";
+import {Checkbox} from "@mui/material";
 
 
 function CustomCheckbox(props) {
@@ -17,7 +17,7 @@ function CustomCheckbox(props) {
   return (
     <FormControl {...(error && {error: true})}>
       <FormControlLabel
-        control={<MyStyledCheckbox
+        control={<Checkbox
           subject={subject}
           name={name}
           checked={value}

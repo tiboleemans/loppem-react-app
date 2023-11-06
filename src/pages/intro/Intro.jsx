@@ -6,7 +6,7 @@ import './intro.css'
 const Intro = () => {
   const {t} = useTranslation();
   return (
-    <section className="intro" id="intro">
+    <div className="intro" id="intro">
       <div className="intro-wrapper">
         <div className="container">
           <div className="intro-banner">
@@ -55,7 +55,7 @@ const Intro = () => {
           <div className="intro-light-background"/>
         </div>
       </div>
-    </section>
+    </div>
   );
 };
 

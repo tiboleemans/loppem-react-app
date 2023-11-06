@@ -1,7 +1,7 @@
 import React from "react";
 import {Accordion, AccordionDetails, AccordionSummary, Card, Grid,} from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
-import ScrollTo from "../../common/ScrollTo";
+import ScrollTo from "../common/ScrollTo";
 import "./pricing.css"
 import {useTranslation} from "react-i18next";
 

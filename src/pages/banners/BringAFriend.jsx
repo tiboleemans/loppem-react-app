@@ -1,8 +1,8 @@
 import React from "react";
 import {Grid} from "@mui/material";
 import {useTranslation} from "react-i18next";
-import BringAFriendConditionsDialog from "../../components/controls/BringAFriendConditionsDialog";
-import BringAFriendForm from "../../components/controls/BringAFriendForm";
+import BringAFriendConditionsDialog from "./BringAFriendConditionsDialog";
+import BringAFriendForm from "./BringAFriendForm";
 import "./banner.css"
 
 const BringAFriend = () => {

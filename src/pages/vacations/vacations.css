@@ -16,6 +16,11 @@
     margin: 60px 20px;
 }
 
+.vacation-swiper-slide-card-img {
+    display: block;
+    width: 100%;
+}
+
 .tab-div {
     display: inline-block;
     margin-left: 2rem;

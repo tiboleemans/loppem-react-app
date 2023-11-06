@@ -7,14 +7,7 @@ import {styled} from "@mui/material/styles";
 
 function CustomDatePicker(props) {
 
-  const PREFIX = 'MyDatePicker';
-
-  const classes = {
-    textfield_root: `${PREFIX}-textfield_root`,
-  }
-
   const StyledDatePicker = styled(DatePicker)(({theme}) => ({
-    [`&.${classes.textfield_root}`]: {
       '& label.Mui-focused': {
         color: theme.palette.primary.main,
       },
@@ -44,7 +37,6 @@ function CustomDatePicker(props) {
           color: "#fff"
         }
       }
-    },
   }))
 
   const {subject, name, label, value, onChange, error = null} = props;
@@ -77,7 +69,6 @@ function CustomDatePicker(props) {
         autoOk={true}
         inputVariant="outlined"
         orientation="landscape"
-        classes={{root: classes.textfield_root}}
         {...(error && {error: true, helperText: error})}
       />
 

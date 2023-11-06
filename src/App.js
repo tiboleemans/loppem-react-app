@@ -6,9 +6,8 @@ import {ThemeProvider} from '@mui/material/styles';
 import {theme} from "./theme";
 import Home from "./pages/home/Home";
 import setupAndInitI18n from "./i18n/i18nSetup";
-import UpdateInscriptionForm from "./pages/Inscriptions/UpdateInscriptionForm";
-import {GlobalStyleVariables} from "./styles/global";
-import { register } from 'swiper/element/bundle';
+import UpdateInscriptionForm from "./pages/inscription-form/update/UpdateInscriptionForm";
+import {register} from 'swiper/element/bundle';
 
 function App() {
   setupAndInitI18n();
@@ -16,16 +15,14 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyleVariables>
-        <Router basename="/">
-          <Switch>
-            <Route path="/home" component={Home} exact/>
-            <Route path="/inscription/:id" component={UpdateInscriptionForm}/>
-            <Redirect path="/" exact to="home"/>
-            {/* <Route component={Error} /> */}
-          </Switch>
-        </Router>
-      </GlobalStyleVariables>
+      <Router basename="/">
+        <Switch>
+          <Route path="/home" component={Home} exact/>
+          <Route path="/inscription/:id" component={UpdateInscriptionForm}/>
+          <Redirect path="/" exact to="home"/>
+          {/* <Route component={Error} /> */}
+        </Switch>
+      </Router>
     </ThemeProvider>
   )
     ;

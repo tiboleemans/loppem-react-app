@@ -1,9 +1,9 @@
 import React from 'react';
 import Grid from "@mui/material/Grid";
-import {Form} from "../../components/useForm";
-import CustomTextField from "../../components/controls/CustomTextField";
-import CustomDatePicker from "../../components/controls/CustomDatePicker";
-import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
+import {Form} from "../useForm";
+import CustomTextField from "../custom/CustomTextField";
+import CustomDatePicker from "../custom/CustomDatePicker";
+import CustomButtonGroup from "../custom/CustomButtonGroup";
 
 export default function StudentInformationForm(props) {
 

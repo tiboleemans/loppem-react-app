@@ -4,22 +4,37 @@ import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
 import MenuItem from "@mui/material/MenuItem";
 import FormHelperText from "@mui/material/FormHelperText";
+import {styled} from "@mui/system";
 
 function CustomSelect(props) {
+
+  const StyledCustomSelect = styled(Select)(({theme}) => ({
+      '& .MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root': {
+        color: theme.palette.primary.main,
+      },
+      '& .MuiSelect-root': {
+        color: theme.palette.primary.main,
+      },
+      '& .MuiSelect-select': {
+        color: theme.palette.primary.main,
+      },
+      '& .MuiSelect-outlined:hover': {
+        borderColor: theme.palette.primary.main,
+      },
+    })
+  )
 
   const {subject, name, labelId, labelText, value, onChange, items, error} = props;
 
   const handleChange = (event) => {
-    event.preventDefault();
     event.target = {subject: subject, name: name, value: event.target.value};
     onChange(event);
   };
 
   return (
-
-    <FormControl variant="outlined" {...(error && {error: true})}>
+    <FormControl {...(error && {error: true})}>
       <InputLabel id={labelId}>{labelText}</InputLabel>
-      <Select
+      <StyledCustomSelect
         subject={subject}
         labelId={labelId}
         id={name}
@@ -36,7 +51,7 @@ function CustomSelect(props) {
             )
           )
         }
-      </Select>
+      </StyledCustomSelect>
       <FormHelperText>{error}</FormHelperText>
     </FormControl>
   )

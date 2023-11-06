@@ -2,18 +2,18 @@ import React, {useEffect, useState} from 'react';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import Typography from '@mui/material/Typography';
-import StudentInformationForm, {getErrorStudentStep} from "./StudentInformationForm";
-import ParentInformationForm, {getErrorParentStep} from "./ParentInformationForm";
-import SchoolInformationForm, {getErrorSchoolStep} from "./SchoolInformationForm";
-import ExtraInformationForm, {getErrorExtraInfoStep} from "./ExtraInformationForm";
-import useForm from "../../components/useForm";
+import StudentInformationForm, {getErrorStudentStep} from "./steps/StudentInformationForm";
+import ParentInformationForm, {getErrorParentStep} from "./steps/ParentInformationForm";
+import SchoolInformationForm, {getErrorSchoolStep} from "./steps/SchoolInformationForm";
+import ExtraInformationForm, {getErrorExtraInfoStep} from "./steps/ExtraInformationForm";
+import useForm from "./useForm";
 import Alert from '@mui/material/Alert';
 import {registerStudent, updateStudent} from "../../services/InscriptionService";
 import {getLanguage} from "../../i18n/i18nSetup";
 import {Card, CircularProgress} from "@mui/material";
 import {initialFieldValues} from "./initialFieldValues";
-import MyStyledStepper from "../../components/controls/MyStyledStepper";
-import {MyStyledButton, MyStyledButtons} from "../../components/controls/MyStyledButton";
+import CustomStepper from "./custom/CustomStepper";
+import "./inscription-form.css";
 
 const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
 const disableValidation = true;
@@ -160,43 +160,40 @@ export default function InscriptionForm() {
   return (
 
     <React.Fragment>
-      <div className="section bg-light-gray" id="inscription">
+      <div className="inscription-card" id="inscription">
         <div className="container">
-          <Card className="pricing-card card-container">
-            <div className="section__header">
-              <h2>Inschrijvingsformulier</h2>
-            </div>
-            <MyStyledStepper activeStep={step}>
+          <Card className="card-container">
+            <h1>Inschrijvingsformulier</h1>
+            <CustomStepper activeStep={step}>
               {steps.map((label) => (
                 <Step key={label}>
                   <StepLabel>{label}</StepLabel>
                 </Step>
               ))}
-            </MyStyledStepper>
+            </CustomStepper>
             <React.Fragment>
               {step === steps.length ? getInscriptionConfirmation() : (
                 <React.Fragment>
                   {getStepContent()}
                   {hasFeedback ? feedbackMessage : null}
-                  <MyStyledButtons>
+                  <div className="inscription-button-container">
                     {step > 1 && (
-                      <MyStyledButton onClick={sentInfo}>
+                      <div className="inscription-button" onClick={sentInfo}>
                         Voorlopig opslaan
-                      </MyStyledButton>
+                      </div>
                     )}
                     {step !== 0 && (
-                      <MyStyledButton onClick={handleBack}>
+                      <div className="inscription-button" onClick={handleBack}>
                         Vorige
-                      </MyStyledButton>
+                      </div>
                     )}
-                    <MyStyledButton
-                      variant="contained"
-                      onClick={handleNext}
+                    <div className="inscription-button"
+                         onClick={handleNext}
                     >
                       {step === steps.length - 1 ? 'Inschrijven' : 'Volgende'}
-                    </MyStyledButton>
+                    </div>
 
-                  </MyStyledButtons>
+                  </div>
                 </React.Fragment>
               )}
             </React.Fragment>

@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from "react";
 import {useParams} from "react-router-dom";
-import {getInscription} from "../../services/InscriptionService";
+import {getInscription} from "../../../services/InscriptionService";
 import UpdateInscriptionForm from "./UpdateInscriptionForm";
-import MyStyledPaper from "../../components/controls/MyStyledPaper";
 
 export default function UpdateInscription() {
 
@@ -29,14 +28,10 @@ export default function UpdateInscription() {
 
   return (
     <React.Fragment>
-      <div className="section bg-light-gray" id="inscription">
+      <div className="inscription-card" id="inscription">
         <div className="container">
-          <MyStyledPaper>
-            <div className="section__header">
-              <h2>Inschrijvingsformulier</h2>
-              <UpdateInscriptionForm initialForm={values}/>
-            </div>
-          </MyStyledPaper>
+          <h1>Inschrijvingsformulier</h1>
+          <UpdateInscriptionForm initialForm={values}/>
         </div>
       </div>
     </React.Fragment>

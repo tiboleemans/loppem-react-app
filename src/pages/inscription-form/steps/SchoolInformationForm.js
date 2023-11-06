@@ -1,9 +1,9 @@
 import React from 'react';
-import {Form} from "../../components/useForm";
+import {Form} from "../useForm";
 import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
-import CustomTextField from "../../components/controls/CustomTextField";
-import CustomButtonGroup from "../../components/controls/CustomButtonGroup";
+import CustomTextField from "../custom/CustomTextField";
+import CustomButtonGroup from "../custom/CustomButtonGroup";
 
 
 export default function SchoolInformationForm(props) {

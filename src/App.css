@@ -23,11 +23,10 @@
     --swiper-pagination-top: 10px;
     --swiper-pagination-fraction-color: var(--primary-main);
     --topbar-mobile-width: 220px;
-    --font: "Big City Grotesque", serif;
 }
 
 body {
-    font-family: 'Big City Grotesque', sans-serif;
+    font-family: 'Big City Grotesque', serif !important;
     margin: 0;
 }
 
@@ -49,44 +48,8 @@ p {
     color: inherit;
 }
 
-.font-medium {
-    font-weight: 500
-}
-
-.text-44 {
-    font-size: 44px
-}
-
-.font-italic {
-    font-style: italic
-}
-
-.font-normal {
-    font-weight: normal
-}
-
-.font-semibold {
-    font-weight: 600
-}
-
-.font-bold {
-    font-weight: 700
-}
-
-.items-end {
-    align-items: flex-end
-}
-
-.text-right {
-    text-align: right
-}
-
-.text-left {
-    text-align: left
-}
-
-.justify-end {
-    justify-content: flex-end
+a {
+    text-decoration: none !important;
 }
 
 .container {
