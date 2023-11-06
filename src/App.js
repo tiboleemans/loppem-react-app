@@ -1,7 +1,6 @@
 import React from 'react'
 import './App.css'
 import {BrowserRouter as Router, Redirect, Route, Switch} from "react-router-dom";
-import "react-perfect-scrollbar/dist/css/styles.css";
 import {ThemeProvider} from '@mui/material/styles';
 import {theme} from "./theme";
 import Home from "./pages/home/Home";
