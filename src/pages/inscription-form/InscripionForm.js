@@ -68,21 +68,6 @@ export default function InscriptionForm() {
     }
   }, [values]);
 
-  function getStepContent() {
-    switch (step) {
-      case 0:
-        return <StudentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
-      case 1:
-        return <ParentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
-      case 2:
-        return <SchoolInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
-      case 3:
-        return <ExtraInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>;
-      default:
-        throw new Error('Unknown step');
-    }
-  }
-
   const validate = () => {
     switch (step) {
       case 0:
@@ -174,7 +159,10 @@ export default function InscriptionForm() {
             <React.Fragment>
               {step === steps.length ? getInscriptionConfirmation() : (
                 <React.Fragment>
-                  {getStepContent()}
+                    {step === 0 && <StudentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
+                    {step === 1 && <ParentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
+                    {step === 2 && <SchoolInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
+                    {step === 3 && <ExtraInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
                   {hasFeedback ? feedbackMessage : null}
                   <div className="inscription-button-container">
                     {step > 1 && (

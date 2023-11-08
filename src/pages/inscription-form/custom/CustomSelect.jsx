@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Select from "@mui/material/Select";
@@ -9,8 +9,8 @@ import {styled} from "@mui/system";
 function CustomSelect(props) {
 
   const StyledCustomSelect = styled(Select)(({theme}) => ({
-      '& .MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root': {
-        color: theme.palette.primary.main,
+      '&>.MuiOutlinedInput-notchedOutline': {
+        borderColor: theme.palette.primary.main,
       },
       '& .MuiSelect-root': {
         color: theme.palette.primary.main,
@@ -25,6 +25,12 @@ function CustomSelect(props) {
   )
 
   const {subject, name, labelId, labelText, value, onChange, items, error} = props;
+
+    const [opgeslageFormulier, setOpgeslageFormulier] = useState(undefined)
+
+    useEffect(() => {
+        fetch('/').then(data => a = data)
+    }, []);
 
   const handleChange = (event) => {
     event.target = {subject: subject, name: name, value: event.target.value};

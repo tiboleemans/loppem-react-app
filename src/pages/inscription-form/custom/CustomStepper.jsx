@@ -3,8 +3,8 @@ import React from "react";
 import Stepper from '@mui/material/Stepper';
 
 const StyledStepper = styled(Stepper)(({theme}) => ({
-  '& MuiStepIcon-text': {
-    color: theme.palette.secondary.main,
+  '& .MuiStepIcon-text': {
+    fill: theme.palette.secondary.main,
   }
 }));
 

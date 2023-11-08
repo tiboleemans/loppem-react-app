@@ -5,9 +5,7 @@ import nlLocale from "date-fns/locale/nl-BE";
 import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns'
 import {styled} from "@mui/material/styles";
 
-function CustomDatePicker(props) {
-
-  const StyledDatePicker = styled(DatePicker)(({theme}) => ({
+const StyledDatePicker = styled(DatePicker)(({theme}) => ({
       '& label.Mui-focused': {
         color: theme.palette.primary.main,
       },
@@ -37,9 +35,10 @@ function CustomDatePicker(props) {
           color: "#fff"
         }
       }
-  }))
-
+  }));
+function CustomDatePicker(props) {
   const {subject, name, label, value, onChange, error = null} = props;
+  console.log(value);
 
   const convertToDefaultEventParameter = (subject, name, value) => ({
     target: {
@@ -49,8 +48,7 @@ function CustomDatePicker(props) {
 
   const minDate = new Date((new Date().getFullYear() - 20) + "-01-01");
   const maxDate = new Date((new Date().getFullYear() - 9) + "-01-01");
-
-  return (
+    return (
     <LocalizationProvider adapterLocale={nlLocale} dateAdapter={AdapterDateFns}>
       <StyledDatePicker
         disableFuture
@@ -60,8 +58,8 @@ function CustomDatePicker(props) {
         subject={subject}
         label={label}
         name={name}
-        // onChange={(date) => onChange(convertToDefaultEventParameter(subject, name, date))}
-        // value={value}
+        onChange={(date) => onChange(convertToDefaultEventParameter(subject, name, date))}
+        value={value}
         minDate={minDate}
         minDateMessage={"minDateMessage"}
         maxDate={maxDate}

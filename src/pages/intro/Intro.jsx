@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import {useTranslation} from "react-i18next";
-import './intro.css'
+import './intro.scss'
 
 const Intro = () => {
   const {t} = useTranslation();
