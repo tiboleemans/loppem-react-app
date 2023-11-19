@@ -36,7 +36,7 @@ export default function ExtraInformationForm(props) {
                         subject="extra"
                         label="Naam nieuw aangebrachte leerling"
                         name="apportedStudent"
-                        value={values.apportedStudent}
+                        value={values.extra.apportedStudent}
                         onChange={handleInputChange}
                         helperText={"Geniet van een korting door een nieuwe leerling aan te brengen (klik hier om de voorwaarden te lezen)"}
                     />
@@ -48,10 +48,10 @@ export default function ExtraInformationForm(props) {
                         labelText="Hoe bent u in contact gekomen met de cursus?"
                         name={"contact"}
                         id={"contact"}
-                        value={values.contact}
+                        value={values.extra.contact}
                         onChange={handleInputChange}
                         items={contactItems}
-                        error={errors.contact}
+                        error={errors.extra.contact}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -59,7 +59,7 @@ export default function ExtraInformationForm(props) {
                         subject="extra"
                         label="Relevante informatie voor de kok"
                         name="foodInfo"
-                        value={values.foodInfo}
+                        value={values.extra.foodInfo}
                         onChange={handleInputChange}
                         helperText={"(voedselallergiën, intoleranties, vegetarish, ...)"}
                     />
@@ -70,7 +70,7 @@ export default function ExtraInformationForm(props) {
                         subject="extra"
                         label="Extra informatie over uw zoon of dochter"
                         name="additionalInfo"
-                        value={values.additionalInfo}
+                        value={values.extra.additionalInfo}
                         onChange={handleInputChange}
                         helperText={"(medisch, allergiën, examens, kamerindeling, ...)"}
                     />
@@ -82,7 +82,7 @@ export default function ExtraInformationForm(props) {
                         subject="extra"
                         name="acceptPictures"
                         label="Ik geef toestemming om foto's van mijn kind te gebruiken voor commerciële doeleinden (klik hier voor details)"
-                        value={values.acceptPictures}
+                        value={values.extra.acceptPictures}
                         onChange={handleInputChange}
                     />
                 </Grid>
@@ -92,9 +92,9 @@ export default function ExtraInformationForm(props) {
                         subject="extra"
                         name="acceptTerms"
                         label="Ik aanvaard de algemene voorwaarden en privacyregels"
-                        value={values.acceptTerms}
+                        value={values.extra.acceptTerms}
                         onChange={handleInputChange}
-                        error={errors.acceptTerms}
+                        error={errors.extra.acceptTerms}
                     />
                 </Grid>
             </Grid>
@@ -102,9 +102,6 @@ export default function ExtraInformationForm(props) {
     )
 }
 
-export function getErrorExtraInfoStep(values) {
-    const errors = {}
-    errors.contact = values.contact ? "" : "Gelieve aan te duiden via welke weg u in contact bent gekomen met Loppem Conversa."
-    errors.acceptTerms = values.acceptTerms ? "" : "Gelieve het cursusreglement te lezen en te accepteren."
-    return errors;
+export function updateExtraInfoErrors(values, errors) {
+
 }

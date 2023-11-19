@@ -30,8 +30,7 @@ const CustomTextField = (props) => {
   const {subject, name, label, value, onChange, type, placeholder, helperText, error = null} = props;
 
   const handleChange = (event) => {
-    event.preventDefault();
-    event.target = {subject: subject, name: name, value: event.target.value};
+    event.target = {subject: subject, name: name, value: event.target.value, error: error};
     onChange(event);
   };
 

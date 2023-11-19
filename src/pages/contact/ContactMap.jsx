@@ -37,7 +37,7 @@ const ContactMap = (props) => {
     <GoogleMap
       mapContainerStyle={containerStyle}
       center={center}
-      zoom="17"
+      zoom={17}
       onLoad={onLoad}
       onUnmount={onUnmount}
       mapTypeId="satellite"

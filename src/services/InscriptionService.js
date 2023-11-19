@@ -4,7 +4,7 @@ import axios from "axios";
 const registerStudent = async (request) => {
     const apiPathInscription = process.env.REACT_APP_API_ENDPOINT;
     return await axios.post(
-        `${apiPathInscription}/api/inscriptionSaveTemporary`,
+        `${apiPathInscription}/api/registration/temporary`,
         request
     ).then(({data}) => {
         console.log("registerStudent " + data.id + " nothing");
@@ -22,9 +22,11 @@ const updateStudent = async (id, request) => {
 
 const getInscription = async (id) => {
     const apiPathInscription = process.env.REACT_APP_API_ENDPOINT;
-    return await axios.get(
+    const response = await axios.get(
         `${apiPathInscription}/api/inscriptionSaveGetTempInscription?id=${id}`
-    ).then(({data}) => Inscription.fromApi(data))
+    )
+      const inscription = Inscription.fromApi(response.data);
+    return inscription
 }
 
 export {registerStudent, updateStudent, getInscription};

@@ -24,16 +24,10 @@ function CustomSelect(props) {
     })
   )
 
-  const {subject, name, labelId, labelText, value, onChange, items, error} = props;
-
-    const [opgeslageFormulier, setOpgeslageFormulier] = useState(undefined)
-
-    useEffect(() => {
-        fetch('/').then(data => a = data)
-    }, []);
+  const {subject, name, labelId, labelText, value, onChange, items, error = null} = props;
 
   const handleChange = (event) => {
-    event.target = {subject: subject, name: name, value: event.target.value};
+    event.target = {subject: subject, name: name, value: event.target.value, error: error};
     onChange(event);
   };
 

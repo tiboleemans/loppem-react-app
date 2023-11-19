@@ -30,9 +30,9 @@ export default function ParentInformationForm(props) {
             subject="parent"
             label="Voornaam ouder"
             name="firstNameParent"
-            value={values.firstNameParent}
+            value={values.parent.firstNameParent}
             onChange={handleInputChange}
-            error={errors.firstNameParent}
+            error={errors.parent.firstNameParent}
           />
         </Grid>
 
@@ -41,9 +41,9 @@ export default function ParentInformationForm(props) {
             subject="parent"
             label="Naam ouder"
             name="lastNameParent"
-            value={values.lastNameParent}
+            value={values.parent.lastNameParent}
             onChange={handleInputChange}
-            error={errors.lastNameParent}
+            error={errors.parent.lastNameParent}
           />
         </Grid>
 
@@ -53,9 +53,9 @@ export default function ParentInformationForm(props) {
             label="E-mail"
             name="email"
             type="email"
-            value={values.email}
+            value={values.parent.email}
             onChange={handleInputChange}
-            error={errors.email}
+            error={errors.parent.email}
           />
         </Grid>
 
@@ -64,10 +64,10 @@ export default function ParentInformationForm(props) {
             subject="parent"
             name="relation"
             label="* Relatie met leerling:"
-            value={values.relation}
+            value={values.parent.relation}
             onChange={handleInputChange}
             items={relationItems}
-            error={errors.relation}
+            error={errors.parent.relation}
           />
         </Grid>
 
@@ -76,9 +76,9 @@ export default function ParentInformationForm(props) {
             subject="parent"
             label="Straat"
             name="street"
-            value={values.street}
+            value={values.parent.street}
             onChange={handleInputChange}
-            error={errors.street}
+            error={errors.parent.street}
           />
         </Grid>
         <Grid item xs={6} sm={3}>
@@ -86,9 +86,9 @@ export default function ParentInformationForm(props) {
             subject="parent"
             label="Huisnummer"
             name="houseNr"
-            value={values.houseNr}
+            value={values.parent.houseNr}
             onChange={handleInputChange}
-            error={errors.houseNr}
+            error={errors.parent.houseNr}
           />
         </Grid>
         <Grid item xs={6} sm={3}>
@@ -96,7 +96,7 @@ export default function ParentInformationForm(props) {
             subject="parent"
             label="Busnummer"
             name="busNr"
-            value={values.busNr}
+            value={values.parent.busNr}
             onChange={handleInputChange}
           />
         </Grid>
@@ -106,9 +106,9 @@ export default function ParentInformationForm(props) {
             subject="parent"
             label="Gemeente"
             name="city"
-            value={values.city}
+            value={values.parent.city}
             onChange={handleInputChange}
-            error={errors.city}
+            error={errors.parent.city}
           />
         </Grid>
 
@@ -117,9 +117,9 @@ export default function ParentInformationForm(props) {
             subject="parent"
             label="Postcode"
             name="zipCode"
-            value={values.zipCode}
+            value={values.parent.zipCode}
             onChange={handleInputChange}
-            error={errors.zipCode}
+            error={errors.parent.zipCode}
           />
         </Grid>
 
@@ -128,9 +128,9 @@ export default function ParentInformationForm(props) {
             subject="parent"
             label="GSM"
             name="gsm"
-            value={values.gsm}
+            value={values.parent.gsm}
             onChange={handleInputChange}
-            error={errors.gsm}
+            error={errors.parent.gsm}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -138,28 +138,13 @@ export default function ParentInformationForm(props) {
             subject="parent"
             label="2e telefoonnummer"
             name="gsm2"
-            value={values.gsm2}
+            value={values.parent.gsm2}
             onChange={handleInputChange}
-            error={errors.gsm2}
+            error={errors.parent.gsm2}
           />
         </Grid>
 
       </Grid>
     </Form>
   )
-}
-
-export function getErrorParentStep(values) {
-  const errors = {}
-  errors.firstNameParent = values.parent.firstNameParent ? "" : "Gelieve uw voornaam in te vullen.\n"
-  errors.lastNameParent = values.parent.lastNameParent ? "" : "Gelieve uw naam in te vullen."
-  errors.email = values.parent.email ? "" : "Gelieve uw e-mailadres in te vullen."
-  errors.relation = values.parent.relation ? "" : "Gelieve uw relatie met de leerling aan te duiden."
-  errors.street = values.parent.street ? "" : "Gelieve uw adres volledig in te vullen."
-  errors.houseNr = values.parent.houseNr ? "" : "Gelieve uw huisnummer in te vullen."
-  errors.city = values.parent.city ? "" : "Gelieve uw gemeente in te vullen."
-  errors.zipCode = values.parent.zipCode ? "" : "Gelieve uw postcode in te vullen."
-  errors.gsm = values.parent.gsm ? "" : "Gelieve uw gsm nummer in te vullen."
-  errors.gsm2 = values.parent.gsm2 ? "" : "Gelieve het nummer in geval van nood in te vullen."
-  return errors;
 }

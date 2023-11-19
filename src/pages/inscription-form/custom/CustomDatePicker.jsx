@@ -1,54 +1,88 @@
-import React from 'react';
+import React, {useMemo, useState} from 'react';
 import {LocalizationProvider} from '@mui/x-date-pickers/LocalizationProvider';
 import {DatePicker} from '@mui/x-date-pickers/DatePicker';
 import nlLocale from "date-fns/locale/nl-BE";
 import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns'
 import {styled} from "@mui/material/styles";
 
-const StyledDatePicker = styled(DatePicker)(({theme}) => ({
-      '& label.Mui-focused': {
-        color: theme.palette.primary.main,
-      },
-      '& .MuiInput-underline:after': {
-        borderBottomColor: 'black',
-      },
-      '& .MuiOutlinedInput-root': {
-        '& fieldset': {
-          borderColor: theme.palette.primary.main,
-          color: "#fff"
-        },
-        '&:hover fieldset': {
-          borderColor: theme.palette.primary.main,
-          color: "#fff"
-        },
-        '&.Mui-focused fieldset': {
-          borderColor: theme.palette.primary.main,
-          color: "#fff"
-        },
-      },
-      '& MuiPickersToolbar-toolbar': {
-        backgroundColor: theme.palette.primary.main,
-        color: "#fff"
-      },
-      '& .MuiPickersYear-yearButton': {
-        '&.Mui-selected': {
-          color: "#fff"
-        }
-      }
-  }));
-function CustomDatePicker(props) {
-  const {subject, name, label, value, onChange, error = null} = props;
-  console.log(value);
 
-  const convertToDefaultEventParameter = (subject, name, value) => ({
+const StyledDatePicker = styled(DatePicker)(({theme}) => ({
+  '& label.Mui-focused': {
+    color: theme.palette.primary.main,
+  },
+  '& .MuiInput-underline:after': {
+    borderBottomColor: 'black',
+  },
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: theme.palette.primary.main,
+      color: "#fff"
+    },
+    '&:hover fieldset': {
+      borderColor: theme.palette.primary.main,
+      color: "#fff"
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: theme.palette.primary.main,
+      color: "#fff"
+    },
+  },
+  '& MuiPickersToolbar-toolbar': {
+    backgroundColor: theme.palette.primary.main,
+    color: "#fff"
+  },
+  '& .MuiPickersYear-yearButton': {
+    '&.Mui-selected': {
+      color: "#fff"
+    }
+  }
+}));
+
+function CustomDatePicker(props) {
+  const {subject, name, label, value, onChange, error = null, onError} = props;
+  const [errorDatePicker, setErrorDatePicker] = useState(null);
+  const minDate = new Date((new Date().getFullYear() - 20) + "-01-01");
+  const maxDate = new Date((new Date().getFullYear() - 9) + "-01-01");
+
+
+  const errorMessage = useMemo(() => {
+    if (error) {
+      return error;
+    }
+
+    switch (errorDatePicker) {
+      case 'maxDate':
+      case 'minDate': {
+        return 'Please select a date in the first quarter of 2022';
+      }
+
+      case 'invalidDate': {
+        return 'Your date is not valid';
+      }
+
+      default: {
+        return errorDatePicker;
+      }
+    }
+  }, [errorDatePicker, value, error]);
+
+  const handleChange = (dateValue) => {
+    onChange(convertToDefaultEventParameter(subject, name, dateValue, error));
+  };
+
+  const handleError = (newError) => {
+    setErrorDatePicker(newError);
+    onError(convertToDefaultEventParameter(subject, "datepicker", value, newError));
+  };
+
+  const convertToDefaultEventParameter = (subject, name, value, error) => ({
+
     target: {
-      subject, name, value
+      subject, name, value, error: error
     }
   })
 
-  const minDate = new Date((new Date().getFullYear() - 20) + "-01-01");
-  const maxDate = new Date((new Date().getFullYear() - 9) + "-01-01");
-    return (
+  return (
     <LocalizationProvider adapterLocale={nlLocale} dateAdapter={AdapterDateFns}>
       <StyledDatePicker
         disableFuture
@@ -58,16 +92,22 @@ function CustomDatePicker(props) {
         subject={subject}
         label={label}
         name={name}
-        onChange={(date) => onChange(convertToDefaultEventParameter(subject, name, date))}
+        onChange={(date) => handleChange(date)}
         value={value}
         minDate={minDate}
-        minDateMessage={"minDateMessage"}
         maxDate={maxDate}
-        maxDateMessage={"maxDateMessage"}
         autoOk={true}
         inputVariant="outlined"
         orientation="landscape"
-        {...(error && {error: true, helperText: error})}
+        onError={(newError) => handleError(newError)}
+        slotProps={{
+          textField: {
+            fullWidth: true,
+            variant: 'outlined',
+            error: !!errorMessage,
+            helperText: errorMessage
+          }
+        }}
       />
 
     </LocalizationProvider>

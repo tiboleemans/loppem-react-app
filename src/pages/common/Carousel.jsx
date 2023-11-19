@@ -4,7 +4,6 @@ import {Fab} from "@mui/material";
 import NavigateNext from "@mui/icons-material/NavigateNext";
 import NavigateBefore from "@mui/icons-material/NavigateBefore";
 import {theme} from "../../theme";
-import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
 
 let globalBulletColor = "red";
 

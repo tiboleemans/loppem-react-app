@@ -2,6 +2,7 @@ import React, {useEffect, useRef} from "react";
 import {Card} from "@mui/material";
 import {Navigation, Pagination} from 'swiper/modules';
 import CardMedia from "@mui/material/CardMedia";
+import "./swiper.scss";
 
 const ImageCarousel = () => {
   const swiperElRef = useRef(null);

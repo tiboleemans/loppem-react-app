@@ -146,8 +146,118 @@
       }
     }
   },
+  "inscription": {
+    "title": "Inschrijvingsformulier",
+    "steps": {
+      "student": "Gegevens leerling",
+      "parent": "Gegevens ouder",
+      "school": "Gegevens school",
+      "extra": "Extra informatie"
+    },
+    "student.label": {
+      "firstName": "Voornaam Leerling",
+      "lastName": "Naam Leerling",
+      "birthdate": "Geboortedatum Leerling",
+      "language": "Cursustaal:",
+      "period": "Periode:",
+      "july": "7 - 17 juli 2024",
+      "august": "4 - 14 augustus 2024",
+      "sex": "Geslacht:",
+      "boy": "Jongen",
+      "girl": "Meisje"
+    },
+    "student.error": {
+      "firstName": "Gelieve de voornaam van de leerling in te vullen.",
+      "lastName": "Gelieve de naam van de leerling in te vullen.",
+      "birthdate": "Gelieve de geboortedatum van de leerling in te vullen.",
+      "language": "Gelieve de gewenste cursustaal aan te duiden.",
+      "period": "Gelieve de gewenste periode aan te duiden.",
+      "sex": "Gelieve het geslacht van de leerling in te vullen."
+    },
+    "parent.label": {
+      "firstName": "Voornaam Leerling",
+      "lastName": "Naam Leerling",
+      "email": "E-mail",
+      "relation": "Relatie met leerling",
+      "mother": "Moeder",
+      "father": "Vader",
+      "guardian": "Voogd",
+      "street": "Straat:",
+      "housnr": "Huisnummer",
+      "busnr": "Busnummer",
+      "city": "Gemeente",
+      "zip": "Postcode",
+      "gsm": "GSM",
+      "gsm2": "2e telefoonnummer"
+    },
+    "parent.error": {
+      "firstName": "Gelieve uw voornaam in te vullen.",
+      "lastName": "Gelieve uw naam in te vullen.",
+      "email": "Gelieve uw e-mailadres in te vullen.",
+      "relation": "Gelieve uw relatie met de leerling aan te duiden.",
+      "street": "Gelieve uw adres volledig in te vullen.",
+      "housnr": "Gelieve uw huisnummer in te vullen.",
+      "city": "Gelieve uw gemeente in te vullen.",
+      "zip": "Gelieve uw postcode in te vullen.",
+      "gsm": "Gelieve uw gsm nummer in te vullen.",
+      "gsm2": "Gelieve het nummer in geval van nood in te vullen."
+    },
+    "school.label": {
+      "name": "Naam school",
+      "street": "Straat:",
+      "housnr": "Huisnummer",
+      "busnr": "Busnummer",
+      "city": "Gemeente",
+      "zip": "Postcode",
+      "prof.title": "Aanspreektitel leerkracht",
+      "prof.name": "Naam leerkracht",
+      "count.years": "Aantal jaren Nederlands of Engels op school",
+      "count.hours": "Aantal uren Nederlands of Engels per week",
+      "immersion": "Volgt uw kind tweetalig onderwijs voor de gekozen doeltaal op school?",
+      "report": "Moet er een rapport na de stage opgestuurd worden naar de school?"
+    },
+    "school.error": {
+      "name": "Gelieve de naam van de school in te vullen.",
+      "street": "Gelieve de straat van de school in te vullen.",
+      "houseNr": "Gelieve het huisnummer van de school in te vullen.",
+      "city": "Gelieve de gemeente van de school in te vullen.",
+      "zip": "Gelieve de postcode van de school in te vullen.",
+      "prof.title": "Gelieve de aanspreektitel van de leerkracht in te vullen.",
+      "prof.name": "Gelieve de naam van de leerkracht in te vullen.",
+      "count.years": "Gelieve het aantal jaren van de gekozen taal op school aan te duiden.",
+      "count.hours": "Gelieve het aantal uren per week van de gekozen taal op school aan te duiden.",
+      "immersion": "Gelieve aan te duiden of de leerling immersie volgt.",
+      "report": "Gelieve aan te duiden of u een rapport wenst op te sturen naar de school na de stage."
+    },
+    "extra.label": {
+      "apported.name": "Naam nieuw aangebrachte leerling",
+      "apported.name.condition": "Geniet van een korting door een nieuwe leerling aan te brengen (klik hier om de voorwaarden te lezen)\n\n",
+      "contact": "Hoe bent u in contact gekomen met de Loppem Conversa?",
+      "contact.choice": {
+        "1": "Mond-tot-mond-reclame",
+        "2": "Via het internet",
+        "3": "Via de school",
+        "4": "Ik ben een oud-leerling",
+        "5": "Via een oud-leerling",
+        "6": "Via het nieuws",
+        "7": "Via de brochure",
+        "8": "Krant/magazine/advertentie",
+        "9": "Andere"
+      },
+      "kitchen": "Relevante informatie voor de kok",
+      "kitchen.example": "((voedselallergiën, intoleranties, vegetarisch, ...))",
+      "info": "Extra informatie over uw zoon of dochter",
+      "info.example": "(medisch, allergiën, examens, kamerindeling, ...)",
+      "pictures": "Ik geef toestemming om foto's van mijn kind te gebruiken voor commerciële doeleinden (klik hier voor details)",
+      "conditions": "Ik aanvaard de algemene voorwaarden en privacyregels"
+    },
+    "extra.error": {
+      "contact": "Gelieve aan te duiden via welke weg u in contact bent gekomen met Loppem Conversa.",
+      "street": "Gelieve het cursusreglement te lezen en te accepteren."
+    }
+  },
   "interest": {
-    "text" : "Kent u iemand die mogelijks geïnteresseerd is?",
+    "text": "Kent u iemand die mogelijks geïnteresseerd is?",
     "button.send": "Stuur een bericht",
     "button.share": "Download brochure"
   }

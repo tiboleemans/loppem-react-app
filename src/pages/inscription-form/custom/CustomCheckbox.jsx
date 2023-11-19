@@ -8,11 +8,10 @@ import {Checkbox} from "@mui/material";
 function CustomCheckbox(props) {
   const {subject, name, label, value, onChange, error} = props;
 
-  const convertToDefaultEventParameter = (subject, name, value) => ({
-    target: {
-      subject, name, value
-    }
-  })
+  const handleChange = (event) => {
+    event.target = {subject: subject, name: name, value: event.target.checked, error: error};
+    onChange(event);
+  };
 
   return (
     <FormControl {...(error && {error: true})}>
@@ -21,7 +20,7 @@ function CustomCheckbox(props) {
           subject={subject}
           name={name}
           checked={value}
-          onChange={(e) => onChange(convertToDefaultEventParameter(subject, name, e.target.checked))}
+          onChange={(e) => handleChange(e)}
         />}
         label={label}
 

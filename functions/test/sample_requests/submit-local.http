@@ -49,7 +49,7 @@ content-type: application/json
 
 ###
 
-POST http://127.0.0.1:5001/loppem-adf69/europe-west1/inscriptionSubmit http/1.1
+POST http://127.0.0.1:5001/loppem-adf69/europe-west1/api/registration/temporary http/1.1
 content-type: application/json
 
  {

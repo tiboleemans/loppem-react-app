@@ -20,7 +20,7 @@ function CustomButtonGroup(props) {
     if (selected === id) {
       return;
     }
-    event.target = {subject: subject, name: name, value: parse(id)};
+    event.target = {subject: subject, name: name, value: parse(id), error: error};
     setSelected(id);
     onChange(event);
   };

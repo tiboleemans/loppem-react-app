@@ -10,12 +10,14 @@ export default function UpdateInscription() {
   let {id} = useParams();
 
   useEffect(() => {
-    const inscription = getInscription(id);
-    setValues(inscription);
-    setValues({
-      ...values,
-      id: id
-    })
+    getInscription(id).then(inscription => {
+      setValues(inscription);
+      setValues({
+        ...values,
+        id: id
+      })
+    });
+
   }, [id])
 
 
