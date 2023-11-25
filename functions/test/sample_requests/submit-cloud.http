@@ -8,7 +8,7 @@ content-type: application/json
     "firstNameStudent": "Franske    ",
     "lastNameStudent": "Vermeulen",
     "gender": "Het is een manneke",
-    "birthday": "2020-01-01",
+    "birthdate": "2020-01-01",
 
     "firstNameParent": "Mario",
     "lastNameParent": "Vermeulen",
@@ -36,7 +36,7 @@ content-type: application/json
     "immersionSchool": "false",
     "reportSchool": "n",
 
-    "apportedStudent": "true",
+    "referral": "true",
     "contact": "euhm",
     "additionalInfo": "Graag",
     "foodInfo": "Hoe meer hoe beter",
@@ -67,7 +67,7 @@ content-type: application/text
     Gekozen periode: {{period}} {{campYear}}<br />
     Naam leerling: {{lastNameStudent}}<br />
     Voornaam leerling: {{firstNameStudent}}<br />
-    Geboortedatum: {{birthday}}<br />
+    Geboortedatum: {{birthdate}}<br />
     Geslacht: {{gender}}<br />
     Naam ouder: {{lastNameParent}}<br />
     Voornaam ouder: {{firstNameParent}}<br />
@@ -92,7 +92,7 @@ content-type: application/text
     Aantal uren les per week in de gekozen taal: {{hoursSchool}}<br />
     CLIL: {{immersionSchool}}<br />
     Rapport: {{reportSchool}}<br />
-    Aangebrachte leerling: {{apportedStudent}}<br />
+    Aangebrachte leerling: {{referral}}<br />
     Contactwijze: {{contact}}<br />
     Extra info: {{additionalInfo}}<br />
     Voedselallergieën of intoleranties: {{foodInfo}}<br />
@@ -119,7 +119,7 @@ content-type: application/text
     Gekozen periode: {{period}} {{campYear}}<br />
     Naam leerling: {{lastNameStudent}}<br />
     Voornaam leerling: {{firstNameStudent}}<br />
-    Geboortedatum: {{birthday}}<br />
+    Geboortedatum: {{birthdate}}<br />
     Geslacht: {{gender}}<br />
     Naam ouder: {{lastNameParent}}<br />
     Voornaam ouder: {{firstNameParent}}<br />
@@ -144,7 +144,7 @@ content-type: application/text
     Aantal uren les per week in de gekozen taal: {{hoursSchool}}<br />
     CLIL: {{immersionSchool}}<br />
     Rapport: {{reportSchool}}<br />
-    Aangebrachte leerling: {{apportedStudent}}<br />
+    Aangebrachte leerling: {{referral}}<br />
     Contactwijze: {{contact}}<br />
     Extra info: {{additionalInfo}}<br />
     Voedselallergieën of intoleranties: {{foodInfo}}<br />

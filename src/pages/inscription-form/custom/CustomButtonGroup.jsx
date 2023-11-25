@@ -20,29 +20,15 @@ function CustomButtonGroup(props) {
     if (selected === id) {
       return;
     }
-    event.target = {subject: subject, name: name, value: parse(id), error: error};
+    event.target = {subject: subject, name: name, value: id, error: error};
     setSelected(id);
     onChange(event);
   };
 
-  const parse = (value) => {
-    if (value === 'yes') {
-      return true;
-    }
-    if (value === 'no') {
-      return false;
-    }
-    return value;
-  }
-
   return (
     <FormControl {...(error && {error: true})}>
       <FormLabel component="legend">{label}</FormLabel>
-      <ButtonGroup fullWidth
-                   name={name}
-                   value={value}
-      >
-
+      <ButtonGroup fullWidth name={name} value={value}>
         {
           items.map(
             (item, index) => (

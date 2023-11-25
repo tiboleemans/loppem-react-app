@@ -1,19 +1,19 @@
-POST http://127.0.0.1:5001/loppem-adf69/europe-west1/api/registration/temporary
+POST http://127.0.0.1:5001/loppem-adf69/europe-west1/api/registration
 content-type: application/json
 
 {
   "student": {
-    "language": "english   ",
-    "period": "august   ",
-    "firstNameStudent": "Joske   ",
-    "lastNameStudent": "Vermeulen",
+    "language": "english",
+    "period": "august",
+    "firstName": "Joske",
+    "lastName": "Vermeulen",
     "gender": "boy",
-    "birthday": "2020-01-01"
+    "birthdate": "2020-01-01"
   },
   "parent": {
-    "siteLanguage": "nl",
-    "firstNameParent": "Mario",
-    "lastNameParent": "Vermeulen",
+    "language": "nl",
+    "firstName": "Mario",
+    "lastName": "Vermeulen",
     "email": "test@test.be",
     "relation": "yes please",
     "street": "Trammezandlei",
@@ -25,23 +25,22 @@ content-type: application/json
     "gsm2": ""
   },
   "school": {
-    "nameSchool": "école de test",
-    "streetSchool": "rue de test",
-    "houseNrSchool": "1",
-    "busNrSchool": "",
-    "citySchool": "Bruxelles",
-    "zipSchool": "1000",
-    "titleProfSchool": "Mr",
-    "nameProfSchool": "François",
-    "yearsSchool": "6",
-    "hoursSchool": "1",
-    "immersionSchool": "true",
-    "reportSchool": null
+    "name": "école de test",
+    "street": "rue de test",
+    "houseNr": "1",
+    "busNr": "",
+    "city": "Bruxelles",
+    "zip": "1000",
+    "titleProf": "Mr",
+    "nameProf": "François",
+    "years": "6",
+    "hours": "1",
+    "immersion": "true"
   },
   "extra": {
-    "apportedStudent": "false",
+    "referral": "false",
     "contact": "euhm",
-    "additionalInfo": "<script>alert('test')</script>",
+    "additionalInfo": "additionalInfo",
     "foodInfo": "Hoe meer hoe beter",
     "interest": "Node.JS",
     "acceptPictures": false,

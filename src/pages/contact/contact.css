@@ -1,6 +1,6 @@
 .contact {
     padding: 4rem;
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(157, 201, 130, 0.4);
 }
 
 .card-contact {
@@ -52,7 +52,7 @@
 }
 
 .contact-facebook-img {
-    width: 200px;
+    height: 85px;
 }
 
 .contact-facebook {
@@ -68,6 +68,7 @@
     float: left;
     margin: 5px 0 10px 0;
     padding: 5px;
+    width: 200px;
 }
 
 .contact-juvigo:hover {
@@ -75,7 +76,7 @@
 }
 
 .contact-juvigo-img {
-    width: 250px;
+    width: 200px;
 }
 
 .contact-vgc-img {

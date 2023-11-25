@@ -22,33 +22,33 @@ export default function BringAFriendForm() {
   return (
     <React.Fragment>
       <div className="banner-button" onClick={handleClickOpen}>
-        {t("bringafriend.form.button")}
+        {t("banner.bringafriend.form.button")}
       </div>
       <Dialog open={open} onClose={handleClose}>
-        <DialogTitle>{t("bringafriend.form.dialog.title")}</DialogTitle>
+        <DialogTitle>{t("banner.bringafriend.form.dialog.title")}</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            {t("bringafriend.form.dialog.subtitle")}
+            {t("banner.bringafriend.form.dialog.subtitle")}
           </DialogContentText>
           <div className="section-header">
-            <h3>{t("bringafriend.form.dialog.section.1.header")}</h3>
+            <h3>{t("banner.bringafriend.form.dialog.section.1.header")}</h3>
           </div>
-          <TextField autoFocus margin="dense" id="name" label={t("bringafriend.form.dialog.section.1.text.field.1")} type="email" fullWidth
+          <TextField autoFocus margin="dense" id="name" label={t("banner.bringafriend.form.dialog.section.1.text.field.1")} type="email" fullWidth
                      variant="standard"/>
-          <TextField autoFocus margin="dense" id="name" label={t("bringafriend.form.dialog.section.1.text.field.2")} fullWidth variant="standard"/>
-          <TextField autoFocus margin="dense" id="name" label={t("bringafriend.form.dialog.section.1.text.field.3")} type="email" fullWidth
+          <TextField autoFocus margin="dense" id="name" label={t("banner.bringafriend.form.dialog.section.1.text.field.2")} fullWidth variant="standard"/>
+          <TextField autoFocus margin="dense" id="name" label={t("banner.bringafriend.form.dialog.section.1.text.field.3")} type="email" fullWidth
                      variant="standard"/>
           <div className="section-header">
-            <h3>{t("bringafriend.form.dialog.section.2.header")}</h3>
+            <h3>{t("banner.bringafriend.form.dialog.section.2.header")}</h3>
           </div>
-          <TextField autoFocus margin="dense" id="name" label={t("bringafriend.form.dialog.section.2.text.field.1")} fullWidth variant="standard"/>
+          <TextField autoFocus margin="dense" id="name" label={t("banner.bringafriend.form.dialog.section.2.text.field.1")} fullWidth variant="standard"/>
         </DialogContent>
         <DialogActions>
           <div className="banner-button-dialog" onClick={handleClose}>
-            {t("bringafriend.form.dialog.action.cancel")}
+            {t("banner.bringafriend.form.dialog.action.cancel")}
           </div>
           <div className="banner-button-dialog" onClick={handleClose}>
-            {t("bringafriend.form.dialog.action.send")}
+            {t("banner.bringafriend.form.dialog.action.send")}
           </div>
         </DialogActions>
       </Dialog>

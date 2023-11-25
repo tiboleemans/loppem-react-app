@@ -1,6 +1,6 @@
 .pricing {
     padding: 4rem;
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(157, 201, 130, 0.4);
 }
 
 .card-header-highlighted {
@@ -49,7 +49,7 @@
     color: white;
     text-align: center;
     padding: 10px 10px;
-    background: rgb(249, 148, 32);
+    background: rgba(157, 201, 130, 1);
     border-radius: 15px 0;
     margin-top: 42px;
     cursor: pointer;
@@ -63,6 +63,10 @@
 .card-camp-label {
     font-size: 20px;
     text-align: right;
+}
+
+.card-camp-grid p {
+    margin: 0 0 0.5rem;
 }
 
 .card-camp-content {

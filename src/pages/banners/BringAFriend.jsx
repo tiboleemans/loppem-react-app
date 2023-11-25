@@ -12,7 +12,7 @@ const BringAFriend = () => {
       <div className="container">
         <Grid container>
           <Grid item sm={12} className="banner-text">
-            <h2>{t("bringafriend.title")}</h2>
+            <h2>{t("banner.bringafriend.title")}</h2>
           </Grid>
           <Grid container className="banner-action">
             <Grid item sm={3}/>

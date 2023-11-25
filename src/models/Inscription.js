@@ -12,8 +12,9 @@ class Inscription {
         this.extra = extra;
     }
 
-    static fromApi(data) {
-        return new Inscription(data.id, Student.fromApi(data.student), Parent.fromApi(data.parent), School.fromApi(data.school), Extra.fromApi(data.extra));
+    static fromApi(registrationData) {
+        return new Inscription(registrationData.id, Student.fromApi(registrationData.student), Parent.fromApi(registrationData.parent),
+          School.fromApi(registrationData.school), Extra.fromApi(registrationData.extra));
     }
 }
 

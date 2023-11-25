@@ -253,7 +253,7 @@ definitions:
   Extra:
     type: object
     properties:
-      apportedStudent:
+      referral:
         type: string
       contact:
         type: string

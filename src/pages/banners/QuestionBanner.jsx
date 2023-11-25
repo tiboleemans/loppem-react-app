@@ -9,11 +9,11 @@ const QuestionBanner = () => {
       <div className="container">
         <Grid container>
           <Grid item sm={8} className="banner-text">
-            <h2>Heeft u een vraag of een probleem?</h2>
+            <h2>{t("banner.question.title")}</h2>
           </Grid>
           <Grid item sm={2}>
             <Button size="large" color="secondary" variant="contained">
-              Contacteer ons
+              {t("banner.question.button")}
             </Button>
           </Grid>
         </Grid>

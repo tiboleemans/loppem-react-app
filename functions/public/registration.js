@@ -77,7 +77,7 @@ async function validateTemporary(req, res, isUpdate) {
   if (validation.error != null) {
     console.log(validation);
     result.response = res.status(400).json(
-        validation,
+      validation,
     );
     return result;
   }
@@ -92,7 +92,7 @@ async function validateTemporary(req, res, isUpdate) {
  * @param {*} data student data
  * @return {boolean} true if contact information is correct
  */
- function preValidateTemporary(data) {
+function preValidateTemporary(data) {
   const joi = tools.saferJoi;
   const schema = joi.object({
     id: joi.string().optional().trim().allow(''),
@@ -103,12 +103,12 @@ async function validateTemporary(req, res, isUpdate) {
       firstNameStudent: joi.string().trim().allow(''),
       lastNameStudent: joi.string().trim().allow(''),
       gender: joi.string().trim().allow(''),
-      birthday: joi.string().trim().allow(''),
+      birthdate: joi.string().trim().allow(''),
     }),
     parent: joi.object().keys({
-      siteLanguage: joi.string().trim().required(),
-      firstNameParent: joi.string().trim().min(3).required(),
-      lastNameParent: joi.string().trim().min(3).required(),
+      language: joi.string().trim().required(),
+      firstName: joi.string().trim().min(3).required(),
+      lastName: joi.string().trim().min(3).required(),
       email: joi.string().trim().email().required(),
       relation: joi.string().trim().allow(''),
       street: joi.string().trim().allow(''),
@@ -120,21 +120,20 @@ async function validateTemporary(req, res, isUpdate) {
       gsm2: joi.string().trim().allow(''),
     }),
     school: joi.object().keys({
-      nameSchool: joi.string().trim().allow(''),
-      streetSchool: joi.string().trim().allow(''),
-      houseNrSchool: joi.string().trim().allow(''),
-      busNrSchool: joi.string().trim().allow(''),
-      citySchool: joi.string().trim().allow(''),
-      zipSchool: joi.string().trim().allow(''),
-      titleProfSchool: joi.string().trim().allow(''),
-      nameProfSchool: joi.string().trim().allow(''),
-      yearsSchool: joi.string().trim().allow(''),
-      hoursSchool: joi.string().trim().allow(''),
-      immersionSchool: joi.boolean().allow(null),
-      reportSchool: joi.boolean().allow(null),
+      name: joi.string().trim().allow(''),
+      street: joi.string().trim().allow(''),
+      houseNr: joi.string().trim().allow(''),
+      busNr: joi.string().trim().allow(''),
+      city: joi.string().trim().allow(''),
+      zip: joi.string().trim().allow(''),
+      titleProf: joi.string().trim().allow(''),
+      nameProf: joi.string().trim().allow(''),
+      years: joi.string().trim().allow(''),
+      hours: joi.string().trim().allow(''),
+      immersion: joi.string().trim().allow(''),
     }),
     extra: joi.object().keys({
-      apportedStudent: joi.string().trim().allow(''),
+      referral: joi.string().trim().allow(''),
       contact: joi.string().trim().allow(''),
       additionalInfo: joi.string().trim().allow(''),
       foodInfo: joi.string().trim().allow(''),
@@ -254,7 +253,7 @@ async function validateFinal(req, res, isUpdate) {
   if (validation.error != null) {
     console.log(validation);
     result.response = res.status(400).json(
-        validation,
+      validation,
     );
     return result;
   }
@@ -269,7 +268,7 @@ async function validateFinal(req, res, isUpdate) {
  * @param {*} data
  * @return {*} validation data
  */
- function preValidateFinal(data) {
+function preValidateFinal(data) {
   const joi = tools.saferJoi;
   const schema = joi.object({
     id: joi.string().optional().trim().allow(''),
@@ -277,47 +276,47 @@ async function validateFinal(req, res, isUpdate) {
     student: joi.object().keys({
       language: joi.string().trim().min(1).required(),
       period: joi.string().trim().min(4).required(),
-      firstNameStudent: joi.string().trim().min(2).required(),
-      lastNameStudent: joi.string().trim().min(2).required(),
+      firstName: joi.string().trim().min(2).required(),
+      lastName: joi.string().trim().min(2).required(),
       gender: joi.string().trim().min(3).required(),
-      birthday: joi.string().trim().min(10).max(10).required(), // TODO: add regex or use date
+      birthdate: joi.string().trim().required(), // TODO: add regex or use date
     }),
     parent: joi.object().keys({
-      siteLanguage: joi.string().trim().allow(''),
-      firstNameParent: joi.string().trim().min(3).required(),
-      lastNameParent: joi.string().trim().min(3).required(),
+      language: joi.string().trim().allow(''),
+      firstName: joi.string().trim().min(1).required(),
+      lastName: joi.string().trim().min(1).required(),
       email: joi.string().trim().email().required(),
-      relation: joi.string().trim(),
-      street: joi.string().trim().min(2).required(),
-      houseNr: joi.string().trim().min(1).max(5).required(),
-      busNr: joi.string().trim().max(10).allow(''),
-      city: joi.string().trim().min(2).required(),
-      zipCode: joi.string().trim().min(4).required(),
-      gsm: joi.string().trim().min(10).required(),
-      gsm2: joi.string().trim().allow(''),
+      // email: joi.string().trim().required(),
+      relation: joi.string().trim().required(),
+      street: joi.string().trim().min(1).required(),
+      houseNr: joi.string().trim().min(1).required(),
+      busNr: joi.string().trim().allow(''),
+      city: joi.string().trim().min(1).required(),
+      zipCode: joi.string().trim().min(1).required(),
+      gsm: joi.string().trim().min(1).required(),
+      gsm2: joi.string().trim().min(1).allow(''),
     }),
     school: joi.object().keys({
-      nameSchool: joi.string().trim().min(3).required(),
-      streetSchool: joi.string().trim().min(3).required(),
-      houseNrSchool: joi.string().trim().min(1).max(5).required(),
-      busNrSchool: joi.string().trim().max(10).allow(''),
-      citySchool: joi.string().trim().min(2).required(),
-      zipSchool: joi.string().trim().min(4).required(),
-      titleProfSchool: joi.string().trim().min(2).required(),
-      nameProfSchool: joi.string().trim().min(3).required(),
-      yearsSchool: joi.string().trim().required(),
-      hoursSchool: joi.string().trim().required(),
-      immersionSchool: joi.boolean(),
-      reportSchool: joi.string().trim().allow(''),
+      name: joi.string().trim().min(1).required(),
+      street: joi.string().trim().min(1).required(),
+      houseNr: joi.string().trim().min(1).required(),
+      busNr: joi.string().trim().allow(''),
+      city: joi.string().trim().min(1).required(),
+      zip: joi.string().trim().min(1).required(),
+      titleProf: joi.string().trim().min(1).required(),
+      nameProf: joi.string().trim().min(1).required(),
+      years: joi.string().trim().required(),
+      hours: joi.string().trim().required(),
+      immersion: joi.string().trim().required(),
     }),
     extra: joi.object().keys({
-      apportedStudent: joi.boolean(),
-      contact: joi.string().trim().min(3).required(),
+      referral: joi.string().trim().allow(''),
+      contact: joi.string().trim().min(1).required(),
       additionalInfo: joi.string().trim().allow(''),
       foodInfo: joi.string().trim().allow(''),
       interest: joi.string().trim().allow(''),
       acceptPictures: joi.boolean(),
-      acceptTerms: joi.boolean().allow(true),
+      acceptTerms: joi.boolean(),
     })
   });
 
@@ -325,7 +324,7 @@ async function validateFinal(req, res, isUpdate) {
     presence: 'required', // don't save an empty object
     convert: true, // perform trim and XSS sanitizations
     abortEarly: false, // validate all fields instead of stopping at the first error
-    allowUnknown: false, // do not allow unknonw fields
+    allowUnknown: false, // do not allow unknown fields
     errors: {
       escapeHtml: true, // espace the original data in error messages
     },
@@ -375,7 +374,8 @@ async function getAndTransformRegistration(docId) {
   if (!doc.exists) {
     return null;
   }
-  return {...tools.stripTechnicalFields(doc.data()),
+  return {
+    ...tools.stripTechnicalFields(doc.data()),
     id: docId,
   }
 }
@@ -395,12 +395,12 @@ async function getAndTransformRegistration(docId) {
  */
 async function performInsert(data) {
   const writeResult = await db
-      .collection('registration')
-      .add({
-        ...data,
-        insertTimestamp: new Date(),
-        campYear: tools.campYear(),
-      });
+    .collection('registration')
+    .add({
+      ...data,
+      insertTimestamp: new Date(),
+      campYear: tools.campYear(),
+    });
   console.info(`Added document with id ${writeResult.id}`);
   return writeResult.id;
 }
@@ -412,15 +412,15 @@ async function performInsert(data) {
  */
 async function performUpdate(docId, data) {
   await db
-      .collection('registration')
-      .doc(docId)
-      .set({
+    .collection('registration')
+    .doc(docId)
+    .set({
         ...data,
         updateTimestamp: new Date(),
       }, {
         merge: true,
       },
-      );
+    );
   console.info(`Updated document with id ${docId}`);
 }
 

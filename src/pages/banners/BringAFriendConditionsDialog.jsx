@@ -34,7 +34,7 @@ export default function BringAFriendConditionsDialog() {
   return (
     <React.Fragment>
       <div className="banner-button" onClick={handleClickOpen('paper')}>
-        {t("bringafriend.conditions.button")}
+        {t("banner.bringafriend.conditions.button")}
       </div>
       <Dialog
         open={open}
@@ -43,23 +43,23 @@ export default function BringAFriendConditionsDialog() {
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <DialogTitle id="scroll-dialog-title">{t("bringafriend.conditions.dialog.title")}</DialogTitle>
+        <DialogTitle id="scroll-dialog-title">{t("banner.bringafriend.conditions.dialog.title")}</DialogTitle>
         <DialogContent dividers={scroll === 'paper'}>
           <DialogContentText
             id="scroll-dialog-description"
             ref={descriptionElementRef}
             tabIndex={-1}
           >
-            <CardContent className="pricing1__card-content text-left">
+            <CardContent>
               <ul>
-                <li>{t("bringafriend.conditions.dialog.content.1")}</li>
-                <li>{t("bringafriend.conditions.dialog.content.2")}</li>
-                <li>{t("bringafriend.conditions.dialog.content.3")}</li>
-                <li>{t("bringafriend.conditions.dialog.content.4")}</li>
-                <li>{t("bringafriend.conditions.dialog.content.5")}</li>
-                <li>{t("bringafriend.conditions.dialog.content.6")}</li>
+                <li>{t("banner.bringafriend.conditions.dialog.content.1")}</li>
+                <li>{t("banner.bringafriend.conditions.dialog.content.2")}</li>
+                <li>{t("banner.bringafriend.conditions.dialog.content.3")}</li>
+                <li>{t("banner.bringafriend.conditions.dialog.content.4")}</li>
+                <li>{t("banner.bringafriend.conditions.dialog.content.5")}</li>
+                <li>{t("banner.bringafriend.conditions.dialog.content.6")}</li>
               </ul>
-              <p><Trans i18nKey="bringafriend.conditions.dialog.content.footer" components={{bold: <strong/>}}/></p>
+              <p><Trans i18nKey="banner.bringafriend.conditions.dialog.content.footer"/></p>
             </CardContent>
           </DialogContentText>
         </DialogContent>
@@ -67,7 +67,6 @@ export default function BringAFriendConditionsDialog() {
           <div className="banner-button-dialog" onClick={handleClose}>
             {t("common.button.close")}
           </div>
-          {/*<Button color="primary" variant="contained" onClick={handleClose}>{t("common.button.close")}</Button>*/}
         </DialogActions>
       </Dialog>
     </React.Fragment>

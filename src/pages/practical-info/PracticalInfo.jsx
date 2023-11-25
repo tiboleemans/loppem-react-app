@@ -1,56 +1,75 @@
 import React, {useState} from "react";
 import {Accordion, AccordionDetails, AccordionSummary, Card, Grid,} from "@mui/material";
 import "./practicalInfo.css"
+import {Trans, useTranslation} from "react-i18next";
+import ScrollTo from "../common/ScrollTo";
 
 const PracticalInfo = () => {
   const [tabIndex, setTabIndex] = useState(0);
   const [expandedIndex, setExpandedIndex] = useState(0);
+  const {t} = useTranslation();
 
   const categoryList = [
     {
-      title: "Inschrijvingen",
+      title: t("practical.tab.1.title"),
       faqs: [
         {
-          question: "Hoe inschrijven?",
-          answer: "Klik op \"inschrijven\" op de navigatiebalk van onze website en vul het formulier in. Zorg ervoor dat u alle verplichte velden hebt ingevuld en het cursusreglement hebt aanvaard. In geval van vragen: contacteer ons\n" +
-            "- via e-mail: info@loppemconversa.be\n" +
-            "- telefonisch: 0478/51.93.44\n" +
-            "Na de inschrijving krijgt u een melding en een bevestigingsmail dat de inschrijving werd geregistreerd."
+          question: t("practical.tab.1.content.card.1.title"),
+          answer: <Trans i18nKey="practical.tab.1.content.card.1.body" components={{scrollTo: <ScrollTo to="inscription" className="link"/>, header: <h3/>}}/>,
         },
         {
-          question: "Wanneer betalen?",
-          answer: "U betaalt het voorschot binnen de tien dagen na inschrijving. Het saldo (€ 400) wordt volstort vóór 1 juni 2020. Wanneer u na 1 juni 2020 inschrijft, betaalt u het volledige bedrag onmiddellijk.\n" +
-            "Ons rekeningnummer is BE16 0018 5319 2474. Om te weten welk voorschot u dient te betalen, afhankelijk van een mogelijke korting, klikt u op \"informatie\" in de navigatiebalk van onze website of klikt u op de vraag hieronder."
+          question: t("practical.tab.1.content.card.2.title"),
+          answer: <Trans i18nKey="practical.tab.1.content.card.2.body" components={{header: <h3/>}}/>,
         },
         {
-          question: "Heb ik recht op bepaalde kortingen?",
-          answer: "SPECIALE KORTING:\n" +
-            "€ 20 bij het aanbrengen van een nieuwe leerling, onder de volgende voorwaarden:\n" +
-            "Uw kind is zelf ingeschreven.\n" +
-            "De nieuw aangebrachte leerling heeft nog nooit een stage bij Loppem Conversa gevolgd en behoort niet tot hetzelfde gezin (dus inwonend op hetzelfde adres).\n" +
-            "U vermeldt de naam van deze leerling duidelijk in het inschrijvingsformulier op de website in het daartoe bestemde vakje.\n" +
-            "U kunt elkaar niet wederzijds aanbrengen.\n" +
-            "\n" +
-            "Deze korting wordt pas toegekend en terugbetaald NA de stage."
+          question: t("practical.tab.1.content.card.3.title"),
+          answer: <Trans i18nKey="practical.tab.1.content.card.3.body" components={{header: <h3/>}}/>,
+        },
+        {
+          question: t("practical.tab.1.content.card.4.title"),
+          answer: t("practical.tab.1.content.card.4.body"),
         }
       ]
     },
     {
-      title: "Stage",
+      title: t("practical.tab.2.title"),
       faqs: [
         {
-          question: "Voor welke stages is er plaats?",
-          answer: "Onze stages gaan enkel door in de zomervakantie tussen 2 - 12 juli & 2 - 12 augustus \n" +
-            "In het inschrijvingsformulier worden de keuzes van de beschikbare stages getoond. Zolang de stageperiode in het inschrijvingsformulier zichtbaar is, betekent dit dat er plaats is voor deze stage."
+          question: t("practical.tab.2.content.card.1.title"),
+          answer: t("practical.tab.2.content.card.1.body"),
+        },
+        {
+          question: t("practical.tab.2.content.card.2.title"),
+          answer: t("practical.tab.2.content.card.2.body"),
+        },
+        {
+          question: t("practical.tab.2.content.card.3.title"),
+          answer: t("practical.tab.2.content.card.3.body"),
+        },
+        {
+          question: t("practical.tab.2.content.card.4.title"),
+          answer: t("practical.tab.2.content.card.4.body"),
+        },
+        {
+          question: t("practical.tab.2.content.card.5.title"),
+          answer: t("practical.tab.2.content.card.5.body"),
+        },
+        {
+          question: t("practical.tab.2.content.card.6.title"),
+          answer: t("practical.tab.2.content.card.6.body"),
+        },
+        {
+          question: t("practical.tab.2.content.card.7.title"),
+          answer: t("practical.tab.2.content.card.7.body"),
         }
       ]
     },
     {
-      title: "Administratie",
+      title: t("practical.tab.3.title"),
       faqs: [
         {
-          question: "Komt mijn ziekenfonds tussen?",
-          answer: "Sommige ziekenfondsen bieden een tegemoetkoming aan. Informeer bij uw ziekenfonds. Voor leerlingen tot 12 jaar wordt een fiscaal attest voor opvang opgeleverd."
+          question: t("practical.tab.3.content.card.1.title"),
+          answer: t("practical.tab.3.content.card.1.body"),
         }
       ]
     },
@@ -60,7 +79,7 @@ const PracticalInfo = () => {
     <div className="info-card" id="info">
       <div className="container">
         <Card className="card-container">
-          <h1>Praktische informatie</h1>
+          <h1>{t("practical.title")}</h1>
           <div className="practical-info-grid">
             <Grid container spacing={3}>
               <Grid item md={3} sm={4} xs={12}>
@@ -79,7 +98,7 @@ const PracticalInfo = () => {
                 </div>
               </Grid>
               <Grid item md={9} sm={8} xs={12}>
-                {<div>
+                {<div className="practical-info-content">
                   {categoryList[tabIndex].faqs.map((faq, ind) => (
                     <Accordion
                       key={ind}
@@ -93,9 +112,7 @@ const PracticalInfo = () => {
                         {faq.question}
                       </AccordionSummary>
                       <AccordionDetails className="accordion-details">
-                        <p>
-                          {faq.answer}
-                        </p>
+                        {faq.answer}
                       </AccordionDetails>
                     </Accordion>
                   ))}

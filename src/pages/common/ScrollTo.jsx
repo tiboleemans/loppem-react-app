@@ -1,12 +1,13 @@
 import React from "react";
 import {scrollTo} from "./utils";
 
-const ScrollTo = ({to, onScroll, children}) => {
+const ScrollTo = ({to, onScroll, className, children}) => {
   let appContainer = document.querySelector(".scrollable-content");
   if (!appContainer) appContainer = window;
 
   return (
     <a
+      className={`${className}`}
       href={`#${to}`}
       onClick={(e) => {
         scrollTo(appContainer, to);

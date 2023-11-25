@@ -1,14 +1,28 @@
 .vacations {
     padding: 4rem;
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(157, 201, 130, 0.4);
+}
+
+.image-grid {
+    margin-top: -40px;
+}
+
+.vacations-grid {
+    margin-top: 20px;
 }
 
 .vacations-card {
     padding: 2rem;
 }
 
+.vacations-title {
+    margin-top: 25px;
+}
+
 .vacations-content {
     font-size: 16px;
+    text-align: justify;
+    margin-top: 10px;
 }
 
 .vacation-swiper-slide-card {

@@ -9,7 +9,7 @@ content-type: application/json
     "firstNameStudent": "Joske    ",
     "lastNameStudent": "Vermeulen",
     "gender": "<script type=\"javascript\">alert('test')</script>",
-    "birthday": "2020-01-01",
+    "birthdate": "2020-01-01",
 
     "firstNameParent": "Mario",
     "lastNameParent": "Vermeulen",
@@ -37,7 +37,7 @@ content-type: application/json
     "immersionSchool": "false",
     "reportSchool": "n",
 
-    "apportedStudent": "true",
+    "referral": "true",
     "contact": "euhm",
     "additionalInfo": "Graag",
     "foodInfo": "Hoe meer hoe beter",
@@ -59,7 +59,7 @@ content-type: application/json
     "firstNameStudent": "Franske    ",
     "lastNameStudent": "Vermeulen",
     "gender": "<script type=\"javascript\">alert('test')</script>",
-    "birthday": "2020-01-01",
+    "birthdate": "2020-01-01",
 
     "firstNameParent": "Mario",
     "lastNameParent": "Vermeulen",
@@ -87,7 +87,7 @@ content-type: application/json
     "immersionSchool": "false",
     "reportSchool": "n",
 
-    "apportedStudent": "true",
+    "referral": "true",
     "contact": "euhm",
     "additionalInfo": "Graag",
     "foodInfo": "Hoe meer hoe beter",

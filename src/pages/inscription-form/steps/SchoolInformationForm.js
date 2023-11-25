@@ -1,21 +1,21 @@
 import React from 'react';
 import {Form} from "../useForm";
-import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import CustomTextField from "../custom/CustomTextField";
 import CustomButtonGroup from "../custom/CustomButtonGroup";
+import {useTranslation} from "react-i18next";
 
 
 export default function SchoolInformationForm(props) {
 
   const {values, handleInputChange, errors} = props;
-
+  const {t} = useTranslation();
   const titleProfItems = [
     {id: 'mister', title: 'Meneer'},
     {id: 'madam', title: 'Mevrouw'},
   ]
 
-  const yearsSchoolItems = [
+  const yearsItems = [
     {id: '0', title: '0'},
     {id: '1', title: '1'},
     {id: '2', title: '2'},
@@ -26,7 +26,7 @@ export default function SchoolInformationForm(props) {
     {id: '7', title: '7+'},
   ]
 
-  const hoursSchoolItems = [
+  const hoursItems = [
     {id: '0', title: '0'},
     {id: '1', title: '1'},
     {id: '2', title: '2'},
@@ -37,156 +37,139 @@ export default function SchoolInformationForm(props) {
     {id: '7', title: '7+'},
   ]
 
-  const immersionSchoolItems = [
-    {id: 'yes', title: 'Ja'},
-    {id: 'no', title: 'Nee'},
+  const immersionItems = [
+    {id: 'yes', title: t("inscription.school.label.yes")},
+    {id: 'no', title: t("inscription.school.label.no")}
   ]
 
-  const reportSchoolItems = [
-    {id: 'yes', title: 'Ja'},
-    {id: 'no', title: 'Nee'},
-  ]
+  const subject = "school";
 
   return (
     <Form>
-      <Typography variant="h5" gutterBottom>
-        Gegevens school
-      </Typography>
+      <h3 className="inscription-form-title">{t("inscription.steps.school")}</h3>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="school"
-            label="Naam school"
-            name="nameSchool"
-            value={values?.school?.nameSchool}
+            subject={subject}
+            label={t("inscription.school.label.name")}
+            name="name"
+            value={values.school.name}
             onChange={handleInputChange}
-            error={errors?.school.nameSchool}
+            error={errors.school.name}
           />
         </Grid>
         <Grid item sm={6}/>
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="school"
-            label="Straat"
-            name="streetSchool"
-            value={values?.school?.streetSchool}
+            subject={subject}
+            label={t("inscription.school.label.street")}
+            name="street"
+            value={values.school.street}
             onChange={handleInputChange}
-            error={errors?.school.streetSchool}
+            error={errors.school.street}
           />
         </Grid>
 
         <Grid item xs={6} sm={3}>
           <CustomTextField
-            subject="school"
-            label="Huisnummer"
-            name="houseNrSchool"
-            value={values?.school?.houseNrSchool}
+            subject={subject}
+            label={t("inscription.school.label.houseNr")}
+            name="houseNr"
+            value={values.school.houseNr}
             onChange={handleInputChange}
-            error={errors?.school.houseNrSchool}
+            error={errors.school.houseNr}
           />
         </Grid>
 
         <Grid item xs={6} sm={3}>
           <CustomTextField
-            subject="school"
-            label="Busnummer"
-            name="busNrSchool"
-            value={values?.school?.busNrSchool}
+            subject={subject}
+            label={t("inscription.school.label.busNr")}
+            name="busNr"
+            value={values.school.busNr}
             onChange={handleInputChange}
           />
         </Grid>
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="school"
-            label="Gemeente"
-            name="citySchool"
-            value={values?.school?.citySchool}
+            subject={subject}
+            label={t("inscription.school.label.city")}
+            name="city"
+            value={values.school.city}
             onChange={handleInputChange}
-            error={errors?.school.citySchool}
+            error={errors.school.city}
           />
         </Grid>
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="school"
-            label="Postcode"
-            name="zipSchool"
-            value={values?.school?.zipSchool}
+            subject={subject}
+            label={t("inscription.school.label.zip")}
+            name="zip"
+            value={values.school.zip}
             onChange={handleInputChange}
-            error={errors?.school.zipSchool}
+            error={errors.school.zip}
           />
         </Grid>
 
-        <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
+        <Grid item xs={12} sm={6}>
           <CustomButtonGroup
-            subject="school"
-            name="titleProfSchool"
-            label="Aanspreektitel leerkracht"
-            value={values?.school?.titleProfSchool}
+            subject={subject}
+            name="titleProf"
+            label={t("inscription.school.label.prof.title")}
+            value={values.school.titleProf}
             onChange={handleInputChange}
             items={titleProfItems}
-            error={errors?.school.titleProfSchool}
+            error={errors.school.titleProf}
           />
         </Grid>
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="school"
-            label="Naam leerkracht"
-            name="nameProfSchool"
-            value={values?.school?.nameProfSchool}
+            subject={subject}
+            label={t("inscription.school.label.prof.name")}
+            name="nameProf"
+            value={values.school.nameProf}
             onChange={handleInputChange}
-            error={errors?.school.nameProfSchool}
+            error={errors.school.nameProf}
           />
         </Grid>
 
-        <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
+        <Grid item xs={12} sm={6}>
           <CustomButtonGroup
-            subject="school"
-            name="yearsSchool"
-            label="Aantal jaren Nederlands of Engels op school"
-            value={values?.school?.yearsSchool}
+            subject={subject}
+            name="years"
+            label={t("inscription.school.label.count.years")}
+            value={values.school.years}
             onChange={handleInputChange}
-            items={yearsSchoolItems}
-            error={errors?.school.yearsSchool}
+            items={yearsItems}
+            error={errors.school.years}
           />
         </Grid>
 
-        <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
+        <Grid item xs={12} sm={6}>
           <CustomButtonGroup
-            subject="school"
-            name="hoursSchool"
-            label="Aanal schooluren Nederlands of Engels per week"
-            value={values?.school?.hoursSchool}
+            subject={subject}
+            name="hours"
+            label={t("inscription.school.label.count.hours")}
+            value={values.school.hours}
             onChange={handleInputChange}
-            items={hoursSchoolItems}
-            error={errors?.school.hoursSchool}
+            items={hoursItems}
+            error={errors.school.hours}
           />
         </Grid>
 
-        <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
+        <Grid item xs={12} sm={6}>
           <CustomButtonGroup
-            subject="school"
-            name="immersionSchool"
-            label="Volgt uw kind tweetalig onderwijs voor de gekozen doeltaal op school?"
-            value={values?.school?.immersionSchool}
+            subject={subject}
+            name="immersion"
+            label={t("inscription.school.label.immersion")}
+            value={values.school.immersion}
             onChange={handleInputChange}
-            items={immersionSchoolItems}
-            error={errors?.school.immersionSchool}
-          />
-        </Grid>
-
-        <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
-          <CustomButtonGroup
-            subject="school"
-            name="reportSchool"
-            label="Moet er een rapport na de stage opgestuurd worden naar de school?"
-            value={values?.school?.reportSchool}
-            onChange={handleInputChange}
-            items={reportSchoolItems}
-            error={errors?.school.reportSchool}
+            items={immersionItems}
+            error={errors.school.immersion}
           />
         </Grid>
       </Grid>

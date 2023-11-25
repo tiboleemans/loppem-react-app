@@ -15,21 +15,17 @@ export default function useForm(showValidation, step) {
   const [componentErrors, setComponentErrors] = useState(initialComponentErrorValues);
   const [errors, setErrors] = useState(initialErrorValues);
 
-  useEffect(() => {
-    if (!showValidation) {
-      return;
-    }
-    errors.initiated = true;
+  function updateMyStepErrors() {
     if (step === 0) {
       errors.student.language = values.student.language ? null : t("inscription.student.error.firstName")
       errors.student.period = values.student.period ? null : t("inscription.student.error.firstName")
-      errors.student.firstNameStudent = values.student.firstNameStudent ? null : t("inscription.student.error.firstName")
-      errors.student.lastNameStudent = values.student.lastNameStudent ? null : t("inscription.student.error.lastName")
-      errors.student.birthday = values.student.birthday ? null : t("inscription.student.error.birthdate")
+      errors.student.firstName = values.student.firstName ? null : t("inscription.student.error.firstName")
+      errors.student.lastName = values.student.lastName ? null : t("inscription.student.error.lastName")
+      errors.student.birthdate = values.student.birthdate ? null : t("inscription.student.error.birthdate")
       errors.student.gender = values.student.gender ? null : t("inscription.student.error.sex")
     } else if (step === 1) {
-      errors.parent.firstNameParent = values.parent.firstNameParent ? null : t("inscription.parent.error.firstName")
-      errors.parent.lastNameParent = values.parent.lastNameParent ? null : t("inscription.parent.error.lastName")
+      errors.parent.firstName = values.parent.firstName ? null : t("inscription.parent.error.firstName")
+      errors.parent.lastName = values.parent.lastName ? null : t("inscription.parent.error.lastName")
       errors.parent.email = values.parent.email ? null : t("inscription.parent.error.email")
       errors.parent.relation = values.parent.relation ? null : t("inscription.parent.error.relation")
       errors.parent.street = values.parent.street ? null : t("inscription.parent.error.street")
@@ -39,17 +35,16 @@ export default function useForm(showValidation, step) {
       errors.parent.gsm = values.parent.gsm ? null : t("inscription.parent.error.gsm")
       errors.parent.gsm2 = values.parent.gsm2 ? null : t("inscription.parent.error.gsm2")
     } else if (step === 2) {
-      errors.school.nameSchool = values.school.nameSchool ? null : t("inscription.school.error.name")
-      errors.school.streetSchool = values.school.streetSchool ? null : t("inscription.school.error.street")
-      errors.school.houseNrSchool = values.school.houseNrSchool ? null : t("inscription.school.error.houseNr")
-      errors.school.citySchool = values.school.citySchool ? null : t("inscription.school.error.city")
-      errors.school.zipSchool = values.school.zipSchool ? null : t("inscription.school.error.zip")
-      errors.school.titleProfSchool = values.school.titleProfSchool ? null : t("inscription.school.error.prof.title")
-      errors.school.nameProfSchool = values.school.nameProfSchool ? null : t("inscription.school.error.prof.name")
-      errors.school.yearsSchool = values.school.yearsSchool ? null : t("inscription.school.error.count.years")
-      errors.school.hoursSchool = values.school.hoursSchool ? null : t("inscription.school.error.count.hours")
-      errors.school.immersionSchool = values.school.immersionSchool ? null : t("inscription.school.error.immersion")
-      errors.school.reportSchool = values.school.reportSchool ? null : t("inscription.school.error.report")
+      errors.school.name = values.school.name ? null : t("inscription.school.error.name")
+      errors.school.street = values.school.street ? null : t("inscription.school.error.street")
+      errors.school.houseNr = values.school.houseNr ? null : t("inscription.school.error.houseNr")
+      errors.school.city = values.school.city ? null : t("inscription.school.error.city")
+      errors.school.zip = values.school.zip ? null : t("inscription.school.error.zip")
+      errors.school.titleProf = values.school.titleProf ? null : t("inscription.school.error.prof.title")
+      errors.school.nameProf = values.school.nameProf ? null : t("inscription.school.error.prof.name")
+      errors.school.years = values.school.years ? null : t("inscription.school.error.count.years")
+      errors.school.hours = values.school.hours ? null : t("inscription.school.error.count.hours")
+      errors.school.immersion = values.school.immersion ? null : t("inscription.school.error.immersion")
     } else if (step === 3) {
       errors.extra.contact = values.extra.contact ? null : t("inscription.extra.error.contact")
       errors.extra.acceptTerms = values.extra.acceptTerms ? null : t("inscription.extra.error.street")
@@ -59,6 +54,13 @@ export default function useForm(showValidation, step) {
         ...errors
       }
     )
+  }
+
+  useEffect(() => {
+    if (!showValidation) {
+      return;
+    }
+    updateMyStepErrors();
   }, [values, showValidation]);
 
 
@@ -117,7 +119,8 @@ export default function useForm(showValidation, step) {
     handleInputChange,
     handleOnError,
     errors,
-    componentErrors
+    componentErrors,
+    updateMyStepErrors
   }
 };
 

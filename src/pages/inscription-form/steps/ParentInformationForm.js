@@ -1,56 +1,54 @@
 import React from 'react';
 import {Form} from "../useForm";
-import Typography from "@mui/material/Typography";
 import Grid from "@mui/material/Grid";
 import CustomTextField from "../custom/CustomTextField";
 import CustomButtonGroup from "../custom/CustomButtonGroup";
+import {useTranslation} from "react-i18next";
 
 
 export default function ParentInformationForm(props) {
 
   const {values, handleInputChange, errors} = props;
+  const {t} = useTranslation();
 
   const relationItems = [
-    {id: 'mother', title: 'Moeder'},
-    {id: 'father', title: 'Vader'},
-    {id: 'guardian', title: 'Voogd'},
+    {id: 'mother', title: t("inscription.parent.label.mother")},
+    {id: 'father', title: t("inscription.parent.label.father")},
+    {id: 'guardian', title: t("inscription.parent.label.guardian")},
   ]
 
+  const subject = "parent";
 
   return (
-
     <Form>
-      <Typography variant="h5" gutterBottom>
-        Gegevens ouder
-      </Typography>
-
+      <h3 className="inscription-form-title">{t("inscription.steps.parent")}</h3>
       <Grid container spacing={2}>
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="parent"
-            label="Voornaam ouder"
-            name="firstNameParent"
-            value={values.parent.firstNameParent}
+            subject={subject}
+            label={t("inscription.parent.label.firstName")}
+            name="firstName"
+            value={values.parent.firstName}
             onChange={handleInputChange}
-            error={errors.parent.firstNameParent}
+            error={errors.parent.firstName}
           />
         </Grid>
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="parent"
-            label="Naam ouder"
-            name="lastNameParent"
-            value={values.parent.lastNameParent}
+            subject={subject}
+            label={t("inscription.parent.label.lastName")}
+            name="lastName"
+            value={values.parent.lastName}
             onChange={handleInputChange}
-            error={errors.parent.lastNameParent}
+            error={errors.parent.lastName}
           />
         </Grid>
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="parent"
-            label="E-mail"
+            subject={subject}
+            label={t("inscription.parent.label.email")}
             name="email"
             type="email"
             value={values.parent.email}
@@ -59,11 +57,11 @@ export default function ParentInformationForm(props) {
           />
         </Grid>
 
-        <Grid item xs={12} sm={6} style={{marginTop: '-10px'}}>
+        <Grid item xs={12} sm={6}>
           <CustomButtonGroup
-            subject="parent"
+            subject={subject}
             name="relation"
-            label="* Relatie met leerling:"
+            label={t("inscription.parent.label.relation")}
             value={values.parent.relation}
             onChange={handleInputChange}
             items={relationItems}
@@ -73,8 +71,8 @@ export default function ParentInformationForm(props) {
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="parent"
-            label="Straat"
+            subject={subject}
+            label={t("inscription.parent.label.street")}
             name="street"
             value={values.parent.street}
             onChange={handleInputChange}
@@ -83,8 +81,8 @@ export default function ParentInformationForm(props) {
         </Grid>
         <Grid item xs={6} sm={3}>
           <CustomTextField
-            subject="parent"
-            label="Huisnummer"
+            subject={subject}
+            label={t("inscription.parent.label.houseNr")}
             name="houseNr"
             value={values.parent.houseNr}
             onChange={handleInputChange}
@@ -93,8 +91,8 @@ export default function ParentInformationForm(props) {
         </Grid>
         <Grid item xs={6} sm={3}>
           <CustomTextField
-            subject="parent"
-            label="Busnummer"
+            subject={subject}
+            label={t("inscription.parent.label.busNr")}
             name="busNr"
             value={values.parent.busNr}
             onChange={handleInputChange}
@@ -103,8 +101,8 @@ export default function ParentInformationForm(props) {
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="parent"
-            label="Gemeente"
+            subject={subject}
+            label={t("inscription.parent.label.city")}
             name="city"
             value={values.parent.city}
             onChange={handleInputChange}
@@ -114,8 +112,8 @@ export default function ParentInformationForm(props) {
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="parent"
-            label="Postcode"
+            subject={subject}
+            label={t("inscription.parent.label.zip")}
             name="zipCode"
             value={values.parent.zipCode}
             onChange={handleInputChange}
@@ -125,8 +123,8 @@ export default function ParentInformationForm(props) {
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="parent"
-            label="GSM"
+            subject={subject}
+            label={t("inscription.parent.label.gsm")}
             name="gsm"
             value={values.parent.gsm}
             onChange={handleInputChange}
@@ -135,8 +133,8 @@ export default function ParentInformationForm(props) {
         </Grid>
         <Grid item xs={12} sm={6}>
           <CustomTextField
-            subject="parent"
-            label="2e telefoonnummer"
+            subject={subject}
+            label={t("inscription.parent.label.gsm2")}
             name="gsm2"
             value={values.parent.gsm2}
             onChange={handleInputChange}

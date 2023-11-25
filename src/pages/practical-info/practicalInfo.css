@@ -1,6 +1,6 @@
 .info-card {
     padding: 4rem;
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(157, 201, 130, 0.4);
 }
 
 .info-index-table {
@@ -19,4 +19,12 @@
 
 .practical-info-grid {
     margin-top: 50px;
+}
+
+a.practical-info-content {
+    text-decoration: underline;
+}
+
+.link {
+    text-decoration: underline !important;
 }

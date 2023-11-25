@@ -5,46 +5,49 @@ GET https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveGetTempI
 POST https://europe-west1-loppem-adf69.cloudfunctions.net/inscriptionSaveTemporary http/1.1
 content-type: application/json
 
- {
-    "siteLanguage": "nl",
-    "language": "dutch",
+{
+  "student": {
+    "language": "english",
     "period": "august",
-    "firstNameStudent": "Joske",
-    "lastNameStudent": "Vermeulen",
+    "firstName": "Joske",
+    "lastName": "Vermeulen",
     "gender": "boy",
-    "birthday": "2020-01-01",
-
-    "firstNameParent": "Maria",
-    "lastNameParent": "Vermeulen",
-    "email": "wutske@gmail.com",
+    "birthdate": "2020-01-01"
+  },
+  "parent": {
+    "language": "nl",
+    "firstName": "Mario",
+    "lastName": "Vermeulen",
+    "email": "test@test.be",
     "relation": "yes please",
     "street": "Trammezandlei",
     "houseNr": "122",
     "busNr": "",
-
     "city": "Schoten",
     "zipCode": "2900",
     "gsm": "0412/121212",
-    "gsm2": "",
-
-    "nameSchool": "école de test",
-    "streetSchool": "rue de test",
-    "houseNrSchool": "1",
-    "busNrSchool": "",
-    "citySchool": "Bruxelles",
-    "zipSchool": "1000",
-    "titleProfSchool": "Mr",
-    "nameProfSchool": "François",
-    "yearsSchool": "6",
-    "hoursSchool": "1",
-    "immersionSchool": "f",
-    "reportSchool": "n",
-
-    "apportedStudent": "n",
+    "gsm2": ""
+  },
+  "school": {
+    "name": "école de test",
+    "street": "rue de test",
+    "houseNr": "1",
+    "busNr": "",
+    "city": "Bruxelles",
+    "zip": "1000",
+    "titleProf": "Mr",
+    "nameProf": "François",
+    "years": "6",
+    "hours": "1",
+    "immersion": "true",
+    "report": null
+  },
+  "extra": {
+    "referral": "false",
     "contact": "euhm",
-    "additionalInfo": "Graag",
+    "additionalInfo": "<script>alert('test')</script>",
     "foodInfo": "Hoe meer hoe beter",
     "interest": "Node.JS",
     "acceptPictures": false,
     "acceptTerms": true
-}
+  }

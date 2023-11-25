@@ -4,6 +4,7 @@ import {DatePicker} from '@mui/x-date-pickers/DatePicker';
 import nlLocale from "date-fns/locale/nl-BE";
 import {AdapterDateFns} from '@mui/x-date-pickers/AdapterDateFns'
 import {styled} from "@mui/material/styles";
+import {useTranslation} from "react-i18next";
 
 
 const StyledDatePicker = styled(DatePicker)(({theme}) => ({
@@ -43,6 +44,7 @@ function CustomDatePicker(props) {
   const [errorDatePicker, setErrorDatePicker] = useState(null);
   const minDate = new Date((new Date().getFullYear() - 20) + "-01-01");
   const maxDate = new Date((new Date().getFullYear() - 9) + "-01-01");
+  const {t} = useTranslation();
 
 
   const errorMessage = useMemo(() => {
@@ -52,12 +54,12 @@ function CustomDatePicker(props) {
 
     switch (errorDatePicker) {
       case 'maxDate':
+        return t("student.error.datepicker.max.date");
       case 'minDate': {
-        return 'Please select a date in the first quarter of 2022';
+        return t("student.error.datepicker.min.date");
       }
-
       case 'invalidDate': {
-        return 'Your date is not valid';
+        return t("student.error.datepicker.invalid.date");
       }
 
       default: {

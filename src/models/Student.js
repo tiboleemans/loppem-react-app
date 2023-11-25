@@ -1,20 +1,15 @@
 class Student {
-    constructor(language,
-                period,
-                firstNameStudent,
-                lastNameStudent,
-                gender,
-                birthday) {
-        this.language = language;
+    constructor(firstName, lastName, period, birthdate, gender, language) {
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.period = period;
-        this.firstNameStudent = firstNameStudent;
-        this.lastNameStudent = lastNameStudent;
+        this.birthdate = birthdate;
         this.gender = gender;
-        this.birthday = birthday;
+        this.language = language;
     }
 
-    static fromApi(data) {
-        return new Student(data.language, data.period, data.firstNameStudent, data.lastNameStudent, data.gender, data.birthday)
+    static fromApi(student) {
+        return new Student(student.firstName, student.lastName, student.period, student.birthdate, student.gender, student.language)
     }
 }
 

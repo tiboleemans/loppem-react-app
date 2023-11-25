@@ -34,6 +34,8 @@ const setupAndInitI18n = (language) => {
       'nl-BE': { translations: nl },
       'fr-BE': { translations: fr }
     },
+    transSupportBasicHtmlNodes: true,
+    transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'p'],
     // debug: true,
     interpolation: {
       escapeValue: false // Make sure to not escape characters by default (eg. DD//MM//YYYY, é&è)

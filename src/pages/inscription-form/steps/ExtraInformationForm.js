@@ -1,51 +1,47 @@
 import {Form} from "../useForm";
-import Typography from "@mui/material/Typography";
 import CustomCheckbox from "../custom/CustomCheckbox";
 import React from "react";
 import Grid from "@mui/material/Grid";
 import CustomTextField from "../custom/CustomTextField";
 import CustomTextArea from "../custom/CustomTextArea";
 import CustomSelect from "../custom/CustomSelect";
-
-const contactItems = [
-    {id: 'viavia', title: 'Mond-tot-mond-reclame'},
-    {id: 'internet', title: 'Via het internet'},
-    {id: 'school', title: 'Via de school'},
-    {id: 'isOldStudent', title: 'Ik ben een oud-leerling'},
-    {id: 'viaOldStudent', title: 'Via een oud-leerling'},
-    {id: 'news', title: 'Via het nieuws'},
-    {id: 'brochure', title: 'Via de brochure'},
-    {id: 'ad', title: 'Krant/magazine'},
-    {id: 'other', title: 'Andere'}
-]
+import {useTranslation} from "react-i18next";
 
 export default function ExtraInformationForm(props) {
 
     const {values, handleInputChange, errors} = props;
+    const {t} = useTranslation();
+
+    const contactItems = [
+        {id: 'isOldStudent', title: t("inscription.extra.label.contact.choice.1")},
+        {id: 'viavia', title: t("inscription.extra.label.contact.choice.2")},
+        {id: 'viaOldStudent', title: t("inscription.extra.label.contact.choice.3")},
+        {id: 'socials', title: t("inscription.extra.label.contact.choice.4")},
+        {id: 'brochure', title: t("inscription.extra.label.contact.choice.5")},
+        {id: 'internet', title: t("inscription.extra.label.contact.choice.6")},
+        {id: 'school', title: t("inscription.extra.label.contact.choice.7")},
+        {id: 'other', title: t("inscription.extra.label.contact.choice.8")}
+    ]
 
     return (
         <Form>
-            <h4>
-                Extra informatie
-            </h4>
-
+            <h3 className="inscription-form-title">{t("inscription.steps.extra")}</h3>
             <Grid container spacing={2}>
-
                 <Grid item xs={12}>
                     <CustomTextField
                         subject="extra"
-                        label="Naam nieuw aangebrachte leerling"
-                        name="apportedStudent"
-                        value={values.extra.apportedStudent}
+                        label={t("inscription.extra.label.referral.name")}
+                        name="referral"
+                        value={values.extra.referral}
                         onChange={handleInputChange}
-                        helperText={"Geniet van een korting door een nieuwe leerling aan te brengen (klik hier om de voorwaarden te lezen)"}
+                        helperText={t("inscription.extra.label.referral.condition")}
                     />
                 </Grid>
                 <Grid item xs={12}>
                     <CustomSelect
                         subject="extra"
                         labelId="contactLabelId"
-                        labelText="Hoe bent u in contact gekomen met de cursus?"
+                        labelText={t("inscription.extra.label.contact.placeHolder")}
                         name={"contact"}
                         id={"contact"}
                         value={values.extra.contact}
@@ -57,22 +53,22 @@ export default function ExtraInformationForm(props) {
                 <Grid item xs={12}>
                     <CustomTextArea
                         subject="extra"
-                        label="Relevante informatie voor de kok"
+                        label={t("inscription.extra.label.kitchen.info")}
                         name="foodInfo"
                         value={values.extra.foodInfo}
                         onChange={handleInputChange}
-                        helperText={"(voedselallergiën, intoleranties, vegetarish, ...)"}
+                        helperText={t("inscription.extra.label.kitchen.example")}
                     />
                 </Grid>
 
                 <Grid item xs={12}>
                     <CustomTextArea
                         subject="extra"
-                        label="Extra informatie over uw zoon of dochter"
+                        label={t("inscription.extra.label.extra.info")}
                         name="additionalInfo"
                         value={values.extra.additionalInfo}
                         onChange={handleInputChange}
-                        helperText={"(medisch, allergiën, examens, kamerindeling, ...)"}
+                        helperText={t("inscription.extra.label.extra.example")}
                     />
                 </Grid>
 
@@ -81,7 +77,7 @@ export default function ExtraInformationForm(props) {
                     <CustomCheckbox
                         subject="extra"
                         name="acceptPictures"
-                        label="Ik geef toestemming om foto's van mijn kind te gebruiken voor commerciële doeleinden (klik hier voor details)"
+                        label={t("inscription.extra.label.pictures")}
                         value={values.extra.acceptPictures}
                         onChange={handleInputChange}
                     />
@@ -91,7 +87,7 @@ export default function ExtraInformationForm(props) {
                     <CustomCheckbox
                         subject="extra"
                         name="acceptTerms"
-                        label="Ik aanvaard de algemene voorwaarden en privacyregels"
+                        label={t("inscription.extra.label.conditions")}
                         value={values.extra.acceptTerms}
                         onChange={handleInputChange}
                         error={errors.extra.acceptTerms}

@@ -61,7 +61,7 @@ describe.skip('Notes functionality', function() {
             should.exist(res.body.campYear);
             should.exist(res.body.additionalInfo);
             should.exist(res.body.student);
-            should.exist(res.body.student.birthday);
+            should.exist(res.body.student.birthdate);
             should.exist(res.body.student.city);
             done();
           });
@@ -94,7 +94,7 @@ describe.skip('Notes functionality', function() {
             should.exist(res.body.campYear);
             should.exist(res.body.foodInfo);
             should.exist(res.body.student);
-            should.exist(res.body.student.birthday);
+            should.exist(res.body.student.birthdate);
             should.exist(res.body.student.city);
             done();
           });

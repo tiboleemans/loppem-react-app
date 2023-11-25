@@ -93,6 +93,7 @@ const Pricing = () => {
     <div className="pricing" id="pricing">
       <div className="container">
         <Card className="card-container">
+          <h1>{t("pricing.title")}</h1>
           <Grid container spacing={6}>
             <Grid item xs={5}>
               {cardContent.map((element, i) =>
@@ -112,10 +113,10 @@ const Pricing = () => {
                         <Grid item xs={8}>
                           <p className="card-camp-content">{element.period}</p>
                         </Grid>
-                        <Grid item xs={4}>
+                        <Grid item xs={5}>
                           <p className="card-camp-label">{t("pricing.card.camp.label.available")}</p>
                         </Grid>
-                        <Grid item xs={8}>
+                        <Grid item xs={7}>
                           <p className="card-camp-content"><CheckIcon color={element.available}/></p>
                         </Grid>
                       </Grid>

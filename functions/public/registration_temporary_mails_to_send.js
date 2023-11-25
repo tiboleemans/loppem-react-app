@@ -26,15 +26,12 @@ exports.inscriptionSaveMailAfterInscription = functions
     .firestore
     .document('registration/{docId}')
     .onCreate((change, context) => {
-      if (change.data().status != 'TEMPORARY') {
-        return "not-temporary";
-      }
       return db
           .collection('inscription_temporary_mails_to_send')
           .doc(context.params.docId)
           .set({
-            firstNameParent: change.data().parent.firstNameParent,
-            lastNameParent: change.data().parent.lastNameParent,
+            firstName: change.data().parent.firstName,
+            lastName: change.data().parent.firstName,
             email: change.data().parent.email,
             temporaryInscriptionId: context.params.docId,
             campYear: change.data().campYear,
@@ -74,8 +71,8 @@ exports.inscriptionSaveMailAfterUpdate = functions
           .collection('inscription_temporary_mails_to_send')
           .doc(context.params.docId)
           .set({
-            firstNameParent: change.after.data().parent.firstNameParent,
-            lastNameParent: change.after.data().parent.lastNameParent,
+            firstName: change.after.data().parent.firstName,
+            lastName: change.after.data().parent.lastName,
             email: change.after.data().parent.email,
             mailScheduled: false,
             updateTimestamp: new Date(),

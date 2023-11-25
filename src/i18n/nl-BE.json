@@ -7,92 +7,99 @@
   "nav": {
     "home": "Home",
     "vacations": "Taalvakanties",
-    "pricing": "Prijs",
+    "pricing": "Prijzen",
     "enroll": "Inschrijven",
     "info": "Praktische info",
     "contact": "Contact"
   },
   "intro": {
     "title": "Loppem Conversa",
-    "subtitle": "Een duidelijke voorsprong",
+    "subtitle": "Leer spreken met plezier",
     "info.label.what": "Wat?",
-    "info.text.what": "Taalvakanties Nederlands / Engels",
+    "info.text.what": "Taalvakanties Nederlands en Engels",
     "info.label.when": "Wanneer?",
     "info.text.when.p1": "7 - 17 juli 2024",
     "info.text.when.p2": "4 - 14 augustus 2024",
     "info.label.who": "Wie?",
-    "info.text.who": "Voor jongeren van 10 tot 18 jaar",
+    "info.text.who": "Jongeren van 10 tot 18 jaar",
     "footer": "Wij zijn pas tevreden wanneer de jongeren in de doeltaal dromen!"
   },
   "vacations": {
+    "title": "Taalbad",
     "what": {
       "title": "Wat?",
-      "section.one.title": "Taalvakanties Nederlands / Engels",
-      "section.one.text": "Loppem Conversa organiseert conversatiecursussen Nederlands en Engels voor jongeren van 10 tot 18 jaar in de prachtige groene omgeving van de abdijschool van Zevenkerken, in de nabijheid van Brugge.",
-      "section.two.title": "Kwaliteit",
-      "section.two.text": "Wij staan garant voor kwaliteitsvolle, interactieve conversatiecursussen in klassen van maximum tien leerlingen. De lessen worden afgewisseld met een waaier aan sporten, kleine en grote spelen, muzikale activiteiten en shows, onder leiding van een toegewijde monitorenploeg. Zo creëren we keer op keer een sfeervolle en onvergetelijke vakantie voor jongeren.",
-      "section.three.title": "Taalbad",
-      "section.three.text": "Bij Loppem Conversa wordt de gekozen taal altijd en overal gesproken. Wij zijn pas tevreden als de jongeren in de doeltaal dromen."
-    },
-    "when": {
-      "title": "Wanneer?",
-      "section.one.title": "7 - 17 juli 2024",
-      "section.one.text": "De stages Engels/Nederlands gaan door van 2 tot 12 augustus. De leerlingen worden de eerste dag verwacht tussen 9 en 11 uur en worden de laatste dag terug opgehaald tussen 9 en 11 uur.",
-      "section.two.title": "4 - 14 juli 2024",
-      "section.two.text": "De stages Engels/Nederlands gaan door van 2 tot 12 augustus. De leerlingen worden de eerste dag verwacht tussen 9 en 11 uur en worden de laatste dag terug opgehaald tussen 9 en 11 uur."
+      "section.one.title": "Taalvakanties Nederlands en Engels",
+      "section.one.text": "Loppem Conversa organiseert in de zomer taalvakanties Nederlands en Engels met internaat voor jongeren van 10 tot 18 jaar in de prachtige groene omgeving van de abdijschool van Zevenkerken, op een steenworp van Brugge. <br/> <br/> Wij zorgen voor een volledige onderdompeling in het Nederlands of Engels want bij ons wordt de gekozen doeltaal altijd en overal zo veel mogelijk gesproken om hun spreekvaardigheid een ongelofelijke boost te geven en hen een onvergetelijke vakantie te bezorgen.",
+      "section.two.title": "Kwaliteitsvol taalbad",
+      "section.two.text": "De leerlingen krijgen een afwisselende dagplanning voorgeschoteld die boordevol les-, sport- en spelactiviteiten zit. De jongeren worden in conversatielessen in kleine groepjes van maximaal 10 leerlingen op een ontspannen manier uitgedaagd en gemotiveerd om hun spreekvaardigheid naar een hoger niveau te tillen in creatieve werkvormen. <br/> Met plezier en zelfvertrouwen leren spreken in de gekozen doeltaal gebeurt in de lessen, maar natuurlijk ook tijdens de activiteiten en de vrije ontspanningsmomentjes. <br/> Er is een dagelijkse portie sport en spel: denk aan balsporten op onze sportvelden, zwemmen, de geliefde water- en verfspelletjes, een escape game, quiz, lasertag, knutselen voor de kleinsten, muziek, een uitstap naar Brugge en nog zo veel meer. "
     },
     "where": {
       "title": "Waar?",
-      "section.one.title": "Het domein",
-      "section.one.text": "De stages gaan door in de abdijschool van Zevenkerken, gelegen in de prachtige groene omgeving van de Brugse rand. De gezonde buitenlucht draagt bij tot een bruisend vakantiegevoel.",
-      "section.two.title": "Geschikt voor sport & spel",
-      "section.two.text": "Het domein omvat onder andere drie grote voetbalvelden, een hockeyveld, twee basketbalpleinen, drie tennisvelden en een grote vernieuwde sportzaal. Deze terreinen waar de leerlingen zich onder begeleiding kunnen uitleven, zijn omringd door prachtige bossen. Verder is er een grote speelruimte met vier ping pongtafels en drie kickertafels. Hiernaast bevindt zich het monitorenlokaal met een ruim aanbod van materiaal de gebruikt mag worden tijdens de vrije momenten en de activiteiten.",
-      "section.three.title": "De klaslokalen",
-      "section.three.text": "De interactieve lessen gaan door in goed uitgeruste klaslokalen in klasgroepen van maximaal 10 leerlingen.",
-      "section.four.title": "De overnachting",
-      "section.four.text": "Alle leerlingen slapen in individuele éénpersoonskamers."
+      "section.one.title": "Historische abdijschool",
+      "section.one.text": "Onze taalvakanties gaan door in de abdijschool van Zevenkerken in Loppem, gelegen in de prachtige groene omgeving van de Brugse rand. Deze unieke, historische locatie spreekt tot de verbeelding en draagt bij tot een bruisend vakantiegevoel door de enorme binnen- en buitenruimte. <br/> Het adres: Zevenkerken 4, 8200 Brugge of geef ‘abdijschool van Zevenkerken’ of 'Loppem Conversa' in op je gps, Waze of Google.",
+      "section.two.title": "Groene oase voor sport en spel",
+      "section.two.text": "Tijdens al onze activiteiten en ontspanningsmomentjes genieten de leerlingen van de uitgestrekte groene omgeving van de abdijschool. Het domein omvat onder andere drie grote voetbalvelden, een hockeyveld, twee basketbalpleinen, drie tennisvelden en een grote vernieuwde sportzaal. Deze terreinen waar de leerlingen zich onder begeleiding kunnen uitleven, zijn omringd door prachtige bossen. Ook binnen is er een grote speelruimte met vier pingpongtafels en vier kickertafels.",
+      "section.three.title": "Comfortabel verblijf",
+      "section.three.text": "De leerlingen maken tijdens de taalvakanties gebruik van de voorzieningen van de abdijschool. Alle leerlingen slapen in individuele éénpersoonskamers. In elke gang slapen er ook minimaal 2 begeleiders die dag en nacht beschikbaar zijn. In de grote eetzaal van de abdij krijgen de jongeren voedzame en gevarieerde maaltijden."
     },
     "why": {
       "title": "Waarom?",
-      "section.one.title": "Een duidelijke voorsprong",
-      "section.one.text": "Loppem Conversa is een springplank naar de toekomst en geeft uw kind een duidelijke voorsprong in het spreken van de gekozen taal. Deze meerwaarde vraagt op persoonlijk niveau en op studievlak een duidelijke inspanning van de leerlingen. Zo opent het spreken van vreemde talen mogelijkheden naar verdere studies en de beroepswereld."
+      "section.one.title": "Duidelijke voorsprong",
+      "section.one.text": "Een taal leer je door ze te spreken! Het taalbad van Loppem Conversa vormt een springplank naar de toekomst. 10 dagen lang de gekozen doeltaal ongeremd kunnen toepassen in concrete situaties biedt een mooie en duurzame voorsprong voor de start van een nieuw schooljaar.",
+      "section.two.title": "Vanzelfsprekend amuseren",
+      "section.two.text": "We willen in jongeren vooral het enthousiasme voor een vreemde taal spreken aanwakkeren. In onze activiteiten en werkvormen heeft taal een direct praktisch nut want de leerlingen hebben de taal nodig om samen te werken en zo plezier te kunnen maken. Op deze manier leren jongeren de doeltaal omarmen. <br/> In ons taalbad wordt de doeltaal spreken vanzelfsprekend. Iets wat als het ware vanzelf gaat, alsof ze nooit iets anders gedaan hebben. Bij ons gaan leren en amuseren altijd hand in hand. Kortom: een unieke sfeer en onvergetelijke herinneringen!"
+    },
+    "who": {
+      "title": "Wie?",
+      "section.one.title": "Betrokken organisatie",
+      "section.one.text": "Loppem conversatie is een vrijwilligersorganisatie die uit 7 vrijwilligers bestaat die doorheen het jaar de taalvakanties met heel goesting organiseren. Wat Loppem Conversa uniek maakt, is dat we een nauwe band hebben met de jongeren en met hun ouders en begeleiders. We kijken er zelf elk jaar naar uit om met de jongeren in de zomer aan de slag te gaan en het is een voorrecht om hen jaar na jaar te zien openbloeien en groeien. <br/> Onze taalvakanties bestaan al meer dan 50 jaar maar na elke zomer gaan we graag met de feedback van de jongeren en hun omgeving aan de slag om onze taalvakanties jaar na jaar te blijven vernieuwen en investeren in de toekomst van de jongeren.",
+      "section.two.title": "Enthousiast team",
+      "section.two.text": "Tijdens de taalvakanties kunnen we rekenen op het enthousiasme van ons grote team vrijwillige leerkrachten en animatoren dat ons kernteam aanvult. Ook zij kijken er elk jaar weer naar uit om met de leerlingen aan de slag te gaan en zich samen met de jongeren voor de volle 200% te amuseren. <br/> Ons diverse team van ervaren leerkrachten en animatoren engageren zich tijdens hun vakantie met plezier tijdens de taalvakanties. Het is geweldig om te zien hoe hun uiteenlopende achtergronden zich vertalen in gevarieerde en vernieuwende ideeën voor lessen en activiteiten. Hun drive en passie vormen de motor én sleutel tot het succes van onze taalvakanties."
     }
   },
   "banner": {
     "rating": {
-      "text": "Wist u dat Loppem Conversa een 5-sterren review heeft op Google?",
-      "button.1": "Zie reviews",
+      "text": "Wist je dat Loppem Conversa 5 sterren heeft op Google?",
+      "button.1": "Bekijk reviews",
       "button.2": "Schrijf review"
-    }
-  },
-  "bringafriend": {
-    "title": "Neem een vriend mee en geniet van 50 euro cashback!",
-    "conditions": {
-      "button": "ZIE VOORWAARDEN",
-      "dialog.title": "Voorwaarden aanbrengen nieuwe leerling",
-      "dialog.content.1": "Uw kind is zelf ingeschreven.",
-      "dialog.content.2": "De nieuw aangebrachte leerling heeft nog nooit een stage bij Loppem Conversa gevolgd.",
-      "dialog.content.3": "De nieuw aangebrachte leerling behoort niet tot hetzelfde gezin (dus inwonend op hetzelfde adres).",
-      "dialog.content.4": "U vermeldt de naam van deze leerling duidelijk in het inschrijvingsformulier op de website in het daartoe bestemde vakje.",
-      "dialog.content.5": "De nieuw aangebrachte leerling is nog niet door iemand anders aangebracht.",
-      "dialog.content.6": "U kunt elkaar niet wederzijds aanbrengen.",
-      "dialog.content.footer": "Deze korting wordt pas toegekend en <bold>terugbetaald NA de stage </bold>."
     },
-    "form": {
-      "button": "Aanbrengen",
-      "dialog.title": "Aanbrengen nieuwe leerling",
-      "dialog.subtitle": "Vul dit onderstaande formulier in om een nieuwe leerling aan te brengen.",
-      "dialog.section.1.header": "Uw gegevens",
-      "dialog.section.1.text.field.1": "Uw naam",
-      "dialog.section.1.text.field.2": "Naam van uw ingeschreven kind",
-      "dialog.section.1.text.field.3": "Uw emailadres",
-      "dialog.section.2.header": "Gegevens aangebrachte leerling",
-      "dialog.section.2.text.field.1": "Naam van aangebrachte leerling",
-      "dialog.action.cancel": "Cancel",
-      "dialog.action.send": "Verzenden"
+    "bringafriend": {
+      "title": "Neem een vriend mee en geniet van 50 euro cashback!",
+      "conditions": {
+        "button": "ZIE VOORWAARDEN",
+        "dialog.title": "Voorwaarden aanbrengen nieuwe leerling",
+        "dialog.content.1": "Je kind is zelf ingeschreven.",
+        "dialog.content.2": "De aangebrachte leerling volgde nog nooit een taalvakantie bij Loppem Conversa.",
+        "dialog.content.3": "De aangebrachte leerling is nog niet door iemand anders aangebracht.",
+        "dialog.content.4": "Je kan elkaar niet wederzijds aanbrengen.",
+        "dialog.content.footer": "Deze korting wordt pas toegekend en <strong>terugbetaald NA de taalvakantie </strong>."
+      },
+      "form": {
+        "button": "Aanbrengen",
+        "dialog.title": "Aanbrengen nieuwe leerling",
+        "dialog.subtitle": "Vul dit formulier in om een nieuwe leerling aan te brengen.",
+        "dialog.section.1.header": "Je gegevens",
+        "dialog.section.1.text.field.1": "Naam ouder of begeleider",
+        "dialog.section.1.text.field.2": "Naam ingeschreven leerling",
+        "dialog.section.1.text.field.3": "E-mailadres",
+        "dialog.section.2.header": "Gegevens aangebrachte leerling",
+        "dialog.section.2.text.field.1": "Naam aangebrachte leerling",
+        "dialog.action.cancel": "Annuleer",
+        "dialog.action.send": "Verzend"
+      }
+    },
+    "interest": {
+      "text": "Ken je misschien iemand die geïnteresseerd is?",
+      "button.send": "Stuur een bericht",
+      "button.share": "Download brochure"
+    },
+    "question": {
+      "title": "Heb je een vraag of een probleem?",
+      "button": "Contacteer ons"
     }
   },
   "pricing": {
+    "title": "Aanbod",
     "card.camp": {
       "label.price": "€ 780",
       "label.enroll": "Boek nu",
@@ -113,108 +120,120 @@
       "content.available.4": "success"
     },
     "accordion.1": {
-      "summary": "PRIJSDETAILS",
+      "summary": "PRIJZEN EN KORTINGEN",
       "details": {
-        "title.1": "Basisprijs",
-        "text.1": "De basisprijs van al onze kampen bedraagt € 780 euro.",
+        "title.1": "Kostprijs",
+        "text.1": "De kostprijs van elke taalvakantie bedraagt 790 euro.",
         "title.2": "Vroegboekkorting",
-        "text.2": "Schrijf in voor 1 februari en geniet van 20 euro korting.",
-        "title.3": "Cashback",
-        "text.3": "Neem een vriend mee en geniet van 50 euro cashback!"
+        "text.2": "Schrijf in voor 1 februari en geniet van 20 euro korting. De kostprijs bedraagt in dat geval dus 770 euro.",
+        "title.3": "Vriendjeskorting",
+        "text.3": "Overtuig een vriend om voor de eerste keer mee te komen op taalvakantie en geniet van 50 euro cashback die je ontvangt na afloop van de taalvakantie (voor meer info, bekijk de voorwaarden hieronder)."
       }
     },
     "accordion.2": {
-      "summary": "BETALINGSDETAILS",
+      "summary": "BETALING",
       "details": {
         "title.1": "Voorschot",
-        "text.1": "Het voorschot dient meteen na de inschrijving betaald te worden. In het voorschot mogen de kortingen verrekend worden. Voor 1 februari: 360 euro Na 1 februari: 380 euro",
+        "text.1": "Je betaalt het voorschot (of het volledige bedrag) bij de inschrijving. De inschrijving van je kind is pas definitief nadat wij het voorschot (of het volledige bedrag) ontvangen hebben. <br/>Inschrijving voor 1 februari: 370 euro <br/>Inschrijving na 1 februari: 390 euro <br/>Inschrijving na 1 juni: 790 euro",
         "title.2": "Resterende saldo",
-        "text.2": "Het resterende saldo bedraagt 400 euro en dient voor 1 juni betaald te worden.",
+        "text.2": "Je betaalt het resterende saldo van 400 euro voor 1 juni.",
         "title.3": "Volledige bedrag",
-        "text.3": "Het volledige bedrag kan ook meteen gestort worden.",
+        "text.3": "Het volledige bedrag kan ook meteen na de inschrijving in 1 keer gestort worden. <br/> Inschrijving voor 1 februari: 770 euro <br/> Inschrijving na 1 februari: 790 euro",
         "title.4": "Overschrijving",
-        "text.4": "Rekeningnummer, naam, mededeling, ..."
+        "text.4": "Naam: Conversa taalvakanties vzw <br/> Rekeningnummer: BE16 0018 5319 2474 <br/> BIC: GEBABEBB <br/> Mededeling: volledige naam van de leerling + juli of augustus + Nederlands of Engels"
       }
     },
     "accordion.3": {
-      "summary": "VOORDELEN",
+      "summary": "EXTRA VOORDELEN",
       "details": {
         "title.1": "Ziekenfonds",
-        "text.1": "Sommige ziekenfondsen komen tussenbeide in de inschrijvingskosten. Informeer bij uw ziekenfonds.",
+        "text.1": "Sommige ziekenfondsen komen tussenbeide in de inschrijvingskosten. Informeer hiervoor het best eens bij je ziekenfonds.",
         "title.2": "Fiscale attesten",
-        "text.2": "Voor deelnemers tot 12 jaar wordt een fiscaal attest voor opvang opgeleverd."
+        "text.2": "Je kan een fiscaal attest voor opvang ontvangen voor leerlingen die tijdens de taalvakantie maximaal 14 jaar oud zijn."
       }
     }
   },
   "inscription": {
     "title": "Inschrijvingsformulier",
+    "form.errors": "Niet alle verplichte velden werden ingevuld.",
+    "button": {
+      "back": "Vorige",
+      "next": "Volgende",
+      "enroll": "Inschrijven"
+    },
     "steps": {
       "student": "Gegevens leerling",
-      "parent": "Gegevens ouder",
+      "parent": "Gegevens ouder of begeleider",
       "school": "Gegevens school",
       "extra": "Extra informatie"
     },
     "student.label": {
-      "firstName": "Voornaam Leerling",
-      "lastName": "Naam Leerling",
-      "birthdate": "Geboortedatum Leerling",
-      "language": "Cursustaal:",
+      "firstName": "Voornaam leerling",
+      "lastName": "Naam leerling",
+      "birthdate": "Geboortedatum leerling",
+      "language": "Doeltaal:",
+      "dutch": "Nederlands",
+      "english": "Engels",
       "period": "Periode:",
       "july": "7 - 17 juli 2024",
       "august": "4 - 14 augustus 2024",
-      "sex": "Geslacht:",
-      "boy": "Jongen",
-      "girl": "Meisje"
+      "gender": "Slaapkamer bij",
+      "boy": "Jongens",
+      "girl": "Meisjes"
     },
     "student.error": {
       "firstName": "Gelieve de voornaam van de leerling in te vullen.",
       "lastName": "Gelieve de naam van de leerling in te vullen.",
       "birthdate": "Gelieve de geboortedatum van de leerling in te vullen.",
-      "language": "Gelieve de gewenste cursustaal aan te duiden.",
+      "language": "Gelieve de gewenste doeltaal aan te duiden.",
       "period": "Gelieve de gewenste periode aan te duiden.",
-      "sex": "Gelieve het geslacht van de leerling in te vullen."
+      "sex": "Gelieve de slaapkamer aan te duiden.",
+      "datepicker.max.date": "De leerling mag maximaal 19 jaar zijn.",
+      "datepicker.min.date": "De leerling moet minstens 9 jaar zijn.",
+      "datepicker.invalid.date": "Het formaat van de datum is ongeldig"
     },
     "parent.label": {
-      "firstName": "Voornaam Leerling",
-      "lastName": "Naam Leerling",
+      "firstName": "Voornaam",
+      "lastName": "Naam",
       "email": "E-mail",
       "relation": "Relatie met leerling",
       "mother": "Moeder",
       "father": "Vader",
       "guardian": "Voogd",
       "street": "Straat:",
-      "housnr": "Huisnummer",
-      "busnr": "Busnummer",
+      "houseNr": "Huisnummer",
+      "busNr": "Busnummer",
       "city": "Gemeente",
       "zip": "Postcode",
       "gsm": "GSM",
       "gsm2": "2e telefoonnummer"
     },
     "parent.error": {
-      "firstName": "Gelieve uw voornaam in te vullen.",
-      "lastName": "Gelieve uw naam in te vullen.",
-      "email": "Gelieve uw e-mailadres in te vullen.",
-      "relation": "Gelieve uw relatie met de leerling aan te duiden.",
-      "street": "Gelieve uw adres volledig in te vullen.",
-      "housnr": "Gelieve uw huisnummer in te vullen.",
-      "city": "Gelieve uw gemeente in te vullen.",
-      "zip": "Gelieve uw postcode in te vullen.",
-      "gsm": "Gelieve uw gsm nummer in te vullen.",
+      "firstName": "Gelieve je voornaam in te vullen.",
+      "lastName": "Gelieve je naam in te vullen.",
+      "email": "Gelieve je e-mailadres in te vullen.",
+      "relation": "Gelieve je relatie met de leerling aan te duiden.",
+      "street": "Gelieve je adres volledig in te vullen.",
+      "housnr": "Gelieve je huisnummer in te vullen.",
+      "city": "Gelieve je gemeente in te vullen.",
+      "zip": "Gelieve je postcode in te vullen.",
+      "gsm": "Gelieve je gsmnummer in te vullen.",
       "gsm2": "Gelieve het nummer in geval van nood in te vullen."
     },
     "school.label": {
       "name": "Naam school",
       "street": "Straat:",
-      "housnr": "Huisnummer",
-      "busnr": "Busnummer",
+      "houseNr": "Huisnummer",
+      "busNr": "Busnummer",
       "city": "Gemeente",
       "zip": "Postcode",
       "prof.title": "Aanspreektitel leerkracht",
       "prof.name": "Naam leerkracht",
-      "count.years": "Aantal jaren Nederlands of Engels op school",
-      "count.hours": "Aantal uren Nederlands of Engels per week",
-      "immersion": "Volgt uw kind tweetalig onderwijs voor de gekozen doeltaal op school?",
-      "report": "Moet er een rapport na de stage opgestuurd worden naar de school?"
+      "count.years": "Aantal jaren gekozen doeltaal op school",
+      "count.hours": "Aantal uren gekozen doeltaal op school per week",
+      "immersion": "Volgt je kind tweetalig onderwijs voor de gekozen doeltaal op school?",
+      "yes": "Ja",
+      "no": "Nee"
     },
     "school.error": {
       "name": "Gelieve de naam van de school in te vullen.",
@@ -230,35 +249,110 @@
       "report": "Gelieve aan te duiden of u een rapport wenst op te sturen naar de school na de stage."
     },
     "extra.label": {
-      "apported.name": "Naam nieuw aangebrachte leerling",
-      "apported.name.condition": "Geniet van een korting door een nieuwe leerling aan te brengen (klik hier om de voorwaarden te lezen)\n\n",
-      "contact": "Hoe bent u in contact gekomen met de Loppem Conversa?",
+      "referral.name": "Ik ben aangebracht door",
+      "referral.condition": "Indien je in contact bent gebracht door een oud-leerling van Loppem Conversa kan die genieten van een cashback korting",
+      "contact.placeHolder": "Hoe bent je dit jaar in contact gekomen met de Loppem Conversa?",
       "contact.choice": {
-        "1": "Mond-tot-mond-reclame",
-        "2": "Via het internet",
-        "3": "Via de school",
-        "4": "Ik ben een oud-leerling",
-        "5": "Via een oud-leerling",
-        "6": "Via het nieuws",
-        "7": "Via de brochure",
-        "8": "Krant/magazine/advertentie",
-        "9": "Andere"
+        "1": "Mijn kind is een oud-leerling",
+        "2": "Mond-aan-mondreclame",
+        "3": "Via een oud-leerling",
+        "4": "Via sociale media",
+        "5": "Via de brochure",
+        "6": "Via het internet",
+        "7": "Via de school",
+        "8": "Andere"
       },
-      "kitchen": "Relevante informatie voor de kok",
-      "kitchen.example": "((voedselallergiën, intoleranties, vegetarisch, ...))",
-      "info": "Extra informatie over uw zoon of dochter",
-      "info.example": "(medisch, allergiën, examens, kamerindeling, ...)",
+      "kitchen.info": "Relevante informatie voor de kok",
+      "kitchen.example": "(voedselallergieën, intoleranties, vegetarisme, halal ...)",
+      "extra.info": "Extra informatie over de leerling",
+      "extra.example": "(medische info zoals allergieën, voorkennis, kamerverdeling ...)",
       "pictures": "Ik geef toestemming om foto's van mijn kind te gebruiken voor commerciële doeleinden (klik hier voor details)",
       "conditions": "Ik aanvaard de algemene voorwaarden en privacyregels"
     },
     "extra.error": {
       "contact": "Gelieve aan te duiden via welke weg u in contact bent gekomen met Loppem Conversa.",
       "street": "Gelieve het cursusreglement te lezen en te accepteren."
+    },
+    "confirmation": {
+      "card.mail.header": "Succesvolle inschrijving",
+      "card.mail.content": "<strong>Bedankt voor uw inschrijving!</strong><p>Je ontvangt van ons een bevestigingsmail (kijk ook zeker eens in je spam of je ongewenste e-mails).</p><p>Begin juni contacteren wij je per e-mail met praktische informatie over de taalvakantie.</p>",
+      "card.payment.header": "Betalingsdetails",
+      "card.payment.content": "<p>Gelieve het voorschot van 370 euro of het totale bedrag van 770 euro te betalen op BE16 0018 5319 2474 (BIC: GEBABEBB) met als mededeling de naam van de ingeschreven leerling.</p> <p> De inschrijving is pas defintief zodra wij een betaling hebben ontvangen. </p>",
+      "button": "Schrijf nog een leerling",
+      "error": {
+        "title": "Technische fout",
+        "undefined": "Er is een onbekende fout opgetreden",
+        "retry": "Opnieuw proberen",
+        "footer": "U kan opnieuw proberen met dezelfde vooringevlde data of u kan deze teks kopieëren en naar ons verzenden via mail. Excuses voor het ongemak."
+      }
     }
   },
-  "interest": {
-    "text": "Kent u iemand die mogelijks geïnteresseerd is?",
-    "button.send": "Stuur een bericht",
-    "button.share": "Download brochure"
+  "practical": {
+    "title": "Praktische informatie",
+    "tab.1": {
+      "title": "Inschrijvingen",
+      "content.card.1.title": "Hoe inschrijven?",
+      "content.card.1.body": "<scrollTo>Klik hier om in te schrijven</scrollTo> of klik op \"inschrijven\" op de navigatiebalk van onze website en vul het formulier in. Zorg ervoor dat je alle verplichte velden hebt ingevuld en de algemene voorwaarden en privacyregels hebt aanvaard. In geval van vragen: contacteer ons via e-mail: info@loppemconversa.be of telefonisch: 0478519344. Na de inschrijving krijg je een bevestigingsmail. Het voorschot moet meteen na de inschrijving betaald worden. De inschrijving van je kind is pas definitief nadat wij het voorschot (of het volledige bedrag) ontvangen hebben.",
+      "content.card.2.title": "Wanneer betalen?",
+      "content.card.2.body": "<header>Voorschot</header> <p>Je betaalt het voorschot (of het volledige bedrag) bij de inschrijving. De inschrijving van je kind is pas definitief nadat wij het voorschot (of het volledige bedrag) ontvangen hebben. <br />Inschrijving voor 1 februari: 370 euro <br />Inschrijving na 1 februari: 390 euro <br />Inschrijving na 1 juni: 790 euro</p><header>Resterende saldo</header><p>Je betaalt het resterende saldo van 400 euro voor 1 juni.</p><header>Volledige bedrag</header><p>Het volledige bedrag kan ook meteen na de inschrijving in 1 keer gestort worden. <br /> Inschrijving voor 1 februari: 770 euro <br /> Inschrijving na 1 februari: 790 euro</p><header>Overschrijving</header><p>Naam: Conversa taalvakanties vzw <br /> Rekeningnummer: BE16 0018 5319 2474 <br /> BIC: GEBABEBB <br /> Mededeling: volledige naam van de leerling + juli of augustus + Nederlands of Engels</p>",
+      "content.card.3.title": "Zijn er kortingen?",
+      "content.card.3.body": "<header>Kostprijs</header><p>De kostprijs van elke taalvakantie bedraagt 790 euro.</p><header>Vroegboekkortin</header><p>Schrijf in voor 1 februari en geniet van 20 euro korting. De kostprijs bedraagt in dat geval dus 770 euro.</p><header>Vriendjeskorting</header><p>Overtuig een vriend om voor de eerste keer mee te komen op taalvakantie en geniet van 50 euro cashback die je ontvangt na afloop van de taalvakantie (voor meer info, bekijk de voorwaarden hieronder).</p>",
+      "content.card.4.title": "Wat als ik mijn inschrijving wil annuleren?",
+      "content.card.4.body": ""
+    },
+    "tab.2": {
+      "title": "Op kamp",
+      "content.card.1.title": "Voor welke taalvakantie is er plaats?",
+      "content.card.1.body": "Onze stages gaan enkel door in de zomervakantie tussen 2 - 12 juli & 2 - 12 augustus In het inschrijvingsformulier worden de keuzes van de beschikbare stages getoond. Zolang de stageperiode in het inschrijvingsformulier zichtbaar is, betekent dit dat er plaats is voor deze stage. ",
+      "content.card.2.title": "Wat moet mijn kind meenemen?",
+      "content.card.2.body": "Link naar pdf",
+      "content.card.3.title": "Hoe ziet een typische dag eruit?",
+      "content.card.3.body": "De leerlingen worden met muziek in de doeltaal gewekt en schuiven vrij aan bij het ontbijt. In de voormiddag wisselen de conversatielessen en korte ontspanningsmomentjes elkaar af. Na het middageten kunnen de leerlingen zich kort even opfrissen op hun kamer en daarna dagen de animatoren hen sportief of creatief uit tijdens activiteiten die zoveel mogelijk in openlucht doorgaan. Daarna staan de leerkrachten alweer te popelen om verder met de leerlingen aan de slag te gaan. Dan is het al tijd voor het vieruurtje en een volgende ontspannende activiteit om wat stoom af te laten. Na het avondeten kunnen de leerlingen een actieve of rustige activiteit naar keuze kiezen en gezellig tijd doorbrengen met hun vrienden. Na een verkwikkende douche kruipen de leerlingen onder de wol.",
+      "content.card.4.title": "Welke activiteiten en uitstappen zijn er?",
+      "content.card.4.body": "Er is een dagelijkse portie sport en spel op het domein van de abdijschool: denk aan balsporten op onze sportvelden, de alom geliefde water- en verfspelletjes, een escape game, quiz, lasertag, knutselen voor de kleinsten, karaoke en muzikale shows (swingpaleis en vrij podium), een nachtspel voor de oudste leerlingen, een casinoavond en natuurlijk nog een aantal verrassingen!\nDaarnaast verlaten we het domein ook een aantal keer. We gaan met de hele groep op uitstap naar het historische stadscentrum van het nabijgelegen Brugge, waar we de leerlingen de stad laten ontdekken tijdens een uitdagende stadszoektocht. De leerlingen gaan tijdens deze zoektocht in interactie met winkeliers en kunnen zo hun zelfvertrouwen in de gekozen doeltaal nog een extra boost geven. Het is geweldig voor de leerlingen om tijdens deze interacties te merken dat ze er op een comfortabele manier in slagen om in de doeltaal te spreken met moedertaalsprekers. Het is ook een jaarlijkse traditie geworden om met de leerlingen te gaan zwemmen in een zwembad in de buurt.",
+      "content.card.5.title": "Wat is het gsmbeleid?",
+      "content.card.5.body": "We begrijpen dat de leerlingen hun gsm graag willen meenemen op kamp om af en toe contact te houden met het thuisfront, hoewel ze absoluut geen gsm nodig hebben tijdens onze taalvakantie. We zetten alles op alles om de leerlingen te motiveren om zoveel mogelijk vrienden te maken en op die manier zoveel mogelijk de gekozen doeltaal op een ontspannen manier in te oefenen. Wij vinden als organisatie dat een gsm op zak hebben daarbij niet helpt en daarom vragen we de leerlingen om hun gsm ofwel zoveel mogelijk op hun kamer te laten. We hebben door de jaren heen opgemerkt dat leerlingen het eigenlijk heel fijn vinden om even afstand te nemen van hun gsm en sociale media en zich helemaal kunnen concentreren op het dagelijkse leven op kamp. ",
+      "content.card.6.title": "Hoe worden de klasgroepjes gevormd?",
+      "content.card.6.body": "We vormen de klasgroepjes van maximaal 10 leerlingen tijdens de eerste dag van de taalvakantie op basis van leeftijd, voorkennis en spreekdurf in de doeltaal. De leerkracht gaat gedurende 2 uur in verschillende werkvormen (zowel in groep als individueel) aan de slag met de leerlingen om hun reële vaardigheden zo goed mogelijk in te schatten. We houden hierbij ook rekening met de sociale dynamiek, wat cruciaal is om elk kind een fijne leerervaring te kunnen aanbieden. Uiteraard volgen we de evolutie en groei van de leerlingen nauwgezet op doorheen de taalvakantie en passen we indien nodig de groepsvorming nog aan in nauw overleg met de leerling, de leerkracht en de organisatie.",
+      "content.card.7.title": "Hoe blijf ik op de hoogte tijdens het kamp?",
+      "content.card.7.body": "We ontvangen je vol enthousiasme op de eerste dag van de taalvakantie. Op dat moment kan je als ouder of begeleider ons als team beter leren kennen en een rondleiding op het domein volgen. Je kan met je kind meegaan naar de kamer om rustig uit te pakken. \nNa de eerste dag van de taalvakantie ontvang je van ons een link naar een fotoalbum waarin we dagelijks heel wat foto’s posten van de activiteiten, lessen en ontspanningsmomentjes. Zo proberen we ouders en begeleiders te laten meegenieten van wat er zich allemaal afspeelt op kamp. Het is elk jaar leuk om te zien dat we heel wat positieve reacties krijgen op het album.\nAan het einde van de taalvakantie ontvangen we de ouders of begeleiders graag met open armen om de ervaringen en vaardigheden van de leerlingen te bespreken tijdens een oudercontactje waarin we ook een persoonlijk rapportje met tips & tricks meegeven."
+    },
+    "tab.3": {
+      "title": "Administratie",
+      "content.card.1.title": "Komt mijn ziekenfonds tussen?",
+      "content.card.1.body": "Sommige ziekenfondsen komen tussenbeide in de inschrijvingskosten. Informeer hiervoor het best eens bij je ziekenfonds.",
+      "content.card.2.title": "Kan ik een fiscaal attest ontvangen?",
+      "content.card.2.body": "Je kan een fiscaal attest voor opvang ontvangen voor leerlingen die tijdens de taalvakantie maximaal 14 jaar oud zijn."
+    }
+  },
+  "contact": {
+    "title": "Contactinformatie",
+    "card.1.content": {
+      "title": "Contactpersoon",
+      "item.1": "Thibault Leemans",
+      "item.2": "info@loppemconversa.be",
+      "item.3": "0478 51 93 44 (bij voorkeur buiten de kantooruren)"
+    },
+    "card.2.content": {
+      "title": "Organisatie",
+      "item.1": "VZW Taalvakanties Conversa",
+      "item.2": "0714.900.490",
+      "item.3": "Tortelduifstraat 63, 9000 Gent",
+      "item.4": "BE16 0018 5319 2474",
+      "item.5": "GEBABEBB"
+    },
+    "card.3.content": {
+      "title": "Partners",
+      "item.juvigo": "De taalvakanties van Loppem Conversa vind je ook bij Juvigo!"
+    },
+    "card.4.content": {
+      "title": "Kampadres",
+      "item.1": "Loppem Conversa",
+      "item.2": "Abdijschool van Zevenkerken",
+      "item.3": "Zevenkerken 4, 8200 Brugge"
+    },
+    "card.5.content": {
+      "title": "Sociale media"
+    }
   }
 }

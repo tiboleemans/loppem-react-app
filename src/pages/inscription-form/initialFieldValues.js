@@ -4,18 +4,18 @@ export const initialFieldValues = {
   student: {
     language: '',
     period: '',
-    firstNameStudent: '',
-    lastNameStudent: '',
+    firstName: '',
+    lastName: '',
     gender: '',
-    birthday: null,
+    birthdate: null,
   },
   // ParentInformation
   parent: {
-    firstNameParent: '',
-    lastNameParent: '',
+    firstName: '',
+    lastName: '',
     email: '',
     relation: '',
-    siteLanguage: '',
+    language: '',
     street: '',
     houseNr: '',
     busNr: '',
@@ -27,23 +27,22 @@ export const initialFieldValues = {
 
   // SchoolInformation
   school: {
-    nameSchool: '',
-    streetSchool: '',
-    houseNrSchool: '',
-    busNrSchool: '',
-    citySchool: '',
-    zipSchool: '',
-    titleProfSchool: '',
-    nameProfSchool: '',
-    yearsSchool: '',
-    hoursSchool: '',
-    immersionSchool: false,
-    reportSchool: false
+    name: '',
+    street: '',
+    houseNr: '',
+    busNr: '',
+    city: '',
+    zip: '',
+    titleProf: '',
+    nameProf: '',
+    years: '',
+    hours: '',
+    immersion: '',
   },
 
   // ExtraInformation
   extra: {
-    apportedStudent: '',
+    referral: '',
     contact: '',
     additionalInfo: '',
     foodInfo: '',

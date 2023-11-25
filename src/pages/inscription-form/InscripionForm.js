@@ -1,51 +1,80 @@
 import React, {useEffect, useState} from 'react';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
-import Typography from '@mui/material/Typography';
 import StudentInformationForm from "./steps/StudentInformationForm";
 import ParentInformationForm from "./steps/ParentInformationForm";
 import SchoolInformationForm from "./steps/SchoolInformationForm";
 import ExtraInformationForm from "./steps/ExtraInformationForm";
 import useForm from "./useForm";
 import Alert from '@mui/material/Alert';
-import {registerStudent, updateStudent} from "../../services/InscriptionService";
-import {getLanguage} from "../../i18n/i18nSetup";
-import {Card, CircularProgress} from "@mui/material";
+import {Card} from "@mui/material";
 import CustomStepper from "./custom/CustomStepper";
 import "./inscription-form.css";
+import {useTranslation} from "react-i18next";
+import InscriptionConfirmation from "./steps/InscriptionConfirmation";
+import {registerStudent} from "../../services/InscriptionService";
+import axios from "axios";
 
-const steps = ['Gegevens leerling', 'Gegevens ouder', 'Gegevens school', 'Extra informatie'];
 const disableValidation = false;
 
 export default function InscriptionForm() {
   const [step, setStep] = useState(0);
   const [isLoading, setIsLoading] = useState(false);
-  const [isValid, setIsValid] = useState(false);
   const [showValidation, setShowValidation] = useState(false);
   const [myStepHasErrors, setMyStepHasErrors] = useState(false);
-
+  const [registrationResult, setRegistrationResult] = useState(undefined);
+  const [registrationError, setRegistrationError] = useState(undefined);
+  const {t} = useTranslation();
   const {
     values,
     handleInputChange,
     errors,
     handleOnError,
-    componentErrors
+    componentErrors,
+    updateMyStepErrors
   } = useForm(showValidation, step);
+  const steps = [t("inscription.steps.student"), t("inscription.steps.parent"), t("inscription.steps.school"), t("inscription.steps.extra")];
 
   function stepHasNoErrors(stepErrors, componentErrors) {
     return Object.values(stepErrors).every((error) => error === null) && Object.values(componentErrors).every((componentError) => componentError === null);
   }
 
-  useEffect(() => {
-    if (isValid && showValidation) {
-      setIsValid(false);
-      setStep(step + 1);
-      setShowValidation(false);
-      if (step === steps.length - 1) {
-        sentInfo()
+  function stepHasNoValues(stepValues) {
+    return Object.values(stepValues).every((value) => value === '' || value === null || value === false);
+  }
+
+  function handleError(error) {
+    if (axios.isAxiosError(error)) {
+      const axiosError = {
+        message: error.toJSON().message,
+        details: JSON.stringify(error.response.data.error.details),
+        values: error.toJSON().config.data,
       }
+      setRegistrationError(axiosError);
+    } else {
+      const validationError = {
+        message: t("confirmation.error.undefined"),
+        details: JSON.stringify(error),
+        values: values,
+      }
+      setRegistrationError(validationError);
     }
-  }, [isValid, showValidation])
+  }
+
+
+  useEffect(() => {
+    setRegistrationResult(undefined);
+    setRegistrationError(undefined);
+    if (step === steps.length) {
+      setIsLoading(true);
+      registerStudent(values).then(inscription => {
+        setRegistrationResult(inscription);
+      }).catch(error => {
+        handleError(error);
+      })
+    }
+    setIsLoading(false);
+  }, [step]);
 
   useEffect(() => {
     setMyStepHasErrors(!myStepHasNoErrors())
@@ -66,118 +95,84 @@ export default function InscriptionForm() {
     }
   }
 
-  function validate() {
-    if (!errors.initiated) {
-      return;
+  function myStepHasNoValues() {
+    switch (step) {
+      case 0:
+        return stepHasNoValues(values.student);
+      case 1:
+        return stepHasNoValues(values.parent);
+      case 2:
+        return stepHasNoValues(values.school);
+      case 3:
+        return stepHasNoValues(values.extra);
+      default:
+        return false;
     }
-    setIsValid(myStepHasNoErrors());
-
-    // if (step === 0) {
-    //   let hasNoErrors = stepHasNoErrors(errors.student, componentErrors.student);
-    //   setIsValid(hasNoErrors);
-    // } else if (step === 1) {
-    //   let hasNoErrors = stepHasNoErrors(errors.parent, componentErrors.parent);
-    //   setIsValid(hasNoErrors);
-    // } else if (step === 2) {
-    //   let hasNoErrors = stepHasNoErrors(errors.school, componentErrors.school);
-    //   setIsValid(hasNoErrors);
-    // } else if (step === 3) {
-    //   let hasNoErrors = stepHasNoErrors(errors.extra, componentErrors.extra);
-    //   setIsValid(hasNoErrors);
-    // } else {
-    //   setIsValid(false);
-    // }
-  };
+  }
 
   const handleNext = () => {
+    updateMyStepErrors();
     setShowValidation(true);
-    validate();
+    if (myStepHasNoValues()) {
+      return;
+    }
+    if (myStepHasNoErrors()) {
+      setStep(step + 1);
+      setShowValidation(false);
+    }
   };
 
   const handleBack = () => {
-    setShowValidation(false);
-    setIsValid(false);
+    setShowValidation(true);
     setStep(step - 1);
   };
 
-  const sentInfo = () => {
-    setIsLoading(true);
-    values.parent.siteLanguage = getLanguage();
-    if (!values.id) {
-      const register = registerStudent(values);
-      values.id = register.id;
-    } else {
-      // TODO update student functionality
-      const update = updateStudent(values.id, values);
-    }
-    setIsLoading(false);
-  }
-
-  const getInscriptionConfirmation = () => {
-    if (isLoading) {
-      return <CircularProgress/>
-    } else {
-      return <React.Fragment>
-        <Typography variant="h5" gutterBottom>
-          Bedankt voor uw inschrijving.
-        </Typography>
-        <Typography variant="subtitle1">
-          U ontvangt van ons een bevestigingsmail (gelieve ook uw ongewenste e-mail na te kijken).
-          Begin juni contacteren wij u per e-mail met praktische informatie m.b.t. de taalvakantie.
-          We verwachten u op de eerste dag van de stage in de abdijschool van Zevenkerken.
-          Gelieve het voorschot binnen de drie werkdagen te storten op rekening BE16 0018 5319 2474.
-        </Typography>
-      </React.Fragment>;
-    }
+  const handleAnotherRegistration = () => {
+    setStep(0);
+    setShowValidation(true);
   }
 
   return (
-
-    <React.Fragment>
-      <div className="inscription-card" id="inscription">
-        <div className="container">
-          <Card className="card-container">
-            <h1>Inschrijvingsformulier</h1>
-            <CustomStepper activeStep={step}>
-              {steps.map((label) => (
-                <Step key={label}>
-                  <StepLabel>{label}</StepLabel>
-                </Step>
-              ))}
-            </CustomStepper>
-            <React.Fragment>
-              {step === steps.length ? getInscriptionConfirmation() : (
-                <React.Fragment>
-                  {step === 0 &&
-                  <StudentInformationForm values={values} handleInputChange={handleInputChange} handleOnError={handleOnError} errors={errors}/>}
-                  {step === 1 && <ParentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
-                  {step === 2 && <SchoolInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
-                  {step === 3 && <ExtraInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
-                  {myStepHasErrors ? <Alert severity="warning">Niet alle verplichte velden werden ingevuld.</Alert> : null}
-                  <div className="inscription-button-container">
-                    {step > 1 && (
-                      <div className="inscription-button" onClick={sentInfo}>
-                        Voorlopig opslaan
-                      </div>
-                    )}
-                    {step !== 0 && (
-                      <div className="inscription-button" onClick={handleBack}>
-                        Vorige
-                      </div>
-                    )}
-                    <div className="inscription-button"
-                         onClick={handleNext}
-                    >
-                      {step === steps.length - 1 ? 'Inschrijven' : 'Volgende'}
+    <div className="inscription-card" id="inscription">
+      <div className="container">
+        <Card className="card-container">
+          <h1>{t("inscription.title")}</h1>
+          <CustomStepper activeStep={step}>
+            {steps.map((label) => (
+              <Step key={label}>
+                <StepLabel>{label}</StepLabel>
+              </Step>
+            ))}
+          </CustomStepper>
+          <>
+            {step === steps.length ? (
+              <>
+                <InscriptionConfirmation isLoading={isLoading} registration={registrationResult} error={registrationError}
+                                         onClick={handleAnotherRegistration}/>
+              </>
+            ) : (
+              <>
+                {step === 0 &&
+                <StudentInformationForm values={values} handleInputChange={handleInputChange} handleOnError={handleOnError} errors={errors}/>}
+                {step === 1 && <ParentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
+                {step === 2 && <SchoolInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
+                {step === 3 && <ExtraInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
+                {showValidation && myStepHasErrors ? <Alert severity="warning">{t("inscription.form.errors")}</Alert> : null}
+                <div className="inscription-button-container">
+                  {step !== 0 && (
+                    <div className="inscription-button" onClick={handleBack}>
+                      {t("inscription.button.back")}
                     </div>
-
+                  )}
+                  <div className="inscription-button" onClick={handleNext}>
+                    {step === steps.length - 1 ? t("inscription.button.enroll") : t("inscription.button.next")}
                   </div>
-                </React.Fragment>
-              )}
-            </React.Fragment>
-          </Card>
-        </div>
+                </div>
+              </>
+            )}
+          </>
+        </Card>
       </div>
-    </React.Fragment>
+    </div>
   );
 }

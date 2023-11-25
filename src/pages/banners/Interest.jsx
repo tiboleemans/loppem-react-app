@@ -12,21 +12,21 @@ const Interest = () => {
       <div className="container">
         <Grid container>
           <Grid item sm={12} className="banner-text">
-            <h2>{t("interest.text")}</h2>
+            <h2>{t("banner.interest.text")}</h2>
           </Grid>
           <Grid container className="banner-action">
             <Grid item sm={3}/>
             <Grid item sm={2}>
               <div className="banner-button">
-                {t("interest.button.send")}
+                {t("banner.interest.button.send")}
               </div>
             </Grid>
             <Grid item sm={2}>
             </Grid>
             <Grid item sm={2}>
               <div className="banner-button">
-                {i18n.language === "nl-BE" ? <a href={BrochurePdf} target="_blank" rel="noreferrer">{t("interest.button.share")}</a> : null}
-                {i18n.language === "fr-BE" ? <a href={DepliantPdf} target="_blank" rel="noreferrer">{t("interest.button.share")}</a> : null}
+                {i18n.language === "nl-BE" ? <a href={BrochurePdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
+                {i18n.language === "fr-BE" ? <a href={DepliantPdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
               </div>
             </Grid>
           </Grid>

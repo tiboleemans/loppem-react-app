@@ -13,7 +13,7 @@ const Navigation = () => {
       <div className={`header header-fixed ${isClosed ? 'closed' : ''}`}>
         <div className="container header-container">
           <div className="brand">
-            <img src={require('../../images/logo.png')} className="nav-logo" alt="nav-logo"/>
+            <img src={require('../../images/navigation/logo.png')} className="nav-logo" alt="nav-logo"/>
           </div>
           <ul className="navigation">
             <li>
