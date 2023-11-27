@@ -12,9 +12,11 @@ const Navigation = () => {
       <button onClick={() => setIsClosed(!isClosed)}>open</button>
       <div className={`header header-fixed ${isClosed ? 'closed' : ''}`}>
         <div className="container header-container">
-          <div className="brand">
-            <img src={require('../../images/navigation/logo.png')} className="nav-logo" alt="nav-logo"/>
-          </div>
+          <ScrollTo to="intro">
+            <div className="brand">
+              <img src={require('../../images/navigation/logo.png')} className="nav-logo" alt="nav-logo"/>
+            </div>
+          </ScrollTo>
           <ul className="navigation">
             <li>
               <ScrollTo to="intro">{t("nav.home")}</ScrollTo>
