@@ -82,10 +82,12 @@ export default function useForm(showValidation, step) {
       name,
       value
     } = event.target;
+
     updateValue(subject, name, value)
   }
 
   const updateValue = (subject, name, value) => {
+      const validateResult = validators[subject][name](value);
     setValues({
       ...values,
       [subject]: {

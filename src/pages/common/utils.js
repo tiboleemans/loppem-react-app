@@ -13,10 +13,11 @@ export function debounce(func, wait, immediate) {
   };
 }
 
-export function scrollTo(scrollableElement, elmID) {
+export function scrollTo(elmID) {
   const elm = document.getElementById(elmID);
 
   if (!elmID || !elm) {
+      console.log("cannot find el", elmID);
     return;
   }
 

@@ -87,7 +87,7 @@ const Vacations = () => {
           <Card className="vacations-card card-container">
             <h1>{t("vacations.title")}</h1>
             <Grid container>
-              <Grid item xs={6}>
+              <Grid item xs={12} sm={6}>
                 <div id="vacations-grid" className="vacations-grid">
                   {tabTitles}
                 </div>
@@ -101,7 +101,7 @@ const Vacations = () => {
                 </CardContent>
               </Grid>
 
-              <Grid item xs={6}>
+              <Grid item xs={12} sm={6}>
                 <div className="image-grid">
                   <ImageCarousel/>
                 </div>

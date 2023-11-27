@@ -10,10 +10,12 @@ const ScrollTo = ({to, onScroll, className, children}) => {
       className={`${className}`}
       href={`#${to}`}
       onClick={(e) => {
-        scrollTo(appContainer, to);
+        scrollTo(to);
         if (onScroll) {
           onScroll(e);
         }
+        e.preventDefault();
+        e.stopPropagation();
       }}
     >
       {children}
