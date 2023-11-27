@@ -12,7 +12,6 @@ const ImageCarousel = () => {
     // swiper element
     const swiperContainer = document.querySelector('swiper-container');
 
-
     // swiper parameters
     const swiperParams = {
       modules: [Navigation, Pagination],

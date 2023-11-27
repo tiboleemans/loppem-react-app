@@ -60,3 +60,16 @@
     background: var(--primary-main);
 }
 
+
+@media (max-width: 600px) {
+
+    .vacations {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .tab-div {
+        margin-left: 0.1rem;
+    }
+}
+
