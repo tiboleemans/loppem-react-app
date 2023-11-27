@@ -3,7 +3,7 @@ import {Accordion, AccordionDetails, AccordionSummary, Card, Grid,} from "@mui/m
 import CheckIcon from '@mui/icons-material/Check';
 import ScrollTo from "../common/ScrollTo";
 import "./pricing.css"
-import {useTranslation} from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
 
 const Pricing = () => {
   const {t} = useTranslation();
@@ -34,19 +34,19 @@ const Pricing = () => {
       details: [
         {
           title: t("pricing.accordion.2.details.title.1"),
-          text: t("pricing.accordion.2.details.text.1")
+          text: <Trans i18nKey="pricing.accordion.2.details.text.1" />
         },
         {
           title: t("pricing.accordion.2.details.title.2"),
-          text: t("pricing.accordion.2.details.text.2")
+          text: <Trans i18nKey="pricing.accordion.2.details.text.2" />
         },
         {
           title: t("pricing.accordion.2.details.title.3"),
-          text: t("pricing.accordion.2.details.text.3")
+          text: <Trans i18nKey="pricing.accordion.2.details.text.3" />
         },
         {
           title: t("pricing.accordion.2.details.title.4"),
-          text: t("pricing.accordion.2.details.text.4")
+          text: <Trans i18nKey="pricing.accordion.2.details.text.4" />
         }
       ]
     },
@@ -61,6 +61,10 @@ const Pricing = () => {
         {
           title: t("pricing.accordion.3.details.title.2"),
           text: t("pricing.accordion.3.details.text.2")
+        },
+        {
+          title: t("pricing.accordion.3.details.title.3"),
+          text: t("pricing.accordion.3.details.text.3")
         },
       ]
     }
@@ -90,12 +94,12 @@ const Pricing = () => {
   ]
 
   return (
-    <div className="pricing" id="pricing">
+    <div className="section" id="pricing">
       <div className="container">
         <Card className="card-container">
           <h1>{t("pricing.title")}</h1>
           <Grid container spacing={6}>
-            <Grid item xs={5}>
+            <Grid item xs={12} sm={5}>
               {cardContent.map((element, i) =>
                 <div key={i} className="card card-camp">
                   <Grid container>
@@ -121,7 +125,7 @@ const Pricing = () => {
                         </Grid>
                       </Grid>
                     </Grid>
-                    <Grid item xs={3}>
+                    <Grid item sm={3}>
                       <div className="card-header-price">
                         {t("pricing.card.camp.label.price")}
                       </div>
@@ -135,8 +139,8 @@ const Pricing = () => {
                 </div>
               )}
             </Grid>
-            <Grid item xs={7}>
-              <div className=" pricing-content">
+            <Grid item sm={7}>
+              <div className="pricing-content">
                 {accordions.map((accordion, i) =>
                   <Accordion
                     key={i}

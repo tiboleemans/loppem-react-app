@@ -1,14 +1,15 @@
-import * as React from 'react';
-import Dialog from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
-import DialogContent from '@mui/material/DialogContent';
-import DialogContentText from '@mui/material/DialogContentText';
-import DialogTitle from '@mui/material/DialogTitle';
+import Dialog from "@mui/material/Dialog";
+import DialogTitle from "@mui/material/DialogTitle";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
 import {CardContent} from "@mui/material";
 import {Trans, useTranslation} from "react-i18next";
-import {useEffect, useState} from "react";
+import DialogActions from "@mui/material/DialogActions";
+import * as React from "react";
+import {useEffect, useRef, useState} from "react";
+import "./vacations.css"
 
-export default function BringAFriendConditionsDialog() {
+const VacationDetails = () => {
   const {t} = useTranslation();
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState('paper');
@@ -22,7 +23,7 @@ export default function BringAFriendConditionsDialog() {
     setOpen(false);
   };
 
-  const descriptionElementRef = React.useRef(null);
+  const descriptionElementRef = useRef(null);
   useEffect(() => {
     if (open) {
       const {current: descriptionElement} = descriptionElementRef;
@@ -31,11 +32,10 @@ export default function BringAFriendConditionsDialog() {
       }
     }
   }, [open]);
-
   return (
     <>
-      <div className="banner-button" onClick={handleClickOpen('paper')}>
-        {t("banner.bringafriend.conditions.button")}
+      <div className="vacations-details-button" onClick={handleClickOpen('paper')}>
+        {t("vacations.what.details.button")}
       </div>
       <Dialog
         open={open}
@@ -44,7 +44,7 @@ export default function BringAFriendConditionsDialog() {
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <DialogTitle id="scroll-dialog-title">{t("banner.bringafriend.conditions.dialog.title")}</DialogTitle>
+        <DialogTitle id="scroll-dialog-title">{t("vacations.what.details.title")}</DialogTitle>
         <DialogContent dividers={scroll === 'paper'}>
           <DialogContentText
             id="scroll-dialog-description"
@@ -52,15 +52,7 @@ export default function BringAFriendConditionsDialog() {
             tabIndex={-1}
           >
             <CardContent>
-              <ul>
-                <li>{t("banner.bringafriend.conditions.dialog.content.1")}</li>
-                <li>{t("banner.bringafriend.conditions.dialog.content.2")}</li>
-                <li>{t("banner.bringafriend.conditions.dialog.content.3")}</li>
-                <li>{t("banner.bringafriend.conditions.dialog.content.4")}</li>
-                <li>{t("banner.bringafriend.conditions.dialog.content.5")}</li>
-                <li>{t("banner.bringafriend.conditions.dialog.content.6")}</li>
-              </ul>
-              <p><Trans i18nKey="banner.bringafriend.conditions.dialog.content.footer"/></p>
+              <p>{t("vacations.what.details.content")}</p>
             </CardContent>
           </DialogContentText>
         </DialogContent>
@@ -72,5 +64,6 @@ export default function BringAFriendConditionsDialog() {
       </Dialog>
     </>
   )
-    ;
 }
+
+export default VacationDetails;

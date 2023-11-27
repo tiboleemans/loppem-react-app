@@ -80,6 +80,11 @@ a {
     color: var(--text-muted);
 }
 
+.section {
+    padding: 4rem;
+    background: rgba(157, 201, 130, 0.4);
+}
+
 .section-header {
     margin: 16px 0 0 0;
 }
@@ -91,4 +96,19 @@ a {
 .section-header p {
     font-size: 16px;
     max-width: 36rem;
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        padding: 0;
+    }
+
+    .card-container {
+        padding: 1rem;
+    }
+
+    .section {
+        padding: 4rem 0;
+    }
 }

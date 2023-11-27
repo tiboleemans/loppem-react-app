@@ -11,10 +11,6 @@
     margin-top: 20px;
 }
 
-.vacations-card {
-    padding: 2rem;
-}
-
 .vacations-title {
     margin-top: 25px;
 }
@@ -60,6 +56,24 @@
     background: var(--primary-main);
 }
 
+.vacations-details-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.vacations-details-button {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    padding: 10px 10px;
+    background: rgba(157, 201, 130, 1);
+    border-radius: 15px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
 
 @media (max-width: 600px) {
 
@@ -69,7 +83,28 @@
     }
 
     .tab-div {
-        margin-left: 0.1rem;
+        margin-left: 0;
+    }
+
+    .vacations-tabs {
+        border-radius: 0;
+        overflow: hidden;
+        cursor: pointer;
+        background: var(--primary-hex-light);
+        padding: 0.75rem 1.5rem;
+        transition: none;
+    }
+
+    .vacations-tabs:hover {
+        border-radius: 0;
+        overflow: hidden;
+        cursor: pointer;
+        background: var(--primary-main);
+    }
+
+    .vacations-content {
+        text-align: left;
+        margin-top: 0px;
     }
 }
 

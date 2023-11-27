@@ -5,6 +5,7 @@ import useTabs from "./useTabs";
 import {Trans, useTranslation} from "react-i18next";
 import ImageCarousel from "./ImageCarousel";
 import "./vacations.css";
+import VacationDetails from "./VacationDetails";
 
 const Vacations = () => {
     const {t} = useTranslation();
@@ -24,6 +25,7 @@ const Vacations = () => {
                 text: <Trans i18nKey="vacations.what.section.two.text" components={{enter: <br/>}}/>
               }
             ],
+          dialog: <VacationDetails/>
         },
       }, {
         id: 'vacations-where',
@@ -38,10 +40,6 @@ const Vacations = () => {
               {
                 title: t("vacations.where.section.two.title"),
                 text: t("vacations.where.section.two.text"),
-              },
-              {
-                title: t("vacations.where.section.three.title"),
-                text: t("vacations.where.section.three.text"),
               }
             ]
         },
@@ -59,7 +57,7 @@ const Vacations = () => {
               text: t("vacations.why.section.two.text"),
             },
           ]
-        }
+        },
       }, {
         id: 'vacations-who',
         title: t("vacations.who.title"),
@@ -68,11 +66,11 @@ const Vacations = () => {
             [
               {
                 title: t("vacations.who.section.one.title"),
-                text: t("vacations.who.section.one.text"),
+                text: <Trans i18nKey="vacations.who.section.one.text" />
               },
               {
                 title: t("vacations.who.section.two.title"),
-                text: t("vacations.who.section.two.text"),
+                text: <Trans i18nKey="vacations.who.section.two.text" />
               },
             ]
         },
@@ -84,7 +82,7 @@ const Vacations = () => {
     return (
       <div className="vacations" id="vacations">
         <div className="container">
-          <Card className="vacations-card card-container">
+          <Card className="card-container">
             <h1>{t("vacations.title")}</h1>
             <Grid container>
               <Grid item xs={12} sm={6}>
@@ -98,15 +96,16 @@ const Vacations = () => {
                       <p className="vacations-content">{section.text}</p>
                     </div>
                   )}
+                  <div className="vacations-details-button-container">
+                    {bodyActiveTab?.dialog}
+                  </div>
                 </CardContent>
               </Grid>
-
               <Grid item xs={12} sm={6}>
                 <div className="image-grid">
                   <ImageCarousel/>
                 </div>
               </Grid>
-
             </Grid>
           </Card>
         </div>
