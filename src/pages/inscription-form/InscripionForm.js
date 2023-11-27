@@ -71,9 +71,10 @@ export default function InscriptionForm() {
         setRegistrationResult(inscription);
       }).catch(error => {
         handleError(error);
+      }).finally(() => {
+        setIsLoading(false);
       })
     }
-    setIsLoading(false);
   }, [step]);
 
   useEffect(() => {

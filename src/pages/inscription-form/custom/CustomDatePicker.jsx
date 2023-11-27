@@ -54,12 +54,12 @@ function CustomDatePicker(props) {
 
     switch (errorDatePicker) {
       case 'maxDate':
-        return t("student.error.datepicker.max.date");
+        return t("inscription.student.error.datepicker.max.date");
       case 'minDate': {
-        return t("student.error.datepicker.min.date");
+        return t("inscription.student.error.datepicker.min.date");
       }
       case 'invalidDate': {
-        return t("student.error.datepicker.invalid.date");
+        return t("inscription.student.error.datepicker.invalid.date");
       }
 
       default: {
