@@ -7,9 +7,8 @@ import {Trans, useTranslation} from "react-i18next";
 import DialogActions from "@mui/material/DialogActions";
 import * as React from "react";
 import {useEffect, useRef, useState} from "react";
-import "./vacations.css"
 
-const VacationDetails = () => {
+const PrivacyDialog = () => {
   const {t} = useTranslation();
   const [open, setOpen] = useState(false);
   const [scroll, setScroll] = useState('paper');
@@ -34,8 +33,8 @@ const VacationDetails = () => {
   }, [open]);
   return (
     <>
-      <div className="vacations-details-button" onClick={handleClickOpen('paper')}>
-        {t("vacations.what.details.button")}
+      <div className="inscription-dialog" onClick={handleClickOpen('paper')}>
+        {t("inscription.extra.label.conditions.click.privacy")}
       </div>
       <Dialog
         open={open}
@@ -44,7 +43,7 @@ const VacationDetails = () => {
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
-        <DialogTitle id="scroll-dialog-title">{t("vacations.what.details.title")}</DialogTitle>
+        <DialogTitle id="scroll-dialog-title">{t("inscription.extra.label.conditions.privacy.dialog.title")}</DialogTitle>
         <DialogContent dividers={scroll === 'paper'}>
           <DialogContentText
             id="scroll-dialog-description"
@@ -52,7 +51,18 @@ const VacationDetails = () => {
             tabIndex={-1}
           >
             <CardContent>
-              <Trans i18nKey="vacations.what.details.content" />
+              <h3> {t("inscription.extra.label.conditions.privacy.dialog.1.subtitle")}</h3>
+              <p> {t("inscription.extra.label.conditions.privacy.dialog.1.paragraph")}</p>
+              <h3> {t("inscription.extra.label.conditions.privacy.dialog.2.subtitle")}</h3>
+              <p> {t("inscription.extra.label.conditions.privacy.dialog.2.paragraph")}</p>
+              <h3> {t("inscription.extra.label.conditions.privacy.dialog.3.subtitle")}</h3>
+              <p> {t("inscription.extra.label.conditions.privacy.dialog.3.paragraph")}</p>
+              <h3> {t("inscription.extra.label.conditions.privacy.dialog.4.subtitle")}</h3>
+              <p> {t("inscription.extra.label.conditions.privacy.dialog.4.paragraph")}</p>
+              <h3> {t("inscription.extra.label.conditions.privacy.dialog.5.subtitle")}</h3>
+              <p> {t("inscription.extra.label.conditions.privacy.dialog.5.paragraph")}</p>
+              <h3> {t("inscription.extra.label.conditions.privacy.dialog.6.subtitle")}</h3>
+              <p> {t("inscription.extra.label.conditions.privacy.dialog.6.paragraph")}</p>
             </CardContent>
           </DialogContentText>
         </DialogContent>
@@ -66,4 +76,4 @@ const VacationDetails = () => {
   )
 }
 
-export default VacationDetails;
+export default PrivacyDialog;

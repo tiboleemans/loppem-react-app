@@ -18,7 +18,9 @@
 .vacations-content {
     font-size: 16px;
     text-align: justify;
-    margin-top: 10px;
+    margin: 1rem 0;
+    line-height: 1.1;
+    color: inherit;
 }
 
 .vacation-swiper-slide-card {

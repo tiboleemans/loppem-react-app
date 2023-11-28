@@ -33,15 +33,9 @@ export default function useForm(showValidation, step) {
       errors.parent.city = values.parent.city ? null : t("inscription.parent.error.city")
       errors.parent.zipCode = values.parent.zipCode ? null : t("inscription.parent.error.zipCode")
       errors.parent.gsm = values.parent.gsm ? null : t("inscription.parent.error.gsm")
-      errors.parent.gsm2 = values.parent.gsm2 ? null : t("inscription.parent.error.gsm2")
     } else if (step === 2) {
       errors.school.name = values.school.name ? null : t("inscription.school.error.name")
-      errors.school.street = values.school.street ? null : t("inscription.school.error.street")
-      errors.school.houseNr = values.school.houseNr ? null : t("inscription.school.error.houseNr")
       errors.school.city = values.school.city ? null : t("inscription.school.error.city")
-      errors.school.zip = values.school.zip ? null : t("inscription.school.error.zip")
-      errors.school.titleProf = values.school.titleProf ? null : t("inscription.school.error.prof.title")
-      errors.school.nameProf = values.school.nameProf ? null : t("inscription.school.error.prof.name")
       errors.school.years = values.school.years ? null : t("inscription.school.error.count.years")
       errors.school.hours = values.school.hours ? null : t("inscription.school.error.count.hours")
       errors.school.immersion = values.school.immersion ? null : t("inscription.school.error.immersion")
@@ -87,7 +81,6 @@ export default function useForm(showValidation, step) {
   }
 
   const updateValue = (subject, name, value) => {
-      const validateResult = validators[subject][name](value);
     setValues({
       ...values,
       [subject]: {

@@ -43,7 +43,7 @@ function CustomDatePicker(props) {
   const {subject, name, label, value, onChange, error = null, onError} = props;
   const [errorDatePicker, setErrorDatePicker] = useState(null);
   const minDate = new Date((new Date().getFullYear() - 20) + "-01-01");
-  const maxDate = new Date((new Date().getFullYear() - 9) + "-01-01");
+  const maxDate = new Date((new Date().getFullYear() - 9) + "-12-31");
   const {t} = useTranslation();
 
 
@@ -55,9 +55,10 @@ function CustomDatePicker(props) {
     switch (errorDatePicker) {
       case 'maxDate':
         return t("inscription.student.error.datepicker.max.date");
-      case 'minDate': {
+      case 'minDate':
         return t("inscription.student.error.datepicker.min.date");
-      }
+      case 'disableFuture':
+        return t("inscription.student.error.datepicker.min.date");
       case 'invalidDate': {
         return t("inscription.student.error.datepicker.invalid.date");
       }

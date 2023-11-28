@@ -35,8 +35,7 @@ export default function BringAFriendForm() {
           </div>
           <TextField autoFocus margin="dense" id="name" label={t("banner.bringafriend.form.dialog.section.1.text.field.1")} type="email" fullWidth
                      variant="standard"/>
-          <TextField autoFocus margin="dense" id="name" label={t("banner.bringafriend.form.dialog.section.1.text.field.2")} fullWidth variant="standard"/>
-          <TextField autoFocus margin="dense" id="name" label={t("banner.bringafriend.form.dialog.section.1.text.field.3")} type="email" fullWidth
+          <TextField autoFocus margin="dense" id="name" label={t("banner.bringafriend.form.dialog.section.1.text.field.2")} type="email" fullWidth
                      variant="standard"/>
           <div className="section-header">
             <h3>{t("banner.bringafriend.form.dialog.section.2.header")}</h3>

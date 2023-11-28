@@ -157,9 +157,9 @@ const Pricing = () => {
                       {accordion.details.map((detail, j) =>
                         <div key={j}>
                           <h4>{detail.title}</h4>
-                          <p className="vacations-content">
+                          <div className="vacations-content">
                             {detail.text}
-                          </p>
+                          </div>
                         </div>
                       )}
                     </AccordionDetails>

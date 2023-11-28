@@ -2,7 +2,6 @@ import React, {useEffect, useRef} from "react";
 import {Card} from "@mui/material";
 import {Navigation, Pagination} from 'swiper/modules';
 import CardMedia from "@mui/material/CardMedia";
-import "./swiper.scss";
 
 const ImageCarousel = () => {
   const swiperElRef = useRef(null);
@@ -16,10 +15,11 @@ const ImageCarousel = () => {
     const swiperParams = {
       modules: [Navigation, Pagination],
       slidesPerView: 1,
-      pagination: {
-        el: swiperPaginationRef.current,
-        type: 'fraction',
-      },
+      // loop: true,
+      // pagination: {
+      //   el: swiperPaginationRef.current,
+      //   type: 'fraction',
+      // },
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
@@ -48,7 +48,7 @@ const ImageCarousel = () => {
 
   return (
     <>
-      <div className="swiper-pagination" ref={swiperPaginationRef}/>
+      {/*<div className="swiper-pagination" ref={swiperPaginationRef}/>*/}
       <swiper-container ref={swiperElRef}>
 
         <swiper-slide lazy="true">

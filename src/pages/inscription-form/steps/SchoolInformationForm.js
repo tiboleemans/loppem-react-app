@@ -58,39 +58,6 @@ export default function SchoolInformationForm(props) {
             error={errors.school.name}
           />
         </Grid>
-        <Grid item sm={6}/>
-
-        <Grid item xs={12} sm={6}>
-          <CustomTextField
-            subject={subject}
-            label={t("inscription.school.label.street")}
-            name="street"
-            value={values.school.street}
-            onChange={handleInputChange}
-            error={errors.school.street}
-          />
-        </Grid>
-
-        <Grid item xs={6} sm={3}>
-          <CustomTextField
-            subject={subject}
-            label={t("inscription.school.label.houseNr")}
-            name="houseNr"
-            value={values.school.houseNr}
-            onChange={handleInputChange}
-            error={errors.school.houseNr}
-          />
-        </Grid>
-
-        <Grid item xs={6} sm={3}>
-          <CustomTextField
-            subject={subject}
-            label={t("inscription.school.label.busNr")}
-            name="busNr"
-            value={values.school.busNr}
-            onChange={handleInputChange}
-          />
-        </Grid>
 
         <Grid item xs={12} sm={6}>
           <CustomTextField
@@ -100,40 +67,6 @@ export default function SchoolInformationForm(props) {
             value={values.school.city}
             onChange={handleInputChange}
             error={errors.school.city}
-          />
-        </Grid>
-
-        <Grid item xs={12} sm={6}>
-          <CustomTextField
-            subject={subject}
-            label={t("inscription.school.label.zip")}
-            name="zip"
-            value={values.school.zip}
-            onChange={handleInputChange}
-            error={errors.school.zip}
-          />
-        </Grid>
-
-        <Grid item xs={12} sm={6}>
-          <CustomButtonGroup
-            subject={subject}
-            name="titleProf"
-            label={t("inscription.school.label.prof.title")}
-            value={values.school.titleProf}
-            onChange={handleInputChange}
-            items={titleProfItems}
-            error={errors.school.titleProf}
-          />
-        </Grid>
-
-        <Grid item xs={12} sm={6}>
-          <CustomTextField
-            subject={subject}
-            label={t("inscription.school.label.prof.name")}
-            name="nameProf"
-            value={values.school.nameProf}
-            onChange={handleInputChange}
-            error={errors.school.nameProf}
           />
         </Grid>
 

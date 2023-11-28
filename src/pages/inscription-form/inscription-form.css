@@ -23,7 +23,7 @@
     border-radius: 8px;
     overflow: hidden;
     cursor: pointer;
-    background: var(--primary-main);
+    background: var(--green-hex-main);
     padding: 6px 16px;
     margin: 10px;
     font-weight: 500;
@@ -31,9 +31,8 @@
 }
 
 .inscription-button:hover {
-    background: var(--primary-hex-light);
     transition: all 250ms ease;
-    color: #fff;
+    font-weight: bold;
 }
 
 .inscription-confirmation-button {
@@ -96,4 +95,21 @@
 
 .inscription-form-title {
     margin: 10px 0 30px 10px;
+}
+
+.inscription-dialog {
+    text-decoration: underline !important;
+    display: inline-block;
+    color: blue;
+    cursor: pointer;
+}
+
+@media (max-width: 600px) {
+
+    .inscription-stepper {
+        padding: 10px 0;
+        flex-direction: column !important;
+        text-align: left;
+        align-items: flex-start !important;
+    }
 }

@@ -6,6 +6,7 @@ import {Trans, useTranslation} from "react-i18next";
 import ImageCarousel from "./ImageCarousel";
 import "./vacations.css";
 import VacationDetails from "./VacationDetails";
+import WhereDetails from "./WhereDetails";
 
 const Vacations = () => {
     const {t} = useTranslation();
@@ -41,7 +42,8 @@ const Vacations = () => {
                 title: t("vacations.where.section.two.title"),
                 text: t("vacations.where.section.two.text"),
               }
-            ]
+            ],
+          dialog: <WhereDetails/>
         },
       }, {
         id: 'vacations-why',

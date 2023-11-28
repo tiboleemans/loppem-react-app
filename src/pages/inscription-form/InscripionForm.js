@@ -134,7 +134,7 @@ export default function InscriptionForm() {
   }
 
   return (
-    <div className="inscription-card" id="inscription">
+    <div className="section" id="inscription">
       <div className="container">
         <Card className="card-container">
           <h1>{t("inscription.title")}</h1>
