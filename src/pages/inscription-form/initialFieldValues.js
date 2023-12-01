@@ -28,13 +28,7 @@ export const initialFieldValues = {
   // SchoolInformation
   school: {
     name: '',
-    street: '',
-    houseNr: '',
-    busNr: '',
     city: '',
-    zip: '',
-    titleProf: '',
-    nameProf: '',
     years: '',
     hours: '',
     immersion: '',
@@ -42,11 +36,9 @@ export const initialFieldValues = {
 
   // ExtraInformation
   extra: {
-    referral: '',
     contact: '',
     additionalInfo: '',
     foodInfo: '',
-    interest: '',
     acceptPictures: false,
     acceptTerms: false
   }
