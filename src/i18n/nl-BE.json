@@ -31,7 +31,7 @@
       "section.one.title": "Taalvakanties Nederlands en Engels",
       "section.one.text": "Loppem Conversa organiseert in de zomer taalvakanties Nederlands en Engels met overnachting voor jongeren van 10 tot 18 jaar in de prachtige omgeving van de abdijschool van Zevenkerken, op een steenworp van Brugge.",
       "section.two.title": "Kwaliteitsvol taalbad",
-      "section.two.text": "We zorgen voor een volledige onderdompeling in het Nederlands of Engels. Leerlingen krijgen een echt taalbad: ze spreken de doeltaal altijd en overal. Dit geeft hun spreekvaardigheden een ongelofelijke boost.",
+      "section.two.text": "We zorgen voor een volledige onderdompeling in het Nederlands of Engels. Leerlingen krijgen een echt taalbad: ze spreken de doeltaal altijd en overal. Dit geeft hun spreekvaardigheid een ongelofelijke boost.",
       "details": {
         "button": "Lessen en activiteiten",
         "title": "Lessen en activiteiten",
@@ -43,7 +43,7 @@
       "section.one.title": "Groene oase voor sport en spel",
       "section.one.text": "Tijdens al onze activiteiten en ontspanningsmomentjes genieten de leerlingen van de uitgestrekte groene omgeving van de abdijschool van Zevenkerken. Dit unieke domein omvat onder andere drie grote voetbalvelden, een hockeyveld, twee basketbalpleinen, drie tennisvelden en een grote vernieuwde sportzaal. De terreinen waar de leerlingen zich onder begeleiding kunnen uitleven, zijn omringd door prachtige bossen. Ook binnen is er een grote speelruimte met pingpongtafels en kickertafels.",
       "section.two.title": "Comfortabel verblijf",
-      "section.two.text": "Alle leerlingen slapen in individuele éénpersoonskamers met eigen lavabo. Ze elke dag krijgen voedzame en gevarieerde maaltijden.",
+      "section.two.text": "Alle leerlingen slapen in individuele éénpersoonskamers met eigen lavabo. Ze krijgen elke dag voedzame en gevarieerde maaltijden.",
       "details": {
         "button": "Historische abdijschool",
         "title": "Historische abdijschool",
@@ -155,7 +155,7 @@
       "summary": "EXTRA VOORDELEN",
       "details": {
         "title.1": "Ziekenfonds",
-        "text.1": "Sommige ziekenfondsen komen tussen in de inschrijvingskosten. Informeer hiervoor het best eens bij je ziekenfonds.",
+        "text.1": "Sommige ziekenfondsen komen tussen in de inschrijvingskosten. Informeer hiervoor best eens bij je ziekenfonds.",
         "title.2": "Fiscale attesten",
         "text.2": "Je kan een fiscaal attest voor opvang ontvangen voor leerlingen die tijdens de taalvakantie maximaal 14 jaar oud zijn.",
         "title.3": "Voordelen via je werkgever",
@@ -215,7 +215,7 @@
       "busNr": "Busnummer",
       "city": "Gemeente",
       "zip": "Postcode",
-      "gsm": "GSM",
+      "gsm": "Gsm",
       "gsm2": "2e telefoonnummer"
     },
     "parent.error": {
@@ -258,7 +258,7 @@
     "extra.label": {
       "referral.name": "Ik ben aangebracht door",
       "referral.condition": "Indien je in contact bent gebracht door een oud-leerling van Loppem Conversa kan die genieten van een cashback korting",
-      "contact.placeHolder": "Hoe ben je dit jaar in contact gekomen met de Loppem Conversa?",
+      "contact.placeHolder": "Hoe ben je dit jaar in contact gekomen met Loppem Conversa?",
       "contact.choice": {
         "1": "Mijn kind is een oud-leerling",
         "2": "Mond-aan-mondreclame",
@@ -332,7 +332,7 @@
             },
             "6": {
               "subtitle": "Annulatie inschrijving",
-              "paragraph": "Bij annulatie van de inschrijving wordt tot 14 dagen voor de aanvang van de stage een administratieve kost van € 50 aangerekend. Indien u minder dan 14 dagen voor de stage annuleert, wordt een administratieve kost van € 150 aangerekend."
+              "paragraph": "We begrijpen dat het soms belangrijk is om een inschrijving te kunnen annuleren. Als je een inschrijving wil annuleren, dan vragen we om ons via e-mail te contacteren zodat we samen naar een oplossing kunnen zoeken. Tot 1 juni kan je je inschrijving kosteloos annuleren. Vanaf 1 juni brengen we een administratieve kost van 100 euro in rekening. Dit bedrag kunnen we omzetten in een voucher die je kan gebruiken bij een volgende inschrijving."
             },
             "7": {
               "subtitle": "Privacy",
@@ -421,20 +421,20 @@
       "content.card.3.title": "Zijn er kortingen?",
       "content.card.3.body": "<header>Kostprijs</header><p>De kostprijs van elke taalvakantie bedraagt 790 euro.</p><header>Vroegboekkortin</header><p>Schrijf in voor 1 februari en geniet van 20 euro korting. De kostprijs bedraagt in dat geval dus 770 euro.</p><header>Vriendjeskorting</header><p>Overtuig een vriend om voor de eerste keer mee te komen op taalvakantie en geniet van 50 euro cashback die je ontvangt na afloop van de taalvakantie (voor meer info, bekijk de voorwaarden hieronder).</p>",
       "content.card.4.title": "Wat als ik mijn inschrijving wil annuleren?",
-      "content.card.4.body": ""
+      "content.card.4.body": "We begrijpen dat het soms belangrijk is om een inschrijving te kunnen annuleren. Als je een inschrijving wil annuleren, dan vragen we om ons via e-mail te contacteren zodat we samen naar een oplossing kunnen zoeken. Tot 1 juni kan je je inschrijving kosteloos annuleren. Vanaf 1 juni brengen we een administratieve kost van 100 euro in rekening. Dit bedrag kunnen we omzetten in een voucher die je kan gebruiken bij een volgende inschrijving."
     },
     "tab.2": {
       "title": "Op kamp",
       "content.card.1.title": "Voor welke taalvakantie is er plaats?",
-      "content.card.1.body": "Onze stages gaan enkel door in de zomervakantie tussen 7 - 17 juli 2024 & 4 - 14 augustus 2024 In het inschrijvingsformulier worden de keuzes van de beschikbare stages getoond. Zolang de stageperiode in het inschrijvingsformulier zichtbaar is, betekent dit dat er plaats is voor deze stage. ",
+      "content.card.1.body": "Onze stages gaan enkel door in de zomervakantie tussen 7 - 17 juli 2024 & 4 - 14 augustus 2024. In het inschrijvingsformulier worden de keuzes van de beschikbare stages getoond. Zolang de stageperiode in het inschrijvingsformulier zichtbaar is, betekent dit dat er plaats is voor deze stage. ",
       "content.card.2.title": "Wat moet mijn kind meenemen?",
       "content.card.2.body": "Link naar pdf",
       "content.card.3.title": "Hoe ziet een typische dag eruit?",
       "content.card.3.body": "De leerlingen worden met muziek in de doeltaal gewekt en schuiven vrij aan bij het ontbijt. In de voormiddag wisselen de conversatielessen en korte ontspanningsmomentjes elkaar af. Na het middageten kunnen de leerlingen zich kort even opfrissen op hun kamer en daarna dagen de animatoren hen sportief of creatief uit tijdens activiteiten die zoveel mogelijk in openlucht doorgaan. Daarna staan de leerkrachten alweer te popelen om verder met de leerlingen aan de slag te gaan. Dan is het al tijd voor het vieruurtje en een volgende ontspannende activiteit om wat stoom af te laten. Na het avondeten kunnen de leerlingen een actieve of rustige activiteit naar keuze kiezen en gezellig tijd doorbrengen met hun vrienden. Na een verkwikkende douche kruipen de leerlingen onder de wol.",
       "content.card.4.title": "Welke activiteiten en uitstappen zijn er?",
       "content.card.4.body": "Er is een dagelijkse portie sport en spel op het domein van de abdijschool: denk aan balsporten op onze sportvelden, de alom geliefde water- en verfspelletjes, een escape game, quiz, lasertag, knutselen voor de kleinsten, karaoke en muzikale shows (swingpaleis en vrij podium), een nachtspel voor de oudste leerlingen, een casinoavond en natuurlijk nog een aantal verrassingen!\nDaarnaast verlaten we het domein ook een aantal keer. We gaan met de hele groep op uitstap naar het historische stadscentrum van het nabijgelegen Brugge, waar we de leerlingen de stad laten ontdekken tijdens een uitdagende stadszoektocht. De leerlingen gaan tijdens deze zoektocht in interactie met winkeliers en kunnen zo hun zelfvertrouwen in de gekozen doeltaal nog een extra boost geven. Het is geweldig voor de leerlingen om tijdens deze interacties te merken dat ze er op een comfortabele manier in slagen om in de doeltaal te spreken met moedertaalsprekers. Het is ook een jaarlijkse traditie geworden om met de leerlingen te gaan zwemmen in een zwembad in de buurt.",
-      "content.card.5.title": "Wat is het gsmbeleid?",
-      "content.card.5.body": "We begrijpen dat de leerlingen hun gsm graag willen meenemen op kamp om af en toe contact te houden met het thuisfront, hoewel ze absoluut geen gsm nodig hebben tijdens onze taalvakantie. We zetten alles op alles om de leerlingen te motiveren om zoveel mogelijk vrienden te maken en op die manier zoveel mogelijk de gekozen doeltaal op een ontspannen manier in te oefenen. Wij vinden als organisatie dat een gsm op zak hebben daarbij niet helpt en daarom vragen we de leerlingen om hun gsm ofwel zoveel mogelijk op hun kamer te laten. We hebben door de jaren heen opgemerkt dat leerlingen het eigenlijk heel fijn vinden om even afstand te nemen van hun gsm en sociale media en zich helemaal kunnen concentreren op het dagelijkse leven op kamp. ",
+      "content.card.5.title": "Wat is het gsm-beleid?",
+      "content.card.5.body": "We begrijpen dat de leerlingen hun gsm graag willen meenemen op kamp om af en toe contact te houden met het thuisfront, hoewel ze absoluut geen gsm nodig hebben tijdens onze taalvakantie. We zetten alles op alles om de leerlingen te motiveren om zoveel mogelijk vrienden te maken en op die manier zoveel mogelijk de gekozen doeltaal op een ontspannen manier in te oefenen. Wij vinden als organisatie dat een gsm op zak hebben daarbij niet helpt en daarom vragen we de leerlingen om hun gsm zoveel mogelijk op hun kamer te laten. We hebben door de jaren heen opgemerkt dat leerlingen het eigenlijk heel fijn vinden om even afstand te nemen van hun gsm en sociale media en zich helemaal te kunnen concentreren op het dagelijkse leven op kamp. ",
       "content.card.6.title": "Hoe worden de klasgroepjes gevormd?",
       "content.card.6.body": "We vormen de klasgroepjes van maximaal 10 leerlingen tijdens de eerste dag van de taalvakantie op basis van leeftijd, voorkennis en spreekdurf in de doeltaal. De leerkracht gaat gedurende 2 uur in verschillende werkvormen (zowel in groep als individueel) aan de slag met de leerlingen om hun reële vaardigheden zo goed mogelijk in te schatten. We houden hierbij ook rekening met de sociale dynamiek, wat cruciaal is om elk kind een fijne leerervaring te kunnen aanbieden. Uiteraard volgen we de evolutie en groei van de leerlingen nauwgezet op doorheen de taalvakantie en passen we indien nodig de groepsvorming nog aan in nauw overleg met de leerling, de leerkracht en de organisatie.",
       "content.card.7.title": "Hoe blijf ik op de hoogte tijdens het kamp?",

@@ -26,7 +26,7 @@ const Contact = () => {
                 </div>
                 <div className="card card-contact">
                   <div className="card-header-contact">
-                    {t("contact.card.1.content.title")}
+                    {t("contact.card.2.content.title")}
                   </div>
                   <div className="card-contact-content">
                     <p className="card-contact-content-item">{t("contact.card.2.content.item.1")}</p>

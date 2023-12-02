@@ -34,7 +34,7 @@ const PrivacyDialog = () => {
   return (
     <>
       <div className="inscription-dialog" onClick={handleClickOpen('paper')}>
-        {t("inscription.extra.label.conditions.click.privacy")}
+        {t("inscription.extra.label.conditions.privacy.click")}
       </div>
       <Dialog
         open={open}

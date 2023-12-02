@@ -73,6 +73,15 @@ const PracticalInfo = () => {
         }
       ]
     },
+    {
+      title: t("practical.tab.4.title"),
+      faqs: [
+        {
+          question: t("inscription."),
+          answer: t("practical.tab.4.content.card.1.body"),
+        }
+      ]
+    },
   ];
 
   return (

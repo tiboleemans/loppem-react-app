@@ -12,9 +12,9 @@ const QuestionBanner = () => {
             <h2>{t("banner.question.title")}</h2>
           </Grid>
           <Grid item sm={2}>
-            <Button size="large" color="secondary" variant="contained">
-              {t("banner.question.button")}
-            </Button>
+            <div className="banner-button">
+              <a className="banner-button-link" href="mailto:info@loppemconversa.be">{t("banner.question.button")}</a>
+            </div>
           </Grid>
         </Grid>
       </div>

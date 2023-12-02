@@ -13,84 +13,83 @@
     "contact": "Contact"
   },
   "vacations": {
-    "title": "Apprenez à parler avec plaisir",
+    "title": "Apprendre à parler avec plaisir",
     "what": {
       "title": "Quoi ?",
-      "section.one.title": "Séjours linguistiques Néerlandais et anglais",
-      "section.one.text": "Loppem Conversa organise des séjours linguistiques d'été en néerlandais et en anglais avec hébergement pour les jeunes de 10 à 18 ans dans le cadre magnifique de l'école abbatiale de Zevenkerken, à deux pas de Bruges.",
-      "section.two.title": "Bain de langue de qualité",
-      "section.two.text": "Nous proposons une immersion totale en néerlandais ou en anglais. Les élèves bénéficient d'un véritable bain linguistique : ils parlent la langue cible à tout moment et en tout lieu. Leurs compétences orales s'en trouvent considérablement renforcées.",
+      "section.one.title": "Séjours linguistiques néerlandais et anglais",
+      "section.one.text": "Chaque été, Loppem Conversa organise des séjours linguistiques en néerlandais et en anglais avec hébergement pour les jeunes de 10 à 18 ans dans le cadre magnifique de l'école abbatiale de Zevenkerken, à deux pas de Bruges.",
+      "section.two.title": "Immersion totale",
+      "section.two.text": "Nous proposons une expérience d’immersion totale dans la langue cible. Les élèves bénéficient d'un véritable bain linguistique : ils parlent la langue cible constamment et partout. Ceci permet aux participants de progresser notablement dans la maîtrise du néerlandais ou de l’anglais.",
       "details": {
         "button": "Leçons et activités",
         "title": "Leçons et activités",
-        "content": "<p>Les élèves bénéficient d'un programme quotidien varié, riche en apprentissage, en sports et en jeux. Les jeunes suivent des cours de conversation en petits groupes de 10 élèves maximum. Ils sont stimulés et motivés de manière détendue pour faire progresser leurs compétences orales grâce à des formes de travail créatives. </p> <p>Apprendre à parler avec plaisir et confiance dans la langue cible choisie ne se fait pas seulement pendant les cours, mais aussi pendant les activités et les moments de détente.</p> <p>Il y a une dose quotidienne de sports et de jeux : par exemple, des jeux de balle sur nos terrains de sport, la natation, les populaires jeux d'eau et de peinture, un jeu d'évasion, des quiz, le laser tag, des travaux manuels pour les plus petits, de la musique, une excursion à la piscine, à Bruges et bien plus encore.</p> <p>Il y a une dose quotidienne de sports et de jeux.</p>"
+        "content": "<p>Les élèves profitent d'un programme quotidien varié, riche en apprentissage, en sports et en jeux. Les jeunes suivent des cours de conversation en petits groupes de 10 élèves maximum. Ils sont stimulés et motivés de manière détendue pour faire progresser leurs compétences orales grâce à des méthodes de travail créatives.</p> <p>Les élèves apprennent à parler avec plaisir et confiance dans la langue cible, pas seulement pendant les cours mais aussi pendant les activités et les moments de détente</p> <p>Les cours sont alternés avec une variété d’activités ludiques et sportives : des jeux de ballons sur nos terrains de sport, la natation, les jeux d'eau et de peinture, un escape game, un quiz, le lasertag, le bricolage, de la musique, une journée dans la villes de Bruges et bien plus encore.</p>"
       }
     },
     "where": {
       "title": "Où ?",
-      "section.one.title": "Oasis de verdure pour le sport et les jeux",
-      "section.one.text": "Pendant toutes nos activités et nos moments de loisirs, les élèves profitent des vastes espaces verts de l'école de l'abbaye de Zevenkerken. Ce domaine unique comprend trois grands terrains de football, un terrain de hockey, deux terrains de basket, trois terrains de tennis et une grande salle de sport rénovée. Les terrains, où les élèves peuvent s'amuser sous surveillance, sont entourés de belles forêts. Il y a également une grande aire de jeux intérieure avec des tables de ping-pong et des tables de kicker.",
+      "section.one.title": "Domaine unique",
+      "section.one.text": "Pendant toutes nos activités et nos moments de loisirs, les élèves profitent du domaine verdoyant de l'école abatiale de Zevenkerken. Il y a trois grands terrains de football, un terrain de hockey, deux terrains de basket, trois terrains de tennis et une grande salle de sport. Les terrains, où les élèves peuvent s'amuser, sont entourés de belles forêts. Il y a également un grand espace à l’intérieur avec des tables de ping-pong et de kicker.",
       "section.two.title": "Séjour confortable",
-      "section.two.text": "Tous les étudiants dorment dans des chambres individuelles avec des lavabos privés. Ils reçoivent chaque jour des repas nutritifs et variés.",
+      "section.two.text": "Tous les étudiants dorment dans des chambres individuelles avec des lavabos privés. Ils reçoivent des repas nutritifs et variés.",
       "details": {
         "button": "École abbatiale historique",
         "title": "École abbatiale historique",
-        "content": "Nos séjours linguistiques se déroulent à l'école de l'abbaye de Zevenkerken à Loppem, située dans le magnifique cadre verdoyant de la périphérie de Bruges. Ce lieu historique unique capte l'imagination et contribue à créer un sentiment de vacances vibrant grâce à l'énorme espace intérieur et extérieur."
+        "content": "Nos séjours linguistiques se déroulent à l'école de l'abbaye de Zevenkerken à Loppem, située dans le magnifique cadre verdoyant de la périphérie de Bruges. Ce lieu historique unique contribue à créer un atmosphère de vacances grâce à l'énorme espace intérieur et extérieur."
       }
     },
     "why": {
       "title": "Pourquoi ?",
-      "section.one.title": "Un net avantage",
-      "section.one.text": "On apprend une langue en la parlant ! Le bain linguistique de Loppem Conversa est un tremplin pour l'avenir. Le fait de pouvoir appliquer sans retenue la langue cible choisie dans des situations concrètes pendant 10 jours offre une longueur d'avance agréable et durable.",
-      "section.two.title": "Vanzelfsprekend amuseren",
-      "section.two.text": "Avant tout, nous voulons susciter l'enthousiasme pour l'apprentissage d'une langue étrangère. Dans nos activités et nos formes de travail, la langue a une utilité pratique directe, car les apprenants ont besoin de la langue pour travailler ensemble et s'amuser. Les jeunes apprennent ainsi à s'approprier la langue cible. Grâce à notre pool linguistique, parler la langue cible devient naturel. En outre, nous voulons offrir aux élèves des vacances inoubliables : chez nous, l'apprentissage et le plaisir vont toujours de pair. En bref : une atmosphère unique et des souvenirs inoubliables !"
+      "section.one.title": "Une belle longueur d’avance",
+      "section.one.text": "Pour apprendre une langue, il faut la parler ! La formule de vacances linguistiques de Loppem Conversa est un tremplin pour l'avenir. Le fait de pouvoir appliquer la langue cible pendant 10 jours dans des situations concrètes et dans une atmosphère de vacances offre une longueur d'avance importante.",
+      "section.two.title": "Une atmosphère de vacances",
+      "section.two.text": "Avant tout, nous voulons enthousiasmer les jeunes à apprendre une langue étrangère. A travers de nos activités et nos méthodes de travail, la langue est directement mise en pratique. Les jeunes utilisent la langue pour travailler ensemble et pour s'amuser et apprennent ainsi à s'approprier la langue cible. Avec le temps, parler la langue cible devient un automatisme. En outre, nous voulons offrir aux élèves des vacances inoubliables : chez nous, l'apprentissage et le plaisir vont toujours de pair. En bref : nous offrons une atmosphère unique et des souvenirs inoubliables !"
     },
     "who": {
       "title": "Qui ?",
-      "section.one.title": "Organisation concernée",
-      "section.one.text": "Loppem Conversa est une organisation à but non lucratif composée d'une équipe centrale de 7 amis qui partagent une passion pour les langues et le développement. Ce qui rend Loppem Conversa unique, c'est notre approche personnelle : nous construisons des liens étroits avec les jeunes et leurs parents. Nous sommes à l'écoute des besoins et veillons à l'intégration sociale des jeunes. Nous considérons que c'est un privilège de voir les jeunes s'épanouir, grandir et se faire de nouveaux amis année après année.",
+      "section.one.title": "Une organisation engagée",
+      "section.one.text": "Loppem Conversa est une asbl composée d'une équipe de 7 amis qui partagent une passion pour les langues et le développement des jeunes. Ce qui rend Loppem Conversa unique, c'est notre approche personnelle : nous construisons des liens étroits avec les jeunes et leurs parents. Nous sommes à l'écoute de leurs besoins et veillons à l'intégration sociale des jeunes. Pour nous, c’est un privilège de voir que les jeunes s'épanouissent, grandissent et se font de nouveaux amis année après année.",
       "section.two.title": "Une équipe enthousiaste",
-      "section.two.text": "Pendant l'été, nous pouvons compter sur l'enthousiasme de notre grande équipe d'enseignants et d'animateurs bénévoles. Chaque année, ils se réjouissent eux aussi de travailler avec les élèves et de s'amuser à 200 % avec les jeunes."
+      "section.two.text": "Pendant l'été, nous pouvons compter sur l'enthousiasme de notre grande équipe d'enseignants et d'animateurs bénévoles. Chaque année, ils se réjouissent eux aussi de motiver les élèves et de s’investir à 200 %."
     }
   },
   "banner": {
     "rating": {
       "text": "Saviez-vous que Loppem Conversa a 5 étoiles sur Google ?",
-      "button.1": "Voir les commentaires",
-      "button.2": "Rédiger un commentaire"
+      "button.1": "Voir les avis",
+      "button.2": "Rédiger un avis"
     },
     "bringafriend": {
       "title": "Amenez un ami et profitez d'une réduction de 50 euros !",
       "conditions": {
         "button": "VOIR LES CONDITIONS",
-        "dialog.title": "Conditions d'utilisation de la réduction pour les amis",
-        "dialog.content.1": "Votre enfant s'inscrit lui-même.",
-        "dialog.content.2": "Votre petit ami n'a jamais participé à un séjour linguistique à Loppem Conversa.",
-        "dialog.content.3": "Votre petit ami n'a pas encore été équipé par quelqu'un d'autre.",
-        "dialog.content.4": "Vous ne pouvez pas rendre la pareille.",
-        "dialog.content.5": "Les deux élèves participent à un séjour linguistique.",
-        "dialog.content.footer": "Cette réduction n'est accordée et <strong>remboursée qu'APRÈS le séjour linguistique</strong>."
+        "dialog.title": "Conditions réduction \"amis\"",
+        "dialog.content.1": "Votre enfant est également inscrit.",
+        "dialog.content.2": "L'ami n'a jamais participé à un séjour Loppem Conversa.",
+        "dialog.content.3": "L'ami n'a pas encore été amené par quelqu'un d'autre.",
+        "dialog.content.4": "L'ami ne peut pas demander une réduction \"amis\" pour votre enfant en même temps.",
+        "dialog.content.footer": "Cette réduction n'est <strong>remboursée qu'APRÈS le séjour linguistique</strong>."
       },
       "form": {
         "button": "Demandez votre réduction",
-        "dialog.title": "Demandez une réduction pour vos amis",
-        "dialog.subtitle": "Indiquez-nous le nom de l'ami que vous amenez et bénéficiez de la remise en argent.",
+        "dialog.title": "Demandez une réduction \"amis\"",
+        "dialog.subtitle": "Indiquez-nous le nom de l'ami que vous amenez et bénéficiez de la réduction.",
         "dialog.section.1.header": "Vos coordonnées",
         "dialog.section.1.text.field.1": "Nom du parent ou du superviseur",
-        "dialog.section.1.text.field.2": "Adresse e-mail",
-        "dialog.section.2.header": "Données sur l'ami",
+        "dialog.section.1.text.field.2": "Adresse email",
+        "dialog.section.2.header": "Coordonnées de l'ami",
         "dialog.section.2.text.field.1": "Nom de l'ami",
         "dialog.action.cancel": "Annuler",
         "dialog.action.send": "Envoyer"
       }
     },
     "interest": {
-      "text": "Peut-être connaissez-vous quelqu'un qui pourrait être intéressé ?",
+      "text": "Vous connaissez quelqu'un qui pourrait être intéressé ?",
       "button.send": "Envoyer un message",
       "button.share": "Télécharger le dépliant"
     },
     "question": {
-      "title": "Vous avez une question ou un problème ?",
+      "title": "Vous avez une question ?",
       "button": "Contactez-nous"
     }
   },
@@ -98,17 +97,17 @@
     "title": "Offre",
     "card.camp": {
       "label.price": "790 €",
-      "label.enroll": "Réserver",
-      "label.language": "Langue cible: ",
+      "label.enroll": "S'inscrire",
+      "label.language": "Langue: ",
       "label.period": "Période: ",
       "label.available": "Disponible: ",
-      "content.language.1": "Néerlandais",
+      "content.language.1": "néerlandais",
       "content.period.1": "7 - 17 juillet 2024",
       "content.available.1": "success",
-      "content.language.2": "Anglas",
+      "content.language.2": "anglais",
       "content.period.2": "7 - 17 juillet 2024",
       "content.available.2": "success",
-      "content.language.3": "Néerlandais",
+      "content.language.3": "néerlandais",
       "content.period.3": "4 - 14 août 2024",
       "content.available.3": "success",
       "content.language.4": "anglais",
@@ -118,23 +117,23 @@
     "accordion.1": {
       "summary": "PRIX ET REMISES",
       "details": {
-        "title.1": "Coût",
-        "text.1": "Le coût d'un séjour linguistique de 10 jours est de 790 euros.",
-        "title.2": "Réduction pour réservation anticipée.",
-        "text.2": "Inscrivez-vous avant le 1er février 2024 et bénéficiez d'une réduction de 20 euros. Le coût dans ce cas est donc de 770 euros.",
-        "title.3": "Réduction pour les amis",
-        "text.3": "Convainquez un ami de participer pour la première fois à un séjour linguistique et profitez de 50 euros de cashback que vous recevrez après le séjour linguistique (pour plus d'informations, consultez les conditions générales ci-dessous)."
+        "title.1": "Prix",
+        "text.1": "Le prix d'un séjour linguistique de 10 jours est de 790 euros.",
+        "title.2": "Remise pour réservation anticipée",
+        "text.2": "Inscrivez-vous avant le 1er février 2024 et bénéficiez d'une réduction de 20 euros. Le prix total dans ce cas est donc de 770 euros.",
+        "title.3": "Réduction \"amis\"",
+        "text.3": "Convainquez un ami de participer pour la première fois à un séjour linguistique et profitez de 50 euros de réduction que vous recevrez après le séjour linguistique (pour plus d'informations, consultez les conditions générales ci-dessous). "
       }
     },
     "accordion.2": {
       "summary": "PAIEMENT",
       "details": {
-        "title.1": "Avance",
-        "text.1": "Vous payez l'acompte (ou le montant total immédiatement) au moment de l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total). Pour les inscriptions après le 1er juin, nous vous demandons de payer immédiatement le montant total. </p> <p>Prépaiement à l'inscription avant le 1er février : 370 € </p> <p>Paiement à l'inscription après le 1er février : 390 € </p> <p>Paiement à l'inscription après le 1er juin : 790 € </p> <p>Paiement à l'inscription après le 1er juin : 790 € </p> <p>Paiement à l'inscription après le 1er juin : 790 € </p>.",
+        "title.1": "Acompte",
+        "text.1": "Vous payez l'acompte (ou le montant total immédiatement) au moment de l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total). Pour les inscriptions après le 1er juin, nous vous demandons de payer immédiatement le montant total. </p> <p>Acompte pour inscription avant le 1er février : 370 €</p> <p>Acompte pour inscription après le 1er février : 390 €</p> <p>Montant pour inscription après le 1er juin : 790 €",
         "title.2": "Solde",
-        "text.2": "Vous paierez le solde de 400 euros avant le 1er juin.",
+        "text.2": "Vous payez le solde de 400 euros avant le 1er juin.",
         "title.3": "Montant total",
-        "text.3": "Le montant total peut également être déposé en une seule fois immédiatement après l'inscription. <p>Inscription avant le 1er février : €770</p> <p>Inscription après le 1er février : €790</p>.",
+        "text.3": "Le montant total peut également être versé en une seule fois immédiatement après l'inscription.</p> <p>Inscription avant le 1er février : €770</p> <p>Inscription après le 1er février : €790</p>",
         "title.4": "Virement",
         "text.4": "Nom: Conversa Taalvakanties vzw <br/> Numéro de compte: BE16 0018 5319 2474 <br/> BIC: GEBABEBB <p> Communication: <br/> nom complet de l'élève <br/> juillet ou août <br/> néerlandais ou anglais</p>"
       }
@@ -143,9 +142,9 @@
       "summary": "AVANTAGES SUPPLÉMENTAIRES",
       "details": {
         "title.1": "Mutualités",
-        "text.1": "Certaines mutualités interviennent dans les frais d'inscription. Il est préférable de se renseigner auprès de votre mutualité à ce sujet.",
+        "text.1": "Certaines mutualités interviennent dans les frais d'inscription. Nous vous conseillons de vous renseigner auprès de votre mutualité à ce sujet.",
         "title.2": "Attestations fiscaux",
-        "text.2": "Vous pouvez recevoir une attestation fiscale pour les élèves de moins de 14 ans pendant le séjour linguistique.",
+        "text.2": "Vous pouvez recevoir une attestation fiscale pour les élèves de moins de 14 ans.",
         "title.3": "Prestations de l'employeur",
         "text.3": "Renseignez-vous auprès de votre employeur : certains employeurs offrent des réductions sur les camps d'été pour enfants."
       }
@@ -175,7 +174,7 @@
       "period": "Période",
       "july": "7 - 17 juillet 2024",
       "august": "4 - 14 août 2024",
-      "gender": "Chambre à coucher",
+      "gender": "Chambre dans le couloir des",
       "boy": "Garçons",
       "girl": "Filles"
     },
@@ -185,31 +184,31 @@
       "birthdate": "Veuillez indiquer la date de naissance de l'élève.",
       "language": "Veuillez indiquer la langue cible souhaitée.",
       "period": "Veuillez indiquer la période souhaitée.",
-      "sex": "Veuillez indiquer la chambre à coucher.",
-      "datepicker.min.date": "L'élève doit être âgé de 19 ans au maximum.",
-      "datepicker.max.date": "L'élève doit être âgé d'au moins 9 ans.",
+      "sex": "Veuillez indiquer la chambre.",
+      "datepicker.min.date": "L'élève ne peut pas être plus agé que 19 ans.",
+      "datepicker.max.date": "L'élève doit avoir au moins 9 ans.",
       "datepicker.invalid.date": "Le format de la date n'est pas valide"
     },
     "parent.label": {
       "firstName": "Prénom",
       "lastName": "Nom",
-      "email": "E-mail",
+      "email": "Email",
       "relation": "Relation avec l'élève",
       "mother": "Mère",
       "father": "Père",
-      "guardian": "Gardien",
+      "guardian": "Tuteur",
       "street": "Rue",
-      "houseNr": "Numéro de maison",
+      "houseNr": "Numéro",
       "busNr": "Boîte",
       "city": "Commune",
       "zip": "Code postal",
-      "gsm": "GSM",
-      "gsm2": "2ème numéro"
+      "gsm": "téléphone portable",
+      "gsm2": "2ème numéro de téléphone"
     },
     "parent.error": {
       "firstName": "Veuillez indiquer votre prénom.",
       "lastName": "Veuillez indiquer votre nom.",
-      "email": "Veuillez indiquer votre adresse e-mail.",
+      "email": "Veuillez indiquer votre adresse email.",
       "relation": "Veuillez indiquer votre lien avec l'élève.",
       "street": "Veuillez indiquer votre rue.",
       "housnr": "Veuillez indiquer votre numéro de maison.",
@@ -222,7 +221,7 @@
       "city": "Commune et/ou code postal de l'école",
       "count.years": "Nombre d'années d'apprentissage de la langue cible choisie à l'école",
       "count.hours": "Nombre d'heures de langue cible choisie à l'école par semaine",
-      "immersion": "Votre enfant suit-il un enseignement bilingue pour la langue cible choisie à l'école ?",
+      "immersion": "Votre enfant suit-il un enseignement 'immersion' pour la langue cible choisie à l'école ?",
       "yes": "Oui",
       "no": "Non"
     },
@@ -234,7 +233,7 @@
       "immersion": "Veuillez indiquer si l'élève suit un programme d'immersion."
     },
     "extra.label": {
-      "contact.placeHolder": "Comment avez-vous pris contact avec la Loppem Conversa cette année ?",
+      "contact.placeHolder": "Comment avez-vous découvert Loppem Conversa cette année ?",
       "contact.choice": {
         "1": "Mon enfant est un ancien élève",
         "2": "Le bouche à oreille",
@@ -248,19 +247,19 @@
       "kitchen.info": "Informations utiles pour la cuisine",
       "kitchen.example": "(allergies alimentaires, intolérances, végétarien, halal...)",
       "extra.info": "Informations complémentaires sur l'élève",
-      "extra.example": "(informations médicales telles que les allergies, les connaissances préalables, l'attribution des chambres...)",
+      "extra.example": "(informations médicales, les connaissances préalables, l'attribution des chambres, ...)",
       "pictures": {
         "label": "J'autorise l'utilisation de photos de mon enfant à des fins commerciales <dialog/>",
         "click": "(cliquez ici pour plus de détails)",
         "dialog": {
           "title": "Utilisation de l'imagerie",
           "1": {
-            "subtitle": "Algemeen",
+            "subtitle": "Général",
             "paragraph": "En général, la publication de données à caractère personnel, au moyen de photos et de vidéos sur lesquelles une personne est reconnaissable, nécessite le consentement de la personne figurant sur la photo ou, dans le cas de mineurs, de leurs parents."
           },
           "2": {
             "subtitle": "Autorisation",
-            "paragraph": "Dans le formulaire d'inscription, nous demandons explicitement l'autorisation d'utiliser des photos qui entrent dans la catégorie des \"photos ciblées\". Nous entendons par là des photos individuelles, posées ou non, pour lesquelles une ou quelques personnes sont mises en évidence lors d'une activité de groupe (en les mettant en quelque sorte sur la photo) ou des photos posées (de groupe) telles que la photo de classe classique. Si nous sommes d'accord, nous pouvons utiliser ces photos sur nos dépliants, notre site web accessible au public, nos affiches, etc."
+            "paragraph": "Dans le formulaire d'inscription, nous demandons explicitement l'autorisation d'utiliser des photos qui entrent dans la catégorie des \"photos ciblées\". Nous entendons par là des photos individuelles, posées ou non, pour lesquelles une ou plusieurs personnes sont mises en évidence lors d'une activité de groupe (en les mettant en quelque sorte sur la photo) ou des photos posées (de groupe) telles que la photo de classe classique. Si vous êtes d'accord, nous pouvons utiliser ces photos sur nos dépliants, notre site web accessible au public, nos affiches, etc."
           },
           "3": {
             "subtitle": "Photos d'ambiance",
@@ -369,20 +368,20 @@
       }
     },
     "extra.error": {
-      "contact": "Veuillez indiquer la voie de contacte avec Loppem Conversa.",
+      "contact": "Veuillez indiquer comment vous avez découvert Loppem Conversa.",
       "accept": "Veuillez lire et accepter le règlement du cours."
     },
     "confirmation": {
       "card.mail.header": "Inscription réussie",
-      "card.mail.content": "<strong>Merci de vous être inscrit !</strong><p>Vous recevrez un e-mail de confirmation de notre part (pensez à vérifier vos spams ou vos courriers indésirables).</p><p>Début juin, nous vous contacterons par e-mail pour vous donner des informations pratiques sur le séjour linguistique.</p>",
+      "card.mail.content": "<strong>Merci pour votre inscription !</strong><p>Vous recevrez un e-mail de confirmation de notre part (pensez à vérifier votre spam).</p><p>Début juin, nous vous contacterons par email pour vous donner des informations pratiques sur le séjour linguistique.</p>",
       "card.payment.header": "Détails du paiement",
-      "card.payment.content": "<p>Veuillez verser l'acompte de 370 € ou le montant total de 770 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit en note.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
+      "card.payment.content": "<p>Veuillez verser l'acompte de 370 € ou le montant total de 770 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit dans la communication.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
       "button": "Écrire à un autre élève",
       "error": {
         "title": "Erreur technique",
         "undefined": "Une erreur inconnue s'est produite",
         "retry": "Réessayer",
-        "footer": "Vous pouvez réessayer avec les mêmes données préfixées ou vous pouvez copier ce texte et nous l'envoyer par e-mail. Nous vous prions de bien vouloir nous excuser pour ce désagrément."
+        "footer": "Vous pouvez réessayer avec les mêmes données ou vous pouvez copier ce texte et nous l'envoyer par e-mail. Nous vous prions de vouloir nous excuser pour ce désagrément."
       }
     }
   },
@@ -391,37 +390,37 @@
     "tab.1": {
       "title": "S'inscrire",
       "content.card.1.title": "Comment s'inscrire?",
-      "content.card.1.body": "<scrollTo>Cliquez ici pour vous inscrire</scrollTo> et remplissez le formulaire. Assurez-vous d'avoir rempli tous les champs obligatoires et d'avoir accepté les conditions générales et les règles de confidentialité. En cas de questions : contactez-nous par e-mail : info@loppemconversa.be ou par téléphone : +32 478 51 93 44. Après l'inscription, vous recevrez un e-mail de confirmation. L'acompte doit être payé immédiatement après l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total).",
-      "content.card.2.title": "Wanneer betalen?",
-      "content.card.2.body": "<header>Avance</header><p>Vous payez l'acompte (ou le montant total immédiatement) au moment de l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total). </p> <p>Si vous vous inscrivez après le 1er juin, nous vous demandons de verser immédiatement le montant total. </p> <p>Avance sur inscription avant le 1er février : 370 EUR</p> <p>Avance sur inscription après le 1er février : € 390</p> <p>Inscription après le 1er juin : 790</p><header>Solde</header> <p>Vous paierez le solde de 400 euros avant le 1er juin.</p><header>Montant total</header><p>Le montant total peut également être déposé en une seule fois immédiatement après l'inscription. <br /> Inscription avant le 1er février : 770 <br /> Inscription après le 1er février : 790</p><header>Virement</header><p>Nom: Conversa Taalvakanties vzw <br /> Numéro de compte: BE16 0018 5319 2474 <br /> BIC: GEBABEBB <br /> Mededeling: nom complet de l'élève + juillet ou août + néerlandais ou anglais</p>",
-      "content.card.3.title": "Existe-t-il des réductions ?",
-      "content.card.3.body": "<header>Coût</header><p>Le coût de chaque séjour linguistique est de 790 euros.</p><header>Réduction pour réservation anticipée</header><p>Inscrivez-vous avant le 1er février et bénéficiez d'une réduction de 20 euros. Le coût dans ce cas est donc de 770 euros.</p><header>Réduction pour les amis</header><p>Convainquez un ami de participer pour la première fois à un séjour linguistique et profitez de 50 euros de cashback que vous recevrez après le séjour linguistique (pour plus d'informations, consultez les conditions générales ci-dessous).</p>",
+      "content.card.1.body": "<scrollTo>Cliquez ici pour vous inscrire</scrollTo> et remplissez le formulaire. Assurez-vous d'avoir rempli tous les champs obligatoires et d'avoir accepté les conditions générales et les règles de confidentialité. En cas de questions : contactez-nous par email : info@loppemconversa.be ou par téléphone : +32 478 51 93 44. Après l'inscription, vous recevrez un e-mail de confirmation. L'acompte doit être payé immédiatement après l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total).",
+      "content.card.2.title": "Quand et comment faut-il payer ?",
+      "content.card.2.body": "<header>Acompte</header><p>Vous payez l'acompte (ou le montant total immédiatement) au moment de l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total). </p> <p>Si vous vous inscrivez après le 1er juin, nous vous demandons de verser immédiatement le montant total. </p> <p>Acompte pour inscription avant le 1er février : 370 EUR</p> <p>Acompte pour inscription après le 1er février : € 390</p> <p>Inscription après le 1er juin : 790</p><header>Solde</header> <p>Vous payez le solde de 400 euros avant le 1er juin.</p><header>Montant total</header><p>Le montant total peut également être versé en une seule fois immédiatement après l'inscription. <br /> Inscription avant le 1er février : 770 <br /> Inscription après le 1er février : 790</p><header>Virement</header><p>Nom: Conversa Taalvakanties vzw <br /> Numéro de compte: BE16 0018 5319 2474 <br /> BIC: GEBABEBB <br /> Mededeling: nom complet de l'élève + juillet ou août + néerlandais ou anglais</p>",
+      "content.card.3.title": "Y-a-t-il des réductions ?",
+      "content.card.3.body": "<header>Prix</header><p>Le prix d'un séjour linguistique est de 790 euros.</p><header>Remise pour réservation anticipée</header><p>Inscrivez-vous avant le 1er février et bénéficiez d'une réduction de 20 euros. Le prix dans ce cas est donc de 770 euros.</p><header>Réduction \"amis\"</header><p>Convainquez un ami de participer pour la première fois à un séjour linguistique et profitez de 50 euros de réduction que vous recevrez après le séjour linguistique (pour plus d'informations, consultez les conditions générales ci-dessous).</p>",
       "content.card.4.title": "Que se passe-t-il si je souhaite annuler mon inscription ?",
-      "content.card.4.body": ""
+      "content.card.4.body": "Nous comprenons qu'il est parfois nécessaire d'annuler une inscription. Si vous souhaitez annuler une inscription, nous vous demandons de nous contacter par email afin que nous puissions trouver une solution ensemble. Jusqu'au 1er juin, vous pouvez annuler votre inscription sans frais supplémentaires. A partir du 1er juin, nous demandons un frais administratif de 100 euros. Nous pouvons offrir un bon que vous pourrez utiliser lors d'une prochaine inscription."
     },
     "tab.2": {
       "title": "Le camp",
-      "content.card.1.title": "Quels sont les séjours linguistiques disponibles ?",
-      "content.card.1.body": "Nos stages auront lieu uniquement pendant les vacances d'été, entre le 7 et le 17 juillet 2024 et entre le 4 et le 14 août 2024. Le formulaire d'inscription affichera les choix de stages disponibles. Tant que la période de stage est visible dans le formulaire d'inscription, cela signifie qu'il y a de la place pour ce stage.",
-      "content.card.2.title": "Que doit apporter mon enfant ?",
-      "content.card.2.body": "Link naar pdf",
+      "content.card.1.title": "Quels séjours linguistiques sont encore disponibles ?",
+      "content.card.1.body": "Nos stages ont lieu uniquement pendant les vacances d'été, entre le 7 et 17 juillet 2024 et entre le 4 et 14 août 2024. Le formulaire d'inscription affichera les choix de stages disponibles. Si la période de stage est visible dans le formulaire d'inscription, cela signifie qu'il y a encore des places pour ce stage.",
+      "content.card.2.title": "Qu'est-ce que mon enfant doit apporter ?",
+      "content.card.2.body": "Checklist",
       "content.card.3.title": "À quoi ressemble une journée typique ?",
-      "content.card.3.body": "Les étudiants se réveillent avec de la musique dans la langue cible et participent librement au petit-déjeuner. Le matin, les cours de conversation alternent avec de courts moments de détente. Après le déjeuner, les élèves peuvent se rafraîchir brièvement dans leur chambre, puis les animateurs les sollicitent de manière sportive ou créative lors d'activités qui se déroulent, dans la mesure du possible, à l'extérieur. Ensuite, les enseignants sont déjà impatients de continuer à travailler avec les élèves. Puis c'est déjà l'heure du goûter et d'une autre activité relaxante pour se défouler. Après le dîner, les élèves peuvent choisir une activité active ou calme de leur choix et passer du temps avec leurs amis. Après une douche rafraîchissante, les élèves se glissent sous les couvertures.",
+      "content.card.3.body": "Les élèves se réveillent le matin avec de la musique et mangent le petit-déjeuner ensemble. Le matin, les cours de conversation sont alternés avec des moments de récréation. Après le déjeuner, les élèves peuvent retourner brièvement dans leur chambre. Puis les animateurs organisent des activités sportives et créatives à l'extérieur. Ensuite, les enseignants reprennent les cours de conversation avec les élèves. Après le cours, on prend le temps pour un goûter qui est suivi par une autre activité de détente. Après le dîner, les élèves s’amusent lors d’une activité de leur choix et passent la soirée avec leurs amis. Après cette chouette journée, il est temps de se coucher. ",
       "content.card.4.title": "Quelles sont les activités et les sorties proposées ?",
-      "content.card.4.body": "Chaque jour, l'école de l'Abbaye est le théâtre d'activités sportives et de jeux : jeux de ballon sur nos terrains de sport, jeux d'eau et de peinture très appréciés, escape game, quiz, laser tag, travaux manuels pour les plus jeunes, karaoké et spectacles musicaux (swing palace et scène libre), jeu de nuit pour les plus grands, soirée casino et, bien sûr, de nombreuses surprises ! En outre, nous quittons l'enceinte de l'école à quelques reprises. Nous emmenons tout le groupe en excursion dans le centre historique de la ville voisine de Bruges, où nous laissons les élèves découvrir la ville au cours d'une quête urbaine stimulante. Les élèves interagissent avec les commerçants au cours de cette quête et peuvent ainsi renforcer leur confiance en eux dans la langue cible qu'ils ont choisie. Les élèves sont ravis de constater qu'ils parviennent à s'exprimer confortablement dans la langue cible avec des locuteurs natifs. Il est également devenu une tradition annuelle d'aller nager avec les élèves dans une piscine voisine.",
+      "content.card.4.body": "Chaque jour, l'école abbatiale est la scène d'activités sportives et de jeux : jeux de ballon sur nos terrains de sport, jeux d'eau et de peinture très appréciés, escape game, quiz, laser tag, bricolage pour les plus jeunes, karaoké et spectacles musicaux, jeu de nuit pour les plus grands, soirée casino et, bien sûr, de nombreuses surprises ! En outre, nous quittons l'école à quelques reprises. Nous partons pour une excursion dans le centre historique de la ville de Bruges, où nous les élèves découvrent la ville. Les élèves interagissent avec les commerçants au cours de cette quête et peuvent ainsi renforcer leur confiance en eux dans la langue cible. Il est également une tradition d'aller à la piscine avec les élèves.",
       "content.card.5.title": "Quelle est la politique en matière de téléphones portables ?",
-      "content.card.5.body": "Nous comprenons que les étudiants aiment emporter leur téléphone portable pour rester en contact avec leur famille, mais ils n'en ont absolument pas besoin pendant nos séjours linguistiques. Nous faisons tout notre possible pour motiver les étudiants à se faire autant d'amis que possible et à pratiquer ainsi la langue cible de leur choix de manière détendue. En tant qu'organisation, nous pensons que le fait d'avoir un téléphone portable dans sa poche n'aide pas à atteindre cet objectif et nous demandons donc aux étudiants de laisser leur téléphone portable dans leur chambre autant que possible. Nous avons remarqué au fil des ans que les étudiants apprécient vraiment de faire une pause avec leur téléphone portable et les médias sociaux et qu'ils peuvent ainsi se concentrer pleinement sur leur vie quotidienne au camp.",
-      "content.card.6.title": "Comment se forment les groupes de classe ?",
-      "content.card.6.body": "Le premier jour du séjour linguistique, nous formons des groupes de 10 élèves au maximum en fonction de l'âge, des connaissances préalables et de la maîtrise de la langue cible. Pendant deux heures, l'enseignant travaillera avec les élèves sous différentes formes (en groupe et individuellement) afin d'évaluer au mieux leurs compétences réelles. Nous tenons également compte de la dynamique sociale, qui est cruciale pour offrir à chaque enfant une expérience d'apprentissage optimale. Bien entendu, nous suivons de près l'évolution et la croissance des élèves tout au long du séjour linguistique et, si nécessaire, nous adaptons la formation du groupe en étroite concertation avec l'élève, l'enseignant et l'organisation.",
+      "content.card.5.body": "Nous comprenons que les étudiants souhaitent emporter leur téléphone portable pour rester en contact avec leur famille, mais ils n'en ont absolument pas besoin pendant nos séjours linguistiques. Nous faisons tout notre possible pour motiver les étudiants à se faire autant d'amis que possible et à pratiquer ainsi la langue cible de leur choix. En tant qu'organisation, nous pensons que le fait d'avoir un téléphone portable dans sa poche n'aide pas à atteindre cet objectif et nous demandons donc aux étudiants de laisser leur téléphone portable dans leur chambre autant que possible.",
+      "content.card.6.title": "Comment les groupes de classe sont-ils formés ?",
+      "content.card.6.body": "Le premier jour, nous formons des groupes de 10 élèves au maximum en fonction de l'âge, des connaissances préalables et de la maîtrise de la langue cible. Pendant deux heures, l'enseignant travaille avec les élèves sous différentes formes (en groupe et individuellement) afin d'évaluer au mieux leurs compétences réelles. Nous tenons également compte de la dynamique sociale, qui est cruciale pour offrir à chaque enfant une expérience d'apprentissage optimale. Bien entendu, nous suivons de près l'évolution et la croissance des élèves tout au long du stage et, si nécessaire, nous adaptons la composition du groupe en étroite concertation avec l'élève, l'enseignant et l'organisation.",
       "content.card.7.title": "Comment puis-je rester informé pendant le camp ?",
-      "content.card.7.body": "Nous vous accueillons avec enthousiasme le premier jour du séjour linguistique. A cette occasion, en tant que parent ou encadrant, vous pourrez faire plus ample connaissance avec l'équipe et visiter le domaine. Vous pouvez accompagner votre enfant dans sa chambre pour qu'il déballe tranquillement ses affaires. Après le premier jour du séjour linguistique, nous vous enverrons un lien vers un album photo dans lequel nous publierons chaque jour de nombreuses photos des activités, des leçons et des moments de détente. C'est ainsi que nous essayons de faire profiter les parents et les moniteurs de ce qui se passe au camp. A la fin du séjour linguistique, nous accueillons les parents ou les moniteurs à bras ouverts pour discuter des expériences et des compétences des élèves lors d'un contact avec les parents, au cours duquel nous donnons également un rapport personnel avec des conseils et des astuces."
+      "content.card.7.body": "Nous vous accueillons avec enthousiasme le premier jour du stage. A cette occasion, en tant que parent, vous pourrez faire plus ample connaissance avec l'équipe et visiter le domaine. Vous pouvez accompagner votre enfant dans sa chambre pour l'installer tranquillement. Après le premier jour du séjour linguistique, nous vous enverrons un lien vers un album photo dans lequel nous publierons chaque jour de nombreuses photos des activités, des leçons et des moments de détente. A la fin du stage, nous accueillons les parents pour discuter des expériences et des compétences des élèves lors d'un entretien avec les parents, au cours duquel nous donnons également un bulletin personnel avec une évaluation et des conseils."
     },
     "tab.3": {
       "title": "Administration",
       "content.card.1.title": "Ma mutualité interviendra-t-elle ?",
-      "content.card.1.body": "Certaines mutualités interviennent dans les frais d'inscription. Il est préférable de se renseigner auprès de votre mutualité à ce sujet.",
-      "content.card.2.title": "Puis-je recevoir une attestation fiscal ?",
-      "content.card.2.body": "Vous pouvez recevoir une attestation fiscale pour les élèves de moins de 14 ans pendant le séjour linguistique."
+      "content.card.1.body": "Certaines mutualités interviennent dans les frais d'inscription. Nous vous conseillons de vous renseigner auprès de votre mutualité à ce sujet.",
+      "content.card.2.title": "Puis-je recevoir une attestation fiscale ?",
+      "content.card.2.body": "Vous pouvez recevoir une attestation fiscale pour les élèves de moins de 14 ans."
     }
   },
   "contact": {
@@ -430,7 +429,7 @@
       "title": "Contact",
       "item.1": "Thibault Leemans",
       "item.2": "info@loppemconversa.be",
-      "item.3": "+32 478 51 93 44 (de préférence en dehors des heures de bureau)"
+      "item.3": "+32 478 51 93 44 (de préférence en dehors des heures de travail)"
     },
     "card.2.content": {
       "title": "Organisation",
@@ -445,7 +444,7 @@
       "item.juvigo": "Les séjours linguistiques de Loppem Conversa sont également disponibles sur Juvigo !"
     },
     "card.4.content": {
-      "title": "Adresse du camp",
+      "title": "Adresse du séjours",
       "item.1": "Loppem Conversa",
       "item.2": "Abdijschool van Zevenkerken",
       "item.3": "Zevenkerken 4, 8200 Brugge"
