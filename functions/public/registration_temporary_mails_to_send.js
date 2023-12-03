@@ -20,7 +20,7 @@ const {admin, db} = require('../db');
 /**
  * Firestore#onCreate: after first temporary inscription, send e-mail
  */
-exports.inscriptionSaveMailAfterInscription = functions
+inscriptionSaveMailAfterInscription = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
@@ -43,7 +43,7 @@ exports.inscriptionSaveMailAfterInscription = functions
 /**
  * Firestore#onUpdate: after updating temporary inscription, send e-mail
  */
-exports.inscriptionSaveMailAfterUpdate = functions
+inscriptionSaveMailAfterUpdate = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
@@ -84,7 +84,7 @@ exports.inscriptionSaveMailAfterUpdate = functions
 /**
  * Firestore#onWrite: convert our mail data to the format of the mail sender plugin
  */
-exports.inscriptionSaveConvertEmailForExt = functions
+inscriptionSaveConvertEmailForExt = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
@@ -97,7 +97,7 @@ exports.inscriptionSaveConvertEmailForExt = functions
 /**
  * PubSub: send mails if it previously failed
  */
-exports.inscriptionSaveScheduleMail = functions
+inscriptionSaveScheduleMail = functions
     .runWith(tools.defaultBatchOptions)
     .region('europe-west1')
     .pubsub.schedule('0 8 * * *')

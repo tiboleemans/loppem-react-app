@@ -8,18 +8,18 @@ const InscriptionConfirmation = (props) => {
 
   function ErrorResult() {
     return <>
-      <Grid container xs={12}>
+      <Grid container>
         <div className="inscription-confirmation-error">
-          <Grid item xs={6}>
+          <Grid item sm={8} xs={12}>
             <div className="card inscription-confirmation-card">
               <div className="inscription-confirmation-card-header">
                 {t("inscription.confirmation.error.title")}
               </div>
               <div className="inscription-confirmation-card-content">
-                <pre>{props.error.message}</pre>
-                <pre>{props.error.details}</pre>
-                <pre>{props.error.values}</pre>
+                <h3>{props.error.message}</h3>
+                <p>{props.error.details}</p>
                 <p>{t("inscription.confirmation.error.footer")}</p>
+                <pre>{props.error.values}</pre>
               </div>
             </div>
           </Grid>
@@ -61,9 +61,20 @@ const InscriptionConfirmation = (props) => {
     </>;
   }
 
+  function Registering() {
+    return <>
+      <Grid container>
+        <div className="inscription-confirmation-loading">
+          <p>{t("inscription.confirmation.loading")}</p>
+          <CircularProgress size={100}/>
+        </div>
+      </Grid>
+    </>
+  }
+
   return (
     <>
-      {props.isLoading === true && <CircularProgress/>}
+      {props.isLoading === true && <Registering/>}
       {props.isLoading === false && props.error && <ErrorResult/>}
       {props.isLoading === false && props.registration && <SuccessfulRegistration/>}
     </>

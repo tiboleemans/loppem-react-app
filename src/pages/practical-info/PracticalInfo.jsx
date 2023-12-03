@@ -74,14 +74,116 @@ const PracticalInfo = () => {
       ]
     },
     {
-      title: t("practical.tab.4.title"),
+      title: t("inscription.extra.label.conditions.general.dialog.title"),
       faqs: [
         {
-          question: t("inscription."),
-          answer: t("practical.tab.4.content.card.1.body"),
+          question: t("inscription.extra.label.conditions.general.dialog.1.subtitle"),
+          answer: t("inscription.extra.label.conditions.general.dialog.1.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.general.dialog.2.subtitle"),
+          answer: t("inscription.extra.label.conditions.general.dialog.2.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.general.dialog.3.subtitle"),
+          answer: t("inscription.extra.label.conditions.general.dialog.3.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.general.dialog.4.subtitle"),
+          answer: t("inscription.extra.label.conditions.general.dialog.4.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.general.dialog.5.subtitle"),
+          answer: t("inscription.extra.label.conditions.general.dialog.5.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.general.dialog.6.subtitle"),
+          answer: t("inscription.extra.label.conditions.general.dialog.6.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.general.dialog.7.subtitle"),
+          answer: t("inscription.extra.label.conditions.general.dialog.7.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.general.dialog.8.subtitle"),
+          answer: t("inscription.extra.label.conditions.general.dialog.8.paragraph"),
         }
       ]
     },
+    {
+      title: t("inscription.extra.label.conditions.privacy.dialog.title"),
+      faqs: [
+        {
+          question: t("inscription.extra.label.conditions.privacy.dialog.1.subtitle"),
+          answer: t("inscription.extra.label.conditions.privacy.dialog.1.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.privacy.dialog.2.subtitle"),
+          answer: t("inscription.extra.label.conditions.privacy.dialog.2.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.privacy.dialog.3.subtitle"),
+          answer: t("inscription.extra.label.conditions.privacy.dialog.3.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.privacy.dialog.4.subtitle"),
+          answer: t("inscription.extra.label.conditions.privacy.dialog.4.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.privacy.dialog.5.subtitle"),
+          answer: t("inscription.extra.label.conditions.privacy.dialog.5.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.privacy.dialog.6.subtitle"),
+          answer: t("inscription.extra.label.conditions.privacy.dialog.6.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.privacy.dialog.7.subtitle"),
+          answer: t("inscription.extra.label.conditions.privacy.dialog.7.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.privacy.dialog.8.subtitle"),
+          answer: t("inscription.extra.label.conditions.privacy.dialog.8.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.privacy.dialog.9.subtitle"),
+          answer: t("inscription.extra.label.conditions.privacy.dialog.9.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.conditions.privacy.dialog.10.subtitle"),
+          answer: t("inscription.extra.label.conditions.privacy.dialog.10.paragraph"),
+        }
+      ]
+    },
+    {
+      title: t("inscription.extra.label.pictures.dialog.title"),
+      faqs: [
+        {
+          question: t("inscription.extra.label.pictures.dialog.1.subtitle"),
+          answer: t("inscription.extra.label.pictures.dialog.1.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.pictures.dialog.2.subtitle"),
+          answer: t("inscription.extra.label.pictures.dialog.2.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.pictures.dialog.3.subtitle"),
+          answer: t("inscription.extra.label.pictures.dialog.3.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.pictures.dialog.4.subtitle"),
+          answer: t("inscription.extra.label.pictures.dialog.4.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.pictures.dialog.5.subtitle"),
+          answer: t("inscription.extra.label.pictures.dialog.5.paragraph"),
+        },
+        {
+          question: t("inscription.extra.label.pictures.dialog.6.subtitle"),
+          answer: t("inscription.extra.label.pictures.dialog.6.paragraph"),
+        }
+      ]
+    }
   ];
 
   return (

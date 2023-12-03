@@ -1,14 +1,17 @@
 import React from "react";
-import {useTranslation} from "react-i18next";
 import './intro.scss'
+import {getLanguage} from "../../i18n/i18nSetup";
 
 const Intro = () => {
-  const {t} = useTranslation();
+  const lang = getLanguage();
   return (
     <div className="intro" id="intro">
       <div className="intro-wrapper">
         <div className="intro-light-background">
-          <img src={require('./../../images/intro/logo-baseline.png')} alt="Logo Loppem Conversa" className="intro-logo"/>
+          {lang.includes('nl') ?
+            <img src={require('./../../images/intro/logo-baseline-nl.png')} alt="Logo Loppem Conversa" className="intro-logo"/> : null}
+          {lang.includes('fr') ?
+            <img src={require('./../../images/intro/logo-baseline-fr.png')} alt="Logo Loppem Conversa" className="intro-logo"/> : null}
         </div>
       </div>
     </div>

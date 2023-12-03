@@ -1,6 +1,6 @@
 .vacations {
     padding: 4rem;
-    background: rgba(157, 201, 130, 0.4);
+    background: var(--green-hex-light);
 }
 
 .image-grid {

@@ -36,12 +36,12 @@ app.use(cors(CORS_CONFIG));
 // Temporary inscriptions
 // These are _only_ used when a parent doesn't submit the form but
 // saves it for a later date (e.g. doesn't have all the data)
-app.post('/registration/temporary', (req, res) => {
-  tools.executeRequest(register.createTemporaryRegistration, req, res);
-});
-app.put('/registration/temporary', (req, res) => {
-  tools.executeRequest(register.updateTemporaryRegistration, req, res);
-});
+// app.post('/registration/temporary', (req, res) => {
+//   tools.executeRequest(register.createTemporaryRegistration, req, res);
+// });
+// app.put('/registration/temporary', (req, res) => {
+//   tools.executeRequest(register.updateTemporaryRegistration, req, res);
+// });
 app.get('/registration/:id', (req, res) => {
   tools.executeRequest(register.getRegistration, req, res);
 });
@@ -58,13 +58,12 @@ exports.api = functions
     .https.onRequest(app);
 
 // FIRESTORE TRIGGERED FUNCTIONS
-exports.inscriptionSaveMailAfterInscription = registrationMailToSend.inscriptionSaveMailAfterInscription;
-exports.inscriptionSaveMailAfterUpdate = registrationMailToSend.inscriptionSaveMailAfterUpdate;
-exports.inscriptionSaveConvertEmailForExt = registrationMailToSend.inscriptionSaveConvertEmailForExt;
-exports.inscriptionSaveMailUpdatedInscription = registrationMailToSend.inscriptionSaveMailUpdatedInscription;
-exports.inscriptionSaveScheduleMail = registrationMailToSend.inscriptionSaveScheduleMail;
+// exports.inscriptionSaveMailAfterInscription = registrationMailToSend.inscriptionSaveMailAfterInscription;
+// exports.inscriptionSaveMailAfterUpdate = registrationMailToSend.inscriptionSaveMailAfterUpdate;
+// exports.inscriptionSaveConvertEmailForExt = registrationMailToSend.inscriptionSaveConvertEmailForExt;
+// exports.inscriptionSaveScheduleMail = registrationMailToSend.inscriptionSaveScheduleMail;
 
-exports.inscriptionSaveMailAfterSubmit = registrationSubmitMailToSend.inscriptionSaveMailAfterSubmit;
+exports.inscriptionSaveMailAfterSubmit = registrationSubmitMailToSend.inscriptionSaveMailAfterRegistration;
 
 // ADMIN API
 // All defined endpoints are available under the /admin path

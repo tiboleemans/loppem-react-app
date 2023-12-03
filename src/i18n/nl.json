@@ -13,16 +13,7 @@
     "contact": "Contact"
   },
   "intro": {
-    "title": "Loppem Conversa",
-    "subtitle": "Leer spreken met plezier",
-    "info.label.what": "Wat?",
-    "info.text.what": "Taalvakanties Nederlands en Engels",
-    "info.label.when": "Wanneer?",
-    "info.text.when.p1": "7 - 17 juli 2024",
-    "info.text.when.p2": "4 - 14 augustus 2024",
-    "info.label.who": "Wie?",
-    "info.text.who": "Jongeren van 10 tot 18 jaar",
-    "footer": "Wij zijn pas tevreden wanneer de jongeren in de doeltaal dromen!"
+    "img": ""
   },
   "vacations": {
     "title": "Leer spreken met plezier",
@@ -402,11 +393,13 @@
       "card.payment.header": "Betalingsdetails",
       "card.payment.content": "<p>Gelieve het voorschot van 370 euro of het totale bedrag van 770 euro te betalen op BE16 0018 5319 2474 (BIC: GEBABEBB) met als mededeling de naam van de ingeschreven leerling.</p> <p> De inschrijving is pas defintief zodra wij een betaling hebben ontvangen. </p>",
       "button": "Schrijf nog een leerling",
+      "loading" : "Uw inschrijving wordt verstuurd. Dit kan enkele seconden duren.",
       "error": {
         "title": "Technische fout",
         "undefined": "Er is een onbekende fout opgetreden",
+        "network": "Er is een netwerk fout opgetreden. Gelieve uw internetverbinding te controleren",
         "retry": "Opnieuw proberen",
-        "footer": "U kan opnieuw proberen met dezelfde vooringevlde data of u kan deze teks kopieëren en naar ons verzenden via mail. Excuses voor het ongemak."
+        "footer": "U kan opnieuw proberen met dezelfde vooringevlde data of u kan de waardes hieronder kopieëren en naar ons verzenden via mail. Excuses voor het ongemak."
       }
     }
   },

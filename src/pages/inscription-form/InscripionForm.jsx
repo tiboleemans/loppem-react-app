@@ -14,8 +14,9 @@ import {useTranslation} from "react-i18next";
 import InscriptionConfirmation from "./steps/InscriptionConfirmation";
 import {registerStudent} from "../../services/InscriptionService";
 import axios from "axios";
-
-const disableValidation = false;
+import {getLanguage} from "../../i18n/i18nSetup";
+import ScrollTo from "../common/ScrollTo";
+import {scrollTo} from "../common/utils";
 
 export default function InscriptionForm() {
   const [step, setStep] = useState(0);
@@ -45,15 +46,24 @@ export default function InscriptionForm() {
 
   function handleError(error) {
     if (axios.isAxiosError(error)) {
-      const axiosError = {
-        message: error.toJSON().message,
-        details: JSON.stringify(error.response.data.error.details),
-        values: error.toJSON().config.data,
+      if (error.toJSON().code === "ERR_NETWORK") {
+        const networkError = {
+          message: error.toJSON().message,
+          details: t("inscription.confirmation.error.network"),
+          values: error.toJSON().config.data,
+        }
+        setRegistrationError(networkError);
+      } else {
+        const backendError = {
+          message: error.toJSON().message,
+          details: JSON.stringify(error.response?.data?.error?.details),
+          values: error.toJSON().config.data,
+        }
+        setRegistrationError(backendError);
       }
-      setRegistrationError(axiosError);
     } else {
       const validationError = {
-        message: t("confirmation.error.undefined"),
+        message: t("inscription.confirmation.error.undefined"),
         details: JSON.stringify(error),
         values: values,
       }
@@ -66,6 +76,8 @@ export default function InscriptionForm() {
     setRegistrationResult(undefined);
     setRegistrationError(undefined);
     if (step === steps.length) {
+      values.parent.language = getLanguage();
+      scrollTo('inscription');
       setIsLoading(true);
       registerStudent(values).then(inscription => {
         setRegistrationResult(inscription);

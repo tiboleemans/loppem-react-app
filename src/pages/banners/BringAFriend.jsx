@@ -15,13 +15,13 @@ const BringAFriend = () => {
             <h2>{t("banner.bringafriend.title")}</h2>
           </Grid>
           <Grid container className="banner-action">
-            <Grid item sm={3}/>
-            <Grid item sm={2}>
+            <Grid item sm={2}/>
+            <Grid item sm={3}>
               <BringAFriendConditionsDialog/>
             </Grid>
             <Grid item sm={2}>
             </Grid>
-            <Grid item sm={2}>
+            <Grid item sm={3}>
               <BringAFriendForm/>
             </Grid>
           </Grid>

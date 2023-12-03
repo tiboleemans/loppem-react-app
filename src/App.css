@@ -82,7 +82,7 @@ a {
 
 .section {
     padding: 4rem;
-    background: rgba(157, 201, 130, 0.4);
+    background: rgba(157, 201, 130, var(--secondary-hex-light));
 }
 
 .section-header {

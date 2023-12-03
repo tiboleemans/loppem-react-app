@@ -1,52 +1,19 @@
 <html>
-  <body>
-    Mijnheer, Mevrouw {{lastName}},<br />
-    <br />
-    Wij hebben {{firstName}} {{lastName}} op de wachtlijst geplaatst voor de periode {{period}} {{campYear}}.<br />
-    Wij contacteren u zodra er een plaats vrijkomt. Alvast bedankt voor het vertrouwen.<br />
-    <br />
-    Met vriendelijke groeten,<br />
-    <br />
-    Loppem Conversa<br />
-    <br />
-    ---<br />
-    Gekozen taal: {{language}}<br />
-    Gekozen periode: {{period}} {{campYear}}<br />
-    Naam leerling: {{lastName}}<br />
-    Voornaam leerling: {{firstName}}<br />
-    Geboortedatum: {{birthdate}}<br />
-    Geslacht: {{gender}}<br />
-    Naam ouder: {{lastName}}<br />
-    Voornaam ouder: {{firstName}}<br />
-    E-mail ouder: {{email}}<br />
-    Relatie met leerling: {{relation}}<br />
-    Straatnaam ouder: {{street}}<br />
-    Huisnummer ouder: {{houseNr}}<br />
-    Busnummer: {{busNr}}<br />
-    Postcode ouder: {{zipCode}}<br />
-    Gemeente ouder: {{city}}<br />
-    Telefoonnummer ouder: {{gsm}}<br />
-    Noodnummer: {{gsm2}}<br />
-    Naam school: {{name}}<br />
-    Straatnaam school: {{street}}<br />
-    Huisnummer school: {{houseNr}}<br />
-    Busnummer school: {{busNr}}<br />
-    Postcode school: {{zip}}<br />
-    Gemeente school: {{city}}<br />
-    Aanspreektitel leerkracht: {{titleProf}}<br />
-    Naam leerkracht: {{nameProf}}<br />
-    Aantal jaren les in de gekozen taal: {{years}}<br />
-    Aantal uren les per week in de gekozen taal: {{hours}}<br />
-    CLIL: {{immersion}}<br />
-    Aangebrachte leerling: {{referral}}<br />
-    Contactwijze: {{contact}}<br />
-    Extra info: {{additionalInfo}}<br />
-    Voedselallergieën of intoleranties: {{foodInfo}}<br />
-    Interesse: {{interest}}<br />
-    {{#if acceptPictures}}
-    Toestemming gebruik foto's: ja<br />
-    {{else}}
-    Toestemming gebruik foto's: nee
-    {{/if}}
-  </body>
+<body>
+<p>Dag {{parent.firstName}} {{parent.lastName}} </p>
+<p>Wij hebben je inschrijving van {{student.firstName}} {{student.lastName}} goed ontvangen voor onze taalvakantie {{student.language}} in de periode:
+    {{student.period}}. </p>
+<p>Wij staan alvast te popelen om jullie te ontvangen op de eerste dag van de taalvakantie! In juni kan je van ons een mailtje verwachten met alle
+    praktische informatie voor het kamp. Check ook zeker eens je ongewenste mails en spamfolder.</p>
+<p>Om je inschrijving te bevestigen vragen we je om het voorschot van 370 euro over te schrijven: <br/>Naam: Taalvakanties Conversa vzw <br/>Rekeningnummer:
+    BE16 0018 5319 2474 <br/>BIC: GEBABEBB <br/>Mededeling: {{student.firstName}} {{student.lastName}} {{student.period}} {{student.language}} </p>
+<p>Je betaalt dan het resterende saldo van 400 euro voor 1 juni. Je mag ook altijd meteen het volledige bedrag van 770 euro overschrijven.</p>
+<p>Hieronder vind je een overzicht van je antwoorden in het inschrijvingsformulier. </p>
+<p>Aarzel zeker niet om ons te contacteren voor wijzigingen aan de inschrijving of andere vragen. Dit kan door te antwoorden op deze mail of te mailen
+    naar info@loppemconversa.be. </p>
+<p>Wist je dat je ook heel wat informatie op onze website terug kan vinden?</p>
+<p>We zien elkaar deze zomer!</p>
+<p>Met vriendelijke groeten <br/>Het Loppem Conversa Team </p>
+</body>
+
 </html>

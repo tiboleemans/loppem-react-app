@@ -1,13 +1,12 @@
 <html>
   <body>
-    Gegevens nieuwe inschrijving:
-    ---<br />
+    Gegevens nieuwe inschrijving: <br /> <br />
     Gekozen taal: {{student.language}}<br />
-    Gekozen periode: {{period}} {{campYear}}<br />
+    Gekozen periode: {{student.period}} {{campYear}}<br />
     Naam leerling: {{student.lastName}}<br />
     Voornaam leerling: {{student.firstName}}<br />
     Geboortedatum: {{student.birthdate}}<br />
-    Geslacht: {{student.gender}}<br />
+    Slaapkamer bij: {{student.gender}}<br />
     Naam ouder: {{parent.lastName}}<br />
     Voornaam ouder: {{parent.firstName}}<br />
     Taal ouder: {{parent.language}}<br />
@@ -21,21 +20,13 @@
     Telefoonnummer ouder: {{parent.gsm}}<br />
     Noodnummer: {{parent.gsm2}}<br />
     Naam school: {{school.name}}<br />
-    Straatnaam school: {{school.street}}<br />
-    Huisnummer school: {{school.houseNr}}<br />
-    Busnummer school: {{school.busNr}}<br />
-    Postcode school: {{school.zip}}<br />
     Gemeente school: {{school.city}}<br />
-    Aanspreektitel leerkracht: {{school.titleProf}}<br />
-    Naam leerkracht: {{school.nameProf}}<br />
     Aantal jaren les in de gekozen taal: {{school.years}}<br />
     Aantal uren les per week in de gekozen taal: {{school.hours}}<br />
     CLIL: {{school.immersion}}<br />
-    Aangebrachte leerling: {{extra.referral}}<br />
     Contactwijze: {{extra.contact}}<br />
     Extra info: {{extra.additionalInfo}}<br />
     Voedselallergieën of intoleranties: {{extra.foodInfo}}<br />
-    Interesse: {{extra.interest}}<br />
     {{#if extra.acceptPictures}}
     Toestemming gebruik foto's: ja<br />
     {{else}}

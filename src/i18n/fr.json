@@ -68,6 +68,7 @@
         "dialog.content.2": "L'ami n'a jamais participé à un séjour Loppem Conversa.",
         "dialog.content.3": "L'ami n'a pas encore été amené par quelqu'un d'autre.",
         "dialog.content.4": "L'ami ne peut pas demander une réduction \"amis\" pour votre enfant en même temps.",
+        "dialog.content.5": "Les deux enfants participent à un séjour linguistique.",
         "dialog.content.footer": "Cette réduction n'est <strong>remboursée qu'APRÈS le séjour linguistique</strong>."
       },
       "form": {
@@ -376,12 +377,14 @@
       "card.mail.content": "<strong>Merci pour votre inscription !</strong><p>Vous recevrez un e-mail de confirmation de notre part (pensez à vérifier votre spam).</p><p>Début juin, nous vous contacterons par email pour vous donner des informations pratiques sur le séjour linguistique.</p>",
       "card.payment.header": "Détails du paiement",
       "card.payment.content": "<p>Veuillez verser l'acompte de 370 € ou le montant total de 770 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit dans la communication.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
-      "button": "Écrire à un autre élève",
+      "button": "Inscrire un autre élève",
+      "loading" : "Votre inscription est en cours d'envoi. Cela peut prendre quelques secondes.",
       "error": {
         "title": "Erreur technique",
         "undefined": "Une erreur inconnue s'est produite",
+        "network": "Une erreur de réseau s'est produite. Veuillez vérifier votre connexion internet",
         "retry": "Réessayer",
-        "footer": "Vous pouvez réessayer avec les mêmes données ou vous pouvez copier ce texte et nous l'envoyer par e-mail. Nous vous prions de vouloir nous excuser pour ce désagrément."
+        "footer": "Vous pouvez réessayer avec les mêmes données ou vous pouvez copier les valeurs ci-dessous et nous l'envoyer par e-mail. Nous vous prions de vouloir nous excuser pour ce désagrément."
       }
     }
   },

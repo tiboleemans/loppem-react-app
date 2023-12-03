@@ -11,7 +11,7 @@ const {admin, db} = require('../db');
 /**
  * Firestore#onCreate: after inscription, send e-mail confirmation mail to parents and to admin
  */
-exports.inscriptionSaveMailAfterSubmit = functions
+exports.inscriptionSaveMailAfterRegistration = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
     .firestore
@@ -41,7 +41,7 @@ async function prepareSendEmailToParent(studentId, registration) {
           // replyTo:
           to: registration.parent.email,
           template: {
-            name: `inscription-confirmation-nl`,
+            name: `inscription-confirmation-` + registration.parent.language,
             data: registration,
           },
         });

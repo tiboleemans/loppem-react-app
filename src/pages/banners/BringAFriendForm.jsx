@@ -20,7 +20,7 @@ export default function BringAFriendForm() {
   };
 
   return (
-    <React.Fragment>
+    <>
       <div className="banner-button" onClick={handleClickOpen}>
         {t("banner.bringafriend.form.button")}
       </div>
@@ -40,7 +40,8 @@ export default function BringAFriendForm() {
           <div className="section-header">
             <h3>{t("banner.bringafriend.form.dialog.section.2.header")}</h3>
           </div>
-          <TextField autoFocus margin="dense" id="name" label={t("banner.bringafriend.form.dialog.section.2.text.field.1")} fullWidth variant="standard"/>
+          <TextField autoFocus margin="dense" id="name" label={t("banner.bringafriend.form.dialog.section.2.text.field.1")} fullWidth
+                     variant="standard"/>
         </DialogContent>
         <DialogActions>
           <div className="banner-button-dialog" onClick={handleClose}>
@@ -51,6 +52,6 @@ export default function BringAFriendForm() {
           </div>
         </DialogActions>
       </Dialog>
-    </React.Fragment>
+    </>
   );
 }

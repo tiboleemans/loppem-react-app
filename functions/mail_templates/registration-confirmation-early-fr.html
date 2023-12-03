@@ -1,0 +1,51 @@
+<html>
+<body>
+<p>Madame, Monsieur {{parent.firstName}} {{parent.lastName}} </p>
+<p>Nous avons bien reçu votre inscription de {{student.firstName}} {{student.lastName}} pour le séjour linguistique {{student.language}} en {{student.period}}. </p>
+<p>Nous sommes déjà impatients de vous accueillir le premier jour du séjour linguistique ! En juin, vous recevrez un e-mail de notre part contenant toutes les informations pratiques pour le camp. N'oubliez pas de vérifier votre courrier indésirable.</p>
+<p>Pour confirmer votre inscription, nous vous demandons de verser l'acompte de 370 euros : <br/>Nom: Conversa Taalvakanties <br/>Numéro de compte:
+    BE16 0018 5319 2474 <br/>BIC: GEBABEBB <br/>Communication: {{student.firstName}} {{student.lastName}} {{student.period}} {{student.language}} </p>
+<p>Vous paierez ensuite le solde de 400 euros avant le 1er juin. Vous pouvez également transférer le montant total de 770 euros immédiatement à tout moment.</p>
+<p>Vous trouverez ci-dessous un résumé des réponses que vous avez données dans le formulaire d'inscription. </p>
+<p>N'hésitez pas à nous contacter pour toute modification de l'inscription ou pour toute autre question. Vous pouvez le faire en répondant à cet e-mail ou en envoyant un e-mail à l'adresse suivante
+    à info@loppemconversa.be.</p>
+<p>Saviez-vous que vous pouvez également trouver de nombreuses informations sur notre site web ?</p>
+<p>Nous nous verrons cet été !</p>
+<p>Bien cordialement<br/>L'équipe de Loppem Conversa </p>
+<p>
+    Détails inscription:<br /> <br />
+    Langue cible: {{student.language}}<br />
+    Période: {{student.period}} {{campYear}}<br />
+    Nom élève: {{student.lastName}}<br />
+    Prénom élève: {{student.firstName}}<br />
+    Date de naissance: {{student.birthdate}}<br />
+    Chambre dans le couloir des: {{student.gender}}<br />
+    Nom parent: {{parent.lastName}}<br />
+    Prénom parent: {{parent.firstName}}<br />
+    Langue parent: {{parent.language}}<br />
+    E-mail ouder: {{parent.email}}<br />
+    Rélation avec l'élève: {{parent.relation}}<br />
+    Rue parent: {{parent.street}}<br />
+    Numéro rue parent: {{parent.houseNr}}<br />
+    Numéro boîte parent: {{parent.busNr}}<br />
+    Code postal parent: {{parent.zipCode}}<br />
+    Communce parent: {{parent.city}}<br />
+    Numéro de téléphone parent: {{parent.gsm}}<br />
+    Deuxième numéro de téléphone parent: {{parent.gsm2}}<br />
+    Nom école: {{school.name}}<br />
+    Commune école: {{school.city}}<br />
+    Nombre d'années langue choisie à l'école:{{school.years}}<br />
+    Nombre d'heures langue choisie à l'école:{{school.hours}}<br />
+    Immersion:{{school.immersion}}<br />
+    Voie contacte:{{extra.contact}}<br />
+    Extra info: {{extra.additionalInfo}}<br />
+    Intolérances ou allergies alimentaires:{{extra.foodInfo}}<br />
+    {{#if extra.acceptPictures}}
+    Autorisation utilisation images:oui<br />
+    {{else}}
+    Autorisation utilisation images:non
+    {{/if}}
+
+</p>
+</body>
+</html>

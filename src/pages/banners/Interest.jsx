@@ -4,9 +4,11 @@ import {useTranslation} from "react-i18next";
 import BrochurePdf from '../../resources/Brochure Loppem Conversa 2024.pdf';
 import DepliantPdf from '../../resources/Dépliant Loppem Conversa 2024.pdf';
 import "./banner.css";
+import {getLanguage} from "../../i18n/i18nSetup";
 
 const Interest = () => {
   const {t, i18n} = useTranslation();
+  const lang = getLanguage();
   return (
     <div className="banner" id="interest-banner">
       <div className="container">
@@ -25,8 +27,8 @@ const Interest = () => {
             </Grid>
             <Grid item sm={2}>
               <div className="banner-button">
-                {i18n.language === "nl-BE" ? <a href={BrochurePdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
-                {i18n.language === "fr-BE" ? <a href={DepliantPdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
+                {lang.includes("nl") ? <a href={BrochurePdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
+                {lang.includes("fr") ? <a href={DepliantPdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
               </div>
             </Grid>
           </Grid>
