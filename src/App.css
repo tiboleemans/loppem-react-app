@@ -50,6 +50,7 @@ a {
 }
 
 .container {
+    display: flex;
     padding: 0 1rem;
     max-width: 1170px;
     margin: 0 auto;
@@ -82,7 +83,7 @@ a {
 
 .section {
     padding: 4rem;
-    background: rgba(157, 201, 130, var(--secondary-hex-light));
+    background: var(--green-hex-light);
 }
 
 .section-header {
@@ -98,6 +99,14 @@ a {
     max-width: 36rem;
 }
 
+.expand {
+    margin-left: auto;
+}
+
+.rotated {
+    transform: rotate(180deg);
+}
+
 @media (max-width: 600px) {
 
     .container {
@@ -109,6 +118,7 @@ a {
     }
 
     .section {
-        padding: 4rem 0;
+        padding-left: 0;
+        padding-right: 0;
     }
 }

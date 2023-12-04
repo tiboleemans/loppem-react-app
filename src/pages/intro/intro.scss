@@ -1,6 +1,5 @@
 .intro {
   padding-top: 3rem;
-  background: rgba(0, 0, 0, 0.03);
 }
 
 .intro-wrapper {
@@ -33,36 +32,33 @@
   border-radius: 10px;
 }
 
-.intro-title {
-  font-weight: 500;
-  font-size: 44px;
-}
+@media only screen and (max-width: 767px) {
+  .intro {
+    padding-top: 0;
+  }
 
-.intro-subtitle {
-  font-style: italic;
-  font-weight: normal;
-  margin-bottom: 2rem;
-}
+  .intro-wrapper {
+    position: relative;
+    background: url('./../../images/intro/cover.jpeg') center center/cover no-repeat;
+    height: 250px;
+    margin: auto auto;
+    overflow: hidden;
+  }
 
-.intro-info-label {
-  align-items: flex-end;
-  text-align: right;
-  justify-content: flex-end;
-  font-weight: normal;
-  margin: 0 0 1rem 0;
-}
+  .intro-logo {
+    margin: auto;
+    width: 160px;
+    height: 120px;
+    display: flex;
+    top: 20px;
+    position: relative;
+  }
 
-.intro-info-text {
-  align-items: flex-start;
-  text-align: left;
-  justify-content: flex-start;
-  font-weight: bolder;
-}
-
-.intro-footer {
-  font-weight: normal;
-  font-style: italic;
-  margin: 2rem 0 0 0;
-  font-size: 18px;
-  text-align: left;
+  .intro-light-background {
+    position: absolute;
+    display: block;
+    left: calc(60% - 175px);
+    right: calc(60% - 175px);
+    border-radius: 10px;
+  }
 }

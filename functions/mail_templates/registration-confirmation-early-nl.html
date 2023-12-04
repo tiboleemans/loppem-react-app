@@ -1,6 +1,5 @@
 <html>
-<body>
-<p>Dag {{parent.firstName}} {{parent.lastName}} </p>
+<body><p>Dag {{parent.firstName}} {{parent.lastName}} </p>
 <p>Wij hebben je inschrijving van {{student.firstName}} {{student.lastName}} goed ontvangen voor onze taalvakantie {{student.language}} in de periode:
     {{student.period}}. </p>
 <p>Wij staan alvast te popelen om jullie te ontvangen op de eerste dag van de taalvakantie! In juni kan je van ons een mailtje verwachten met alle
@@ -14,41 +13,14 @@
 <p>Wist je dat je ook heel wat informatie op onze website terug kan vinden?</p>
 <p>We zien elkaar deze zomer!</p>
 <p>Met vriendelijke groeten<br/>Het Loppem Conversa Team </p>
-<p>
-    Gegevens nieuwe inschrijving: <br /> <br />
-    Gekozen taal: {{student.language}}<br />
-    {{#if student.period == 'july'}}
-    Gekozen periode: {{student.period}} {{campYear}}<br />
-    Naam leerling: {{student.lastName}}<br />
-    Voornaam leerling: {{student.firstName}}<br />
-    Geboortedatum: {{student.birthdate}}<br />
-    Slaapkamer bij: {{student.gender}}<br />
-    Naam ouder: {{parent.lastName}}<br />
-    Voornaam ouder: {{parent.firstName}}<br />
-    Taal ouder: {{parent.language}}<br />
-    E-mail ouder: {{parent.email}}<br />
-    Relatie met leerling: {{parent.relation}}<br />
-    Straatnaam ouder: {{parent.street}}<br />
-    Huisnummer ouder: {{parent.houseNr}}<br />
-    Busnummer: {{parent.busNr}}<br />
-    Postcode ouder: {{parent.zipCode}}<br />
-    Gemeente ouder: {{parent.city}}<br />
-    Telefoonnummer ouder: {{parent.gsm}}<br />
-    Noodnummer: {{parent.gsm2}}<br />
-    Naam school: {{school.name}}<br />
-    Gemeente school: {{school.city}}<br />
-    Aantal jaren les in de gekozen taal: {{school.years}}<br />
-    Aantal uren les per week in de gekozen taal: {{school.hours}}<br />
-    CLIL: {{school.immersion}}<br />
-    Contactwijze: {{extra.contact}}<br />
-    Extra info: {{extra.additionalInfo}}<br />
-    Voedselallergieën of intoleranties: {{extra.foodInfo}}<br />
-    {{#if extra.acceptPictures}}
-    Toestemming gebruik foto's: ja<br />
-    {{else}}
-    Toestemming gebruik foto's: nee
-    {{/if}}
-
-</p>
-</body>
+<p> Gegevens nieuwe inschrijving: <br/> <br/> Gekozen taal: {{student.language}}<br/> Gekozen periode:
+    {{student.period}} {{campYear}}<br/> Naam leerling: {{student.lastName}}<br/> Voornaam leerling: {{student.firstName}}<br/> Geboortedatum:
+    {{student.birthdate}}<br/> Slaapkamer bij: {{student.gender}}<br/> Naam ouder: {{parent.lastName}}<br/> Voornaam ouder: {{parent.firstName}}<br/>
+    Taal ouder: {{parent.language}}<br/> E-mail ouder: {{parent.email}}<br/> Relatie met leerling: {{parent.relation}}<br/> Straatnaam ouder:
+    {{parent.street}}<br/> Huisnummer ouder: {{parent.houseNr}}<br/> Busnummer: {{parent.busNr}}<br/> Postcode ouder: {{parent.zipCode}}<br/> Gemeente
+    ouder: {{parent.city}}<br/> Telefoonnummer ouder: {{parent.gsm}}<br/> Noodnummer: {{parent.gsm2}}<br/> Naam school: {{school.name}}<br/> Gemeente
+    school: {{school.city}}<br/> Aantal jaren les in de gekozen taal: {{school.years}}<br/> Aantal uren les per week in de gekozen taal:
+    {{school.hours}}<br/> CLIL: {{school.immersion}}<br/> Contactwijze: {{extra.contact}}<br/> Extra info: {{extra.additionalInfo}}<br/>
+    Voedselallergieën of intoleranties: {{extra.foodInfo}}<br/> {{#if extra.acceptPictures}} Toestemming gebruik foto's: ja<br/> {{else}} Toestemming
+    gebruik foto's: nee {{/if}} </p></body>
 </html>

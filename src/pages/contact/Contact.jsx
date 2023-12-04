@@ -7,7 +7,7 @@ import ContactMap from "./ContactMap";
 const Contact = () => {
   const {t} = useTranslation();
   return (
-    <div className="contact" id="contact">
+    <div className="section" id="contact">
       <div className="container">
         <Card className="card-container">
           <h1>{t("contact.title")}</h1>

@@ -2,14 +2,25 @@ import React, {useState} from "react";
 import ScrollTo from "../common/ScrollTo";
 import {useTranslation} from "react-i18next";
 import LanguageSelector from "./LanguageSelector";
+import MenuIcon from '@mui/icons-material/Menu';
 import "./navigation.css"
+import {IconButton} from "@mui/material";
 
 const Navigation = () => {
   const {t} = useTranslation();
   const [isClosed, setIsClosed] = useState(true);
   return (
     <>
-      <button onClick={() => setIsClosed(!isClosed)}>open</button>
+      <div className="header-menu-button" onClick={() => setIsClosed(!isClosed)}>
+        <IconButton
+          size="large"
+          edge="start"
+          color="inherit"
+          aria-label="menu"
+        >
+          <MenuIcon />
+        </IconButton>
+      </div>
       <div className={`header header-fixed ${isClosed ? 'closed' : ''}`}>
         <div className="container header-container">
           <ScrollTo to="intro">

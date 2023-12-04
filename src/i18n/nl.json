@@ -392,7 +392,7 @@
       "card.mail.content": "<strong>Bedankt voor uw inschrijving!</strong><p>Je ontvangt van ons een bevestigingsmail (kijk ook zeker eens in je spam of je ongewenste e-mails).</p><p>Begin juni contacteren wij je per e-mail met praktische informatie over de taalvakantie.</p>",
       "card.payment.header": "Betalingsdetails",
       "card.payment.content": "<p>Gelieve het voorschot van 370 euro of het totale bedrag van 770 euro te betalen op BE16 0018 5319 2474 (BIC: GEBABEBB) met als mededeling de naam van de ingeschreven leerling.</p> <p> De inschrijving is pas defintief zodra wij een betaling hebben ontvangen. </p>",
-      "button": "Schrijf nog een leerling",
+      "button": "Schrijf nog een leerling in",
       "loading" : "Uw inschrijving wordt verstuurd. Dit kan enkele seconden duren.",
       "error": {
         "title": "Technische fout",

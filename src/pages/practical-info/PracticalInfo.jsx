@@ -187,7 +187,7 @@ const PracticalInfo = () => {
   ];
 
   return (
-    <div className="info-card" id="info">
+    <div className="section" id="info">
       <div className="container">
         <Card className="card-container">
           <h1>{t("practical.title")}</h1>

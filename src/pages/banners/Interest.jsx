@@ -7,7 +7,7 @@ import "./banner.css";
 import {getLanguage} from "../../i18n/i18nSetup";
 
 const Interest = () => {
-  const {t, i18n} = useTranslation();
+  const {t} = useTranslation();
   const lang = getLanguage();
   return (
     <div className="banner" id="interest-banner">

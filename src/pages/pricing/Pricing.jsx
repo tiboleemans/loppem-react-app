@@ -1,9 +1,10 @@
 import React from "react";
-import {Accordion, AccordionDetails, AccordionSummary, Card, Grid,} from "@mui/material";
+import {Accordion, AccordionDetails, AccordionSummary, Card, Grid, IconButton,} from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
 import ScrollTo from "../common/ScrollTo";
 import "./pricing.css"
 import {Trans, useTranslation} from "react-i18next";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const Pricing = () => {
   const {t} = useTranslation();
@@ -125,7 +126,7 @@ const Pricing = () => {
                         </Grid>
                       </Grid>
                     </Grid>
-                    <Grid item sm={3}>
+                    <Grid item xs={3}>
                       <div className="card-header-price">
                         {t("pricing.card.camp.label.price")}
                       </div>
@@ -152,6 +153,9 @@ const Pricing = () => {
                   >
                     <AccordionSummary className="accordion-summary">
                       {accordion.summary}
+                      <div className={`expand ${expanded === accordion.id ? 'rotated' : ''}`}>
+                        <ExpandMoreIcon />
+                      </div>
                     </AccordionSummary>
                     <AccordionDetails className="accordion-details">
                       {accordion.details.map((detail, j) =>

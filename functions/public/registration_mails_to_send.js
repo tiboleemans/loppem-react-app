@@ -34,14 +34,15 @@ exports.inscriptionSaveMailAfterRegistration = functions
  */
 async function prepareSendEmailToParent(studentId, registration) {
   try {
+    const language = registration.parent.language.substring(0, 2);
     return await db.collection('mail_ext')
-        .doc(studentId + '-inscription-confirmation')
+        .doc(studentId + '-registration-confirmation')
         .set({
           from: process.env.APP_MAIL_FROM,
           // replyTo:
           to: registration.parent.email,
           template: {
-            name: `inscription-confirmation-` + registration.parent.language,
+            name: `registration-confirmation-early-` + language,
             data: registration,
           },
         });
@@ -60,13 +61,13 @@ async function prepareSendEmailToParent(studentId, registration) {
 async function prepareSendEmailToAdmin(studentId, registration) {
   try {
     return await db.collection('mail_ext')
-        .doc(studentId + '-inscription-cc')
+        .doc(studentId + '-registration-cc')
         .set({
           from: process.env.APP_MAIL_FROM,
           // replyTo:
           to: process.env.APP_MAIL_ADMIN_EMAIL,
           template: {
-            name: `inscription-cc`,
+            name: `registration-cc`,
             data: registration,
           },
         });

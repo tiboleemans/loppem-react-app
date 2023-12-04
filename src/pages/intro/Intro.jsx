@@ -6,7 +6,7 @@ const Intro = () => {
   const lang = getLanguage();
   return (
     <div className="intro" id="intro">
-      <div className="intro-wrapper">
+      <div className="intro-wrapper" id="intro">
         <div className="intro-light-background">
           {lang.includes('nl') ?
             <img src={require('./../../images/intro/logo-baseline-nl.png')} alt="Logo Loppem Conversa" className="intro-logo"/> : null}
