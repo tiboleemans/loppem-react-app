@@ -82,7 +82,7 @@ const Vacations = () => {
     );
 
     return (
-      <div className="vacations-section" id="vacations">
+      <div className="section" id="vacations">
         <div className="container">
           <Card className="card-container">
             <h1>{t("vacations.title")}</h1>

@@ -16,16 +16,16 @@ const Interest = () => {
           <Grid item sm={12} className="banner-text">
             <h2>{t("banner.interest.text")}</h2>
           </Grid>
-          <Grid container className="banner-action">
-            <Grid item sm={3}/>
-            <Grid item sm={2}>
+          <Grid container spacing={2} className="banner-action">
+            <Grid item xs={1} sm={2}/>
+            <Grid item xs={5} sm={3}>
               <div className="banner-button">
                 {t("banner.interest.button.send")}
               </div>
             </Grid>
-            <Grid item sm={2}>
+            <Grid item xs={0} sm={2}>
             </Grid>
-            <Grid item sm={2}>
+            <Grid item xs={5} sm={3}>
               <div className="banner-button">
                 {lang.includes("nl") ? <a href={BrochurePdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
                 {lang.includes("fr") ? <a href={DepliantPdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}

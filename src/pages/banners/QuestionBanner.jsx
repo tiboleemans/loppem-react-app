@@ -8,10 +8,11 @@ const QuestionBanner = () => {
     <div className="banner" id="rating-banner">
       <div className="container">
         <Grid container>
-          <Grid item sm={8} className="banner-text">
+          <Grid item xs={12} sm={8} className="banner-text">
             <h2>{t("banner.question.title")}</h2>
           </Grid>
-          <Grid item sm={2}>
+          <Grid item xs={3}/>
+          <Grid item xs={6} sm={2}>
             <div className="banner-button">
               <a className="banner-button-link" href="mailto:info@loppemconversa.be">{t("banner.question.button")}</a>
             </div>

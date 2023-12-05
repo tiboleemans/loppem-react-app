@@ -1,7 +1,6 @@
 import React, {useEffect, useRef} from "react";
 import {Card} from "@mui/material";
 import {Navigation, Pagination} from 'swiper/modules';
-import CardMedia from "@mui/material/CardMedia";
 
 const ImageCarousel = () => {
   const swiperElRef = useRef(null);
@@ -79,11 +78,11 @@ const ImageCarousel = () => {
         </swiper-slide>
 
         <swiper-slide>
-          <CardMedia className="vacation-swiper-slide-card"
-                     component="video"
-                     image={require("../../images/vacations/promo.mp4")}
-                     title='promo-video-loppem-conversa'
-                     controls/>
+          <Card className="vacation-swiper-slide-card">
+            <iframe src="https://www.youtube.com/embed/d7H1GaxaQ9w?si=HiPDdZ_XKaj2r5S4" title="Loppem Conversa promo"
+                    frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen/>
+          </Card>
         </swiper-slide>
       </swiper-container>
     </>

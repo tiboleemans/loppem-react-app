@@ -1,5 +1,6 @@
 .intro {
   padding-top: 3rem;
+  background: var(--green-hex-light);
 }
 
 .intro-wrapper {
@@ -33,9 +34,6 @@
 }
 
 @media only screen and (max-width: 767px) {
-  .intro {
-    padding-top: 0;
-  }
 
   .intro-wrapper {
     position: relative;

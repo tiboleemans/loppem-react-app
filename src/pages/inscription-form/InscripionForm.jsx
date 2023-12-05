@@ -15,7 +15,6 @@ import InscriptionConfirmation from "./steps/InscriptionConfirmation";
 import {registerStudent} from "../../services/InscriptionService";
 import axios from "axios";
 import {getLanguage} from "../../i18n/i18nSetup";
-import ScrollTo from "../common/ScrollTo";
 import {scrollTo} from "../common/utils";
 
 export default function InscriptionForm() {
@@ -77,6 +76,7 @@ export default function InscriptionForm() {
     setRegistrationError(undefined);
     if (step === steps.length) {
       values.parent.language = getLanguage();
+      values.student.birthdate = values.student.birthdate.toLocaleDateString('nl-BE');
       scrollTo('inscription');
       setIsLoading(true);
       registerStudent(values).then(inscription => {

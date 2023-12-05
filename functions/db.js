@@ -4,7 +4,6 @@ admin.initializeApp({
   projectId: 'loppem-adf69',
 });
 const db = admin.firestore();
-
 module.exports = {
   admin,
   db,

@@ -35,6 +35,82 @@ exports.inscriptionSaveMailAfterRegistration = functions
 async function prepareSendEmailToParent(studentId, registration) {
   try {
     const language = registration.parent.language.substring(0, 2);
+    switch (language) {
+      case 'nl':
+        switch (registration.student.language) {
+          case 'dutch':
+            registration.student.language = 'Nederlands';
+            break;
+          case 'english':
+            registration.student.language = 'Engels'
+            break;
+        }
+        switch (registration.student.period) {
+          case 'july':
+            registration.student.period = '7 - 17 juli 2024';
+            break;
+          case 'august':
+            registration.student.period = '4 - 14 augustus 2024'
+            break;
+        }
+        switch (registration.student.gender) {
+          case 'boy':
+            registration.student.gender = 'jongens';
+            break;
+          case 'girl':
+            registration.student.gender = 'meisjes'
+            break;
+        }
+        switch (registration.parent.relation) {
+          case 'mother':
+            registration.parent.relation = 'moeder';
+            break;
+          case 'father':
+            registration.parent.relation = 'vader'
+            break;
+          case 'guardian':
+            registration.parent.relation = 'voogd'
+            break;
+        }
+        break;
+      case 'fr':
+        switch (registration.student.language) {
+          case 'dutch':
+            registration.student.language = 'néerlandais';
+            break;
+          case 'english':
+            registration.student.language = 'anglais'
+            break;
+        }
+        switch (registration.student.period) {
+          case 'july':
+            registration.student.period = '7 - 17 juillet 2024';
+            break;
+          case 'august':
+            registration.student.period = '4 - 14 août 2024'
+            break;
+        }
+        switch (registration.student.gender) {
+          case 'boy':
+            registration.student.gender = 'garçons';
+            break;
+          case 'girl':
+            registration.student.gender = 'filles'
+            break;
+        }
+        switch (registration.parent.relation) {
+          case 'mother':
+            registration.parent.relation = 'mère';
+            break;
+          case 'father':
+            registration.parent.relation = 'père'
+            break;
+          case 'guardian':
+            registration.parent.relation = 'tuteur'
+            break;
+        }
+        break;
+    }
     return await db.collection('mail_ext')
         .doc(studentId + '-registration-confirmation')
         .set({

@@ -9,6 +9,8 @@
 const tools = require('../tools');
 const {admin, db} = require('../db');
 
+console.log("in registration.js")
+
 // ████████╗███████╗███╗   ███╗██████╗  ██████╗ ██████╗  █████╗ ██████╗ ██╗   ██╗
 // ╚══██╔══╝██╔════╝████╗ ████║██╔══██╗██╔═══██╗██╔══██╗██╔══██╗██╔══██╗╚██╗ ██╔╝
 //    ██║   █████╗  ██╔████╔██║██████╔╝██║   ██║██████╔╝███████║██████╔╝ ╚████╔╝
@@ -249,7 +251,6 @@ async function validateFinal(req, res, isUpdate) {
   }
 
   const validation = preValidateFinal(req.body);
-
   if (validation.error != null) {
     console.log(validation);
     result.response = res.status(400).json(
@@ -386,6 +387,7 @@ async function getAndTransformRegistration(docId) {
  * @param {*} data the request bodyActiveTab (student data)
  */
 async function performInsert(data) {
+  console.log("In performInsert");
   const writeResult = await db
     .collection('registration')
     .add({

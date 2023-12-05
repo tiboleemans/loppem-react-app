@@ -52,6 +52,8 @@ app.put('/registration', (req, res) => {
   tools.executeRequest(register.updateFinalRegistration, req, res);
 });
 
+app.get('/warm', (req, res) => { res.end(); });
+
 exports.api = functions
     .runWith(tools.defaultHttpOptions)
     .region('europe-west1')
