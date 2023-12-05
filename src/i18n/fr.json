@@ -243,7 +243,8 @@
         "5": "Via le dépliant",
         "6": "Via l'internet",
         "7": "Via l'école",
-        "8": "Andere"
+        "8": "Via Juvigo",
+        "9": "Andere"
       },
       "kitchen.info": "Informations utiles pour la cuisine",
       "kitchen.example": "(allergies alimentaires, intolérances, végétarien, halal...)",

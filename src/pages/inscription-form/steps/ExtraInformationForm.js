@@ -22,7 +22,8 @@ export default function ExtraInformationForm(props) {
     {id: 'brochure', title: t("inscription.extra.label.contact.choice.5")},
     {id: 'internet', title: t("inscription.extra.label.contact.choice.6")},
     {id: 'school', title: t("inscription.extra.label.contact.choice.7")},
-    {id: 'other', title: t("inscription.extra.label.contact.choice.8")}
+    {id: 'juvigo', title: t("inscription.extra.label.contact.choice.8")},
+    {id: 'other', title: t("inscription.extra.label.contact.choice.9")}
   ]
 
   return (

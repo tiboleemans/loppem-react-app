@@ -258,7 +258,8 @@
         "5": "Via de brochure",
         "6": "Via het internet",
         "7": "Via de school",
-        "8": "Andere"
+        "8": "Via Juvigo",
+        "9": "Andere"
       },
       "kitchen.info": "Relevante informatie voor de kok",
       "kitchen.example": "(voedselallergieën, intoleranties, vegetarisch, halal ...)",
