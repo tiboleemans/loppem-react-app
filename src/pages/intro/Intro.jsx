@@ -12,6 +12,8 @@ const Intro = () => {
             <img src={require('./../../images/intro/logo-baseline-nl.png')} alt="Logo Loppem Conversa" className="intro-logo"/> : null}
           {lang.includes('fr') ?
             <img src={require('./../../images/intro/logo-baseline-fr.png')} alt="Logo Loppem Conversa" className="intro-logo"/> : null}
+          {lang.includes('en') ?
+            <img src={require('./../../images/intro/logo-baseline-en.png')} alt="Logo Loppem Conversa" className="intro-logo"/> : null}
         </div>
       </div>
     </div>

@@ -29,6 +29,7 @@ const Interest = () => {
               <div className="banner-button">
                 {lang.includes("nl") ? <a href={BrochurePdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
                 {lang.includes("fr") ? <a href={DepliantPdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
+                {lang.includes("en") ? <a href={BrochurePdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
               </div>
             </Grid>
           </Grid>

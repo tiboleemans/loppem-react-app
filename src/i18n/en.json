@@ -102,7 +102,7 @@
     "card.camp": {
       "label.price": "€ 790",
       "label.enroll": "Book now",
-      "label.language": "Target language: ",
+      "label.language": "Language: ",
       "label.period": "Dates: ",
       "label.available": "Available: ",
       "content.language.1": "Dutch",
