@@ -142,7 +142,17 @@ export default function InscriptionForm() {
 
   const handleAnotherRegistration = () => {
     setStep(0);
-    setShowValidation(true);
+    setShowValidation(false);
+    values.student.firstName = '';
+    values.student.birthdate = '';
+    values.student.gender = '';
+    values.school.immersion = '';
+    values.school.years = '';
+    values.extra.acceptPictures = false;
+    values.extra.acceptTerms = false;
+    values.extra.contact = '';
+    values.extra.foodInfo = '';
+    values.extra.additionalInfo = '';
   }
 
   return (
