@@ -1,0 +1,465 @@
+{
+  "common": {
+    "button": {
+      "close": "Close"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "vacations": "Language holidays",
+    "pricing": "Prices",
+    "enroll": "Registration",
+    "info": "Practical info",
+    "contact": "Contact"
+  },
+  "intro": {
+    "img": ""
+  },
+  "vacations": {
+    "title": "Learn to speak with pleasure",
+    "what": {
+      "title": "What?",
+      "section.one.title": "Language holidays Dutch and English",
+      "section.one.text": "Loppem Conversa organises summer language holidays of Dutch and English with accommodation for young people aged 10 to 18. This all takes place in the beautiful surroundings of Zevenkerken abbey school, a stone's throw from Bruges.",
+      "section.two.title": "Quality language immersion course",
+      "section.two.text": "We provide full immersion in Dutch or English. Pupils are really immersed: they speak the target language anytime, anywhere. This gives their speaking skills an incredible boost.",
+      "details": {
+        "button": "Lessons and activities",
+        "title": "Lessons and activities",
+        "content": "<p>Pupils are given a varied daily schedule packed with lesson, sports and game activities. They receive conversation classes in small groups of up to 10 youngsters. They are challenged and motivated in a relaxed way to take their oral skills to the next level through creative work forms.</p> <p>Learning to speak with pleasure and self-confidence in the chosen target language happens not only in lessons, but also during activities and free moments of relaxation. There is a daily dose of sports and games: think ball sports on our sports fields, swimming, the popular water and paint games, an escape game, quiz, laser tag, arts and crafts for the young ones, music, a trip to the swimming pool, to Bruges and so much more.</p>"
+      }
+    },
+    "where": {
+      "title": "Where?",
+      "section.one.title": "Green oasis for sports and games",
+      "section.one.text": "During all our activities and leisure moments, pupils enjoy the vast green surroundings of Zevenkerken abbey school. These unique grounds include three large football pitches, a hockey pitch, two basketball courts, three tennis courts and a large renovated gym. The grounds, where pupils can enjoy themselves under supervision, are surrounded by beautiful forests. There is also a large indoor play area with table tennis tables and kicker tables.",
+      "section.two.title": "Comfortable accommodation",
+      "section.two.text": "All pupils sleep in individual single rooms with private washbasins. They receive nutritious and varied meals every day.",
+      "details": {
+        "button": "Historic abbey school",
+        "title": "Historic abbey school",
+        "content": "Our language holidays take place at Zevenkerken abbey school in Loppem, located in the beautiful green surroundings of the Bruges outskirts. This unique, historic location captures the imagination and contributes to a vibrant holiday feeling thanks to the enormous indoor and outdoor space."
+      }
+    },
+    "why": {
+      "title": "Why?",
+      "section.one.title": "Clear head start",
+      "section.one.text": "You learn a language by speaking it! Loppem Conversa's language immersion provides a stepping stone to the future. Being able to apply the chosen target language uninhibitedly in concrete situations for 10 days offers an excellent and sustainable head start.",
+      "section.two.title": "Fun first",
+      "section.two.text": "Above all, we want to spark enthusiasm for speaking a foreign language. In our activities and work forms, language has a direct practical use because pupils need the language to work together in order to have fun. Like that, young people learn to embrace the target language. Thanks to our language immersion, speaking the target language becomes natural. Moreover, we want to offer pupils an unforgettable holiday: with us, learning and fun always go hand in hand. In short: a unique atmosphere and wonderful memories!"
+    },
+    "who": {
+      "title": "Who?",
+      "section.one.title": "A committed team",
+      "section.one.text": "Loppem Conversa is a non-profit organisation made up of a core team of 7 friends who share a passion for language and development. What makes Loppem Conversa unique is our personal approach: we build close ties with the youngsters and with their parents. We listen to their needs and pay attention to the social integration. We consider it a privilege to see them blossom, grow and make new friends, year after year.",
+      "section.two.title": "An enthusiastic team",
+      "section.two.text": "During the summer, we can count on the enthusiasm of our large team of volunteer teachers and animators. Every year, they too look forward to getting to work with the pupils and to having fun together with the youngsters for 200%."
+    }
+  },
+  "banner": {
+    "rating": {
+      "text": "Did you know that Loppem Conversa has 5 stars on Google?",
+      "button.1": "See reviews",
+      "button.2": "Write a review"
+    },
+    "bringafriend": {
+      "title": "Bring a friend and enjoy 50 euro cashback!",
+      "conditions": {
+        "button": "See terms and conditions",
+        "dialog.title": "Terms and conditions friend discount",
+        "dialog.content.1": "Your child is enrolled himself/herself.",
+        "dialog.content.2": "Your friend has never attended a language holiday at Loppem Conversa.",
+        "dialog.content.3": "Your friend has not yet been introduced by someone else.",
+        "dialog.content.4": "You cannot get a discount for each other.",
+        "dialog.content.5": "Both pupils take part in one of our language holidays.",
+        "dialog.content.footer": "This discount is only granted and refunded <strong>AFTER the language holiday</strong>."
+      },
+      "form": {
+        "button": "Claim your discount",
+        "dialog.title": "Claim your friend discount",
+        "dialog.subtitle": "Tell us which friend you are bringing and qualify for the cashback.",
+        "dialog.section.1.header": "Your details",
+        "dialog.section.1.text.field.1": "Name of parent or guardian",
+        "dialog.section.1.text.field.2": "Email address",
+        "dialog.section.2.header": "Friend's details",
+        "dialog.section.2.text.field.1": "Friend's name",
+        "dialog.action.cancel": "Cancel",
+        "dialog.action.send": "Send"
+      }
+    },
+    "interest": {
+      "text": "Perhaps you know someone who might be interested?",
+      "button.send": "Send a message",
+      "button.share": "Download brochure"
+    },
+    "question": {
+      "title": "Do you have a question or a problem?",
+      "button": "Contact us"
+    }
+  },
+  "pricing": {
+    "title": "Dates and prices",
+    "card.camp": {
+      "label.price": "€ 790",
+      "label.enroll": "Book now",
+      "label.language": "Target language: ",
+      "label.period": "Dates: ",
+      "label.available": "Available: ",
+      "content.language.1": "Dutch",
+      "content.period.1": "7 - 17 July 2024",
+      "content.available.1": "success",
+      "content.language.2": "English",
+      "content.period.2": "7 - 17 July 2024",
+      "content.available.2": "success",
+      "content.language.3": "Dutch",
+      "content.period.3": "4 - 14 August 2024",
+      "content.available.3": "success",
+      "content.language.4": "English",
+      "content.period.4": "4 - 14 August 2024",
+      "content.available.4": "success"
+    },
+    "accordion.1": {
+      "summary": "Prices and discounts",
+      "details": {
+        "title.1": "Cost",
+        "text.1": "The cost of a 10-day language holiday is 790 euros.",
+        "title.2": "Early bird discount",
+        "text.2": "Register before February 1, 2024 and enjoy a 20 euro discount. That makes the price 770 euro.",
+        "title.3": "Friend discount",
+        "text.3": "Convince a friend to come along on our language holiday for the first time and enjoy 50 euro cashback which you will receive after the language holiday (for more info, check the conditions below)."
+      }
+    },
+    "accordion.2": {
+      "summary": "Payment",
+      "details": {
+        "title.1": "Deposit",
+        "text.1": "You pay the deposit (or the full amount) at the time of enrolment. Your child's enrolment is not final until we have received the deposit (or the full amount). For enrolment after June 1, we ask you to pay in full.<p>Deposit with enrolment before February 1: 370 euro</p> <p>Deposit with enrolment after February 1: 390 euro</p> <p>Price enrolment after June 1: 790 euro</p>",
+        "title.2": "Remaining balance",
+        "text.2": "We ask you to pay the remaining balance of 400 euro before June 1.",
+        "title.3": "Full amount",
+        "text.3": "The full amount can also be deposited in one lump sum immediately after enrolment.<p> Enrolment before February 1: 770 euro</p> <p>Enrolment after February 1: 790 euro</p>",
+        "title.4": "Bank transfer",
+        "text.4": "Name: Conversa Taalvakanties vzw <br/> Account number: BE16 0018 5319 2474 <br/> BIC: GEBABEBB <p> Notification: <br/> Full name of pupil <br/> July or August <br/> Dutch or English</p>"
+      }
+    },
+    "accordion.3": {
+      "summary": "Additional benefits",
+      "details": {
+        "title.1": "Health insurance",
+        "text.1": "Some health insurances partially refund registration fees. It is best to check with your health insurance.",
+        "title.2": "Tax certificates",
+        "text.2": "You can get a tax certificate for childcare for pupils aged 14 or less during the language holiday.",
+        "title.3": "Benefits via your employer",
+        "text.3": "Check with your employer: some employers offer discounts on summer camps for children."
+      }
+    }
+  },
+  "inscription": {
+    "title": "Registration form",
+    "form.errors": "Not all required fields were filled in.",
+    "button": {
+      "back": "Previous",
+      "next": "Next",
+      "enroll": "Register"
+    },
+    "steps": {
+      "student": "Personal details pupil",
+      "parent": "Personal details parent or guardian",
+      "school": "Details school",
+      "extra": "Extra information"
+    },
+    "student.label": {
+      "firstName": "Given name pupil",
+      "lastName": "Surname pupil",
+      "birthdate": "Birth date pupil",
+      "language": "Target language",
+      "dutch": "Dutch",
+      "english": "English",
+      "period": "Period",
+      "july": "7 - 17 July 2024",
+      "august": "4 - 14 August 2024",
+      "gender": "Bedroom with",
+      "boy": "Boys",
+      "girl": "Girls"
+    },
+    "student.error": {
+      "firstName": "Please enter the pupil's given name.",
+      "lastName": "Please enter the pupil's surname.",
+      "birthdate": "Please enter the pupil's birth date.",
+      "language": "Please enter the target language.",
+      "period": "Please enter the period.",
+      "sex": "Please enter the bedroom location",
+      "datepicker.min.date": "The pupil must be 19 years of age maximum.",
+      "datepicker.max.date": "The pupil must be at least 9 years old.",
+      "datepicker.invalid.date": "The format of the date is invalid"
+    },
+    "parent.label": {
+      "firstName": "Given name",
+      "lastName": "Surname",
+      "email": "Email",
+      "relation": "Relation to the pupil",
+      "mother": "Mother",
+      "father": "Father",
+      "guardian": "Guardian",
+      "street": "Street",
+      "houseNr": "Number",
+      "busNr": "Box number",
+      "city": "Municipality",
+      "zip": "Postal code",
+      "gsm": "Mobile phone",
+      "gsm2": "Second phone number"
+    },
+    "parent.error": {
+      "firstName": "Please enter your given name.",
+      "lastName": "Please enter your surname.",
+      "email": "Please enter your email.",
+      "relation": "Please enter your relation to the pupil",
+      "street": "Please enter your street",
+      "housnr": "Please enter your house number",
+      "city": "Please enter your municipality.",
+      "zip": "Please enter your postal code",
+      "gsm": "Please enter your mobile phone",
+      "gsm2": "Please enter your second phone number"
+    },
+    "school.label": {
+      "name": "Name school",
+      "city": "Municipality and/or postal code school",
+      "zip": "Postal code",
+      "count.years": "Number of years in chosen target language",
+      "count.hours": "Number of hours per week in the chosen target language",
+      "immersion": "Does your child get bilingual education for the chosen target language at school?",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "school.error": {
+      "name": "Please enter the name of the school.",
+      "city": "Please enter the municipality or postal code of the school",
+      "count.years": "Please enter the number of years in the chosen target language",
+      "count.hours": "Please enter the number of hours per week in the chosen target language",
+      "immersion": "Please indicate whether the pupil is following a bilingual education for the chosen target language at school."
+    },
+    "extra.label": {
+      "contact.placeHolder": "How did you find Loppem Conversa this year?",
+      "contact.choice": {
+        "1": "My child is a former pupil.",
+        "2": "Word of mouth",
+        "3": "Through a former pupil",
+        "4": "Through social media",
+        "5": "Through the brochure",
+        "6": "Through the internet",
+        "7": "Through school",
+        "8": "Through Juvigo",
+        "9": "Other"
+      },
+      "kitchen.info": "Relevant information for the kitchen",
+      "kitchen.example": "(Food allergies, intolerances, vegetarian, halal ...)",
+      "extra.info": "Extra information about the pupil",
+      "extra.example": "(Medical information like allergies, prior knowledge, room allocation ...)",
+      "pictures": {
+        "label": "I give permission for photos of my child to be used for commercial purposes <dialog/>",
+        "click": "(click here for more details)",
+        "dialog": {
+          "title": "Use of visual material",
+          "1": {
+            "subtitle": "General",
+            "paragraph": "In general, the publication of personal data, by means of photos and videos in which someone can be recognised, requires the consent of the person depicted in the photo or, in the case of minors, their parents."
+          },
+          "2": {
+            "subtitle": "Permission",
+            "paragraph": "Via the registration form, we explicitly ask permission to use photos that fall under the category of 'targeted photos'. By this we mean individual photos, whether or not posed, for which one or a few people are singled out during a group activity (putting them in the picture, as it were) or posed (group) photos such as the classic class photo. If agreed, we may use these photos on our flyers, publicly accessible website, posters, etc."
+          },
+          "3": {
+            "subtitle": "Atmosphere shots",
+            "paragraph": "In addition, there is another category: the non-focused photos: these are spontaneous, unposed atmospheric shots, without highlighting any pupil. Again, in principle, signing the language holiday regulations suffices as consent, so no additional permission is needed. Parents who object to such publication should notify the management in writing."
+          },
+          "4": {
+            "subtitle": "Careful",
+            "paragraph": "Of course, we treat photos and videos with care. We do not post photos that could harm pupils. We do not post pupils' names with photos and videos."
+          },
+          "5": {
+            "subtitle": "Third parties",
+            "paragraph": "Your permission applies only to photos and videos taken by us, or on our behalf. It may happen that third parties take photos over which our organisation has no influence."
+          },
+          "6": {
+            "subtitle": "Changes",
+            "paragraph": "You may of course always revoke the consent you have given. You may also give permission at a later date."
+          }
+        }
+      },
+      "conditions": {
+        "label": "I accept <conditions/> and <privacy/>",
+        "general": {
+          "click": "the general terms",
+          "dialog": {
+            "title": "Regulations",
+            "1": {
+              "subtitle": "Student behaviour",
+              "paragraph": "Pupils always speak English/Dutch, both during lessons, and outside them. A pupil who does not abide by this rule will be reprimanded, may receive a penalty work or be excluded from the holiday. Pupils treat each other and staff respectfully."
+            },
+            "2": {
+              "subtitle": "Insurance and certificates",
+              "paragraph": "The civil liability of each pupil is covered by our insurance (after using any family insurance). The organisation also covers medical, pharmaceutical and hospital costs. We are not insured against theft or loss of objects. If a student causes damage to the building, materials or third parties, it is the parents' responsibility to compensate for this damage. Certificates for the holiday are filled in by the management only upon request. Forms for benefits (health insurance, employer, etc.) are sent after the course. The tax certificate, for participants up to the age of 12, is sent automatically in March of the following calendar year."
+            },
+            "3": {
+              "subtitle": "Medical care",
+              "paragraph": "Initial medical care may be administered by the organisation, if necessary and without consulting a doctor. Parents inform the organisation about specific medical needs of their child."
+            },
+            "4": {
+              "subtitle": "Valuables",
+              "paragraph": "Valuables are brought at your own risk. The organisation is not responsible for any theft or damage. The organisation is not responsible for lost items. Any use of mobile phone is not allowed during the course. In certain situations, students can contact the management to make phone calls."
+            },
+            "5": {
+              "subtitle": "Camp rules",
+              "paragraph": "Pupils are not allowed to enter other people's rooms. Smoking is allowed from the age of 16 onwards with prior written parental consent. The organisation is not responsible for a pupil that leaves the domain. Access to the forest is possible only under supervision. Infringement of the course regulations may result in immediate exclusion from the rest of the course."
+            },
+            "6": {
+              "subtitle": "Cancellation of enrolment",
+              "paragraph": "We understand that sometimes it is important to be able to cancel an enrolment. If you wish to cancel an enrolment, we ask that you contact us via e-mail so that we can look for a solution together. Until June 1, you can cancel your registration free of charge. From June 1 onwards, we will charge an administrative fee of 100 euros. We can convert this amount into a voucher that you can use for your next registration."
+            },
+            "7": {
+              "subtitle": "Privacy",
+              "paragraph": "During and after the language holiday, photos will be published on the Loppem Conversa website. They may also be used for commercial purposes (brochures, posters, fairs, etc.). Enrolling in a language holiday therefore also means that you give your consent to this. If this is not the case, this must be communicated in writing at the time of registration."
+            },
+            "8": {
+              "subtitle": "General",
+              "paragraph": "In cases of dispute or contestation where no solution is found after consultation between the person concerned and Loppem Conversa, the Commercial Court of Bruges shall be competent. By registering, you accept the above course regulations."
+            }
+          }
+        },
+        "privacy": {
+          "click": "privacy policy",
+          "dialog": {
+            "title": "Privacy policy",
+            "1": {
+              "subtitle": "General",
+              "paragraph": "This Privacy Policy applies to all information you receive from or provide to Loppem Conversa. Loppem Conversa processes privacy-sensitive information or personal data through registrations via its website. Loppem Conversa attaches great importance to your privacy and therefore treats your data with the utmost care. Loppem Conversa processes data in accordance with the Personal Data Protection Act (GDPR or AVG), effective from May 25, 2020. Loppem Conversa is responsible for how this data is used."
+            },
+            "2": {
+              "subtitle": "Use of personal data",
+              "paragraph": "When you use our services, you make certain data available to Loppem Conversa. Loppem Conversa only stores and uses personal data directly provided by you or information that has clearly been made available for processing. Your data will not be used for purposes other than as described in this Privacy Policy or as would be logical for providing optimal services. Data may be shared with third parties as required by the organisation."
+            },
+            "3": {
+              "subtitle": "Mailing",
+              "paragraph": "Loppem Conversa issues a mailing to keep parents informed about the language courses. You can ask to be removed from that list at any time. If you fill in a contact form on our website or if you send us an e-mail, your data will be kept as long as necessary. We do this in order to handle your message or e-mail completely and correctly. For commercial purposes, we may contact you by e-mail or telephone."
+            },
+            "4": {
+              "subtitle": "Provision of information to third parties",
+              "paragraph": "Your (personal) data are expressly not provided to third parties outside the language course. Our website contains references to social media (\"links\"). These links are used by third parties to collect your personal data. You can read how these third parties handle your personal data in their privacy policies."
+            },
+            "5": {
+              "subtitle": "Security",
+              "paragraph": "Loppem Conversa takes security measures to prevent misuse of or unauthorised access to personal data.The following specific measures are taken: 1. Access to personal data requires introduction of a user name and password. 2. We keep statistics of our website, but these remain anonymous at all times."
+            },
+            "6": {
+              "subtitle": "Inspection and modification of your data",
+              "paragraph": "Upon request, we can remove your personal data from our databases and software applications. If you have any questions or concerns about our Privacy Policy or wish to view, amend or have your personal data deleted, please contact us (info@loppemconversa.be)."
+            },
+            "7": {
+              "subtitle": "Permission",
+              "paragraph": "Through the registration form, we explicitly request permission to use photos that fall under the category of 'targeted photos'. By targeted photos we mean individual (posed or unposed) photos or photos in which one or a few people are highlighted or posed (group) photos such as class photos. With your consent, we may use these photos for commercial purposes (such as flyers, publicly accessible website, posters, etc.)."
+            },
+            "8": {
+              "subtitle": "Atmospheric shots",
+              "paragraph": "Another category concerns non-focused photographs. Non-focused photos involve spontaneous atmospheric shots, without highlighting a student. Here, signing the course regulations suffices as permission. No additional consent is therefore required. Parents who object to such publication should inform the management in writing or by e-mail."
+            },
+            "9": {
+              "subtitle": "Third parties",
+              "paragraph": "Your consent applies only to photos and videos taken by us or on our behalf. Third parties may take photos over which our organisation has no control."
+            },
+            "10": {
+              "subtitle": "Changes",
+              "paragraph": "You can always reconsider your consent, i.e. give or withdraw consent. Changes must be communicated in writing to info@loppemconversa.be. Loppem Conversa will take your decision into account as from the written notification and prospectively. Prospective means that the organisation will possibly remove photos of your children on the website if you have withdrawn your consent. If you withdraw the consent given while a photo of your child is already included on one of our printed brochures, this will be taken into account in the next printing of brochures."
+            }
+          }
+        }
+      }
+    },
+    "extra.error": {
+      "contact": "Please indicate the means by which you came into contact with Loppem Conversa.",
+      "acceptTerms": "Please read and accept the camp regulations."
+    },
+    "confirmation": {
+      "card.mail.header": "Successful registration",
+      "card.mail.content": "<strong>Thank you for your registration!</strong><p>You will receive a confirmation email from us (be sure to check your spam or junk e-mails).</p><p>We will contact you by e-mail at the beginning of June with practical information about the language holiday.</p>",
+      "card.payment.header": "Payment details",
+      "card.payment.content": "<p>Please pay the advance payment of €370 or the total amount of €770 to BE16 0018 5319 2474 (BIC: GEBABEBB) with the name of the enrolled pupil, the period and the target language as a communication.</p> <p>The registration is only final once we have received payment.</p>",
+      "button": "Register another pupil",
+      "loading": "Your registration is being sent. This may take a few seconds.",
+      "error": {
+        "title": "Technical error",
+        "undefined": "An unknown error has occurred",
+        "network": "A network error has occurred. Please check your internet connection",
+        "retry": "Retry",
+        "footer": "You can try again with the same pre-filled data or you can copy the values below and send them to us via mail. Apologies for the inconvenience."
+      }
+    }
+  },
+  "practical": {
+    "title": "Practical info",
+    "tab.1": {
+      "title": "Enrolments",
+      "content.card.1.title": "How to enrol?",
+      "content.card.1.body": "<scrollTo>Click here to register</scrollTo> and fill in the form. Make sure you have filled in all mandatory fields and accepted the terms and conditions and privacy policy. In case of questions: contact us by e-mail: info@loppemconversa.be or by phone: +32 478 51 93 44. After enrolment, you will receive a confirmation e-mail. The deposit must be paid immediately after enrolment. Your child's enrolment is only final once we have received the deposit (or the full amount).",
+      "content.card.2.title": "When to pay?",
+      "content.card.2.body": "<header>Advance</header><p>You pay the deposit (or the full amount immediately) at the time of enrolment. Your child's enrolment is not final until we have received the deposit (or the full amount).</p><p>For enrolment after June 1, we ask you to pay the full amount immediately.</p><p>Advance for enrolment before February 1: 370 euro</p><p>Advance on enrolment after February 1: 390 euro</p><p>Registration after June 1: 790 euros</p><header>Remaining balance</header><p>You will pay the remaining balance of 400 euro before June 1.</p><header>Full amount</header><p>The full amount can also be deposited in 1 lump sum immediately after enrolment.<br /> Registration before February 1: 770 euro <br /> Enrolment after February 1: 790 euro</p><header>Transfer</header><p>Name: Conversa Taalvakanties vzw <br /> Account number: BE16 0018 5319 2474 <br /> BIC: GEBABEBB <br /> Communication: full name of student + July or August + Dutch or English</p>",
+      "content.card.3.title": "Are the discounts?",
+      "content.card.3.body": "<header>Cost</header><p>The cost of each language holiday is €790.</p><header>Early booking discount</header><p>Register before February 1 and enjoy a 20 euro discount. The cost in this case is therefore 770 euro.</p><header>Friends discount</header><p>Convince a friend to come along on a language holiday for the first time and enjoy 50 euro cashback which you will receive after the language holiday (for more info, check the conditions below).</p>",
+      "content.card.4.title": "What if I want to cancel my enrolment?",
+      "content.card.4.body": "We understand that sometimes it is important to be able to cancel an enrolment. If you wish to cancel an enrolment, we ask that you contact us via e-mail so that we can look for a solution together. Until June 1, you can cancel your registration free of charge. From June 1 onwards, we will charge an administrative fee of 100 euros. We can convert this amount into a voucher that you can use for your next registration."
+    },
+    "tab.2": {
+      "title": "At camp",
+      "content.card.1.title": "Which language holidays are available?",
+      "content.card.1.body": "Our courses only run during the summer holidays between July 7 - 17 2024 & August 4 - 14 2024. The registration form will show the choices of available courses. As long as the period is visible in the registration form, it means there is space for this course.",
+      "content.card.2.title": "What should my child bring?",
+      "content.card.2.body": "Link to pdf",
+      "content.card.3.title": "What does a typical day look like?",
+      "content.card.3.body": "The students wake up with music in the target language and freely join breakfast. In the morning, conversation classes alternate with short moments of relaxation. After lunch, the pupils can freshen up briefly in their rooms, and then the animators challenge them in sporting or creative ways during activities that take place outdoors whenever possible. Afterwards, the teachers are already eager to continue working with the pupils. Then it is time for the afternoon snack and another relaxing activity to let off some steam. After dinner, pupils can pick an active or quiet activity of their choice and spend time with their friends. After a refreshing shower, pupils crawl under the covers.",
+      "content.card.4.title": "Which activities and excursions are there?",
+      "content.card.4.body": "There is a daily dose of sports and games on the abbey school domain: think ball games on our sports fields, the much-loved water and paint games, an escape game, quiz, laser tag, crafts for the littlest ones, karaoke and musical shows (swing palace and free stage), a night game for the oldest pupils, a casino night and of course a number of surprises! We also leave the domain several times. We take the whole group on a trip to the historic city centre of nearby Bruges, where we let the pupils discover the city during a challenging city quest. Pupils interact with shopkeepers during this quest and can boost their confidence in their chosen target language. It is great for the pupils to notice during these interactions that they manage to speak comfortably in the target language with native speakers. It has also become an annual tradition to go swimming with the pupils at a nearby swimming pool.",
+      "content.card.5.title": "What is the policy with mobile phones?",
+      "content.card.5.body": "We understand that students like to take their mobile phones with them on camp to keep in touch with the home front from time to time, although they absolutely do not need mobile phones during our language holidays. We make every effort to motivate the students to make as many friends as possible and thus practise their chosen target language as much as possible in a relaxed manner. As an organisation, we feel that having a mobile phone in your pocket does not help in this respect, which is why we ask students to leave their mobile phones in their rooms whenever possible. We have noticed over the years that students actually really enjoy taking a break from their mobile phones and social media and being able to fully concentrate on daily life at camp.",
+      "content.card.6.title": "How are the class groups formed?",
+      "content.card.6.body": "We form class groups of up to 10 pupils on the first day of the language holiday based on age, prior knowledge and fluency in the target language. For 2 hours, the teacher will work with the pupils in different work formats (both group and individual) to assess their real skills as best as possible. We also take into account the social dynamics here, which is crucial to offer each child a pleasant learning experience. Naturally, we closely monitor the pupils' evolution and growth throughout the language holidays and, if necessary, adjust the group formation in close consultation with the pupil, the teacher and the organisation.",
+      "content.card.7.title": "How do I stay informed during the camp?",
+      "content.card.7.body": "We enthusiastically welcome you on the first day of the language holiday. At that time, as a parent or guardian, you can get to know us better as a team and take a tour of the domain. You can accompany your child to the room to unpack quietly. After the first day of the language holiday, we will send you a link to a photo album in which we post many photos of the activities, lessons and moments of relaxation every day. This is how we try to let parents and guardians enjoy what goes on at camp. Every year it is nice to see that we get a lot of positive reactions to the album. At the end of the language holiday, we gladly welcome parents or guardians to discuss the pupils' experiences and skills during a parent meeting in which we also give a personal report with tips & tricks."
+    },
+    "tab.3": {
+      "title": "Administration",
+      "content.card.1.title": "Does my health insurance step in?",
+      "content.card.1.body": "Some health insurances step in with the registration fee. It is best to check with your health insurance for this.",
+      "content.card.2.title": "Kan ik een fiscaal attest ontvangen?",
+      "content.card.2.body": "Je kan een fiscaal attest voor opvang ontvangen voor leerlingen die tijdens de taalvakantie maximaal 14 jaar oud zijn."
+    }
+  },
+  "contact": {
+    "title": "Contact information",
+    "card.1.content": {
+      "title": "Contact",
+      "item.1": "Thibault Leemans",
+      "item.2": "info@loppemconversa.be",
+      "item.3": "+32 478 51 93 44 (preferably outside office hours)"
+    },
+    "card.2.content": {
+      "title": "Organisation",
+      "item.1": "VZW Conversa Taalvakanties",
+      "item.2": "0714.900.490",
+      "item.3": "Tortelduifstraat 63, 9000 Ghent",
+      "item.4": "BE16 0018 5319 2474",
+      "item.5": "GEBABEBB"
+    },
+    "card.3.content": {
+      "title": "Partners",
+      "item.juvigo": "The language holidays of Loppem Conversa can also be found at Juvigo!"
+    },
+    "card.4.content": {
+      "title": "Camp address",
+      "item.1": "Loppem Conversa",
+      "item.2": "Abbey school of Zevenkerken",
+      "item.3": "Zevenkerken 4, 8200 Bruges"
+    },
+    "card.5.content": {
+      "title": "Social media"
+    }
+  }
+}

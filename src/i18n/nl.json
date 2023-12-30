@@ -386,7 +386,7 @@
     },
     "extra.error": {
       "contact": "Gelieve aan te duiden via welke weg u in contact bent gekomen met Loppem Conversa.",
-      "street": "Gelieve het cursusreglement te lezen en te accepteren."
+      "acceptTerms": "Gelieve het cursusreglement te lezen en te accepteren."
     },
     "confirmation": {
       "card.mail.header": "Succesvolle inschrijving",
@@ -400,7 +400,7 @@
         "undefined": "Er is een onbekende fout opgetreden",
         "network": "Er is een netwerk fout opgetreden. Gelieve uw internetverbinding te controleren",
         "retry": "Opnieuw proberen",
-        "footer": "U kan opnieuw proberen met dezelfde vooringevlde data of u kan de waardes hieronder kopieëren en naar ons verzenden via mail. Excuses voor het ongemak."
+        "footer": "U kan opnieuw proberen met dezelfde vooringevulde data of u kan de waardes hieronder kopieëren en naar ons verzenden via mail. Excuses voor het ongemak."
       }
     }
   },
@@ -413,7 +413,7 @@
       "content.card.2.title": "Wanneer betalen?",
       "content.card.2.body": "<header>Voorschot</header><p>Je betaalt het voorschot (of meteen het volledige bedrag) bij de inschrijving. De inschrijving van je kind is pas definitief nadat wij het voorschot (of het volledige bedrag) ontvangen hebben. </p><p>Bij een inschrijving na 1 juni vragen we om meteen het volledige bedrag te storten. </p><p>Voorschot bij inschrijving voor 1 februari: 370 euro</p><p>Voorschot bij inschrijving na 1 februari: 390 euro</p><p>Inschrijving na 1 juni: 790 euro</p><header>Resterende saldo</header><p>Je betaalt het resterende saldo van 400 euro voor 1 juni.</p><header>Volledige bedrag</header><p>Het volledige bedrag kan ook meteen na de inschrijving in 1 keer gestort worden. <br /> Inschrijving voor 1 februari: 770 euro <br /> Inschrijving na 1 februari: 790 euro</p><header>Overschrijving</header><p>Naam: Conversa taalvakanties vzw <br /> Rekeningnummer: BE16 0018 5319 2474 <br /> BIC: GEBABEBB <br /> Mededeling: volledige naam van de leerling + juli of augustus + Nederlands of Engels</p>",
       "content.card.3.title": "Zijn er kortingen?",
-      "content.card.3.body": "<header>Kostprijs</header><p>De kostprijs van elke taalvakantie bedraagt 790 euro.</p><header>Vroegboekkortin</header><p>Schrijf in voor 1 februari en geniet van 20 euro korting. De kostprijs bedraagt in dat geval dus 770 euro.</p><header>Vriendjeskorting</header><p>Overtuig een vriend om voor de eerste keer mee te komen op taalvakantie en geniet van 50 euro cashback die je ontvangt na afloop van de taalvakantie (voor meer info, bekijk de voorwaarden hieronder).</p>",
+      "content.card.3.body": "<header>Kostprijs</header><p>De kostprijs van elke taalvakantie bedraagt 790 euro.</p><header>Vroegboekkorting</header><p>Schrijf in voor 1 februari en geniet van 20 euro korting. De kostprijs bedraagt in dat geval dus 770 euro.</p><header>Vriendjeskorting</header><p>Overtuig een vriend om voor de eerste keer mee te komen op taalvakantie en geniet van 50 euro cashback die je ontvangt na afloop van de taalvakantie (voor meer info, bekijk de voorwaarden hieronder).</p>",
       "content.card.4.title": "Wat als ik mijn inschrijving wil annuleren?",
       "content.card.4.body": "We begrijpen dat het soms belangrijk is om een inschrijving te kunnen annuleren. Als je een inschrijving wil annuleren, dan vragen we om ons via e-mail te contacteren zodat we samen naar een oplossing kunnen zoeken. Tot 1 juni kan je je inschrijving kosteloos annuleren. Vanaf 1 juni brengen we een administratieve kost van 100 euro in rekening. Dit bedrag kunnen we omzetten in een voucher die je kan gebruiken bij een volgende inschrijving."
     },

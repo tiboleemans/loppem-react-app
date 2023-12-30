@@ -1,9 +1,10 @@
 import i18n from 'i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
-import { initReactI18next } from 'react-i18next';
+import {initReactI18next} from 'react-i18next';
 
 const nl = require('./nl.json');
 const fr = require('./fr.json');
+const en = require('./en.json');
 
 const changeLanguage = (language) => {
   // Don't reset the same language
@@ -27,12 +28,13 @@ const languageDetectorOptions = {
 
 const setupAndInitI18n = (language) => {
   const i18nOptions = {
-    fallbackLng: ['fr', 'nl'],
-    supportedLngs: ['nl', 'fr'],
+    fallbackLng: ['en', 'fr', 'nl'],
+    supportedLngs: ['nl', 'fr', 'en'],
     detection: languageDetectorOptions,
     resources: {
-      'nl': { translations: nl },
-      'fr': { translations: fr }
+      'nl': {translations: nl},
+      'fr': {translations: fr},
+      'en': {translations: en}
     },
     transSupportBasicHtmlNodes: true,
     transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'p'],
@@ -66,6 +68,6 @@ const getLanguage = () => {
   return i18n.language;
 }
 
-export { changeLanguage };
-export { getLanguage };
+export {changeLanguage};
+export {getLanguage};
 export default setupAndInitI18n;

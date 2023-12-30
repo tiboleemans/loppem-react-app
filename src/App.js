@@ -30,8 +30,8 @@ function App() {
         <Switch>
           <Route path="/:language" render={({match}) => {
             const language = match.params.language;
-            if (['nl', 'fr'].includes(language)) {
-              setLanguage(language + '-BE');
+            if (['nl', 'fr', 'en'].includes(language)) {
+              setLanguage(language);
               return <Switch>
                 <Route path={"/" + language + "/home"} component={Home}/>
                 <Route render={() => <Redirect to={"/" + language + "/home"}/>}/>

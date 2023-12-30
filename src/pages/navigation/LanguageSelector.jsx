@@ -24,7 +24,7 @@ export default function LanguageSelector() {
       >
         <option value={'nl'}>NL</option>
         <option value={'fr'}>FR</option>
-        {/*<option value={'en'}>EN</option>*/}
+        <option value={'en'}>EN</option>
       </NativeSelect>
     </FormControl>
   );

@@ -41,7 +41,7 @@ export default function useForm(showValidation, step) {
       errors.school.immersion = values.school.immersion ? null : t("inscription.school.error.immersion")
     } else if (step === 3) {
       errors.extra.contact = values.extra.contact ? null : t("inscription.extra.error.contact")
-      errors.extra.acceptTerms = values.extra.acceptTerms ? null : t("inscription.extra.error.street")
+      errors.extra.acceptTerms = values.extra.acceptTerms ? null : t("inscription.extra.error.acceptTerms")
     }
 
     setErrors({

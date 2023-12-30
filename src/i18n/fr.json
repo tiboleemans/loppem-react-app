@@ -371,7 +371,7 @@
     },
     "extra.error": {
       "contact": "Veuillez indiquer comment vous avez découvert Loppem Conversa.",
-      "accept": "Veuillez lire et accepter le règlement du cours."
+      "acceptTerms": "Veuillez lire et accepter le règlement du cours."
     },
     "confirmation": {
       "card.mail.header": "Inscription réussie",
@@ -379,7 +379,7 @@
       "card.payment.header": "Détails du paiement",
       "card.payment.content": "<p>Veuillez verser l'acompte de 370 € ou le montant total de 770 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit dans la communication.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
       "button": "Inscrire un autre élève",
-      "loading" : "Votre inscription est en cours d'envoi. Cela peut prendre quelques secondes.",
+      "loading": "Votre inscription est en cours d'envoi. Cela peut prendre quelques secondes.",
       "error": {
         "title": "Erreur technique",
         "undefined": "Une erreur inconnue s'est produite",
