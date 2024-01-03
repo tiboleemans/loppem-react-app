@@ -7,6 +7,7 @@ const cors = require('cors');
 const tools = require('./tools');
 
 const register = require('./public/registration');
+const bringFriend = require('./public/bring_a_friend');
 const registrationMailToSend = require('./public/registration_temporary_mails_to_send');
 const registrationSubmitMailToSend = require('./public/registration_mails_to_send');
 
@@ -50,6 +51,10 @@ app.post('/registration', (req, res) => {
 });
 app.put('/registration', (req, res) => {
   tools.executeRequest(register.updateFinalRegistration, req, res);
+});
+
+app.post('/claim-discount', (req, res) => {
+  tools.executeRequest(bringFriend.claimDiscount, req, res);
 });
 
 app.get('/warm', (req, res) => { res.end(); });

@@ -73,15 +73,27 @@
       },
       "form": {
         "button": "Demandez votre réduction",
-        "dialog.title": "Demandez une réduction \"amis\"",
-        "dialog.subtitle": "Indiquez-nous le nom de l'ami que vous amenez et bénéficiez de la réduction.",
+        "dialog.title.normal": "Demandez une réduction \"amis\"",
+        "dialog.subtitle.normal": "Indiquez-nous le nom de l'ami que vous amenez et bénéficiez de la réduction.",
         "dialog.section.1.header": "Vos coordonnées",
         "dialog.section.1.text.field.1": "Nom du parent ou du superviseur",
         "dialog.section.1.text.field.2": "Adresse email",
         "dialog.section.2.header": "Coordonnées de l'ami",
         "dialog.section.2.text.field.1": "Nom de l'ami",
         "dialog.action.cancel": "Annuler",
-        "dialog.action.send": "Envoyer"
+        "dialog.action.send": "Envoyer",
+        "parent.error.name": "Veuillez remplir votre nom",
+        "parent.error.email": "Veuillez remplir votre e-mail",
+        "friend.error.name": "Veuillez remplir le nom de l'ami",
+        "dialog.title.error": "La requête a échoué",
+        "dialog.title.success": "La requête est envoyé",
+        "dialog.title.loading": "La requête est en cours de traitement...",
+        "dialog.subtitle.error": "La requête a échoué. Vous pouvez réessayer ou envoyer un e-mail. Nous vous prions de nous excuser pour ce désagrément.",
+        "dialog.subtitle.success": "La requête est envoyé. Nous vérifions les détails et assurons le suivi. Après le séjour linguistique, nous vous remboursons 50 euros. Nous vous remercions d'avance de recommander nos séjours linguistiques.",
+        "dialog.subtitle.loading": "La requête est en cours de traitement. Cela peut prendre quelques instants.",
+        "dialog.action.back": "Retourner",
+        "dialog.action.retry": "Réessayer",
+        "dialog.action.another": "Amener un autre ami"
       }
     },
     "interest": {

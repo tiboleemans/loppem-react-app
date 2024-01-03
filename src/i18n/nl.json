@@ -76,15 +76,27 @@
       },
       "form": {
         "button": "Claim je korting",
-        "dialog.title": "Claim je vriendjeskorting",
-        "dialog.subtitle": "Vertel ons welk vriendje je meeneemt en kom in aanmerking voor de cashback.",
+        "dialog.title.normal": "Claim je vriendjeskorting",
+        "dialog.subtitle.normal": "Vertel ons welk vriendje je meeneemt en kom in aanmerking voor de cashback.",
         "dialog.section.1.header": "Je gegevens",
         "dialog.section.1.text.field.1": "Naam ouder of begeleider",
-        "dialog.section.1.text.field.2": "E-mailadres",
+        "dialog.section.1.text.field.2": "E-mail",
         "dialog.section.2.header": "Gegevens vriendje",
         "dialog.section.2.text.field.1": "Naam vriendje",
         "dialog.action.cancel": "Annuleer",
-        "dialog.action.send": "Verzend"
+        "dialog.action.send": "Verzend",
+        "parent.error.name": "Gelieve uw naam in te vullen",
+        "parent.error.email": "Gelieve uw e-mail in te vullen",
+        "friend.error.name": "Gelieve de naam van de vriend in te vullen",
+        "dialog.title.error": "Aanbrengen van een vriend is mislukt",
+        "dialog.title.success": "Aanbrengen van een vriend is geslaagd",
+        "dialog.title.loading": "Aanbrengen van een vriend ...",
+        "dialog.subtitle.error": "Het aanbrengen van een vriend is mislukt. U kan opnieuw proberen of een mail sturen. Onze excuses voor het ongemak.",
+        "dialog.subtitle.success": "Het aanbrengen van een vriend is geslaagd. Wij controleren de gegevens en volgen dit verder op. Na de taalvakantie storten we 50 euro terug. Alvast bedankt voor het aanbevelen van onze taalvakanties.",
+        "dialog.subtitle.loading": "Uw aanvraag wordt verwerkt. Dit kan enkele seconden duren.",
+        "dialog.action.back": "Verlaten",
+        "dialog.action.retry": "Opnieuw proberen",
+        "dialog.action.another": "Nog iemand aanbrengen"
       }
     },
     "interest": {
@@ -394,7 +406,7 @@
       "card.payment.header": "Betalingsdetails",
       "card.payment.content": "<p>Gelieve het voorschot van 370 euro of het totale bedrag van 770 euro te betalen op BE16 0018 5319 2474 (BIC: GEBABEBB) met als mededeling de naam van de ingeschreven leerling.</p> <p> De inschrijving is pas defintief zodra wij een betaling hebben ontvangen. </p>",
       "button": "Schrijf nog een leerling in",
-      "loading" : "Uw inschrijving wordt verstuurd. Dit kan enkele seconden duren.",
+      "loading": "Uw inschrijving wordt verstuurd. Dit kan enkele seconden duren.",
       "error": {
         "title": "Technische fout",
         "undefined": "Er is een onbekende fout opgetreden",

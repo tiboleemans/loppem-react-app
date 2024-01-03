@@ -76,15 +76,27 @@
       },
       "form": {
         "button": "Claim your discount",
-        "dialog.title": "Claim your friend discount",
-        "dialog.subtitle": "Tell us which friend you are bringing and qualify for the cashback.",
+        "dialog.title.normal": "Claim your friend discount",
+        "dialog.subtitle.normal": "Tell us which friend you are bringing and qualify for the cashback.",
         "dialog.section.1.header": "Your details",
         "dialog.section.1.text.field.1": "Name of parent or guardian",
         "dialog.section.1.text.field.2": "Email address",
         "dialog.section.2.header": "Friend's details",
         "dialog.section.2.text.field.1": "Friend's name",
         "dialog.action.cancel": "Cancel",
-        "dialog.action.send": "Send"
+        "dialog.action.send": "Send",
+        "parent.error.name": "Please enter your name",
+        "parent.error.email": "Please enter your email",
+        "friend.error.name": "Please enter the name of the referred friend",
+        "dialog.title.error": "Referring new student failed",
+        "dialog.title.success": "Referring friend succeeded",
+        "dialog.title.loading": "Referring friend ...",
+        "dialog.subtitle.error": "Referral of a friend failed. You can try again or send an e-mail. We apologise for the inconvenience.",
+        "dialog.subtitle.success": "The referral of a friend has been successful. We check the data and follow up. After the language holiday, we refund 50 euros. Thank you in advance for recommending our language holidays.",
+        "dialog.subtitle.loading": "Your request is being processed. This may take a few seconds.",
+        "dialog.action.back": "Leave",
+        "dialog.action.retry": "Retry",
+        "dialog.action.another": "Refer another friend"
       }
     },
     "interest": {

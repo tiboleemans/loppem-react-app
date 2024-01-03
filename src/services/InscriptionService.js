@@ -21,8 +21,7 @@ const getInscription = async (id) => {
   const response = await axios.get(
     `${apiPathInscription}/api/inscriptionSaveGetTempInscription?id=${id}`
   )
-  const inscription = Inscription.fromApi(response.data);
-  return inscription
+  return Inscription.fromApi(response.data);
 }
 
 export {registerStudent, updateStudent, getInscription};

@@ -27,7 +27,7 @@ const MyStyledCustomTextField = styled(TextField)(({theme}) => ({
 
 
 const CustomTextField = (props) => {
-  const {subject, name, label, value, onChange, type, placeholder, helperText, error = null} = props;
+  const {subject, name, label, value, onChange, type, placeholder, helperText, disabled = false, error = null} = props;
 
   const handleChange = (event) => {
     event.target = {subject: subject, name: name, value: event.target.value, error: error};
@@ -45,6 +45,7 @@ const CustomTextField = (props) => {
       type={type}
       placeholder={placeholder}
       helperText={helperText}
+      disabled={disabled}
       {...(error && {error: true, helperText: error})}
     />
   );
