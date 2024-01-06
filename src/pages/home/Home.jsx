@@ -7,7 +7,7 @@ import Pricing from "../pricing/Pricing";
 import PracticalInfo from "../practical-info/PracticalInfo";
 import Contact from "../contact/Contact";
 import RatingBanner from "../banners/RatingBanner";
-import BringAFriend from "../banners/BringAFriend";
+import BringAFriend from "../banners/bringafriend/BringAFriend";
 import Interest from "../banners/Interest";
 import QuestionBanner from "../banners/QuestionBanner";
 

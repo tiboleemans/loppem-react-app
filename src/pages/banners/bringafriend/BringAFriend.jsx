@@ -3,7 +3,7 @@ import {Grid} from "@mui/material";
 import {useTranslation} from "react-i18next";
 import BringAFriendConditionsDialog from "./BringAFriendConditionsDialog";
 import BringAFriendForm from "./BringAFriendForm";
-import "./banner.css"
+import "../banner.css"
 
 const BringAFriend = () => {
   const {t} = useTranslation();
