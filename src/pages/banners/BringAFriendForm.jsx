@@ -48,6 +48,7 @@ export default function BringAFriendForm() {
   };
 
   const handleSend = () => {
+    updateErrors();
     setShowValidation(true);
     if (canSend()) {
       setIsLoading(true);
