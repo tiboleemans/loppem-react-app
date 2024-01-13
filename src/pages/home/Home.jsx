@@ -10,6 +10,7 @@ import RatingBanner from "../banners/RatingBanner";
 import BringAFriend from "../banners/bringafriend/BringAFriend";
 import Interest from "../banners/Interest";
 import QuestionBanner from "../banners/QuestionBanner";
+import Testimonial from "../deprecated/Testimonial";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <Pricing/>
       <BringAFriend/>
       <InscriptionForm/>
+      <Testimonial />
       <Interest/>
       <PracticalInfo/>
       <QuestionBanner/>

@@ -51,7 +51,7 @@ const Gallery = () => {
     }, {
       title: "",
       subtitle: "Een uitstap naar Brugge om de doeltaal in praktijk te gebruiken",
-      image: require("../../images/vacations/5.jpg"),
+      image: require("../../images/vacations/5.jpeg"),
     }, {
       title: "",
       subtitle: "Interactieve lessen in klassen van maximaal 10 leerlingen",
