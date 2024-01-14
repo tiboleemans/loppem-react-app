@@ -19,8 +19,6 @@
     --green-hex-main: rgba(157, 201, 130, 1);
     --green-hex-light: rgba(157, 201, 130, 0.4);
     --text-muted: #9DC982;
-    --swiper-navigation-top-offset: 20px;
-    --swiper-navigation-sides-offset: 20px;
     --swiper-navigation-color: var(--primary-main);
     --swiper-pagination-top: 10px;
     --swiper-pagination-fraction-color: var(--primary-main);
@@ -121,4 +119,8 @@ a {
         padding-left: 0;
         padding-right: 0;
     }
+}
+
+swiper-container:focus-visible {
+    outline: none;
 }
