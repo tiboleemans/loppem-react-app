@@ -24,6 +24,10 @@
     --swiper-pagination-fraction-color: var(--primary-main);
     --topbar-mobile-width: 220px;
 }
+.swiper-button svg {
+    width: 1.5rem;
+    height: 1.5rem;
+}
 
 body {
     font-family: 'Big City Grotesque', serif !important;

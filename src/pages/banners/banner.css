@@ -55,6 +55,13 @@
     font-weight: 500;
     text-align: center;
 }
+
+.flex-container {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
 @media (max-width: 600px) {
     .banner-text {
         padding: 10px 20px;
@@ -69,5 +76,11 @@
 
     .rating-display-mobile {
         display: inline;
+    }
+
+    .flex-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 25px;
     }
 }

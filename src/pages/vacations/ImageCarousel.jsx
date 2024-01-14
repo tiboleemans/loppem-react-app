@@ -1,7 +1,8 @@
 import React, {useEffect, useRef, useState} from "react";
-import {Card} from "@mui/material";
+import {Card, SvgIcon} from "@mui/material";
 import {Navigation, Pagination} from 'swiper/modules';
 import FullScreenCarousel from "../common/full-screen-carousel/FullScreenCarousel";
+import "./vacations.css";
 
 const ImageCarousel = () => {
     const swiperElRef = useRef(null);

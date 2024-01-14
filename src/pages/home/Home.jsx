@@ -9,7 +9,7 @@ import Contact from "../contact/Contact";
 import RatingBanner from "../banners/RatingBanner";
 import BringAFriend from "../banners/bringafriend/BringAFriend";
 import Interest from "../banners/interest/Interest";
-import QuestionBanner from "../banners/QuestionBanner";
+import QuestionBanner from "../banners/question/QuestionBanner";
 import Testimonial from "../deprecated/Testimonial";
 
 const Home = () => {
