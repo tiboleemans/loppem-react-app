@@ -8,7 +8,7 @@ import {useTranslation} from "react-i18next";
 
 export default function ParentInformationForm(props) {
 
-  const {values, handleInputChange, errors} = props;
+  const {values, handleInputChange, errors, handleOnError, showValidation} = props;
   const {t} = useTranslation();
 
   const relationItems = [
@@ -51,8 +51,10 @@ export default function ParentInformationForm(props) {
             label={t("inscription.parent.label.email")}
             name="email"
             type="email"
+            showValidation={showValidation}
             value={values.parent.email}
             onChange={handleInputChange}
+            onError={handleOnError}
             error={errors.parent.email}
           />
         </Grid>
@@ -126,9 +128,11 @@ export default function ParentInformationForm(props) {
             subject={subject}
             label={t("inscription.parent.label.gsm")}
             name="gsm"
+            type="phone"
             value={values.parent.gsm}
             onChange={handleInputChange}
             error={errors.parent.gsm}
+            onError={handleOnError}
           />
         </Grid>
         <Grid item xs={12} sm={6}>

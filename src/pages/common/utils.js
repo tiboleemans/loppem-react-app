@@ -1,32 +1,64 @@
 /* eslint-disable */
-export function debounce(func, wait, immediate) {
-  let timeout;
-  return function () {
-    const context = this,
-      args = arguments;
-    clearTimeout(timeout);
-    timeout = setTimeout(function () {
-      timeout = null;
-      if (!immediate) func.apply(context, args);
-    }, wait);
-    if (immediate && !timeout) func.apply(context, args);
-  };
-}
+import axios from "axios";
 
 export function scrollTo(elmID) {
   const elm = document.getElementById(elmID);
 
   if (!elmID || !elm) {
-      console.log("cannot find el", elmID);
+    console.log("cannot find el", elmID);
     return;
   }
 
   window.scrollTo({behavior: "smooth", top: elm.offsetTop - 20});
 }
 
-export function classList(classes) {
-  return Object.entries(classes)
-    .filter((entry) => entry[1])
-    .map((entry) => entry[0])
-    .join(' ');
+export function hasNoErrors(errors) {
+  return Object.values(errors).every((error) => error === null);
+}
+
+export function hasValues(values) {
+  return !Object.values(values).every((value) => value === '' || value === null || value === false)
+}
+
+export function handleError(t, error, setError, values) {
+  if (axios.isAxiosError(error)) {
+    if (error.toJSON().code === "ERR_NETWORK") {
+      const networkError = {
+        message: error.toJSON().message,
+        details: t("inscription.confirmation.error.network"),
+        values: error.toJSON().config.data,
+      }
+      setError(networkError);
+    } else {
+      const backendError = {
+        message: error.toJSON().message,
+        details: JSON.stringify(error.response?.data?.error?.details),
+        values: error.toJSON().config.data,
+      }
+      setError(backendError);
+    }
+  } else {
+    const validationError = {
+      message: t("inscription.confirmation.error.undefined"),
+      details: JSON.stringify(error),
+      values: values,
+    }
+    setError(validationError);
+  }
+}
+
+export function handleInputChange(event, setValues, values) {
+  const {
+    subject,
+    name,
+    value
+  } = event.target;
+
+  setValues({
+    ...values,
+    [subject]: {
+      ...values[subject],
+      [name]: value
+    }
+  })
 }

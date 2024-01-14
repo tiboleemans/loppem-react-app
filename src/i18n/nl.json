@@ -198,7 +198,10 @@
   },
   "inscription": {
     "title": "Inschrijvingsformulier",
-    "form.errors": "Niet alle verplichte velden werden ingevuld.",
+    "form.errors": {
+      "general" : "Niet alle verplichte velden werden ingevuld.",
+      "email": "Het formaat van je e-mailadres is niet correct."
+    },
     "button": {
       "back": "Vorige",
       "next": "Volgende",

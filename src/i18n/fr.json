@@ -165,7 +165,10 @@
   },
   "inscription": {
     "title": "Formulaire d'inscription",
-    "form.errors": "Tous les champs obligatoires n'ont pas été remplis.",
+    "form.errors": {
+      "general" : "Tous les champs obligatoires n'ont pas été remplis.",
+      "email": "Le format de votre adresse email est incorrect."
+    },
     "button": {
       "back": "Précédent",
       "next": "Suivant",

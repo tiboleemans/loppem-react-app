@@ -177,10 +177,11 @@ export default function InscriptionForm() {
               <>
                 {step === 0 &&
                 <StudentInformationForm values={values} handleInputChange={handleInputChange} handleOnError={handleOnError} errors={errors}/>}
-                {step === 1 && <ParentInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
+                {step === 1 && <ParentInformationForm values={values} handleInputChange={handleInputChange} handleOnError={handleOnError}
+                                                      showValidation={showValidation} errors={errors}/>}
                 {step === 2 && <SchoolInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
                 {step === 3 && <ExtraInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
-                {showValidation && myStepHasErrors ? <Alert severity="warning">{t("inscription.form.errors")}</Alert> : null}
+                {showValidation && myStepHasErrors ? <Alert severity="warning">{t("inscription.form.errors.general")}</Alert> : null}
                 <div className="inscription-button-container">
                   {step !== 0 && (
                     <div className="inscription-button" onClick={handleBack}>

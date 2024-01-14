@@ -47,6 +47,7 @@ const CustomTextArea = (props) => {
       multiline
       rows={4}
       disabled={disabled}
+      inputProps={{ maxLength: 1000 }}
     />
   );
 };

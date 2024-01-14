@@ -8,19 +8,19 @@ import DialogTitle from '@mui/material/DialogTitle';
 import {useTranslation} from "react-i18next";
 import {Form} from "../../inscription-form/useForm";
 import CustomTextField from "../../inscription-form/custom/CustomTextField";
-import axios from "axios";
 import {initialInterestValues} from "./initialInterestValues";
 import {initialInterestErrors} from "./initialInterestErrors";
 import CustomTextArea from "../../inscription-form/custom/CustomTextArea";
-import {sendBringAFriendMail} from "../../../services/MailService";
+import {sendInterestMail} from "../../../services/MailService";
+import {handleError, handleInputChange, hasNoErrors, hasValues} from "../../common/utils";
 
 export default function InterestForm() {
   const {t} = useTranslation();
   const [open, setOpen] = React.useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showValidation, setShowValidation] = useState(false);
-  const [interestResult, setInterestResult] = useState(undefined);
-  const [interestError, setInterestError] = useState(undefined);
+  const [axiosResult, setAxiosResult] = useState(undefined);
+  const [axiosError, setAxiosError] = useState(undefined);
   const [values, setValues] = useState(initialInterestValues);
   const [errors, setErrors] = useState(initialInterestErrors);
   const [canChangeContent, setCanChangeContent] = useState(false);
@@ -55,8 +55,8 @@ export default function InterestForm() {
     setShowValidation(false);
     setValues(initialInterestValues);
     setErrors(initialInterestErrors);
-    setInterestResult(undefined);
-    setInterestError(undefined);
+    setAxiosResult(undefined);
+    setAxiosError(undefined);
   };
 
   const handleClose = () => {
@@ -69,62 +69,15 @@ export default function InterestForm() {
     if (canSend()) {
       setIsLoading(true);
       values.friend.subject = t("banner.interest.form.dialog.mail.subject");
-      sendBringAFriendMail(values).then(interestResult => {
-        setInterestResult(interestResult);
+      sendInterestMail(values).then(result => {
+        setAxiosResult(result);
       }).catch(error => {
-        handleError(error);
+        handleError(t, error, setAxiosError, values);
       }).finally(() => {
         setIsLoading(false);
       })
     }
   };
-
-  const handleInputChange = (event) => {
-    const {
-      subject,
-      name,
-      value
-    } = event.target;
-
-    updateValue(subject, name, value)
-  }
-
-  const updateValue = (subject, name, value) => {
-    setValues({
-      ...values,
-      [subject]: {
-        ...values[subject],
-        [name]: value
-      }
-    })
-  }
-
-  function handleError(error) {
-    if (axios.isAxiosError(error)) {
-      if (error.toJSON().code === "ERR_NETWORK") {
-        const networkError = {
-          message: error.toJSON().message,
-          details: t("inscription.confirmation.error.network"),
-          values: error.toJSON().config.data,
-        }
-        setInterestError(networkError);
-      } else {
-        const backendError = {
-          message: error.toJSON().message,
-          details: JSON.stringify(error.response?.data?.error?.details),
-          values: error.toJSON().config.data,
-        }
-        setInterestError(backendError);
-      }
-    } else {
-      const validationError = {
-        message: t("inscription.confirmation.error.undefined"),
-        details: JSON.stringify(error),
-        values: values,
-      }
-      setInterestError(validationError);
-    }
-  }
 
   function updateErrors() {
     errors.parent.name = values.parent.name ? null : t("banner.interest.form.parent.error.name");
@@ -140,20 +93,18 @@ export default function InterestForm() {
   }
 
   function canSend() {
-    return Object.values(errors.parent).every((error) => error === null) &&
-      Object.values(errors.friend).every((error) => error === null) &&
-      !Object.values(values.parent).every((value) => value === '' || value === null || value === false) &&
-      !Object.values(values.friend).every((value) => value === '' || value === null || value === false);
+    return hasNoErrors(errors.parent) && hasValues(values.parent) &&
+      hasNoErrors(errors.friend) && hasValues(values.friend);
   }
 
   function getDialogTitle() {
     if (isLoading) {
       return <DialogTitle>{t("banner.interest.form.dialog.title.loading")}</DialogTitle>;
     }
-    if (!!interestResult) {
+    if (!!axiosResult) {
       return <DialogTitle>{t("banner.interest.form.dialog.title.success")}</DialogTitle>;
     }
-    if (!!interestError) {
+    if (!!axiosError) {
       return <DialogTitle>{t("banner.interest.form.dialog.title.error")}</DialogTitle>;
     }
     return <DialogTitle>{t("banner.interest.form.dialog.title.normal")}</DialogTitle>;
@@ -163,22 +114,22 @@ export default function InterestForm() {
     if (isLoading) {
       return <DialogContentText>{t("banner.interest.form.dialog.subtitle.loading")}</DialogContentText>;
     }
-    if (!!interestResult) {
+    if (!!axiosResult) {
       return <DialogContentText>{t("banner.interest.form.dialog.subtitle.success")}</DialogContentText>;
     }
-    if (!!interestError) {
+    if (!!axiosError) {
       return <DialogContentText>{t("banner.interest.form.dialog.subtitle.error")}</DialogContentText>;
     }
     return <DialogContentText>{t("banner.interest.form.dialog.subtitle.normal")}</DialogContentText>;
   }
 
   function getLeftButton() {
-    if (!!interestResult) {
+    if (!!axiosResult) {
       return <div className="banner-button-dialog" onClick={handleClose}>
         {t("banner.interest.form.dialog.action.back")}
       </div>;
     }
-    if (!!interestError) {
+    if (!!axiosError) {
       return <div className="banner-button-dialog" onClick={handleClose}>
         {t("banner.interest.form.dialog.action.cancel")}
       </div>;
@@ -194,12 +145,12 @@ export default function InterestForm() {
         {t("banner.interest.form.dialog.action.send")}
       </div>;
     }
-    if (!!interestResult) {
+    if (!!axiosResult) {
       return <div className="banner-button-dialog" onClick={handleClear}>
         {t("banner.interest.form.dialog.action.another")}
       </div>;
     }
-    if (!!interestError) {
+    if (!!axiosError) {
       return <div className="banner-button-dialog" onClick={handleSend}>
         {t("banner.interest.form.dialog.action.retry")}
       </div>;
@@ -227,8 +178,8 @@ export default function InterestForm() {
               label={t("banner.interest.form.dialog.section.1.text.field.1")}
               name="name"
               value={values.parent.name}
-              onChange={handleInputChange}
-              disabled={!!interestResult || !!interestError}
+              onChange={(e) => handleInputChange(e, setValues, values)}
+              disabled={!!axiosResult || !!axiosError}
               error={errors.parent.name}
             />
 
@@ -237,8 +188,8 @@ export default function InterestForm() {
               label={t("banner.interest.form.dialog.section.1.text.field.2")}
               name="email"
               value={values.parent.email}
-              onChange={handleInputChange}
-              disabled={!!interestResult || !!interestError}
+              onChange={(e) => handleInputChange(e, setValues, values)}
+              disabled={!!axiosResult || !!axiosError}
               error={errors.parent.email}
             />
 
@@ -250,8 +201,8 @@ export default function InterestForm() {
               label={t("banner.interest.form.dialog.section.2.text.field.1")}
               name="name"
               value={values.friend.name}
-              onChange={handleInputChange}
-              disabled={!!interestResult || !!interestError}
+              onChange={(e) => handleInputChange(e, setValues, values)}
+              disabled={!!axiosResult || !!axiosError}
               error={errors.friend.name}
             />
             <CustomTextField
@@ -259,8 +210,8 @@ export default function InterestForm() {
               label={t("banner.interest.form.dialog.section.2.text.field.2")}
               name="email"
               value={values.friend.email}
-              onChange={handleInputChange}
-              disabled={!!interestResult || !!interestError}
+              onChange={(e) => handleInputChange(e, setValues, values)}
+              disabled={!!axiosResult || !!axiosError}
               error={errors.friend.email}
             />
             <CustomTextArea
@@ -268,8 +219,8 @@ export default function InterestForm() {
               label={t("banner.interest.form.dialog.section.2.text.field.3")}
               name="content"
               value={values.friend.content}
-              onChange={handleInputChange}
-              disabled={!canChangeContent || !!interestResult || !!interestError}
+              onChange={(e) => handleInputChange(e, setValues, values)}
+              disabled={!canChangeContent || !!axiosResult || !!axiosError}
               error={errors.friend.content}
             />
             <div className="section-header">
@@ -278,7 +229,7 @@ export default function InterestForm() {
                   type="checkbox"
                   checked={canChangeContent}
                   onChange={handleCanChangeContent}
-                  disabled={!!interestResult || !!interestError}
+                  disabled={!!axiosResult || !!axiosError}
                 />
                 {t("banner.interest.form.dialog.section.2.checkbox")}
               </label>

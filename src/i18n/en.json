@@ -168,7 +168,10 @@
   },
   "inscription": {
     "title": "Registration form",
-    "form.errors": "Not all required fields were filled in.",
+    "form.errors": {
+      "general" : "Not all required fields were filled in.",
+      "email": "The format of your e-mail address is incorrect."
+    },
     "button": {
       "back": "Previous",
       "next": "Next",

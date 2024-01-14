@@ -9,26 +9,25 @@ import {useTranslation} from "react-i18next";
 import {Form} from "../../inscription-form/useForm";
 import CustomTextField from "../../inscription-form/custom/CustomTextField";
 import {claimDiscount} from "../../../services/FriendService";
-import axios from "axios";
 import {initialBringFriendValues} from "./initialBringFriendValues";
 import {initialBringFriendErrors} from "./initialBringFriendErrors";
+import {handleError, handleInputChange, hasNoErrors, hasValues} from "../../common/utils";
 
 export default function BringAFriendForm() {
   const {t} = useTranslation();
   const [open, setOpen] = React.useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [showValidation, setShowValidation] = useState(false);
-  const [bringFriendResult, setBringFriendResult] = useState(undefined);
-  const [bringFriendError, setBringFriendError] = useState(undefined);
+  const [axiosResult, setAxiosResult] = useState(undefined);
+  const [axiosError, setAxiosError] = useState(undefined);
   const [values, setValues] = useState(initialBringFriendValues);
-
   const [errors, setErrors] = useState(initialBringFriendErrors);
 
   useEffect(() => {
     if (!showValidation) {
       return;
     }
-    updateErrors();
+    validate();
   }, [values, showValidation]);
 
   const handleClickOpen = () => {
@@ -39,8 +38,8 @@ export default function BringAFriendForm() {
     setShowValidation(false);
     setValues(initialBringFriendValues);
     setErrors(initialBringFriendErrors);
-    setBringFriendResult(undefined);
-    setBringFriendError(undefined);
+    setAxiosResult(undefined);
+    setAxiosError(undefined);
   };
 
   const handleClose = () => {
@@ -48,68 +47,21 @@ export default function BringAFriendForm() {
   };
 
   const handleSend = () => {
-    updateErrors();
+    validate();
     setShowValidation(true);
     if (canSend()) {
       setIsLoading(true);
-      claimDiscount(values).then(bringFriendResult => {
-        setBringFriendResult(bringFriendResult);
+      claimDiscount(values).then(result => {
+        setAxiosResult(result);
       }).catch(error => {
-        handleError(error);
+        handleError(t, error, setAxiosError, values);
       }).finally(() => {
         setIsLoading(false);
       })
     }
   };
 
-  const handleInputChange = (event) => {
-    const {
-      subject,
-      name,
-      value
-    } = event.target;
-
-    updateValue(subject, name, value)
-  }
-
-  const updateValue = (subject, name, value) => {
-    setValues({
-      ...values,
-      [subject]: {
-        ...values[subject],
-        [name]: value
-      }
-    })
-  }
-
-  function handleError(error) {
-    if (axios.isAxiosError(error)) {
-      if (error.toJSON().code === "ERR_NETWORK") {
-        const networkError = {
-          message: error.toJSON().message,
-          details: t("inscription.confirmation.error.network"),
-          values: error.toJSON().config.data,
-        }
-        setBringFriendError(networkError);
-      } else {
-        const backendError = {
-          message: error.toJSON().message,
-          details: JSON.stringify(error.response?.data?.error?.details),
-          values: error.toJSON().config.data,
-        }
-        setBringFriendError(backendError);
-      }
-    } else {
-      const validationError = {
-        message: t("inscription.confirmation.error.undefined"),
-        details: JSON.stringify(error),
-        values: values,
-      }
-      setBringFriendError(validationError);
-    }
-  }
-
-  function updateErrors() {
+  function validate() {
     errors.parent.name = values.parent.name ? null : t("banner.bringafriend.form.parent.error.name")
     errors.parent.email = values.parent.email ? null : t("banner.bringafriend.form.parent.error.email")
     errors.friend.name = values.friend.name ? null : t("banner.bringafriend.form.friend.error.name")
@@ -121,20 +73,18 @@ export default function BringAFriendForm() {
   }
 
   function canSend() {
-    return Object.values(errors.parent).every((error) => error === null) &&
-      Object.values(errors.friend).every((error) => error === null) &&
-      !Object.values(values.parent).every((value) => value === '' || value === null || value === false) &&
-      !Object.values(values.friend).every((value) => value === '' || value === null || value === false);
+    return hasNoErrors(errors.parent) && hasValues(values.parent) &&
+      hasNoErrors(errors.friend) && hasValues(values.friend);
   }
 
   function getDialogTitle() {
     if (isLoading) {
       return <DialogTitle>{t("banner.bringafriend.form.dialog.title.loading")}</DialogTitle>;
     }
-    if (!!bringFriendResult) {
+    if (!!axiosResult) {
       return <DialogTitle>{t("banner.bringafriend.form.dialog.title.success")}</DialogTitle>;
     }
-    if (!!bringFriendError) {
+    if (!!axiosError) {
       return <DialogTitle>{t("banner.bringafriend.form.dialog.title.error")}</DialogTitle>;
     }
     return <DialogTitle>{t("banner.bringafriend.form.dialog.title.normal")}</DialogTitle>;
@@ -144,22 +94,22 @@ export default function BringAFriendForm() {
     if (isLoading) {
       return <DialogContentText>{t("banner.bringafriend.form.dialog.subtitle.loading")}</DialogContentText>;
     }
-    if (!!bringFriendResult) {
+    if (!!axiosResult) {
       return <DialogContentText>{t("banner.bringafriend.form.dialog.subtitle.success")}</DialogContentText>;
     }
-    if (!!bringFriendError) {
+    if (!!axiosError) {
       return <DialogContentText>{t("banner.bringafriend.form.dialog.subtitle.error")}</DialogContentText>;
     }
     return <DialogContentText>{t("banner.bringafriend.form.dialog.subtitle.normal")}</DialogContentText>;
   }
 
   function getLeftButton() {
-    if (!!bringFriendResult) {
+    if (!!axiosResult) {
       return <div className="banner-button-dialog" onClick={handleClose}>
         {t("banner.bringafriend.form.dialog.action.back")}
       </div>;
     }
-    if (!!bringFriendError) {
+    if (!!axiosError) {
       return <div className="banner-button-dialog" onClick={handleClose}>
         {t("banner.bringafriend.form.dialog.action.cancel")}
       </div>;
@@ -175,12 +125,12 @@ export default function BringAFriendForm() {
         {t("banner.bringafriend.form.dialog.action.send")}
       </div>;
     }
-    if (!!bringFriendResult) {
+    if (!!axiosResult) {
       return <div className="banner-button-dialog" onClick={handleClear}>
         {t("banner.bringafriend.form.dialog.action.another")}
       </div>;
     }
-    if (!!bringFriendError) {
+    if (!!axiosError) {
       return <div className="banner-button-dialog" onClick={handleSend}>
         {t("banner.bringafriend.form.dialog.action.retry")}
       </div>;
@@ -208,8 +158,8 @@ export default function BringAFriendForm() {
               label={t("banner.bringafriend.form.dialog.section.1.text.field.1")}
               name="name"
               value={values.parent.name}
-              onChange={handleInputChange}
-              disabled={!!bringFriendResult || !!bringFriendError}
+              onChange={(e) => handleInputChange(e, setValues, values)}
+              disabled={!!axiosResult || !!axiosError}
               error={errors.parent.name}
             />
 
@@ -218,8 +168,8 @@ export default function BringAFriendForm() {
               label={t("banner.bringafriend.form.dialog.section.1.text.field.2")}
               name="email"
               value={values.parent.email}
-              onChange={handleInputChange}
-              disabled={!!bringFriendResult || !!bringFriendError}
+              onChange={(e) => handleInputChange(e, setValues, values)}
+              disabled={!!axiosResult || !!axiosError}
               error={errors.parent.email}
             />
 
@@ -231,8 +181,8 @@ export default function BringAFriendForm() {
               label={t("banner.bringafriend.form.dialog.section.2.text.field.1")}
               name="name"
               value={values.friend.name}
-              onChange={handleInputChange}
-              disabled={!!bringFriendResult || !!bringFriendError}
+              onChange={(e) => handleInputChange(e, setValues, values)}
+              disabled={!!axiosResult || !!axiosError}
               error={errors.friend.name}
             />
           </Form>
