@@ -8,7 +8,7 @@ import PracticalInfo from "../practical-info/PracticalInfo";
 import Contact from "../contact/Contact";
 import RatingBanner from "../banners/RatingBanner";
 import BringAFriend from "../banners/bringafriend/BringAFriend";
-import Interest from "../banners/Interest";
+import Interest from "../banners/interest/Interest";
 import QuestionBanner from "../banners/QuestionBanner";
 
 const Home = () => {

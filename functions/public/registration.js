@@ -77,7 +77,6 @@ async function validateTemporary(req, res, isUpdate) {
   const validation = preValidateTemporary(req.body);
 
   if (validation.error != null) {
-    console.log(validation);
     result.response = res.status(400).json(
       validation,
     );
@@ -387,7 +386,6 @@ async function getAndTransformRegistration(docId) {
  * @param {*} data the request bodyActiveTab (student data)
  */
 async function performInsert(data) {
-  console.log("In performInsert");
   const writeResult = await db
     .collection('registration')
     .add({

@@ -102,7 +102,37 @@
     "interest": {
       "text": "Ken je misschien iemand die geïnteresseerd is?",
       "button.send": "Stuur een bericht",
-      "button.share": "Download brochure"
+      "button.share": "Download brochure",
+      "form": {
+        "dialog.title.normal": "Stuur een bericht naar een vriend",
+        "dialog.subtitle.normal": "Vul je gegevens en die van een vriend in om een mail te sturen en onze taalvakanties te delen. Indien deze vriend zich inschrijft kan je de vriendjeskorting (een cashback van 50 euro) claimen.",
+        "dialog.section.1.header": "Je gegevens",
+        "dialog.section.1.text.field.1": "Je naam",
+        "dialog.section.1.text.field.2": "Je e-mail",
+        "dialog.section.2.header": "Gegevens vriendje",
+        "dialog.section.2.text.field.1": "Naam vriendje",
+        "dialog.section.2.text.field.2": "E-mail vriendje",
+        "dialog.section.2.text.field.3": "Inhoud bericht",
+        "dialog.section.2.checkbox": "Ik wil de inhoud van het bericht aanpassen",
+        "dialog.action.cancel": "Annuleer",
+        "dialog.action.send": "Verzend",
+        "parent.error.name": "Gelieve je naam in te vullen",
+        "parent.error.email": "Gelieve je e-mail in te vullen",
+        "friend.error.name": "Gelieve de naam van je vriend in te vullen",
+        "dialog.title.error": "Er heeft zich een technische fout voorgedaan",
+        "dialog.title.success": "Bedankt om een vriendje aan te brengen",
+        "dialog.title.loading": "Even geduld",
+        "dialog.subtitle.error": "Er heeft zich een technische fout voorgedaan. Je kan opnieuw proberen of een mail sturen naar info@loppemconversa.be. Onze excuses voor het ongemak.",
+        "dialog.subtitle.success": "Bedankt om een vriendje aan te brengen. Wij controleren de gegevens en volgen dit verder op. Alvast bedankt voor het aanbevelen van onze taalvakanties.",
+        "dialog.subtitle.loading": "Je vriendje wordt aangebracht. Dit kan enkele seconden duren.",
+        "dialog.mail.greeting" : "Hallo",
+        "dialog.mail.body" : "I wanted to share something exciting - Loppem Conversa (www.loppemconversa.be) offers English and Dutch language holidays for kids aged 10-18. \n\nTheir approach provides a practical and enjoyable way for children to learn languages, ideal for the summer break.\n\nExplore more here: [Insert Your Website Link]\n\nIt looks great, and considering the excellent Google reviews, thought you might want to check it out too!",
+        "dialog.mail.subject" : "Check Out Loppem Conversa - Top-rated Language Holidays for Kids!",
+        "dialog.mail.footer" : "Best,",
+        "dialog.action.back": "Verlaten",
+        "dialog.action.retry": "Opnieuw proberen",
+        "dialog.action.another": "Nog iemand aanbrengen"
+      }
     },
     "question": {
       "title": "Heb je een vraag of een probleem?",

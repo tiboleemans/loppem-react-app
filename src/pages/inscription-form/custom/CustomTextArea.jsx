@@ -26,7 +26,7 @@ const StyledCustomTextField = styled(TextField)(({theme}) => ({
 
 
 const CustomTextArea = (props) => {
-  const {subject, name, label, value, onChange, type, placeholder, helperText, error = null} = props;
+  const {subject, name, label, value, onChange, type, placeholder, helperText, disabled = false, error = null} = props;
 
   const handleChange = (event) => {
     event.target = {subject: subject, name: name, value: event.target.value, error: error};
@@ -46,6 +46,7 @@ const CustomTextArea = (props) => {
       helperText={helperText}
       multiline
       rows={4}
+      disabled={disabled}
     />
   );
 };
