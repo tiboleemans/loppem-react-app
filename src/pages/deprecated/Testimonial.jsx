@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useCallback} from "react";
 
 import {Avatar, Card, CardContent} from "@mui/material";
 
@@ -29,9 +29,23 @@ const Testimonial = () => {
         },
     },];
 
-    return (<div className="container" style={{}}>
+    const setSwiperProps = useCallback((el) => {
+        if (el !== null) {
+            el.slidesPerView = 1;
+            el.breakpoints= {
+                640: {
+                    slidesPerView: 2,
+                },
+                1024: {
+                    slidesPerView: 2,
+                },
+            };
+        }
+    });
 
-        <swiper-container slides-per-view="2" space-between="20" style={{width: '100%'}} navigation="true">
+    return (<div className="container">
+
+        <swiper-container ref={setSwiperProps} space-between="20" style={{width: '100%'}} navigation="true">
             {testimonialList.map((testimonial, index) => (<swiper-slide key={index} style={{width: '50%',}}>
                 <div style={{padding: '10px 5px'}}>
 

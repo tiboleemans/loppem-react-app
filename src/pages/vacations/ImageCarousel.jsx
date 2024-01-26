@@ -68,12 +68,11 @@ const ImageCarousel = () => {
                 alignItems: 'center',
                 justifyContent: 'center'
             }}>
-                <Card className="vacation-swiper-slide-card">
                     <iframe src="https://www.youtube.com/embed/d7H1GaxaQ9w?si=HiPDdZ_XKaj2r5S4" title="Loppem Conversa promo"
                             frameBorder="0"
+                            style={{width: '100%', height: '70%', margin: '60px 50px'}}
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             allowFullScreen/>
-                </Card>
             </swiper-slide>
         </swiper-container>
         {showFullScreen && <FullScreenCarousel onClose={() => setShowFullScreen(false)}/>}
