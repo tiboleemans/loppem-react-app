@@ -84,6 +84,8 @@ export default function StudentInformationForm(props) {
             label={t("inscription.student.label.birthdate")}
             value={values.student.birthdate}
             onChange={handleInputChange}
+            minDate={new Date((new Date().getFullYear() - 20) + "-01-01")}
+            maxDate={new Date((new Date().getFullYear() - 9) + "-12-31")}
             error={errors.student.birthdate}
             onError={handleOnError}
           />

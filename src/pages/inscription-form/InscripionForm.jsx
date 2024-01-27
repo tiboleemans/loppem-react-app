@@ -76,6 +76,7 @@ export default function InscriptionForm() {
     setRegistrationError(undefined);
     if (step === steps.length) {
       values.parent.language = getLanguage();
+      const tmpBirthdate = values.student.birthdate;
       values.student.birthdate = values.student.birthdate.toLocaleDateString('nl-BE');
       scrollTo('inscription');
       setIsLoading(true);
@@ -84,6 +85,7 @@ export default function InscriptionForm() {
       }).catch(error => {
         handleError(error);
       }).finally(() => {
+        values.student.birthdate = tmpBirthdate
         setIsLoading(false);
       })
     }

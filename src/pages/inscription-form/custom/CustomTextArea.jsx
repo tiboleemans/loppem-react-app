@@ -48,6 +48,7 @@ const CustomTextArea = (props) => {
       rows={4}
       disabled={disabled}
       inputProps={{ maxLength: 1000 }}
+      {...(error && {error: true, helperText: error})}
     />
   );
 };

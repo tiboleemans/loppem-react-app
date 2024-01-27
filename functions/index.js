@@ -9,6 +9,7 @@ const tools = require('./tools');
 const register = require('./public/registration');
 const bringFriend = require('./public/bring_a_friend');
 const interest = require('./public/interest');
+const jobs = require('./public/jobs');
 const registrationMailToSend = require('./public/registration_temporary_mails_to_send');
 const registrationSubmitMailToSend = require('./public/registration_mails_to_send');
 
@@ -62,6 +63,10 @@ app.post('/mail/interest', (req, res) => {
   tools.executeRequest(interest.sendInterestMail, req, res);
 });
 
+app.post('/jobs/apply', (req, res) => {
+  tools.executeRequest(jobs.sendApply, req, res);
+});
+
 app.get('/warm', (req, res) => { res.end(); });
 
 exports.api = functions
@@ -76,6 +81,7 @@ exports.api = functions
 // exports.inscriptionSaveScheduleMail = registrationMailToSend.inscriptionSaveScheduleMail;
 
 exports.inscriptionSaveMailAfterSubmit = registrationSubmitMailToSend.inscriptionSaveMailAfterRegistration;
+exports.jobsSaveMailAfterSubmit = jobs.jobsSendApplyMails;
 
 // ADMIN API
 // All defined endpoints are available under the /admin path

@@ -40,40 +40,60 @@ const StyledDatePicker = styled(DatePicker)(({theme}) => ({
 }));
 
 function CustomDatePicker(props) {
-  const {subject, name, label, value, onChange, error = null, onError} = props;
+  const {subject, name, label, value, onChange, minDate, maxDate, error = null, onError} = props;
   const [errorDatePicker, setErrorDatePicker] = useState(null);
-  const minDate = new Date((new Date().getFullYear() - 20) + "-01-01");
-  const maxDate = new Date((new Date().getFullYear() - 9) + "-12-31");
   const {t} = useTranslation();
 
 
   const errorMessage = useMemo(() => {
-    if (error) {
-      return error;
-    }
-
-    switch (errorDatePicker) {
-      case 'maxDate':
-        return t("inscription.student.error.datepicker.max.date");
-      case 'minDate':
-        return t("inscription.student.error.datepicker.min.date");
-      case 'disableFuture':
-        return t("inscription.student.error.datepicker.min.date");
-      case 'invalidDate': {
-        return t("inscription.student.error.datepicker.invalid.date");
+        if (error) {
+          return error;
+        }
+        if (subject === 'student') {
+          switch (errorDatePicker) {
+            case 'maxDate':
+              return t("inscription.student.error.datepicker.max.date");
+            case 'minDate':
+              return t("inscription.student.error.datepicker.min.date");
+            case 'disableFuture':
+              return t("inscription.student.error.datepicker.max.date");
+            case 'invalidDate': {
+              return t("inscription.student.error.datepicker.invalid.date");
+            }
+            default: {
+              return errorDatePicker;
+            }
+          }
+        } else {
+          switch (errorDatePicker) {
+            case 'maxDate':
+              return t("jobs.volunteer.error.datepicker.max.date");
+            case 'minDate':
+              return t("jobs.volunteer.error.datepicker.min.date");
+            case 'disableFuture':
+              return t("jobs.volunteer.error.datepicker.max.date");
+            case 'invalidDate': {
+              return t("jobs.volunteer.error.datepicker.invalid.date");
+            }
+            default: {
+              return errorDatePicker;
+            }
+          }
+        }
       }
-
-      default: {
-        return errorDatePicker;
-      }
-    }
-  }, [errorDatePicker, value, error]);
+      ,
+      [errorDatePicker, value, error]
+    )
+  ;
 
   const handleChange = (dateValue) => {
     onChange(convertToDefaultEventParameter(subject, name, dateValue, error));
   };
 
   const handleError = (newError) => {
+    if (!onError) {
+      return;
+    }
     setErrorDatePicker(newError);
     onError(convertToDefaultEventParameter(subject, "datepicker", value, newError));
   };

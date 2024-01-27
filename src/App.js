@@ -7,7 +7,7 @@ import Home from "./pages/home/Home";
 import setupAndInitI18n, {changeLanguage, getLanguage} from "./i18n/i18nSetup";
 import {register} from 'swiper/element/bundle';
 import {scrollTo} from "./pages/common/utils";
-import InterestForm from "./pages/banners/interest/InterestForm";
+import Jobs from "./pages/jobs/Jobs";
 
 
 function App() {
@@ -35,7 +35,7 @@ function App() {
               setLanguage(language);
               return <Switch>
                 <Route path={"/" + language + "/home"} component={Home}/>
-                <Route path={"/" + language + "/interest"} component={InterestForm}/>
+                <Route path={"/" + language + "/jobs"} component={Jobs}/>
                 <Route render={() => <Redirect to={"/" + language + "/home"}/>}/>
               </Switch>
             } else {

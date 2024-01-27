@@ -52,7 +52,6 @@ a {
 }
 
 .container {
-    display: flex;
     padding: 0 1rem;
     max-width: 1170px;
     margin: 0 auto;

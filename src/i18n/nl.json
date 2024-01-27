@@ -124,7 +124,7 @@
         "dialog.title.success": "Bedankt om onze taalvakanties te delen",
         "dialog.title.loading": "Even geduld",
         "dialog.subtitle.error": "Er heeft zich een technische fout voorgedaan. Je kan opnieuw proberen of een mail sturen naar info@loppemconversa.be. Onze excuses voor het ongemak.",
-        "dialog.subtitle.success": "Er werd een email verstuurd naar uw vriend. Alvast bedankt voor het aanbevelen van onze taalvakanties.",
+        "dialog.subtitle.success": "Er werd een email verstuurd naar je vriend. Alvast bedankt voor het aanbevelen van onze taalvakanties.",
         "dialog.subtitle.loading": "Het bericht wordt verstuurd. Dit kan enkele seconden duren.",
         "dialog.mail.greeting": "Hallo",
         "dialog.mail.body": "Ken jij Loppem Conversa al? Dat zijn taalvakanties voor jongeren van 10-18 jaar in de zomer.\n\nZe zorgen voor een volledige onderdompeling in het Nederlands of Engels. Leerlingen krijgen gedurende 10 dagen een echt taalbad: ze spreken de doeltaal altijd en overal.\n\nZe hebben trouwens ook zeer positieve Google Reviews. Misschien is dit voor jou ook interessant?\n\nOntdek er meer over op hun website: www.loppemconversa.be",
@@ -448,6 +448,49 @@
         "retry": "Opnieuw proberen",
         "footer": "U kan opnieuw proberen met dezelfde vooringevulde data of u kan de waardes hieronder kopieëren en naar ons verzenden via mail. Excuses voor het ongemak."
       }
+    }
+  },
+  "jobs" : {
+    "title" : "Kandidatuur",
+    "button": {
+      "send": "VERSTUREN"
+    },
+    "confirmation" : {
+      "card.mail.header": "Succesvolle verzending",
+      "card.mail.content": "<strong>Bedankt voor uw kandidatuur!</strong><p>Je ontvangt van ons een bevestigingsmail (kijk ook zeker eens in je spam of je ongewenste e-mails).</p><p>We contacteren je zo snel mogelijk.</p>"
+    },
+    "volunteer.label": {
+      "firstName": "Je voornaam",
+      "lastName": "Je naam",
+      "birthdate": "Je geboortedatum",
+      "language": "Voorkeur taal / talen",
+      "dutch": "Nederlands",
+      "english": "Engels",
+      "period": "Periode(s)",
+      "july": "7 - 17 juli 2024",
+      "august": "4 - 14 augustus 2024",
+      "function" : "Voorkeur functie(s)",
+      "animator" : "Animator",
+      "teacher" : "Leerkracht",
+      "nurse" : "Verpleegkundige",
+      "recurring" : "Ik ben al vrijwilliger geweest tijdens een taalvakantie bij Loppem Conversa",
+      "experience": "Eventuele ervaring",
+      "motivation": "Motivatie"
+    },
+    "volunteer.error": {
+      "firstName": "Gelieve je voornaam in te vullen.",
+      "lastName": "Gelieve je naam in te vullen.",
+      "email": "Gelieve je email in te vullen.",
+      "gsm": "Gelieve je gsm nummer in te vullen.",
+      "birthdate": "Gelieve je geboortedatum in te vullen.",
+      "language": "Gelieve de gewenste doeltaal / doeltalen aan te duiden.",
+      "period": "Gelieve de gewenste periode(s) aan te duiden.",
+      "function": "Gelieve de gewenste functie(s) aan te duiden.",
+      "gender": "Gelieve aan te duiden hoe u zich voelt",
+      "motivation": "Gelieve een motivatie te geven",
+      "datepicker.min.date": "Je mag maximaal 99 jaar oud zijn.",
+      "datepicker.max.date": "Je moet minstens 18 jaar oud zijn.",
+      "datepicker.invalid.date": "Het formaat van de datum is ongeldig"
     }
   },
   "practical": {
