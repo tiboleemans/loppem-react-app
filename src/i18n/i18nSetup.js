@@ -53,7 +53,7 @@ const setupAndInitI18n = (language) => {
     }
   };
 
-  // Only set lng option when wanting to init for dedicated language (otherwise it will language detected from LanguageDetector)
+  // Only set lng option when wanting to values for dedicated language (otherwise it will language detected from LanguageDetector)
   if (language) {
     i18nOptions.lng = language;
   }

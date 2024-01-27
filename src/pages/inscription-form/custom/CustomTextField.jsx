@@ -55,12 +55,13 @@ const CustomTextField = (props) => {
     if (!onError) {
       return;
     }
+    let componentError;
     if (type === 'email' && !isEmail(value)) {
-      setComponentError(t("inscription.form.errors.email"));
+      componentError = t("inscription.form.errors.email");
     } else {
-      setComponentError(null);
+      componentError = null;
     }
-
+    setComponentError(componentError);
     onError(convertToDefaultEventParameter(subject, name, value, componentError));
   };
 

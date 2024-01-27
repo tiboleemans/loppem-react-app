@@ -17,7 +17,7 @@ export function hasNoErrors(errors) {
 }
 
 export function hasValues(values) {
-  return !Object.values(values).every((value) => value === '' || value === null || value === false)
+  return Object.values(values).some((value) => value !== '' || value !== null || value)
 }
 
 export function handleError(t, error, setError, values) {
@@ -59,6 +59,21 @@ export function handleInputChange(event, setValues, values) {
     [subject]: {
       ...values[subject],
       [name]: value
+    }
+  })
+}
+
+export const handleComponentError = (event, setComponentErrors, componentErrors) => {
+  const {
+    subject,
+    name,
+    error
+  } = event.target;
+  setComponentErrors({
+    ...componentErrors,
+    [subject]: {
+      ...componentErrors[subject],
+      [name]: error
     }
   })
 }

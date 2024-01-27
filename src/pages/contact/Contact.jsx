@@ -19,6 +19,7 @@ const Contact = () => {
                     {t("contact.card.1.content.title")}
                   </div>
                   <div className="card-contact-content">
+                    {/*href="mailto:info@loppemconversa.be"*/}
                     <p className="card-contact-content-item">{t("contact.card.1.content.item.1")}</p>
                     <p className="card-contact-content-item">{t("contact.card.1.content.item.2")}</p>
                     <p className="card-contact-content-item">{t("contact.card.1.content.item.3")}</p>

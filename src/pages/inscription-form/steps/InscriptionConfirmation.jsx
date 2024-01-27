@@ -25,7 +25,7 @@ const InscriptionConfirmation = (props) => {
           </Grid>
         </div>
       </Grid>
-      <div className="inscription-confirmation-button" onClick={props.onClick}>
+      <div className="inscription-confirmation-button" onClick={props.retry}>
         {t("inscription.confirmation.error.retry")}
       </div>
     </>
@@ -55,7 +55,7 @@ const InscriptionConfirmation = (props) => {
           </div>
         </Grid>
       </Grid>
-      <div className="inscription-confirmation-button" onClick={props.onClick}>
+      <div className="inscription-confirmation-button" onClick={props.anotherRegistration}>
         {t("inscription.confirmation.button")}
       </div>
     </>;

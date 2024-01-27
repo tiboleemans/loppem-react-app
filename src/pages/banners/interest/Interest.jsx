@@ -20,9 +20,7 @@ const Interest = () => {
           <Grid container spacing={2} className="banner-action">
             <Grid item xs={1} sm={2}/>
             <Grid item xs={5} sm={3}>
-              <div className="banner-button">
-                {t("banner.interest.button.send")}
-              </div>
+              <InterestForm />
             </Grid>
             <Grid item xs={0} sm={2}>
             </Grid>

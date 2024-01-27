@@ -155,6 +155,10 @@ export default function InscriptionForm() {
     values.extra.additionalInfo = '';
   }
 
+  const retry = () => {
+    setStep(0);
+  }
+
   return (
     <div className="section" id="inscription">
       <div className="container">
@@ -171,7 +175,7 @@ export default function InscriptionForm() {
             {step === steps.length ? (
               <>
                 <InscriptionConfirmation isLoading={isLoading} registration={registrationResult} error={registrationError}
-                                         onClick={handleAnotherRegistration}/>
+                                         anotherRegistration={handleAnotherRegistration} retry={retry}/>
               </>
             ) : (
               <>

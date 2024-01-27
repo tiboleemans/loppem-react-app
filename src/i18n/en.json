@@ -102,7 +102,38 @@
     "interest": {
       "text": "Perhaps you know someone who might be interested?",
       "button.send": "Send a message",
-      "button.share": "Download brochure"
+      "button.share": "Download brochure",
+      "form": {
+        "dialog.title.normal": "Send a message to a friend",
+        "dialog.subtitle.normal": "Enter your details and those of a friend to send an email and share our language holidays. If this new friend signs up, you can claim the friend discount (a €50 cashback).",
+        "dialog.section.1.header": "Your details",
+        "dialog.section.1.text.field.1": "Your name",
+        "dialog.section.1.text.field.2": "Your email address",
+        "dialog.section.2.header": "Details friend",
+        "dialog.section.2.text.field.1": "Name friend",
+        "dialog.section.2.text.field.2": "Email friend",
+        "dialog.section.2.text.field.3": "Personal message",
+        "dialog.section.2.text.field.4": "Preview message",
+        "dialog.action.cancel": "Cancel",
+        "dialog.action.send": "Send",
+        "parent.error.name": "Please enter your name",
+        "parent.error.email": "Please enter your email",
+        "friend.error.name": "Please enter the name of your friend",
+        "friend.error.email": "Please enter the email of your friend",
+        "dialog.title.error": "A technical error has occurred.",
+        "dialog.title.success": "Thank you for sharing our language holidays",
+        "dialog.title.loading": "A moment",
+        "dialog.subtitle.error": "A technical error has occurred. You can try again or send an e-mail to info@loppemconversa.be. We apologise for the inconvenience.",
+        "dialog.subtitle.success": "An email has been sent to your friend. Thank you for sharing our language holidays.",
+        "dialog.subtitle.loading": "Your message is being sent. This may take a few seconds.",
+        "dialog.mail.greeting": "Hello ",
+        "dialog.mail.body": "Do you know Loppem Conversa? They organize language holidays for children aged 10-18 in the summer.\n\nThey offer 10 days of full immersion in Dutch or English. Students speak the target language anytime, anywhere.\n\nThey also have very positive Google Reviews. Perhaps this is of interest to you too?\n\nRead all about it on their website: www.loppemconversa.be",
+        "dialog.mail.subject": " recommends Loppem Conversa language holidays",
+        "dialog.mail.footer": "Best regards",
+        "dialog.action.back": "Leave",
+        "dialog.action.retry": "Retry",
+        "dialog.action.another": "Send another message"
+      }
     },
     "question": {
       "title": "Do you have a question or a problem?",
@@ -169,7 +200,7 @@
   "inscription": {
     "title": "Registration form",
     "form.errors": {
-      "general" : "Not all required fields were filled in.",
+      "general": "Not all required fields were filled in.",
       "email": "The format of your e-mail address is incorrect."
     },
     "button": {

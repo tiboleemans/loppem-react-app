@@ -12,7 +12,7 @@ const QuestionBanner = () => {
         <div className="banner-button">
           <a className="banner-button-link" href="mailto:info@loppemconversa.be">{t("banner.question.button")}</a>
         </div>
-        <QuestionForm />
+        {/*<QuestionForm />*/}
       </div>
     </div>
   )

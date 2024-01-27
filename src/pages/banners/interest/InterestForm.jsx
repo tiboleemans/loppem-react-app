@@ -8,11 +8,12 @@ import DialogTitle from '@mui/material/DialogTitle';
 import {useTranslation} from "react-i18next";
 import {Form} from "../../inscription-form/useForm";
 import CustomTextField from "../../inscription-form/custom/CustomTextField";
-import {initialInterestValues} from "./initialInterestValues";
-import {initialInterestErrors} from "./initialInterestErrors";
 import CustomTextArea from "../../inscription-form/custom/CustomTextArea";
 import {sendInterestMail} from "../../../services/MailService";
-import {handleError, handleInputChange, hasNoErrors, hasValues} from "../../common/utils";
+import {handleComponentError, handleError, handleInputChange, hasNoErrors, hasValues} from "../../common/utils";
+import {getLanguage} from "../../../i18n/i18nSetup";
+import {initComponentErrors, initErrors, initValues} from "./initInterest";
+import {CircularProgress} from "@mui/material";
 
 export default function InterestForm() {
   const {t} = useTranslation();
@@ -21,24 +22,23 @@ export default function InterestForm() {
   const [showValidation, setShowValidation] = useState(false);
   const [axiosResult, setAxiosResult] = useState(undefined);
   const [axiosError, setAxiosError] = useState(undefined);
-  const [values, setValues] = useState(initialInterestValues);
-  const [errors, setErrors] = useState(initialInterestErrors);
-  const [canChangeContent, setCanChangeContent] = useState(false);
+  const [values, setValues] = useState(initValues);
+  const [errors, setErrors] = useState(initErrors);
+  const [componentErrors, setComponentErrors] = useState(initComponentErrors);
 
-  const handleCanChangeContent = () => {
-    setCanChangeContent(!canChangeContent);
-  };
 
-  function prepareMailContent() {
-    if (!canChangeContent) {
-      const greeting = t("banner.interest.form.dialog.mail.greeting") + " " + `${values.friend.name}` + "\n\n";
-      const body = t("banner.interest.form.dialog.mail.body") + "\n\n";
-      const footer = t("banner.interest.form.dialog.mail.footer") + "\n\n" + `${values.parent.name}`;
-      values.friend.content = greeting + body + footer;
+  function getMailContent() {
+    const greeting = t("banner.interest.form.dialog.mail.greeting") + " " + `${values.friend.name}` + "\n\n";
+    const body = t("banner.interest.form.dialog.mail.body") + "\n\n";
+
+    const footer = t("banner.interest.form.dialog.mail.footer") + "\n\n" + `${values.parent.name}`;
+    if (values.friend.content) {
+      const personalMessage = values.friend.content + "\n\n";
+      return greeting + personalMessage + body + footer;
     }
-  }
 
-  prepareMailContent();
+    return greeting + body + footer;
+  }
 
   useEffect(() => {
     if (!showValidation) {
@@ -53,14 +53,30 @@ export default function InterestForm() {
 
   const handleClear = () => {
     setShowValidation(false);
-    setValues(initialInterestValues);
-    setErrors(initialInterestErrors);
+    setValues(initValues);
+    setErrors(initErrors);
+    setAxiosResult(undefined);
+    setAxiosError(undefined);
+  };
+
+  const handleAnother = () => {
+    setShowValidation(false);
+    values.friend.name = '';
+    values.friend.email = '';
+    setErrors(initErrors);
     setAxiosResult(undefined);
     setAxiosError(undefined);
   };
 
   const handleClose = () => {
     setOpen(false);
+    handleClear();
+  };
+
+  const handleRetry = () => {
+    setShowValidation(true);
+    setAxiosResult(undefined);
+    setAxiosError(undefined);
   };
 
   const handleSend = () => {
@@ -68,7 +84,7 @@ export default function InterestForm() {
     setShowValidation(true);
     if (canSend()) {
       setIsLoading(true);
-      values.friend.subject = t("banner.interest.form.dialog.mail.subject");
+      values.parent.language = getLanguage();
       sendInterestMail(values).then(result => {
         setAxiosResult(result);
       }).catch(error => {
@@ -84,8 +100,6 @@ export default function InterestForm() {
     errors.parent.email = values.parent.email ? null : t("banner.interest.form.parent.error.email");
     errors.friend.name = values.friend.name ? null : t("banner.interest.form.friend.error.name");
     errors.friend.email = values.friend.email ? null : t("banner.interest.form.friend.error.email");
-    errors.friend.content = values.friend.content ? null : t("banner.interest.form.friend.error.email");
-
     setErrors({
         ...errors
       }
@@ -93,8 +107,8 @@ export default function InterestForm() {
   }
 
   function canSend() {
-    return hasNoErrors(errors.parent) && hasValues(values.parent) &&
-      hasNoErrors(errors.friend) && hasValues(values.friend);
+    return hasValues(values.parent) && hasNoErrors(errors.parent) && hasNoErrors(componentErrors.parent) &&
+      hasValues(values.friend) && hasNoErrors(errors.friend) && hasNoErrors(componentErrors.friend);
   }
 
   function getDialogTitle() {
@@ -141,17 +155,15 @@ export default function InterestForm() {
 
   function getRightButton() {
     if (isLoading) {
-      return <div className="banner-button-dialog">
-        {t("banner.interest.form.dialog.action.send")}
-      </div>;
+      return <div className="banner-circular-spinner"><CircularProgress size={50}/> </div>
     }
     if (!!axiosResult) {
-      return <div className="banner-button-dialog" onClick={handleClear}>
+      return <div className="banner-button-dialog" onClick={handleAnother}>
         {t("banner.interest.form.dialog.action.another")}
       </div>;
     }
     if (!!axiosError) {
-      return <div className="banner-button-dialog" onClick={handleSend}>
+      return <div className="banner-button-dialog" onClick={handleRetry}>
         {t("banner.interest.form.dialog.action.retry")}
       </div>;
     }
@@ -187,8 +199,11 @@ export default function InterestForm() {
               subject={"parent"}
               label={t("banner.interest.form.dialog.section.1.text.field.2")}
               name="email"
+              type="email"
               value={values.parent.email}
               onChange={(e) => handleInputChange(e, setValues, values)}
+              onError={(e) => handleComponentError(e, setComponentErrors, componentErrors)}
+              showValidation={showValidation}
               disabled={!!axiosResult || !!axiosError}
               error={errors.parent.email}
             />
@@ -209,8 +224,11 @@ export default function InterestForm() {
               subject={"friend"}
               label={t("banner.interest.form.dialog.section.2.text.field.2")}
               name="email"
+              type="email"
               value={values.friend.email}
               onChange={(e) => handleInputChange(e, setValues, values)}
+              onError={(e) => handleComponentError(e, setComponentErrors, componentErrors)}
+              showValidation={showValidation}
               disabled={!!axiosResult || !!axiosError}
               error={errors.friend.email}
             />
@@ -220,24 +238,18 @@ export default function InterestForm() {
               name="content"
               value={values.friend.content}
               onChange={(e) => handleInputChange(e, setValues, values)}
-              disabled={!canChangeContent || !!axiosResult || !!axiosError}
+              disabled={!!axiosResult || !!axiosError}
               error={errors.friend.content}
             />
-            <div className="section-header">
-              <label>
-                <input
-                  type="checkbox"
-                  checked={canChangeContent}
-                  onChange={handleCanChangeContent}
-                  disabled={!!axiosResult || !!axiosError}
-                />
-                {t("banner.interest.form.dialog.section.2.checkbox")}
-              </label>
-            </div>
+            <CustomTextArea
+              label={t("banner.interest.form.dialog.section.2.text.field.4")}
+              value={getMailContent()}
+              disabled={true}
+            />
 
           </Form>
         </DialogContent>
-        <DialogActions>
+        <DialogActions className="dialog-actions">
           {getLeftButton()}
           {getRightButton()}
         </DialogActions>

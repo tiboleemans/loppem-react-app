@@ -24,7 +24,7 @@ const RatingBanner = () => {
             <Grid item xs={4} sm={2}/>
             <Grid item xs={4} sm={2}>
               <Link
-                href="https://www.google.com/search?hl=en-BE&gl=be&q=Loppem+Conversa,+Enseignement,+Zevenkerken+4,+8200+Brugge&ludocid=9048162388851239654&lsig=AB86z5Wu7iJz8vM-JQvu2WBqaMWp&authuser=2&hl=en&gl=BE&sa=X&ved=2ahUKEwjzz4ylma2CAxV00gIHHTSmC7YQ3PALegQIKRAE#lrd=0x47c357361301a8b1:0x7d9187c0e1872ae6,1"
+                href="https://g.co/kgs/GvDXeHN"
                 target="_blank">
                 <div className="banner-button">
                   {t("banner.rating.button.1")}
