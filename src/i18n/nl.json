@@ -456,8 +456,9 @@
       "send": "VERSTUREN"
     },
     "confirmation" : {
-      "card.mail.header": "Succesvolle verzending",
-      "card.mail.content": "<strong>Bedankt voor uw kandidatuur!</strong><p>Je ontvangt van ons een bevestigingsmail (kijk ook zeker eens in je spam of je ongewenste e-mails).</p><p>We contacteren je zo snel mogelijk.</p>"
+      "loading" : "Je kandidatuur wordt verstuurd. Dit kan eventjes duren.",
+      "card.mail.header": "Kandidatuur succesvol verzonden",
+      "card.mail.content": "<strong>Bedankt voor je kandidatuur!</strong><p>Je ontvangt van ons een bevestigingsmail (kijk ook zeker eens in je spam of je ongewenste e-mails).</p><p>We contacteren je zo snel mogelijk.</p>"
     },
     "volunteer.label": {
       "firstName": "Je voornaam",

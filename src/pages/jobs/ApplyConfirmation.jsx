@@ -2,6 +2,7 @@ import {Trans, useTranslation} from "react-i18next";
 import Grid from "@mui/material/Grid";
 import React from "react";
 import {CircularProgress} from "@mui/material";
+import "./jobs.css";
 
 const ApplyConfirmation = (props) => {
   const {t} = useTranslation();
@@ -15,7 +16,7 @@ const ApplyConfirmation = (props) => {
               <div className="inscription-confirmation-card-header">
                 {t("inscription.confirmation.error.title")}
               </div>
-              <div className="inscription-confirmation-card-content">
+              <div className="jobs-confirmation-card-content">
                 <h3>{props.error.message}</h3>
                 <p>{props.error.details}</p>
                 <p>{t("inscription.confirmation.error.footer")}</p>
@@ -33,24 +34,24 @@ const ApplyConfirmation = (props) => {
 
   function SuccessfulRegistration() {
     return <>
-      <Grid item xs={12}>
-        <div className="card inscription-confirmation-card">
+      <div className="jobs-confirmation-loading">
+        <div className="card jobs-confirmation-card">
           <div className="inscription-confirmation-card-header">
             {t("jobs.confirmation.card.mail.header")}
           </div>
-          <div className="inscription-confirmation-card-content">
+          <div className="jobs-confirmation-card-content">
             <Trans i18nKey="jobs.confirmation.card.mail.content"/>
           </div>
         </div>
-      </Grid>
+      </div>
     </>;
   }
 
   function Registering() {
     return <>
       <Grid container>
-        <div className="inscription-confirmation-loading">
-          <p>{t("inscription.confirmation.loading")}</p>
+        <div className="jobs-confirmation-loading">
+          <p>{t("jobs.confirmation.loading")}</p>
           <CircularProgress size={100}/>
         </div>
       </Grid>

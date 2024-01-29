@@ -32,8 +32,8 @@ async function sendApplyMailVolunteer(applicationId, applyForm) {
     .doc(applicationId + '-jobs-apply-volunteer')
     .set({
       from: process.env.APP_MAIL_FROM,
-      to: process.env.APP_MAIL_FROM,
-      replyTo: applyForm.volunteer.email,
+      to: applyForm.volunteer.email,
+      replyTo: process.env.APP_MAIL_FROM,
       template: {
         name: `jobs-apply-volunteer-` + applyForm.volunteer.siteLang,
         data: applyForm,
