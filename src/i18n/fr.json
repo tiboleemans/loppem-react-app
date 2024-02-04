@@ -435,6 +435,27 @@
       }
     }
   },
+  "berlaymont": {
+    "title": "Envoyer un code de réduction",
+    "button.send": "Envoyer code",
+    "confirmation": {
+      "loading": "On est en train d'envoyer le code. Cela peut prendre quelques instants.",
+      "success" : {
+        "header" : "Code envoyé avec succès",
+        "content" : "Nous vous remercions de l'intérêt que vous portez à nos séjours linguistiques.<br /> <br />Vous avez reçu un e-mail avec plus d'explications et un code de réduction temporaire.<br /><br />Nous espérons de pouvoir vous accueillir à Loppem cet été."
+      }
+    },
+    "form": {
+      "section.1.text.field.1": "E-mail",
+      "section.1.text.field.2": "Code de réduction",
+      "friend.error.email": "Veuillez indiquer l'adresse email de votre ami",
+      "dialog.title.error": "Une erreur technique s'est reproduit",
+      "dialog.title.loading": "Veuillez patienter",
+      "dialog.subtitle.error": "Une erreur technique s'est reproduit. Vous pouvez réessayer ou envoyer un e-mail vers info@loppemconversa.be. Nous vous prions de nous excuser pour ce désagrément.",
+      "dialog.action.retry": "Réessayer",
+      "dialog.action.another": "Envoyer un autre code"
+    }
+  },
   "practical": {
     "title": "Informations pratiques",
     "tab.1": {

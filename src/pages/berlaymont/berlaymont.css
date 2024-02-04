@@ -1,0 +1,62 @@
+.flex-container {
+    display: flex;
+    justify-content: center;
+}
+
+.berlaymont-button {
+    color: #ffffff;
+    display: flex;
+    width: auto;
+    justify-content: center;
+    text-transform: uppercase;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    background: var(--green-hex-main);
+    padding: 20px;
+    margin: 10px;
+    font-weight: 500;
+    text-align: center;
+    flex-direction: row;
+    font-size: 24px;
+}
+
+.berlaymont-button:hover {
+    transition: all 250ms ease;
+    font-weight: bold;
+}
+
+.berlaymont-confirmation-loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+}
+
+.berlaymont-confirmation-card {
+    color: rgba(0, 0, 0, 0.87);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 15px;
+    box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    border-left: 10px solid var(--primary-main);
+    width: 80%;
+    margin: 20px auto;
+}
+
+.berlaymont-confirmation-card-content {
+    overflow-y: auto;
+    margin: 15px;
+}
+
+.berlaymont-confirmation-card-header {
+    display: block;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    background: rgb(249, 148, 32);
+    box-shadow: none;
+    padding: 10px 0;
+}

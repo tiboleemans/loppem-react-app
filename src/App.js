@@ -8,6 +8,7 @@ import setupAndInitI18n, {changeLanguage, getLanguage} from "./i18n/i18nSetup";
 import {register} from 'swiper/element/bundle';
 import {scrollTo} from "./pages/common/utils";
 import Jobs from "./pages/jobs/Jobs";
+import Berlaymont from "./pages/berlaymont/Berlaymont";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
               return <Switch>
                 <Route path={"/" + language + "/home"} component={Home}/>
                 <Route path={"/" + language + "/jobs"} component={Jobs}/>
+                <Route path={"/" + language + "/berlaymont"} component={Berlaymont}/>
                 <Route render={() => <Redirect to={"/" + language + "/home"}/>}/>
               </Switch>
             } else {

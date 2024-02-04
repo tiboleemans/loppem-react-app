@@ -440,6 +440,27 @@
       }
     }
   },
+  "berlaymont": {
+    "title": "Send a reduction code",
+    "button.send": "Send code",
+    "confirmation": {
+      "loading": "Sending the code...",
+      "success" : {
+        "header" : "The code has been sent successfully",
+        "content" : "Thank you for your interest in our language courses. <br /> <br />You have received an e-mail with more information and a temporary discount code.<br /><br />We look forward to welcoming you to Loppem this summer."
+      }
+    },
+    "form": {
+      "section.1.text.field.1": "E-mail",
+      "section.1.text.field.2": "Reduction code",
+      "friend.error.email": "Please enter the email of your friend",
+      "dialog.title.error": "A technical error has occurred.",
+      "dialog.title.loading": "A moment",
+      "dialog.subtitle.error": "A technical error has occurred. You can try again or send an e-mail to info@loppemconversa.be. We apologise for the inconvenience.",
+      "dialog.action.retry": "Retry",
+      "dialog.action.another": "Send another code"
+    }
+  },
   "practical": {
     "title": "Practical info",
     "tab.1": {

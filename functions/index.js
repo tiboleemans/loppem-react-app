@@ -9,6 +9,7 @@ const tools = require('./tools');
 const register = require('./public/registration');
 const bringFriend = require('./public/bring_a_friend');
 const interest = require('./public/interest');
+const code = require('./public/code');
 const jobs = require('./public/jobs');
 const registrationMailToSend = require('./public/registration_temporary_mails_to_send');
 const registrationSubmitMailToSend = require('./public/registration_mails_to_send');
@@ -61,6 +62,10 @@ app.post('/claim-discount', (req, res) => {
 
 app.post('/mail/interest', (req, res) => {
   tools.executeRequest(interest.sendInterestMail, req, res);
+});
+
+app.post('/mail/code', (req, res) => {
+  tools.executeRequest(code.sendCodeMail, req, res);
 });
 
 app.post('/jobs/apply', (req, res) => {

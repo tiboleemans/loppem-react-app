@@ -450,13 +450,34 @@
       }
     }
   },
-  "jobs" : {
-    "title" : "Kandidatuur",
+  "berlaymont": {
+    "title": "Verstuur een kortingscode",
+    "button.send": "Code versturen",
+    "confirmation": {
+      "loading": "De code wordt verzonden. Dit kan eventjes duren.",
+      "success" : {
+        "header" : "Code succesvol verstuurd",
+        "content" : "Bedankt voor je interesse in onze taalvakanties.<br /> <br /> Je hebt een mail ontvangen met meer uitleg en tijdelijke kortingscode. <br /><br />Hopelijk mogen we je ontvangen in Loppem deze zomer."
+      }
+    },
+    "form": {
+      "section.1.text.field.1": "E-mail",
+      "section.1.text.field.2": "Gegenereerde code",
+      "friend.error.email": "Gelieve de e-mail in te vullen",
+      "dialog.title.error": "Er heeft zich een technische fout voorgedaan",
+      "dialog.title.loading": "Even geduld",
+      "dialog.subtitle.error": "Er heeft zich een technische fout voorgedaan. Je kan opnieuw proberen of een mail sturen naar info@loppemconversa.be. Onze excuses voor het ongemak.",
+      "dialog.action.retry": "Opnieuw proberen",
+      "dialog.action.another": "Nog een code versturen"
+    }
+  },
+  "jobs": {
+    "title": "Kandidatuur",
     "button": {
       "send": "VERSTUREN"
     },
-    "confirmation" : {
-      "loading" : "Je kandidatuur wordt verstuurd. Dit kan eventjes duren.",
+    "confirmation": {
+      "loading": "Je kandidatuur wordt verstuurd. Dit kan eventjes duren.",
       "card.mail.header": "Kandidatuur succesvol verzonden",
       "card.mail.content": "<strong>Bedankt voor je kandidatuur!</strong><p>Je ontvangt van ons een bevestigingsmail (kijk ook zeker eens in je spam of je ongewenste e-mails).</p><p>We contacteren je zo snel mogelijk.</p>"
     },
@@ -470,11 +491,11 @@
       "period": "Periode(s)",
       "july": "7 - 17 juli 2024",
       "august": "4 - 14 augustus 2024",
-      "function" : "Voorkeur functie(s)",
-      "animator" : "Animator",
-      "teacher" : "Leerkracht",
-      "nurse" : "Verpleegkundige",
-      "recurring" : "Ik ben al vrijwilliger geweest tijdens een taalvakantie bij Loppem Conversa",
+      "function": "Voorkeur functie(s)",
+      "animator": "Animator",
+      "teacher": "Leerkracht",
+      "nurse": "Verpleegkundige",
+      "recurring": "Ik ben al vrijwilliger geweest tijdens een taalvakantie bij Loppem Conversa",
       "experience": "Eventuele ervaring",
       "motivation": "Motivatie"
     },
