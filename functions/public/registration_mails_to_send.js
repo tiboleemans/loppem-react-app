@@ -23,8 +23,44 @@ exports.inscriptionSaveMailAfterRegistration = functions
               prepareSendEmailToAdmin(context.params.docId, change.data());
             });
       }
-      return "SKIP";
+      return 'SKIP';
     });
+
+// eslint-disable-next-line valid-jsdoc,require-jsdoc
+function isDateBeforeJune() {
+  const juneDate = new Date(`${tools.campYear()}`, 6, 1);
+  return new Date(new Date().toDateString()) < new Date(juneDate.toDateString());
+}
+
+// eslint-disable-next-line valid-jsdoc,require-jsdoc
+// function getMailType(period, language, destination) {
+//   if (period === 'july') {
+//     return 'wait';
+//   } else {
+//     if (destination === 'parent') {
+//       if (isDateBeforeJune()) {
+//         return 'normal';
+//       } else {
+//         return 'june';
+//       }
+//     } else if (destination === 'admin') {
+//       return 'normal';
+//     }
+//   }
+// }
+
+// eslint-disable-next-line valid-jsdoc,require-jsdoc
+function getMailType(period, language, destination) {
+  if (destination === 'parent') {
+    if (isDateBeforeJune()) {
+      return 'normal';
+    } else {
+      return 'june';
+    }
+  } else if (destination === 'admin') {
+    return 'normal';
+  }
+}
 
 /**
  * Converts the student data and store it into the mail extention table (which will perform the actual sending of the e-mail).
@@ -35,6 +71,7 @@ exports.inscriptionSaveMailAfterRegistration = functions
 async function prepareSendEmailToParent(studentId, registration) {
   try {
     const language = registration.parent.language.substring(0, 2);
+    const mailType = getMailType(registration.student.period, registration.student.language, 'parent');
     switch (language) {
       case 'nl':
         switch (registration.student.language) {
@@ -42,15 +79,15 @@ async function prepareSendEmailToParent(studentId, registration) {
             registration.student.language = 'Nederlands';
             break;
           case 'english':
-            registration.student.language = 'Engels'
+            registration.student.language = 'Engels';
             break;
         }
         switch (registration.student.period) {
           case 'july':
-            registration.student.period = '7 - 17 juli 2024';
+            registration.student.period = '6 - 16 juli 2025';
             break;
           case 'august':
-            registration.student.period = '4 - 14 augustus 2024'
+            registration.student.period = '3 - 13 augustus 2025';
             break;
         }
         switch (registration.student.gender) {
@@ -58,7 +95,7 @@ async function prepareSendEmailToParent(studentId, registration) {
             registration.student.gender = 'jongens';
             break;
           case 'girl':
-            registration.student.gender = 'meisjes'
+            registration.student.gender = 'meisjes';
             break;
         }
         switch (registration.parent.relation) {
@@ -66,10 +103,10 @@ async function prepareSendEmailToParent(studentId, registration) {
             registration.parent.relation = 'moeder';
             break;
           case 'father':
-            registration.parent.relation = 'vader'
+            registration.parent.relation = 'vader';
             break;
           case 'guardian':
-            registration.parent.relation = 'voogd'
+            registration.parent.relation = 'voogd';
             break;
         }
         break;
@@ -79,15 +116,15 @@ async function prepareSendEmailToParent(studentId, registration) {
             registration.student.language = 'néerlandais';
             break;
           case 'english':
-            registration.student.language = 'anglais'
+            registration.student.language = 'anglais';
             break;
         }
         switch (registration.student.period) {
           case 'july':
-            registration.student.period = '7 - 17 juillet 2024';
+            registration.student.period = '6 - 16 juillet 2025';
             break;
           case 'august':
-            registration.student.period = '4 - 14 août 2024'
+            registration.student.period = '3 - 13 août 2025';
             break;
         }
         switch (registration.student.gender) {
@@ -95,7 +132,7 @@ async function prepareSendEmailToParent(studentId, registration) {
             registration.student.gender = 'garçons';
             break;
           case 'girl':
-            registration.student.gender = 'filles'
+            registration.student.gender = 'filles';
             break;
         }
         switch (registration.parent.relation) {
@@ -103,10 +140,10 @@ async function prepareSendEmailToParent(studentId, registration) {
             registration.parent.relation = 'mère';
             break;
           case 'father':
-            registration.parent.relation = 'père'
+            registration.parent.relation = 'père';
             break;
           case 'guardian':
-            registration.parent.relation = 'tuteur'
+            registration.parent.relation = 'tuteur';
             break;
         }
         break;
@@ -118,7 +155,7 @@ async function prepareSendEmailToParent(studentId, registration) {
           // replyTo:
           to: registration.parent.email,
           template: {
-            name: `registration-confirmation-early-` + language,
+            name: 'registration-confirmation-' + mailType + '-' + language,
             data: registration,
           },
         });
@@ -140,10 +177,9 @@ async function prepareSendEmailToAdmin(studentId, registration) {
         .doc(studentId + '-registration-cc')
         .set({
           from: process.env.APP_MAIL_FROM,
-          // replyTo:
           to: process.env.APP_MAIL_ADMIN_EMAIL,
           template: {
-            name: `registration-cc`,
+            name: 'registration-cc-' + getMailType(registration.student.period, registration.student.language, 'admin'),
             data: registration,
           },
         });

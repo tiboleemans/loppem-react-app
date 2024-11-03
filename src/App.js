@@ -9,6 +9,8 @@ import {register} from 'swiper/element/bundle';
 import {scrollTo} from "./pages/common/utils";
 import Jobs from "./pages/jobs/Jobs";
 import Berlaymont from "./pages/berlaymont/Berlaymont";
+import Attestations from "./pages/attestation/Attestations";
+import JobsConfirmationWrapper from "./pages/jobs/JobsConfirmationWrapper";
 
 
 function App() {
@@ -36,8 +38,10 @@ function App() {
               setLanguage(language);
               return <Switch>
                 <Route path={"/" + language + "/home"} component={Home}/>
+                <Route path={"/" + language + "/jobs/confirmation"} component={JobsConfirmationWrapper}/>
                 <Route path={"/" + language + "/jobs"} component={Jobs}/>
                 <Route path={"/" + language + "/berlaymont"} component={Berlaymont}/>
+                <Route path={"/" + language + "/attestation"} component={Attestations}/>
                 <Route render={() => <Redirect to={"/" + language + "/home"}/>}/>
               </Switch>
             } else {

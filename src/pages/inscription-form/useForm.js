@@ -17,8 +17,8 @@ export default function useForm(showValidation, step) {
 
   function updateMyStepErrors() {
     if (step === 0) {
-      errors.student.language = values.student.language ? null : t("inscription.student.error.firstName")
-      errors.student.period = values.student.period ? null : t("inscription.student.error.firstName")
+      errors.student.language = values.student.language ? null : t("inscription.student.error.language")
+      errors.student.period = values.student.period ? null : t("inscription.student.error.period")
       errors.student.firstName = values.student.firstName ? null : t("inscription.student.error.firstName")
       errors.student.lastName = values.student.lastName ? null : t("inscription.student.error.lastName")
       errors.student.birthdate = values.student.birthdate ? null : t("inscription.student.error.birthdate")

@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Get started
+npm run start
+
+npm run build
+
+firebase emulators:start --project development
+
+firebase deploy
+firebase deploy --only hosting
+firebase deploy --only functions
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -106,10 +117,18 @@ View the raw content of this file to understand the format.
 ### Frontend
 - [ ] Voorlopig inschrijven knop toevoegen
 - [X] Getuigenissen
-- [ ] Contact
+- [X] Contact
 - [X] Foto's
 - [X] Faq
-- [ ] Jobs
+- [X] Attestations
+- [ ] Enhancements
+  - fotos intro automatisch 2seconden
+  - Imagecarousel:
+    -> arrows should be 'mui fab button'
+    -> hover with hand
+    -> add autoloop
+    -> fix youtube
+    -> use arrows on fullscreen
 
 
 

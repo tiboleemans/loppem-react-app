@@ -1,5 +1,5 @@
 import React from "react";
-import {Accordion, AccordionDetails, AccordionSummary, Card, Grid, IconButton,} from "@mui/material";
+import {Accordion, AccordionDetails, AccordionSummary, Card, Grid,} from "@mui/material";
 import CheckIcon from '@mui/icons-material/Check';
 import ScrollTo from "../common/ScrollTo";
 import "./pricing.css"
@@ -35,19 +35,19 @@ const Pricing = () => {
       details: [
         {
           title: t("pricing.accordion.2.details.title.1"),
-          text: <Trans i18nKey="pricing.accordion.2.details.text.1" />
+          text: <Trans i18nKey="pricing.accordion.2.details.text.1"/>
         },
         {
           title: t("pricing.accordion.2.details.title.2"),
-          text: <Trans i18nKey="pricing.accordion.2.details.text.2" />
+          text: <Trans i18nKey="pricing.accordion.2.details.text.2"/>
         },
         {
           title: t("pricing.accordion.2.details.title.3"),
-          text: <Trans i18nKey="pricing.accordion.2.details.text.3" />
+          text: <Trans i18nKey="pricing.accordion.2.details.text.3"/>
         },
         {
           title: t("pricing.accordion.2.details.title.4"),
-          text: <Trans i18nKey="pricing.accordion.2.details.text.4" />
+          text: <Trans i18nKey="pricing.accordion.2.details.text.4"/>
         }
       ]
     },
@@ -75,22 +75,22 @@ const Pricing = () => {
     {
       language: t("pricing.card.camp.content.language.1"),
       period: t("pricing.card.camp.content.period.1"),
-      available: t("pricing.card.camp.content.available.1"),
+      available: <Trans i18nKey="pricing.card.camp.content.available.1" components={{icon: <CheckIcon/>}}/>,
     },
     {
       language: t("pricing.card.camp.content.language.2"),
       period: t("pricing.card.camp.content.period.2"),
-      available: t("pricing.card.camp.content.available.2"),
+      available: <Trans i18nKey="pricing.card.camp.content.available.2" components={{icon: <CheckIcon/>}}/>,
     },
     {
       language: t("pricing.card.camp.content.language.3"),
       period: t("pricing.card.camp.content.period.3"),
-      available: t("pricing.card.camp.content.available.3"),
+      available: <Trans i18nKey="pricing.card.camp.content.available.3" components={{icon: <CheckIcon/>}}/>,
     },
     {
       language: t("pricing.card.camp.content.language.4"),
       period: t("pricing.card.camp.content.period.4"),
-      available: t("pricing.card.camp.content.available.4"),
+      available: <Trans i18nKey="pricing.card.camp.content.available.4" components={{icon: <CheckIcon/>}}/>,
     }
   ]
 
@@ -122,7 +122,8 @@ const Pricing = () => {
                           <p className="card-camp-label">{t("pricing.card.camp.label.available")}</p>
                         </Grid>
                         <Grid item xs={7}>
-                          <p className="card-camp-content"><CheckIcon color={element.available}/></p>
+                          {i = 3 ? <p className="card-camp-content-emphasized">{element.available}</p> :
+                            <p className="card-camp-content">{element.available}</p>}
                         </Grid>
                       </Grid>
                     </Grid>
@@ -154,7 +155,7 @@ const Pricing = () => {
                     <AccordionSummary className="accordion-summary">
                       {accordion.summary}
                       <div className={`expand ${expanded === accordion.id ? 'rotated' : ''}`}>
-                        <ExpandMoreIcon />
+                        <ExpandMoreIcon/>
                       </div>
                     </AccordionSummary>
                     <AccordionDetails className="accordion-details">

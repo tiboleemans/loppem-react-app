@@ -11,6 +11,7 @@ const bringFriend = require('./public/bring_a_friend');
 const interest = require('./public/interest');
 const code = require('./public/code');
 const jobs = require('./public/jobs');
+const attestations = require('./public/attestations');
 const registrationMailToSend = require('./public/registration_temporary_mails_to_send');
 const registrationSubmitMailToSend = require('./public/registration_mails_to_send');
 
@@ -72,7 +73,17 @@ app.post('/jobs/apply', (req, res) => {
   tools.executeRequest(jobs.sendApply, req, res);
 });
 
-app.get('/warm', (req, res) => { res.end(); });
+app.post('/jobs/confirmation', (req, res) => {
+  tools.executeRequest(jobs.sendConfirmation, req, res);
+});
+
+app.post('/attestation', (req, res) => {
+  tools.executeRequest(attestations.addAttestation, req, res);
+});
+
+app.get('/warm', (req, res) => {
+  res.end();
+});
 
 exports.api = functions
     .runWith(tools.defaultHttpOptions)

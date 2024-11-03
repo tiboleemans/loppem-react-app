@@ -69,6 +69,12 @@
     font-weight: bold;
 }
 
+.card-camp-content-emphasized {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--primary-main);
+}
+
 .accordion {
     border-radius: 4px;
     overflow: hidden;

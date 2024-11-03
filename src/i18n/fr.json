@@ -135,36 +135,41 @@
     "question": {
       "title": "Vous avez une question ?",
       "button": "Contactez-nous"
+    },
+    "jobs": {
+      "title": "Souhaitez-vous rejoindre notre équipe ?",
+      "button": "Postuler"
     }
   },
   "pricing": {
     "title": "Offre",
     "card.camp": {
-      "label.price": "790 €",
+      "label.price": "800 €",
       "label.enroll": "S'inscrire",
       "label.language": "Langue: ",
       "label.period": "Période: ",
       "label.available": "Disponible: ",
       "content.language.1": "néerlandais",
-      "content.period.1": "7 - 17 juillet 2024",
-      "content.available.1": "success",
+      "content.period.1": "6 - 16 juillet 2025",
+      "content.available.1": "<icon color=success />",
       "content.language.2": "anglais",
-      "content.period.2": "7 - 17 juillet 2024",
-      "content.available.2": "success",
+      "content.period.2": "6 - 16 juillet 2025",
+      "content.available.2": "<icon color=success />",
       "content.language.3": "néerlandais",
-      "content.period.3": "4 - 14 août 2024",
-      "content.available.3": "success",
+      "content.period.3": "3 - 13 août 2025",
+      "content.available.3": "<icon color=success />",
       "content.language.4": "anglais",
-      "content.period.4": "4 - 14 août 2024",
-      "content.available.4": "success"
+      "content.period.4": "3 - 13 août 2025",
+      "content.available.4": "<icon color=success />",
+      "content.waitlist": "liste d'attente"
     },
     "accordion.1": {
       "summary": "PRIX ET REMISES",
       "details": {
         "title.1": "Prix",
-        "text.1": "Le prix d'un séjour linguistique de 10 jours est de 790 euros.",
+        "text.1": "Le prix d'un séjour linguistique de 10 jours est de 800 euros.",
         "title.2": "Remise pour réservation anticipée",
-        "text.2": "Inscrivez-vous avant le 1er février 2024 et bénéficiez d'une réduction de 20 euros. Le prix total dans ce cas est donc de 770 euros.",
+        "text.2": "Inscrivez-vous avant le 1er février 2025 et bénéficiez d'une réduction de 20 euros. Le prix total dans ce cas est donc de 780 euros.",
         "title.3": "Réduction \"amis\"",
         "text.3": "Convainquez un ami de participer pour la première fois à un séjour linguistique et profitez de 50 euros de réduction que vous recevrez après le séjour linguistique (pour plus d'informations, consultez les conditions générales ci-dessous). "
       }
@@ -173,11 +178,11 @@
       "summary": "PAIEMENT",
       "details": {
         "title.1": "Acompte",
-        "text.1": "Vous payez l'acompte (ou le montant total immédiatement) au moment de l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total). Pour les inscriptions après le 1er juin, nous vous demandons de payer immédiatement le montant total. </p> <p>Acompte pour inscription avant le 1er février : 370 €</p> <p>Acompte pour inscription après le 1er février : 390 €</p> <p>Montant pour inscription après le 1er juin : 790 €",
+        "text.1": "Vous payez l'acompte (ou le montant total immédiatement) au moment de l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total). Pour les inscriptions après le 1er juin, nous vous demandons de payer immédiatement le montant total. </p> <p>Acompte pour inscription avant le 1er février : 380 €</p> <p>Acompte pour inscription après le 1er février : 400 €</p> <p>Montant pour inscription après le 1er juin : 800 €",
         "title.2": "Solde",
         "text.2": "Vous payez le solde de 400 euros avant le 1er juin.",
         "title.3": "Montant total",
-        "text.3": "Le montant total peut également être versé en une seule fois immédiatement après l'inscription.</p> <p>Inscription avant le 1er février : €770</p> <p>Inscription après le 1er février : €790</p>",
+        "text.3": "Le montant total peut également être versé en une seule fois immédiatement après l'inscription.</p> <p>Inscription avant le 1er février : €780</p> <p>Inscription après le 1er février : €800</p>",
         "title.4": "Virement",
         "text.4": "Nom: Conversa Taalvakanties vzw <br/> Numéro de compte: BE16 0018 5319 2474 <br/> BIC: GEBABEBB <p> Communication: <br/> nom complet de l'élève <br/> juillet ou août <br/> néerlandais ou anglais</p>"
       }
@@ -197,7 +202,7 @@
   "inscription": {
     "title": "Formulaire d'inscription",
     "form.errors": {
-      "general" : "Tous les champs obligatoires n'ont pas été remplis.",
+      "general": "Tous les champs obligatoires n'ont pas été remplis.",
       "email": "Le format de votre adresse email est incorrect."
     },
     "button": {
@@ -219,12 +224,13 @@
       "dutch": "Néerlandais",
       "english": "Anglais",
       "period": "Période",
-      "july": "7 - 17 juillet 2024",
-      "august": "4 - 14 août 2024",
+      "july": "6 - 16 juillet 2025",
+      "august": "3 - 13 août 2025",
       "gender": "Chambre dans le couloir des",
       "boy": "Garçons",
       "girl": "Filles"
     },
+    "student.waitList": "En remplissant ce formulaire et en choisissant le stage juillet en anglais, vous serez inscrit sur la liste d'attente. Nous vous contacterons dès qu'une place sera disponible.",
     "student.error": {
       "firstName": "Veuillez indiquer le prénom de l'élève.",
       "lastName": "Veuillez indiquer le nom de l'élève.",
@@ -423,7 +429,7 @@
       "card.mail.header": "Inscription réussie",
       "card.mail.content": "<strong>Merci pour votre inscription !</strong><p>Vous recevrez un e-mail de confirmation de notre part (pensez à vérifier votre spam).</p><p>Début juin, nous vous contacterons par email pour vous donner des informations pratiques sur le séjour linguistique.</p>",
       "card.payment.header": "Détails du paiement",
-      "card.payment.content": "<p>Veuillez verser l'acompte de 390 € ou le montant total de 790 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit dans la communication.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
+      "card.payment.content": "<p>Veuillez verser l'acompte de 400 € ou le montant total de 800 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit dans la communication.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
       "button": "Inscrire un autre élève",
       "loading": "Votre inscription est en cours d'envoi. Cela peut prendre quelques secondes.",
       "error": {
@@ -440,9 +446,9 @@
     "button.send": "Envoyer code",
     "confirmation": {
       "loading": "On est en train d'envoyer le code. Cela peut prendre quelques instants.",
-      "success" : {
-        "header" : "Code envoyé avec succès",
-        "content" : "Nous vous remercions de l'intérêt que vous portez à nos séjours linguistiques.<br /> <br />Vous avez reçu un e-mail avec plus d'explications et un code de réduction temporaire.<br /><br />Nous espérons de pouvoir vous accueillir à Loppem cet été."
+      "success": {
+        "header": "Code envoyé avec succès",
+        "content": "Nous vous remercions de l'intérêt que vous portez à nos séjours linguistiques.<br /> <br />Vous avez reçu un e-mail avec plus d'explications et un code de réduction temporaire.<br /><br />Nous espérons de pouvoir vous accueillir à Loppem cet été."
       }
     },
     "form": {
@@ -456,6 +462,64 @@
       "dialog.action.another": "Envoyer un autre code"
     }
   },
+  "attestation": {
+    "title": "Formulaire d'attestation",
+    "description": "A cause d'un changement dans la réglementation concernant les attestations fiscales, on se voit obligé de remplir un nouveau document fiscal <strong>avant fin février</strong> pour tous les enfants qui avaient moins de 14 ans au début du stage. Afin de pouvoir remplir ce document, nous avons besoin de données personnelles supplémentaires. Serait-il possible de remplir ce formulaire le plus vite possible? <br /> <br /><strong>Il est important de remplir vos données correctement afin de pouvoir bénéficier d'un avantage fiscal.</strong>",
+    "button": {
+      "send": "Envoyer"
+    },
+    "student.title": "Données enfant",
+    "student.label": {
+      "firstName": "Prénom élève",
+      "lastName": "Nom élève",
+      "birthdate": "Date de naissance élève",
+      "period": "Période",
+      "july": "9 - 19 juillet 2023",
+      "august": "2 - 12 août 2023",
+      "hasOtherAddress": "Mon enfant habite à une autre adresse",
+      "ssin": "Numéro du registre national de l'enfant (xx.xx.xx-xxx.xx)"
+    },
+    "student.error": {
+      "firstName": "Veuillez indiquer le prénom de l'enfant.",
+      "lastName": "Veuillez indiquer le nom de l'enfant.",
+      "birthdate": "Veuillez indiquer la date de naissance de l'enfant.",
+      "datepicker.min.date": "L'enfant peut être âgé de 14 ans maximum au moment du stage pour demander une attestation fiscale.",
+      "datepicker.max.date": "L'enfant doit avoir au moins 8 ans.",
+      "datepicker.invalid.date": "Le format de la date n'est pas valide"
+    },
+    "parent.title": "Données parent",
+    "parent.label": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "street": "Rue",
+      "houseNr": "Numéro",
+      "busNr": "Boîte",
+      "city": "Commune",
+      "zip": "Code postal",
+      "ssin": "Numéro du registre national du parent (xx.xx.xx-xxx.xx)"
+    },
+    "parent.error": {
+      "firstName": "Veuillez indiquer votre prénom.",
+      "lastName": "Veuillez indiquer votre nom.",
+      "street": "Veuillez indiquer votre rue.",
+      "housnr": "Veuillez indiquer votre numéro de maison.",
+      "city": "Veuillez indiquer le nom de votre commune.",
+      "zip": "Veuillez saisir votre code postal."
+    },
+    "confirmation": {
+      "card.mail.header": "Attestation envoyé avec succès",
+      "card.mail.content": "<strong>Merci d'avoir rempli le formulaire.</strong><p>Nous faisons tout le nécessaire pour traiter votre demande d’impôt auprès du gouvernement.</p>",
+      "button": "Demander une autre attestation",
+      "loading": "Votre attestation est en cours d'envoi. Cela peut prendre quelques secondes.",
+      "error": {
+        "title": "Erreur technique",
+        "undefined": "Une erreur inconnue s'est produite",
+        "network": "Une erreur de réseau s'est produite. Veuillez vérifier votre connexion internet",
+        "retry": "Réessayer",
+        "footer": "Vous pouvez réessayer avec les mêmes données ou vous pouvez copier les valeurs ci-dessous et nous l'envoyer par e-mail. Nous vous prions de vouloir nous excuser pour ce désagrément."
+      }
+    }
+  },
   "practical": {
     "title": "Informations pratiques",
     "tab.1": {
@@ -463,16 +527,16 @@
       "content.card.1.title": "Comment s'inscrire?",
       "content.card.1.body": "<scrollTo>Cliquez ici pour vous inscrire</scrollTo> et remplissez le formulaire. Assurez-vous d'avoir rempli tous les champs obligatoires et d'avoir accepté les conditions générales et les règles de confidentialité. En cas de questions : contactez-nous par email : info@loppemconversa.be ou par téléphone : +32 478 51 93 44. Après l'inscription, vous recevrez un e-mail de confirmation. L'acompte doit être payé immédiatement après l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total).",
       "content.card.2.title": "Quand et comment faut-il payer ?",
-      "content.card.2.body": "<header>Acompte</header><p>Vous payez l'acompte (ou le montant total immédiatement) au moment de l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total). </p> <p>Si vous vous inscrivez après le 1er juin, nous vous demandons de verser immédiatement le montant total. </p> <p>Acompte pour inscription avant le 1er février : 370 EUR</p> <p>Acompte pour inscription après le 1er février : € 390</p> <p>Inscription après le 1er juin : 790</p><header>Solde</header> <p>Vous payez le solde de 400 euros avant le 1er juin.</p><header>Montant total</header><p>Le montant total peut également être versé en une seule fois immédiatement après l'inscription. <br /> Inscription avant le 1er février : 770 <br /> Inscription après le 1er février : 790</p><header>Virement</header><p>Nom: Conversa Taalvakanties vzw <br /> Numéro de compte: BE16 0018 5319 2474 <br /> BIC: GEBABEBB <br /> Mededeling: nom complet de l'élève + juillet ou août + néerlandais ou anglais</p>",
+      "content.card.2.body": "<header>Acompte</header><p>Vous payez l'acompte (ou le montant total immédiatement) au moment de l'inscription. L'inscription de votre enfant n'est définitive qu'après réception de l'acompte (ou du montant total). </p> <p>Si vous vous inscrivez après le 1er juin, nous vous demandons de verser immédiatement le montant total. </p> <p>Acompte pour inscription avant le 1er février : 380 EUR</p> <p>Acompte pour inscription après le 1er février : € 400</p> <p>Inscription après le 1er juin : 800</p><header>Solde</header> <p>Vous payez le solde de 400 euros avant le 1er juin.</p><header>Montant total</header><p>Le montant total peut également être versé en une seule fois immédiatement après l'inscription. <br /> Inscription avant le 1er février : 780 <br /> Inscription après le 1er février : 800</p><header>Virement</header><p>Nom: Conversa Taalvakanties vzw <br /> Numéro de compte: BE16 0018 5319 2474 <br /> BIC: GEBABEBB <br /> Mededeling: nom complet de l'élève + juillet ou août + néerlandais ou anglais</p>",
       "content.card.3.title": "Y-a-t-il des réductions ?",
-      "content.card.3.body": "<header>Prix</header><p>Le prix d'un séjour linguistique est de 790 euros.</p><header>Remise pour réservation anticipée</header><p>Inscrivez-vous avant le 1er février et bénéficiez d'une réduction de 20 euros. Le prix dans ce cas est donc de 770 euros.</p><header>Réduction \"amis\"</header><p>Convainquez un ami de participer pour la première fois à un séjour linguistique et profitez de 50 euros de réduction que vous recevrez après le séjour linguistique (pour plus d'informations, consultez les conditions générales ci-dessous).</p>",
+      "content.card.3.body": "<header>Prix</header><p>Le prix d'un séjour linguistique est de 800 euros.</p><header>Remise pour réservation anticipée</header><p>Inscrivez-vous avant le 1er février et bénéficiez d'une réduction de 20 euros. Le prix dans ce cas est donc de 780 euros.</p><header>Réduction \"amis\"</header><p>Convainquez un ami de participer pour la première fois à un séjour linguistique et profitez de 50 euros de réduction que vous recevrez après le séjour linguistique (pour plus d'informations, consultez les conditions générales ci-dessous).</p>",
       "content.card.4.title": "Que se passe-t-il si je souhaite annuler mon inscription ?",
       "content.card.4.body": "Nous comprenons qu'il est parfois nécessaire d'annuler une inscription. Si vous souhaitez annuler une inscription, nous vous demandons de nous contacter par email afin que nous puissions trouver une solution ensemble. Jusqu'au 1er juin, vous pouvez annuler votre inscription sans frais supplémentaires. A partir du 1er juin, nous demandons un frais administratif de 100 euros. Nous pouvons offrir un bon que vous pourrez utiliser lors d'une prochaine inscription."
     },
     "tab.2": {
       "title": "Le camp",
       "content.card.1.title": "Quels séjours linguistiques sont encore disponibles ?",
-      "content.card.1.body": "Nos stages ont lieu uniquement pendant les vacances d'été, entre le 7 et 17 juillet 2024 et entre le 4 et 14 août 2024. Le formulaire d'inscription affichera les choix de stages disponibles. Si la période de stage est visible dans le formulaire d'inscription, cela signifie qu'il y a encore des places pour ce stage.",
+      "content.card.1.body": "Nos stages ont lieu uniquement pendant les vacances d'été, entre le 6 et 16 juillet 2025 et entre le 3 et 13 août 2025. Le formulaire d'inscription affichera les choix de stages disponibles. Si la période de stage est visible dans le formulaire d'inscription, cela signifie qu'il y a encore des places pour ce stage.",
       "content.card.2.title": "Qu'est-ce que mon enfant doit apporter ?",
       "content.card.2.body": "Checklist",
       "content.card.3.title": "À quoi ressemble une journée typique ?",

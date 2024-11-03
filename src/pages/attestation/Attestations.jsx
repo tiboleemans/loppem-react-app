@@ -1,17 +1,16 @@
 import React from "react";
 import Intro from "../intro/Intro";
-import JobsForm from "./JobsForm";
+import AttestationsForm from "./AttestationsForm";
 import NavigationExternal from "../navigation/NavigationExternal";
-import JobsConfirmation from "./JobsConfirmation";
 
-const Jobs = () => {
+const Attestations = () => {
   return (
     <div>
       <NavigationExternal/>
       <Intro/>
-      <JobsForm/>
+      <AttestationsForm/>
     </div>
   );
 };
 
-export default Jobs;
+export default Attestations;

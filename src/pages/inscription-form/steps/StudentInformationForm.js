@@ -5,6 +5,7 @@ import CustomTextField from "../custom/CustomTextField";
 import CustomDatePicker from "../custom/CustomDatePicker";
 import CustomButtonGroup from "../custom/CustomButtonGroup";
 import {useTranslation} from "react-i18next";
+import {isFull} from "../../common/utils";
 
 export default function StudentInformationForm(props) {
 
@@ -103,6 +104,13 @@ export default function StudentInformationForm(props) {
           />
         </Grid>
       </Grid>
+
+      {isFull(values.student.period, values.student.language) ?
+        <div className="card inscription-wait-list-card">
+          <div className="inscription-wait-list-card-header">
+            {t("inscription.student.waitList")}
+          </div>
+        </div> : null}
 
     </Form>
   )

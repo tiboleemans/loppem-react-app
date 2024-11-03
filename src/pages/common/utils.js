@@ -77,3 +77,25 @@ export const handleComponentError = (event, setComponentErrors, componentErrors)
     }
   })
 }
+
+export const isFull = (period, language) => {
+  if (period === "july") {
+    if (language === "dutch") {
+      return true;
+    } else if (language === "english") {
+      return true;
+    } else {
+      return false;
+    }
+  } else if (period === "august") {
+    if (language === "dutch") {
+      return false;
+    } else if (language === "english") {
+      return false;
+    } else {
+      return false;
+    }
+  } else {
+    return false;
+  }
+}

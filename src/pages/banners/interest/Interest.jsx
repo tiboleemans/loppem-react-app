@@ -3,6 +3,7 @@ import {Grid} from "@mui/material";
 import {useTranslation} from "react-i18next";
 import BrochurePdf from '../../../resources/Brochure Loppem Conversa 2024.pdf';
 import DepliantPdf from '../../../resources/Dépliant Loppem Conversa 2024.pdf';
+import FlyerPdf from '../../../resources/Flyer Loppem Conversa 2024.pdf';
 import "../banner.css";
 import {getLanguage} from "../../../i18n/i18nSetup";
 import InterestForm from "./InterestForm";
@@ -28,7 +29,7 @@ const Interest = () => {
               <div className="banner-button">
                 {lang.includes("nl") ? <a href={BrochurePdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
                 {lang.includes("fr") ? <a href={DepliantPdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
-                {lang.includes("en") ? <a href={BrochurePdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
+                {lang.includes("en") ? <a href={FlyerPdf} target="_blank" rel="noreferrer">{t("banner.interest.button.share")}</a> : null}
               </div>
             </Grid>
           </Grid>

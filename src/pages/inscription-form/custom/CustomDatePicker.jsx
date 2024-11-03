@@ -54,6 +54,9 @@ function CustomDatePicker(props) {
             case 'maxDate':
               return t("inscription.student.error.datepicker.max.date");
             case 'minDate':
+              if (name === 'birthdateAttestation') {
+                return t("attestation.student.error.datepicker.min.date");
+              }
               return t("inscription.student.error.datepicker.min.date");
             case 'disableFuture':
               return t("inscription.student.error.datepicker.max.date");

@@ -138,36 +138,41 @@
     "question": {
       "title": "Do you have a question or a problem?",
       "button": "Contact us"
+    },
+    "jobs": {
+      "title": "Would you like to join our team?",
+      "button": "Apply"
     }
   },
   "pricing": {
     "title": "Dates and prices",
     "card.camp": {
-      "label.price": "€ 790",
+      "label.price": "€ 800",
       "label.enroll": "Book now",
       "label.language": "Language: ",
       "label.period": "Dates: ",
       "label.available": "Available: ",
       "content.language.1": "Dutch",
-      "content.period.1": "7 - 17 July 2024",
-      "content.available.1": "success",
+      "content.period.1": "6 - 16 July 2025",
+      "content.available.1": "<icon color=success />",
       "content.language.2": "English",
-      "content.period.2": "7 - 17 July 2024",
-      "content.available.2": "success",
+      "content.period.2": "6 - 16 July 2025",
+      "content.available.2": "<icon color=success />",
       "content.language.3": "Dutch",
-      "content.period.3": "4 - 14 August 2024",
-      "content.available.3": "success",
+      "content.period.3": "3 - 13 August 2025",
+      "content.available.3": "<icon color=success />",
       "content.language.4": "English",
-      "content.period.4": "4 - 14 August 2024",
-      "content.available.4": "success"
+      "content.period.4": "3 - 13 August 2025",
+      "content.available.4": "<icon color=success />",
+      "content.waitlist": "waiting list"
     },
     "accordion.1": {
       "summary": "Prices and discounts",
       "details": {
         "title.1": "Cost",
-        "text.1": "The cost of a 10-day language holiday is 790 euros.",
+        "text.1": "The cost of a 10-day language holiday is 800 euros.",
         "title.2": "Early bird discount",
-        "text.2": "Register before February 1, 2024 and enjoy a 20 euro discount. That makes the price 770 euro.",
+        "text.2": "Register before February 1, 2025 and enjoy a 20 euro discount. That makes the price 780 euro.",
         "title.3": "Friend discount",
         "text.3": "Convince a friend to come along on our language holiday for the first time and enjoy 50 euro cashback which you will receive after the language holiday (for more info, check the conditions below)."
       }
@@ -176,11 +181,11 @@
       "summary": "Payment",
       "details": {
         "title.1": "Deposit",
-        "text.1": "You pay the deposit (or the full amount) at the time of enrolment. Your child's enrolment is not final until we have received the deposit (or the full amount). For enrolment after June 1, we ask you to pay in full.<p>Deposit with enrolment before February 1: 370 euro</p> <p>Deposit with enrolment after February 1: 390 euro</p> <p>Price enrolment after June 1: 790 euro</p>",
+        "text.1": "You pay the deposit (or the full amount) at the time of enrolment. Your child's enrolment is not final until we have received the deposit (or the full amount). For enrolment after June 1, we ask you to pay in full.<p>Deposit with enrolment before February 1: 380 euro</p> <p>Deposit with enrolment after February 1: 400 euro</p> <p>Price enrolment after June 1: 800 euro</p>",
         "title.2": "Remaining balance",
         "text.2": "We ask you to pay the remaining balance of 400 euro before June 1.",
         "title.3": "Full amount",
-        "text.3": "The full amount can also be deposited in one lump sum immediately after enrolment.<p> Enrolment before February 1: 770 euro</p> <p>Enrolment after February 1: 790 euro</p>",
+        "text.3": "The full amount can also be deposited in one lump sum immediately after enrolment.<p> Enrolment before February 1: 780 euro</p> <p>Enrolment after February 1: 800 euro</p>",
         "title.4": "Bank transfer",
         "text.4": "Name: Conversa Taalvakanties vzw <br/> Account number: BE16 0018 5319 2474 <br/> BIC: GEBABEBB <p> Notification: <br/> Full name of pupil <br/> July or August <br/> Dutch or English</p>"
       }
@@ -222,12 +227,13 @@
       "dutch": "Dutch",
       "english": "English",
       "period": "Period",
-      "july": "7 - 17 July 2024",
-      "august": "4 - 14 August 2024",
+      "july": "6 - 16 July 2025",
+      "august": "3 - 13 August 2025",
       "gender": "Bedroom with",
       "boy": "Boys",
       "girl": "Girls"
     },
+    "student.waitList": "By filling in this form with July English as your choice, you will be put on the waiting list. We will contact you as soon as a place becomes available.",
     "student.error": {
       "firstName": "Please enter the pupil's given name.",
       "lastName": "Please enter the pupil's surname.",
@@ -428,9 +434,131 @@
       "card.mail.header": "Successful registration",
       "card.mail.content": "<strong>Thank you for your registration!</strong><p>You will receive a confirmation email from us (be sure to check your spam or junk e-mails).</p><p>We will contact you by e-mail at the beginning of June with practical information about the language holiday.</p>",
       "card.payment.header": "Payment details",
-      "card.payment.content": "<p>Please pay the advance payment of €390 or the total amount of €790 to BE16 0018 5319 2474 (BIC: GEBABEBB) with the name of the enrolled pupil, the period and the target language as a communication.</p> <p>The registration is only final once we have received payment.</p>",
+      "card.payment.content": "<p>Please pay the advance payment of €400 or the total amount of €800 to BE16 0018 5319 2474 (BIC: GEBABEBB) with the name of the enrolled pupil, the period and the target language as a communication.</p> <p>The registration is only final once we have received payment.</p>",
       "button": "Register another pupil",
       "loading": "Your registration is being sent. This may take a few seconds.",
+      "error": {
+        "title": "Technical error",
+        "undefined": "An unknown error has occurred",
+        "network": "A network error has occurred. Please check your internet connection",
+        "retry": "Retry",
+        "footer": "You can try again with the same pre-filled data or you can copy the values below and send them to us via mail. Apologies for the inconvenience."
+      }
+    }
+  },
+  "jobs": {
+    "title": "Application",
+    "button": {
+      "send": "SEND"
+    },
+    "confirmation": {
+      "title": "Confirmation application",
+      "loading": "Your application is being sent. This may take some time.",
+      "card.mail.header": "Application sent successfully",
+      "card.mail.content": "<strong>Thanks for your application!</strong><p>You will receive a confirmation e-mail from us (be sure to check your spam or junk e-mails).</p><p>We will contact you as soon as possible.</p>"
+    },
+    "jobs_confirmation": {
+      "title": "Confirmation application",
+      "loading": "Your details are being sent. This may take a while.",
+      "card.mail.header": "Data sent successfully",
+      "card.mail.content": "<strong>Thanks for sending your details. Now the administrative mill is in order!</strong></p><p>See you soon!</p>"
+    },
+    "volunteer.label": {
+      "firstName": "Your first name",
+      "lastName": "Your last name",
+      "birthdate": "Your birthdate",
+      "language": "Preferred language(s)",
+      "dutch": "Dutch",
+      "english": "English",
+      "period": "Available period(s)",
+      "july": "6 - 16 july 2025",
+      "august": "3 - 13 august 2025",
+      "function": "Preferred function(s)",
+      "animator": "Animator",
+      "teacher": "Teacher",
+      "nurse": "Nurse",
+      "recurring": "I have already volunteered during a language holiday at Loppem Conversa",
+      "experience": "Experience (if available)",
+      "motivation": "Motivation",
+      "email": "Your email",
+      "gsm": "Your mobile phone",
+      "ssin": "Your national register number (xx.xx.xx-xxx.xx)",
+      "account": "Your bank account",
+      "street": "Street and housenumber",
+      "municipality": "Municipality + zip-code",
+      "kitchen": "Information for the kitchen",
+      "extra_information": "Other information"
+    },
+    "volunteer.error": {
+      "firstName": "Please enter your first name.",
+      "lastName": "Please enter your last name.",
+      "email": "Please enter your email.",
+      "gsm": "Please enter your mobile phone",
+      "birthdate": "Please enter your birthdate",
+      "language": "Please enter your preferred language(s).",
+      "period": "Please enter your preferred period(s).",
+      "function": "Please enter your preferred function(s).",
+      "motivation": "Please enter a motivation.",
+      "datepicker.min.date": "You may be up to 99 years old.",
+      "datepicker.max.date": "You must be at least 18 years old.",
+      "datepicker.invalid.date": "The format of the date is invalid",
+      "ssin": "Please enter your national register number (xx.xx.xx-xxx.xx)",
+      "account": "Please enter your bank account",
+      "street": "Please enter your street and housenumber",
+      "municipality": "Please enter your municipality and zip code"
+    }
+  },
+  "attestation": {
+    "title": "Attestation form",
+    "description": "Due to a change in regulations regarding tax certificates, we are forced to fill out a new tax certificate <strong>before the end of February</strong> for all children who were under 14 years old at the start of the camp. To complete that document, we need additional personal information. Would it be possible to fill in this form as soon as possible?<br /> <br /><strong>It is important to fill in these details correctly to enjoy a tax benefit.</strong>",
+    "button.send": "Send",
+    "student.title": "Data pupil",
+    "student.label": {
+      "firstName": "Given name pupil",
+      "lastName": "Surname pupil",
+      "birthdate": "Birth date pupil",
+      "ssin": "National registry number pupil (xx.xx.xx-xxx.xx)",
+      "period": "Period",
+      "july": "9 - 19 July 2023",
+      "august": "2 - 12 August 2023",
+      "hasOtherAddress": "My child lives at a different address"
+    },
+    "student.error": {
+      "firstName": "Please enter the pupil's given name.",
+      "lastName": "Please enter the pupil's surname.",
+      "birthdate": "Please enter the pupil's birth date.",
+      "ssin": "Please enter the pupil's national registry number.",
+      "period": "Please enter the period.",
+      "sex": "Please enter the bedroom location",
+      "datepicker.min.date": "The pupil must be at most 14 years old at the time of the internship to apply for a tax certificate.",
+      "datepicker.max.date": "The pupil must be at least 9 years old.",
+      "datepicker.invalid.date": "The format of the date is invalid"
+    },
+    "parent.title": "Data parent",
+    "parent.label": {
+      "firstName": "Given name",
+      "lastName": "Surname",
+      "ssin": "National registry number (xx.xx.xx-xxx.xx)",
+      "street": "Street",
+      "houseNr": "Number",
+      "busNr": "Box number",
+      "city": "Municipality",
+      "zip": "Postal code"
+    },
+    "parent.error": {
+      "firstName": "Please enter your given name.",
+      "lastName": "Please enter your surname.",
+      "ssin": "Please enter your national registry number. (xx.xx.xx-xxx.xx)",
+      "street": "Please enter your street",
+      "housnr": "Please enter your house number",
+      "city": "Please enter your municipality.",
+      "zip": "Please enter your postal code"
+    },
+    "confirmation": {
+      "card.mail.header": "The attestation has been sent successfully",
+      "card.mail.content": "<strong>Thank you for your submitting the form.</strong><p>We take the necessary steps to process your tax application digitally with the government.</p>",
+      "button": "Request another attestation",
+      "loading": "Your attestation is being sent. This may take a few seconds.",
       "error": {
         "title": "Technical error",
         "undefined": "An unknown error has occurred",
@@ -445,9 +573,9 @@
     "button.send": "Send code",
     "confirmation": {
       "loading": "Sending the code...",
-      "success" : {
-        "header" : "The code has been sent successfully",
-        "content" : "Thank you for your interest in our language courses. <br /> <br />You have received an e-mail with more information and a temporary discount code.<br /><br />We look forward to welcoming you to Loppem this summer."
+      "success": {
+        "header": "The code has been sent successfully",
+        "content": "Thank you for your interest in our language courses. <br /> <br />You have received an e-mail with more information and a temporary discount code.<br /><br />We look forward to welcoming you to Loppem this summer."
       }
     },
     "form": {
@@ -468,16 +596,16 @@
       "content.card.1.title": "How to enrol?",
       "content.card.1.body": "<scrollTo>Click here to register</scrollTo> and fill in the form. Make sure you have filled in all mandatory fields and accepted the terms and conditions and privacy policy. In case of questions: contact us by e-mail: info@loppemconversa.be or by phone: +32 478 51 93 44. After enrolment, you will receive a confirmation e-mail. The deposit must be paid immediately after enrolment. Your child's enrolment is only final once we have received the deposit (or the full amount).",
       "content.card.2.title": "When to pay?",
-      "content.card.2.body": "<header>Advance</header><p>You pay the deposit (or the full amount immediately) at the time of enrolment. Your child's enrolment is not final until we have received the deposit (or the full amount).</p><p>For enrolment after June 1, we ask you to pay the full amount immediately.</p><p>Advance for enrolment before February 1: 370 euro</p><p>Advance on enrolment after February 1: 390 euro</p><p>Registration after June 1: 790 euros</p><header>Remaining balance</header><p>You will pay the remaining balance of 400 euro before June 1.</p><header>Full amount</header><p>The full amount can also be deposited in 1 lump sum immediately after enrolment.<br /> Registration before February 1: 770 euro <br /> Enrolment after February 1: 790 euro</p><header>Transfer</header><p>Name: Conversa Taalvakanties vzw <br /> Account number: BE16 0018 5319 2474 <br /> BIC: GEBABEBB <br /> Communication: full name of student + July or August + Dutch or English</p>",
+      "content.card.2.body": "<header>Advance</header><p>You pay the deposit (or the full amount immediately) at the time of enrolment. Your child's enrolment is not final until we have received the deposit (or the full amount).</p><p>For enrolment after June 1, we ask you to pay the full amount immediately.</p><p>Advance for enrolment before February 1: 380 euro</p><p>Advance on enrolment after February 1: 400 euro</p><p>Registration after June 1: 800 euros</p><header>Remaining balance</header><p>You will pay the remaining balance of 400 euro before June 1.</p><header>Full amount</header><p>The full amount can also be deposited in 1 lump sum immediately after enrolment.<br /> Registration before February 1: 780 euro <br /> Enrolment after February 1: 800 euro</p><header>Transfer</header><p>Name: Conversa Taalvakanties vzw <br /> Account number: BE16 0018 5319 2474 <br /> BIC: GEBABEBB <br /> Communication: full name of student + July or August + Dutch or English</p>",
       "content.card.3.title": "Are the discounts?",
-      "content.card.3.body": "<header>Cost</header><p>The cost of each language holiday is €790.</p><header>Early booking discount</header><p>Register before February 1 and enjoy a 20 euro discount. The cost in this case is therefore 770 euro.</p><header>Friends discount</header><p>Convince a friend to come along on a language holiday for the first time and enjoy 50 euro cashback which you will receive after the language holiday (for more info, check the conditions below).</p>",
+      "content.card.3.body": "<header>Cost</header><p>The cost of each language holiday is €800.</p><header>Early booking discount</header><p>Register before February 1 and enjoy a 20 euro discount. The cost in this case is therefore 780 euro.</p><header>Friends discount</header><p>Convince a friend to come along on a language holiday for the first time and enjoy 50 euro cashback which you will receive after the language holiday (for more info, check the conditions below).</p>",
       "content.card.4.title": "What if I want to cancel my enrolment?",
       "content.card.4.body": "We understand that sometimes it is important to be able to cancel an enrolment. If you wish to cancel an enrolment, we ask that you contact us via e-mail so that we can look for a solution together. Until June 1, you can cancel your registration free of charge. From June 1 onwards, we will charge an administrative fee of 100 euros. We can convert this amount into a voucher that you can use for your next registration."
     },
     "tab.2": {
       "title": "At camp",
       "content.card.1.title": "Which language holidays are available?",
-      "content.card.1.body": "Our courses only run during the summer holidays between July 7 - 17 2024 & August 4 - 14 2024. The registration form will show the choices of available courses. As long as the period is visible in the registration form, it means there is space for this course.",
+      "content.card.1.body": "Our courses only run during the summer holidays between July 6 - 16 2025 & August 3 - 13 2025. The registration form will show the choices of available courses. As long as the period is visible in the registration form, it means there is space for this course.",
       "content.card.2.title": "What should my child bring?",
       "content.card.2.body": "Link to pdf",
       "content.card.3.title": "What does a typical day look like?",

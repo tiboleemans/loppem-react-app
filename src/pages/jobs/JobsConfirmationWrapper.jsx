@@ -1,17 +1,16 @@
 import React from "react";
 import Intro from "../intro/Intro";
-import JobsForm from "./JobsForm";
 import NavigationExternal from "../navigation/NavigationExternal";
 import JobsConfirmation from "./JobsConfirmation";
 
-const Jobs = () => {
+const JobsConfirmationWrapper = () => {
   return (
     <div>
       <NavigationExternal/>
       <Intro/>
-      <JobsForm/>
+      <JobsConfirmation/>
     </div>
   );
 };
 
-export default Jobs;
+export default JobsConfirmationWrapper;
