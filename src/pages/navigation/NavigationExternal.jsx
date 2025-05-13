@@ -50,6 +50,13 @@ const NavigationExternal = () => {
             <li>
               <NavigateTo to="contact">{t("nav.contact")}</NavigateTo>
             </li>
+            <li>
+              <a
+                href={`/${getLanguage()}/jobs`}
+              >
+                {t("nav.jobs")}
+              </a>
+            </li>
           </ul>
           <div className="nav-language-selector">
             <LanguageSelector/>

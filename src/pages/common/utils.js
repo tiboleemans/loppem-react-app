@@ -81,7 +81,7 @@ export const handleComponentError = (event, setComponentErrors, componentErrors)
 export const isFull = (period, language) => {
   if (period === "july") {
     if (language === "dutch") {
-      return true;
+      return false;
     } else if (language === "english") {
       return true;
     } else {

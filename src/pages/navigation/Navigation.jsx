@@ -5,6 +5,8 @@ import LanguageSelector from "./LanguageSelector";
 import MenuIcon from '@mui/icons-material/Menu';
 import "./navigation.css"
 import {IconButton} from "@mui/material";
+import NavigateTo from "../common/NavigateTo";
+import {getLanguage} from "../../i18n/i18nSetup";
 
 const Navigation = () => {
   const {t} = useTranslation();
@@ -46,6 +48,13 @@ const Navigation = () => {
             </li>
             <li>
               <ScrollTo to="contact">{t("nav.contact")}</ScrollTo>
+            </li>
+            <li>
+              <a
+                href={`/${getLanguage()}/jobs`}
+              >
+                {t("nav.jobs")}
+              </a>
             </li>
           </ul>
           <div className="nav-language-selector">

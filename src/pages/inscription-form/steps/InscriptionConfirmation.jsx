@@ -50,7 +50,7 @@ const InscriptionConfirmation = (props) => {
               {t("inscription.confirmation.card.payment.header")}
             </div>
             <div className="inscription-confirmation-card-content">
-              <Trans i18nKey="inscription.confirmation.card.payment.content"/>
+              <Trans i18nKey="inscription.confirmation.card.payment.content.normal"/>
             </div>
           </div>
         </Grid>

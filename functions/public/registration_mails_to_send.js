@@ -32,6 +32,11 @@ function isDateBeforeJune() {
   return new Date(new Date().toDateString()) < new Date(juneDate.toDateString());
 }
 
+function isDateBeforeFebruari() {
+  const juneDate = new Date(`${tools.campYear()}`, 2, 1);
+  return new Date(new Date().toDateString()) < new Date(juneDate.toDateString());
+}
+
 // eslint-disable-next-line valid-jsdoc,require-jsdoc
 // function getMailType(period, language, destination) {
 //   if (period === 'july') {
@@ -51,8 +56,13 @@ function isDateBeforeJune() {
 
 // eslint-disable-next-line valid-jsdoc,require-jsdoc
 function getMailType(period, language, destination) {
+  if (period === 'july' && language === 'english') {
+    return 'wait';
+  }
   if (destination === 'parent') {
-    if (isDateBeforeJune()) {
+    if (isDateBeforeFebruari()) {
+      return 'early';
+    } else if (isDateBeforeJune()) {
       return 'normal';
     } else {
       return 'june';

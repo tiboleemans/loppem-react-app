@@ -1,9 +1,9 @@
 import React from "react";
 import {Grid} from "@mui/material";
 import {useTranslation} from "react-i18next";
-import BrochurePdf from '../../../resources/Brochure Loppem Conversa 2024.pdf';
-import DepliantPdf from '../../../resources/Dépliant Loppem Conversa 2024.pdf';
-import FlyerPdf from '../../../resources/Flyer Loppem Conversa 2024.pdf';
+import BrochurePdf from '../../../resources/Brochure Loppem Conversa.pdf';
+import DepliantPdf from '../../../resources/Dépliant Loppem Conversa.pdf';
+import FlyerPdf from '../../../resources/Flyer Loppem Conversa.pdf';
 import "../banner.css";
 import {getLanguage} from "../../../i18n/i18nSetup";
 import InterestForm from "./InterestForm";

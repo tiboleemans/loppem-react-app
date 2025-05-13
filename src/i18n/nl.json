@@ -10,7 +10,8 @@
     "pricing": "Prijzen",
     "enroll": "Inschrijven",
     "info": "Praktische info",
-    "contact": "Contact"
+    "contact": "Contact",
+    "jobs": "Jobs"
   },
   "intro": {
     "img": ""
@@ -444,7 +445,8 @@
       "card.mail.header": "Succesvolle inschrijving",
       "card.mail.content": "<strong>Bedankt voor uw inschrijving!</strong><p>Je ontvangt van ons een bevestigingsmail (kijk ook zeker eens in je spam of je ongewenste e-mails).</p><p>Begin juni contacteren wij je per e-mail met praktische informatie over de taalvakantie.</p>",
       "card.payment.header": "Betalingsdetails",
-      "card.payment.content": "<p>Gelieve het voorschot van 400 euro of het totale bedrag van 800 euro te betalen op BE16 0018 5319 2474 (BIC: GEBABEBB) met als mededeling de naam van de ingeschreven leerling.</p> <p> De inschrijving is pas defintief zodra wij een betaling hebben ontvangen. </p>",
+      "card.payment.content.normal": "<p>Gelieve het voorschot van 400 euro of het totale bedrag van 800 euro te betalen op BE16 0018 5319 2474 (BIC: GEBABEBB) met als mededeling de naam van de ingeschreven leerling.</p> <p> De inschrijving is pas defintief zodra wij een betaling hebben ontvangen. </p>",
+      "card.payment.content.early": "<p>Gelieve het voorschot van 380 euro of het totale bedrag van 780 euro te betalen op BE16 0018 5319 2474 (BIC: GEBABEBB) met als mededeling de naam van de ingeschreven leerling.</p> <p> De inschrijving is pas defintief zodra wij een betaling hebben ontvangen. </p>",
       "button": "Schrijf nog een leerling in",
       "loading": "Uw inschrijving wordt verstuurd. Dit kan enkele seconden duren.",
       "error": {
@@ -530,6 +532,7 @@
       "function": "Gelieve de gewenste functie(s) aan te duiden.",
       "gender": "Gelieve aan te duiden hoe u zich voelt",
       "motivation": "Gelieve een motivatie te geven",
+      "experience": "Gelieve een ervaring te geven",
       "datepicker.min.date": "Je mag maximaal 99 jaar oud zijn.",
       "datepicker.max.date": "Je moet minstens 18 jaar oud zijn.",
       "datepicker.invalid.date": "Het formaat van de datum is ongeldig",

@@ -78,6 +78,7 @@ const JobsForm = () => {
     errors.volunteer.birthdate = values.volunteer.birthdate ? null : t("jobs.volunteer.error.birthdate");
     errors.volunteer.gsm = values.volunteer.gsm ? null : t("jobs.volunteer.error.gsm");
     errors.volunteer.motivation = values.volunteer.motivation ? null : t("jobs.volunteer.error.motivation");
+    errors.volunteer.experience = values.volunteer.experience ? null : t("jobs.volunteer.error.experience");
     setErrors({
         ...errors
       }
@@ -213,6 +214,7 @@ const JobsForm = () => {
                       name="experience"
                       value={values.volunteer.experience}
                       onChange={(e) => handleInputChange(e, setValues, values)}
+                      error={errors.volunteer.experience}
                     />
                   </Grid>
                   <Grid item xs={12}>

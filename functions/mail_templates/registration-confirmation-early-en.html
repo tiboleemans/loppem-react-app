@@ -1,0 +1,27 @@
+<html>
+<body><p>Hello {{parent.firstName}} {{parent.lastName}}</p>
+<p>We have received your enrolment of {{student.firstName}} {{student.lastName}} for our language holiday {{student.language}} in the period:
+    {{student.period}}.</p>
+<p>We can't wait to welcome you on the first day of the language holiday! In June, you can expect an e-mail from us with all the practical information
+    for the camp. Be sure to check your junk mail and spam folder.</p>
+<p>To confirm your enrolment, we ask you to transfer the deposit of 380 euros: <br/>Name: Conversa Taalvakanties vzw <br/>Account number: BE16 0018
+    5319 2474 <br/>BIC: GEBABEBB <br/>Communication: {{student.firstName}} {{student.lastName}} {{student.period}} {{student.language}}</p>
+<p>You will then pay the remaining balance of 400 euros before June 1. You may also transfer the full amount of 780 euro immediately, if you
+    prefer.</p>
+<p>Below is a summary of your answers in the enrolment form.</p>
+<p>Do not hesitate to contact us for changes to the enrolment or any other questions. You can do so by replying to this e-mail or by sending an e-mail
+    to info@loppemconversa.be.</p>
+<p>Did you know that you can also find a lot of information on our website?</p>
+<p>See you this summer!</p>
+<p>Kind regards<br/> The Loppem Conversa Team</p>
+<p>New enrolment details:<br/><br/>Chosen language: {{student.language}}<br/>Chosen period: {{student.period}}<br/>Student name:
+    {{student.lastName}}<br/>Student first name: {{student.firstName}}<br/>Date of birth: {{student.birthdate}}<br/>Bedroom at:
+    {{student.gender}}<br/>Name parent: {{parent.lastName}}<br/>First name parent: {{parent.firstName}}<br/>Language parent: {{parent.language}}<br/>E-mail
+    parent: {{parent.email}}<br/>Relationship with pupil: {{parent.relation}}<br/>Street name parent: {{parent.street}}<br/>House number parent:
+    {{parent.houseNr}}<br/>Letterbox number: {{parent.busNr}}<br/>Postal code parent: {{parent.zipCode}}<br/>City parent: {{parent.city}}<br/>Phone
+    number parent: {{parent.mobilephone}}<br/>Emergency number: {{parent.mobile2}}<br/>School name: {{school.name}}<br/>City of school:
+    {{school.city}}<br/>Number of years of lessons in the chosen language: {{school.years}}<br/>Number of hours of lessons per week in the chosen
+    language: {{school.hours}}<br/>CLIL: {{school.immersion}}<br/>Contact method: {{extra.contact}}<br/>Additional info: {{extra.additionalInfo}}<br/>Food
+    allergies or intolerances: {{extra.foodInfo}}<br/>{{#if extra.acceptPictures}} Permission to use pictures: yes{{else}} Permission to use photos:
+    no {{/if}} </p></body>
+</html>

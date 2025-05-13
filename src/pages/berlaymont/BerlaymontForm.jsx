@@ -40,7 +40,7 @@ const BerlaymontForm = () => {
       result += characters.charAt(Math.floor(Math.random() * charactersLength));
       counter += 1;
     }
-    return "BERLAYMONT2024-".concat(result);
+    return "BERLAYMONT2025-".concat(result);
   }
 
   const handleAnother = () => {

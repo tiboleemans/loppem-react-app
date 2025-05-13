@@ -32,6 +32,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Router basename="/">
         <Switch>
+          <Route exact path="/berlaymont" render={() => <Redirect to="/fr/home" />} />
           <Route path="/:language" render={({match}) => {
             const language = match.params.language;
             if (['nl', 'fr', 'en'].includes(language)) {
@@ -50,7 +51,6 @@ function App() {
             }
           }}/>
           <Route render={() => <Redirect to={'/' + getLanguage().substring(0, 2) + '/home'}/>}/>
-
         </Switch>
       </Router>
     </ThemeProvider>

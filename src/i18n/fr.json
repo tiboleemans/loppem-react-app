@@ -10,7 +10,8 @@
     "pricing": "Prix",
     "enroll": "S'inscrire",
     "info": "Infos pratiques",
-    "contact": "Contact"
+    "contact": "Contact",
+    "jobs": "Jobs"
   },
   "vacations": {
     "title": "Apprendre à parler avec plaisir",
@@ -429,7 +430,8 @@
       "card.mail.header": "Inscription réussie",
       "card.mail.content": "<strong>Merci pour votre inscription !</strong><p>Vous recevrez un e-mail de confirmation de notre part (pensez à vérifier votre spam).</p><p>Début juin, nous vous contacterons par email pour vous donner des informations pratiques sur le séjour linguistique.</p>",
       "card.payment.header": "Détails du paiement",
-      "card.payment.content": "<p>Veuillez verser l'acompte de 400 € ou le montant total de 800 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit dans la communication.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
+      "card.payment.content.normal": "<p>Veuillez verser l'acompte de 400 € ou le montant total de 800 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit dans la communication.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
+      "card.payment.content.early": "<p>Veuillez verser l'acompte de 380 € ou le montant total de 780 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit dans la communication.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
       "button": "Inscrire un autre élève",
       "loading": "Votre inscription est en cours d'envoi. Cela peut prendre quelques secondes.",
       "error": {

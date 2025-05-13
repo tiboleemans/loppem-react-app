@@ -10,7 +10,8 @@
     "pricing": "Prices",
     "enroll": "Registration",
     "info": "Practical info",
-    "contact": "Contact"
+    "contact": "Contact",
+    "jobs": "Jobs"
   },
   "intro": {
     "img": ""
@@ -434,7 +435,8 @@
       "card.mail.header": "Successful registration",
       "card.mail.content": "<strong>Thank you for your registration!</strong><p>You will receive a confirmation email from us (be sure to check your spam or junk e-mails).</p><p>We will contact you by e-mail at the beginning of June with practical information about the language holiday.</p>",
       "card.payment.header": "Payment details",
-      "card.payment.content": "<p>Please pay the advance payment of €400 or the total amount of €800 to BE16 0018 5319 2474 (BIC: GEBABEBB) with the name of the enrolled pupil, the period and the target language as a communication.</p> <p>The registration is only final once we have received payment.</p>",
+      "card.payment.content.normal": "<p>Please pay the advance payment of €400 or the total amount of €800 to BE16 0018 5319 2474 (BIC: GEBABEBB) with the name of the enrolled pupil, the period and the target language as a communication.</p> <p>The registration is only final once we have received payment.</p>",
+      "card.payment.content.early": "<p>Please pay the advance payment of €380 or the total amount of €780 to BE16 0018 5319 2474 (BIC: GEBABEBB) with the name of the enrolled pupil, the period and the target language as a communication.</p> <p>The registration is only final once we have received payment.</p>",
       "button": "Register another pupil",
       "loading": "Your registration is being sent. This may take a few seconds.",
       "error": {
@@ -499,6 +501,7 @@
       "period": "Please enter your preferred period(s).",
       "function": "Please enter your preferred function(s).",
       "motivation": "Please enter a motivation.",
+      "experience": "Please enter an experience.",
       "datepicker.min.date": "You may be up to 99 years old.",
       "datepicker.max.date": "You must be at least 18 years old.",
       "datepicker.invalid.date": "The format of the date is invalid",

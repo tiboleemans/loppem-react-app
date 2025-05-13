@@ -80,7 +80,7 @@ const Pricing = () => {
     {
       language: t("pricing.card.camp.content.language.2"),
       period: t("pricing.card.camp.content.period.2"),
-      available: <Trans i18nKey="pricing.card.camp.content.available.2" components={{icon: <CheckIcon/>}}/>,
+      available: <Trans i18nKey="pricing.card.camp.content.waitlist" components={{icon: <CheckIcon/>}}/>,
     },
     {
       language: t("pricing.card.camp.content.language.3"),

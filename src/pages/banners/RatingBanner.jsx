@@ -2,7 +2,7 @@ import React from "react";
 import {Grid, Link, Rating} from "@mui/material";
 import StarIcon from '@mui/icons-material/Star';
 import {styled} from "@mui/material/styles";
-import {useTranslation} from "react-i18next";
+import {Trans, useTranslation} from "react-i18next";
 import "./banner.css";
 
 const StyledRating = styled(Rating)({
