@@ -188,15 +188,16 @@ export default function InscriptionForm() {
                 {step === 2 && <SchoolInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
                 {step === 3 && <ExtraInformationForm values={values} handleInputChange={handleInputChange} errors={errors}/>}
                 {showValidation && myStepHasErrors ? <Alert severity="warning">{t("inscription.form.errors.general")}</Alert> : null}
+                <Alert severity="warning">{t("inscription.form.waiting")}</Alert>
                 <div className="inscription-button-container">
                   {step !== 0 && (
                     <div className="inscription-button" onClick={handleBack}>
                       {t("inscription.button.back")}
                     </div>
                   )}
-                  <div className="inscription-button" onClick={handleNext}>
-                    {step === steps.length - 1 ? t("inscription.button.enroll") : t("inscription.button.next")}
-                  </div>
+                  {/*<div className="inscription-button" onClick={handleNext}>*/}
+                  {/*  {step === steps.length - 1 ? t("inscription.button.enroll") : t("inscription.button.next")}*/}
+                  {/*</div>*/}
                 </div>
               </>
             )}

@@ -148,24 +148,27 @@
   "pricing": {
     "title": "Aanbod",
     "card.camp": {
-      "label.price": "€ 800",
+      "label.price": "n.t.b.",
       "label.enroll": "Boek nu",
       "label.language": "Doeltaal: ",
       "label.period": "Periode: ",
       "label.available": "Beschikbaar: ",
+      "label.waiting.price": "Prijs nog te bepalen",
+      "label.waiting.text": "Inschrijven mogelijk vanaf november '25",
       "content.language.1": "Nederlands",
-      "content.period.1": "6 - 16 juli 2025",
+      "content.period.1": "5 - 15 juli 2026",
       "content.available.1": "<icon color=success />",
       "content.language.2": "Engels",
-      "content.period.2": "6 - 16 juli 2025",
+      "content.period.2": "5 - 15 juli 2026",
       "content.available.2": "<icon color=success />",
       "content.language.3": "Nederlands",
-      "content.period.3": "3 - 13 augustus 2025",
+      "content.period.3": "2 - 12 augustus 2026",
       "content.available.3": "<icon color=success />",
       "content.language.4": "Engels",
-      "content.period.4": "3 - 13 augustus 2025",
+      "content.period.4": "2 - 12 augustus 2026",
       "content.available.4": "<icon color=success />",
-      "content.waitlist": "wachtlijst"
+      "content.waitlist": "wachtlijst",
+      "content.last": "bijna volzet"
     },
     "accordion.1": {
       "summary": "PRIJZEN EN KORTINGEN",
@@ -173,7 +176,7 @@
         "title.1": "Kostprijs",
         "text.1": "De kostprijs van een taalvakantie van 10 dagen bedraagt 800 euro.",
         "title.2": "Vroegboekkorting",
-        "text.2": "Schrijf in voor 1 februari 2025 en geniet van 20 euro korting. De kostprijs bedraagt in dat geval dus 780 euro.",
+        "text.2": "Schrijf in voor 1 februari 2026 en geniet van 20 euro korting. De kostprijs bedraagt in dat geval dus 780 euro.",
         "title.3": "Vriendjeskorting",
         "text.3": "Overtuig een vriend om voor de eerste keer mee te komen op taalvakantie en geniet van 50 euro cashback die je ontvangt na afloop van de taalvakantie (voor meer info, bekijk de voorwaarden hieronder)."
       }
@@ -205,6 +208,9 @@
   },
   "inscription": {
     "title": "Inschrijvingsformulier",
+    "form" : {
+      "waiting" : "Inschrijven is pas mogelijk vanaf november."
+    },
     "form.errors": {
       "general": "Niet alle verplichte velden werden ingevuld.",
       "email": "Het formaat van je e-mailadres is niet correct."
@@ -228,8 +234,8 @@
       "dutch": "Nederlands",
       "english": "Engels",
       "period": "Periode",
-      "july": "6 - 16 juli 2025",
-      "august": "3 - 13 augustus 2025",
+      "july": "5 - 15 juli 2026",
+      "august": "2 - 12 augustus 2026",
       "gender": "Slaapkamer bij",
       "boy": "Jongens",
       "girl": "Meisjes"
@@ -447,6 +453,7 @@
       "card.payment.header": "Betalingsdetails",
       "card.payment.content.normal": "<p>Gelieve het voorschot van 400 euro of het totale bedrag van 800 euro te betalen op BE16 0018 5319 2474 (BIC: GEBABEBB) met als mededeling de naam van de ingeschreven leerling.</p> <p> De inschrijving is pas defintief zodra wij een betaling hebben ontvangen. </p>",
       "card.payment.content.early": "<p>Gelieve het voorschot van 380 euro of het totale bedrag van 780 euro te betalen op BE16 0018 5319 2474 (BIC: GEBABEBB) met als mededeling de naam van de ingeschreven leerling.</p> <p> De inschrijving is pas defintief zodra wij een betaling hebben ontvangen. </p>",
+      "card.payment.content.wait": "<p>Je bent succesvol geregistreerd op de wachtlijst.</p> <p>We nemen contact met je op zodra er een plaats vrijkomt.</p>",
       "button": "Schrijf nog een leerling in",
       "loading": "Uw inschrijving wordt verstuurd. Dit kan enkele seconden duren.",
       "error": {
@@ -503,8 +510,8 @@
       "dutch": "Nederlands",
       "english": "Engels",
       "period": "Periode(s)",
-      "july": "6 - 16 juli 2025",
-      "august": "3 - 13 augustus 2025",
+      "july": "5 - 15 juli 2026",
+      "august": "2 - 12 augustus 2026",
       "function": "Voorkeur functie(s)",
       "animator": "Animator",
       "teacher": "Leerkracht",
@@ -617,7 +624,7 @@
     "tab.2": {
       "title": "Op kamp",
       "content.card.1.title": "Voor welke taalvakantie is er plaats?",
-      "content.card.1.body": "Onze stages gaan enkel door in de zomervakantie tussen 6 - 16 juli 2025 & 3 - 13 augustus 2025. In het inschrijvingsformulier worden de keuzes van de beschikbare stages getoond. Zolang de stageperiode in het inschrijvingsformulier zichtbaar is, betekent dit dat er plaats is voor deze stage. ",
+      "content.card.1.body": "Onze stages gaan enkel door in de zomervakantie tussen 5 - 15 juli 2026 & 2 - 12 augustus 2026. In het inschrijvingsformulier worden de keuzes van de beschikbare stages getoond. Zolang de stageperiode in het inschrijvingsformulier zichtbaar is, betekent dit dat er plaats is voor deze stage. ",
       "content.card.2.title": "Wat moet mijn kind meenemen?",
       "content.card.2.body": "Link naar pdf",
       "content.card.3.title": "Hoe ziet een typische dag eruit?",

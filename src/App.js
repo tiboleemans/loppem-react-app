@@ -39,6 +39,7 @@ function App() {
               setLanguage(language);
               return <Switch>
                 <Route path={"/" + language + "/home"} component={Home}/>
+                <Route path={"/" + language + "/welcome"} component={Home}/>
                 <Route path={"/" + language + "/jobs/confirmation"} component={JobsConfirmationWrapper}/>
                 <Route path={"/" + language + "/jobs"} component={Jobs}/>
                 <Route path={"/" + language + "/berlaymont"} component={Berlaymont}/>

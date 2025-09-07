@@ -57,7 +57,7 @@ function isDateBeforeFebruari() {
 // eslint-disable-next-line valid-jsdoc,require-jsdoc
 function getMailType(period, language, destination) {
   if (period === 'july' && language === 'english') {
-    return 'wait';
+    return 'normal';
   }
   if (destination === 'parent') {
     if (isDateBeforeFebruari()) {

@@ -145,24 +145,27 @@
   "pricing": {
     "title": "Offre",
     "card.camp": {
-      "label.price": "800 €",
+      "label.price": "P.A.D.",
       "label.enroll": "S'inscrire",
       "label.language": "Langue: ",
       "label.period": "Période: ",
       "label.available": "Disponible: ",
+      "label.waiting.price": "Prix à déterminer",
+      "label.waiting.text": "Inscription possible à partir de novembre 2025",
       "content.language.1": "néerlandais",
-      "content.period.1": "6 - 16 juillet 2025",
+      "content.period.1": "5 - 15 juillet 2026",
       "content.available.1": "<icon color=success />",
       "content.language.2": "anglais",
-      "content.period.2": "6 - 16 juillet 2025",
+      "content.period.2": "5 - 15 juillet 2026",
       "content.available.2": "<icon color=success />",
       "content.language.3": "néerlandais",
-      "content.period.3": "3 - 13 août 2025",
+      "content.period.3": "2 - 12 août 2026",
       "content.available.3": "<icon color=success />",
       "content.language.4": "anglais",
-      "content.period.4": "3 - 13 août 2025",
+      "content.period.4": "2 - 12 août 2026",
       "content.available.4": "<icon color=success />",
-      "content.waitlist": "liste d'attente"
+      "content.waitlist": "liste d'attente",
+      "content.last": "presque plein"
     },
     "accordion.1": {
       "summary": "PRIX ET REMISES",
@@ -170,7 +173,7 @@
         "title.1": "Prix",
         "text.1": "Le prix d'un séjour linguistique de 10 jours est de 800 euros.",
         "title.2": "Remise pour réservation anticipée",
-        "text.2": "Inscrivez-vous avant le 1er février 2025 et bénéficiez d'une réduction de 20 euros. Le prix total dans ce cas est donc de 780 euros.",
+        "text.2": "Inscrivez-vous avant le 1er février 2026 et bénéficiez d'une réduction de 20 euros. Le prix total dans ce cas est donc de 780 euros.",
         "title.3": "Réduction \"amis\"",
         "text.3": "Convainquez un ami de participer pour la première fois à un séjour linguistique et profitez de 50 euros de réduction que vous recevrez après le séjour linguistique (pour plus d'informations, consultez les conditions générales ci-dessous). "
       }
@@ -206,6 +209,9 @@
       "general": "Tous les champs obligatoires n'ont pas été remplis.",
       "email": "Le format de votre adresse email est incorrect."
     },
+    "form" : {
+      "waiting" : "Les inscriptions ne seront possibles qu'à partir du mois de novembre."
+    },
     "button": {
       "back": "Précédent",
       "next": "Suivant",
@@ -225,8 +231,8 @@
       "dutch": "Néerlandais",
       "english": "Anglais",
       "period": "Période",
-      "july": "6 - 16 juillet 2025",
-      "august": "3 - 13 août 2025",
+      "july": "5 - 15 juillet 2026",
+      "august": "2 - 12 août 2026",
       "gender": "Chambre dans le couloir des",
       "boy": "Garçons",
       "girl": "Filles"
@@ -432,6 +438,7 @@
       "card.payment.header": "Détails du paiement",
       "card.payment.content.normal": "<p>Veuillez verser l'acompte de 400 € ou le montant total de 800 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit dans la communication.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
       "card.payment.content.early": "<p>Veuillez verser l'acompte de 380 € ou le montant total de 780 € au BE16 0018 5319 2474 (BIC : GEBABEBB) avec le nom de l'élève inscrit dans la communication.</p> <p>L'inscription n'est définitive qu'après réception du paiement. </p>",
+      "card.payment.content.wait": "<p>Vous êtes bien inscrit sur la liste d'attente.</p> <p>Nous vous contacterons dès qu'une place sera disponible.</p>",
       "button": "Inscrire un autre élève",
       "loading": "Votre inscription est en cours d'envoi. Cela peut prendre quelques secondes.",
       "error": {
@@ -538,7 +545,7 @@
     "tab.2": {
       "title": "Le camp",
       "content.card.1.title": "Quels séjours linguistiques sont encore disponibles ?",
-      "content.card.1.body": "Nos stages ont lieu uniquement pendant les vacances d'été, entre le 6 et 16 juillet 2025 et entre le 3 et 13 août 2025. Le formulaire d'inscription affichera les choix de stages disponibles. Si la période de stage est visible dans le formulaire d'inscription, cela signifie qu'il y a encore des places pour ce stage.",
+      "content.card.1.body": "Nos stages ont lieu uniquement pendant les vacances d'été, entre le 5 et 15 juillet 2026 et entre le 2 et 12 août 2026. Le formulaire d'inscription affichera les choix de stages disponibles. Si la période de stage est visible dans le formulaire d'inscription, cela signifie qu'il y a encore des places pour ce stage.",
       "content.card.2.title": "Qu'est-ce que mon enfant doit apporter ?",
       "content.card.2.body": "Checklist",
       "content.card.3.title": "À quoi ressemble une journée typique ?",

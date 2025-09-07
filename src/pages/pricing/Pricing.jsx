@@ -80,7 +80,7 @@ const Pricing = () => {
     {
       language: t("pricing.card.camp.content.language.2"),
       period: t("pricing.card.camp.content.period.2"),
-      available: <Trans i18nKey="pricing.card.camp.content.waitlist" components={{icon: <CheckIcon/>}}/>,
+      available: <Trans i18nKey="pricing.card.camp.content.last" components={{icon: <CheckIcon/>}}/>,
     },
     {
       language: t("pricing.card.camp.content.language.3"),
@@ -118,13 +118,19 @@ const Pricing = () => {
                         <Grid item xs={8}>
                           <p className="card-camp-content">{element.period}</p>
                         </Grid>
-                        <Grid item xs={5}>
-                          <p className="card-camp-label">{t("pricing.card.camp.label.available")}</p>
+                        {/*comment me*/}
+                        <Grid item xs={12}>
+                          <p className="card-camp-label-small">{t("pricing.card.camp.label.waiting.price")}</p>
+                          <p className="card-camp-label-small">{t("pricing.card.camp.label.waiting.text")}</p>
                         </Grid>
-                        <Grid item xs={7}>
-                          {i = 3 ? <p className="card-camp-content-emphasized">{element.available}</p> :
-                            <p className="card-camp-content">{element.available}</p>}
-                        </Grid>
+                        {/*Uncomment me*/}
+                        {/*<Grid item xs={5}>*/}
+                        {/*  <p className="card-camp-label">{t("pricing.card.camp.label.available")}</p>*/}
+                        {/*</Grid>*/}
+                        {/*<Grid item xs={7}>*/}
+                        {/*  {i = 3 ? <p className="card-camp-content-emphasized">{element.available}</p> :*/}
+                        {/*    <p className="card-camp-content">{element.available}</p>}*/}
+                        {/*</Grid>*/}
                       </Grid>
                     </Grid>
                     <Grid item xs={3}>

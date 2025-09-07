@@ -60,6 +60,12 @@
     text-align: right;
 }
 
+.card-camp-label-small {
+    font-size: 14px;
+    text-align: left;
+    font-style: italic;
+}
+
 .card-camp-grid p {
     margin: 0 0 0.5rem;
 }

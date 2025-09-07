@@ -11,7 +11,7 @@
     "test": "FIRESTORE_EMULATOR_HOST=localhost:8080 mocha --timeout 15000"
   },
   "engines": {
-    "node": "16"
+    "node": "18"
   },
   "main": "index.js",
   "dependencies": {

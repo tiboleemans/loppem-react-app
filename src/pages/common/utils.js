@@ -83,7 +83,7 @@ export const isFull = (period, language) => {
     if (language === "dutch") {
       return false;
     } else if (language === "english") {
-      return true;
+      return false;
     } else {
       return false;
     }
